@@ -1,0 +1,547 @@
+{
+  "id": "music",
+  "language": "de",
+  "name": "Musik",
+  "themes": [
+    {
+      "id": "de-music-streichinstrumente",
+      "name": "Streichinstrumente",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Geige",
+        "Bratsche",
+        "Cello",
+        "Kontrabass",
+        "Bogen",
+        "Saite",
+        "Kolophonium",
+        "Wirbel"
+      ]
+    },
+    {
+      "id": "de-music-tasteninstrumente",
+      "name": "Tasteninstrumente",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Klavier",
+        "Flügel",
+        "Orgel",
+        "Keyboard",
+        "Synthesizer",
+        "Akkordeon",
+        "Celesta",
+        "Cembalo"
+      ]
+    },
+    {
+      "id": "de-music-blasinstrumente",
+      "name": "Blasinstrumente",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Trompete",
+        "Posaune",
+        "Tuba",
+        "Horn",
+        "Klarinette",
+        "Oboe",
+        "Fagott",
+        "Saxofon"
+      ]
+    },
+    {
+      "id": "de-music-schlaginstrumente",
+      "name": "Schlaginstrumente",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Trommel",
+        "Pauke",
+        "Becken",
+        "Triangel",
+        "Xylofon",
+        "Marimba",
+        "Tamburin",
+        "Gong"
+      ]
+    },
+    {
+      "id": "de-music-gitarrenwelt",
+      "name": "Gitarre",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Gitarre",
+        "Saite",
+        "Plektrum",
+        "Verstärker",
+        "Griffbrett",
+        "Bund",
+        "Kapodaster",
+        "Gitarrenkoffer"
+      ]
+    },
+    {
+      "id": "de-music-singen",
+      "name": "Singen",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Stimme",
+        "Chor",
+        "Solist",
+        "Duett",
+        "Refrain",
+        "Strophe",
+        "Melodie",
+        "Text"
+      ]
+    },
+    {
+      "id": "de-music-auf-der-buhne",
+      "name": "Auf der Bühne",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Scheinwerfer",
+        "Mikrofon",
+        "Box",
+        "Monitor",
+        "Vorhang",
+        "Bühnenrand",
+        "Soundcheck",
+        "Auftritt"
+      ]
+    },
+    {
+      "id": "de-music-konzertbesuch",
+      "name": "Konzertbesuch",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Eintrittskarte",
+        "Publikum",
+        "Applaus",
+        "Zugabe",
+        "Garderobe",
+        "Stehplatz",
+        "Einlass",
+        "Vorband"
+      ]
+    },
+    {
+      "id": "de-music-musik-horen",
+      "name": "Musik hören",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Kopfhörer",
+        "Radio",
+        "Plattenspieler",
+        "Playlist",
+        "Album",
+        "Single",
+        "Lautsprecher",
+        "Streaming"
+      ]
+    },
+    {
+      "id": "de-music-musikstile",
+      "name": "Musikstile",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Pop",
+        "Rock",
+        "Jazz",
+        "Blues",
+        "Reggae",
+        "Techno",
+        "Hip-Hop",
+        "Schlager"
+      ]
+    },
+    {
+      "id": "de-music-orchester",
+      "name": "Orchester",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Dirigent",
+        "Geiger",
+        "Cellist",
+        "Notenpult",
+        "Konzertmeister",
+        "Streicher",
+        "Bläser",
+        "Pauker"
+      ]
+    },
+    {
+      "id": "de-music-band",
+      "name": "Band",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Sänger",
+        "Gitarrist",
+        "Bassist",
+        "Schlagzeuger",
+        "Keyboarder",
+        "Probe",
+        "Proberaum",
+        "Auftritt"
+      ]
+    },
+    {
+      "id": "de-music-kinderlieder",
+      "name": "Kinderlieder",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Alle meine Entchen",
+        "Bruder Jakob",
+        "Hänschen klein",
+        "Backe backe Kuchen",
+        "Kuckuck und Esel",
+        "Alle Vögel",
+        "Fuchs & Gans",
+        "Ein Männlein"
+      ]
+    },
+    {
+      "id": "de-music-weihnachtslieder",
+      "name": "Weihnachtslieder",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Stille Nacht",
+        "O Tannenbaum",
+        "Leise rieselt…",
+        "O du fröhliche",
+        "Alle Jahre wieder",
+        "Kling Glöckchen",
+        "Ihr Kinderlein kommet",
+        "Weihnachtsbäckerei"
+      ]
+    },
+    {
+      "id": "de-music-tanzen",
+      "name": "Tanzen",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Walzer",
+        "Tango",
+        "Salsa",
+        "Polka",
+        "Samba",
+        "Cha-Cha-Cha",
+        "Disco",
+        "Foxtrott"
+      ]
+    },
+    {
+      "id": "de-music-notenschrift",
+      "name": "Notenschrift",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Note",
+        "Notenlinie",
+        "Notenschlüssel",
+        "Taktstrich",
+        "Pause",
+        "Kreuz",
+        "Be",
+        "Violinschlüssel"
+      ]
+    },
+    {
+      "id": "de-music-rhythmus",
+      "name": "Rhythmus",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Takt",
+        "Beat",
+        "Tempo",
+        "Klatschen",
+        "Stampfen",
+        "Metronom",
+        "Puls",
+        "Schlag"
+      ]
+    },
+    {
+      "id": "de-music-klang-beschreiben",
+      "name": "Klang beschreiben",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Laut",
+        "Leise",
+        "Hoch",
+        "Tief",
+        "Hell",
+        "Dunkel",
+        "Sanft",
+        "Schrill"
+      ]
+    },
+    {
+      "id": "de-music-musik-im-alltag",
+      "name": "Musik im Alltag",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Klingelton",
+        "Wecker",
+        "Werbejingle",
+        "Wiegenlied",
+        "Nationalhymne",
+        "Hintergrundmusik",
+        "Titelmelodie",
+        "Pausengong"
+      ]
+    },
+    {
+      "id": "de-music-festival",
+      "name": "Festival",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Zelt",
+        "Wiese",
+        "Armband",
+        "Hauptbühne",
+        "Camping",
+        "Line-up",
+        "Headliner",
+        "Imbiss"
+      ]
+    },
+    {
+      "id": "de-music-klassische-komponisten",
+      "name": "Komponisten",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "Bach",
+        "Beethoven",
+        "Mozart",
+        "Schubert",
+        "Schumann",
+        "Brahms",
+        "Händel",
+        "Vivaldi"
+      ]
+    },
+    {
+      "id": "de-music-musiktheater",
+      "name": "Musiktheater",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "Oper",
+        "Operette",
+        "Musical",
+        "Arie",
+        "Ouvertüre",
+        "Libretto",
+        "Ballett",
+        "Rezitativ"
+      ]
+    },
+    {
+      "id": "de-music-abba",
+      "name": "ABBA",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "Agnetha",
+        "Björn",
+        "Benny",
+        "Anni-Frid",
+        "Waterloo",
+        "Dancing Queen",
+        "Mamma Mia",
+        "Super Trouper"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-music-die-beatles",
+      "name": "Die Beatles",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "John",
+        "Paul",
+        "George",
+        "Ringo",
+        "Yesterday",
+        "Hey Jude",
+        "Abbey Road",
+        "Yellow Submarine"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-music-queen",
+      "name": "Queen",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "Freddie Mercury",
+        "Brian May",
+        "Roger Taylor",
+        "John Deacon",
+        "Bohemian Rhapsody",
+        "We Will Rock You",
+        "We Are the Champions",
+        "Radio Ga Ga"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-music-nena",
+      "name": "Nena",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "99 Luftballons",
+        "Nur geträumt",
+        "Leuchtturm",
+        "Irgendwie, irgendwo…",
+        "Wunder gescheh’n",
+        "NDW",
+        "Liebe ist",
+        "Fragezeichen"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-music-udo-jurgens",
+      "name": "Udo Jürgens",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "Griechischer Wein",
+        "Merci Chérie",
+        "Mit 66 Jahren",
+        "Noch niemals in New York",
+        "Aber bitte mit Sahne",
+        "Ein ehrenwertes Haus",
+        "Pianist",
+        "Weißer Bademantel"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-music-musikproduktion",
+      "name": "Musikproduktion",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "Tonstudio",
+        "Mischpult",
+        "Tonspur",
+        "Aufnahme",
+        "Mikrofon",
+        "Abmischen",
+        "Mastering",
+        "Hall"
+      ]
+    },
+    {
+      "id": "de-music-musikalische-formen",
+      "name": "Musikformen",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "Sonate",
+        "Sinfonie",
+        "Konzert",
+        "Fuge",
+        "Kanon",
+        "Rondo",
+        "Etüde",
+        "Suite"
+      ]
+    },
+    {
+      "id": "de-music-musiktheorie",
+      "name": "Musiktheorie",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "Akkord",
+        "Tonleiter",
+        "Intervall",
+        "Dur",
+        "Moll",
+        "Quinte",
+        "Oktave",
+        "Grundton"
+      ]
+    },
+    {
+      "id": "de-music-saiteninstrumente",
+      "name": "Saiteninstrumente",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Gitarre",
+        "Harfe",
+        "Ukulele",
+        "Banjo",
+        "Mandoline",
+        "Zither",
+        "Laute",
+        "Sitar",
+        "Geige",
+        "Cello"
+      ]
+    },
+    {
+      "id": "de-music-instrumente",
+      "name": "Instrumente",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Saiteninstrumente",
+        "Tasteninstrumente",
+        "Blasinstrumente",
+        "Schlaginstrumente",
+        "Streichinstrumente",
+        "Holzbläser",
+        "Blechbläser",
+        "Zupfinstrumente"
+      ]
+    }
+  ],
+  "pictures": {
+    "Geige": "🎻",
+    "Klavier": "🎹",
+    "Trompete": "🎺",
+    "Saxofon": "🎷",
+    "Gitarre": "🎸",
+    "Trommel": "🥁",
+    "Mikrofon": "🎤",
+    "Kopfhörer": "🎧",
+    "Radio": "📻",
+    "Note": "🎵",
+    "Notenschlüssel": "🎼",
+    "Eintrittskarte": "🎟️",
+    "Applaus": "👏",
+    "Zelt": "⛺",
+    "Wecker": "⏰",
+    "Leuchtturm": "🗼",
+    "Album": "💿",
+    "Lautsprecher": "🔊",
+    "Akkordeon": "🪗"
+  }
+}

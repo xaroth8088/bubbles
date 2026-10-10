@@ -1,0 +1,567 @@
+{
+  "id": "video-games",
+  "language": "de",
+  "name": "Videospiele",
+  "themes": [
+    {
+      "id": "de-video-games-gaming-gerate",
+      "name": "Gaming-Geräte",
+      "domain": "video-games",
+      "difficulty": 1,
+      "words": [
+        "Konsole",
+        "Controller",
+        "Joystick",
+        "Headset",
+        "Tastatur",
+        "Maus",
+        "Bildschirm",
+        "Handheld"
+      ]
+    },
+    {
+      "id": "de-video-games-spielmenu",
+      "name": "Spielmenü",
+      "domain": "video-games",
+      "difficulty": 1,
+      "words": [
+        "Start",
+        "Laden",
+        "Speichern",
+        "Optionen",
+        "Pause",
+        "Neustart",
+        "Beenden",
+        "Fortsetzen"
+      ]
+    },
+    {
+      "id": "de-video-games-spielziele",
+      "name": "Spielziele",
+      "domain": "video-games",
+      "difficulty": 1,
+      "words": [
+        "Level",
+        "Checkpoint",
+        "Endgegner",
+        "Mission",
+        "Bestzeit",
+        "Highscore",
+        "Pokal",
+        "Belohnung"
+      ]
+    },
+    {
+      "id": "de-video-games-jump-n-run",
+      "name": "Jump ’n’ Run",
+      "domain": "video-games",
+      "difficulty": 1,
+      "words": [
+        "Springen",
+        "Plattform",
+        "Abgrund",
+        "Doppelsprung",
+        "Münze",
+        "Hindernis",
+        "Stachel",
+        "Leben"
+      ]
+    },
+    {
+      "id": "de-video-games-rennspiele",
+      "name": "Rennspiele",
+      "domain": "video-games",
+      "difficulty": 1,
+      "words": [
+        "Rennstrecke",
+        "Rundenzeit",
+        "Startlinie",
+        "Zielgerade",
+        "Drift",
+        "Nitro",
+        "Überholen",
+        "Boxenstopp"
+      ]
+    },
+    {
+      "id": "de-video-games-aufbauspiele",
+      "name": "Aufbauspiele",
+      "domain": "video-games",
+      "difficulty": 1,
+      "words": [
+        "Straße",
+        "Wohnhaus",
+        "Kraftwerk",
+        "Baustelle",
+        "Stadtplan",
+        "Wasserleitung",
+        "Steuern",
+        "Bevölkerung"
+      ]
+    },
+    {
+      "id": "de-video-games-farmspiele",
+      "name": "Farmspiele",
+      "domain": "video-games",
+      "difficulty": 1,
+      "words": [
+        "Aussaat",
+        "Ernte",
+        "Stall",
+        "Huhn",
+        "Kuh",
+        "Traktor",
+        "Gießkanne",
+        "Feld"
+      ]
+    },
+    {
+      "id": "de-video-games-rollenspiele",
+      "name": "Rollenspiele",
+      "domain": "video-games",
+      "difficulty": 1,
+      "words": [
+        "Held",
+        "Magier",
+        "Krieger",
+        "Rüstung",
+        "Inventar",
+        "Erfahrung",
+        "Quest",
+        "Heiltrank"
+      ]
+    },
+    {
+      "id": "de-video-games-sportspiele",
+      "name": "Sportspiele",
+      "domain": "video-games",
+      "difficulty": 1,
+      "words": [
+        "Mannschaft",
+        "Trikot",
+        "Tor",
+        "Stadion",
+        "Turnier",
+        "Schiedsrichter",
+        "Elfmeter",
+        "Pokal"
+      ]
+    },
+    {
+      "id": "de-video-games-weltraumspiele",
+      "name": "Weltraumspiele",
+      "domain": "video-games",
+      "difficulty": 1,
+      "words": [
+        "Raumschiff",
+        "Planet",
+        "Asteroid",
+        "Galaxie",
+        "Laser",
+        "Alien",
+        "Raumstation",
+        "Triebwerk"
+      ]
+    },
+    {
+      "id": "de-video-games-super-mario",
+      "name": "Super Mario",
+      "domain": "video-games",
+      "difficulty": 1,
+      "words": [
+        "Mario",
+        "Luigi",
+        "Peach",
+        "Bowser",
+        "Yoshi",
+        "Toad",
+        "Superpilz",
+        "Feuerblume"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-video-games-mario-kart",
+      "name": "Mario Kart",
+      "domain": "video-games",
+      "difficulty": 1,
+      "words": [
+        "Bananenschale",
+        "Roter Panzer",
+        "Blauer Panzer",
+        "Regenbogen-Boulevard",
+        "Blitz",
+        "Pilz",
+        "Startampel",
+        "Grand Prix"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-video-games-pokemon",
+      "name": "Pokémon",
+      "domain": "video-games",
+      "difficulty": 1,
+      "words": [
+        "Pikachu",
+        "Glumanda",
+        "Schiggy",
+        "Bisasam",
+        "Pokéball",
+        "Pokédex",
+        "Team Rocket",
+        "Mewtu"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-video-games-minecraft",
+      "name": "Minecraft",
+      "domain": "video-games",
+      "difficulty": 1,
+      "words": [
+        "Creeper",
+        "Redstone",
+        "Diamant",
+        "Nether",
+        "Enderman",
+        "Werkbank",
+        "Spitzhacke",
+        "Ofen"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-video-games-tetris",
+      "name": "Tetris",
+      "domain": "video-games",
+      "difficulty": 1,
+      "words": [
+        "Block",
+        "Reihe",
+        "Drehen",
+        "Fallen",
+        "Lücke",
+        "Stapel",
+        "Linie",
+        "Tetromino"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-video-games-pac-man",
+      "name": "Pac-Man",
+      "domain": "video-games",
+      "difficulty": 1,
+      "words": [
+        "Labyrinth",
+        "Geist",
+        "Punkte",
+        "Kirsche",
+        "Kraftpille",
+        "Verfolgung",
+        "Gelber Kreis",
+        "Tunnel"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-video-games-die-sims",
+      "name": "Die Sims",
+      "domain": "video-games",
+      "difficulty": 1,
+      "words": [
+        "Sim",
+        "Haushalt",
+        "Baumodus",
+        "Simoleon",
+        "Bedürfnisse",
+        "Karriere",
+        "Nachbarschaft",
+        "Beziehung"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-video-games-animal-crossing",
+      "name": "Animal Crossing",
+      "domain": "video-games",
+      "difficulty": 1,
+      "words": [
+        "Tom Nook",
+        "Melinda",
+        "Insel",
+        "Sternis",
+        "Museum",
+        "Kescher",
+        "Fossil",
+        "Rüben"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-video-games-sonic",
+      "name": "Sonic",
+      "domain": "video-games",
+      "difficulty": 1,
+      "words": [
+        "Sonic",
+        "Tails",
+        "Knuckles",
+        "Dr. Eggman",
+        "Goldring",
+        "Looping",
+        "Igel",
+        "Chaos Emerald"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-video-games-zelda",
+      "name": "Zelda",
+      "domain": "video-games",
+      "difficulty": 1,
+      "words": [
+        "Link",
+        "Zelda",
+        "Hyrule",
+        "Ganon",
+        "Triforce",
+        "Master-Schwert",
+        "Herzcontainer",
+        "Rubine"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-video-games-fortnite",
+      "name": "Fortnite",
+      "domain": "video-games",
+      "difficulty": 2,
+      "words": [
+        "Battle Bus",
+        "Sturm",
+        "Spitzhacke",
+        "Bauwand",
+        "Beutetruhe",
+        "Emote",
+        "Schlachtinsel",
+        "Siegeskrone"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-video-games-stardew-valley",
+      "name": "Stardew Valley",
+      "domain": "video-games",
+      "difficulty": 2,
+      "words": [
+        "Pelikan-Stadt",
+        "Gemeinschaftszentrum",
+        "Sternenfalltal",
+        "Mine",
+        "Angel",
+        "Ernte",
+        "Waldhof",
+        "Jahreszeit"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-video-games-world-of-warcraft",
+      "name": "World of Warcraft",
+      "domain": "video-games",
+      "difficulty": 2,
+      "words": [
+        "Azeroth",
+        "Horde",
+        "Allianz",
+        "Ork",
+        "Nachtelf",
+        "Sturmwind",
+        "Orgrimmar",
+        "Magier"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-video-games-league-of-legends",
+      "name": "League of Legends",
+      "domain": "video-games",
+      "difficulty": 2,
+      "words": [
+        "Kluft der Beschwörer",
+        "Nexus",
+        "Turm",
+        "Champion",
+        "Lane",
+        "Jungler",
+        "Baron",
+        "Minion"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-video-games-the-witcher",
+      "name": "The Witcher",
+      "domain": "video-games",
+      "difficulty": 2,
+      "words": [
+        "Geralt",
+        "Ciri",
+        "Yennefer",
+        "Triss",
+        "Plötze",
+        "Hexer",
+        "Silberschwert",
+        "Gwint"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-video-games-portal",
+      "name": "Portal",
+      "domain": "video-games",
+      "difficulty": 2,
+      "words": [
+        "Portal",
+        "Portalgun",
+        "GLaDOS",
+        "Chell",
+        "Testkammer",
+        "Begleiterkubus",
+        "Aperture",
+        "Kuchen"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-video-games-hogwarts-legacy",
+      "name": "Hogwarts Legacy",
+      "domain": "video-games",
+      "difficulty": 2,
+      "words": [
+        "Hogwarts",
+        "Zauberstab",
+        "Sprechender Hut",
+        "Hogsmeade",
+        "Hippogreif",
+        "Zaubertrank",
+        "Besen",
+        "Raum der Wünsche"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-video-games-splatoon",
+      "name": "Splatoon",
+      "domain": "video-games",
+      "difficulty": 2,
+      "words": [
+        "Inkling",
+        "Octoling",
+        "Tinte",
+        "Farbroller",
+        "Kleckser",
+        "Revierkampf",
+        "Inkopolis",
+        "Supermuschel"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-video-games-among-us",
+      "name": "Among Us",
+      "domain": "video-games",
+      "difficulty": 2,
+      "words": [
+        "Crewmitglied",
+        "Hochstapler",
+        "Lüftungsschacht",
+        "Notfallknopf",
+        "Abstimmung",
+        "Aufgabe",
+        "Sabotage",
+        "Raumschiff"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-video-games-street-fighter",
+      "name": "Street Fighter",
+      "domain": "video-games",
+      "difficulty": 2,
+      "words": [
+        "Ryu",
+        "Ken",
+        "Chun-Li",
+        "Guile",
+        "Blanka",
+        "Hadouken",
+        "Kombo",
+        "Knockout"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-video-games-nintendo",
+      "name": "Nintendo",
+      "domain": "video-games",
+      "difficulty": 1,
+      "words": [
+        "Super Mario",
+        "Zelda",
+        "Pokémon",
+        "Animal Crossing",
+        "Splatoon",
+        "Kirby",
+        "Donkey Kong",
+        "Metroid",
+        "Pikmin",
+        "Switch"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-video-games-spielestudios",
+      "name": "Spielestudios",
+      "domain": "video-games",
+      "difficulty": 2,
+      "words": [
+        "Nintendo",
+        "Sega",
+        "Ubisoft",
+        "Capcom",
+        "Konami",
+        "Square Enix",
+        "Mojang",
+        "Valve",
+        "Naughty Dog",
+        "Blizzard"
+      ],
+      "popCulture": true
+    }
+  ],
+  "pictures": {
+    "Controller": "🎮",
+    "Joystick": "🕹️",
+    "Tastatur": "⌨️",
+    "Maus": "🖱️",
+    "Bildschirm": "🖥️",
+    "Pokal": "🏆",
+    "Münze": "🪙",
+    "Pilz": "🍄",
+    "Bananenschale": "🍌",
+    "Kirsche": "🍒",
+    "Diamant": "💎",
+    "Spitzhacke": "⛏️",
+    "Ofen": "🧱",
+    "Traktor": "🚜",
+    "Huhn": "🐔",
+    "Kuh": "🐄",
+    "Gießkanne": "🚿",
+    "Raumschiff": "🚀",
+    "Planet": "🪐",
+    "Zauberstab": "🪄"
+  }
+}

@@ -1,40 +1,46 @@
-import {THEMES,SPECIALS,INTRO_LEVELS,LIBRARY_STATS} from './data.js';
-import {createPuzzle,makeState,merge,tapSpecial,getHint,magnet,moreRoom,bubbleText,specialLabel,isBlocked,blockedReason,validateState,localDate,random,shuffle,upgradeDealing,atomText,arrivalDependency,canUseDriver} from './engine.js';
+import {SPECIALS,INTRO_LEVELS} from './data.js';
+import {getCatalog,PACKS,ALL_PACK_IDS,normalizePackIds,normalizeLanguage} from './catalog.js';
+import {translate,localizeUI} from './i18n.js';
+import {createPuzzle,makeState,merge,tapSpecial,getHint,magnet,moreRoom,bubbleText,specialLabel,isBlocked,blockedReason,validateState,localDate,random,shuffle,upgradeDealing,atomText,arrivalDependency,canUseDriver,linkedPartner} from './engine.js';
 import {stepPhysics,simulatePhysics,bubbleDiameter,radialImpulse,resetPhysics,membranePath,membraneContains,translateBoundedGroup,PHYSICS_STEP,PHYSICS_DEFAULTS,normalizePhysics} from './physics.js';
 import {specialArt,oceanArt,membraneArt,KEY_PALETTE} from './art.js';
 import {createExperience} from './experience.js';
 
 const $=id=>document.getElementById(id);
 const STORAGE_KEY='bubble-grove-v1';
-const defaults={theme:'grove',sound:false,haptics:true,motion:'system',difficulty:'balanced',challenge:false,physics:{...PHYSICS_DEFAULTS}};
+const defaults={language:'en',packIds:[...ALL_PACK_IDS],theme:'grove',sound:false,haptics:true,motion:'system',difficulty:'balanced',challenge:false,physics:{...PHYSICS_DEFAULTS}};
 const initial={version:1,settings:{...defaults},activeMode:'journey',level:1,round:1,completed:[],dailyWins:[],sessions:{},stats:{groups:0,puzzles:0}};
 let saved=loadSave(),settings=saved.settings,state,history=[],selected=null,hinted=new Set(),positions=new Map(),elements=new Map(),drag=null,frame=0,settleUntil=0,toastTimer=0,winTimer=0,installPrompt=null,audioContext=null,storageWarning=false;
 let lastFrame=0,physicsTime=0,quietFrames=0,restorePositions=false,boardSize={width:0,height:0},shuffleNumber=0;
 const board=$('board'),sheet=$('sheet');
+const t=text=>translate(text,settings.language);
+const catalog=()=>getCatalog({language:settings.language,packIds:settings.packIds});
+const wordScope=(language,packIds)=>`${normalizeLanguage(language)}|${normalizePackIds(packIds).join(',')}`;
+const compatible=p=>wordScope(p.language,p.packIds)===wordScope(settings.language,settings.packIds);
 let busy=false,animationEpoch=0,activeActions=0;
 const returning=new Map(),completions=new Map(),births=new Map();
 board.insertAdjacentHTML('beforebegin',oceanArt());
 const experience=createExperience(board,reducedMotion);
 const escape=text=>String(text).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
-function isSave(data){return data&&data.version===1&&data.settings&&['journey','daily','endless','lab'].includes(data.activeMode)&&Number.isInteger(data.level)&&data.level>0&&Number.isInteger(data.round)&&data.round>0&&Array.isArray(data.completed)&&data.completed.every(n=>Number.isInteger(n)&&n>0&&n<=100000)&&Array.isArray(data.dailyWins)&&data.dailyWins.every(d=>typeof d==='string'&&/^\d{4}-\d{2}-\d{2}$/.test(d))&&data.sessions&&Object.entries(data.sessions).every(([mode,value])=>['journey','daily','endless','lab'].includes(mode)&&value.puzzle?.mode===mode&&validateState(value))&&data.stats&&Number.isFinite(data.stats.groups)&&Number.isFinite(data.stats.puzzles)&&(data.awarded===undefined||Array.isArray(data.awarded)&&data.awarded.every(id=>typeof id==='string'));}
+function isSave(data){return data&&data.version===1&&data.settings&&['journey','daily','endless','lab'].includes(data.activeMode)&&Number.isInteger(data.level)&&data.level>0&&Number.isInteger(data.round)&&data.round>0&&Array.isArray(data.completed)&&data.completed.every(n=>Number.isInteger(n)&&n>0&&n<=100000)&&Array.isArray(data.dailyWins)&&data.dailyWins.every(d=>typeof d==='string'&&/^\d{4}-\d{2}-\d{2}(?:\|[a-z0-9,|\-]+)?$/.test(d))&&data.sessions&&Object.entries(data.sessions).every(([mode,value])=>['journey','daily','endless','lab'].includes(mode)&&value.puzzle?.mode===mode&&validateState(value))&&data.stats&&Number.isFinite(data.stats.groups)&&Number.isFinite(data.stats.puzzles)&&(data.awarded===undefined||Array.isArray(data.awarded)&&data.awarded.every(id=>typeof id==='string'));}
 function loadSave(){try{const raw=localStorage.getItem(STORAGE_KEY);if(!raw)return structuredClone(initial);const data=JSON.parse(raw);if(!isSave(data))return structuredClone(initial);return {...structuredClone(initial),...data,settings:normalizeSettings(data.settings),stats:{...initial.stats,...data.stats}};}catch{return structuredClone(initial);}}
-function normalizeSettings(value){return {...defaults,theme:['grove','lavender','sunset'].includes(value.theme)?value.theme:'grove',sound:value.sound===true,haptics:value.haptics!==false,motion:['system','reduced'].includes(value.motion)?value.motion:'system',difficulty:['gentle','balanced','tricky'].includes(value.difficulty)?value.difficulty:'balanced',challenge:value.challenge===true,physics:normalizePhysics(value.physics)};}
+function normalizeSettings(value={}){return {...defaults,language:normalizeLanguage(value.language),packIds:normalizePackIds(value.packIds),theme:['grove','lavender','sunset'].includes(value.theme)?value.theme:'grove',sound:value.sound===true,haptics:value.haptics!==false,motion:['system','reduced'].includes(value.motion)?value.motion:'system',difficulty:['gentle','balanced','tricky'].includes(value.difficulty)?value.difficulty:'balanced',challenge:value.challenge===true,physics:normalizePhysics(value.physics)};}
 function capturePositions(){if(state)for(const b of state.bubbles){const p=positions.get(b.id);if(p?.releaseAt!==undefined)delete b.position;else if(p)b.position={x:p.x/Math.max(1,board.clientWidth),y:p.y/Math.max(1,board.clientHeight)};}}
 function persist(){
   if(state){capturePositions();saved.sessions[state.puzzle.mode]=state;saved.activeMode=state.puzzle.mode;}
   saved.settings=settings;
   try{localStorage.setItem(STORAGE_KEY,JSON.stringify(saved));}catch{if(!storageWarning){storageWarning=true;toast('This browser cannot save right now. Export your progress in Settings.');}}
 }
-function applySettings(){document.documentElement.dataset.theme=settings.theme;document.documentElement.dataset.motion=settings.motion;document.querySelector('meta[name="theme-color"]').content=getComputedStyle(document.documentElement).getPropertyValue('--paper').trim();experience.sync();syncPhysicsControls();if(state)wake();}
+function applySettings(){document.documentElement.lang=settings.language;document.title=t('Bubble Grove · a little wordplay');localizeUI(document.body,settings.language);document.documentElement.dataset.theme=settings.theme;document.documentElement.dataset.motion=settings.motion;document.querySelector('meta[name="theme-color"]').content=getComputedStyle(document.documentElement).getPropertyValue('--paper').trim();experience.sync();syncPhysicsControls();if(state){render();wake();}if($('offline-label').dataset.ready)$('offline-label').textContent=t(navigator.onLine?'Ready for a little offline time.':'Offline. All yours.');}
 function start(options={},force=false){
   resetAnimations();
   clearTimeout(winTimer);if(drag)cancelDrag();
   if(state)persist();
   const mode=options.mode||saved.activeMode||'journey';
   const previous=saved.sessions[mode];
-  if(!force&&previous&&validateState(previous)&&(mode!=='daily'||previous.puzzle.date===localDate()))state=structuredClone(previous);
-  else state=makeState(createPuzzle({mode,level:saved.level||1,round:saved.round||1,difficulty:settings.difficulty,...options}),{
+  if(!force&&previous&&compatible(previous.puzzle)&&validateState(previous)&&(mode!=='daily'||previous.puzzle.date===localDate()))state=structuredClone(previous);
+  else state=makeState(createPuzzle({mode,level:saved.level||1,round:saved.round||1,difficulty:settings.difficulty,...options,language:settings.language,packIds:settings.packIds}),{
     challenge:settings.challenge,
     shuffleSeed:mode==='journey'?Array.from(crypto.getRandomValues(new Uint32Array(4))).join('-'):null
   });
@@ -45,17 +51,16 @@ function start(options={},force=false){
 const bubbleSize=b=>bubbleDiameter(b)*Math.min(1,board.clientWidth/358);
 const textMeasure=document.createElement('canvas').getContext('2d');
 function fitTerm(el,size,count,badge){
-  const width=el.clientWidth-1,height=count>1?(size*.7-(count-1)*12)/count:size*(badge?.46:.62);
+  const width=el.clientWidth-1,height=count>1?(size*.76-(count-1)*7)/count:size*(badge?.48:.67);
   const style=getComputedStyle(el),family=style.fontFamily,weight=style.fontWeight,text=el.textContent.trim();
-  for(let font=14;font>=8;font-=.5){
+  for(let font=count>1?19:18;font>=10;font-=.5){
     textMeasure.font=`${weight} ${font}px ${family}`;
-    if(font>8&&text.split(/\s+/).some(word=>textMeasure.measureText(word).width>width))continue;
     let lines=1,line='';
     for(const word of text.split(/\s+/)){
       if(line&&textMeasure.measureText(`${line} ${word}`).width>width){lines++;line='';}
       for(const char of (line?' ':'')+word){if(line&&textMeasure.measureText(line+char).width>width){lines++;line='';}line+=char;}
     }
-    if(lines*font*1.15<=height||font===8){el.style.fontSize=`${font}px`;break;}
+    if(lines*font*1.15<=height||font===10){el.style.fontSize=`${font}px`;break;}
   }
 }
 function topInset(){return 0;}
@@ -91,7 +96,7 @@ function placeBubbles(reset=false){
   restorePositions=false;drawPositions();wake(Math.max(4000,releaseAt-now+1800));
 }
 function wake(ms=1800){quietFrames=0;settleUntil=performance.now()+ms;if(!frame)frame=requestAnimationFrame(animate);}
-function heldBubbles(){const ids=new Set([...returning.keys(),...births.keys()]);for(const[id,p]of completions)if(p.popping)ids.add(id);if(drag){ids.add(drag.id);const b=state.bubbles.find(b=>b.id===drag.id);if(b?.link)for(const other of state.bubbles){const p=positions.get(other.id);if(other.link===b.link&&p&&p.releaseAt===undefined&&!p.entering&&!p.rebirthPending)ids.add(other.id);}}return ids;}
+function heldBubbles(){const ids=new Set([...returning.keys(),...births.keys()]);for(const[id,p]of completions)if(p.popping)ids.add(id);if(drag){ids.add(drag.id);const b=state.bubbles.find(b=>b.id===drag.id);const other=linkedPartner(b,state.bubbles),p=positions.get(other?.id);if(p&&p.releaseAt===undefined&&!p.entering&&!p.rebirthPending)ids.add(other.id);}return ids;}
 function drawBubble(el,p){
   el.hidden=p.rebirthPending||p.releaseAt!==undefined;
   el.style.translate=`${(p.x-p.r).toFixed(2)}px ${(p.y-p.r).toFixed(2)}px`;
@@ -150,11 +155,11 @@ function drawLinks(){
 function render(){
   const p=state.puzzle;
   document.querySelectorAll('[data-mode]').forEach(el=>{const active=el.dataset.mode===(p.mode==='lab'?'journey':p.mode);el.classList.toggle('active',active);el.setAttribute('aria-current',active?'page':'false');});
-  $('level-label').textContent=p.mode==='journey'?`JOURNEY · LEVEL ${String(p.level).padStart(2,'0')}`:p.mode==='daily'?`DAILY · ${new Date(p.date+'T12:00:00').toLocaleDateString(undefined,{month:'short',day:'numeric'})}`:p.mode==='lab'?'BUBBLE PLAYGROUND':`FREE PLAY · PUZZLE ${p.round}`;
-  $('level-title').textContent=p.title;$('level-number').textContent=p.mode==='daily'?'☀':p.mode==='lab'?'✧':String(p.mode==='endless'?p.round:p.level).padStart(2,'0');
-  $('levels-button').setAttribute('aria-label',p.mode==='lab'?'Explore special bubbles':'Choose a journey level');
-  $('progress-text').textContent=state.solved.length?`${state.solved.length} of ${p.groups.length} connections found`:`Find ${p.groups.length} groups of four`;
-  $('moves-text').innerHTML=state.remaining===null?'Take your time <span>∞</span>':`${Math.max(0,state.remaining)} moves left`;
+  $('level-label').textContent=t(p.mode==='journey'?`JOURNEY · LEVEL ${String(p.level).padStart(2,'0')}`:p.mode==='daily'?`DAILY · ${new Date(p.date+'T12:00:00').toLocaleDateString(settings.language,{month:'short',day:'numeric'})}`:p.mode==='lab'?'BUBBLE PLAYGROUND':`FREE PLAY · PUZZLE ${p.round}`);
+  $('level-title').textContent=t(p.title);$('level-number').textContent=p.mode==='daily'?'☀':p.mode==='lab'?'✧':String(p.mode==='endless'?p.round:p.level).padStart(2,'0');
+  $('levels-button').setAttribute('aria-label',t(p.mode==='lab'?'Explore special bubbles':'Choose a journey level'));
+  $('progress-text').textContent=t(state.solved.length?`${state.solved.length} of ${p.groups.length} connections found`:`Find ${p.groups.length} groups of four`);
+  $('moves-text').innerHTML=state.remaining===null?`${t('Take your time')} <span>∞</span>`:t(`${Math.max(0,state.remaining)} moves left`);
   $('progress-track').innerHTML=p.groups.map((_,i)=>`<span class="${i<state.solved.length?'done':''}"></span>`).join('');
   $('board-empty').hidden=state.status!=='won'||busy;
   $('undo-button').disabled=!history.length;
@@ -173,8 +178,8 @@ function render(){
     if(pairColor){el.dataset.pairColor=pairColor;el.style.setProperty('--skin-border',KEY_PALETTE[pairColor].ink);}else{delete el.dataset.pairColor;el.style.removeProperty('--skin-border');}
     const label=b.atoms.length>1&&!b.lockColor?`<span class="bubble-terms">${b.atoms.map(atom=>`<span class="bubble-term">${escape(atomText(atom))}</span>`).join('')}</span>`:`<span class="bubble-label">${escape(bubbleText(b))}</span>`;
     el.dataset.soft='true';el._membranePath=null;el.innerHTML=`<span class="bubble-skin" aria-hidden="true">${membraneArt(b.id)}</span>${specialArt(b)}${label}`;
-    const text=b.lockColor?'Locked word':b.kind==='picture'?`Picture: ${b.atoms[0].word}`:bubbleText(b);
-    el.setAttribute('aria-label',`${text}${b.atoms.length>1?`, ${b.atoms.length} of four`:''}${isBlocked(b)?`, ${blockedReason(b)}`:badge?`, ${badge}`:''}`);
+    const text=b.lockColor?t('Locked word'):b.kind==='picture'?t(`Picture: ${b.atoms[0].word}`):bubbleText(b);
+    el.setAttribute('aria-label',`${text}${b.atoms.length>1?`, ${t(`${b.atoms.length} of four`)}`:''}${isBlocked(b)?`, ${t(blockedReason(b))}`:badge?`, ${badge.replace(/amber|azure|coral|violet|green|gold|blue|pink|purple|teal|red/g,color=>t(color))}`:''}`);
     el.setAttribute('aria-pressed',String(selected===b.id));
   }
   placeBubbles();
@@ -303,7 +308,7 @@ board.addEventListener('pointermove',event=>{
   if(!drag.moved||drag.blocked)return;
   const pos=positions.get(drag.id);if(!pos)return;
   const group=[pos],bubble=state.bubbles.find(b=>b.id===drag.id);
-  if(bubble?.link){const partner=state.bubbles.find(b=>b.link===bubble.link&&b.id!==bubble.id),pp=positions.get(partner?.id);if(pp&&pp.releaseAt===undefined&&!pp.entering&&!pp.rebirthPending)group.push(pp);}
+  if(bubble?.link){const partner=linkedPartner(bubble,state.bubbles),pp=positions.get(partner?.id);if(pp&&pp.releaseAt===undefined&&!pp.entering&&!pp.rebirthPending)group.push(pp);}
   const delta=translateBoundedGroup(group,{x:point.x+drag.offset.x-pos.x,y:point.y+drag.offset.y-pos.y},{width:board.clientWidth,height:board.clientHeight,top:topInset()}),dx=delta.x,dy=delta.y;
   const elapsed=Math.max(.008,(event.timeStamp-drag.lastTime)/1000);drag.velocity={x:Math.max(-400,Math.min(400,dx/elapsed)),y:Math.max(-400,Math.min(400,dy/elapsed))};drag.lastTime=event.timeStamp;
   elements.get(drag.id)?.classList.add('dragging');
@@ -334,7 +339,7 @@ function onBubbleTap(id){
 board.addEventListener('keydown',event=>{if(['Enter',' '].includes(event.key)){const el=event.target.closest('.bubble');if(el){event.preventDefault();onBubbleTap(el.dataset.id);}}if(event.key==='Escape'){selected=null;render();}});
 board.addEventListener('click',event=>{if(event.detail===0){const el=event.target.closest('.bubble');if(el)onBubbleTap(el.dataset.id);}});
 
-$('hint-button').addEventListener('click',()=>{const hint=getHint(state);if(!hint)return;hinted=new Set(hint.ids);render();persist();toast(hint.message);});
+$('hint-button').addEventListener('click',()=>{const hint=getHint(state);if(!hint)return;hinted=new Set(hint.ids);render();persist();toast(`Look for ${hint.group.name}.`);});
 $('magnet-button').addEventListener('click',()=>animateAction(()=>magnet(state)));
 $('space-button').addEventListener('click',()=>{remember();moreRoom(state);render();persist();wake();});
 $('undo-button').addEventListener('click',()=>{if(!history.length)return;clearTimeout(winTimer);resetAnimations();resetPhysics();state=history.pop();selected=null;hinted.clear();positions.clear();restorePositions=true;render();persist();});
@@ -345,7 +350,7 @@ function closeActions(){$('actions-menu').hidden=true;$('tools-button').setAttri
 function syncPhysicsControls(){
   for(const key of Object.keys(PHYSICS_DEFAULTS)){
     const input=$(`physics-${key}`),percent=Math.round(settings.physics[key]*100);
-    input.value=percent;$(`physics-${key}-value`).value=`${percent}%`;input.setAttribute('aria-valuetext',`${percent} percent of the default`);
+    input.value=percent;$(`physics-${key}-value`).value=`${percent}%`;input.setAttribute('aria-valuetext',t(`${percent} percent of the default`));
   }
 }
 function showPhysicsControls(open){
@@ -366,14 +371,17 @@ document.addEventListener('pointerdown',event=>{if(!event.target.closest('#actio
 document.addEventListener('keydown',event=>{if(event.key==='Escape'){if(!$('physics-panel').hidden)showPhysicsControls(false);else closeActions();}});
 sheet.addEventListener('click',event=>{const r=sheet.getBoundingClientRect();if(event.target===sheet&&(event.clientX<r.left||event.clientX>r.right||event.clientY<r.top||event.clientY>r.bottom))sheet.close();});
 
-function openSheet(title,html){$('sheet-title').textContent=title;$('sheet-body').innerHTML=html;if(!sheet.open)sheet.showModal();$('sheet-body').scrollTop=0;sheet.scrollTop=0;experience.panel(sheet);}
+function openSheet(title,html){$('sheet-title').textContent=t(title);$('sheet-body').innerHTML=html;localizeUI($('sheet-body'),settings.language);if(!sheet.open)sheet.showModal();$('sheet-body').scrollTop=0;sheet.scrollTop=0;experience.panel(sheet);}
 function showHelp(){openSheet('A little wordplay',`<p class="sheet-intro">Some words just belong together. Find their connection and bring four into one bubble.</p><div class="help-steps"><div class="help-step"><span>1</span><div><strong>Find a common thread</strong><p>Oak, Maple, Birch, and Pine are all forest trees. Each deck has a fixed answer, but a clue may have several meanings. Is Bass a fish or an instrument?</p></div></div><div class="help-step"><span>2</span><div><strong>Drag one onto another</strong><p>Words fall and settle at the bottom. Hold one and drop it onto its partner, or tap each in turn. Combined bubbles keep every word visible; the category appears only when four join.</p></div></div><div class="help-step"><span>3</span><div><strong>Let the board open up</strong><p>A few new words fall in after a group clears. Sometimes the category returns as a word. Its new connection may use another meaning.</p></div></div></div><p class="sheet-intro">Hint reveals a theme. Magnet completes a group. More room deals extra bubbles and adds moves in Challenge mode. Shuffle is free. Undo brings back your last action.</p><button class="primary-button" id="help-play">Let's connect</button><button class="secondary-button" id="specials-button">Meet the special bubbles</button>`);$('help-play').onclick=()=>sheet.close();$('specials-button').onclick=showSpecials;}
 function showSpecials(){openSheet('Little twists',`<p class="sheet-intro">Meet all ${SPECIALS.length} special mechanics. Tap one to try a small practice puzzle. Your journey stays saved.</p><div class="special-grid">${SPECIALS.map(s=>`<button class="special-card" data-special="${s.id}"><span>${s.icon}</span><strong>${s.name}</strong><small>${s.description}</small><em>Try it · Journey ${s.level} ↗</em></button>`).join('')}</div>`);document.querySelectorAll('[data-special]').forEach(el=>el.onclick=()=>{sheet.close();start({mode:'lab',special:el.dataset.special},true);});}
 function showLevels(){const pageStart=Math.max(1,Math.floor(((state.puzzle.level||saved.level)-1)/30)*30+1);renderLevels(pageStart);}
 function renderLevels(startAt){openSheet('Your little journey',`<p class="sheet-intro">Every level is open. The first ${INTRO_LEVELS} introduce the special bubbles; later boards mix them together.</p><div class="level-grid">${Array.from({length:30},(_,i)=>{const n=startAt+i;return `<button data-level="${n}" class="${saved.completed.includes(n)?'finished ':''}${state.puzzle.mode==='journey'&&state.puzzle.level===n?'current':''}">${n}<small>${saved.completed.includes(n)?'✓':n<=INTRO_LEVELS?'learn':'explore'}</small></button>`;}).join('')}</div><div class="sheet-tabs" style="margin-top:18px"><button id="level-prev" ${startAt===1?'disabled':''}>← Previous</button><button id="level-next">Next 30 →</button></div>`);document.querySelectorAll('[data-level]').forEach(el=>el.onclick=()=>{saved.level=Number(el.dataset.level);sheet.close();start({mode:'journey',level:saved.level},true);});$('level-prev').onclick=()=>renderLevels(Math.max(1,startAt-30));$('level-next').onclick=()=>renderLevels(startAt+30);}
 
 function toggleRow(id,title,subtitle,checked){return `<label class="field-row"><span><strong>${title}</strong><small>${subtitle}</small></span><span class="switch"><input id="${id}" type="checkbox" ${checked?'checked':''}><span></span></span></label>`;}
-function showSettings(){openSheet('Make yourself at home',`
+function showSettings(){const LIBRARY_STATS=catalog().stats;openSheet('Make yourself at home',`
+  <label class="field-row"><span><strong>Language</strong><small>One language for words and interface</small></span><select id="setting-language"><option value="en">English</option><option value="de">Deutsch</option></select></label>
+  <fieldset class="word-pack-settings"><legend>Word packs</legend><p class="sheet-intro">Choose at least one pack. Every pack works on its own; the base pack is optional.</p><div class="word-pack-grid">${PACKS.map(pack=>`<label class="word-pack-option"><input type="checkbox" name="word-pack" value="${pack.id}" ${settings.packIds.includes(pack.id)?'checked':''}><span data-vocabulary>${escape(pack.name[settings.language])}</span></label>`).join('')}</div></fieldset>
+  <p class="install-note">Changing language or packs starts fresh puzzles in all modes. Completed levels and totals stay saved.</p><p class="install-note">Daily puzzles depend on the selected language and packs.</p><p class="pack-validation" id="pack-validation" role="status" aria-live="polite"></p><button class="primary-button" id="apply-word-settings">Apply word settings</button><div class="sheet-divider"></div>
   <label class="field-row"><span><strong>Palette</strong><small>A different kind of quiet</small></span><select id="setting-theme"><option value="grove">Grove</option><option value="lavender">Lavender</option><option value="sunset">Golden hour</option></select></label>
   <label class="field-row"><span><strong>Word difficulty</strong><small>Applies to the next new puzzle</small></span><select id="setting-difficulty"><option value="gentle">Gentle</option><option value="balanced">Balanced</option><option value="tricky">Curious</option></select></label>
   ${toggleRow('setting-challenge','Challenge mode','A move budget for new puzzles',settings.challenge)}
@@ -382,8 +390,17 @@ function showSettings(){openSheet('Make yourself at home',`
   ${toggleRow('setting-motion','Less motion','Keep things still',settings.motion==='reduced')}
   <div class="sheet-divider"></div><button class="secondary-button" id="install-button">${matchMedia('(display-mode: standalone)').matches?'Already at home ✓':'Install Bubble Grove'}</button>
   <p class="install-note" id="install-note">${installMessage()}</p>
-  <div class="sheet-divider"></div><p class="sheet-intro">${LIBRARY_STATS.themes} original themes · ${LIBRARY_STATS.words.toLocaleString()} distinct words. No ads, purchases, analytics, or accounts. Progress lives on this device.</p>
+  <div class="sheet-divider"></div><p class="sheet-intro">${LIBRARY_STATS.themes} original themes · ${LIBRARY_STATS.words.toLocaleString(settings.language)} distinct words. No ads, purchases, analytics, or accounts. Progress lives on this device.</p>
   <button class="secondary-button" id="export-button">Export progress</button><button class="secondary-button" id="import-button">Restore progress</button><input class="save-file" type="file" accept="application/json,.json" id="import-file"><button class="inline-link" id="restart-button">Restart this puzzle</button>`);
+  $('setting-language').value=settings.language;
+  $('apply-word-settings').onclick=()=>{
+    const packIds=[...document.querySelectorAll('[name="word-pack"]:checked')].map(el=>el.value);
+    if(!packIds.length){$('pack-validation').textContent=t('Keep at least one word pack enabled.');return;}
+    const language=$('setting-language').value;
+    if(wordScope(language,packIds)===wordScope(settings.language,settings.packIds)){sheet.close();return;}
+    const mode=state.puzzle.mode;persist();resetAnimations();if(drag)cancelDrag();state=null;saved.sessions={};settings.language=language;settings.packIds=normalizePackIds(packIds);
+    applySettings();sheet.close();start({mode:mode==='lab'?'journey':mode},true);toast('Word settings saved. Fresh puzzles are ready.');
+  };
   $('setting-theme').value=settings.theme;$('setting-difficulty').value=settings.difficulty;
   for(const key of['theme','difficulty'])$(`setting-${key}`).onchange=event=>{settings[key]=event.target.value;applySettings();persist();};
   for(const key of['challenge','sound','haptics'])$(`setting-${key}`).onchange=event=>{settings[key]=event.target.checked;persist();if(key==='sound'&&settings.sound)sound('merge');};
@@ -391,7 +408,7 @@ function showSettings(){openSheet('Make yourself at home',`
   $('install-button').onclick=install;$('export-button').onclick=exportSave;$('import-button').onclick=()=>$('import-file').click();$('import-file').onchange=importSave;
   $('restart-button').onclick=()=>{openSheet('A fresh start?',`<p class="sheet-intro">Restart this puzzle from its opening board. Your other puzzles and completed levels stay saved.</p><button class="primary-button" id="confirm-restart">Restart puzzle</button><button class="secondary-button" id="cancel-restart">Keep playing</button>`);$('confirm-restart').onclick=()=>{const options={...state.puzzle,special:state.puzzle.mode==='lab'?state.puzzle.specials[0]:null};sheet.close();start(options,true);};$('cancel-restart').onclick=()=>sheet.close();};
 }
-function showLibrary(){openSheet('The word library',`<p class="sheet-intro">Short clues can have several meanings. Four words form each theme, and ${LIBRARY_STATS.pictures} emoji can stand in for words.</p><div class="pack-stats"><div><strong>${LIBRARY_STATS.themes}</strong><small>themes</small></div><div><strong>${LIBRARY_STATS.words.toLocaleString()}</strong><small>distinct words</small></div><div><strong>${LIBRARY_STATS.domains}</strong><small>worlds to explore</small></div></div><input type="search" class="library-search" id="library-search" placeholder="Find a theme or word…" aria-label="Search themes and words"><div id="library-results"></div>`);const draw=q=>{const query=q.trim().toLowerCase(),themes=THEMES.filter(t=>`${t.name} ${t.domain} ${t.words.join(' ')}`.toLowerCase().includes(query));$('library-results').innerHTML=themes.length?themes.map(t=>`<div class="library-item"><strong>${escape(t.name)}</strong><small>${escape(t.domain)}</small><p>${t.words.map(escape).join(' · ')}</p></div>`).join(''):'<p class="sheet-intro">No connection found. Try another word.</p>';};draw('');$('library-search').oninput=event=>draw(event.target.value);}
+function showLibrary(){const {themes:THEMES,stats:LIBRARY_STATS}=catalog();openSheet('The word library',`<p class="sheet-intro">Short clues can have several meanings. Four words form each theme, and ${LIBRARY_STATS.pictures} emoji can stand in for words.</p><div class="pack-stats"><div><strong>${LIBRARY_STATS.themes}</strong><small>themes</small></div><div><strong>${LIBRARY_STATS.words.toLocaleString(settings.language)}</strong><small>distinct words</small></div><div><strong>${LIBRARY_STATS.domains}</strong><small>worlds to explore</small></div></div><input type="search" class="library-search" id="library-search" placeholder="Find a theme or word…" aria-label="Search themes and words"><div id="library-results"></div>`);const draw=q=>{const query=q.trim().toLowerCase(),themes=THEMES.filter(t=>`${t.name} ${t.domain} ${t.words.join(' ')}`.toLowerCase().includes(query));$('library-results').innerHTML=themes.length?themes.map(t=>`<div class="library-item"><strong>${escape(t.name)}</strong><small>${escape(translate(t.domain,settings.language))}</small><p>${t.words.map(escape).join(' · ')}</p></div>`).join(''):`<p class="sheet-intro">${t('No connection found. Try another word.')}</p>`;};draw('');$('library-search').oninput=event=>draw(event.target.value);}
 
 function onWin(){
   const p=state.puzzle,key=p.id;
@@ -399,7 +416,8 @@ function onWin(){
   if(!saved.awarded)saved.awarded=[];
   if(!saved.awarded.includes(key)){saved.awarded.push(key);if(saved.awarded.length>2000)saved.awarded.shift();saved.stats.groups+=p.groups.length;saved.stats.puzzles++;}
   if(p.mode==='journey'&&!saved.completed.includes(p.level))saved.completed.push(p.level);
-  if(p.mode==='daily'&&!saved.dailyWins.includes(p.date))saved.dailyWins.push(p.date);
+  const dailyKey=`${p.date}|${wordScope(p.language,p.packIds)}`;
+  if(p.mode==='daily'&&!saved.dailyWins.includes(dailyKey))saved.dailyWins.push(dailyKey);
   persist();confetti();
   winTimer=setTimeout(()=>{if(state.status==='won')showWin();},500);
 }
@@ -407,20 +425,20 @@ function showWin(){const p=state.puzzle;openSheet('Everything connects',`<div cl
 function nextPuzzle(){sheet.close();const p=state.puzzle;if(p.mode==='journey'){saved.level=p.level+1;start({mode:'journey',level:saved.level},true);}else if(p.mode==='lab')showSpecials();else{saved.round=(saved.round||1)+1;start({mode:'endless',round:saved.round},true);}}
 function showPause(){openSheet('A little breathing room',`<p class="sheet-intro">${state.bubbles.some(b=>b.timer<=0)?'That spark ran out of moves.':'You reached the move budget.'} Take five more moves, reset any sparks, and keep connecting. Always free.</p><button class="primary-button" id="continue-button">More room · keep playing</button><button class="secondary-button" id="pause-undo" ${history.length?'':'disabled'}>Undo the last move</button>`);$('continue-button').onclick=()=>{sheet.close();remember();moreRoom(state);render();persist();};$('pause-undo').onclick=()=>{sheet.close();$('undo-button').click();};}
 
-function toast(message,duration=3000){clearTimeout(toastTimer);$('toast').textContent=message;$('toast').classList.add('visible');toastTimer=setTimeout(()=>$('toast').classList.remove('visible'),duration);}
+function toast(message,duration=3000){clearTimeout(toastTimer);$('toast').textContent=t(message);$('toast').classList.add('visible');toastTimer=setTimeout(()=>$('toast').classList.remove('visible'),duration);}
 function haptic(pattern){if(settings.haptics)navigator.vibrate?.(pattern);}
 function sound(type){if(!settings.sound)return;try{audioContext??=new(window.AudioContext||window.webkitAudioContext)();if(audioContext.state==='suspended')audioContext.resume();const now=audioContext.currentTime;for(const[i,freq]of(type==='clear'?[523,659,784]:type==='wrong'?[185]:[440,660]).entries()){const osc=audioContext.createOscillator(),gain=audioContext.createGain();osc.type='sine';osc.frequency.setValueAtTime(freq,now+i*.06);gain.gain.setValueAtTime(0,now+i*.06);gain.gain.linearRampToValueAtTime(.045,now+i*.06+.01);gain.gain.exponentialRampToValueAtTime(.001,now+i*.06+.16);osc.connect(gain);gain.connect(audioContext.destination);osc.start(now+i*.06);osc.stop(now+i*.06+.18);}}catch{/* Audio is an optional enhancement. */}}
 function celebrateSmall(){experience.progress($('progress-track'));}
 function confetti(){experience.emit('win',board.clientWidth/2,board.clientHeight*.5,80);}
 
 function exportSave(){persist();const url=URL.createObjectURL(new Blob([JSON.stringify(saved,null,2)],{type:'application/json'}));const a=document.createElement('a');a.href=url;a.download=`bubble-grove-${localDate()}.json`;a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);toast('Your progress, ready to keep.');}
-async function importSave(event){const file=event.target.files?.[0];if(!file)return;try{if(file.size>2_000_000)throw Error('That file is too large.');const data=JSON.parse(await file.text());if(!isSave(data))throw Error('This is not a valid Bubble Grove progress file.');openSheet('Restore your progress?',`<p class="sheet-intro">This backup contains ${data.completed.length} completed journey levels. Restoring replaces the progress on this device.</p><button class="primary-button" id="restore-confirm">Restore backup</button><button class="secondary-button" id="restore-cancel">Keep current progress</button>`);$('restore-confirm').onclick=()=>{state=null;saved={...structuredClone(initial),...data};settings=normalizeSettings(data.settings);applySettings();sheet.close();start();toast('Welcome back. Your progress is restored.');};$('restore-cancel').onclick=()=>sheet.close();}catch(error){toast(error.message||'That backup could not be read.');}}
+async function importSave(event){const file=event.target.files?.[0];if(!file)return;try{if(file.size>2_000_000)throw Error('That file is too large.');const data=JSON.parse(await file.text());if(!isSave(data))throw Error('This is not a valid Bubble Grove progress file.');openSheet('Restore your progress?',`<p class="sheet-intro">This backup contains ${data.completed.length} completed journey levels. Restoring replaces the progress on this device.</p><button class="primary-button" id="restore-confirm">Restore backup</button><button class="secondary-button" id="restore-cancel">Keep current progress</button>`);$('restore-confirm').onclick=()=>{state=null;saved={...structuredClone(initial),...data};settings=normalizeSettings(data.settings);applySettings();sheet.close();start();toast('Welcome back. Your progress is restored.');};$('restore-cancel').onclick=()=>sheet.close();}catch(error){toast(['That file is too large.','This is not a valid Bubble Grove progress file.'].includes(error.message)?error.message:'That backup could not be read.');}}
 function installMessage(){if(matchMedia('(display-mode: standalone)').matches)return 'Bubble Grove is installed. Open it from your home screen, even offline.';if(!window.isSecureContext)return 'To install on your phone, open the game from an HTTPS address. Then use Chrome’s menu → Add to Home screen → Install. The local computer preview is also supported.';return 'On your Galaxy: open this page in Chrome, then tap Install above or use the ⋮ menu → Add to Home screen → Install. After the first visit, the whole game works offline.';}
 async function install(){if(installPrompt){await installPrompt.prompt();await installPrompt.userChoice;installPrompt=null;}else{toast(matchMedia('(display-mode: standalone)').matches?'Already installed. A little grove on your home screen.':'In Chrome: ⋮ menu → Add to Home screen → Install.',5000);}}
 window.addEventListener('beforeinstallprompt',event=>{event.preventDefault();installPrompt=event;});
 window.addEventListener('appinstalled',()=>{installPrompt=null;toast('A little grove on your home screen.');});
-async function setupOffline(){if(!navigator.onLine)$('offline-label').textContent='Offline. All yours.';if(!('serviceWorker'in navigator)||!window.isSecureContext)return;try{await navigator.serviceWorker.register('./sw.js');await navigator.serviceWorker.ready;$('offline-label').textContent=navigator.onLine?'Ready for a little offline time.':'Offline. All yours.';}catch{if(navigator.onLine)toast('Offline saving is unavailable here. The game still plays online.');}}
-window.addEventListener('online',()=>$('offline-label').textContent='Ready for a little offline time.');window.addEventListener('offline',()=>$('offline-label').textContent='Offline. All yours.');
+async function setupOffline(){if(!navigator.onLine)$('offline-label').textContent=t('Offline. All yours.');if(!('serviceWorker'in navigator)||!window.isSecureContext)return;try{await navigator.serviceWorker.register('./sw.js');await navigator.serviceWorker.ready;$('offline-label').dataset.ready='true';$('offline-label').textContent=t(navigator.onLine?'Ready for a little offline time.':'Offline. All yours.');}catch{if(navigator.onLine)toast('Offline saving is unavailable here. The game still plays online.');}}
+window.addEventListener('online',()=>$('offline-label').textContent=t('Ready for a little offline time.'));window.addEventListener('offline',()=>$('offline-label').textContent=t('Offline. All yours.'));
 window.addEventListener('pagehide',persist);document.addEventListener('visibilitychange',()=>{if(document.hidden){persist();cancelAnimationFrame(frame);frame=0;}else{wake();if(state.puzzle.mode==='daily'&&state.puzzle.date!==localDate()){start({mode:'daily'},true);toast('A new day, a fresh connection.');}}});
 new ResizeObserver(()=>{if(state){placeBubbles();wake();}}).observe(board);
 applySettings();start();setupOffline();

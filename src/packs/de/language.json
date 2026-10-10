@@ -1,0 +1,607 @@
+{
+  "id": "language",
+  "language": "de",
+  "name": "Sprache & Wörter",
+  "themes": [
+    {
+      "id": "de-language-gegensaetze",
+      "name": "Gegensätze",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Groß",
+        "Klein",
+        "Heiß",
+        "Kalt",
+        "Hell",
+        "Dunkel",
+        "Laut",
+        "Leise",
+        "Alt",
+        "Jung"
+      ]
+    },
+    {
+      "id": "de-language-farben",
+      "name": "Farben",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Rot",
+        "Blau",
+        "Gelb",
+        "Grün",
+        "Orange",
+        "Lila",
+        "Rosa",
+        "Schwarz",
+        "Weiß",
+        "Braun"
+      ]
+    },
+    {
+      "id": "de-language-bewegung",
+      "name": "Bewegung",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Gehen",
+        "Laufen",
+        "Springen",
+        "Hüpfen",
+        "Kriechen",
+        "Schleichen",
+        "Tanzen",
+        "Rennen",
+        "Schwimmen",
+        "Fliegen"
+      ]
+    },
+    {
+      "id": "de-language-sprechen",
+      "name": "Sprechen",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Sagen",
+        "Rufen",
+        "Flüstern",
+        "Reden",
+        "Fragen",
+        "Antworten",
+        "Erzählen",
+        "Schreien",
+        "Murmeln",
+        "Plaudern"
+      ]
+    },
+    {
+      "id": "de-language-tierlaute",
+      "name": "Tierlaute",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Miau",
+        "Wau",
+        "Muh",
+        "Mäh",
+        "Kikeriki",
+        "Quak",
+        "Iah",
+        "Grunz",
+        "Piep",
+        "Brumm"
+      ]
+    },
+    {
+      "id": "de-language-lautwoerter",
+      "name": "Lautwörter",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Peng",
+        "Platsch",
+        "Klick",
+        "Klack",
+        "Bumm",
+        "Rums",
+        "Ticktack",
+        "Hatschi",
+        "Klingeling",
+        "Knacks"
+      ]
+    },
+    {
+      "id": "de-language-haus-reime",
+      "name": "Haus-Reime",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Maus",
+        "Laus",
+        "Schmaus",
+        "Applaus",
+        "Strauß",
+        "raus",
+        "aus",
+        "Klaus",
+        "Graus",
+        "heraus"
+      ]
+    },
+    {
+      "id": "de-language-zeit-reime",
+      "name": "Zeit-Reime",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Weit",
+        "Breit",
+        "Kleid",
+        "Leid",
+        "Neid",
+        "Streit",
+        "Bereit",
+        "Gescheit",
+        "Seit",
+        "Zu zweit"
+      ]
+    },
+    {
+      "id": "de-language-licht-reime",
+      "name": "Licht-Reime",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Sicht",
+        "Pflicht",
+        "Gewicht",
+        "Gedicht",
+        "Gesicht",
+        "Bericht",
+        "Gericht",
+        "Schicht",
+        "Dicht",
+        "Nicht"
+      ]
+    },
+    {
+      "id": "de-language-nacht-reime",
+      "name": "Nacht-Reime",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Acht",
+        "Macht",
+        "Pracht",
+        "Schlacht",
+        "Wacht",
+        "Lacht",
+        "Gemacht",
+        "Gedacht",
+        "Gebracht",
+        "Erwacht"
+      ]
+    },
+    {
+      "id": "de-language-hand-woerter",
+      "name": "Hand-Wörter",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Handball",
+        "Handbuch",
+        "Handtuch",
+        "Handschuh",
+        "Handwerk",
+        "Handlauf",
+        "Handtasche",
+        "Handgriff",
+        "Handstand",
+        "Handschrift"
+      ]
+    },
+    {
+      "id": "de-language-wasser-woerter",
+      "name": "Wasser-Wörter",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Wasserfall",
+        "Wasserhahn",
+        "Wasserball",
+        "Wasserglas",
+        "Wasserfarbe",
+        "Wasserbett",
+        "Wasseruhr",
+        "Wassereis",
+        "Wasserrad",
+        "Wasserwaage"
+      ]
+    },
+    {
+      "id": "de-language-spiel-woerter",
+      "name": "Spiel-Wörter",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Spielplatz",
+        "Spielball",
+        "Spielzeug",
+        "Spielregel",
+        "Spielkarte",
+        "Spielbrett",
+        "Spielstand",
+        "Spielraum",
+        "Spielplan",
+        "Spielgeld"
+      ]
+    },
+    {
+      "id": "de-language-buch-woerter",
+      "name": "Buch-Wörter",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Buchseite",
+        "Buchrücken",
+        "Buchladen",
+        "Buchpreis",
+        "Buchmesse",
+        "Buchstabe",
+        "Buchdeckel",
+        "Buchstütze",
+        "Buchhandel",
+        "Buchzeichen"
+      ]
+    },
+    {
+      "id": "de-language-schnee-woerter",
+      "name": "Schnee-Wörter",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Schneeball",
+        "Schneemann",
+        "Schneeflocke",
+        "Schneedecke",
+        "Schneewehe",
+        "Schneeschuh",
+        "Schneepflug",
+        "Schneefall",
+        "Schneeberg",
+        "Schneehase"
+      ]
+    },
+    {
+      "id": "de-language-wochentage-co",
+      "name": "Wochentage & Co.",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Montag",
+        "Dienstag",
+        "Mittwoch",
+        "Donnerstag",
+        "Freitag",
+        "Samstag",
+        "Sonntag",
+        "Werktag",
+        "Feiertag",
+        "Wochenende"
+      ]
+    },
+    {
+      "id": "de-language-monate",
+      "name": "Monate",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Januar",
+        "Februar",
+        "März",
+        "April",
+        "Mai",
+        "Juni",
+        "Juli",
+        "August",
+        "September",
+        "Oktober",
+        "November",
+        "Dezember"
+      ]
+    },
+    {
+      "id": "de-language-richtungen",
+      "name": "Richtungen",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Links",
+        "Rechts",
+        "Oben",
+        "Unten",
+        "Vorn",
+        "Hinten",
+        "Norden",
+        "Süden",
+        "Osten",
+        "Westen"
+      ]
+    },
+    {
+      "id": "de-language-fragewoerter",
+      "name": "Fragewörter",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Wer",
+        "Was",
+        "Wann",
+        "Wo",
+        "Warum",
+        "Wie",
+        "Welche",
+        "Wohin",
+        "Woher",
+        "Wessen"
+      ]
+    },
+    {
+      "id": "de-language-begruessen",
+      "name": "Begrüßen",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Hallo",
+        "Moin",
+        "Servus",
+        "Grüß dich",
+        "Guten Tag",
+        "Grüß Gott",
+        "Hi",
+        "Grüezi",
+        "Willkommen",
+        "Na?"
+      ]
+    },
+    {
+      "id": "de-language-abschied",
+      "name": "Abschied",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Tschüss",
+        "Auf Wiedersehen",
+        "Servus",
+        "Adieu",
+        "Bis bald",
+        "Bis dann",
+        "Mach's gut",
+        "Gute Nacht",
+        "Bye",
+        "Ciao"
+      ]
+    },
+    {
+      "id": "de-language-hoeflich",
+      "name": "Höflich",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Bitte",
+        "Danke",
+        "Entschuldigung",
+        "Gern geschehen",
+        "Verzeihung",
+        "Nach Ihnen",
+        "Kein Problem",
+        "Sehr gern",
+        "Mit Vergnügen",
+        "Vielen Dank"
+      ]
+    },
+    {
+      "id": "de-language-lesen",
+      "name": "Lesen",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Buch",
+        "Seite",
+        "Zeile",
+        "Wort",
+        "Satz",
+        "Kapitel",
+        "Absatz",
+        "Titel",
+        "Inhalt",
+        "Lesezeichen"
+      ]
+    },
+    {
+      "id": "de-language-schreiben",
+      "name": "Schreiben",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Stift",
+        "Papier",
+        "Tinte",
+        "Buchstabe",
+        "Wort",
+        "Satz",
+        "Punkt",
+        "Komma",
+        "Zeile",
+        "Entwurf"
+      ]
+    },
+    {
+      "id": "de-language-maerchenwoerter",
+      "name": "Märchenwörter",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "König",
+        "Prinzessin",
+        "Hexe",
+        "Zauber",
+        "Wald",
+        "Schloss",
+        "Drache",
+        "Riese",
+        "Zwerg",
+        "Fee"
+      ]
+    },
+    {
+      "id": "de-language-anfang",
+      "name": "Anfang",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Start",
+        "Beginn",
+        "Auftakt",
+        "Eröffnung",
+        "Antritt",
+        "Aufbruch",
+        "Premiere",
+        "Einstieg",
+        "Anfangspunkt",
+        "Los"
+      ]
+    },
+    {
+      "id": "de-language-ende",
+      "name": "Ende",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Schluss",
+        "Ziel",
+        "Finale",
+        "Abschluss",
+        "Ausklang",
+        "Feierabend",
+        "Endpunkt",
+        "Abschied",
+        "Schlusspunkt",
+        "Stopp"
+      ]
+    },
+    {
+      "id": "de-language-satzzeichen",
+      "name": "Satzzeichen",
+      "domain": "language",
+      "difficulty": 2,
+      "words": [
+        "Punkt",
+        "Komma",
+        "Doppelpunkt",
+        "Semikolon",
+        "Fragezeichen",
+        "Ausrufezeichen",
+        "Klammer",
+        "Bindestrich",
+        "Gedankenstrich",
+        "Apostroph"
+      ]
+    },
+    {
+      "id": "de-language-wortarten",
+      "name": "Wortarten",
+      "domain": "language",
+      "difficulty": 2,
+      "words": [
+        "Nomen",
+        "Verb",
+        "Adjektiv",
+        "Artikel",
+        "Pronomen",
+        "Adverb",
+        "Präposition",
+        "Konjunktion",
+        "Numerale",
+        "Interjektion"
+      ]
+    },
+    {
+      "id": "de-language-doppelbedeutung",
+      "name": "Doppelbedeutung",
+      "domain": "language",
+      "difficulty": 2,
+      "words": [
+        "Bank",
+        "Schloss",
+        "Ball",
+        "Hahn",
+        "Leiter",
+        "Decke",
+        "Flügel",
+        "Tau",
+        "Strauß",
+        "Kiefer"
+      ]
+    },
+    {
+      "id": "de-language-palindrom",
+      "name": "Palindrom",
+      "domain": "language",
+      "difficulty": 2,
+      "words": [
+        "Anna",
+        "Otto",
+        "Reittier",
+        "Lagerregal",
+        "Reliefpfeiler",
+        "Rentner",
+        "Retter",
+        "Neffen",
+        "neben",
+        "Ebbe"
+      ]
+    },
+    {
+      "id": "de-language-umlaute",
+      "name": "Umlaute",
+      "domain": "language",
+      "difficulty": 1,
+      "words": [
+        "Äpfel",
+        "Öfen",
+        "Übung",
+        "Ähre",
+        "Öl",
+        "Tür",
+        "Käse",
+        "Löwe",
+        "Mütze",
+        "Bär"
+      ]
+    }
+  ],
+  "pictures": {
+    "Tür": "🚪",
+    "Kleid": "👗",
+    "Handschuh": "🧤",
+    "Mütze": "🧢",
+    "Buch": "📖",
+    "Stift": "🖊️",
+    "Löwe": "🦁",
+    "Bär": "🐻",
+    "Schneemann": "⛄",
+    "Orange": "🍊",
+    "Käse": "🧀",
+    "Ball": "⚽",
+    "Tinte": "🖋️",
+    "König": "🤴",
+    "Prinzessin": "👸",
+    "Hexe": "🧙",
+    "Fee": "🧚",
+    "Punkt": "🔴",
+    "Fragezeichen": "❓",
+    "Ausrufezeichen": "❗"
+  }
+}

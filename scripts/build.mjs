@@ -12,8 +12,13 @@ for(const file of['manifest.webmanifest','icons/icon.svg','icons/icon-192.png','
   const target=path.join(root,'public',file);await mkdir(path.dirname(target),{recursive:true});await copyFile(path.join(root,file),target);
 }
 await build({root,configFile:path.join(root,'vite.config.js')});
-for(const file of['LICENSE','src/physics.js','src/engine.js','src/data.js','src/vocabulary.js','src/art.js']){
+for(const file of['LICENSE','src/physics.js','src/engine.js','src/data.js','src/catalog.js','src/nesting.js','src/i18n.js','src/art.js']){
   const target=path.join(dist,file);await mkdir(path.dirname(target),{recursive:true});await copyFile(path.join(root,file),target);
+}
+// Keep the readable source exports usable by diagnostics and precache every locale.
+for (const language of ['en','de']) for (const file of await readdir(path.join(root,'src/packs',language))) {
+  if (!file.endsWith('.json')) continue;
+  const target=path.join(dist,'src/packs',language,file);await mkdir(path.dirname(target),{recursive:true});await copyFile(path.join(root,'src/packs',language,file),target);
 }
 const notices=[];
 for(const name of['animejs','canvas-confetti','@fontsource-variable/nunito','@dimforge/rapier2d-compat']){

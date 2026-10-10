@@ -84,3 +84,21 @@ button:focus-visible,a:focus-visible,input:focus-visible,select:focus-visible{ou
 @keyframes kelp-hold{from{transform:rotate(-2deg)}to{transform:rotate(2deg)}}
 @keyframes kelp-away{to{translate:0 32px;scale:1.18;rotate:12deg;opacity:0}}
 @keyframes pin-away{to{translate:0 -25px;rotate:35deg;scale:1.15;opacity:0}}
+
+/* Readable vocabulary at every cluster size, including German compounds. */
+.bubble-label,.bubble-term{font-size:18px;line-height:1.15;overflow-wrap:anywhere;hyphens:auto;min-width:0}
+.bubble-terms{gap:7px}
+.bubble.merged{padding-left:9px;padding-right:9px}
+.word-pack-settings{border:0;padding:0;margin:18px 0 0;min-width:0}
+.word-pack-settings legend{font-size:16px;font-weight:800}
+.word-pack-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.word-pack-option{display:flex;align-items:center;gap:8px;padding:10px;border:1px solid var(--line,#ffffff30);border-radius:12px;font-size:13px;min-height:44px;overflow-wrap:anywhere}
+.word-pack-option input{width:18px;height:18px;flex:0 0 auto;accent-color:var(--accent)}
+.pack-validation{color:var(--ink);font-size:13px;font-weight:800;min-height:0;margin:8px 0}
+.pack-validation:empty{display:none}
+html[lang="de"] .mode-switch button{font-size:12px}
+html[lang="de"] .tools button{font-size:10px}
+html[lang="de"] .physics-toolbar{gap:6px}
+html[lang="de"] .physics-toolbar h2{font-size:16px}
+html[lang="de"] .physics-toolbar button{padding:7px;font-size:11px}
+@media(max-width:340px){.word-pack-grid{grid-template-columns:1fr}html[lang="de"] .field-row select{max-width:122px}}

@@ -1,0 +1,649 @@
+{
+  "id": "science",
+  "language": "de",
+  "name": "Wissen & Technik",
+  "themes": [
+    {
+      "id": "de-science-weltall",
+      "name": "Weltall",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Stern",
+        "Planet",
+        "Mond",
+        "Sonne",
+        "Rakete",
+        "Komet",
+        "Galaxie",
+        "Satellit",
+        "Raumstation",
+        "Teleskop"
+      ]
+    },
+    {
+      "id": "de-science-sonnensystem",
+      "name": "Sonnensystem",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Merkur",
+        "Venus",
+        "Erde",
+        "Mars",
+        "Jupiter",
+        "Saturn",
+        "Uranus",
+        "Neptun",
+        "Sonne",
+        "Mond"
+      ]
+    },
+    {
+      "id": "de-science-mond",
+      "name": "Mond",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Krater",
+        "Sichel",
+        "Vollmond",
+        "Neumond",
+        "Mondlicht",
+        "Landung",
+        "Umlaufbahn",
+        "Gezeiten",
+        "Finsternis",
+        "Mondstaub"
+      ]
+    },
+    {
+      "id": "de-science-rakete",
+      "name": "Rakete",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Start",
+        "Triebwerk",
+        "Treibstoff",
+        "Countdown",
+        "Kapsel",
+        "Rampe",
+        "Flamme",
+        "Stufe",
+        "Fallschirm",
+        "Schub"
+      ]
+    },
+    {
+      "id": "de-science-astronaut",
+      "name": "Astronaut",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Helm",
+        "Anzug",
+        "Rakete",
+        "Mond",
+        "Training",
+        "Funk",
+        "Sauerstoff",
+        "Raumstation",
+        "Landung",
+        "Schwerelos"
+      ]
+    },
+    {
+      "id": "de-science-erde",
+      "name": "Erde",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Meer",
+        "Land",
+        "Luft",
+        "Kern",
+        "Mantel",
+        "Kruste",
+        "Pol",
+        "Äquator",
+        "Kontinent",
+        "Globus"
+      ]
+    },
+    {
+      "id": "de-science-koerperwissen",
+      "name": "Körperwissen",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Herz",
+        "Lunge",
+        "Gehirn",
+        "Magen",
+        "Leber",
+        "Niere",
+        "Knochen",
+        "Muskel",
+        "Blut",
+        "Haut"
+      ]
+    },
+    {
+      "id": "de-science-sinne",
+      "name": "Sinne",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Sehen",
+        "Hören",
+        "Riechen",
+        "Schmecken",
+        "Fühlen",
+        "Auge",
+        "Ohr",
+        "Nase",
+        "Zunge",
+        "Haut"
+      ]
+    },
+    {
+      "id": "de-science-labor",
+      "name": "Labor",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Lupe",
+        "Mikroskop",
+        "Brille",
+        "Kittel",
+        "Kolben",
+        "Pipette",
+        "Probe",
+        "Waage",
+        "Brenner",
+        "Reagenzglas"
+      ]
+    },
+    {
+      "id": "de-science-messen",
+      "name": "Messen",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Lineal",
+        "Waage",
+        "Uhr",
+        "Thermometer",
+        "Maßband",
+        "Messbecher",
+        "Zollstock",
+        "Stoppuhr",
+        "Tacho",
+        "Kompass"
+      ]
+    },
+    {
+      "id": "de-science-einheiten",
+      "name": "Einheiten",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Meter",
+        "Liter",
+        "Gramm",
+        "Sekunde",
+        "Minute",
+        "Stunde",
+        "Volt",
+        "Watt",
+        "Grad",
+        "Kilo"
+      ]
+    },
+    {
+      "id": "de-science-formen",
+      "name": "Formen",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Kreis",
+        "Dreieck",
+        "Quadrat",
+        "Rechteck",
+        "Raute",
+        "Oval",
+        "Würfel",
+        "Kugel",
+        "Kegel",
+        "Pyramide"
+      ]
+    },
+    {
+      "id": "de-science-rechnen",
+      "name": "Rechnen",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Plus",
+        "Minus",
+        "Mal",
+        "Geteilt",
+        "Summe",
+        "Differenz",
+        "Bruch",
+        "Zahl",
+        "Gleich",
+        "Ergebnis"
+      ]
+    },
+    {
+      "id": "de-science-zahlen",
+      "name": "Zahlen",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Null",
+        "Eins",
+        "Zwei",
+        "Drei",
+        "Vier",
+        "Fünf",
+        "Sechs",
+        "Sieben",
+        "Acht",
+        "Neun"
+      ]
+    },
+    {
+      "id": "de-science-magnete",
+      "name": "Magnete",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Nordpol",
+        "Südpol",
+        "Eisen",
+        "Kompass",
+        "Anziehung",
+        "Abstoßung",
+        "Feld",
+        "Spule",
+        "Magnetnadel",
+        "Kühlschrank"
+      ]
+    },
+    {
+      "id": "de-science-strom",
+      "name": "Strom",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Kabel",
+        "Stecker",
+        "Steckdose",
+        "Schalter",
+        "Batterie",
+        "Akku",
+        "Lampe",
+        "Sicherung",
+        "Motor",
+        "Leitung"
+      ]
+    },
+    {
+      "id": "de-science-licht",
+      "name": "Licht",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Sonne",
+        "Lampe",
+        "Kerze",
+        "Strahl",
+        "Schatten",
+        "Spiegel",
+        "Prisma",
+        "Regenbogen",
+        "Linse",
+        "Reflex"
+      ]
+    },
+    {
+      "id": "de-science-wasser",
+      "name": "Wasser",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Eis",
+        "Dampf",
+        "Tropfen",
+        "Regen",
+        "Schnee",
+        "Quelle",
+        "Fluss",
+        "Meer",
+        "Frost",
+        "Nebel"
+      ]
+    },
+    {
+      "id": "de-science-waerme",
+      "name": "Wärme",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Feuer",
+        "Ofen",
+        "Heizung",
+        "Sonne",
+        "Glut",
+        "Dampf",
+        "Hitze",
+        "Temperatur",
+        "Thermometer",
+        "Isolierung"
+      ]
+    },
+    {
+      "id": "de-science-computer",
+      "name": "Computer",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Maus",
+        "Tastatur",
+        "Bildschirm",
+        "Drucker",
+        "Datei",
+        "Ordner",
+        "Festplatte",
+        "Speicher",
+        "Prozessor",
+        "Laptop"
+      ]
+    },
+    {
+      "id": "de-science-internet",
+      "name": "Internet",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Browser",
+        "Link",
+        "Webseite",
+        "WLAN",
+        "Router",
+        "Suchmaschine",
+        "Download",
+        "Upload",
+        "E-Mail",
+        "Passwort"
+      ]
+    },
+    {
+      "id": "de-science-handy",
+      "name": "Handy",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Display",
+        "Akku",
+        "Kamera",
+        "App",
+        "Anruf",
+        "Nachricht",
+        "Ladekabel",
+        "Lautsprecher",
+        "Mikrofon",
+        "SIM-Karte"
+      ]
+    },
+    {
+      "id": "de-science-roboter",
+      "name": "Roboter",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Sensor",
+        "Motor",
+        "Arm",
+        "Kamera",
+        "Greifer",
+        "Programm",
+        "Akku",
+        "Chip",
+        "Gelenk",
+        "Fernsteuerung"
+      ]
+    },
+    {
+      "id": "de-science-fahrradtechnik",
+      "name": "Fahrradtechnik",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Kette",
+        "Ritzel",
+        "Pedal",
+        "Bremse",
+        "Speiche",
+        "Felge",
+        "Reifen",
+        "Ventil",
+        "Lenker",
+        "Sattel"
+      ]
+    },
+    {
+      "id": "de-science-erfindungen",
+      "name": "Erfindungen",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Rad",
+        "Druckpresse",
+        "Telefon",
+        "Glühbirne",
+        "Radio",
+        "Computer",
+        "Flugzeug",
+        "Dampfmaschine",
+        "Kamera",
+        "Batterie"
+      ]
+    },
+    {
+      "id": "de-science-werkstoffe",
+      "name": "Werkstoffe",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Holz",
+        "Glas",
+        "Stahl",
+        "Kupfer",
+        "Beton",
+        "Plastik",
+        "Gummi",
+        "Papier",
+        "Keramik",
+        "Aluminium"
+      ]
+    },
+    {
+      "id": "de-science-chemie",
+      "name": "Chemie",
+      "domain": "science",
+      "difficulty": 2,
+      "words": [
+        "Atom",
+        "Molekül",
+        "Element",
+        "Reaktion",
+        "Säure",
+        "Lauge",
+        "Salz",
+        "Lösung",
+        "Gas",
+        "Metall"
+      ]
+    },
+    {
+      "id": "de-science-physik",
+      "name": "Physik",
+      "domain": "science",
+      "difficulty": 2,
+      "words": [
+        "Kraft",
+        "Masse",
+        "Energie",
+        "Reibung",
+        "Trägheit",
+        "Schwerkraft",
+        "Druck",
+        "Tempo",
+        "Welle",
+        "Impuls"
+      ]
+    },
+    {
+      "id": "de-science-pflanzenleben",
+      "name": "Pflanzenleben",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Wurzel",
+        "Blatt",
+        "Stängel",
+        "Blüte",
+        "Pollen",
+        "Samen",
+        "Wasser",
+        "Licht",
+        "Keimling",
+        "Frucht"
+      ]
+    },
+    {
+      "id": "de-science-kreislauf",
+      "name": "Kreislauf",
+      "domain": "science",
+      "difficulty": 2,
+      "words": [
+        "Herz",
+        "Blut",
+        "Puls",
+        "Arterie",
+        "Vene",
+        "Sauerstoff",
+        "Lunge",
+        "Kapillare",
+        "Herzklappe",
+        "Blutdruck"
+      ]
+    },
+    {
+      "id": "de-science-fossilien",
+      "name": "Fossilien",
+      "domain": "science",
+      "difficulty": 2,
+      "words": [
+        "Knochen",
+        "Abdruck",
+        "Muschel",
+        "Bernstein",
+        "Versteinerung",
+        "Zahn",
+        "Ammonit",
+        "Sediment",
+        "Ausgrabung",
+        "Urzeit"
+      ]
+    },
+    {
+      "id": "de-science-energiequellen",
+      "name": "Energiequellen",
+      "domain": "science",
+      "difficulty": 2,
+      "words": [
+        "Sonne",
+        "Wind",
+        "Wasser",
+        "Kohle",
+        "Gas",
+        "Öl",
+        "Holz",
+        "Uran",
+        "Erdwärme",
+        "Biomasse"
+      ]
+    }
+  ],
+  "pictures": {
+    "Lampe": "💡",
+    "Spiegel": "🪞",
+    "Mantel": "🧥",
+    "Lineal": "📏",
+    "Drucker": "🖨️",
+    "Kerze": "🕯️",
+    "Stern": "⭐",
+    "Herz": "❤️",
+    "Nase": "👃",
+    "Ohr": "👂",
+    "Auge": "👁️",
+    "Zahn": "🦷",
+    "Zunge": "👅",
+    "Uhr": "🕰️",
+    "Welle": "🌊",
+    "Salz": "🧂",
+    "Muschel": "🐚",
+    "Schnee": "❄️",
+    "Blatt": "🍃",
+    "Sonne": "☀️",
+    "Regen": "🌧️",
+    "Wind": "💨",
+    "Nebel": "🌫️",
+    "Regenbogen": "🌈",
+    "Planet": "🪐",
+    "Mond": "🌙",
+    "Rakete": "🚀",
+    "Komet": "☄️",
+    "Satellit": "🛰️",
+    "Teleskop": "🔭",
+    "Vollmond": "🌕",
+    "Neumond": "🌑",
+    "Globus": "🌍",
+    "Lunge": "🫁",
+    "Gehirn": "🧠",
+    "Knochen": "🦴",
+    "Blut": "🩸",
+    "Lupe": "🔍",
+    "Mikroskop": "🔬",
+    "Brille": "👓",
+    "Kittel": "🥼",
+    "Waage": "⚖️",
+    "Reagenzglas": "🧪",
+    "Thermometer": "🌡️",
+    "Stoppuhr": "⏱️",
+    "Kompass": "🧭",
+    "Kreis": "🔵",
+    "Quadrat": "🟨",
+    "Würfel": "🎲",
+    "Stecker": "🔌",
+    "Batterie": "🔋",
+    "Feuer": "🔥",
+    "Computer": "🖥️",
+    "Tastatur": "⌨️",
+    "Laptop": "💻",
+    "Ordner": "📁",
+    "Kamera": "📷",
+    "Lautsprecher": "🔊",
+    "Mikrofon": "🎤",
+    "Rad": "🚲",
+    "Telefon": "☎️",
+    "Radio": "📻",
+    "Flugzeug": "✈️",
+    "Holz": "🪵"
+  }
+}

@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {THEMES,SPECIALS,INTRO_LEVELS} from '../src/data.js';
-import {createPuzzle,makeState,merge,magnet,bubbleText,isBlocked,validateState,upgradeDealing,arrivalDependency} from '../src/engine.js';
+import {createPuzzle,makeState,merge,magnet,bubbleText,isBlocked,validateState,upgradeDealing,arrivalDependency,linkedPartner,clearableGroups} from '../src/engine.js';
 import {specialArt} from '../src/art.js';
 import {translateBoundedGroup,stepPhysics,resetPhysics} from '../src/physics.js';
 const all=s=>[...s.bubbles,...s.reserve.flat()];
@@ -78,11 +78,46 @@ test('bonus bubbles require a move budget and the demo enables only its own budg
 });
 test('linked translations bound both surfaces at every wall and held physics retains those bounds',()=>{
   const bounds={width:358,height:456,top:12},a={id:'a',x:80,y:110,r:37,vx:0,vy:0},b={id:'b',x:245,y:340,r:37,vx:0,vy:0};
-  const spacing={x:b.x-a.x,y:b.y-a.y};
   for(const delta of [{x:900,y:0},{x:-900,y:0},{x:0,y:-900},{x:0,y:900},{x:900,y:900}]){
     translateBoundedGroup([a,b],delta,bounds);
-    assert.ok(Math.abs(b.x-a.x-spacing.x)<.001);assert.ok(Math.abs(b.y-a.y-spacing.y)<.001);
     for(const p of[a,b]){assert.ok(p.x-p.r>=2&&p.x+p.r<=bounds.width-2);assert.ok(p.y-p.r>=bounds.top+2&&p.y+p.r<=bounds.height-2);}
   }
   resetPhysics();a.x=-100;a.y=900;stepPhysics([a],{...bounds,held:new Set(['a'])});assert.ok(a.x-a.r>=2&&a.y+a.r<=bounds.height-2);resetPhysics();
+});
+
+test('a wall-bound linked partner permits the held bubble to contract the link',()=>{
+  const a={id:'real',x:120,y:130,r:30},b={id:'fake',x:326,y:130,r:30};
+  const delta=translateBoundedGroup([a,b],{x:80,y:0},{width:358,height:456});
+  assert.equal(delta.x,80);assert.equal(a.x,200);assert.equal(b.x,326);
+  translateBoundedGroup([a,b],{x:-40,y:20},{width:358,height:456});
+  assert.equal(a.x,160);assert.equal(b.x,286);assert.equal(a.y,150);assert.equal(b.y,150);
+});
+test('unrelated unlinked bubbles and fragments never acquire a linked partner',()=>{
+  const ordinary={id:'purple',atoms:[{word:'Purple'}]},left={id:'left',atoms:[{id:'hedgehog',part:0}]},right={id:'right',atoms:[{id:'hedgehog',part:1}]};
+  const real={id:'real',link:'pair-a',atoms:[{word:'Cat'}]},fake={id:'fake',link:'pair-a',decoy:true,atoms:[{word:'Dog'}]},all=[ordinary,left,right,real,fake];
+  assert.equal(linkedPartner(ordinary,all),null);assert.equal(linkedPartner(left,all),null);assert.equal(linkedPartner(real,all),fake);
+  left.link=right.link='pair-a';assert.equal(linkedPartner(left,all),null);assert.equal(linkedPartner(real,all),fake);
+});
+test('split boards expose four independent word pairs, never real-decoy links',()=>{
+  for(let round=1;round<=80;round++)for(const mode of ['lab','endless']){
+    const puzzle=createPuzzle({mode,special:'split',round,difficulty:'tricky'});if(round%2===0)puzzle.specials.push('linked');
+    const state=makeState(puzzle,{shuffleSeed:`split-${round}`}),parts=all(state).filter(b=>b.kind==='split');
+    assert.equal(parts.length,8);assert.equal(new Set(parts.map(b=>b.atoms[0].id)).size,4);assert.ok(parts.every(b=>!b.link));
+    assert.equal(state.bubbles.filter(b=>b.kind==='split').length,8);assert.ok(clearableGroups(state).length);assert.ok(validateState(state));
+    if(mode!=='lab')assert.ok(all(state).length<=70);
+  }
+});
+test('legacy linked fragments are detached without changing the real word ledger',()=>{
+  const state=demo('split'),parts=state.bubbles.filter(b=>b.kind==='split').slice(0,2);
+  for(const part of parts)part.link='broken-pair';
+  const source=demo('linked'),fake=all(source).find(b=>b.decoy);fake.link='broken-pair';state.bubbles.push(fake);
+  const ledger=all(state).filter(b=>!b.decoy).flatMap(b=>b.atoms).map(a=>[a.id,a.word,a.part]);
+  upgradeDealing(state);assert.ok(parts.every(b=>!b.link));assert.ok(!all(state).some(b=>b.decoy));
+  assert.deepEqual(all(state).flatMap(b=>b.atoms).map(a=>[a.id,a.word,a.part]),ledger);assert.ok(validateState(state));
+});
+test('a group with a missing split half is never advertised as clearable',()=>{
+  const state=demo('split'),part=state.bubbles.find(b=>b.kind==='split'),group=part.groupId;
+  state.bubbles=all(state).filter(b=>b.id!==part.id);state.reserve=[[part]];
+  assert.ok(!clearableGroups(state).some(g=>g.id===group));
+  state.bubbles.push(part);state.reserve=[];assert.ok(clearableGroups(state).some(g=>g.id===group));
 });

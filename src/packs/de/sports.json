@@ -1,0 +1,612 @@
+{
+  "id": "sports",
+  "language": "de",
+  "name": "Sport",
+  "themes": [
+    {
+      "id": "de-sports-fussball",
+      "name": "Fußball",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Ball",
+        "Tor",
+        "Elfmeter",
+        "Ecke",
+        "Abseits",
+        "Trikot",
+        "Rasen",
+        "Schiri",
+        "Stürmer",
+        "Torwart"
+      ]
+    },
+    {
+      "id": "de-sports-tennis",
+      "name": "Tennis",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Schläger",
+        "Netz",
+        "Ball",
+        "Aufschlag",
+        "Satz",
+        "Ass",
+        "Vorhand",
+        "Rückhand",
+        "Doppel",
+        "Tie-Break"
+      ]
+    },
+    {
+      "id": "de-sports-basketball",
+      "name": "Basketball",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Korb",
+        "Ball",
+        "Dribbling",
+        "Pass",
+        "Dunk",
+        "Freiwurf",
+        "Trikot",
+        "Halle",
+        "Dreier",
+        "Rebound"
+      ]
+    },
+    {
+      "id": "de-sports-handball",
+      "name": "Handball",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Ball",
+        "Tor",
+        "Kreis",
+        "Siebenmeter",
+        "Pass",
+        "Wurf",
+        "Torwart",
+        "Harz",
+        "Halle",
+        "Abwehr"
+      ]
+    },
+    {
+      "id": "de-sports-volleyball",
+      "name": "Volleyball",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Netz",
+        "Ball",
+        "Aufschlag",
+        "Block",
+        "Baggern",
+        "Pritschen",
+        "Satz",
+        "Feld",
+        "Libero",
+        "Angriff"
+      ]
+    },
+    {
+      "id": "de-sports-schwimmen",
+      "name": "Schwimmen",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Becken",
+        "Bahn",
+        "Kraulen",
+        "Brust",
+        "Rücken",
+        "Startblock",
+        "Brille",
+        "Badekappe",
+        "Wende",
+        "Schmetterling"
+      ]
+    },
+    {
+      "id": "de-sports-laufen",
+      "name": "Laufen",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Start",
+        "Ziel",
+        "Strecke",
+        "Tempo",
+        "Schuh",
+        "Stoppuhr",
+        "Runde",
+        "Sprint",
+        "Marathon",
+        "Staffel"
+      ]
+    },
+    {
+      "id": "de-sports-radfahren",
+      "name": "Radfahren",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Rad",
+        "Helm",
+        "Pedal",
+        "Kette",
+        "Lenker",
+        "Sattel",
+        "Reifen",
+        "Bremse",
+        "Trikot",
+        "Etappe"
+      ]
+    },
+    {
+      "id": "de-sports-wandern",
+      "name": "Wandern",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Weg",
+        "Rucksack",
+        "Schuh",
+        "Karte",
+        "Kompass",
+        "Gipfel",
+        "Hütte",
+        "Stock",
+        "Pause",
+        "Flasche"
+      ]
+    },
+    {
+      "id": "de-sports-klettern",
+      "name": "Klettern",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Seil",
+        "Gurt",
+        "Karabiner",
+        "Griff",
+        "Wand",
+        "Fels",
+        "Helm",
+        "Knoten",
+        "Kreide",
+        "Sicherung"
+      ]
+    },
+    {
+      "id": "de-sports-turnen",
+      "name": "Turnen",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Matte",
+        "Barren",
+        "Reck",
+        "Ringe",
+        "Balken",
+        "Sprung",
+        "Handstand",
+        "Salto",
+        "Rolle",
+        "Rad"
+      ]
+    },
+    {
+      "id": "de-sports-yoga",
+      "name": "Yoga",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Matte",
+        "Atmung",
+        "Lotus",
+        "Kobra",
+        "Baum",
+        "Krieger",
+        "Dehnung",
+        "Balance",
+        "Entspannung",
+        "Sonnengruß"
+      ]
+    },
+    {
+      "id": "de-sports-fitness",
+      "name": "Fitness",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Hantel",
+        "Matte",
+        "Kniebeuge",
+        "Liegestütz",
+        "Laufband",
+        "Training",
+        "Muskel",
+        "Pause",
+        "Plank",
+        "Seilspringen"
+      ]
+    },
+    {
+      "id": "de-sports-boxen",
+      "name": "Boxen",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Ring",
+        "Handschuh",
+        "Runde",
+        "Gong",
+        "Schlag",
+        "Deckung",
+        "Sandsack",
+        "K.o.",
+        "Mundschutz",
+        "Trainer"
+      ]
+    },
+    {
+      "id": "de-sports-judo",
+      "name": "Judo",
+      "domain": "sports",
+      "difficulty": 2,
+      "words": [
+        "Matte",
+        "Gürtel",
+        "Anzug",
+        "Wurf",
+        "Griff",
+        "Hebel",
+        "Falltechnik",
+        "Ippon",
+        "Respekt",
+        "Verbeugung"
+      ]
+    },
+    {
+      "id": "de-sports-skifahren",
+      "name": "Skifahren",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Ski",
+        "Stock",
+        "Piste",
+        "Lift",
+        "Helm",
+        "Brille",
+        "Schnee",
+        "Slalom",
+        "Abfahrt",
+        "Hütte"
+      ]
+    },
+    {
+      "id": "de-sports-schlitten",
+      "name": "Schlitten",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Schnee",
+        "Kufe",
+        "Hügel",
+        "Hang",
+        "Rodel",
+        "Bremse",
+        "Handschuh",
+        "Mütze",
+        "Seil",
+        "Abfahrt"
+      ]
+    },
+    {
+      "id": "de-sports-eislaufen",
+      "name": "Eislaufen",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Kufe",
+        "Eis",
+        "Pirouette",
+        "Sprung",
+        "Halle",
+        "Bande",
+        "Schlittschuh",
+        "Kür",
+        "Paarlauf",
+        "Musik"
+      ]
+    },
+    {
+      "id": "de-sports-reiten",
+      "name": "Reiten",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Pferd",
+        "Sattel",
+        "Zügel",
+        "Helm",
+        "Stall",
+        "Trab",
+        "Galopp",
+        "Schritt",
+        "Hindernis",
+        "Steigbügel"
+      ]
+    },
+    {
+      "id": "de-sports-golf",
+      "name": "Golf",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Ball",
+        "Schläger",
+        "Loch",
+        "Grün",
+        "Tee",
+        "Putt",
+        "Bunker",
+        "Fahne",
+        "Abschlag",
+        "Caddie"
+      ]
+    },
+    {
+      "id": "de-sports-tischtennis",
+      "name": "Tischtennis",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Platte",
+        "Netz",
+        "Schläger",
+        "Ball",
+        "Aufschlag",
+        "Satz",
+        "Spin",
+        "Kante",
+        "Doppel",
+        "Vorhand"
+      ]
+    },
+    {
+      "id": "de-sports-badminton",
+      "name": "Badminton",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Federball",
+        "Schläger",
+        "Netz",
+        "Aufschlag",
+        "Smash",
+        "Halle",
+        "Doppel",
+        "Linie",
+        "Drop",
+        "Clear"
+      ]
+    },
+    {
+      "id": "de-sports-bowling",
+      "name": "Bowling",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Kugel",
+        "Bahn",
+        "Pin",
+        "Strike",
+        "Spare",
+        "Schuh",
+        "Rinne",
+        "Anlauf",
+        "Wurf",
+        "Punkte"
+      ]
+    },
+    {
+      "id": "de-sports-darts",
+      "name": "Darts",
+      "domain": "sports",
+      "difficulty": 2,
+      "words": [
+        "Pfeil",
+        "Scheibe",
+        "Spitze",
+        "Flügel",
+        "Bull",
+        "Triple",
+        "Double",
+        "Wurf",
+        "Aufnahme",
+        "Finish"
+      ]
+    },
+    {
+      "id": "de-sports-surfen",
+      "name": "Surfen",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Brett",
+        "Welle",
+        "Strand",
+        "Finne",
+        "Leash",
+        "Neopren",
+        "Paddeln",
+        "Wind",
+        "Balance",
+        "Brandung"
+      ]
+    },
+    {
+      "id": "de-sports-segeln",
+      "name": "Segeln",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Boot",
+        "Mast",
+        "Segel",
+        "Wind",
+        "Ruder",
+        "Leine",
+        "Bug",
+        "Heck",
+        "Wende",
+        "Boje"
+      ]
+    },
+    {
+      "id": "de-sports-kanufahren",
+      "name": "Kanufahren",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Paddel",
+        "Boot",
+        "Kajak",
+        "Fluss",
+        "Strom",
+        "Schwimmweste",
+        "Wildwasser",
+        "Kanadier",
+        "Ufer",
+        "Slalom"
+      ]
+    },
+    {
+      "id": "de-sports-skateboard",
+      "name": "Skateboard",
+      "domain": "sports",
+      "difficulty": 2,
+      "words": [
+        "Brett",
+        "Rolle",
+        "Achse",
+        "Rampe",
+        "Helm",
+        "Ollie",
+        "Halfpipe",
+        "Trick",
+        "Balance",
+        "Griptape"
+      ]
+    },
+    {
+      "id": "de-sports-eishockey",
+      "name": "Eishockey",
+      "domain": "sports",
+      "difficulty": 2,
+      "words": [
+        "Puck",
+        "Schläger",
+        "Tor",
+        "Eis",
+        "Helm",
+        "Bande",
+        "Schlittschuh",
+        "Torwart",
+        "Bully",
+        "Drittel"
+      ]
+    },
+    {
+      "id": "de-sports-leichtathletik",
+      "name": "Leichtathletik",
+      "domain": "sports",
+      "difficulty": 2,
+      "words": [
+        "Sprint",
+        "Hürde",
+        "Staffel",
+        "Weitsprung",
+        "Hochsprung",
+        "Speer",
+        "Diskus",
+        "Kugel",
+        "Hammer",
+        "Zehnkampf"
+      ]
+    },
+    {
+      "id": "de-sports-olympia",
+      "name": "Olympia",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Ringe",
+        "Fackel",
+        "Medaillen",
+        "Gold",
+        "Silber",
+        "Bronze",
+        "Podest",
+        "Hymne",
+        "Stadion",
+        "Eröffnung"
+      ]
+    },
+    {
+      "id": "de-sports-stadion",
+      "name": "Stadion",
+      "domain": "sports",
+      "difficulty": 1,
+      "words": [
+        "Tribüne",
+        "Rasen",
+        "Flutlicht",
+        "Fans",
+        "Einlass",
+        "Ticket",
+        "Anzeigetafel",
+        "Block",
+        "Fahne",
+        "Welle"
+      ]
+    }
+  ],
+  "pictures": {
+    "Hammer": "🔨",
+    "Handschuh": "🧤",
+    "Mütze": "🧢",
+    "Ring": "💍",
+    "Korb": "🧺",
+    "Baum": "🌳",
+    "Welle": "🌊",
+    "Schnee": "❄️",
+    "Pferd": "🐎",
+    "Wind": "💨",
+    "Tee": "🍵",
+    "Brille": "👓",
+    "Stoppuhr": "⏱️",
+    "Kompass": "🧭",
+    "Kreis": "🔵",
+    "Rad": "🚲",
+    "Ball": "⚽",
+    "Tor": "🥅",
+    "Federball": "🏸",
+    "Rucksack": "🎒",
+    "Segel": "⛵",
+    "Boot": "⛵",
+    "Kajak": "🛶",
+    "Bronze": "🥉",
+    "Stadion": "🏟️",
+    "Fahne": "🚩",
+    "Ticket": "🎟️"
+  }
+}

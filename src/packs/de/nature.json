@@ -1,0 +1,673 @@
+{
+  "id": "nature",
+  "language": "de",
+  "name": "Natur & Tiere",
+  "themes": [
+    {
+      "id": "de-nature-wald",
+      "name": "Wald",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Baum",
+        "Moos",
+        "Farn",
+        "Reh",
+        "Fuchs",
+        "Pilz",
+        "Eichel",
+        "Ast",
+        "Laub",
+        "Specht"
+      ]
+    },
+    {
+      "id": "de-nature-wiese",
+      "name": "Wiese",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Gras",
+        "Klee",
+        "Blume",
+        "Biene",
+        "Falter",
+        "Heu",
+        "Grille",
+        "Maulwurf",
+        "Löwenzahn",
+        "Gänseblümchen"
+      ]
+    },
+    {
+      "id": "de-nature-meer",
+      "name": "Meer",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Welle",
+        "Salz",
+        "Strand",
+        "Muschel",
+        "Alge",
+        "Wal",
+        "Hai",
+        "Delfin",
+        "Qualle",
+        "Riff"
+      ]
+    },
+    {
+      "id": "de-nature-teich",
+      "name": "Teich",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Frosch",
+        "Ente",
+        "Schilf",
+        "Seerose",
+        "Kaulquappe",
+        "Libelle",
+        "Karpfen",
+        "Alge",
+        "Ufer",
+        "Molch"
+      ]
+    },
+    {
+      "id": "de-nature-berge",
+      "name": "Berge",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Gipfel",
+        "Fels",
+        "Tal",
+        "Schnee",
+        "Alm",
+        "Grat",
+        "Gletscher",
+        "Steinbock",
+        "Seilbahn",
+        "Wanderweg"
+      ]
+    },
+    {
+      "id": "de-nature-wueste",
+      "name": "Wüste",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Sand",
+        "Düne",
+        "Kamel",
+        "Kaktus",
+        "Oase",
+        "Skorpion",
+        "Hitze",
+        "Staub",
+        "Echse",
+        "Karawane"
+      ]
+    },
+    {
+      "id": "de-nature-regenwald",
+      "name": "Regenwald",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Liane",
+        "Papagei",
+        "Affe",
+        "Jaguar",
+        "Faultier",
+        "Tukan",
+        "Farn",
+        "Regen",
+        "Orchidee",
+        "Urwaldriese"
+      ]
+    },
+    {
+      "id": "de-nature-bauernhof",
+      "name": "Bauernhof",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Kuh",
+        "Schwein",
+        "Huhn",
+        "Schaf",
+        "Ziege",
+        "Pferd",
+        "Stall",
+        "Scheune",
+        "Heu",
+        "Traktor"
+      ]
+    },
+    {
+      "id": "de-nature-haustiere",
+      "name": "Haustiere",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Hund",
+        "Katze",
+        "Hamster",
+        "Wellensittich",
+        "Kaninchen",
+        "Goldfisch",
+        "Meerschweinchen",
+        "Maus",
+        "Körbchen",
+        "Futternapf"
+      ]
+    },
+    {
+      "id": "de-nature-voegel",
+      "name": "Vögel",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Amsel",
+        "Meise",
+        "Spatz",
+        "Adler",
+        "Eule",
+        "Ente",
+        "Schwan",
+        "Taube",
+        "Storch",
+        "Specht"
+      ]
+    },
+    {
+      "id": "de-nature-insekten",
+      "name": "Insekten",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Biene",
+        "Wespe",
+        "Ameise",
+        "Käfer",
+        "Fliege",
+        "Mücke",
+        "Falter",
+        "Libelle",
+        "Hummel",
+        "Grille"
+      ]
+    },
+    {
+      "id": "de-nature-raubtiere",
+      "name": "Raubtiere",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Löwe",
+        "Tiger",
+        "Wolf",
+        "Fuchs",
+        "Bär",
+        "Luchs",
+        "Leopard",
+        "Hyäne",
+        "Panther",
+        "Puma"
+      ]
+    },
+    {
+      "id": "de-nature-afrika",
+      "name": "Afrika",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Elefant",
+        "Giraffe",
+        "Zebra",
+        "Löwe",
+        "Nashorn",
+        "Nilpferd",
+        "Gnu",
+        "Gazelle",
+        "Hyäne",
+        "Strauß"
+      ]
+    },
+    {
+      "id": "de-nature-polarwelt",
+      "name": "Polarwelt",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Eisbär",
+        "Pinguin",
+        "Robbe",
+        "Walross",
+        "Polarfuchs",
+        "Eisberg",
+        "Schnee",
+        "Polarlicht",
+        "Rentier",
+        "Narwal"
+      ]
+    },
+    {
+      "id": "de-nature-blumen",
+      "name": "Blumen",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Rose",
+        "Tulpe",
+        "Nelke",
+        "Lilie",
+        "Mohn",
+        "Veilchen",
+        "Orchidee",
+        "Sonnenblume",
+        "Dahlie",
+        "Narzisse"
+      ]
+    },
+    {
+      "id": "de-nature-baeume",
+      "name": "Bäume",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Eiche",
+        "Buche",
+        "Birke",
+        "Ahorn",
+        "Weide",
+        "Linde",
+        "Kastanie",
+        "Tanne",
+        "Fichte",
+        "Kiefer"
+      ]
+    },
+    {
+      "id": "de-nature-am-baum",
+      "name": "Am Baum",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Wurzel",
+        "Stamm",
+        "Rinde",
+        "Ast",
+        "Zweig",
+        "Blatt",
+        "Krone",
+        "Knospe",
+        "Frucht",
+        "Baumscheibe"
+      ]
+    },
+    {
+      "id": "de-nature-wetter",
+      "name": "Wetter",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Sonne",
+        "Regen",
+        "Schnee",
+        "Hagel",
+        "Wind",
+        "Nebel",
+        "Blitz",
+        "Donner",
+        "Wolke",
+        "Frost"
+      ]
+    },
+    {
+      "id": "de-nature-fruehling",
+      "name": "Frühling",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Blüte",
+        "Knospe",
+        "Nest",
+        "Lamm",
+        "Tulpe",
+        "Krokus",
+        "Regen",
+        "Schwalbe",
+        "Keimling",
+        "Maikäfer"
+      ]
+    },
+    {
+      "id": "de-nature-sommer",
+      "name": "Sommer",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Sonne",
+        "Hitze",
+        "Badesee",
+        "Eis",
+        "Grill",
+        "Strand",
+        "Sonnenhut",
+        "Ernte",
+        "Picknick",
+        "Sonnencreme"
+      ]
+    },
+    {
+      "id": "de-nature-herbst",
+      "name": "Herbst",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Laub",
+        "Kastanie",
+        "Eichel",
+        "Pilz",
+        "Kürbis",
+        "Nebel",
+        "Wind",
+        "Ernte",
+        "Drache",
+        "Regenmantel"
+      ]
+    },
+    {
+      "id": "de-nature-winter",
+      "name": "Winter",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Schnee",
+        "Eis",
+        "Frost",
+        "Schlitten",
+        "Schneemann",
+        "Schal",
+        "Mütze",
+        "Handschuh",
+        "Eiszapfen",
+        "Skier"
+      ]
+    },
+    {
+      "id": "de-nature-regen",
+      "name": "Regen",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Tropfen",
+        "Pfütze",
+        "Schirm",
+        "Wolke",
+        "Gummistiefel",
+        "Mantel",
+        "Regenbogen",
+        "Schauer",
+        "Dachrinne",
+        "Niesel"
+      ]
+    },
+    {
+      "id": "de-nature-schnee",
+      "name": "Schnee",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Flocke",
+        "Schneeball",
+        "Schneemann",
+        "Schlitten",
+        "Lawine",
+        "Spur",
+        "Schaufel",
+        "Schneedecke",
+        "Skier",
+        "Eiskristall"
+      ]
+    },
+    {
+      "id": "de-nature-garten",
+      "name": "Garten",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Beet",
+        "Erde",
+        "Samen",
+        "Blüte",
+        "Kompost",
+        "Spaten",
+        "Gießkanne",
+        "Hecke",
+        "Rasen",
+        "Schnecke"
+      ]
+    },
+    {
+      "id": "de-nature-kueste",
+      "name": "Küste",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Klippe",
+        "Strand",
+        "Düne",
+        "Leuchtturm",
+        "Möwe",
+        "Muschel",
+        "Hafen",
+        "Gezeiten",
+        "Watt",
+        "Brandung"
+      ]
+    },
+    {
+      "id": "de-nature-fluss",
+      "name": "Fluss",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Quelle",
+        "Ufer",
+        "Bett",
+        "Brücke",
+        "Mündung",
+        "Strom",
+        "Schleife",
+        "Fähre",
+        "Forelle",
+        "Wehr"
+      ]
+    },
+    {
+      "id": "de-nature-fische",
+      "name": "Fische",
+      "domain": "nature",
+      "difficulty": 1,
+      "words": [
+        "Forelle",
+        "Karpfen",
+        "Lachs",
+        "Hecht",
+        "Hering",
+        "Thunfisch",
+        "Goldfisch",
+        "Aal",
+        "Kabeljau",
+        "Barsch"
+      ]
+    },
+    {
+      "id": "de-nature-edelsteine",
+      "name": "Edelsteine",
+      "domain": "nature",
+      "difficulty": 2,
+      "words": [
+        "Rubin",
+        "Saphir",
+        "Smaragd",
+        "Diamant",
+        "Opal",
+        "Amethyst",
+        "Topas",
+        "Aquamarin",
+        "Bernstein",
+        "Jade"
+      ]
+    },
+    {
+      "id": "de-nature-pilze",
+      "name": "Pilze",
+      "domain": "nature",
+      "difficulty": 2,
+      "words": [
+        "Steinpilz",
+        "Pfifferling",
+        "Champignon",
+        "Fliegenpilz",
+        "Morchel",
+        "Trüffel",
+        "Schirmling",
+        "Bovist",
+        "Hut",
+        "Stiel"
+      ]
+    },
+    {
+      "id": "de-nature-reptilien",
+      "name": "Reptilien",
+      "domain": "nature",
+      "difficulty": 2,
+      "words": [
+        "Schlange",
+        "Echse",
+        "Krokodil",
+        "Schildkröte",
+        "Gecko",
+        "Leguan",
+        "Chamäleon",
+        "Python",
+        "Kobra",
+        "Warane"
+      ]
+    },
+    {
+      "id": "de-nature-vulkan",
+      "name": "Vulkan",
+      "domain": "nature",
+      "difficulty": 2,
+      "words": [
+        "Lava",
+        "Magma",
+        "Asche",
+        "Krater",
+        "Rauch",
+        "Ausbruch",
+        "Gestein",
+        "Glut",
+        "Bims",
+        "Schlot"
+      ]
+    }
+  ],
+  "pictures": {
+    "Bett": "🛏️",
+    "Schirm": "☂️",
+    "Mantel": "🧥",
+    "Handschuh": "🧤",
+    "Schal": "🧣",
+    "Mütze": "🧢",
+    "Diamant": "💎",
+    "Tanne": "🌲",
+    "Baum": "🌳",
+    "Reh": "🦌",
+    "Fuchs": "🦊",
+    "Pilz": "🍄",
+    "Gras": "🌱",
+    "Klee": "☘️",
+    "Blume": "🌼",
+    "Biene": "🐝",
+    "Falter": "🦋",
+    "Welle": "🌊",
+    "Salz": "🧂",
+    "Muschel": "🐚",
+    "Wal": "🐋",
+    "Hai": "🦈",
+    "Delfin": "🐬",
+    "Qualle": "🪼",
+    "Frosch": "🐸",
+    "Ente": "🦆",
+    "Schnee": "❄️",
+    "Kamel": "🐪",
+    "Kaktus": "🌵",
+    "Skorpion": "🦂",
+    "Echse": "🦎",
+    "Papagei": "🦜",
+    "Affe": "🐒",
+    "Faultier": "🦥",
+    "Kuh": "🐄",
+    "Schwein": "🐖",
+    "Huhn": "🐔",
+    "Schaf": "🐑",
+    "Ziege": "🐐",
+    "Pferd": "🐎",
+    "Traktor": "🚜",
+    "Hund": "🐕",
+    "Katze": "🐈",
+    "Hamster": "🐹",
+    "Kaninchen": "🐇",
+    "Goldfisch": "🐠",
+    "Adler": "🦅",
+    "Eule": "🦉",
+    "Schwan": "🦢",
+    "Taube": "🕊️",
+    "Ameise": "🐜",
+    "Käfer": "🪲",
+    "Fliege": "🪰",
+    "Mücke": "🦟",
+    "Grille": "🦗",
+    "Löwe": "🦁",
+    "Tiger": "🐅",
+    "Wolf": "🐺",
+    "Bär": "🐻",
+    "Leopard": "🐆",
+    "Elefant": "🐘",
+    "Giraffe": "🦒",
+    "Zebra": "🦓",
+    "Nashorn": "🦏",
+    "Nilpferd": "🦛",
+    "Pinguin": "🐧",
+    "Robbe": "🦭",
+    "Rose": "🌹",
+    "Tulpe": "🌷",
+    "Sonnenblume": "🌻",
+    "Blatt": "🍃",
+    "Sonne": "☀️",
+    "Regen": "🌧️",
+    "Wind": "💨",
+    "Nebel": "🌫️",
+    "Blitz": "⚡",
+    "Wolke": "☁️",
+    "Nest": "🪺",
+    "Lamm": "🐑",
+    "Kürbis": "🎃",
+    "Schlitten": "🛷",
+    "Schneemann": "⛄",
+    "Skier": "🎿",
+    "Regenbogen": "🌈",
+    "Schnecke": "🐌",
+    "Schlange": "🐍",
+    "Schildkröte": "🐢",
+    "Krokodil": "🐊"
+  }
+}

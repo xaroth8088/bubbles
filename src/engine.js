@@ -1,4 +1,5 @@
-import { THEMES, PICTURES, SPECIALS, INTRO_LEVELS, themeName } from './data.js';
+import { PICTURES, SPECIALS, INTRO_LEVELS, themeName } from './data.js';
+import { getCatalog, CATALOG_VERSION } from './catalog.js';
 import { assembleThemeChain } from './nesting.js';
 
 export const SCHEMA = 1;
@@ -26,70 +27,49 @@ export function localDate(date = new Date()) {
 
 const titles = ['A little connection','Picture this','Let it thaw','Better together','Between the letters','The key to it','A little twist','A different direction','Ties that bind','A little spark','The bigger picture','Unwind a little','Little pin moments','Room for one more'];
 const canonicalSpecials = specials => [...new Set(specials.map(s=>s==='hidden'?'cryptic':s).filter(s=>SPECIALS.some(x=>x.id===s)))];
-const ambiguousPairs=[
-  {word:'Bass',themes:['Strings','Freshwater fish'],clues:['Guitar','Carp']},
-  {word:'Mouse',themes:['Computer hardware','Small mammals'],clues:['Keyboard','Shrew']},
-  {word:'Bat',themes:['Sports gear','Nocturnal animals'],clues:['Ball','Owl']},
-  {word:'Bank',themes:['At the bank','River features'],clues:['Teller','Rapids']},
-  {word:'Orange',themes:['Fruit','Warm colors'],clues:['Pear','Red']}
-];
 
-export function createPuzzle({mode = 'journey', level = 1, date = localDate(), round = 1, difficulty = 'balanced', special = null} = {}) {
+export function createPuzzle({mode = 'journey', level = 1, date = localDate(), round = 1, difficulty = 'balanced', special = null, language = 'en', packIds} = {}) {
+  const catalog=getCatalog({language,packIds}),themes=catalog.themes,pictures=catalog.pictures;
+  language=catalog.language;packIds=[...catalog.packIds].sort();
+  const catalogKey=`${language}-${hash(`${CATALOG_VERSION}:${packIds.join(',')}`).toString(36)}`;
   if (mode === 'daily') difficulty = 'balanced';
-  const seed = mode === 'daily' ? `daily-v6-${date}` : mode === 'lab' ? `lab-v6-${special}` : `${mode}-v6-${level}-${round}-${difficulty}`;
+  const baseSeed = mode === 'daily' ? `daily-v6-${date}` : mode === 'lab' ? `lab-v6-${special}` : `${mode}-v6-${level}-${round}-${difficulty}`;
+  const seed=`${baseSeed}-${catalogKey}`;
   const rng = random(seed);
   let count = mode === 'lab' ? 4 : difficulty === 'tricky' ? 17 : difficulty === 'gentle' || (mode === 'journey' && level <= 4) ? 10 : 14;
-  const maxDifficulty = mode === 'journey' && level <= 5 ? 1 : difficulty === 'gentle' ? 1 : difficulty === 'tricky' || (mode === 'journey' && level > 30) || mode === 'daily' ? 3 : 2;
+  let maxDifficulty = mode === 'journey' && level <= 5 ? 1 : difficulty === 'gentle' ? 1 : difficulty === 'tricky' || (mode === 'journey' && level > 30) || mode === 'daily' ? 3 : 2;
+  // A selected pack may contain mostly advanced themes. Widen difficulty
+  // within that pack rather than silently adding unselected vocabulary.
+  while(maxDifficulty<3&&themes.filter(t=>t.difficulty<=maxDifficulty).length<count)maxDifficulty++;
   let specials = special ? canonicalSpecials([special]) : mode === 'journey' && level === 1 ? [] : mode === 'journey' && level <= INTRO_LEVELS ? [SPECIALS.find(s => s.level === level)?.id].filter(Boolean) : shuffle(SPECIALS.map(s => s.id), rng).slice(0, level > 35 || difficulty === 'tricky' ? 3 : 2);
-  // A daily board is the same for everybody, irrespective of their preferences.
+  // Daily boards are deterministic within a language and selected catalogue.
   if (mode === 'daily') specials = [shuffle(['picture','frozen','split','cryptic','keylock','screw','backward','pinlock'], rng)[0]];
-  count=Math.min(count,Math.floor((70-specials.filter(s=>['split','linked','bonus'].includes(s)).length)/4));
+  count=Math.min(count,Math.floor((70-specials.reduce((n,s)=>n+(s==='split'?4:['linked','bonus'].includes(s)?1:0),0))/4));
   const selected = [], used = new Set(), domains = new Set();
-  if (mode === 'journey' && level === 1) {
-    for (const name of ['Trees','Baking','Fruit','Planets']) {
-      const theme = THEMES.find(t => t.name === name);
-      selected.push({...theme, words: theme.words.slice(0,4)});
-      theme.words.slice(0,4).forEach(w => used.add(w.toLowerCase())); domains.add(theme.domain);
-    }
-  }
   let chain=[];
   if(specials.includes('nested')){
     const maxDepth=mode==='lab'?2:difficulty==='tricky'?3:difficulty==='gentle'?1:2;
-    const planned=assembleThemeChain(THEMES,{rng,maxDifficulty,maxDepth,minDepth:mode==='lab'?2:rng()<.65?Math.min(2,maxDepth):1,usedWords:used,usedThemes:new Set(selected.map(t=>t.id))});
+    const planned=assembleThemeChain(themes,{rng,maxDifficulty,maxDepth,minDepth:mode==='lab'?2:rng()<.65?Math.min(2,maxDepth):1,usedWords:used,usedThemes:new Set(selected.map(t=>t.id))});
     if(planned.length){
       selected.push(planned[0]);chain=planned.slice(1);
       for(const theme of planned){[theme.name,...theme.words].forEach(w=>used.add(w.toLowerCase()));domains.add(theme.domain);}
-      count=Math.min(count,Math.floor((70-chain.length*3-specials.filter(s=>['split','linked','bonus'].includes(s)).length)/4));
+      count=Math.min(count,Math.floor((70-chain.length*3-specials.reduce((n,s)=>n+(s==='split'?4:['linked','bonus'].includes(s)?1:0),0))/4));
     }else specials=specials.filter(s=>s!=='nested');
   }
-  // Deliberately put both senses on some boards, with one pivot word and a fixed answer.
-  if(!selected.length&&mode!=='lab'&&(mode==='daily'?rng()<.35:(mode==='journey'?level>=18&&level%3===0:round%3===0))){
-    const pair=shuffle(ambiguousPairs.filter(p=>p.themes.every(name=>THEMES.find(t=>t.name===name).difficulty<=maxDifficulty)),rng)[0];
-    if(pair){
-      const sense=rng()<.5?0:1;
-      for(const i of[sense,1-sense]){
-        const theme=THEMES.find(t=>t.name===pair.themes[i]);
-        const mandatory=i===sense?[pair.word,pair.clues[i]]:[pair.clues[i]];
-        const pool=shuffle(theme.words.filter(w=>w!==pair.word&&!mandatory.includes(w)&&!used.has(w.toLowerCase())),rng);
-        const words=[...mandatory,...pool.slice(0,4-mandatory.length)];
-        selected.push({...theme,words});words.forEach(w=>used.add(w.toLowerCase()));domains.add(theme.domain);
-      }
-    }
-  }
-  const pictureCandidate = theme => theme.words.some(w => PICTURES[w]);
+  const pictureCandidate = theme => theme.words.some(w => pictures[w]);
   for (let pass = 0; pass < 2 && selected.length < count; pass++) {
-    for (const theme of shuffle(THEMES.filter(t => t.difficulty <= (mode === 'daily' ? 3 : maxDifficulty)), rng)) {
+    for (const theme of shuffle(themes.filter(t => t.difficulty <= (mode === 'daily' ? 3 : maxDifficulty)), rng)) {
       if (selected.length >= count) break;
       if (selected.some(t => t.id === theme.id) || chain.some(n=>n.name===theme.name) || (pass === 0 && domains.has(theme.domain))) continue;
       const pool = theme.words.filter(w => !used.has(w.toLowerCase()));
-      const pictures = pool.filter(w => PICTURES[w]);
+      const pictureWords = pool.filter(w => pictures[w]);
       if (pool.length < 4) continue;
-      if (specials.includes('picture') && !selected.some(pictureCandidate) && selected.length === count - 1 && !pictures.length) continue;
+      if (specials.includes('picture') && Object.keys(pictures).length && !selected.some(pictureCandidate) && selected.length === count - 1 && !pictureWords.length) continue;
       const words = shuffle(pool, rng).slice(0,4);
-      if (specials.includes('picture') && !selected.some(pictureCandidate) && !words.some(w => PICTURES[w]) && pictures.length) {
+      if (specials.includes('picture') && !selected.some(pictureCandidate) && !words.some(w => pictures[w]) && pictureWords.length) {
         // Only repair a picture-free draw, sampling the available pool rather
         // than always promoting its first mapped word. Keep the other clues.
-        words[Math.floor(rng()*words.length)] = pictures[Math.floor(rng()*pictures.length)];
+        words[Math.floor(rng()*words.length)] = pictureWords[Math.floor(rng()*pictureWords.length)];
       }
       selected.push({...theme,words}); words.forEach(w => used.add(w.toLowerCase())); domains.add(theme.domain);
     }
@@ -100,11 +80,12 @@ export function createPuzzle({mode = 'journey', level = 1, date = localDate(), r
     const parent={id:`g${groups.length}`,name:layer.name,domain:layer.domain,words:layer.words,childId:child.id};
     child.parentId=parent.id;groups.push(parent);child=parent;
   }
-  return {id:seed,seed,mode,level,date,round,difficulty,specials,groups,
+  return {id:seed,seed,language,packIds,catalogKey,mode,level,date,round,difficulty,specials,groups,
     title:mode === 'lab' ? SPECIALS.find(s => s.id === specials[0])?.name || 'Word bubbles' : mode === 'daily' ? 'A fresh little challenge' : mode === 'journey' && level <= INTRO_LEVELS ? titles[level-1] : mode === 'endless' ? 'Follow your curiosity' : ['Little discoveries','Find your flow','Room for wonder','One thing leads to another'][level%4]};
 }
 
 export function makeState(puzzle, {challenge = false, shuffleSeed = null} = {}) {
+  const pictures=getCatalog(puzzle).pictures;
   puzzle={...puzzle,specials:canonicalSpecials(puzzle.specials).filter(s=>s!=='bonus'||challenge||puzzle.mode==='lab')};
   if(shuffleSeed)puzzle={...puzzle,shuffleSeed};
   let chunks = puzzle.groups.map(group => group.words.filter(w => !(group.childId && w === puzzle.groups.find(g => g.id === group.childId).name)).map((word,i) => ({id:`${group.id}w${i}`,groupId:group.id,atoms:[{id:`${group.id}a${i}`,word}],kind:'normal'})));
@@ -124,10 +105,17 @@ export function makeState(puzzle, {challenge = false, shuffleSeed = null} = {}) 
   if (special.includes('burst')) { const b=chunks[0][2]; b.timer=9; b.kind='burst'; }
   if (special.includes('linked')) {const real=chunks[0][3];real.link='pair-a';real.kind='linked';chunks[0].push(makeDecoy(puzzle,real.link));}
   if (special.includes('split')) {
-    const b=chunks[0].find(b => !b.decoy && b.atoms[0].word.length>=5 && !b.keyColor && !b.pinCarrier) || chunks[0][0];
-    const at=chunks[0].indexOf(b),atom=b.atoms[0],cut=Math.max(1,Math.floor(atom.word.length/2));
-    chunks[0].splice(at,1,{...b,id:`${b.id}l`,atoms:[{...atom,part:0,label:atom.word.slice(0,cut)}],kind:'split'},
-      {...b,id:`${b.id}r`,atoms:[{...atom,part:1,label:atom.word.slice(cut)}],kind:'split'});
+    // Split four distinct words, spread across themes. Never inherit a decoy
+    // link or duplicate keys, pins, locks, or other one-shot decorations.
+    const eligible=(b,group,index)=>b.kind==='normal'&&!b.link&&!b.decoy&&!b.keyColor&&!b.pinCarrier&&b.atoms[0].word.length>=2&&!(special.includes('screw')&&group===1&&index<=1);
+    const pools=chunks.map((chunk,group)=>chunk.filter((b,index)=>eligible(b,group,index)).sort((a,b)=>Number(b.atoms[0].word.length>=5)-Number(a.atoms[0].word.length>=5)));
+    const chosen=[];
+    for(let i=0;chosen.length<4&&pools.some(pool=>pool[i]);i++)for(const pool of pools)if(pool[i]&&chosen.length<4)chosen.push(pool[i]);
+    for(const b of chosen){
+      const chunk=chunks.find(c=>c.includes(b)),at=chunk.indexOf(b),atom=b.atoms[0],cut=Math.max(1,Math.floor(atom.word.length/2));
+      chunk.splice(at,1,{...b,id:`${b.id}l`,atoms:[{...atom,part:0,label:atom.word.slice(0,cut)}],kind:'split'},
+        {...b,id:`${b.id}r`,atoms:[{...atom,part:1,label:atom.word.slice(cut)}],kind:'split'});
+    }
   }
   if (special.includes('screw')) {
     const lock=chunks[1][1];lock.kind='screw';lock.screwColor='violet';
@@ -146,21 +134,21 @@ export function makeState(puzzle, {challenge = false, shuffleSeed = null} = {}) 
     chunks=shuffle(chunks.map(chunk=>shuffle(chunk,rng)),rng);
   }
   const state={schema:SCHEMA,puzzle,bubbles:[],reserve:chunks,solved:[],moves:0,mistakes:0,hints:0,assists:0,
-    remaining:challenge||puzzle.mode==='lab'&&special.includes('bonus') ? puzzle.groups.length*3+Number(special.includes('split'))+7 : null,
+    remaining:challenge||puzzle.mode==='lab'&&special.includes('bonus') ? puzzle.groups.length*3+(special.includes('split')?4:0)+7 : null,
     capacity:puzzle.mode==='lab'?12:24,dealVersion:4,pressure:0,pins:0,keys:[],status:'playing',bonusCollected:0};
   refill(state,{initial:true});
   if(special.includes('picture')) {
     // Decorate after other mechanics and dealing so a picture never replaces
     // a split, timer, lock, or cryptic clue. Every suitable live clue can win.
     const ordinary=b=>b.kind==='normal'&&!isBlocked(b)&&!b.decoy&&!b.keyColor&&!b.driverColor&&!b.pinCarrier&&b.atoms.length===1&&b.atoms[0].part===undefined;
-    const eligible=b=>ordinary(b)&&PICTURES[b.atoms[0].word];
+    const eligible=b=>ordinary(b)&&pictures[b.atoms[0].word];
     const rng=random(`${puzzle.shuffleSeed||puzzle.seed}-picture`);
     const visible=state.bubbles.filter(eligible),waiting=state.reserve.flat().filter(eligible);
     // If all mapped clues carry other mechanics, leave those clues intact.
     const candidates=visible.length?visible:waiting;
     const picture=candidates[Math.floor(rng()*candidates.length)];
     if(picture){
-      picture.kind='picture';
+      picture.kind='picture';picture.picture=pictures[picture.atoms[0].word];
       if(!visible.length){
         // The lab previews every group, but its mapped word may be waiting.
         // Exchange equal-load ordinary clues within that group to show the
@@ -175,6 +163,11 @@ export function makeState(puzzle, {challenge = false, shuffleSeed = null} = {}) 
   }
   if(special.includes('bonus')) state.bubbles.push({id:'bonus',groupId:null,atoms:[],kind:'bonus'});
   return state;
+}
+
+export function linkedPartner(bubble,bubbles){
+  if(!bubble?.link||bubble.atoms.some(a=>a.part!==undefined))return null;
+  return bubbles.find(other=>other.id!==bubble.id&&other.link===bubble.link&&Boolean(other.decoy)!==Boolean(bubble.decoy)&&!other.atoms.some(a=>a.part!==undefined))||null;
 }
 
 export function isBlocked(bubble) {
@@ -194,7 +187,7 @@ export function blockedReason(b) {
 export function bubbleLoad(bubble){return bubble.atoms.reduce((sum,atom)=>sum+(atom.part===undefined?1:.5),0);}
 export function liveLoad(state){return state.bubbles.reduce((sum,b)=>sum+bubbleLoad(b),0);}
 const hardBlocked=b=>Boolean(b.ice>0||b.lockColor||b.turns>0||b.clearsNeeded>0||b.pinsNeeded>0||b.hiddenUntil>0);
-const completeAtoms=bubbles=>new Set(bubbles.flatMap(b=>b.atoms.map(a=>a.id))).size===4;
+const completeAtoms=bubbles=>{const atoms=bubbles.flatMap(b=>b.atoms),ids=new Set(atoms.map(a=>a.id));return ids.size===4&&[...ids].every(id=>{const parts=atoms.filter(a=>a.id===id);return parts.some(a=>a.part===undefined)||parts.some(a=>a.part===0)&&parts.some(a=>a.part===1);});};
 // Shells/fragments can be prepared using only the live board; hard locks cannot.
 export function clearableGroups(state){return state.puzzle.groups.filter(g=>!state.solved.some(s=>s.id===g.id)&&completeAtoms(state.bubbles.filter(b=>b.groupId===g.id))&&!state.bubbles.some(b=>b.groupId===g.id&&hardBlocked(b)));}
 
@@ -226,6 +219,8 @@ export function refill(state,{initial=false,budget=4}={}) {
     if(candidate)for(const b of candidate.waiting)take(b);
   }
   if(initial){
+    // Every split word starts with both halves visible, including practice.
+    for(const b of state.reserve.flat().filter(b=>b.atoms.some(a=>a.part!==undefined)))take(b);
     // A second full connection plus a mixture of other themes, including visible obstacles.
     const next=candidates().find(c=>!c.live.length&&c.complete&&!c.blocked&&c.cost<=allowance+.001);
     if(next)for(const b of next.waiting)take(b);
@@ -279,6 +274,12 @@ export function upgradeDealing(state){
     // fixed clue ledger intact and refresh only that foreign word if needed.
     if(b.decoy&&!decoyPool(state.puzzle).includes(b.atoms[0].word))b.atoms[0].word=makeDecoy(state.puzzle,b.link).atoms[0].word;
   }
+  // Old split decoration copied a real clue's link onto both fragments.
+  // Detach fragments without changing their words, progress, or identities.
+  for(const b of allBubbles(state))if(b.atoms.some(a=>a.part!==undefined))delete b.link;
+  const orphanDecoys=new Set(allBubbles(state).filter(b=>b.decoy&&!allBubbles(state).some(real=>!real.decoy&&real.link===b.link)).map(b=>b.id));
+  state.bubbles=state.bubbles.filter(b=>!orphanDecoys.has(b.id));
+  state.reserve=state.reserve.map(c=>c.filter(b=>!orphanDecoys.has(b.id))).filter(c=>c.length);
   // Preserve every real clue in older linked saves; add a separate decoy.
   const links=new Set(allBubbles(state).filter(b=>b.link).map(b=>b.link));
   for(const link of links){
@@ -332,8 +333,9 @@ export function upgradeDealing(state){
 }
 function allBubbles(state){return [...state.bubbles,...state.reserve.flat()];}
 function decoyPool(puzzle){
-  const excluded=new Set(puzzle.groups.flatMap(g=>[g.name,...g.words,...(THEMES.find(t=>t.name===g.name)?.words||[])]).map(w=>w.toLowerCase()));
-  return [...new Set(THEMES.flatMap(t=>t.words))].filter(w=>!excluded.has(w.toLowerCase()));
+  const themes=getCatalog(puzzle).themes;
+  const excluded=new Set(puzzle.groups.flatMap(g=>[g.name,...g.words,...(themes.find(t=>t.name===g.name)?.words||[])]).map(w=>w.toLowerCase()));
+  return [...new Set(themes.flatMap(t=>t.words))].filter(w=>!excluded.has(w.toLowerCase()));
 }
 function makeDecoy(puzzle,link){
   const pool=decoyPool(puzzle),word=pool[hash(`${puzzle.shuffleSeed||puzzle.seed}-${link}-decoy`)%pool.length];
@@ -544,7 +546,7 @@ export function bubbleText(b) {
   if(b.lockColor)return '•••';
   if(b.hiddenUntil>0)return '???';
   if(b.atoms.some(a=>a.part!==undefined))return b.atoms.map(a=>a.label).join('');
-  if(b.kind==='picture')return PICTURES[b.atoms[0].word]||b.atoms[0].word;
+  if(b.kind==='picture')return b.picture||PICTURES[b.atoms[0].word]||b.atoms[0].word;
   if(b.kind==='backward')return [...b.atoms[0].word].reverse().join('');
   return b.atoms.map(atomText).join(' · ');
 }

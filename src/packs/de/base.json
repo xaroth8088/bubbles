@@ -1,0 +1,682 @@
+{
+  "id": "base",
+  "language": "de",
+  "name": "Alltag",
+  "themes": [
+    {
+      "id": "de-base-zuhause",
+      "name": "Zuhause",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Sofa",
+        "Lampe",
+        "Teppich",
+        "Fenster",
+        "Tür",
+        "Regal",
+        "Tisch",
+        "Stuhl",
+        "Kissen",
+        "Vorhang",
+        "Zimmer",
+        "Garten",
+        "Balkon"
+      ]
+    },
+    {
+      "id": "de-base-kueche",
+      "name": "Küche",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Herd",
+        "Ofen",
+        "Spüle",
+        "Kühlschrank",
+        "Topf",
+        "Pfanne",
+        "Kelle",
+        "Sieb",
+        "Brett",
+        "Messer"
+      ]
+    },
+    {
+      "id": "de-base-bad",
+      "name": "Bad",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Dusche",
+        "Wanne",
+        "Spiegel",
+        "Seife",
+        "Handtuch",
+        "Zahnbürste",
+        "Kamm",
+        "Föhn",
+        "Waschbecken",
+        "Shampoo"
+      ]
+    },
+    {
+      "id": "de-base-schlafzimmer",
+      "name": "Schlafzimmer",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Bett",
+        "Decke",
+        "Kissen",
+        "Wecker",
+        "Schrank",
+        "Matratze",
+        "Nachttisch",
+        "Pyjama",
+        "Lampe",
+        "Hausschuhe"
+      ]
+    },
+    {
+      "id": "de-base-wohnzimmer",
+      "name": "Wohnzimmer",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Sofa",
+        "Sessel",
+        "Teppich",
+        "Fernseher",
+        "Regal",
+        "Vase",
+        "Kissen",
+        "Beistelltisch",
+        "Vorhang",
+        "Stehlampe"
+      ]
+    },
+    {
+      "id": "de-base-flur",
+      "name": "Flur",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Garderobe",
+        "Schuhregal",
+        "Schlüssel",
+        "Spiegel",
+        "Fußmatte",
+        "Jacke",
+        "Schirm",
+        "Haken",
+        "Klingel",
+        "Haustür"
+      ]
+    },
+    {
+      "id": "de-base-werkzeug",
+      "name": "Werkzeug",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Hammer",
+        "Zange",
+        "Säge",
+        "Bohrer",
+        "Feile",
+        "Schraube",
+        "Nagel",
+        "Dübel",
+        "Zollstock",
+        "Wasserwaage"
+      ]
+    },
+    {
+      "id": "de-base-putzen",
+      "name": "Putzen",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Besen",
+        "Eimer",
+        "Lappen",
+        "Schwamm",
+        "Seife",
+        "Staubsauger",
+        "Mopp",
+        "Kehrblech",
+        "Bürste",
+        "Fensterleder"
+      ]
+    },
+    {
+      "id": "de-base-waesche",
+      "name": "Wäsche",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Hemd",
+        "Socke",
+        "Handtuch",
+        "Wäschekorb",
+        "Waschmittel",
+        "Bügelbrett",
+        "Bügeleisen",
+        "Klammer",
+        "Leine",
+        "Trockner"
+      ]
+    },
+    {
+      "id": "de-base-kleidung",
+      "name": "Kleidung",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Hose",
+        "Hemd",
+        "Rock",
+        "Kleid",
+        "Jacke",
+        "Mantel",
+        "Pullover",
+        "Weste",
+        "T-Shirt",
+        "Bluse"
+      ]
+    },
+    {
+      "id": "de-base-schuhe",
+      "name": "Schuhe",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Stiefel",
+        "Sandale",
+        "Sneaker",
+        "Pumps",
+        "Hausschuh",
+        "Slipper",
+        "Schnürsenkel",
+        "Sohle",
+        "Absatz",
+        "Schuhcreme"
+      ]
+    },
+    {
+      "id": "de-base-winterzeug",
+      "name": "Winterzeug",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Schal",
+        "Mütze",
+        "Handschuh",
+        "Mantel",
+        "Stiefel",
+        "Strumpfhose",
+        "Ohrwärmer",
+        "Wollsocke",
+        "Anorak",
+        "Stirnband"
+      ]
+    },
+    {
+      "id": "de-base-schmuck",
+      "name": "Schmuck",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Ring",
+        "Kette",
+        "Armband",
+        "Ohrring",
+        "Brosche",
+        "Anhänger",
+        "Perle",
+        "Diamant",
+        "Gold",
+        "Silber"
+      ]
+    },
+    {
+      "id": "de-base-schultasche",
+      "name": "Schultasche",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Heft",
+        "Buch",
+        "Stift",
+        "Radierer",
+        "Lineal",
+        "Spitzer",
+        "Mäppchen",
+        "Geodreieck",
+        "Brotdose",
+        "Trinkflasche"
+      ]
+    },
+    {
+      "id": "de-base-buero",
+      "name": "Büro",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Schreibtisch",
+        "Tastatur",
+        "Maus",
+        "Drucker",
+        "Ordner",
+        "Locher",
+        "Hefter",
+        "Kalender",
+        "Notizblock",
+        "Monitor"
+      ]
+    },
+    {
+      "id": "de-base-post",
+      "name": "Post",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Brief",
+        "Marke",
+        "Paket",
+        "Umschlag",
+        "Postkarte",
+        "Adresse",
+        "Absender",
+        "Stempel",
+        "Briefkasten",
+        "Päckchen"
+      ]
+    },
+    {
+      "id": "de-base-einkaufen",
+      "name": "Einkaufen",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Korb",
+        "Wagen",
+        "Kasse",
+        "Bon",
+        "Regal",
+        "Angebot",
+        "Tüte",
+        "Geldbörse",
+        "Karte",
+        "Kleingeld"
+      ]
+    },
+    {
+      "id": "de-base-geburtstag",
+      "name": "Geburtstag",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Kerze",
+        "Kuchen",
+        "Geschenk",
+        "Luftballon",
+        "Karte",
+        "Gäste",
+        "Wunsch",
+        "Party",
+        "Konfetti",
+        "Girlande"
+      ]
+    },
+    {
+      "id": "de-base-weihnachten",
+      "name": "Weihnachten",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Tanne",
+        "Stern",
+        "Kerze",
+        "Kugel",
+        "Lametta",
+        "Krippe",
+        "Plätzchen",
+        "Geschenk",
+        "Advent",
+        "Engel"
+      ]
+    },
+    {
+      "id": "de-base-ostern",
+      "name": "Ostern",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Ei",
+        "Hase",
+        "Korb",
+        "Nest",
+        "Küken",
+        "Schokolade",
+        "Farbe",
+        "Suchen",
+        "Frühling",
+        "Osterglocke"
+      ]
+    },
+    {
+      "id": "de-base-feiern",
+      "name": "Feiern",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Gäste",
+        "Musik",
+        "Tanz",
+        "Buffet",
+        "Lichter",
+        "Sekt",
+        "Einladung",
+        "Konfetti",
+        "Partyhut",
+        "Girlande"
+      ]
+    },
+    {
+      "id": "de-base-familie",
+      "name": "Familie",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Mutter",
+        "Vater",
+        "Bruder",
+        "Schwester",
+        "Oma",
+        "Opa",
+        "Tante",
+        "Onkel",
+        "Cousin",
+        "Cousine"
+      ]
+    },
+    {
+      "id": "de-base-gefuehle",
+      "name": "Gefühle",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Freude",
+        "Trauer",
+        "Angst",
+        "Wut",
+        "Neid",
+        "Liebe",
+        "Stolz",
+        "Scham",
+        "Hoffnung",
+        "Staunen"
+      ]
+    },
+    {
+      "id": "de-base-koerper",
+      "name": "Körper",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Kopf",
+        "Arm",
+        "Bein",
+        "Hand",
+        "Fuß",
+        "Nase",
+        "Ohr",
+        "Auge",
+        "Mund",
+        "Rücken"
+      ]
+    },
+    {
+      "id": "de-base-gesicht",
+      "name": "Gesicht",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Auge",
+        "Nase",
+        "Mund",
+        "Stirn",
+        "Kinn",
+        "Wange",
+        "Braue",
+        "Lippe",
+        "Zahn",
+        "Zunge"
+      ]
+    },
+    {
+      "id": "de-base-tageslauf",
+      "name": "Tageslauf",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Aufstehen",
+        "Frühstück",
+        "Arbeit",
+        "Pause",
+        "Heimweg",
+        "Abendessen",
+        "Zähneputzen",
+        "Schlafen",
+        "Duschen",
+        "Anziehen"
+      ]
+    },
+    {
+      "id": "de-base-berufe",
+      "name": "Berufe",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Bäcker",
+        "Koch",
+        "Lehrer",
+        "Arzt",
+        "Pflegekraft",
+        "Polizistin",
+        "Gärtner",
+        "Pilot",
+        "Maler",
+        "Friseurin"
+      ]
+    },
+    {
+      "id": "de-base-naehen",
+      "name": "Nähen",
+      "domain": "base",
+      "difficulty": 2,
+      "words": [
+        "Nadel",
+        "Faden",
+        "Stoff",
+        "Schere",
+        "Knopf",
+        "Naht",
+        "Saum",
+        "Reißverschluss",
+        "Maßband",
+        "Fingerhut"
+      ]
+    },
+    {
+      "id": "de-base-basteln",
+      "name": "Basteln",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Papier",
+        "Kleber",
+        "Schere",
+        "Pappe",
+        "Perle",
+        "Filz",
+        "Knete",
+        "Draht",
+        "Stempel",
+        "Wolle"
+      ]
+    },
+    {
+      "id": "de-base-gartenhaus",
+      "name": "Gartenhaus",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Spaten",
+        "Rechen",
+        "Harke",
+        "Schlauch",
+        "Gießkanne",
+        "Erde",
+        "Topf",
+        "Saatgut",
+        "Schubkarre",
+        "Heckenschere"
+      ]
+    },
+    {
+      "id": "de-base-umzug",
+      "name": "Umzug",
+      "domain": "base",
+      "difficulty": 2,
+      "words": [
+        "Karton",
+        "Klebeband",
+        "Transporter",
+        "Helfer",
+        "Möbel",
+        "Schlüssel",
+        "Decke",
+        "Sackkarre",
+        "Etikett",
+        "Treppenhaus"
+      ]
+    },
+    {
+      "id": "de-base-zeit",
+      "name": "Zeit",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Sekunde",
+        "Minute",
+        "Stunde",
+        "Tag",
+        "Woche",
+        "Monat",
+        "Jahr",
+        "Wecker",
+        "Kalender",
+        "Uhr"
+      ]
+    },
+    {
+      "id": "de-base-zimmer",
+      "name": "Zimmer",
+      "domain": "base",
+      "difficulty": 1,
+      "words": [
+        "Küche",
+        "Bad",
+        "Schlafzimmer",
+        "Wohnzimmer",
+        "Flur",
+        "Kinderzimmer",
+        "Esszimmer",
+        "Gästezimmer",
+        "Arbeitszimmer",
+        "Keller"
+      ]
+    }
+  ],
+  "pictures": {
+    "Sofa": "🛋️",
+    "Lampe": "💡",
+    "Tür": "🚪",
+    "Stuhl": "🪑",
+    "Bett": "🛏️",
+    "Wecker": "⏰",
+    "Dusche": "🚿",
+    "Wanne": "🛁",
+    "Spiegel": "🪞",
+    "Seife": "🧼",
+    "Zahnbürste": "🪥",
+    "Schwamm": "🧽",
+    "Besen": "🧹",
+    "Eimer": "🪣",
+    "Schlüssel": "🔑",
+    "Schirm": "☂️",
+    "Hammer": "🔨",
+    "Säge": "🪚",
+    "Schraube": "🔩",
+    "Zange": "🛠️",
+    "Hose": "👖",
+    "Kleid": "👗",
+    "Hemd": "👔",
+    "Mantel": "🧥",
+    "Handschuh": "🧤",
+    "Schal": "🧣",
+    "Mütze": "🧢",
+    "Stiefel": "👢",
+    "Sandale": "🩴",
+    "Sneaker": "👟",
+    "Pumps": "👠",
+    "Ring": "💍",
+    "Diamant": "💎",
+    "Heft": "📓",
+    "Buch": "📖",
+    "Stift": "🖊️",
+    "Lineal": "📏",
+    "Geodreieck": "📐",
+    "Drucker": "🖨️",
+    "Kalender": "📅",
+    "Brief": "✉️",
+    "Paket": "📦",
+    "Briefkasten": "📮",
+    "Korb": "🧺",
+    "Geldbörse": "👛",
+    "Kerze": "🕯️",
+    "Kuchen": "🍰",
+    "Geschenk": "🎁",
+    "Luftballon": "🎈",
+    "Konfetti": "🎊",
+    "Tanne": "🌲",
+    "Stern": "⭐",
+    "Engel": "👼",
+    "Ei": "🥚",
+    "Hase": "🐇",
+    "Küken": "🐤",
+    "Schokolade": "🍫",
+    "Tanz": "💃",
+    "Sekt": "🥂",
+    "Hand": "✋",
+    "Fuß": "🦶",
+    "Nase": "👃",
+    "Ohr": "👂",
+    "Auge": "👁️",
+    "Mund": "👄",
+    "Zahn": "🦷",
+    "Zunge": "👅",
+    "Nadel": "🪡",
+    "Faden": "🧵",
+    "Schere": "✂️",
+    "Wolle": "🧶",
+    "Uhr": "🕰️",
+    "Nest": "🪺",
+    "Messer": "🔪",
+    "Tastatur": "⌨️",
+    "Ordner": "📁"
+  }
+}

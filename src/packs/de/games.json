@@ -1,0 +1,511 @@
+{
+  "id": "games",
+  "language": "de",
+  "name": "Spiele",
+  "themes": [
+    {
+      "id": "de-games-brettspiele",
+      "name": "Brettspiele",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Schach",
+        "Dame",
+        "Mühle",
+        "Halma",
+        "Go",
+        "Backgammon",
+        "Reversi",
+        "Ludo"
+      ]
+    },
+    {
+      "id": "de-games-kartenspiele",
+      "name": "Kartenspiele",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Skat",
+        "Uno",
+        "Bridge",
+        "Mau-Mau",
+        "Rommé",
+        "Canasta",
+        "Poker",
+        "Quartett"
+      ]
+    },
+    {
+      "id": "de-games-auf-dem-schachbrett",
+      "name": "Schach",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "König",
+        "Dame",
+        "Turm",
+        "Läufer",
+        "Springer",
+        "Bauer",
+        "Weiß",
+        "Schwarz"
+      ]
+    },
+    {
+      "id": "de-games-wurfelspiele",
+      "name": "Würfelspiele",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Kniffel",
+        "Pasch",
+        "Augenzahl",
+        "Würfelbecher",
+        "Sechser",
+        "Wurf",
+        "Knobelrunde",
+        "Würfelblock"
+      ]
+    },
+    {
+      "id": "de-games-spielmaterial",
+      "name": "Spielmaterial",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Spielbrett",
+        "Spielstein",
+        "Karte",
+        "Würfel",
+        "Sanduhr",
+        "Figur",
+        "Plättchen",
+        "Spielgeld"
+      ]
+    },
+    {
+      "id": "de-games-spielregeln",
+      "name": "Spielregeln",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Start",
+        "Ziel",
+        "Zug",
+        "Runde",
+        "Reihenfolge",
+        "Strafpunkt",
+        "Bonus",
+        "Sieg"
+      ]
+    },
+    {
+      "id": "de-games-verstecken",
+      "name": "Verstecken",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Versteck",
+        "Sucher",
+        "Zählen",
+        "Abklatschen",
+        "Entdecken",
+        "Verbergen",
+        "Augen zu",
+        "Baum"
+      ]
+    },
+    {
+      "id": "de-games-fangen",
+      "name": "Fangen",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Fänger",
+        "Wegrennen",
+        "Abschlagen",
+        "Ausweichen",
+        "Verfolgen",
+        "Fangspiel",
+        "Frei",
+        "Abstand"
+      ]
+    },
+    {
+      "id": "de-games-ballspiele",
+      "name": "Ballspiele",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Völkerball",
+        "Brennball",
+        "Zweifelderball",
+        "Abwerfen",
+        "Zuspiel",
+        "Fangen",
+        "Prellen",
+        "Werfen"
+      ]
+    },
+    {
+      "id": "de-games-spielplatz",
+      "name": "Spielplatz",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Schaukel",
+        "Rutsche",
+        "Wippe",
+        "Klettergerüst",
+        "Sandkasten",
+        "Karussell",
+        "Reck",
+        "Seilbahn"
+      ]
+    },
+    {
+      "id": "de-games-sandspiele",
+      "name": "Sandspiele",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Förmchen",
+        "Schaufel",
+        "Eimer",
+        "Sandburg",
+        "Graben",
+        "Sieb",
+        "Schloss",
+        "Matsch"
+      ]
+    },
+    {
+      "id": "de-games-seifenblasen",
+      "name": "Seifenblasen",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Pusten",
+        "Seifenlauge",
+        "Blase",
+        "Ring",
+        "Schimmer",
+        "Platzen",
+        "Schweben",
+        "Schaum"
+      ]
+    },
+    {
+      "id": "de-games-puzzle",
+      "name": "Puzzle",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Puzzleteil",
+        "Randstück",
+        "Eckstück",
+        "Motiv",
+        "Zusammensetzen",
+        "Sortieren",
+        "Passform",
+        "Bild"
+      ]
+    },
+    {
+      "id": "de-games-memory",
+      "name": "Memory",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Kartenpaar",
+        "Aufdecken",
+        "Merken",
+        "Umdrehen",
+        "Gedächtnis",
+        "Bildkarte",
+        "Gleiche Bilder",
+        "Paar"
+      ]
+    },
+    {
+      "id": "de-games-ratespiele",
+      "name": "Ratespiele",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Hinweis",
+        "Antwort",
+        "Rätsel",
+        "Erraten",
+        "Frage",
+        "Lösung",
+        "Tipp",
+        "Geheimnis"
+      ]
+    },
+    {
+      "id": "de-games-wortspiele",
+      "name": "Wortspiele",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Wortkette",
+        "Reim",
+        "Silbe",
+        "Anfangsbuchstabe",
+        "Kreuzworträtsel",
+        "Galgenmännchen",
+        "Buchstabensalat",
+        "Wortsuche"
+      ]
+    },
+    {
+      "id": "de-games-partyspiele",
+      "name": "Partyspiele",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Flaschendrehen",
+        "Pantomime",
+        "Stille Post",
+        "Wer bin ich",
+        "Montagsmaler",
+        "Reise nach Jerusalem",
+        "Tabu",
+        "Activity"
+      ]
+    },
+    {
+      "id": "de-games-draussen-spielen",
+      "name": "Draußen spielen",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Hüpfkästchen",
+        "Gummitwist",
+        "Seilspringen",
+        "Drachensteigen",
+        "Kreide",
+        "Rollreifen",
+        "Stelzen",
+        "Sackhüpfen"
+      ]
+    },
+    {
+      "id": "de-games-spielzeug",
+      "name": "Spielzeug",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Puppe",
+        "Kreisel",
+        "Jo-Jo",
+        "Murmel",
+        "Teddybär",
+        "Bauklotz",
+        "Spielzeugauto",
+        "Eisenbahn"
+      ]
+    },
+    {
+      "id": "de-games-gewinnen-und-verlieren",
+      "name": "Spielausgang",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Sieger",
+        "Verlierer",
+        "Unentschieden",
+        "Punktestand",
+        "Endrunde",
+        "Revanche",
+        "Glück",
+        "Pech"
+      ]
+    },
+    {
+      "id": "de-games-monopoly",
+      "name": "Monopoly",
+      "domain": "games",
+      "difficulty": 2,
+      "words": [
+        "Schlossallee",
+        "Badstraße",
+        "Los",
+        "Gefängnis",
+        "Ereigniskarte",
+        "Gemeinschaftsfeld",
+        "Bahnhof",
+        "Hotel"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-games-catan",
+      "name": "Catan",
+      "domain": "games",
+      "difficulty": 2,
+      "words": [
+        "Holz",
+        "Lehm",
+        "Wolle",
+        "Getreide",
+        "Erz",
+        "Räuber",
+        "Siedlung",
+        "Handelsstraße"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-games-cluedo",
+      "name": "Cluedo",
+      "domain": "games",
+      "difficulty": 2,
+      "words": [
+        "Tatort",
+        "Tatwaffe",
+        "Verdächtiger",
+        "Salon",
+        "Bibliothek",
+        "Dolch",
+        "Kerzenleuchter",
+        "Geheimgang"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-games-scrabble",
+      "name": "Scrabble",
+      "domain": "games",
+      "difficulty": 2,
+      "words": [
+        "Buchstabenstein",
+        "Wortwert",
+        "Doppelwort",
+        "Dreifachwort",
+        "Joker",
+        "Steinhalter",
+        "Wörterbuch",
+        "Buchstabenwert"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-games-carcassonne",
+      "name": "Carcassonne",
+      "domain": "games",
+      "difficulty": 2,
+      "words": [
+        "Landschaftsplättchen",
+        "Stadt",
+        "Kloster",
+        "Wiese",
+        "Wegelagerer",
+        "Ritter",
+        "Bauer",
+        "Meeple"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-games-skatkarten",
+      "name": "Skatkarten",
+      "domain": "games",
+      "difficulty": 2,
+      "words": [
+        "Kreuz",
+        "Pik",
+        "Herz",
+        "Karo",
+        "Ass",
+        "Zehn",
+        "Bube",
+        "König"
+      ]
+    },
+    {
+      "id": "de-games-pokerbegriffe",
+      "name": "Pokerbegriffe",
+      "domain": "games",
+      "difficulty": 2,
+      "words": [
+        "Bluff",
+        "All-in",
+        "Flush",
+        "Straight",
+        "Full House",
+        "Chips",
+        "Raise",
+        "Call"
+      ]
+    },
+    {
+      "id": "de-games-boule",
+      "name": "Boule",
+      "domain": "games",
+      "difficulty": 2,
+      "words": [
+        "Zielkugel",
+        "Metallkugel",
+        "Wurfkreis",
+        "Kiesplatz",
+        "Legen",
+        "Schießen",
+        "Abstand",
+        "Messen"
+      ]
+    },
+    {
+      "id": "de-games-pen-and-paper",
+      "name": "Pen-and-Paper",
+      "domain": "games",
+      "difficulty": 2,
+      "words": [
+        "Spielleiter",
+        "Charakterbogen",
+        "Abenteuer",
+        "Zauber",
+        "Inventar",
+        "Quest",
+        "Würfelprobe",
+        "Erfahrungspunkt"
+      ]
+    },
+    {
+      "id": "de-games-escape-room",
+      "name": "Escape-Room",
+      "domain": "games",
+      "difficulty": 2,
+      "words": [
+        "Zahlenschloss",
+        "Schlüssel",
+        "Code",
+        "Geheimfach",
+        "Zeitlimit",
+        "Spur",
+        "Entschlüsseln",
+        "Ausgang"
+      ]
+    }
+  ],
+  "pictures": {
+    "Würfel": "🎲",
+    "Karte": "🃏",
+    "König": "🤴",
+    "Dame": "👸",
+    "Teddybär": "🧸",
+    "Spielzeugauto": "🚗",
+    "Eisenbahn": "🚂",
+    "Schlüssel": "🔑",
+    "Schloss": "🏰",
+    "Sandburg": "🏖️",
+    "Sieg": "🏆",
+    "Seilbahn": "🚡",
+    "Drachensteigen": "🪁",
+    "Zauber": "🪄",
+    "Holz": "🪵",
+    "Wolle": "🧶",
+    "Getreide": "🌾"
+  }
+}

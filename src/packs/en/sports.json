@@ -1,0 +1,1013 @@
+{
+  "id": "sports",
+  "language": "en",
+  "name": "Sports",
+  "themes": [
+    {
+      "id": "theme-132",
+      "name": "Ball sports",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Soccer",
+        "Basketball",
+        "Volleyball",
+        "Baseball",
+        "Tennis",
+        "Cricket",
+        "Rugby",
+        "Handball",
+        "Softball",
+        "Football",
+        "Bowling"
+      ]
+    },
+    {
+      "id": "theme-133",
+      "name": "Winter sports",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Skiing",
+        "Snowboarding",
+        "Curling",
+        "Bobsled",
+        "Ice hockey",
+        "Figure skating",
+        "Luge",
+        "Biathlon",
+        "Skating"
+      ]
+    },
+    {
+      "id": "theme-134",
+      "name": "Athletics events",
+      "domain": "sport",
+      "difficulty": 2,
+      "words": [
+        "Sprint",
+        "Hurdles",
+        "Relay",
+        "Marathon",
+        "Long jump",
+        "High jump",
+        "Pole vault",
+        "Steeplechase"
+      ]
+    },
+    {
+      "id": "theme-135",
+      "name": "Water sports",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Swimming",
+        "Surfing",
+        "Rowing",
+        "Kayaking",
+        "Diving",
+        "Sailing",
+        "Water polo",
+        "Windsurfing"
+      ]
+    },
+    {
+      "id": "theme-136",
+      "name": "Racket sports",
+      "domain": "sport",
+      "difficulty": 2,
+      "words": [
+        "Tennis",
+        "Badminton",
+        "Squash",
+        "Table tennis",
+        "Pickleball",
+        "Padel",
+        "Racquetball",
+        "Real tennis"
+      ]
+    },
+    {
+      "id": "theme-137",
+      "name": "Gym equipment",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Dumbbell",
+        "Barbell",
+        "Treadmill",
+        "Elliptical",
+        "Kettlebell",
+        "Resistance band",
+        "Bench press",
+        "Rowing machine"
+      ]
+    },
+    {
+      "id": "theme-138",
+      "name": "Basketball terms",
+      "domain": "sport",
+      "difficulty": 2,
+      "words": [
+        "Dribble",
+        "Dunk",
+        "Rebound",
+        "Assist",
+        "Free throw",
+        "Three-pointer",
+        "Layup",
+        "Jump ball"
+      ]
+    },
+    {
+      "id": "theme-139",
+      "name": "Soccer terms",
+      "domain": "sport",
+      "difficulty": 2,
+      "words": [
+        "Penalty",
+        "Corner",
+        "Offside",
+        "Goalkeeper",
+        "Striker",
+        "Free kick",
+        "Header",
+        "Throw-in"
+      ]
+    },
+    {
+      "id": "theme-140",
+      "name": "Golf",
+      "domain": "sport",
+      "difficulty": 2,
+      "words": [
+        "Birdie",
+        "Eagle",
+        "Bogey",
+        "Par",
+        "Fairway",
+        "Putter",
+        "Tee",
+        "Bunker"
+      ]
+    },
+    {
+      "id": "theme-141",
+      "name": "Baseball positions",
+      "domain": "sport",
+      "difficulty": 2,
+      "words": [
+        "Pitcher",
+        "Catcher",
+        "Shortstop",
+        "First base",
+        "Second base",
+        "Third base",
+        "Left field",
+        "Center field",
+        "Right field"
+      ]
+    },
+    {
+      "id": "theme-142",
+      "name": "Tennis scoring",
+      "domain": "sport",
+      "difficulty": 2,
+      "words": [
+        "Love",
+        "Deuce",
+        "Advantage",
+        "Set",
+        "Match",
+        "Tiebreak",
+        "Ace",
+        "Break point"
+      ]
+    },
+    {
+      "id": "theme-143",
+      "name": "Swimming strokes",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Freestyle",
+        "Backstroke",
+        "Breaststroke",
+        "Butterfly"
+      ]
+    },
+    {
+      "id": "theme-144",
+      "name": "Martial arts",
+      "domain": "sport",
+      "difficulty": 2,
+      "words": [
+        "Karate",
+        "Judo",
+        "Taekwondo",
+        "Aikido",
+        "Kung fu",
+        "Kendo",
+        "Jujitsu",
+        "Capoeira"
+      ]
+    },
+    {
+      "id": "theme-145",
+      "name": "Yoga poses",
+      "domain": "sport",
+      "difficulty": 2,
+      "words": [
+        "Mountain",
+        "Tree",
+        "Cobra",
+        "Warrior",
+        "Triangle",
+        "Child",
+        "Bridge",
+        "Downward dog"
+      ]
+    },
+    {
+      "id": "theme-146",
+      "name": "Cycling gear",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Helmet",
+        "Pedal",
+        "Chain",
+        "Saddle",
+        "Handlebar",
+        "Spoke",
+        "Derailleur",
+        "Pump"
+      ]
+    },
+    {
+      "id": "theme-147",
+      "name": "Field events",
+      "domain": "sport",
+      "difficulty": 2,
+      "words": [
+        "Discus",
+        "Javelin",
+        "Shot put",
+        "Hammer",
+        "Long jump",
+        "Triple jump",
+        "High jump",
+        "Pole vault"
+      ]
+    },
+    {
+      "id": "theme-289",
+      "name": "Pitch",
+      "domain": "sport",
+      "difficulty": 2,
+      "words": [
+        "Fastball",
+        "Curveball",
+        "Slider",
+        "Sinker",
+        "Cutter",
+        "Changeup",
+        "Splitter",
+        "Knuckleball"
+      ]
+    },
+    {
+      "id": "theme-291",
+      "name": "Bows",
+      "domain": "sport",
+      "difficulty": 2,
+      "words": [
+        "Recurve",
+        "Longbow",
+        "Compound",
+        "Crossbow"
+      ]
+    },
+    {
+      "id": "theme-292",
+      "name": "Cricket",
+      "domain": "sport",
+      "difficulty": 2,
+      "words": [
+        "Wicket",
+        "Innings",
+        "Bowler",
+        "Crease",
+        "Stump",
+        "Boundary",
+        "Over",
+        "Leg spin"
+      ]
+    },
+    {
+      "id": "theme-296",
+      "name": "Sports gear",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Bat",
+        "Ball",
+        "Net",
+        "Racket",
+        "Stick",
+        "Glove",
+        "Helmet",
+        "Pad",
+        "Frisbee",
+        "Boomerang",
+        "Skis",
+        "Sled",
+        "Skateboard",
+        "Skate",
+        "Goggles",
+        "Snorkel",
+        "Bow",
+        "Gi"
+      ]
+    },
+    {
+      "id": "theme-478",
+      "name": "Sailing",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Sail",
+        "Mast",
+        "Boom",
+        "Rudder",
+        "Keel",
+        "Rope",
+        "Wind",
+        "Boat",
+        "Port",
+        "Starboard",
+        "Anchor",
+        "Tack"
+      ]
+    },
+    {
+      "id": "theme-479",
+      "name": "Fishing",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Rod",
+        "Reel",
+        "Line",
+        "Hook",
+        "Bait",
+        "Float",
+        "Net",
+        "Boat",
+        "Lure",
+        "Cast",
+        "Trout",
+        "Bass",
+        "Carp",
+        "Freshwater fish"
+      ]
+    },
+    {
+      "id": "theme-480",
+      "name": "Hiking",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Trail",
+        "Boots",
+        "Backpack",
+        "Map",
+        "Compass",
+        "Water bottle",
+        "Walking stick",
+        "Mountain",
+        "Forest",
+        "View",
+        "Camp",
+        "Blister"
+      ]
+    },
+    {
+      "id": "theme-553",
+      "name": "Sports",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Basketball",
+        "Soccer",
+        "Baseball",
+        "Tennis",
+        "Golf",
+        "Swimming",
+        "Cricket",
+        "Rugby",
+        "Cycling",
+        "Boxing",
+        "Hockey",
+        "Volleyball",
+        "Gymnastics",
+        "Badminton",
+        "Archery",
+        "Rowing",
+        "Climbing",
+        "Running",
+        "Table tennis",
+        "Horse riding",
+        "Skating"
+      ]
+    },
+    {
+      "id": "theme-554",
+      "name": "Soccer",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Ball",
+        "Goal",
+        "Net",
+        "Pitch",
+        "Goalkeeper",
+        "Striker",
+        "Penalty",
+        "Corner",
+        "Offside",
+        "Header",
+        "Referee",
+        "Free kick"
+      ]
+    },
+    {
+      "id": "theme-555",
+      "name": "Basketball",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Hoop",
+        "Ball",
+        "Backboard",
+        "Dribble",
+        "Dunk",
+        "Rebound",
+        "Assist",
+        "Free throw",
+        "Layup",
+        "Court",
+        "Referee",
+        "Three-pointer"
+      ]
+    },
+    {
+      "id": "theme-556",
+      "name": "Baseball",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Bat",
+        "Ball",
+        "Glove",
+        "Pitcher",
+        "Catcher",
+        "Home run",
+        "Strike",
+        "Base",
+        "Dugout",
+        "Diamond",
+        "Inning",
+        "Shortstop"
+      ]
+    },
+    {
+      "id": "theme-557",
+      "name": "Tennis",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Racket",
+        "Ball",
+        "Net",
+        "Court",
+        "Serve",
+        "Ace",
+        "Deuce",
+        "Love",
+        "Set",
+        "Match",
+        "Tiebreak",
+        "Volley"
+      ]
+    },
+    {
+      "id": "theme-558",
+      "name": "Bowling",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Ball",
+        "Pin",
+        "Lane",
+        "Strike",
+        "Spare",
+        "Gutter",
+        "Shoe",
+        "Frame",
+        "Score",
+        "Tenpin"
+      ]
+    },
+    {
+      "id": "theme-559",
+      "name": "Boxing",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Glove",
+        "Ring",
+        "Punch",
+        "Jab",
+        "Hook",
+        "Uppercut",
+        "Round",
+        "Knockout",
+        "Referee",
+        "Corner",
+        "Bell",
+        "Mouthguard"
+      ]
+    },
+    {
+      "id": "theme-560",
+      "name": "Swimming",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Pool",
+        "Water",
+        "Goggles",
+        "Swimsuit",
+        "Freestyle",
+        "Backstroke",
+        "Breaststroke",
+        "Butterfly",
+        "Lane",
+        "Diving board",
+        "Lap",
+        "Float"
+      ]
+    },
+    {
+      "id": "theme-561",
+      "name": "Surfing",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Wave",
+        "Board",
+        "Beach",
+        "Wetsuit",
+        "Leash",
+        "Paddle",
+        "Wax",
+        "Break",
+        "Swell",
+        "Fin",
+        "Barrel",
+        "Surf"
+      ]
+    },
+    {
+      "id": "theme-562",
+      "name": "Skateboarding",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Deck",
+        "Wheel",
+        "Truck",
+        "Grip tape",
+        "Ollie",
+        "Kickflip",
+        "Ramp",
+        "Half-pipe",
+        "Helmet",
+        "Skatepark"
+      ]
+    },
+    {
+      "id": "theme-563",
+      "name": "Skiing",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Ski",
+        "Pole",
+        "Boot",
+        "Slope",
+        "Lift",
+        "Snow",
+        "Goggles",
+        "Helmet",
+        "Piste",
+        "Slalom",
+        "Downhill",
+        "Chalet"
+      ]
+    },
+    {
+      "id": "theme-564",
+      "name": "Ice hockey",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Puck",
+        "Stick",
+        "Skate",
+        "Rink",
+        "Goal",
+        "Goalie",
+        "Helmet",
+        "Pad",
+        "Face-off",
+        "Penalty",
+        "Ice",
+        "Referee"
+      ]
+    },
+    {
+      "id": "theme-565",
+      "name": "American football",
+      "domain": "sport",
+      "difficulty": 2,
+      "words": [
+        "Quarterback",
+        "Touchdown",
+        "Field goal",
+        "Helmet",
+        "End zone",
+        "Linebacker",
+        "Running back",
+        "Receiver",
+        "Pass",
+        "Tackle"
+      ]
+    },
+    {
+      "id": "theme-566",
+      "name": "Athletics",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Sprint",
+        "Relay",
+        "Hurdles",
+        "Marathon",
+        "Long jump",
+        "High jump",
+        "Pole vault",
+        "Javelin",
+        "Discus",
+        "Shot put",
+        "Medal",
+        "Trophy",
+        "Running"
+      ]
+    },
+    {
+      "id": "theme-567",
+      "name": "Exercise",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Walking",
+        "Running",
+        "Swimming",
+        "Cycling",
+        "Stretching",
+        "Yoga",
+        "Push-up",
+        "Squat",
+        "Plank",
+        "Sit-up",
+        "Jumping jack",
+        "Workout",
+        "Weightlifting",
+        "Cartwheel"
+      ]
+    },
+    {
+      "id": "theme-568",
+      "name": "Football gear",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Ball",
+        "Boots",
+        "Shin guard",
+        "Jersey",
+        "Shorts",
+        "Gloves",
+        "Whistle",
+        "Net"
+      ]
+    },
+    {
+      "id": "theme-876",
+      "name": "Balancing",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Beam",
+        "Tightrope",
+        "Unicycle",
+        "Stilt",
+        "Seesaw",
+        "Scale",
+        "One foot",
+        "Center of gravity",
+        "Steady",
+        "Coordination",
+        "Posture",
+        "Equilibrium"
+      ]
+    },
+    {
+      "id": "theme-877",
+      "name": "Gymnastics",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Beam",
+        "Vault",
+        "Floor",
+        "Uneven bars",
+        "Rings",
+        "Pommel horse",
+        "Mat",
+        "Leotard",
+        "Cartwheel",
+        "Handstand",
+        "Somersault",
+        "Split"
+      ]
+    },
+    {
+      "id": "theme-878",
+      "name": "Volleyball",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Ball",
+        "Net",
+        "Court",
+        "Serve",
+        "Spike",
+        "Block",
+        "Set",
+        "Dig",
+        "Pass",
+        "Team",
+        "Rotation",
+        "Beach"
+      ]
+    },
+    {
+      "id": "theme-879",
+      "name": "Badminton",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Racket",
+        "Shuttlecock",
+        "Net",
+        "Court",
+        "Serve",
+        "Smash",
+        "Drop shot",
+        "Rally",
+        "Doubles",
+        "Singles",
+        "Backhand",
+        "Forehand"
+      ]
+    },
+    {
+      "id": "theme-880",
+      "name": "Archery",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Bow",
+        "Arrow",
+        "Target",
+        "Bullseye",
+        "Quiver",
+        "String",
+        "Draw",
+        "Aim",
+        "Release",
+        "Arm guard",
+        "Recurve",
+        "Longbow"
+      ]
+    },
+    {
+      "id": "theme-881",
+      "name": "Rowing",
+      "domain": "sport",
+      "difficulty": 2,
+      "words": [
+        "Boat",
+        "Oar",
+        "Crew",
+        "Coxswain",
+        "Stroke",
+        "Rowlock",
+        "Seat",
+        "River",
+        "Regatta",
+        "Finish line",
+        "Scull",
+        "Training"
+      ]
+    },
+    {
+      "id": "theme-882",
+      "name": "Climbing",
+      "domain": "sport",
+      "difficulty": 2,
+      "words": [
+        "Rope",
+        "Harness",
+        "Carabiner",
+        "Helmet",
+        "Chalk",
+        "Cliff",
+        "Handhold",
+        "Foothold",
+        "Belay",
+        "Bouldering",
+        "Wall",
+        "Summit"
+      ]
+    },
+    {
+      "id": "theme-883",
+      "name": "Running",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Shoes",
+        "Track",
+        "Trail",
+        "Stride",
+        "Pace",
+        "Jog",
+        "Sprint",
+        "Marathon",
+        "Relay",
+        "Finish line",
+        "Stopwatch",
+        "Warm-up"
+      ]
+    },
+    {
+      "id": "theme-884",
+      "name": "Table tennis",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Paddle",
+        "Ball",
+        "Table",
+        "Net",
+        "Serve",
+        "Spin",
+        "Rally",
+        "Smash",
+        "Doubles",
+        "Singles",
+        "Backhand",
+        "Forehand"
+      ]
+    },
+    {
+      "id": "theme-885",
+      "name": "Horse riding",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Horse",
+        "Saddle",
+        "Bridle",
+        "Rein",
+        "Stirrup",
+        "Helmet",
+        "Boot",
+        "Mount",
+        "Trot",
+        "Canter",
+        "Gallop",
+        "Show jumping"
+      ]
+    },
+    {
+      "id": "theme-886",
+      "name": "Skating",
+      "domain": "sport",
+      "difficulty": 1,
+      "words": [
+        "Skate",
+        "Wheel",
+        "Blade",
+        "Rink",
+        "Helmet",
+        "Knee pad",
+        "Glide",
+        "Spin",
+        "Jump",
+        "Ice",
+        "Roller",
+        "Inline"
+      ]
+    }
+  ],
+  "pictures": {
+    "Horse": "🐎",
+    "Butterfly": "🦋",
+    "Snow": "❄️",
+    "Boot": "🥾",
+    "Ring": "💍",
+    "Hammer": "🔨",
+    "Compass": "🧭",
+    "Backpack": "🎒",
+    "Eagle": "🦅",
+    "Cricket": "🦗",
+    "Bat": "🦇",
+    "Wind": "🌬️",
+    "Mountain": "⛰️",
+    "Wave": "🌊",
+    "Ice": "🧊",
+    "Shorts": "🩳",
+    "Swimsuit": "🩱",
+    "Gloves": "🧤",
+    "Helmet": "🪖",
+    "Shoe": "👞",
+    "Goggles": "🥽",
+    "Diamond": "💎",
+    "Bell": "🔔",
+    "Score": "🎼",
+    "Soccer": "⚽",
+    "Basketball": "🏀",
+    "Baseball": "⚾",
+    "Softball": "🥎",
+    "Volleyball": "🏐",
+    "Football": "🏈",
+    "Rugby": "🏉",
+    "Tennis": "🎾",
+    "Bowling": "🎳",
+    "Frisbee": "🥏",
+    "Boomerang": "🪃",
+    "Skis": "🎿",
+    "Sled": "🛷",
+    "Skateboard": "🛹",
+    "Skate": "🛼",
+    "Snorkel": "🤿",
+    "Bow": "🏹",
+    "Racket": "🏸",
+    "Glove": "🥊",
+    "Gi": "🥋",
+    "Medal": "🏅",
+    "Trophy": "🏆",
+    "Running": "🏃",
+    "Yoga": "🧘",
+    "Weightlifting": "🏋️",
+    "Cartwheel": "🤸",
+    "Swimming": "🏊",
+    "Surfing": "🏄",
+    "Rowing": "🚣",
+    "Water polo": "🤽",
+    "Snowboarding": "🏂",
+    "Skiing": "⛷️",
+    "Skating": "⛸️",
+    "Curling": "🥌",
+    "Climbing": "🧗",
+    "Cycling": "🚴",
+    "Truck": "🚚",
+    "Wheel": "🛞",
+    "Walking": "🚶",
+    "Anchor": "⚓",
+    "Map": "🗺️",
+    "Bridge": "🌉",
+    "Hook": "🪝",
+    "Chain": "⛓️",
+    "Stopwatch": "⏱️",
+    "Child": "🧒",
+    "Triangle": "🔺",
+    "Love": "💕",
+    "Scale": "⚖️"
+  }
+}

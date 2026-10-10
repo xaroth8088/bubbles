@@ -1,0 +1,645 @@
+{
+  "id": "food",
+  "language": "de",
+  "name": "Essen & Trinken",
+  "themes": [
+    {
+      "id": "de-food-obst",
+      "name": "Obst",
+      "domain": "food",
+      "difficulty": 1,
+      "words": [
+        "Apfel",
+        "Birne",
+        "Banane",
+        "Orange",
+        "Kiwi",
+        "Traube",
+        "Ananas",
+        "Mango",
+        "Pfirsich",
+        "Melone"
+      ]
+    },
+    {
+      "id": "de-food-beeren",
+      "name": "Beeren",
+      "domain": "food",
+      "difficulty": 2,
+      "words": [
+        "Erdbeere",
+        "Himbeere",
+        "Brombeere",
+        "Heidelbeere",
+        "Stachelbeere",
+        "Johannisbeere",
+        "Holunder",
+        "Preiselbeere",
+        "Cranberry",
+        "Maulbeere"
+      ]
+    },
+    {
+      "id": "de-food-gemuese",
+      "name": "Gemüse",
+      "domain": "food",
+      "difficulty": 1,
+      "words": [
+        "Möhre",
+        "Gurke",
+        "Tomate",
+        "Paprika",
+        "Zwiebel",
+        "Kohl",
+        "Spinat",
+        "Erbse",
+        "Brokkoli",
+        "Zucchini"
+      ]
+    },
+    {
+      "id": "de-food-salat",
+      "name": "Salat",
+      "domain": "food",
+      "difficulty": 1,
+      "words": [
+        "Blatt",
+        "Gurke",
+        "Tomate",
+        "Mais",
+        "Feta",
+        "Öl",
+        "Essig",
+        "Radieschen",
+        "Croutons",
+        "Dressing"
+      ]
+    },
+    {
+      "id": "de-food-fruehstueck",
+      "name": "Frühstück",
+      "domain": "food",
+      "difficulty": 1,
+      "words": [
+        "Brot",
+        "Butter",
+        "Marmelade",
+        "Ei",
+        "Müsli",
+        "Milch",
+        "Kaffee",
+        "Tee",
+        "Saft",
+        "Joghurt"
+      ]
+    },
+    {
+      "id": "de-food-baeckerei",
+      "name": "Bäckerei",
+      "domain": "food",
+      "difficulty": 1,
+      "words": [
+        "Brot",
+        "Brötchen",
+        "Brezel",
+        "Croissant",
+        "Hefezopf",
+        "Baguette",
+        "Berliner",
+        "Schnecke",
+        "Laugenstange",
+        "Streuseltaler"
+      ]
+    },
+    {
+      "id": "de-food-brotzeit",
+      "name": "Brotzeit",
+      "domain": "food",
+      "difficulty": 1,
+      "words": [
+        "Brot",
+        "Butter",
+        "Käse",
+        "Schinken",
+        "Salami",
+        "Gurke",
+        "Radieschen",
+        "Senf",
+        "Schnittlauch",
+        "Leberwurst"
+      ]
+    },
+    {
+      "id": "de-food-backen",
+      "name": "Backen",
+      "domain": "food",
+      "difficulty": 1,
+      "words": [
+        "Mehl",
+        "Zucker",
+        "Butter",
+        "Ei",
+        "Hefe",
+        "Backpulver",
+        "Kakao",
+        "Vanille",
+        "Teig",
+        "Form"
+      ]
+    },
+    {
+      "id": "de-food-kuchen",
+      "name": "Kuchen",
+      "domain": "food",
+      "difficulty": 1,
+      "words": [
+        "Apfelkuchen",
+        "Käsekuchen",
+        "Marmorkuchen",
+        "Streuselkuchen",
+        "Zitronenkuchen",
+        "Brownie",
+        "Gugelhupf",
+        "Torte",
+        "Biskuit",
+        "Glasur"
+      ]
+    },
+    {
+      "id": "de-food-plaetzchen",
+      "name": "Plätzchen",
+      "domain": "food",
+      "difficulty": 1,
+      "words": [
+        "Zimtstern",
+        "Lebkuchen",
+        "Spekulatius",
+        "Vanillekipferl",
+        "Makrone",
+        "Butterkeks",
+        "Ausstecher",
+        "Nudelholz",
+        "Teig",
+        "Zuckerguss"
+      ]
+    },
+    {
+      "id": "de-food-suesses",
+      "name": "Süßes",
+      "domain": "food",
+      "difficulty": 1,
+      "words": [
+        "Schokolade",
+        "Bonbon",
+        "Gummibärchen",
+        "Lolli",
+        "Praline",
+        "Karamell",
+        "Marzipan",
+        "Lakritz",
+        "Nougat",
+        "Zuckerwatte"
+      ]
+    },
+    {
+      "id": "de-food-eisdiele",
+      "name": "Eisdiele",
+      "domain": "food",
+      "difficulty": 1,
+      "words": [
+        "Vanille",
+        "Schokolade",
+        "Erdbeere",
+        "Pistazie",
+        "Zitrone",
+        "Stracciatella",
+        "Waffel",
+        "Kugel",
+        "Sahne",
+        "Streusel"
+      ]
+    },
+    {
+      "id": "de-food-getraenke",
+      "name": "Getränke",
+      "domain": "food",
+      "difficulty": 1,
+      "words": [
+        "Wasser",
+        "Saft",
+        "Limo",
+        "Tee",
+        "Kaffee",
+        "Kakao",
+        "Milch",
+        "Schorle",
+        "Eistee",
+        "Smoothie"
+      ]
+    },
+    {
+      "id": "de-food-kaffee",
+      "name": "Kaffee",
+      "domain": "food",
+      "difficulty": 1,
+      "words": [
+        "Espresso",
+        "Cappuccino",
+        "Latte",
+        "Milchschaum",
+        "Bohne",
+        "Filter",
+        "Tasse",
+        "Kanne",
+        "Mühle",
+        "Zucker"
+      ]
+    },
+    {
+      "id": "de-food-tee",
+      "name": "Tee",
+      "domain": "food",
+      "difficulty": 1,
+      "words": [
+        "Minze",
+        "Kamille",
+        "Fenchel",
+        "Ingwer",
+        "Hagebutte",
+        "Schwarztee",
+        "Grüntee",
+        "Honig",
+        "Kanne",
+        "Beutel"
+      ]
+    },
+    {
+      "id": "de-food-kraeuter",
+      "name": "Kräuter",
+      "domain": "food",
+      "difficulty": 1,
+      "words": [
+        "Basilikum",
+        "Petersilie",
+        "Dill",
+        "Thymian",
+        "Rosmarin",
+        "Salbei",
+        "Minze",
+        "Oregano",
+        "Schnittlauch",
+        "Kresse"
+      ]
+    },
+    {
+      "id": "de-food-gewuerze",
+      "name": "Gewürze",
+      "domain": "food",
+      "difficulty": 1,
+      "words": [
+        "Salz",
+        "Pfeffer",
+        "Paprika",
+        "Zimt",
+        "Nelke",
+        "Muskat",
+        "Curry",
+        "Kurkuma",
+        "Kümmel",
+        "Chili"
+      ]
+    },
+    {
+      "id": "de-food-suppe",
+      "name": "Suppe",
+      "domain": "food",
+      "difficulty": 1,
+      "words": [
+        "Brühe",
+        "Nudel",
+        "Karotte",
+        "Kartoffel",
+        "Linse",
+        "Lauch",
+        "Kürbis",
+        "Kelle",
+        "Topf",
+        "Schüssel"
+      ]
+    },
+    {
+      "id": "de-food-kartoffeln",
+      "name": "Kartoffeln",
+      "domain": "food",
+      "difficulty": 1,
+      "words": [
+        "Pommes",
+        "Püree",
+        "Puffer",
+        "Salat",
+        "Gratin",
+        "Pellkartoffel",
+        "Bratkartoffel",
+        "Kroketten",
+        "Knödel",
+        "Ofenkartoffel"
+      ]
+    },
+    {
+      "id": "de-food-nudeln",
+      "name": "Nudeln",
+      "domain": "food",
+      "difficulty": 1,
+      "words": [
+        "Spaghetti",
+        "Penne",
+        "Fusilli",
+        "Farfalle",
+        "Lasagne",
+        "Ravioli",
+        "Tagliatelle",
+        "Makkaroni",
+        "Tortellini",
+        "Spätzle"
+      ]
+    },
+    {
+      "id": "de-food-pizza",
+      "name": "Pizza",
+      "domain": "food",
+      "difficulty": 1,
+      "words": [
+        "Teig",
+        "Tomate",
+        "Käse",
+        "Salami",
+        "Pilz",
+        "Olive",
+        "Schinken",
+        "Ananas",
+        "Thunfisch",
+        "Mozzarella"
+      ]
+    },
+    {
+      "id": "de-food-grillen",
+      "name": "Grillen",
+      "domain": "food",
+      "difficulty": 1,
+      "words": [
+        "Kohle",
+        "Rost",
+        "Zange",
+        "Wurst",
+        "Steak",
+        "Mais",
+        "Spieß",
+        "Glut",
+        "Marinade",
+        "Folie"
+      ]
+    },
+    {
+      "id": "de-food-kaese",
+      "name": "Käse",
+      "domain": "food",
+      "difficulty": 1,
+      "words": [
+        "Gouda",
+        "Emmentaler",
+        "Brie",
+        "Feta",
+        "Mozzarella",
+        "Parmesan",
+        "Camembert",
+        "Cheddar",
+        "Edamer",
+        "Bergkäse"
+      ]
+    },
+    {
+      "id": "de-food-milchprodukte",
+      "name": "Milchprodukte",
+      "domain": "food",
+      "difficulty": 1,
+      "words": [
+        "Milch",
+        "Butter",
+        "Sahne",
+        "Quark",
+        "Joghurt",
+        "Käse",
+        "Schmand",
+        "Buttermilch",
+        "Kefir",
+        "Frischkäse"
+      ]
+    },
+    {
+      "id": "de-food-imbiss",
+      "name": "Imbiss",
+      "domain": "food",
+      "difficulty": 1,
+      "words": [
+        "Pommes",
+        "Currywurst",
+        "Döner",
+        "Falafel",
+        "Burger",
+        "Hotdog",
+        "Ketchup",
+        "Senf",
+        "Serviette",
+        "Tablett"
+      ]
+    },
+    {
+      "id": "de-food-restaurant",
+      "name": "Restaurant",
+      "domain": "food",
+      "difficulty": 1,
+      "words": [
+        "Speisekarte",
+        "Kellner",
+        "Tisch",
+        "Gast",
+        "Bestellung",
+        "Rechnung",
+        "Trinkgeld",
+        "Vorspeise",
+        "Hauptgang",
+        "Dessert"
+      ]
+    },
+    {
+      "id": "de-food-besteck",
+      "name": "Besteck",
+      "domain": "food",
+      "difficulty": 2,
+      "words": [
+        "Gabel",
+        "Messer",
+        "Löffel",
+        "Teelöffel",
+        "Suppenlöffel",
+        "Kuchengabel",
+        "Stäbchen",
+        "Salatbesteck",
+        "Fischmesser",
+        "Buttermesser"
+      ]
+    },
+    {
+      "id": "de-food-kocharten",
+      "name": "Kocharten",
+      "domain": "food",
+      "difficulty": 2,
+      "words": [
+        "Braten",
+        "Kochen",
+        "Dünsten",
+        "Backen",
+        "Grillen",
+        "Frittieren",
+        "Dämpfen",
+        "Schmoren",
+        "Rösten",
+        "Pochieren"
+      ]
+    },
+    {
+      "id": "de-food-nuesse",
+      "name": "Nüsse",
+      "domain": "food",
+      "difficulty": 2,
+      "words": [
+        "Walnuss",
+        "Haselnuss",
+        "Mandel",
+        "Cashew",
+        "Erdnuss",
+        "Pistazie",
+        "Pekannuss",
+        "Macadamia",
+        "Paranuss",
+        "Pinienkern"
+      ]
+    },
+    {
+      "id": "de-food-reisgerichte",
+      "name": "Reisgerichte",
+      "domain": "food",
+      "difficulty": 2,
+      "words": [
+        "Risotto",
+        "Paella",
+        "Sushi",
+        "Milchreis",
+        "Curry",
+        "Pilaw",
+        "Reispfanne",
+        "Onigiri",
+        "Biryani",
+        "Reissalat"
+      ]
+    },
+    {
+      "id": "de-food-sossen",
+      "name": "Soßen",
+      "domain": "food",
+      "difficulty": 2,
+      "words": [
+        "Ketchup",
+        "Senf",
+        "Mayonnaise",
+        "Pesto",
+        "Aioli",
+        "Hollandaise",
+        "Bratensoße",
+        "Tomatensoße",
+        "Sojasoße",
+        "Chutney"
+      ]
+    },
+    {
+      "id": "de-food-naschgarten",
+      "name": "Naschgarten",
+      "domain": "food",
+      "difficulty": 1,
+      "words": [
+        "Apfel",
+        "Birne",
+        "Kirsche",
+        "Pflaume",
+        "Erdbeere",
+        "Himbeere",
+        "Brombeere",
+        "Traube",
+        "Johannisbeere",
+        "Stachelbeere"
+      ]
+    }
+  ],
+  "pictures": {
+    "Zange": "🛠️",
+    "Ei": "🥚",
+    "Schokolade": "🍫",
+    "Pilz": "🍄",
+    "Salz": "🧂",
+    "Blatt": "🍃",
+    "Kürbis": "🎃",
+    "Schnecke": "🐌",
+    "Apfel": "🍎",
+    "Birne": "🍐",
+    "Banane": "🍌",
+    "Orange": "🍊",
+    "Kiwi": "🥝",
+    "Traube": "🍇",
+    "Ananas": "🍍",
+    "Mango": "🥭",
+    "Pfirsich": "🍑",
+    "Melone": "🍈",
+    "Erdbeere": "🍓",
+    "Heidelbeere": "🫐",
+    "Möhre": "🥕",
+    "Karotte": "🥕",
+    "Gurke": "🥒",
+    "Tomate": "🍅",
+    "Paprika": "🫑",
+    "Zwiebel": "🧅",
+    "Brokkoli": "🥦",
+    "Mais": "🌽",
+    "Brot": "🍞",
+    "Butter": "🧈",
+    "Milch": "🥛",
+    "Kaffee": "☕",
+    "Tee": "🍵",
+    "Brezel": "🥨",
+    "Croissant": "🥐",
+    "Baguette": "🥖",
+    "Käse": "🧀",
+    "Bonbon": "🍬",
+    "Lolli": "🍭",
+    "Zitrone": "🍋",
+    "Honig": "🍯",
+    "Ingwer": "🫚",
+    "Chili": "🌶️",
+    "Kartoffel": "🥔",
+    "Pommes": "🍟",
+    "Spaghetti": "🍝",
+    "Olive": "🫒",
+    "Wurst": "🌭",
+    "Steak": "🥩",
+    "Burger": "🍔",
+    "Hotdog": "🌭",
+    "Falafel": "🧆",
+    "Gabel": "🍴",
+    "Messer": "🔪",
+    "Löffel": "🥄",
+    "Stäbchen": "🥢",
+    "Erdnuss": "🥜",
+    "Sushi": "🍣",
+    "Onigiri": "🍙",
+    "Kirsche": "🍒"
+  }
+}
