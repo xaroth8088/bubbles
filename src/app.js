@@ -5,6 +5,7 @@ import {createPuzzle,makeState,merge,tapSpecial,getHint,magnet,moreRoom,bubbleTe
 import {stepPhysics,simulatePhysics,bubbleDiameter,radialImpulse,resetPhysics,membranePath,membraneContains,translateBoundedGroup,PHYSICS_STEP,PHYSICS_DEFAULTS,normalizePhysics} from './physics.js';
 import {specialArt,oceanArt,membraneArt,KEY_PALETTE} from './art.js';
 import {createExperience} from './experience.js';
+import {fitBubbleTerm} from './text-fit.js';
 
 const $=id=>document.getElementById(id);
 const STORAGE_KEY='bubble-grove-v1';
@@ -49,19 +50,12 @@ function start(options={},force=false){
 }
 
 const bubbleSize=b=>bubbleDiameter(b)*Math.min(1,board.clientWidth/358);
-const textMeasure=document.createElement('canvas').getContext('2d');
 function fitTerm(el,size,count,badge){
-  const width=el.clientWidth-1,height=count>1?(size*.76-(count-1)*7)/count:size*(badge?.48:.67);
-  const style=getComputedStyle(el),family=style.fontFamily,weight=style.fontWeight,text=el.textContent.trim();
-  for(let font=count>1?19:18;font>=10;font-=.5){
-    textMeasure.font=`${weight} ${font}px ${family}`;
-    let lines=1,line='';
-    for(const word of text.split(/\s+/)){
-      if(line&&textMeasure.measureText(`${line} ${word}`).width>width){lines++;line='';}
-      for(const char of (line?' ':'')+word){if(line&&textMeasure.measureText(line+char).width>width){lines++;line='';}line+=char;}
-    }
-    if(lines*font*1.15<=height||font===10){el.style.fontSize=`${font}px`;break;}
-  }
+  const bubble=el.closest('.bubble'),style=getComputedStyle(bubble);
+  const contentHeight=bubble.clientHeight-parseFloat(style.paddingTop)-parseFloat(style.paddingBottom);
+  const gap=count>1?parseFloat(getComputedStyle(el.parentElement).rowGap)||0:0;
+  const height=count>1?(Math.min(contentHeight,size*.76)-(count-1)*gap)/count:Math.min(contentHeight,size*(badge?.48:.67));
+  fitBubbleTerm(el,{maxFont:count>1?19:18,maxHeight:height});
 }
 function topInset(){return 0;}
 function placeBubbles(reset=false){
