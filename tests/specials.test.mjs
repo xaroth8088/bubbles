@@ -98,12 +98,12 @@ test('unrelated unlinked bubbles and fragments never acquire a linked partner',(
   assert.equal(linkedPartner(ordinary,all),null);assert.equal(linkedPartner(left,all),null);assert.equal(linkedPartner(real,all),fake);
   left.link=right.link='pair-a';assert.equal(linkedPartner(left,all),null);assert.equal(linkedPartner(real,all),fake);
 });
-test('split boards expose four independent word pairs, never real-decoy links',()=>{
+test('split boards expose four to eight independent word pairs, never real-decoy links',()=>{
   for(let round=1;round<=80;round++)for(const mode of ['lab','endless']){
-    const puzzle=createPuzzle({mode,special:'split',round,difficulty:'tricky'});if(round%2===0)puzzle.specials.push('linked');
+    const puzzle=createPuzzle({mode,special:'split',round,difficulty:'tricky'});if(round%2===0){puzzle.specials.push('linked');puzzle.groups=puzzle.groups.slice(0,Math.floor((70-puzzle.splitCount-1)/4));}
     const state=makeState(puzzle,{shuffleSeed:`split-${round}`}),parts=all(state).filter(b=>b.kind==='split');
-    assert.equal(parts.length,8);assert.equal(new Set(parts.map(b=>b.atoms[0].id)).size,4);assert.ok(parts.every(b=>!b.link));
-    assert.equal(state.bubbles.filter(b=>b.kind==='split').length,8);assert.ok(clearableGroups(state).length);assert.ok(validateState(state));
+    assert.ok(state.puzzle.splitCount>=4&&state.puzzle.splitCount<=8);assert.equal(parts.length,state.puzzle.splitCount*2);assert.equal(new Set(parts.map(b=>b.atoms[0].id)).size,state.puzzle.splitCount);assert.ok(parts.every(b=>!b.link));
+    assert.equal(state.bubbles.filter(b=>b.kind==='split').length,state.puzzle.splitCount*2);assert.ok(clearableGroups(state).length);assert.ok(validateState(state));
     if(mode!=='lab')assert.ok(all(state).length<=70);
   }
 });

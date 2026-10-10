@@ -12,7 +12,7 @@ The game is about semantic ambiguity, not spotting repeated category labels. Pre
 
 Every entry in `PICTURES` must appear verbatim in at least one playable theme. An emoji supplies a word, so another sense of that word may be relevant (a bat picture can represent the sports tool). Picture selection is seeded and samples eligible clues rather than favoring the first mapped word. Do not replace split/locked or other special mechanics merely to force an image. A small stacked-special board can retain text if every mapped clue is obstructed.
 
-New puzzles use the v6 seed namespace. Existing saves retain their stored clues and state. Keep existing theme IDs stable. Pack order never creates or changes IDs. New puzzles record their language and selected packs; existing saves keep their stored clues when settings change.
+New puzzles use the v7 seed namespace. Existing saves retain their stored clues and state. Keep existing theme IDs stable. Pack order never creates or changes IDs. New puzzles record their language and selected packs; existing saves keep their stored clues when settings change.
 
 ## Play locally
 
@@ -73,7 +73,7 @@ For another host, run `npm run build` and upload the contents of `dist/`. Routes
 | --- | --- |
 | Picture | An emoji represents a word; match its meaning. |
 | Frozen | Four successful merges thaw the bubble, including partial and split-word joins. Ice fragments fall away and cracks deepen at every step; the final layer melts. Wrong guesses and hardware taps do not thaw ice. |
-| Split word | Combine both fragments, in either order, before sorting the whole word. |
+| Split word | Four to eight seeded word pairs per puzzle. Both fragments are lowercase; combine them in either order to restore the original spelling before sorting the whole word. |
 | Lock & key | Any successful merge involving a key consumes it and reveals the hidden word in its matching colored lock immediately, including partial and fragment joins. Wrong guesses leave keys intact. Several pairs can coexist, with distinct matching colors on their keys, lock icons, and rims. Locks enter the visible board before their keys are sprinkled in. |
 | Screw | Two to five screwdrivers open a ring of the same color. Drag a screwdriver onto any other bubble to remove one matching screw, regardless of theme or whether the target is blocked. Each tool is used once. Unrelated words stay separate and incur no mistake; matching words also join normally. Using a tool spends one move. Rings arrive before their tools; tapping the ring does nothing. The final screw releases the ring. |
 | Backward | Read the word right to left. |
@@ -127,7 +127,7 @@ npm run build
 npm run check
 ```
 
-The logic suite checks 300 Journey boards, 210 Free play boards, 300 more boards with randomized partial joins and clear orders, mixed-theme refills, deck size limits, every special demonstration, lock/key/pin dependencies, split assembly, category meaning changes, ambiguous fixed solutions, helpers, exhaustion and recovery, elastic collisions, weight deformation, deterministic generation, and save validation. Older oversized saves can shed untouched ordinary reserve groups while preserving every live clue, partial join, move, completed group, special, and category dependency. The asset check verifies the dictionary, offline asset list, manifest, and actual PNG icon dimensions.
+The logic suite checks 300 Journey boards, 210 Free play boards, 300 more boards with randomized partial joins and clear orders, mixed-theme refills, deck size limits, every special demonstration, lock/key/pin dependencies, seeded split counts across 4–8 pairs, lowercase fragments and canonical assembly in English/German, legacy split-save compatibility, category meaning changes, ambiguous fixed solutions, helpers, exhaustion and recovery, elastic collisions, weight deformation, deterministic generation, and save validation. Older oversized saves can shed untouched ordinary reserve groups while preserving every live clue, partial join, move, completed group, special, and category dependency. The asset check verifies the dictionary, offline asset list, manifest, and actual PNG icon dimensions.
 
 Optional browser checks need Playwright and Chromium:
 

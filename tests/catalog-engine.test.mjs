@@ -18,7 +18,7 @@ test('each language and standalone pack produces self-contained, solvable decks'
       assert.ok(puzzle.groups.length>=10,`${language}/${id}/${difficulty} is too small`);
       for(const group of puzzle.groups){const theme=catalog.themes.find(t=>t.name===group.name);assert.ok(theme);assert.ok(group.words.every(w=>theme.words.includes(w)));}
       assert.ok(all(state).length<=70);assert.ok(validateState(state));
-      if(special==='split')assert.equal(state.bubbles.filter(b=>b.kind==='split').length,8);
+      if(special==='split')assert.equal(state.bubbles.filter(b=>b.kind==='split').length,state.puzzle.splitCount*2);
       for(const b of all(state).filter(b=>b.kind==='picture'))assert.equal(bubbleText(b),catalog.pictures[b.atoms[0].word]);
       for(const fake of all(state).filter(b=>b.decoy))assert.ok(catalog.themes.some(t=>t.words.includes(fake.atoms[0].word)));
       solve(state);

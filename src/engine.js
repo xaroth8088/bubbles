@@ -33,7 +33,7 @@ export function createPuzzle({mode = 'journey', level = 1, date = localDate(), r
   language=catalog.language;packIds=[...catalog.packIds].sort();
   const catalogKey=`${language}-${hash(`${CATALOG_VERSION}:${packIds.join(',')}`).toString(36)}`;
   if (mode === 'daily') difficulty = 'balanced';
-  const baseSeed = mode === 'daily' ? `daily-v6-${date}` : mode === 'lab' ? `lab-v6-${special}` : `${mode}-v6-${level}-${round}-${difficulty}`;
+  const baseSeed = mode === 'daily' ? `daily-v7-${date}` : mode === 'lab' ? `lab-v7-${special}-${round}` : `${mode}-v7-${level}-${round}-${difficulty}`;
   const seed=`${baseSeed}-${catalogKey}`;
   const rng = random(seed);
   let count = mode === 'lab' ? 4 : difficulty === 'tricky' ? 17 : difficulty === 'gentle' || (mode === 'journey' && level <= 4) ? 10 : 14;
@@ -44,7 +44,8 @@ export function createPuzzle({mode = 'journey', level = 1, date = localDate(), r
   let specials = special ? canonicalSpecials([special]) : mode === 'journey' && level === 1 ? [] : mode === 'journey' && level <= INTRO_LEVELS ? [SPECIALS.find(s => s.level === level)?.id].filter(Boolean) : shuffle(SPECIALS.map(s => s.id), rng).slice(0, level > 35 || difficulty === 'tricky' ? 3 : 2);
   // Daily boards are deterministic within a language and selected catalogue.
   if (mode === 'daily') specials = [shuffle(['picture','frozen','split','cryptic','keylock','screw','backward','pinlock'], rng)[0]];
-  count=Math.min(count,Math.floor((70-specials.reduce((n,s)=>n+(s==='split'?4:['linked','bonus'].includes(s)?1:0),0))/4));
+  const splitCount=specials.includes('split')?4+hash(`${seed}-split-count`)%5:0;
+  count=Math.min(count,Math.floor((70-specials.reduce((n,s)=>n+(s==='split'?splitCount:['linked','bonus'].includes(s)?1:0),0))/4));
   const selected = [], used = new Set(), domains = new Set();
   let chain=[];
   if(specials.includes('nested')){
@@ -53,7 +54,7 @@ export function createPuzzle({mode = 'journey', level = 1, date = localDate(), r
     if(planned.length){
       selected.push(planned[0]);chain=planned.slice(1);
       for(const theme of planned){[theme.name,...theme.words].forEach(w=>used.add(w.toLowerCase()));domains.add(theme.domain);}
-      count=Math.min(count,Math.floor((70-chain.length*3-specials.reduce((n,s)=>n+(s==='split'?4:['linked','bonus'].includes(s)?1:0),0))/4));
+      count=Math.min(count,Math.floor((70-chain.length*3-specials.reduce((n,s)=>n+(s==='split'?splitCount:['linked','bonus'].includes(s)?1:0),0))/4));
     }else specials=specials.filter(s=>s!=='nested');
   }
   const pictureCandidate = theme => theme.words.some(w => pictures[w]);
@@ -80,7 +81,7 @@ export function createPuzzle({mode = 'journey', level = 1, date = localDate(), r
     const parent={id:`g${groups.length}`,name:layer.name,domain:layer.domain,words:layer.words,childId:child.id};
     child.parentId=parent.id;groups.push(parent);child=parent;
   }
-  return {id:seed,seed,language,packIds,catalogKey,mode,level,date,round,difficulty,specials,groups,
+  return {id:seed,seed,language,packIds,catalogKey,mode,level,date,round,difficulty,specials,splitCount,groups,
     title:mode === 'lab' ? SPECIALS.find(s => s.id === specials[0])?.name || 'Word bubbles' : mode === 'daily' ? 'A fresh little challenge' : mode === 'journey' && level <= INTRO_LEVELS ? titles[level-1] : mode === 'endless' ? 'Follow your curiosity' : ['Little discoveries','Find your flow','Room for wonder','One thing leads to another'][level%4]};
 }
 
@@ -105,18 +106,21 @@ export function makeState(puzzle, {challenge = false, shuffleSeed = null} = {}) 
   if (special.includes('burst')) { const b=chunks[0][2]; b.timer=9; b.kind='burst'; }
   if (special.includes('linked')) {const real=chunks[0][3];real.link='pair-a';real.kind='linked';chunks[0].push(makeDecoy(puzzle,real.link));}
   if (special.includes('split')) {
-    // Split four distinct words, spread across themes. Never inherit a decoy
+    // Split four to eight distinct words, spread across themes. Never inherit a decoy
     // link or duplicate keys, pins, locks, or other one-shot decorations.
     const eligible=(b,group,index)=>b.kind==='normal'&&!b.link&&!b.decoy&&!b.keyColor&&!b.pinCarrier&&b.atoms[0].word.length>=2&&!(special.includes('screw')&&group===1&&index<=1);
     const pools=chunks.map((chunk,group)=>chunk.filter((b,index)=>eligible(b,group,index)).sort((a,b)=>Number(b.atoms[0].word.length>=5)-Number(a.atoms[0].word.length>=5)));
+    const requested=Number.isInteger(puzzle.splitCount)&&puzzle.splitCount>=4&&puzzle.splitCount<=8?puzzle.splitCount:4+hash(`${puzzle.seed}-split-count`)%5;
     const chosen=[];
-    for(let i=0;chosen.length<4&&pools.some(pool=>pool[i]);i++)for(const pool of pools)if(pool[i]&&chosen.length<4)chosen.push(pool[i]);
+    for(let i=0;chosen.length<requested&&pools.some(pool=>pool[i]);i++)for(const pool of pools)if(pool[i]&&chosen.length<requested)chosen.push(pool[i]);
+    puzzle.splitCount=chosen.length;
     for(const b of chosen){
       const chunk=chunks.find(c=>c.includes(b)),at=chunk.indexOf(b),atom=b.atoms[0],cut=Math.max(1,Math.floor(atom.word.length/2));
-      chunk.splice(at,1,{...b,id:`${b.id}l`,atoms:[{...atom,part:0,label:atom.word.slice(0,cut)}],kind:'split'},
-        {...b,id:`${b.id}r`,atoms:[{...atom,part:1,label:atom.word.slice(cut)}],kind:'split'});
+      chunk.splice(at,1,{...b,id:`${b.id}l`,atoms:[{...atom,part:0,label:atom.word.slice(0,cut).toLowerCase()}],kind:'split'},
+        {...b,id:`${b.id}r`,atoms:[{...atom,part:1,label:atom.word.slice(cut).toLowerCase()}],kind:'split'});
     }
   }
+  if(!special.includes('split'))puzzle.splitCount=0;
   if (special.includes('screw')) {
     const lock=chunks[1][1];lock.kind='screw';lock.screwColor='violet';
     lock.turns=lock.screwTotal=2+hash(`${puzzle.shuffleSeed||puzzle.seed}-screws`)%4;
@@ -134,7 +138,7 @@ export function makeState(puzzle, {challenge = false, shuffleSeed = null} = {}) 
     chunks=shuffle(chunks.map(chunk=>shuffle(chunk,rng)),rng);
   }
   const state={schema:SCHEMA,puzzle,bubbles:[],reserve:chunks,solved:[],moves:0,mistakes:0,hints:0,assists:0,
-    remaining:challenge||puzzle.mode==='lab'&&special.includes('bonus') ? puzzle.groups.length*3+(special.includes('split')?4:0)+7 : null,
+    remaining:challenge||puzzle.mode==='lab'&&special.includes('bonus') ? puzzle.groups.length*3+puzzle.splitCount+7 : null,
     capacity:puzzle.mode==='lab'?12:24,dealVersion:4,pressure:0,pins:0,keys:[],status:'playing',bonusCollected:0};
   refill(state,{initial:true});
   if(special.includes('picture')) {
@@ -264,6 +268,8 @@ export function upgradeDealing(state){
     group.name=name;const solved=state.solved.find(g=>g.id===group.id);if(solved)solved.name=name;
   }
   for(const b of allBubbles(state)){
+    // Normalize display only: never add new fragments to an in-progress save.
+    for(const atom of b.atoms)if(atom.part!==undefined)atom.label=atom.label.toLowerCase();
     if(b.kind==='theme')b.kind='normal';
     if(b.shell||b.kind==='crack'){delete b.shell;if(b.kind==='crack')b.kind='normal';}
     if(b.kind==='hidden'||b.hiddenUntil>0){b.kind='cryptic';b.atoms[0].revealed??=0;delete b.hiddenUntil;}
@@ -402,6 +408,7 @@ export function revealLetters(state){
   }
 }
 export function atomText(atom){
+  if(atom.part!==undefined)return atom.label.toLowerCase();
   if(atom.revealed===undefined||atom.revealed>=letterCount(atom.word))return atom.word;
   let index=0;
   // A stable scattered reveal avoids giving away every word from its prefix alone.
@@ -545,7 +552,7 @@ export function bubbleText(b) {
   if(b.kind==='bonus')return '+5';
   if(b.lockColor)return '•••';
   if(b.hiddenUntil>0)return '???';
-  if(b.atoms.some(a=>a.part!==undefined))return b.atoms.map(a=>a.label).join('');
+  if(b.atoms.some(a=>a.part!==undefined))return b.atoms.map(atomText).join('');
   if(b.kind==='picture')return b.picture||PICTURES[b.atoms[0].word]||b.atoms[0].word;
   if(b.kind==='backward')return [...b.atoms[0].word].reverse().join('');
   return b.atoms.map(atomText).join(' · ');
@@ -575,6 +582,8 @@ export function validateState(value) {
   const p=value.puzzle;
   if(p.shuffleSeed!==undefined&&(typeof p.shuffleSeed!=='string'||!p.shuffleSeed.length||p.shuffleSeed.length>128))return false;
   if(!['journey','daily','endless','lab'].includes(p.mode)||typeof p.id!=='string'||typeof p.seed!=='string'||typeof p.title!=='string'||!Number.isInteger(p.level)||p.level<1||!Number.isInteger(p.round)||p.round<1||typeof p.date!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(p.date)||!Array.isArray(p.specials)||!p.specials.every(s=>['hidden','crack','octopus'].includes(s)||SPECIALS.some(x=>x.id===s)))return false;
+  // Legacy saves omit this original-deck metadata; assembled pairs cannot be inferred.
+  if(p.splitCount!==undefined&&(!Number.isInteger(p.splitCount)||(p.specials.includes('split')?p.splitCount<4||p.splitCount>8:p.splitCount!==0)))return false;
   if(!Array.isArray(value.keys)||!value.keys.every(color=>KEY_COLORS.includes(color))||!Number.isFinite(value.pressure)||!Number.isFinite(value.pins)||!Number.isFinite(value.mistakes)||!Number.isFinite(value.hints)||!Number.isFinite(value.assists))return false;
   if(!p.groups.every(g=>g&&typeof g.id==='string'))return false;
   const groupIds=new Set(value.puzzle.groups.map(g=>g.id));
@@ -593,6 +602,7 @@ export function validateState(value) {
       && (b.decoy?!p.groups.some(g=>[g.name,...g.words].some(w=>w.toLowerCase()===a.word.toLowerCase())):p.groups.find(g=>g.id===b.groupId)?.words.includes(a.word))
       && (a.revealed===undefined||Number.isInteger(a.revealed)&&a.revealed>=0&&a.revealed<=letterCount(a.word))
       && (a.part===undefined||((a.part===0||a.part===1)&&typeof a.label==='string')))))return false;
+  if(p.splitCount!==undefined&&new Set(list.flatMap(b=>b.atoms.filter(a=>a.part!==undefined).map(a=>a.id))).size>p.splitCount)return false;
   // Validate the word ledger too: no discarded words, duplicated groups, or foreign atoms.
   for(const g of p.groups){
     const solved=value.solved.find(s=>s.id===g.id),atoms=list.filter(b=>b.groupId===g.id).flatMap(b=>b.atoms);

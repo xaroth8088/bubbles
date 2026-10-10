@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {THEMES,SPECIALS,LIBRARY_STATS} from '../src/data.js';
 import {assembleThemeChain} from '../src/nesting.js';
-import {createPuzzle,makeState,merge,tapSpecial,isBlocked,magnet,moreRoom,getHint,validateState,bubbleText,localDate,clearableGroups,liveLoad,upgradeDealing,random,refill} from '../src/engine.js';
+import {createPuzzle,makeState,merge,tapSpecial,isBlocked,magnet,moreRoom,getHint,validateState,bubbleText,atomText,localDate,clearableGroups,liveLoad,upgradeDealing,random,refill} from '../src/engine.js';
 
 const demo=special=>makeState(createPuzzle({mode:'lab',special}));
 // Named vocabulary coverage must not depend on the size of the random pool.
@@ -90,7 +90,7 @@ test('randomized journey decks stay solvable across mechanics and retain deck li
     const state=makeState(createPuzzle({level}),{shuffleSeed:`attempt-${level}`});
     const total=state.bubbles.length+state.reserve.flat().length;
     assert.ok(total>=40&&total<=70);assert.equal(liveLoad(state),24);
-    assert.ok(state.bubbles.length>=24&&state.bubbles.length<=28);solve(state);
+    assert.ok(state.bubbles.length>=24&&state.bubbles.length<=32);solve(state);
   }
 });
 test('all 300 journey levels are solvable without helpers, including mixed dependencies',()=>{
@@ -363,7 +363,7 @@ test('concise themes return as ordinary terms in expanded fixed-solution connect
   for(const name of['Ship','Car','Book','Guitar','Airport','Coffee'])assert.ok(returned.has(name),`${name} never returned`);
 });
 test('split fragments cannot be sorted until reunited in either direction',()=>{
-  for(const reverse of[false,true]){const state=demo('split'),parts=state.bubbles.filter(b=>b.kind==='split');if(reverse)parts.reverse();const plain=state.bubbles.find(b=>b.groupId===parts[0].groupId&&b.kind!=='split');
+  for(const reverse of[false,true]){const state=demo('split'),plain=state.bubbles.find(b=>b.kind==='normal'&&state.bubbles.some(p=>p.kind==='split'&&p.groupId===b.groupId)),parts=state.bubbles.filter(b=>b.kind==='split'&&b.groupId===plain.groupId);if(reverse)parts.reverse();
     assert.ok(merge(state,parts[0].id,plain.id).mismatch);assert.ok(merge(state,parts[0].id,parts[1].id).assembled);const united=state.bubbles.find(b=>b.id===parts[1].id);assert.equal(united.atoms.length,1);assert.equal(united.atoms[0].part,undefined);}
 });
 test('every successful merge reveals one letter; a hidden word reveals fully when joined',()=>{
@@ -415,8 +415,8 @@ test('saved states survive JSON roundtrips; malformed saves are rejected',()=>{
 });
 test('hints expose an available connection without spending a move',()=>{const state=demo('frozen'),hint=getHint(state);assert.ok(hint.ids.length>=1);assert.ok(hint.ids.every(id=>!isBlocked(state.bubbles.find(b=>b.id===id))));assert.equal(state.moves,0);});
 
-test('typical decks have 40–70 bubbles total and 24–28 live',()=>{
-  for(const difficulty of['gentle','balanced','tricky'])for(let level=1;level<=100;level++){const state=makeState(createPuzzle({level,difficulty})),total=state.bubbles.length+state.reserve.flat().length;assert.equal(liveLoad(state),24);assert.ok(state.bubbles.length>=24&&state.bubbles.length<=28);assert.ok(total>=40&&total<=70);assert.ok(state.reserve.length);assert.ok(clearableGroups(state).length);}
+test('typical decks have 40–70 bubbles total and 24–32 live',()=>{
+  for(const difficulty of['gentle','balanced','tricky'])for(let level=1;level<=100;level++){const state=makeState(createPuzzle({level,difficulty})),total=state.bubbles.length+state.reserve.flat().length;assert.equal(liveLoad(state),24);assert.ok(state.bubbles.length>=24&&state.bubbles.length<=32);assert.ok(total>=40&&total<=70);assert.ok(state.reserve.length);assert.ok(clearableGroups(state).length);}
 });
 test('four-merges feed at most four new bubbles and never deal on an intermediate merge',()=>{
   const state=makeState(createPuzzle()),initial=state.reserve.flat().length,group=members(state,'g0');
@@ -504,4 +504,71 @@ test('a category term can change meaning and behaves exactly like an ordinary wo
   }
   for(const [name,parent]of[['Bass','Freshwater fish'],['Rock','Music genres'],['Pitch','Soccer'],['Jam','Music session'],['Cricket','Ball sports'],['Keys','Moving house']])meanings.add(checkNamedReturn(name,parent));
   assert.ok(meanings.size>=5,'Several category transfers should change meanings');assert.ok(meanings.has('Bass'));
+});
+
+
+test('split counts cover 4–8 deterministically in both languages and every mode',()=>{
+  for(const language of ['en','de'])for(const mode of ['journey','endless','lab','daily']){
+    const frequencies=new Map();
+    for(let round=1;round<=160;round++){
+      const options={language,mode,special:'split',level:round,round,date:localDate(new Date(2026,0,round)),difficulty:'tricky'};
+      const puzzle=createPuzzle(options);
+      // Daily chooses its own mechanic; only split days belong in this sample.
+      if(!puzzle.specials.includes('split'))continue;
+      const state=makeState(puzzle,{challenge:true}),count=state.puzzle.splitCount;
+      assert.deepEqual(puzzle,createPuzzle(options));assert.deepEqual(state,makeState(puzzle,{challenge:true}));
+      assert.ok(count>=4&&count<=8);frequencies.set(count,(frequencies.get(count)||0)+1);
+      const all=[...state.bubbles,...state.reserve.flat()],parts=all.filter(b=>b.kind==='split');
+      assert.equal(parts.length,count*2);assert.equal(new Set(parts.map(b=>b.atoms[0].id)).size,count);
+      assert.equal(state.bubbles.filter(b=>b.kind==='split').length,count*2);
+      assert.equal(state.remaining,puzzle.groups.length*3+count+7);
+      assert.ok(all.length<=70);assert.equal(new Set(all.map(b=>b.id)).size,all.length);
+      assert.ok(liveLoad(state)<=state.capacity);assert.ok(clearableGroups(state).length);
+      for(const b of parts){assert.equal(bubbleText(b),bubbleText(b).toLowerCase());assert.equal(atomText(b.atoms[0]),bubbleText(b));}
+      assert.ok(validateState(state));
+    }
+    assert.deepEqual([...frequencies.keys()].sort(),[4,5,6,7,8],`${language}/${mode}: ${JSON.stringify([...frequencies])}`);
+  }
+});
+
+test('legacy capitalized fragments display lowercase without changing canonical words or adding pairs',()=>{
+  for(const language of ['en','de'])for(const count of [1,4]){
+    const puzzle=createPuzzle({mode:'lab',special:'split',language});puzzle.splitCount=4;
+    const state=makeState(puzzle,{challenge:true}),all=[...state.bubbles,...state.reserve.flat()];
+    const ids=[...new Set(all.filter(b=>b.kind==='split').map(b=>b.atoms[0].id))];
+    // Historical boards used one or four pairs. Rejoin extras before simulating a played save.
+    for(const id of ids.slice(count)){
+      const pair=state.bubbles.filter(b=>b.atoms[0].id===id);assert.ok(merge(state,pair[0].id,pair[1].id).assembled);
+    }
+    delete state.puzzle.splitCount;
+    for(const b of [...state.bubbles,...state.reserve.flat()])for(const atom of b.atoms)if(atom.part!==undefined){
+      const cut=Math.max(1,Math.floor(atom.word.length/2));atom.label=atom.part===0?atom.word.slice(0,cut):atom.word.slice(cut);
+      assert.equal(bubbleText(b),atom.label.toLowerCase());assert.equal(atomText(atom),atom.label.toLowerCase());
+    }
+    const before=structuredClone(state),loaded=JSON.parse(JSON.stringify(state));assert.ok(validateState(loaded));upgradeDealing(loaded);
+    assert.equal(loaded.puzzle.splitCount,undefined);assert.equal(loaded.moves,before.moves);assert.equal(loaded.remaining,before.remaining);
+    const normalize=s=>{for(const b of [...s.bubbles,...s.reserve.flat()])for(const atom of b.atoms)if(atom.part!==undefined)atom.label=atom.label.toLowerCase();return s;};
+    assert.deepEqual(loaded,normalize(before));assert.ok(validateState(loaded));solve(loaded);
+  }
+});
+
+test('maximum split mixtures retain unique clues, one-shot tools, and a solvable move budget',()=>{
+  for(const language of ['en','de']){
+    const puzzle=createPuzzle({mode:'endless',difficulty:'tricky',special:'split',language,round:8});
+    puzzle.splitCount=8;puzzle.specials=['split','linked','screw','keylock','frozen','bonus'];
+    // A forced fixture reserves the worst-case deck overhead explicitly.
+    puzzle.groups=puzzle.groups.slice(0,15);
+    const state=makeState(puzzle,{challenge:true}),all=[...state.bubbles,...state.reserve.flat()];
+    assert.equal(state.puzzle.splitCount,8);assert.equal(all.filter(b=>b.kind==='split').length,16);
+    assert.ok(all.length<=70);assert.ok(all.filter(b=>b.kind==='split').every(b=>!b.link&&!b.keyColor&&!b.pinCarrier));
+    assert.ok(all.filter(b=>b.atoms[0]?.part===1).every(b=>!b.driverColor));solve(state);
+  }
+});
+
+test('split-count metadata is optional for old saves but validated when present',()=>{
+  const state=demo('split');
+  for(const value of [-1,0,1,2,3,9,4.5,'4',null]){const bad=structuredClone(state);bad.puzzle.splitCount=value;assert.equal(validateState(bad),false);}
+  const tooFew=structuredClone(state);tooFew.puzzle.splitCount=0;assert.equal(validateState(tooFew),false);
+  const old=structuredClone(state);delete old.puzzle.splitCount;assert.ok(validateState(old));
+  const malformed=structuredClone(state);delete malformed.puzzle.specials;assert.equal(validateState(malformed),false);
 });
