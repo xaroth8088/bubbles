@@ -29,8 +29,31 @@ try{
   };
   const textFits=async()=>{
     await page.waitForFunction(()=>document.querySelector('#board').dataset.arriving==='0');await page.evaluate(()=>document.fonts.ready);
-    const metrics=await page.locator('.bubble:not([hidden]) .bubble-label,.bubble:not([hidden]) .bubble-term').evaluateAll(nodes=>nodes.filter(el=>!el.closest('.picture')).map(el=>{const r=el.getBoundingClientRect(),b=el.closest('.bubble').getBoundingClientRect();return{text:el.textContent,font:parseFloat(getComputedStyle(el).fontSize),width:r.width,height:r.height,bubble:b.toJSON(),rect:r.toJSON(),scroll:el.scrollWidth};}));
-    assert.ok(metrics.length);for(const item of metrics){assert.ok(item.font>=10&&item.font<=19,JSON.stringify(item));assert.ok(item.scroll<=item.width+2,`Text overflow ${JSON.stringify(item)}`);assert.ok(item.rect.top>=item.bubble.top-1&&item.rect.bottom<=item.bubble.bottom+1,`Vertical text overflow ${JSON.stringify(item)}`);}
+    const metrics=await page.locator('.bubble:not([hidden]) .bubble-label,.bubble:not([hidden]) .bubble-term').evaluateAll(nodes=>nodes.filter(el=>!el.closest('.picture')).map(el=>{
+      const r=el.getBoundingClientRect(),b=el.closest('.bubble').getBoundingClientRect(),words=[];
+      const walker=document.createTreeWalker(el,NodeFilter.SHOW_TEXT);
+      while(walker.nextNode()){
+        const node=walker.currentNode;
+        for(const match of node.textContent.matchAll(/\S+/gu)){
+          const tops=new Set();let left=Infinity,right=-Infinity;
+          for(let i=match.index;i<match.index+match[0].length;i++){
+            const range=document.createRange();range.setStart(node,i);range.setEnd(node,i+1);
+            for(const rect of range.getClientRects())if(rect.width){tops.add(Math.round(rect.top*10)/10);left=Math.min(left,rect.left);right=Math.max(right,rect.right);}
+          }
+          words.push({text:match[0],lines:tops.size,left,right});
+        }
+      }
+      return{text:el.textContent,font:parseFloat(getComputedStyle(el).fontSize),width:r.width,height:r.height,bubble:b.toJSON(),rect:r.toJSON(),scroll:el.scrollWidth,words};
+    }));
+    assert.ok(metrics.length);for(const item of metrics){
+      assert.ok(item.font>0&&item.font<=19,JSON.stringify(item));
+      assert.ok(item.scroll<=item.width+2,`Text overflow ${JSON.stringify(item)}`);
+      assert.ok(item.rect.top>=item.bubble.top-1&&item.rect.bottom<=item.bubble.bottom+1,`Vertical text overflow ${JSON.stringify(item)}`);
+      for(const word of item.words){
+        assert.equal(word.lines,1,`Word split across lines: ${JSON.stringify({item,word})}`);
+        assert.ok(word.left>=item.rect.left-1&&word.right<=item.rect.right+1,`Whole word exceeds label: ${JSON.stringify({item,word})}`);
+      }
+    }
     assert.ok(metrics.some(item=>item.font>=16),'All bubble text is still small');
     assert.ok(await page.evaluate(()=>document.documentElement.scrollWidth<=innerWidth),'Horizontal page overflow');
   };
@@ -48,6 +71,48 @@ try{
   await page.reload();await page.locator('.bubble').first().waitFor();assert.equal((await assertCatalog('de',['science'])).puzzle.id,state.puzzle.id,'Reload lost selected-language session');
   await settings();await page.locator('#setting-motion').check();await page.locator('#close-sheet').click();
   for(const size of [{width:320,height:640},{width:360,height:780},{width:393,height:852},{width:1280,height:1000}]){await page.setViewportSize(size);await page.waitForTimeout(100);await textFits();}
+  // Deterministic real-font fixtures exercise single words that used to leave
+  // a trailing letter, long compounds, punctuation, and 2/3/4-term bubbles.
+  for(const viewport of [320,360,393]){
+    await page.setViewportSize({width:viewport,height:780});
+    const fixture=await page.evaluate(async()=>{
+      const {fitBubbleTerm}=await import('./src/text-fit.js');
+      await document.fonts.ready;
+      const results=[];
+      for(const count of [1,2,3,4])for(const special of [false,true]){
+        const size=({1:74,2:108,3:134,4:158}[count])*Math.min(1,document.querySelector('#board').clientWidth/358);
+        const bubble=document.createElement('div');bubble.className=`bubble typography-fixture ${count>1?'merged':''} ${special?'screw has-special':''}`;
+        bubble.dataset.terms=String(count);bubble.style.cssText=`--size:${size}px;position:fixed;top:180px;left:80px;pointer-events:none`;
+        const terms=count>1?document.createElement('span'):bubble;if(count>1){terms.className='bubble-terms';bubble.append(terms);}
+        const words=['Sun','Hedgehog','Mountain','Bioluminescence','Cinematographer','LittleBigPlanet','Landschaftsplättchen','Sicherheitskontrolle','Regenbogen-Boulevard','Gemeinschaftszentrum','Donaudampfschifffahrtsgesellschaft',"Will-o'-the-wisp","rock’n’roll",'Hello, Goodbye','A very long recognizable title'];
+        document.body.append(bubble);
+        for(let offset=0;offset<words.length;offset++){
+          terms.replaceChildren();
+          for(let i=0;i<count;i++){const label=document.createElement('span');label.className=count>1?'bubble-term':'bubble-label';label.textContent=words[(offset+i)%words.length];terms.append(label);}
+          const style=getComputedStyle(bubble),content=bubble.clientHeight-parseFloat(style.paddingTop)-parseFloat(style.paddingBottom),gap=count>1?parseFloat(getComputedStyle(terms).rowGap):0;
+          const height=count>1?(Math.min(content,size*.76)-(count-1)*gap)/count:Math.min(content,size*(special?.48:.67));
+          for(const label of terms.querySelectorAll('.bubble-label,.bubble-term')){
+            fitBubbleTerm(label,{maxFont:count>1?19:18,maxHeight:height});
+            const font=parseFloat(label.style.fontSize),fits=()=>[...label.children].every(word=>word.offsetWidth<=label.clientWidth-1)&&label.scrollHeight<=height;
+            const fitted=fits();label.style.fontSize=`${font+.02}px`;const largerFits=fits();label.style.fontSize=`${font}px`;
+            const range=document.createRange();
+            const whole=[...label.children].every(word=>{range.selectNodeContents(word);return range.getClientRects().length===1;});
+            results.push({text:label.textContent,count,special,font,fitted,largerFits,whole,lines:Math.round(label.scrollHeight/parseFloat(getComputedStyle(label).lineHeight))});
+          }
+        }
+        bubble.remove();
+      }
+      return results;
+    });
+    for(const item of fixture){
+      assert.ok(item.fitted&&item.whole,`Fixture failed at ${viewport}px: ${JSON.stringify(item)}`);
+      assert.ok(!item.largerFits||item.font===(item.count>1?19:18),`Not the largest fitting size: ${JSON.stringify(item)}`);
+      if(item.text==='Sun'&&item.count===1)assert.equal(item.font,18,'Short single clues lost their large type');
+    }
+    assert.ok(fixture.some(item=>item.font<10),'Long compounds did not exercise the old minimum-font overflow');
+    assert.ok(fixture.some(item=>item.text==='A very long recognizable title'&&item.lines>1),'Phrases no longer wrap at whitespace');
+    await textFits();
+  }
   // Each selectable pack can generate a board with the base pack switched off.
   for(const language of ['en','de'])for(const packId of ALL_PACK_IDS){await choose(language,[packId]);await assertCatalog(language,[packId]);}
   await page.setViewportSize({width:360,height:780});await choose('de',['science']);await textFits();

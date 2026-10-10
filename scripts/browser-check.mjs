@@ -41,7 +41,7 @@ try{
   await page.goto(base);await page.locator('.bubble').first().waitFor();await settle();
   await layout();await page.screenshot({path:path.join(output,'galaxy-s23.png')});
   const labels=await page.locator('.bubble-label').evaluateAll(nodes=>nodes.map(el=>({font:parseFloat(getComputedStyle(el).fontSize),height:el.getBoundingClientRect().height,bubbleHeight:el.parentElement.getBoundingClientRect().height})));
-  assert.ok(labels.every(label=>label.font>=10&&label.font<=18&&label.height<=label.bubbleHeight*.7),'A shuffled clue did not fit its bubble');
+  assert.ok(labels.every(label=>label.font>0&&label.font<=18&&label.height<=label.bubbleHeight*.7),'A shuffled clue did not fit its bubble');
   let state=await read();assert.equal(state.bubbles.length,24);assert.ok(state.reserve.flat().length>=16);assert.ok(state.bubbles.length+state.reserve.flat().length<=70);
   const journeyShuffle=state.puzzle.shuffleSeed;assert.ok(journeyShuffle,'Journey started without a fresh shuffle');
   const cdp=await context.newCDPSession(page);
