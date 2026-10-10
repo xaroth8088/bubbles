@@ -1,0 +1,776 @@
+{
+  "id": "arts",
+  "language": "en",
+  "name": "Arts & creativity",
+  "themes": [
+    {
+      "id": "theme-160",
+      "name": "Dance styles",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Ballet",
+        "Tap",
+        "Salsa",
+        "Tango",
+        "Waltz",
+        "Hip-hop",
+        "Flamenco",
+        "Swing"
+      ]
+    },
+    {
+      "id": "theme-161",
+      "name": "Art supplies",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Brush",
+        "Canvas",
+        "Easel",
+        "Palette",
+        "Paint",
+        "Charcoal",
+        "Pastel",
+        "Sketchbook",
+        "Pencil",
+        "Crayon",
+        "Marker",
+        "Ink",
+        "Paper",
+        "Clay",
+        "Glue",
+        "Scissors",
+        "Paintbrush"
+      ]
+    },
+    {
+      "id": "theme-162",
+      "name": "Painting styles",
+      "domain": "arts",
+      "difficulty": 2,
+      "words": [
+        "Impressionism",
+        "Cubism",
+        "Surrealism",
+        "Realism",
+        "Expressionism",
+        "Pointillism",
+        "Pop art",
+        "Abstract"
+      ]
+    },
+    {
+      "id": "theme-163",
+      "name": "Art media",
+      "domain": "arts",
+      "difficulty": 2,
+      "words": [
+        "Watercolor",
+        "Oil",
+        "Acrylic",
+        "Ink",
+        "Gouache",
+        "Tempera",
+        "Fresco",
+        "Encaustic"
+      ]
+    },
+    {
+      "id": "theme-164",
+      "name": "Theater",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Stage",
+        "Curtain",
+        "Spotlight",
+        "Backstage",
+        "Orchestra pit",
+        "Prop",
+        "Costume",
+        "Auditorium",
+        "Actor",
+        "Audience",
+        "Script",
+        "Rehearsal",
+        "Ticket",
+        "Director",
+        "Balcony",
+        "Makeup",
+        "Masks"
+      ]
+    },
+    {
+      "id": "theme-167",
+      "name": "Photography",
+      "domain": "arts",
+      "difficulty": 2,
+      "words": [
+        "Aperture",
+        "Shutter",
+        "Exposure",
+        "Focus",
+        "Lens",
+        "ISO",
+        "Bokeh",
+        "Tripod",
+        "Camera",
+        "Film"
+      ]
+    },
+    {
+      "id": "theme-168",
+      "name": "Pottery",
+      "domain": "arts",
+      "difficulty": 2,
+      "words": [
+        "Clay",
+        "Kiln",
+        "Glaze",
+        "Wheel",
+        "Slip",
+        "Coil",
+        "Bisque",
+        "Stoneware"
+      ]
+    },
+    {
+      "id": "theme-169",
+      "name": "Crafts",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Knitting",
+        "Weaving",
+        "Origami",
+        "Embroidery",
+        "Quilting",
+        "Crochet",
+        "Macrame",
+        "Decoupage"
+      ]
+    },
+    {
+      "id": "theme-170",
+      "name": "Famous painters",
+      "domain": "arts",
+      "difficulty": 2,
+      "words": [
+        "Monet",
+        "Picasso",
+        "Rembrandt",
+        "Kahlo",
+        "Van Gogh",
+        "Matisse",
+        "O'Keeffe",
+        "Dali"
+      ]
+    },
+    {
+      "id": "theme-171",
+      "name": "Origami shapes",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Crane",
+        "Boat",
+        "Butterfly",
+        "Flower",
+        "Frog",
+        "Box",
+        "Star",
+        "Heart"
+      ]
+    },
+    {
+      "id": "theme-297",
+      "name": "Warm colors",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Orange",
+        "Red",
+        "Yellow",
+        "Scarlet",
+        "Coral",
+        "Amber",
+        "Gold",
+        "Vermilion"
+      ]
+    },
+    {
+      "id": "theme-460",
+      "name": "Art class",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Paint",
+        "Brush",
+        "Canvas",
+        "Clay",
+        "Crayon",
+        "Pastel",
+        "Sketchbook",
+        "Palette",
+        "Scissors",
+        "Glue",
+        "Paper",
+        "Easel"
+      ]
+    },
+    {
+      "id": "theme-466",
+      "name": "Museum",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Exhibit",
+        "Gallery",
+        "Painting",
+        "Sculpture",
+        "Artifact",
+        "Fossil",
+        "Guide",
+        "Display case",
+        "Ticket",
+        "Audio guide",
+        "Collection",
+        "History"
+      ]
+    },
+    {
+      "id": "theme-467",
+      "name": "Circus",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Clown",
+        "Acrobat",
+        "Trapeze",
+        "Juggler",
+        "Ringmaster",
+        "Big top",
+        "Tightrope",
+        "Unicycle",
+        "Spotlight",
+        "Audience",
+        "Ticket",
+        "Magician"
+      ]
+    },
+    {
+      "id": "theme-529",
+      "name": "Photography kit",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Camera",
+        "Lens",
+        "Tripod",
+        "Flash",
+        "Memory card",
+        "Battery",
+        "Strap",
+        "Reflector",
+        "Light",
+        "Bag"
+      ]
+    },
+    {
+      "id": "theme-530",
+      "name": "Painting",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Brush",
+        "Paint",
+        "Canvas",
+        "Easel",
+        "Palette",
+        "Color",
+        "Stroke",
+        "Portrait",
+        "Landscape",
+        "Watercolor",
+        "Oil",
+        "Acrylic"
+      ]
+    },
+    {
+      "id": "theme-531",
+      "name": "Drawing",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Pencil",
+        "Charcoal",
+        "Paper",
+        "Sketch",
+        "Line",
+        "Shading",
+        "Eraser",
+        "Perspective",
+        "Portrait",
+        "Outline",
+        "Pastel",
+        "Crayon"
+      ]
+    },
+    {
+      "id": "theme-532",
+      "name": "Sculpture",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Clay",
+        "Stone",
+        "Marble",
+        "Bronze",
+        "Wood",
+        "Chisel",
+        "Carving",
+        "Model",
+        "Statue",
+        "Bust",
+        "Pedestal",
+        "Gallery"
+      ]
+    },
+    {
+      "id": "theme-533",
+      "name": "Knitting",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Yarn",
+        "Needle",
+        "Stitch",
+        "Knit",
+        "Purl",
+        "Scarf",
+        "Sweater",
+        "Wool",
+        "Pattern",
+        "Cast on",
+        "Row",
+        "Loop"
+      ]
+    },
+    {
+      "id": "theme-534",
+      "name": "Crochet",
+      "domain": "arts",
+      "difficulty": 2,
+      "words": [
+        "Hook",
+        "Yarn",
+        "Stitch",
+        "Chain",
+        "Loop",
+        "Blanket",
+        "Granny square",
+        "Pattern",
+        "Scarf",
+        "Single crochet"
+      ]
+    },
+    {
+      "id": "theme-535",
+      "name": "Embroidery",
+      "domain": "arts",
+      "difficulty": 2,
+      "words": [
+        "Needle",
+        "Thread",
+        "Hoop",
+        "Fabric",
+        "Stitch",
+        "Pattern",
+        "Cross-stitch",
+        "Backstitch",
+        "Satin stitch",
+        "Floss"
+      ]
+    },
+    {
+      "id": "theme-536",
+      "name": "Quilting",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Fabric",
+        "Patch",
+        "Block",
+        "Stitch",
+        "Batting",
+        "Backing",
+        "Pattern",
+        "Needle",
+        "Thread",
+        "Sewing machine",
+        "Quilt",
+        "Binding"
+      ]
+    },
+    {
+      "id": "theme-537",
+      "name": "Paper crafts",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Origami",
+        "Collage",
+        "Card",
+        "Scrapbook",
+        "Airplane",
+        "Flower",
+        "Scissors",
+        "Glue",
+        "Folding",
+        "Chain"
+      ]
+    },
+    {
+      "id": "theme-538",
+      "name": "Woodworking",
+      "domain": "arts",
+      "difficulty": 2,
+      "words": [
+        "Saw",
+        "Chisel",
+        "Plane",
+        "Sandpaper",
+        "Clamp",
+        "Drill",
+        "Wood",
+        "Glue",
+        "Joint",
+        "Workbench",
+        "Varnish",
+        "Measuring tape"
+      ]
+    },
+    {
+      "id": "theme-539",
+      "name": "Drama",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Actor",
+        "Script",
+        "Stage",
+        "Scene",
+        "Dialogue",
+        "Costume",
+        "Prop",
+        "Rehearsal",
+        "Audience",
+        "Director",
+        "Curtain",
+        "Monologue"
+      ]
+    },
+    {
+      "id": "theme-540",
+      "name": "Ballet",
+      "domain": "arts",
+      "difficulty": 2,
+      "words": [
+        "Pointe",
+        "Tutu",
+        "Barre",
+        "Plie",
+        "Pirouette",
+        "Arabesque",
+        "Leotard",
+        "Slippers",
+        "Pas de deux",
+        "Choreography"
+      ]
+    },
+    {
+      "id": "theme-541",
+      "name": "Magic show",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Magician",
+        "Wand",
+        "Top hat",
+        "Rabbit",
+        "Card",
+        "Trick",
+        "Illusion",
+        "Cape",
+        "Assistant",
+        "Disappearing",
+        "Coin",
+        "Sleight of hand"
+      ]
+    },
+    {
+      "id": "theme-542",
+      "name": "Arts",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Music",
+        "Painting",
+        "Drawing",
+        "Sculpture",
+        "Dance",
+        "Drama",
+        "Photography",
+        "Poetry",
+        "Cinema",
+        "Pottery",
+        "Crafts",
+        "Theater",
+        "Animation",
+        "Printmaking",
+        "Collage",
+        "Calligraphy",
+        "Puppet",
+        "Stagecraft"
+      ]
+    },
+    {
+      "id": "theme-552",
+      "name": "Dance",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Ballet",
+        "Tap",
+        "Salsa",
+        "Tango",
+        "Waltz",
+        "Hip-hop",
+        "Swing",
+        "Flamenco",
+        "Breakdance",
+        "Disco",
+        "Line dance",
+        "Polka"
+      ]
+    },
+    {
+      "id": "theme-650",
+      "name": "Fabric crafts",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Sewing",
+        "Knitting",
+        "Crochet",
+        "Embroidery",
+        "Quilting",
+        "Weaving",
+        "Needle",
+        "Thread",
+        "Yarn",
+        "Fabric"
+      ]
+    },
+    {
+      "id": "theme-897",
+      "name": "Puppet",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "String",
+        "Rod",
+        "Hand",
+        "Glove",
+        "Marionette",
+        "Stage",
+        "Curtain",
+        "Voice",
+        "Character",
+        "Show",
+        "Wood",
+        "Fabric"
+      ]
+    },
+    {
+      "id": "theme-898",
+      "name": "Weaving",
+      "domain": "arts",
+      "difficulty": 2,
+      "words": [
+        "Loom",
+        "Warp",
+        "Weft",
+        "Shuttle",
+        "Thread",
+        "Yarn",
+        "Cloth",
+        "Pattern",
+        "Tapestry",
+        "Basket",
+        "Strand",
+        "Interlacing"
+      ]
+    },
+    {
+      "id": "theme-899",
+      "name": "Calligraphy",
+      "domain": "arts",
+      "difficulty": 2,
+      "words": [
+        "Pen",
+        "Ink",
+        "Nib",
+        "Brush",
+        "Paper",
+        "Letter",
+        "Stroke",
+        "Script",
+        "Flourish",
+        "Line",
+        "Spacing",
+        "Handwriting"
+      ]
+    },
+    {
+      "id": "theme-900",
+      "name": "Printmaking",
+      "domain": "arts",
+      "difficulty": 2,
+      "words": [
+        "Ink",
+        "Block",
+        "Roller",
+        "Paper",
+        "Press",
+        "Stencil",
+        "Woodcut",
+        "Linocut",
+        "Etching",
+        "Screen",
+        "Impression",
+        "Edition"
+      ]
+    },
+    {
+      "id": "theme-901",
+      "name": "Collage",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Paper",
+        "Scissors",
+        "Glue",
+        "Magazine",
+        "Photograph",
+        "Newspaper",
+        "Cutout",
+        "Layer",
+        "Texture",
+        "Shape",
+        "Color",
+        "Composition"
+      ]
+    },
+    {
+      "id": "theme-902",
+      "name": "Animation",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Frame",
+        "Drawing",
+        "Character",
+        "Storyboard",
+        "Cartoon",
+        "Movement",
+        "Voice actor",
+        "Stop motion",
+        "Flipbook",
+        "Computer",
+        "Model",
+        "Background"
+      ]
+    },
+    {
+      "id": "theme-903",
+      "name": "Stagecraft",
+      "domain": "arts",
+      "difficulty": 2,
+      "words": [
+        "Theater",
+        "Set",
+        "Prop",
+        "Costume",
+        "Lighting",
+        "Scenery",
+        "Curtain",
+        "Trapdoor",
+        "Backdrop",
+        "Sound effect",
+        "Stagehand",
+        "Rehearsal"
+      ]
+    },
+    {
+      "id": "theme-904",
+      "name": "Mask",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Face",
+        "Eye hole",
+        "String",
+        "Elastic",
+        "Costume",
+        "Disguise",
+        "Papier-mache",
+        "Paint",
+        "Theater",
+        "Carnival",
+        "Masquerade",
+        "Halloween"
+      ]
+    }
+  ],
+  "pictures": {
+    "Orange": "🍊",
+    "Rabbit": "🐇",
+    "Butterfly": "🦋",
+    "Plane": "✈️",
+    "Saw": "🪚",
+    "Pen": "🖊️",
+    "Pencil": "✏️",
+    "Frog": "🐸",
+    "Star": "⭐",
+    "Coral": "🪸",
+    "Scarf": "🧣",
+    "Top hat": "🎩",
+    "Scissors": "✂️",
+    "Needle": "🪡",
+    "Thread": "🧵",
+    "Yarn": "🧶",
+    "Palette": "🎨",
+    "Paintbrush": "🖌️",
+    "Crayon": "🖍️",
+    "Camera": "📷",
+    "Film": "🎞️",
+    "Masks": "🎭",
+    "Ticket": "🎟️",
+    "Glove": "🥊",
+    "Wheel": "🛞",
+    "Battery": "🔋",
+    "Statue": "🗽",
+    "Basket": "🧺",
+    "Hook": "🪝",
+    "Chain": "⛓️",
+    "Box": "📦",
+    "Heart": "🫀",
+    "Hand": "✋",
+    "Coin": "🪙",
+    "Card": "💳",
+    "Music": "🎶",
+    "Clamp": "🗜️"
+  }
+}

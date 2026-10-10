@@ -1,0 +1,597 @@
+{
+  "id": "movies",
+  "language": "de",
+  "name": "Film & Fernsehen",
+  "themes": [
+    {
+      "id": "de-movies-im-kino",
+      "name": "Im Kino",
+      "domain": "movies",
+      "difficulty": 1,
+      "words": [
+        "Leinwand",
+        "Popcorn",
+        "Kinokarte",
+        "Sessel",
+        "Vorhang",
+        "Trailer",
+        "Vorstellung",
+        "Nachos"
+      ]
+    },
+    {
+      "id": "de-movies-am-filmset",
+      "name": "Am Filmset",
+      "domain": "movies",
+      "difficulty": 1,
+      "words": [
+        "Kamera",
+        "Regisseur",
+        "Drehbuch",
+        "Klappe",
+        "Scheinwerfer",
+        "Kostüm",
+        "Kulisse",
+        "Mikrofon"
+      ]
+    },
+    {
+      "id": "de-movies-filmberufe",
+      "name": "Filmberufe",
+      "domain": "movies",
+      "difficulty": 1,
+      "words": [
+        "Schauspieler",
+        "Regisseurin",
+        "Kameramann",
+        "Maskenbildner",
+        "Stuntfrau",
+        "Cutter",
+        "Komponist",
+        "Drehbuchautor"
+      ]
+    },
+    {
+      "id": "de-movies-filmgenres",
+      "name": "Filmgenres",
+      "domain": "movies",
+      "difficulty": 1,
+      "words": [
+        "Komödie",
+        "Drama",
+        "Thriller",
+        "Western",
+        "Horrorfilm",
+        "Krimi",
+        "Musical",
+        "Abenteuerfilm"
+      ]
+    },
+    {
+      "id": "de-movies-animationsfilm",
+      "name": "Animationsfilm",
+      "domain": "movies",
+      "difficulty": 1,
+      "words": [
+        "Zeichnung",
+        "Figur",
+        "Animation",
+        "Synchronstimme",
+        "Trickfilm",
+        "Storyboard",
+        "Computerbild",
+        "Stop-Motion"
+      ]
+    },
+    {
+      "id": "de-movies-western",
+      "name": "Western",
+      "domain": "movies",
+      "difficulty": 1,
+      "words": [
+        "Cowboy",
+        "Saloon",
+        "Sheriff",
+        "Revolver",
+        "Kutsche",
+        "Wüste",
+        "Duell",
+        "Prärie"
+      ]
+    },
+    {
+      "id": "de-movies-kriminalfilm",
+      "name": "Kriminalfilm",
+      "domain": "movies",
+      "difficulty": 1,
+      "words": [
+        "Detektiv",
+        "Tatort",
+        "Zeuge",
+        "Alibi",
+        "Verdacht",
+        "Beweis",
+        "Täter",
+        "Verhör"
+      ]
+    },
+    {
+      "id": "de-movies-weltraumkino",
+      "name": "Weltraumkino",
+      "domain": "movies",
+      "difficulty": 1,
+      "words": [
+        "Alien",
+        "Raumschiff",
+        "Lichtschwert",
+        "Planet",
+        "Roboter",
+        "Galaxie",
+        "Astronaut",
+        "Laser"
+      ]
+    },
+    {
+      "id": "de-movies-marchenfilm",
+      "name": "Märchenfilm",
+      "domain": "movies",
+      "difficulty": 1,
+      "words": [
+        "Prinzessin",
+        "Prinz",
+        "Hexe",
+        "Schloss",
+        "Zauber",
+        "Drache",
+        "Fee",
+        "Verwandlung"
+      ]
+    },
+    {
+      "id": "de-movies-harry-potter",
+      "name": "Harry Potter",
+      "domain": "movies",
+      "difficulty": 1,
+      "words": [
+        "Harry",
+        "Hermine",
+        "Ron",
+        "Hogwarts",
+        "Dumbledore",
+        "Voldemort",
+        "Hagrid",
+        "Quidditch"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-movies-star-wars",
+      "name": "Star Wars",
+      "domain": "movies",
+      "difficulty": 1,
+      "words": [
+        "Luke Skywalker",
+        "Leia",
+        "Darth Vader",
+        "Yoda",
+        "Chewbacca",
+        "R2-D2",
+        "Han Solo",
+        "Todesstern"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-movies-der-herr-der-ringe",
+      "name": "Der Herr der Ringe",
+      "domain": "movies",
+      "difficulty": 1,
+      "words": [
+        "Frodo",
+        "Sam",
+        "Gandalf",
+        "Aragorn",
+        "Legolas",
+        "Gollum",
+        "Mordor",
+        "Der Eine Ring"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-movies-die-eiskonigin",
+      "name": "Die Eiskönigin",
+      "domain": "movies",
+      "difficulty": 1,
+      "words": [
+        "Elsa",
+        "Anna",
+        "Olaf",
+        "Kristoff",
+        "Sven",
+        "Arendelle",
+        "Eispalast",
+        "Schneemann"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-movies-der-konig-der-lowen",
+      "name": "Der König der Löwen",
+      "domain": "movies",
+      "difficulty": 1,
+      "words": [
+        "Simba",
+        "Nala",
+        "Mufasa",
+        "Scar",
+        "Timon",
+        "Pumbaa",
+        "Rafiki",
+        "Königsfelsen"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-movies-findet-nemo",
+      "name": "Findet Nemo",
+      "domain": "movies",
+      "difficulty": 1,
+      "words": [
+        "Nemo",
+        "Marlin",
+        "Dorie",
+        "Clownfisch",
+        "Riff",
+        "Aquarium",
+        "Schildkröte",
+        "Zahnarzt"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-movies-shrek",
+      "name": "Shrek",
+      "domain": "movies",
+      "difficulty": 1,
+      "words": [
+        "Shrek",
+        "Fiona",
+        "Esel",
+        "Drache",
+        "Lord Farquaad",
+        "Sumpf",
+        "Oger",
+        "Gestiefelter Kater"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-movies-toy-story",
+      "name": "Toy Story",
+      "domain": "movies",
+      "difficulty": 1,
+      "words": [
+        "Woody",
+        "Buzz Lightyear",
+        "Jessie",
+        "Rex",
+        "Hamm",
+        "Andy",
+        "Slinky",
+        "Cowboy"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-movies-fluch-der-karibik",
+      "name": "Fluch der Karibik",
+      "domain": "movies",
+      "difficulty": 1,
+      "words": [
+        "Jack Sparrow",
+        "Will Turner",
+        "Elizabeth Swann",
+        "Barbossa",
+        "Black Pearl",
+        "Davy Jones",
+        "Kompass",
+        "Piratenfluch"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-movies-jurassic-park",
+      "name": "Jurassic Park",
+      "domain": "movies",
+      "difficulty": 1,
+      "words": [
+        "Dinosaurier",
+        "T-Rex",
+        "Velociraptor",
+        "Isla Nublar",
+        "Bernstein",
+        "Alan Grant",
+        "Ian Malcolm",
+        "John Hammond"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-movies-titanic",
+      "name": "Titanic",
+      "domain": "movies",
+      "difficulty": 1,
+      "words": [
+        "Jack",
+        "Rose",
+        "Eisberg",
+        "Atlantik",
+        "Rettungsboot",
+        "Herz des Ozeans",
+        "Schiffsbug",
+        "Untergang"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-movies-zuruck-in-die-zukunft",
+      "name": "Zurück in die Zukunft",
+      "domain": "movies",
+      "difficulty": 2,
+      "words": [
+        "Marty McFly",
+        "Doc Brown",
+        "DeLorean",
+        "Zeitmaschine",
+        "Fluxkompensator",
+        "Hill Valley",
+        "Blitz",
+        "Hoverboard"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-movies-indiana-jones",
+      "name": "Indiana Jones",
+      "domain": "movies",
+      "difficulty": 2,
+      "words": [
+        "Peitsche",
+        "Hut",
+        "Archäologe",
+        "Bundeslade",
+        "Heiliger Gral",
+        "Tempel",
+        "Schlange",
+        "Abenteuer"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-movies-james-bond",
+      "name": "James Bond",
+      "domain": "movies",
+      "difficulty": 2,
+      "words": [
+        "007",
+        "Aston Martin",
+        "M",
+        "Q",
+        "Moneypenny",
+        "Martini",
+        "Geheimagent",
+        "Spectre"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-movies-batman",
+      "name": "Batman",
+      "domain": "movies",
+      "difficulty": 2,
+      "words": [
+        "Bruce Wayne",
+        "Gotham",
+        "Joker",
+        "Robin",
+        "Batmobil",
+        "Alfred",
+        "Batsignal",
+        "Catwoman"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-movies-spider-man",
+      "name": "Spider-Man",
+      "domain": "movies",
+      "difficulty": 2,
+      "words": [
+        "Peter Parker",
+        "Spinnennetz",
+        "Mary Jane",
+        "Onkel Ben",
+        "Tante May",
+        "Grüner Kobold",
+        "New York",
+        "Spinnensinn"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-movies-die-avengers",
+      "name": "Die Avengers",
+      "domain": "movies",
+      "difficulty": 2,
+      "words": [
+        "Iron Man",
+        "Thor",
+        "Hulk",
+        "Black Widow",
+        "Captain America",
+        "Hawkeye",
+        "Thanos",
+        "Infinity-Steine"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-movies-matrix",
+      "name": "Matrix",
+      "domain": "movies",
+      "difficulty": 2,
+      "words": [
+        "Neo",
+        "Trinity",
+        "Morpheus",
+        "Agent Smith",
+        "Rote Pille",
+        "Blaue Pille",
+        "Simulation",
+        "Telefonzelle"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-movies-ghostbusters",
+      "name": "Ghostbusters",
+      "domain": "movies",
+      "difficulty": 2,
+      "words": [
+        "Geisterjäger",
+        "Slimer",
+        "Protonenrucksack",
+        "Geisterfalle",
+        "Feuerwache",
+        "Marshmallow-Mann",
+        "Ecto-1",
+        "Geist"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-movies-paddington",
+      "name": "Paddington",
+      "domain": "movies",
+      "difficulty": 2,
+      "words": [
+        "Bär",
+        "Marmelade",
+        "Peru",
+        "London",
+        "Blauer Mantel",
+        "Roter Hut",
+        "Familie Brown",
+        "Koffer"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-movies-wickie",
+      "name": "Wickie",
+      "domain": "movies",
+      "difficulty": 2,
+      "words": [
+        "Wikinger",
+        "Halvar",
+        "Ylva",
+        "Flake",
+        "Schiff",
+        "Helm",
+        "Schlaue Idee",
+        "Nase reiben"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-movies-die-maus",
+      "name": "Die Maus",
+      "domain": "movies",
+      "difficulty": 1,
+      "words": [
+        "Maus",
+        "Elefant",
+        "Ente",
+        "Armin",
+        "Christoph",
+        "Lachgeschichten",
+        "Sachgeschichten",
+        "Sonntag"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-movies-sesamstrasse",
+      "name": "Sesamstraße",
+      "domain": "movies",
+      "difficulty": 1,
+      "words": [
+        "Ernie",
+        "Bert",
+        "Krümelmonster",
+        "Elmo",
+        "Grobi",
+        "Samson",
+        "Tiffy",
+        "Graf Zahl"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-movies-bibi-und-tina",
+      "name": "Bibi & Tina",
+      "domain": "movies",
+      "difficulty": 1,
+      "words": [
+        "Bibi",
+        "Tina",
+        "Amadeus",
+        "Sabrina",
+        "Martinshof",
+        "Hexerei",
+        "Alex",
+        "Falco"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-movies-die-simpsons",
+      "name": "Die Simpsons",
+      "domain": "movies",
+      "difficulty": 1,
+      "words": [
+        "Homer",
+        "Marge",
+        "Bart",
+        "Lisa",
+        "Maggie",
+        "Springfield",
+        "Flanders",
+        "Mr. Burns"
+      ],
+      "popCulture": true
+    }
+  ],
+  "pictures": {
+    "Kamera": "🎥",
+    "Klappe": "🎬",
+    "Popcorn": "🍿",
+    "Kinokarte": "🎟️",
+    "Mikrofon": "🎤",
+    "Cowboy": "🤠",
+    "Schloss": "🏰",
+    "Drache": "🐉",
+    "Schneemann": "⛄",
+    "Clownfisch": "🐠",
+    "Schildkröte": "🐢",
+    "Piratenfluch": "🏴‍☠️",
+    "Kompass": "🧭",
+    "Dinosaurier": "🦖",
+    "Eisberg": "🧊",
+    "Schiff": "🚢",
+    "Blitz": "⚡",
+    "Spinnennetz": "🕸️",
+    "Geist": "👻"
+  }
+}

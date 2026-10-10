@@ -1,0 +1,1359 @@
+{
+  "id": "music",
+  "language": "en",
+  "name": "Music & artists",
+  "themes": [
+    {
+      "id": "theme-148",
+      "name": "Strings",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Violin",
+        "Cello",
+        "Guitar",
+        "Harp",
+        "Viola",
+        "Banjo",
+        "Mandolin",
+        "Ukulele",
+        "Bass"
+      ]
+    },
+    {
+      "id": "theme-149",
+      "name": "Woodwinds",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "Flute",
+        "Clarinet",
+        "Oboe",
+        "Bassoon",
+        "Piccolo",
+        "Saxophone",
+        "Recorder",
+        "Cor anglais"
+      ]
+    },
+    {
+      "id": "theme-150",
+      "name": "Brass",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "Trumpet",
+        "Trombone",
+        "Tuba",
+        "French horn",
+        "Cornet",
+        "Flugelhorn",
+        "Euphonium",
+        "Sousaphone"
+      ]
+    },
+    {
+      "id": "theme-151",
+      "name": "Percussion",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Drum",
+        "Cymbal",
+        "Tambourine",
+        "Maraca",
+        "Bongo",
+        "Gong",
+        "Triangle",
+        "Xylophone"
+      ]
+    },
+    {
+      "id": "theme-152",
+      "name": "Music genres",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Jazz",
+        "Blues",
+        "Rock",
+        "Pop",
+        "Country",
+        "Folk",
+        "Reggae",
+        "Classical",
+        "Soul"
+      ]
+    },
+    {
+      "id": "theme-153",
+      "name": "Tempo markings",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "Allegro",
+        "Adagio",
+        "Andante",
+        "Presto",
+        "Largo",
+        "Moderato",
+        "Vivace",
+        "Lento"
+      ]
+    },
+    {
+      "id": "theme-154",
+      "name": "Voice",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "Soprano",
+        "Alto",
+        "Tenor",
+        "Bass",
+        "Mezzo",
+        "Baritone",
+        "Contralto",
+        "Countertenor"
+      ]
+    },
+    {
+      "id": "theme-155",
+      "name": "Music notation",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "Clef",
+        "Staff",
+        "Rest",
+        "Note",
+        "Sharp",
+        "Flat",
+        "Barline",
+        "Time signature",
+        "Score"
+      ]
+    },
+    {
+      "id": "theme-156",
+      "name": "Classical composers",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "Bach",
+        "Mozart",
+        "Beethoven",
+        "Chopin",
+        "Vivaldi",
+        "Debussy",
+        "Handel",
+        "Schubert"
+      ]
+    },
+    {
+      "id": "theme-157",
+      "name": "Song sections",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Verse",
+        "Chorus",
+        "Bridge",
+        "Intro",
+        "Outro",
+        "Refrain",
+        "Pre-chorus",
+        "Interlude"
+      ]
+    },
+    {
+      "id": "theme-158",
+      "name": "Guitar",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "Fret",
+        "Neck",
+        "String",
+        "Pickup",
+        "Bridge",
+        "Headstock",
+        "Pickguard",
+        "Tuning peg"
+      ]
+    },
+    {
+      "id": "theme-159",
+      "name": "Listening",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Headphones",
+        "Earbuds",
+        "Speaker",
+        "Radio",
+        "Turntable",
+        "Boombox",
+        "Stereo",
+        "Jukebox"
+      ]
+    },
+    {
+      "id": "theme-286",
+      "name": "Bass",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "Electric",
+        "Upright",
+        "Fretless",
+        "Acoustic",
+        "Five-string",
+        "Six-string",
+        "Short-scale",
+        "Piccolo"
+      ]
+    },
+    {
+      "id": "theme-298",
+      "name": "Musical qualities",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "Pitch",
+        "Tone",
+        "Rhythm",
+        "Timbre",
+        "Melody",
+        "Harmony",
+        "Tempo",
+        "Dynamics"
+      ]
+    },
+    {
+      "id": "theme-300",
+      "name": "Music session",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "Jam",
+        "Solo",
+        "Improvisation",
+        "Groove",
+        "Riff",
+        "Chorus",
+        "Bridge",
+        "Break"
+      ]
+    },
+    {
+      "id": "theme-305",
+      "name": "Instrument families",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "Strings",
+        "Woodwinds",
+        "Brass",
+        "Percussion",
+        "Keyboard",
+        "Electronic",
+        "Plucked",
+        "Bowed"
+      ]
+    },
+    {
+      "id": "theme-308",
+      "name": "Musical topics",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "Music genres",
+        "Instrument families",
+        "Musical qualities",
+        "Music session",
+        "Music notation",
+        "Composition",
+        "Performance",
+        "Recording"
+      ]
+    },
+    {
+      "id": "theme-461",
+      "name": "Music class",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Song",
+        "Note",
+        "Beat",
+        "Rhythm",
+        "Piano",
+        "Recorder",
+        "Drum",
+        "Choir",
+        "Sheet music",
+        "Teacher",
+        "Scale",
+        "Melody"
+      ]
+    },
+    {
+      "id": "theme-468",
+      "name": "Concert",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Stage",
+        "Microphone",
+        "Speaker",
+        "Amplifier",
+        "Crowd",
+        "Ticket",
+        "Setlist",
+        "Encore",
+        "Band",
+        "Singer",
+        "Spotlight",
+        "Drum kit"
+      ]
+    },
+    {
+      "id": "theme-543",
+      "name": "Music",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Song",
+        "Melody",
+        "Harmony",
+        "Rhythm",
+        "Beat",
+        "Note",
+        "Chord",
+        "Instrument",
+        "Singer",
+        "Concert",
+        "Album",
+        "Recording",
+        "Piano",
+        "Accordion",
+        "Flute",
+        "Maraca",
+        "Harp",
+        "Bell",
+        "Microphone",
+        "Headphones",
+        "Radio"
+      ]
+    },
+    {
+      "id": "theme-544",
+      "name": "Band",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Singer",
+        "Guitar",
+        "Bass",
+        "Drums",
+        "Keyboard",
+        "Amplifier",
+        "Microphone",
+        "Stage",
+        "Rehearsal",
+        "Song",
+        "Concert",
+        "Setlist"
+      ]
+    },
+    {
+      "id": "theme-545",
+      "name": "Orchestra",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Violin",
+        "Viola",
+        "Cello",
+        "Double bass",
+        "Flute",
+        "Clarinet",
+        "Trumpet",
+        "Trombone",
+        "Timpani",
+        "Conductor",
+        "Oboe",
+        "French horn"
+      ]
+    },
+    {
+      "id": "theme-546",
+      "name": "Choir",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Singer",
+        "Soprano",
+        "Alto",
+        "Tenor",
+        "Bass",
+        "Harmony",
+        "Conductor",
+        "Sheet music",
+        "Rehearsal",
+        "Voice",
+        "Choral",
+        "Unison"
+      ]
+    },
+    {
+      "id": "theme-547",
+      "name": "Piano",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Key",
+        "Pedal",
+        "Hammer",
+        "String",
+        "Keyboard",
+        "Black",
+        "White",
+        "Bench",
+        "Grand",
+        "Upright",
+        "Chord",
+        "Sheet music"
+      ]
+    },
+    {
+      "id": "theme-548",
+      "name": "Drums",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Snare",
+        "Bass",
+        "Tom",
+        "Cymbal",
+        "Hi-hat",
+        "Drumstick",
+        "Pedal",
+        "Kit",
+        "Beat",
+        "Rhythm",
+        "Brush",
+        "Drummer"
+      ]
+    },
+    {
+      "id": "theme-549",
+      "name": "Violin",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "Bow",
+        "String",
+        "Bridge",
+        "Chin rest",
+        "Peg",
+        "Fingerboard",
+        "Case",
+        "Rosin",
+        "Scroll",
+        "Orchestra"
+      ]
+    },
+    {
+      "id": "theme-550",
+      "name": "Recording studio",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "Microphone",
+        "Headphones",
+        "Mixer",
+        "Speaker",
+        "Soundproofing",
+        "Producer",
+        "Track",
+        "Booth",
+        "Recording",
+        "Mastering"
+      ]
+    },
+    {
+      "id": "theme-551",
+      "name": "Music formats",
+      "domain": "music",
+      "difficulty": 1,
+      "words": [
+        "Vinyl",
+        "CD",
+        "Cassette",
+        "MP3",
+        "Streaming",
+        "Radio",
+        "Download",
+        "Record",
+        "Album",
+        "Single"
+      ]
+    },
+    {
+      "id": "theme-670",
+      "name": "Pop singers",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "Taylor Swift",
+        "Adele",
+        "Beyonce",
+        "Rihanna",
+        "Lady Gaga",
+        "Katy Perry",
+        "Ed Sheeran",
+        "Bruno Mars",
+        "Michael Jackson",
+        "Madonna",
+        "Britney Spears",
+        "Whitney Houston",
+        "Ariana Grande",
+        "Billie Eilish",
+        "Olivia Rodrigo",
+        "Dua Lipa",
+        "Harry Styles",
+        "Sia",
+        "Celine Dion",
+        "Mariah Carey"
+      ]
+    },
+    {
+      "id": "theme-671",
+      "name": "Rock bands",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "Queen",
+        "The Beatles",
+        "The Rolling Stones",
+        "Fleetwood Mac",
+        "Nirvana",
+        "Green Day",
+        "U2",
+        "Coldplay",
+        "The Beach Boys",
+        "The Eagles",
+        "Linkin Park",
+        "AC/DC",
+        "Oasis",
+        "Bon Jovi"
+      ]
+    },
+    {
+      "id": "theme-672",
+      "name": "Country singers",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "Dolly Parton",
+        "Johnny Cash",
+        "Willie Nelson",
+        "Garth Brooks",
+        "Shania Twain",
+        "Carrie Underwood",
+        "Reba McEntire",
+        "Kenny Rogers"
+      ]
+    },
+    {
+      "id": "theme-673",
+      "name": "Soul singers",
+      "domain": "music",
+      "difficulty": 2,
+      "words": [
+        "Aretha Franklin",
+        "Stevie Wonder",
+        "Marvin Gaye",
+        "Otis Redding",
+        "Al Green",
+        "Ray Charles",
+        "Sam Cooke",
+        "James Brown"
+      ]
+    },
+    {
+      "id": "theme-802",
+      "name": "The Beatles",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Hey Jude",
+        "Let It Be",
+        "Yesterday",
+        "Help!",
+        "Yellow Submarine",
+        "Here Comes the Sun",
+        "Abbey Road",
+        "Lucy in the Sky with Diamonds",
+        "Hello, Goodbye"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-803",
+      "name": "Queen",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Bohemian Rhapsody",
+        "We Will Rock You",
+        "We Are the Champions",
+        "Don't Stop Me Now",
+        "Another One Bites the Dust",
+        "Radio Ga Ga"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-804",
+      "name": "ABBA",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Dancing Queen",
+        "Mamma Mia",
+        "Waterloo",
+        "Take a Chance on Me",
+        "SOS",
+        "The Winner Takes It All"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-805",
+      "name": "Taylor Swift",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Love Story",
+        "Shake It Off",
+        "Blank Space",
+        "Anti-Hero",
+        "You Belong with Me",
+        "Cardigan"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-806",
+      "name": "Adele",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Hello",
+        "Rolling in the Deep",
+        "Someone Like You",
+        "Set Fire to the Rain",
+        "Skyfall",
+        "Easy on Me"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-807",
+      "name": "Ed Sheeran",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Shape of You",
+        "Thinking Out Loud",
+        "Perfect",
+        "Photograph",
+        "The A Team",
+        "Bad Habits"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-808",
+      "name": "Lady Gaga",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Poker Face",
+        "Bad Romance",
+        "Just Dance",
+        "Born This Way",
+        "Shallow",
+        "Paparazzi"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-809",
+      "name": "Rihanna",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Umbrella",
+        "Diamonds",
+        "We Found Love",
+        "Stay",
+        "Don't Stop the Music",
+        "Only Girl"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-810",
+      "name": "Beyonce",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Crazy in Love",
+        "Single Ladies",
+        "Halo",
+        "Irreplaceable",
+        "Love on Top",
+        "Formation"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-811",
+      "name": "Bruno Mars",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Just the Way You Are",
+        "Grenade",
+        "The Lazy Song",
+        "Locked Out of Heaven",
+        "24K Magic",
+        "That's What I Like"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-812",
+      "name": "Katy Perry",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Firework",
+        "Roar",
+        "Teenage Dream",
+        "California Gurls",
+        "Dark Horse",
+        "Hot N Cold"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-813",
+      "name": "Michael Jackson",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Billie Jean",
+        "Beat It",
+        "Thriller",
+        "Bad",
+        "Man in the Mirror",
+        "Smooth Criminal"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-814",
+      "name": "Madonna",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Like a Virgin",
+        "Like a Prayer",
+        "Vogue",
+        "Material Girl",
+        "Hung Up",
+        "Holiday"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-815",
+      "name": "Britney Spears",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Toxic",
+        "Oops!... I Did It Again",
+        "...Baby One More Time",
+        "Stronger",
+        "Lucky",
+        "Circus"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-816",
+      "name": "Whitney Houston",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "I Will Always Love You",
+        "I Wanna Dance with Somebody",
+        "Greatest Love of All",
+        "How Will I Know",
+        "I Have Nothing",
+        "One Moment in Time"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-817",
+      "name": "Elton John",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Your Song",
+        "Rocket Man",
+        "Tiny Dancer",
+        "I'm Still Standing",
+        "Crocodile Rock",
+        "Can You Feel the Love Tonight"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-818",
+      "name": "Stevie Wonder",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Superstition",
+        "Isn't She Lovely",
+        "Sir Duke",
+        "I Just Called to Say I Love You",
+        "You Are the Sunshine of My Life",
+        "My Cherie Amour"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-819",
+      "name": "Aretha Franklin",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Respect",
+        "Think",
+        "Chain of Fools",
+        "A Natural Woman",
+        "I Say a Little Prayer",
+        "Spanish Harlem"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-820",
+      "name": "Elvis Presley",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Jailhouse Rock",
+        "Hound Dog",
+        "Love Me Tender",
+        "Suspicious Minds",
+        "Can't Help Falling in Love",
+        "Blue Suede Shoes"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-821",
+      "name": "Prince",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Purple Rain",
+        "Kiss",
+        "When Doves Cry",
+        "1999",
+        "Little Red Corvette",
+        "Raspberry Beret"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-822",
+      "name": "David Bowie",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Space Oddity",
+        "Heroes",
+        "Let's Dance",
+        "Starman",
+        "Changes",
+        "Ziggy Stardust"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-823",
+      "name": "The Rolling Stones",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Satisfaction",
+        "Paint It Black",
+        "Angie",
+        "Jumpin' Jack Flash",
+        "Start Me Up",
+        "Wild Horses"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-824",
+      "name": "The Beach Boys",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Good Vibrations",
+        "Surfin' USA",
+        "California Girls",
+        "God Only Knows",
+        "Wouldn't It Be Nice",
+        "Kokomo"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-825",
+      "name": "Fleetwood Mac",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Dreams",
+        "Go Your Own Way",
+        "Landslide",
+        "The Chain",
+        "Everywhere",
+        "Don't Stop"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-826",
+      "name": "The Eagles",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Hotel California",
+        "Take It Easy",
+        "Desperado",
+        "Life in the Fast Lane",
+        "Lyin' Eyes",
+        "New Kid in Town"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-827",
+      "name": "Bob Marley",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Three Little Birds",
+        "No Woman No Cry",
+        "One Love",
+        "Redemption Song",
+        "Could You Be Loved",
+        "Buffalo Soldier"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-828",
+      "name": "Dolly Parton",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Jolene",
+        "9 to 5",
+        "I Will Always Love You",
+        "Coat of Many Colors",
+        "Here You Come Again",
+        "Islands in the Stream"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-829",
+      "name": "Johnny Cash",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Ring of Fire",
+        "I Walk the Line",
+        "Folsom Prison Blues",
+        "Hurt",
+        "A Boy Named Sue",
+        "Man in Black"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-830",
+      "name": "Shania Twain",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Man! I Feel Like a Woman!",
+        "You're Still the One",
+        "That Don't Impress Me Much",
+        "From This Moment On",
+        "Any Man of Mine",
+        "Whose Bed Have Your Boots Been Under?"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-831",
+      "name": "Nirvana",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Smells Like Teen Spirit",
+        "Come as You Are",
+        "Lithium",
+        "In Bloom",
+        "Heart-Shaped Box",
+        "All Apologies"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-832",
+      "name": "Green Day",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Basket Case",
+        "American Idiot",
+        "Good Riddance",
+        "Boulevard of Broken Dreams",
+        "Wake Me Up When September Ends",
+        "Holiday"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-833",
+      "name": "Linkin Park",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "In the End",
+        "Numb",
+        "One Step Closer",
+        "Crawling",
+        "Somewhere I Belong",
+        "What I've Done"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-834",
+      "name": "Coldplay",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Yellow",
+        "Clocks",
+        "Fix You",
+        "Viva la Vida",
+        "The Scientist",
+        "Paradise"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-835",
+      "name": "U2",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "With or Without You",
+        "One",
+        "Beautiful Day",
+        "Sunday Bloody Sunday",
+        "Where the Streets Have No Name",
+        "Vertigo"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-836",
+      "name": "ABBA lineup",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Agnetha",
+        "Bjorn",
+        "Benny",
+        "Anni-Frid"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-837",
+      "name": "Beatles lineup",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "John",
+        "Paul",
+        "George",
+        "Ringo"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-980",
+      "name": "Ariana Grande",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "7 Rings",
+        "Sweetener",
+        "Into You",
+        "No Tears Left to Cry",
+        "Positions",
+        "Problem",
+        "Break Free",
+        "One Last Time"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-981",
+      "name": "Billie Eilish",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Bad Guy",
+        "Ocean Eyes",
+        "Happier Than Ever",
+        "Everything I Wanted",
+        "What Was I Made For?",
+        "Lovely",
+        "Birds of a Feather",
+        "Bury a Friend"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-982",
+      "name": "Olivia Rodrigo",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Drivers License",
+        "Good 4 U",
+        "Deja Vu",
+        "Vampire",
+        "Traitor",
+        "Sour",
+        "Guts",
+        "Brutal"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-983",
+      "name": "Dua Lipa",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "New Rules",
+        "Don't Start Now",
+        "Levitating",
+        "Physical",
+        "One Kiss",
+        "Break My Heart",
+        "Houdini",
+        "Dance the Night"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-984",
+      "name": "Harry Styles",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "As It Was",
+        "Watermelon Sugar",
+        "Sign of the Times",
+        "Adore You",
+        "Golden",
+        "Kiwi",
+        "Late Night Talking",
+        "Fine Line"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-985",
+      "name": "Sia",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Chandelier",
+        "Cheap Thrills",
+        "Elastic Heart",
+        "Titanium",
+        "Unstoppable",
+        "Alive",
+        "Snowman",
+        "The Greatest"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-986",
+      "name": "Celine Dion",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "My Heart Will Go On",
+        "Because You Loved Me",
+        "The Power of Love",
+        "It's All Coming Back to Me Now",
+        "A New Day Has Come",
+        "That's the Way It Is"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-987",
+      "name": "Mariah Carey",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "All I Want for Christmas Is You",
+        "Hero",
+        "Fantasy",
+        "Always Be My Baby",
+        "We Belong Together",
+        "Emotions",
+        "Without You",
+        "Vision of Love"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-988",
+      "name": "Backstreet Boys",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "I Want It That Way",
+        "Everybody",
+        "As Long as You Love Me",
+        "Larger Than Life",
+        "Quit Playing Games",
+        "Shape of My Heart"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-989",
+      "name": "NSYNC",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Bye Bye Bye",
+        "It's Gonna Be Me",
+        "Tearin' Up My Heart",
+        "This I Promise You",
+        "Pop",
+        "Gone"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-990",
+      "name": "Oasis",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Wonderwall",
+        "Don't Look Back in Anger",
+        "Champagne Supernova",
+        "Live Forever",
+        "Supersonic",
+        "Some Might Say"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "theme-991",
+      "name": "Bon Jovi",
+      "domain": "artists",
+      "difficulty": 2,
+      "words": [
+        "Livin' on a Prayer",
+        "You Give Love a Bad Name",
+        "It's My Life",
+        "Wanted Dead or Alive",
+        "Bad Medicine",
+        "Always"
+      ],
+      "popCulture": true
+    }
+  ],
+  "pictures": {
+    "Guitar": "🎸",
+    "Violin": "🎻",
+    "Drum": "🥁",
+    "Trumpet": "🎺",
+    "Saxophone": "🎷",
+    "Banjo": "🪕",
+    "Hammer": "🔨",
+    "Kiwi": "🥝",
+    "Drumstick": "🍗",
+    "Vampire": "🧛",
+    "Rock": "🪨",
+    "Umbrella": "☂️",
+    "Piano": "🎹",
+    "Accordion": "🪗",
+    "Flute": "🪈",
+    "Harp": "🪉",
+    "Bell": "🔔",
+    "Microphone": "🎤",
+    "Headphones": "🎧",
+    "Radio": "📻",
+    "Ticket": "🎟️",
+    "Note": "🎵",
+    "Score": "🎼",
+    "Bow": "🏹",
+    "Diamonds": "♦️",
+    "Bridge": "🌉",
+    "Circus": "🎪",
+    "Keyboard": "⌨️",
+    "CD": "💿",
+    "Key": "🔑",
+    "Teacher": "🧑‍🏫",
+    "Singer": "🧑‍🎤",
+    "Kiss": "💋",
+    "Snowman": "☃️",
+    "Triangle": "🔺",
+    "Scale": "⚖️",
+    "Maraca": "🪇"
+  }
+}

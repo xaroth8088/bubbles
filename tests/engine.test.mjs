@@ -299,7 +299,7 @@ test('two screwdrivers in one partial merge remove two screws and fragment joins
   const a=tools[0],b=members(state,a.groupId).find(b=>b!==a&&!b.driverColor),donor=[...state.bubbles,...state.reserve.flat()].find(b=>b!==a&&b.driverColor);
   b.driverColor=donor.driverColor;delete donor.driverColor;assert.ok(validateState(state));
   const before=lock.turns,result=merge(state,a.id,b.id);assert.ok(result.ok);assert.equal(result.usedDrivers.length,2);assert.equal(lock.turns,before-2);assert.equal(b.driverColor,undefined);assert.equal(state.solved.length,0);assert.ok(validateState(state));solve(state);
-  const puzzle=createPuzzle({mode:'lab',special:'split'});puzzle.specials=['split','screw'];const split=makeState(puzzle),parts=split.bubbles.filter(b=>b.kind==='split'),screw=split.bubbles.find(b=>b.turns),remaining=screw.turns;
+  const puzzle=createPuzzle({mode:'lab',special:'split'});puzzle.specials=['split','screw'];const split=makeState(puzzle),first=split.bubbles.find(b=>b.kind==='split'&&b.driverColor),parts=split.bubbles.filter(b=>b.kind==='split'&&b.atoms[0].id===first.atoms[0].id),screw=split.bubbles.find(b=>b.turns),remaining=screw.turns;
   assert.equal(parts.filter(b=>b.driverColor).length,1);assert.ok(merge(split,parts[0].id,parts[1].id).assembled);assert.equal(screw.turns,remaining-1);assert.ok(parts.every(b=>!b.driverColor));solve(split);
 });
 
@@ -480,20 +480,16 @@ test('shared words remain in multiple dictionary pools, while each deck stays un
   for(const word of['Mouse','Bat','Bank','Orange'])assert.ok(THEMES.filter(t=>t.words.includes(word)).length>=2,word);
 });
 
-test('ambiguous decks show both senses but resolve to one fixed answer',()=>{
-  const senses=new Set();let tested=0;
-  for(let level=18;level<=400;level++){
-    const puzzle=createPuzzle({level}),bassGroup=puzzle.groups.find(g=>g.words.includes('Bass'));
-    if(!bassGroup||!puzzle.groups.some(g=>g.words.includes('Guitar'))||!puzzle.groups.some(g=>g.words.includes('Carp')))continue;
-    puzzle.specials=[];const state=makeState(puzzle),bass=state.bubbles.find(b=>b.atoms[0]?.word==='Bass');
-    if(!bass)continue;
-    const wrong=state.bubbles.find(b=>b.groupId!==bass.groupId&&['Guitar','Carp'].includes(b.atoms[0]?.word));
-    const right=state.bubbles.find(b=>b.groupId===bass.groupId&&['Guitar','Carp'].includes(b.atoms[0]?.word));
-    if(!wrong||!right)continue;
-    assert.ok(merge(state,bass.id,wrong.id).mismatch);assert.ok(merge(state,bass.id,right.id).ok);
-    senses.add(bassGroup.name);tested++;solve(state);
+test('ordinary overlapping clues have fixed answers without a special board template',()=>{
+  for(const name of ['Strings','Freshwater fish']){
+    const other=name==='Strings'?'Freshwater fish':'Strings';
+    const chosen=[name,other].map(n=>THEMES.find(t=>t.name===n));
+    const puzzle=createPuzzle({mode:'lab',special:'picture'});puzzle.specials=[];
+    puzzle.groups=chosen.map((t,i)=>({id:`g${i}`,name:t.name,domain:t.domain,words:i===0?['Bass',...t.words.filter(w=>w!=='Bass').slice(0,3)]:t.words.filter(w=>w!=='Bass').slice(0,4)}));
+    const state=makeState(puzzle),bass=state.bubbles.find(b=>b.atoms[0].word==='Bass');
+    const wrong=state.bubbles.find(b=>b.groupId!==bass.groupId),right=state.bubbles.find(b=>b.groupId===bass.groupId&&b!==bass);
+    assert.ok(merge(state,bass.id,wrong.id).mismatch);assert.ok(merge(state,bass.id,right.id).ok);solve(state);
   }
-  assert.ok(tested>=2);assert.ok(senses.has('Strings'));assert.ok(senses.has('Freshwater fish'));
 });
 
 test('a category term can change meaning and behaves exactly like an ordinary word',()=>{

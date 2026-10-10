@@ -1,0 +1,654 @@
+{
+  "id": "games",
+  "language": "en",
+  "name": "Tabletop & games",
+  "themes": [
+    {
+      "id": "theme-204",
+      "name": "Board games",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Chess",
+        "Checkers",
+        "Monopoly",
+        "Scrabble",
+        "Clue",
+        "Backgammon",
+        "Go",
+        "Reversi",
+        "Ludo",
+        "Risk",
+        "Sorry!",
+        "Battleship",
+        "Connect Four"
+      ]
+    },
+    {
+      "id": "theme-205",
+      "name": "Chess pieces",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "King",
+        "Queen",
+        "Rook",
+        "Bishop",
+        "Knight",
+        "Pawn"
+      ]
+    },
+    {
+      "id": "theme-206",
+      "name": "Card ranks",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Ace",
+        "King",
+        "Queen",
+        "Jack",
+        "Ten",
+        "Nine",
+        "Eight",
+        "Seven",
+        "Six",
+        "Five",
+        "Four",
+        "Three",
+        "Two"
+      ]
+    },
+    {
+      "id": "theme-207",
+      "name": "Card suits",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Hearts",
+        "Diamonds",
+        "Clubs",
+        "Spades"
+      ]
+    },
+    {
+      "id": "theme-208",
+      "name": "Dice games",
+      "domain": "games",
+      "difficulty": 2,
+      "words": [
+        "Yahtzee",
+        "Farkle",
+        "Bunco",
+        "Liar's dice",
+        "Pig",
+        "Backgammon",
+        "Tenzi",
+        "Perudo"
+      ]
+    },
+    {
+      "id": "theme-209",
+      "name": "Card games",
+      "domain": "games",
+      "difficulty": 2,
+      "words": [
+        "Poker",
+        "Bridge",
+        "Solitaire",
+        "Hearts",
+        "Rummy",
+        "Canasta",
+        "Euchre",
+        "Cribbage"
+      ]
+    },
+    {
+      "id": "theme-210",
+      "name": "Game pieces",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Pawn",
+        "Token",
+        "Die",
+        "Card",
+        "Tile",
+        "Miniature",
+        "Meeple",
+        "Counter"
+      ]
+    },
+    {
+      "id": "theme-211",
+      "name": "Playground games",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Tag",
+        "Hopscotch",
+        "Hide-and-seek",
+        "Dodgeball",
+        "Four square",
+        "Red rover",
+        "Jump rope",
+        "Capture the flag"
+      ]
+    },
+    {
+      "id": "theme-212",
+      "name": "Classic toys",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Kite",
+        "Yo-yo",
+        "Top",
+        "Marble",
+        "Teddy bear",
+        "Jack-in-the-box",
+        "Rocking horse",
+        "Doll",
+        "Car",
+        "Train set",
+        "Jump rope",
+        "Ball",
+        "Frisbee",
+        "Puppet",
+        "Dollhouse",
+        "Building blocks",
+        "Teddy"
+      ]
+    },
+    {
+      "id": "theme-213",
+      "name": "Logic puzzles",
+      "domain": "games",
+      "difficulty": 2,
+      "words": [
+        "Sudoku",
+        "Nonogram",
+        "Kakuro",
+        "KenKen",
+        "Hashi",
+        "Slitherlink",
+        "Futoshiki",
+        "Minesweeper"
+      ]
+    },
+    {
+      "id": "theme-214",
+      "name": "Puzzle",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Crossword",
+        "Jigsaw",
+        "Word search",
+        "Maze",
+        "Cryptogram",
+        "Rebus",
+        "Riddle",
+        "Anagram"
+      ]
+    },
+    {
+      "id": "theme-462",
+      "name": "Playground",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Slide",
+        "Swing",
+        "Seesaw",
+        "Monkey bars",
+        "Sandbox",
+        "Climbing frame",
+        "Hopscotch",
+        "Tag",
+        "Jump rope",
+        "Ball",
+        "Bench",
+        "Merry-go-round"
+      ]
+    },
+    {
+      "id": "theme-464",
+      "name": "Fairground",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Ferris wheel",
+        "Carousel",
+        "Roller coaster",
+        "Bumper cars",
+        "Cotton candy",
+        "Ticket",
+        "Prize",
+        "Arcade",
+        "Funhouse",
+        "Popcorn",
+        "Helter-skelter",
+        "Ring toss",
+        "Circus"
+      ]
+    },
+    {
+      "id": "theme-569",
+      "name": "Chess",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "King",
+        "Queen",
+        "Rook",
+        "Bishop",
+        "Knight",
+        "Pawn",
+        "Check",
+        "Checkmate",
+        "Board",
+        "Castle",
+        "Opening",
+        "Gambit"
+      ]
+    },
+    {
+      "id": "theme-570",
+      "name": "Monopoly",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Board",
+        "Dice",
+        "Token",
+        "Property",
+        "Rent",
+        "House",
+        "Hotel",
+        "Chance",
+        "Community Chest",
+        "Go",
+        "Jail",
+        "Bank"
+      ]
+    },
+    {
+      "id": "theme-571",
+      "name": "Scrabble",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Tile",
+        "Letter",
+        "Word",
+        "Rack",
+        "Board",
+        "Score",
+        "Blank",
+        "Dictionary",
+        "Triple word",
+        "Double letter"
+      ]
+    },
+    {
+      "id": "theme-572",
+      "name": "Clue",
+      "domain": "games",
+      "difficulty": 2,
+      "words": [
+        "Colonel Mustard",
+        "Miss Scarlet",
+        "Professor Plum",
+        "Mrs. Peacock",
+        "Revolver",
+        "Candlestick",
+        "Library",
+        "Ballroom"
+      ]
+    },
+    {
+      "id": "theme-573",
+      "name": "Dominoes",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Tile",
+        "Spot",
+        "Double",
+        "Blank",
+        "Hand",
+        "Shuffle",
+        "Line",
+        "Chain",
+        "Draw",
+        "Match"
+      ]
+    },
+    {
+      "id": "theme-574",
+      "name": "Poker",
+      "domain": "games",
+      "difficulty": 2,
+      "words": [
+        "Ace",
+        "King",
+        "Queen",
+        "Jack",
+        "Pair",
+        "Flush",
+        "Straight",
+        "Full house",
+        "Bet",
+        "Chip",
+        "Bluff",
+        "Fold"
+      ]
+    },
+    {
+      "id": "theme-575",
+      "name": "Game night",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Board games",
+        "Chess",
+        "Checkers",
+        "Monopoly",
+        "Scrabble",
+        "Clue",
+        "Dice",
+        "Card",
+        "Token",
+        "Score",
+        "Rules",
+        "Turn"
+      ]
+    },
+    {
+      "id": "theme-576",
+      "name": "Games",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Board games",
+        "Card games",
+        "Puzzle",
+        "Video games",
+        "Tag",
+        "Hopscotch",
+        "Chess",
+        "Monopoly",
+        "Hide-and-seek",
+        "Dodgeball",
+        "Jigsaw",
+        "Crossword",
+        "Darts",
+        "Mini golf",
+        "Dice",
+        "Joystick",
+        "Controller",
+        "Billiards",
+        "Mahjong",
+        "Joker",
+        "Pawn"
+      ]
+    },
+    {
+      "id": "theme-887",
+      "name": "Water park",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Slide",
+        "Wave pool",
+        "Lazy river",
+        "Splash pad",
+        "Inner tube",
+        "Swimsuit",
+        "Lifeguard",
+        "Locker",
+        "Towel",
+        "Goggles",
+        "Fountain",
+        "Bucket"
+      ]
+    },
+    {
+      "id": "theme-888",
+      "name": "Mini golf",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Putter",
+        "Ball",
+        "Hole",
+        "Flag",
+        "Scorecard",
+        "Obstacle",
+        "Windmill",
+        "Tunnel",
+        "Ramp",
+        "Bridge",
+        "Hazard",
+        "Hole-in-one"
+      ]
+    },
+    {
+      "id": "theme-889",
+      "name": "Darts",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Dart",
+        "Board",
+        "Bullseye",
+        "Flight",
+        "Barrel",
+        "Point",
+        "Throw",
+        "Score",
+        "Double",
+        "Triple",
+        "Number",
+        "Target"
+      ]
+    },
+    {
+      "id": "theme-890",
+      "name": "Pool table",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Cue",
+        "Ball",
+        "Pocket",
+        "Chalk",
+        "Rack",
+        "Cushion",
+        "Felt",
+        "Break",
+        "Eight ball",
+        "Stripe",
+        "Solid",
+        "Triangle"
+      ]
+    },
+    {
+      "id": "theme-891",
+      "name": "Jigsaw",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Piece",
+        "Picture",
+        "Edge",
+        "Corner",
+        "Shape",
+        "Fit",
+        "Box",
+        "Sorting",
+        "Border",
+        "Table",
+        "Missing piece",
+        "Puzzle"
+      ]
+    },
+    {
+      "id": "theme-892",
+      "name": "Crossword",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Grid",
+        "Clue",
+        "Across",
+        "Down",
+        "Letter",
+        "Answer",
+        "Number",
+        "Black square",
+        "Pencil",
+        "Eraser",
+        "Newspaper",
+        "Word"
+      ]
+    },
+    {
+      "id": "theme-893",
+      "name": "Kite",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "String",
+        "Tail",
+        "Frame",
+        "Paper",
+        "Fabric",
+        "Wind",
+        "Breeze",
+        "Spool",
+        "Sky",
+        "Flying",
+        "Diamond",
+        "Beach"
+      ]
+    },
+    {
+      "id": "theme-894",
+      "name": "Dollhouse",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Miniature",
+        "Furniture",
+        "Bed",
+        "Chair",
+        "Table",
+        "Kitchen",
+        "Bedroom",
+        "Bathroom",
+        "Staircase",
+        "Roof",
+        "Window",
+        "Doll"
+      ]
+    },
+    {
+      "id": "theme-895",
+      "name": "Teddy bear",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Fur",
+        "Stuffing",
+        "Paw",
+        "Snout",
+        "Ear",
+        "Button",
+        "Bow",
+        "Ribbon",
+        "Cuddle",
+        "Plush",
+        "Stitch",
+        "Soft"
+      ]
+    },
+    {
+      "id": "theme-896",
+      "name": "Building blocks",
+      "domain": "games",
+      "difficulty": 1,
+      "words": [
+        "Brick",
+        "Tower",
+        "Wall",
+        "Bridge",
+        "Castle",
+        "House",
+        "Stack",
+        "Color",
+        "Shape",
+        "Base",
+        "Piece",
+        "Construction"
+      ]
+    }
+  ],
+  "pictures": {
+    "Pig": "🐖",
+    "Car": "🚗",
+    "Pencil": "✏️",
+    "Kite": "🪁",
+    "Popcorn": "🍿",
+    "Wind": "🌬️",
+    "Swimsuit": "🩱",
+    "Goggles": "🥽",
+    "Diamond": "💎",
+    "Ticket": "🎟️",
+    "Score": "🎼",
+    "Frisbee": "🥏",
+    "Bow": "🏹",
+    "Dice": "🎲",
+    "Puzzle": "🧩",
+    "Joystick": "🕹️",
+    "Controller": "🎮",
+    "Darts": "🎯",
+    "Billiards": "🎱",
+    "Mahjong": "🀄",
+    "Joker": "🃏",
+    "Pawn": "♟️",
+    "Hearts": "♥️",
+    "Diamonds": "♦️",
+    "Clubs": "♣️",
+    "Spades": "♠️",
+    "Teddy": "🧸",
+    "Yo-yo": "🪀",
+    "Doll": "🪆",
+    "Slide": "🛝",
+    "Construction": "🚧",
+    "House": "🏠",
+    "Bank": "🏦",
+    "Hotel": "🏨",
+    "Castle": "🏰",
+    "Bridge": "🌉",
+    "Fountain": "⛲",
+    "Tower": "🗼",
+    "Carousel": "🎠",
+    "Ferris wheel": "🎡",
+    "Roller coaster": "🎢",
+    "Circus": "🎪",
+    "Chair": "🪑",
+    "Bed": "🛏️",
+    "Window": "🪟",
+    "Brick": "🧱",
+    "Bucket": "🪣",
+    "Chain": "⛓️",
+    "Box": "📦",
+    "Ear": "👂",
+    "Hand": "✋",
+    "Ribbon": "🎀",
+    "Card": "💳",
+    "Triangle": "🔺"
+  }
+}

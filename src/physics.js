@@ -118,18 +118,20 @@ export function stepPhysics(bodies,bounds={},dt=STEP){
   }
   world.step();for(const p of bodies)read(p,entries.get(p),held.has(p.id),bounds.top||0);
 }
-// Move a linked pair by one shared displacement, bounded by both membranes.
+// The held body follows the pointer; its linked partner follows as far as its
+// own walls allow. A wall can shorten the link, never pin the held body.
 export function translateBoundedGroup(bodies,delta,{width,height,top=0}){
-  let minX=-Infinity,maxX=Infinity,minY=-Infinity,maxY=Infinity;
-  for(const p of bodies){
+  let applied={x:0,y:0};
+  for(const [index,p] of bodies.entries()){
     const surface=p.surface||[],left=Math.min(-p.r,...surface.map(q=>q.x)),right=Math.max(p.r,...surface.map(q=>q.x));
     const upper=Math.min(-p.r,...surface.map(q=>q.y)),lower=Math.max(p.r,...surface.map(q=>q.y));
-    minX=Math.max(minX,2-p.x-left);maxX=Math.min(maxX,width-2-p.x-right);
-    minY=Math.max(minY,top+2-p.y-upper);maxY=Math.min(maxY,height-2-p.y-lower);
+    const wanted=index===0?delta:applied;
+    const dx=Math.max(2-p.x-left,Math.min(width-2-p.x-right,wanted.x));
+    const dy=Math.max(top+2-p.y-upper,Math.min(height-2-p.y-lower,wanted.y));
+    p.x+=dx;p.y+=dy;
+    if(index===0)applied={x:dx,y:dy};
   }
-  const dx=Math.max(minX,Math.min(maxX,delta.x)),dy=Math.max(minY,Math.min(maxY,delta.y));
-  for(const p of bodies){p.x+=dx;p.y+=dy;}
-  return {x:dx,y:dy};
+  return applied;
 }
 export function simulatePhysics(bodies,bounds,seconds){for(let time=0;time<seconds;time+=STEP)stepPhysics(bodies,bounds,STEP);return bodies;}
 export function radialImpulse(bodies,{x,y,radius=160,strength=65,held=new Set()}){

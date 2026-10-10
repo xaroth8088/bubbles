@@ -83,7 +83,7 @@ test('picture decoration does not erase any other special mechanic or its clue d
       const options = {challenge:true,shuffleSeed:`pair-${special.id}-${round}`};
       const baseline = makeState(puzzle, options);
       const state = makeState({...puzzle,specials:[...puzzle.specials,'picture']}, options);
-      const normalize = s => all(s).map(b => ({...b,kind:b.kind === 'picture' ? 'normal' : b.kind})).sort((a,b) => a.id.localeCompare(b.id));
+      const normalize = s => all(s).map(({picture,...b}) => ({...b,kind:b.kind === 'picture' ? 'normal' : b.kind})).sort((a,b) => a.id.localeCompare(b.id));
       assert.deepEqual(normalize(state), normalize(baseline), special.id);
       for (const group of puzzle.groups) {
         const ledger = s => [...new Set(all(s).filter(b => b.groupId === group.id).flatMap(b => b.atoms.map(a => a.word)))].sort();
@@ -149,8 +149,11 @@ test('fully obstructed picture clues retain their original special mechanics', (
     assert.ok(validateState(state));
     if (special === 'split') {
       const halves = all(state).filter(b => b.kind === 'split');
-      assert.equal(halves.length,2);
-      assert.equal(halves.map(b => b.atoms[0].label).join(''),halves[0].atoms[0].word);
+      assert.equal(halves.length,8);
+      for(const id of new Set(halves.map(b=>b.atoms[0].id))){
+        const pair=halves.filter(b=>b.atoms[0].id===id).sort((a,b)=>a.atoms[0].part-b.atoms[0].part);
+        assert.equal(pair.map(b=>b.atoms[0].label).join(''),pair[0].atoms[0].word);
+      }
     }
   }
 });

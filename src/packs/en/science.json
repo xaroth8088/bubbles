@@ -1,0 +1,1763 @@
+{
+  "id": "science",
+  "language": "en",
+  "name": "Science & technology",
+  "themes": [
+    {
+      "id": "theme-073",
+      "name": "Planets",
+      "domain": "space",
+      "difficulty": 1,
+      "words": [
+        "Mercury",
+        "Venus",
+        "Earth",
+        "Mars",
+        "Jupiter",
+        "Saturn",
+        "Uranus",
+        "Neptune"
+      ]
+    },
+    {
+      "id": "theme-074",
+      "name": "Night sky",
+      "domain": "space",
+      "difficulty": 1,
+      "words": [
+        "Star",
+        "Moon",
+        "Comet",
+        "Meteor",
+        "Constellation",
+        "Galaxy",
+        "Aurora",
+        "Milky Way"
+      ]
+    },
+    {
+      "id": "theme-075",
+      "name": "Space travel",
+      "domain": "space",
+      "difficulty": 1,
+      "words": [
+        "Rocket",
+        "Satellite",
+        "Astronaut",
+        "Spacesuit",
+        "Shuttle",
+        "Launchpad",
+        "Orbiter",
+        "Station"
+      ]
+    },
+    {
+      "id": "theme-076",
+      "name": "Moon phases",
+      "domain": "space",
+      "difficulty": 2,
+      "words": [
+        "New",
+        "Full",
+        "First quarter",
+        "Last quarter",
+        "Waxing crescent",
+        "Waning crescent",
+        "Waxing gibbous",
+        "Waning gibbous"
+      ]
+    },
+    {
+      "id": "theme-077",
+      "name": "Constellations",
+      "domain": "space",
+      "difficulty": 2,
+      "words": [
+        "Orion",
+        "Cassiopeia",
+        "Andromeda",
+        "Ursa Major",
+        "Cygnus",
+        "Draco",
+        "Pegasus",
+        "Lyra"
+      ]
+    },
+    {
+      "id": "theme-078",
+      "name": "Zodiac signs",
+      "domain": "space",
+      "difficulty": 1,
+      "words": [
+        "Aries",
+        "Taurus",
+        "Gemini",
+        "Cancer",
+        "Leo",
+        "Virgo",
+        "Libra",
+        "Scorpio",
+        "Sagittarius",
+        "Capricorn",
+        "Aquarius",
+        "Pisces"
+      ]
+    },
+    {
+      "id": "theme-079",
+      "name": "Jupiter’s moons",
+      "domain": "space",
+      "difficulty": 3,
+      "words": [
+        "Io",
+        "Europa",
+        "Ganymede",
+        "Callisto",
+        "Amalthea",
+        "Himalia",
+        "Elara",
+        "Pasiphae"
+      ]
+    },
+    {
+      "id": "theme-080",
+      "name": "Space probes",
+      "domain": "space",
+      "difficulty": 2,
+      "words": [
+        "Voyager",
+        "Pioneer",
+        "Cassini",
+        "Juno",
+        "New Horizons",
+        "Galileo",
+        "Rosetta",
+        "Mariner"
+      ]
+    },
+    {
+      "id": "theme-081",
+      "name": "Stellar objects",
+      "domain": "space",
+      "difficulty": 2,
+      "words": [
+        "Pulsar",
+        "Quasar",
+        "Nebula",
+        "Supernova",
+        "White dwarf",
+        "Red giant",
+        "Black hole",
+        "Neutron star"
+      ]
+    },
+    {
+      "id": "theme-082",
+      "name": "Astronomy tools",
+      "domain": "space",
+      "difficulty": 2,
+      "words": [
+        "Telescope",
+        "Observatory",
+        "Spectroscope",
+        "Chart",
+        "Astrolabe",
+        "Camera",
+        "Binoculars",
+        "Dish"
+      ]
+    },
+    {
+      "id": "theme-083",
+      "name": "Space agencies",
+      "domain": "space",
+      "difficulty": 2,
+      "words": [
+        "NASA",
+        "ESA",
+        "JAXA",
+        "ISRO",
+        "CNSA",
+        "CSA",
+        "UKSA",
+        "DLR"
+      ]
+    },
+    {
+      "id": "theme-084",
+      "name": "Astronauts",
+      "domain": "space",
+      "difficulty": 2,
+      "words": [
+        "Armstrong",
+        "Aldrin",
+        "Gagarin",
+        "Tereshkova",
+        "Ride",
+        "Jemison",
+        "Hadfield",
+        "Glenn"
+      ]
+    },
+    {
+      "id": "theme-085",
+      "name": "Space objects",
+      "domain": "space",
+      "difficulty": 2,
+      "words": [
+        "Asteroid",
+        "Comet",
+        "Meteoroid",
+        "Planet",
+        "Dwarf planet",
+        "Moon",
+        "Kuiper belt",
+        "Oort cloud"
+      ]
+    },
+    {
+      "id": "theme-086",
+      "name": "Satellite purposes",
+      "domain": "space",
+      "difficulty": 2,
+      "words": [
+        "Navigation",
+        "Communication",
+        "Weather",
+        "Observation",
+        "Reconnaissance",
+        "Astronomy",
+        "Mapping",
+        "Research"
+      ]
+    },
+    {
+      "id": "theme-087",
+      "name": "Distance units",
+      "domain": "science",
+      "difficulty": 2,
+      "words": [
+        "Meter",
+        "Kilometer",
+        "Mile",
+        "Yard",
+        "Foot",
+        "Inch",
+        "Light-year",
+        "Parsec"
+      ]
+    },
+    {
+      "id": "theme-088",
+      "name": "Laboratory",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Beaker",
+        "Test tube",
+        "Microscope",
+        "Pipette",
+        "Flask",
+        "Petri dish",
+        "Centrifuge",
+        "Bunsen burner",
+        "Telescope",
+        "DNA",
+        "Alembic",
+        "Atom"
+      ]
+    },
+    {
+      "id": "theme-089",
+      "name": "Chemical elements",
+      "domain": "science",
+      "difficulty": 2,
+      "words": [
+        "Hydrogen",
+        "Helium",
+        "Carbon",
+        "Oxygen",
+        "Nitrogen",
+        "Neon",
+        "Sodium",
+        "Iron"
+      ]
+    },
+    {
+      "id": "theme-090",
+      "name": "Matter",
+      "domain": "science",
+      "difficulty": 2,
+      "words": [
+        "Solid",
+        "Liquid",
+        "Gas",
+        "Plasma"
+      ]
+    },
+    {
+      "id": "theme-091",
+      "name": "Human bones",
+      "domain": "science",
+      "difficulty": 2,
+      "words": [
+        "Femur",
+        "Tibia",
+        "Fibula",
+        "Humerus",
+        "Radius",
+        "Ulna",
+        "Patella",
+        "Scapula"
+      ]
+    },
+    {
+      "id": "theme-092",
+      "name": "Body organs",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Heart",
+        "Lung",
+        "Liver",
+        "Kidney",
+        "Brain",
+        "Stomach",
+        "Pancreas",
+        "Spleen"
+      ]
+    },
+    {
+      "id": "theme-093",
+      "name": "Senses",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Sight",
+        "Hearing",
+        "Touch",
+        "Taste",
+        "Smell"
+      ]
+    },
+    {
+      "id": "theme-094",
+      "name": "Cell",
+      "domain": "science",
+      "difficulty": 2,
+      "words": [
+        "Nucleus",
+        "Membrane",
+        "Cytoplasm",
+        "Mitochondrion",
+        "Ribosome",
+        "Vacuole",
+        "Golgi",
+        "Lysosome"
+      ]
+    },
+    {
+      "id": "theme-095",
+      "name": "Measuring tools",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Ruler",
+        "Scale",
+        "Thermometer",
+        "Barometer",
+        "Stopwatch",
+        "Caliper",
+        "Protractor",
+        "Hygrometer",
+        "Hourglass"
+      ]
+    },
+    {
+      "id": "theme-096",
+      "name": "Physics concepts",
+      "domain": "science",
+      "difficulty": 2,
+      "words": [
+        "Gravity",
+        "Inertia",
+        "Friction",
+        "Momentum",
+        "Velocity",
+        "Acceleration",
+        "Energy",
+        "Force"
+      ]
+    },
+    {
+      "id": "theme-097",
+      "name": "Simple machines",
+      "domain": "science",
+      "difficulty": 2,
+      "words": [
+        "Lever",
+        "Pulley",
+        "Wedge",
+        "Screw",
+        "Wheel and axle",
+        "Ramp"
+      ]
+    },
+    {
+      "id": "theme-098",
+      "name": "Subatomic particles",
+      "domain": "science",
+      "difficulty": 3,
+      "words": [
+        "Electron",
+        "Proton",
+        "Neutron",
+        "Quark",
+        "Muon",
+        "Neutrino",
+        "Photon",
+        "Gluon"
+      ]
+    },
+    {
+      "id": "theme-099",
+      "name": "Biology fields",
+      "domain": "science",
+      "difficulty": 2,
+      "words": [
+        "Botany",
+        "Zoology",
+        "Ecology",
+        "Genetics",
+        "Microbiology",
+        "Anatomy",
+        "Entomology",
+        "Mycology"
+      ]
+    },
+    {
+      "id": "theme-100",
+      "name": "Metric prefixes",
+      "domain": "science",
+      "difficulty": 2,
+      "words": [
+        "Kilo",
+        "Centi",
+        "Milli",
+        "Micro",
+        "Nano",
+        "Mega",
+        "Giga",
+        "Tera"
+      ]
+    },
+    {
+      "id": "theme-101",
+      "name": "Electronics",
+      "domain": "science",
+      "difficulty": 2,
+      "words": [
+        "Resistor",
+        "Capacitor",
+        "Diode",
+        "Transistor",
+        "Inductor",
+        "Relay",
+        "Switch",
+        "Fuse"
+      ]
+    },
+    {
+      "id": "theme-102",
+      "name": "Energy",
+      "domain": "science",
+      "difficulty": 2,
+      "words": [
+        "Kinetic",
+        "Potential",
+        "Thermal",
+        "Chemical",
+        "Nuclear",
+        "Electrical",
+        "Radiant",
+        "Elastic"
+      ]
+    },
+    {
+      "id": "theme-103",
+      "name": "Blood components",
+      "domain": "science",
+      "difficulty": 2,
+      "words": [
+        "Plasma",
+        "Platelet",
+        "Red cell",
+        "White cell"
+      ]
+    },
+    {
+      "id": "theme-104",
+      "name": "Scientific pioneers",
+      "domain": "science",
+      "difficulty": 2,
+      "words": [
+        "Curie",
+        "Newton",
+        "Einstein",
+        "Darwin",
+        "Galileo",
+        "Tesla",
+        "Faraday",
+        "Bohr"
+      ]
+    },
+    {
+      "id": "theme-192",
+      "name": "Computer hardware",
+      "domain": "tech",
+      "difficulty": 1,
+      "words": [
+        "Keyboard",
+        "Mouse",
+        "Monitor",
+        "Processor",
+        "Memory",
+        "Motherboard",
+        "Drive",
+        "Webcam",
+        "Laptop",
+        "Printer",
+        "Disk",
+        "CD"
+      ]
+    },
+    {
+      "id": "theme-193",
+      "name": "Internet",
+      "domain": "tech",
+      "difficulty": 1,
+      "words": [
+        "Browser",
+        "Website",
+        "Link",
+        "Download",
+        "Upload",
+        "Server",
+        "Domain",
+        "Router"
+      ]
+    },
+    {
+      "id": "theme-194",
+      "name": "Coding languages",
+      "domain": "tech",
+      "difficulty": 2,
+      "words": [
+        "Python",
+        "Java",
+        "Rust",
+        "Ruby",
+        "JavaScript",
+        "Swift",
+        "Kotlin",
+        "Go"
+      ]
+    },
+    {
+      "id": "theme-195",
+      "name": "File extensions",
+      "domain": "tech",
+      "difficulty": 2,
+      "words": [
+        "PNG",
+        "JPEG",
+        "PDF",
+        "MP3",
+        "ZIP",
+        "HTML",
+        "CSV",
+        "TXT"
+      ]
+    },
+    {
+      "id": "theme-196",
+      "name": "Keyboard commands",
+      "domain": "tech",
+      "difficulty": 1,
+      "words": [
+        "Copy",
+        "Paste",
+        "Cut",
+        "Undo",
+        "Redo",
+        "Save",
+        "Find",
+        "Select all"
+      ]
+    },
+    {
+      "id": "theme-197",
+      "name": "Storage units",
+      "domain": "tech",
+      "difficulty": 2,
+      "words": [
+        "Bit",
+        "Byte",
+        "Kilobyte",
+        "Megabyte",
+        "Gigabyte",
+        "Terabyte",
+        "Petabyte",
+        "Exabyte"
+      ]
+    },
+    {
+      "id": "theme-198",
+      "name": "Coding concepts",
+      "domain": "tech",
+      "difficulty": 2,
+      "words": [
+        "Variable",
+        "Function",
+        "Loop",
+        "Array",
+        "Object",
+        "Boolean",
+        "Class",
+        "Exception"
+      ]
+    },
+    {
+      "id": "theme-199",
+      "name": "Network hardware",
+      "domain": "tech",
+      "difficulty": 2,
+      "words": [
+        "Router",
+        "Modem",
+        "Switch",
+        "Hub",
+        "Access point",
+        "Repeater",
+        "Bridge",
+        "Firewall"
+      ]
+    },
+    {
+      "id": "theme-200",
+      "name": "Software",
+      "domain": "tech",
+      "difficulty": 1,
+      "words": [
+        "Spreadsheet",
+        "Word processor",
+        "Browser",
+        "Database",
+        "Photo editor",
+        "Media player",
+        "Antivirus",
+        "Calendar"
+      ]
+    },
+    {
+      "id": "theme-201",
+      "name": "Web formats",
+      "domain": "tech",
+      "difficulty": 2,
+      "words": [
+        "HTML",
+        "CSS",
+        "JavaScript",
+        "SVG",
+        "JSON",
+        "XML",
+        "WebAssembly",
+        "Markdown"
+      ]
+    },
+    {
+      "id": "theme-202",
+      "name": "Computer keys",
+      "domain": "tech",
+      "difficulty": 1,
+      "words": [
+        "Shift",
+        "Enter",
+        "Escape",
+        "Control",
+        "Tab",
+        "Alt",
+        "Delete",
+        "Space"
+      ]
+    },
+    {
+      "id": "theme-246",
+      "name": "Shapes",
+      "domain": "math",
+      "difficulty": 1,
+      "words": [
+        "Circle",
+        "Square",
+        "Triangle",
+        "Rectangle",
+        "Oval",
+        "Hexagon",
+        "Pentagon",
+        "Octagon",
+        "Diamond"
+      ]
+    },
+    {
+      "id": "theme-247",
+      "name": "Solids",
+      "domain": "math",
+      "difficulty": 2,
+      "words": [
+        "Cube",
+        "Sphere",
+        "Cone",
+        "Cylinder",
+        "Pyramid",
+        "Torus",
+        "Prism",
+        "Octahedron"
+      ]
+    },
+    {
+      "id": "theme-248",
+      "name": "Arithmetic",
+      "domain": "math",
+      "difficulty": 1,
+      "words": [
+        "Add",
+        "Subtract",
+        "Multiply",
+        "Divide"
+      ]
+    },
+    {
+      "id": "theme-249",
+      "name": "Geometry",
+      "domain": "math",
+      "difficulty": 2,
+      "words": [
+        "Angle",
+        "Vertex",
+        "Edge",
+        "Face",
+        "Radius",
+        "Diameter",
+        "Perimeter",
+        "Area"
+      ]
+    },
+    {
+      "id": "theme-250",
+      "name": "Numbers",
+      "domain": "math",
+      "difficulty": 2,
+      "words": [
+        "Integer",
+        "Fraction",
+        "Decimal",
+        "Prime",
+        "Rational",
+        "Irrational",
+        "Complex",
+        "Natural"
+      ]
+    },
+    {
+      "id": "theme-251",
+      "name": "Math symbols",
+      "domain": "math",
+      "difficulty": 1,
+      "words": [
+        "Plus",
+        "Minus",
+        "Equals",
+        "Percent",
+        "Infinity",
+        "Pi",
+        "Square root",
+        "Division",
+        "Multiply",
+        "Divide"
+      ]
+    },
+    {
+      "id": "theme-252",
+      "name": "Quadrilaterals",
+      "domain": "math",
+      "difficulty": 2,
+      "words": [
+        "Square",
+        "Rectangle",
+        "Rhombus",
+        "Trapezoid",
+        "Kite",
+        "Parallelogram"
+      ]
+    },
+    {
+      "id": "theme-253",
+      "name": "Statistical terms",
+      "domain": "math",
+      "difficulty": 2,
+      "words": [
+        "Mean",
+        "Median",
+        "Mode",
+        "Range",
+        "Variance",
+        "Deviation",
+        "Quartile",
+        "Percentile"
+      ]
+    },
+    {
+      "id": "theme-287",
+      "name": "Keys",
+      "domain": "tech",
+      "difficulty": 1,
+      "words": [
+        "Enter",
+        "Shift",
+        "Escape",
+        "Tab",
+        "Control",
+        "Alt",
+        "Delete",
+        "Space"
+      ]
+    },
+    {
+      "id": "theme-331",
+      "name": "Moon",
+      "domain": "space",
+      "difficulty": 1,
+      "words": [
+        "Crescent",
+        "Full",
+        "Crater",
+        "Orbit",
+        "Moonlight",
+        "Eclipse",
+        "New",
+        "Landing",
+        "Tide",
+        "Satellite",
+        "Waxing",
+        "Waning"
+      ]
+    },
+    {
+      "id": "theme-332",
+      "name": "Stars",
+      "domain": "space",
+      "difficulty": 1,
+      "words": [
+        "Constellation",
+        "Twinkle",
+        "Night sky",
+        "Polaris",
+        "Sun",
+        "Telescope",
+        "Milky Way",
+        "Big Dipper",
+        "Light",
+        "Chart",
+        "Orion",
+        "Sirius"
+      ]
+    },
+    {
+      "id": "theme-333",
+      "name": "Solar system",
+      "domain": "space",
+      "difficulty": 1,
+      "words": [
+        "Sun",
+        "Moon",
+        "Earth",
+        "Mars",
+        "Jupiter",
+        "Saturn",
+        "Comet",
+        "Asteroid",
+        "Orbit",
+        "Planet",
+        "Mercury",
+        "Venus",
+        "Neptune",
+        "Uranus"
+      ]
+    },
+    {
+      "id": "theme-334",
+      "name": "Space",
+      "domain": "space",
+      "difficulty": 1,
+      "words": [
+        "Planet",
+        "Star",
+        "Moon",
+        "Galaxy",
+        "Comet",
+        "Asteroid",
+        "Rocket",
+        "Astronaut",
+        "Satellite",
+        "Orbit",
+        "Telescope",
+        "Nebula",
+        "Station",
+        "Vacuum"
+      ]
+    },
+    {
+      "id": "theme-335",
+      "name": "Astronaut",
+      "domain": "space",
+      "difficulty": 1,
+      "words": [
+        "Spacesuit",
+        "Helmet",
+        "Rocket",
+        "Spacewalk",
+        "Orbit",
+        "Launch",
+        "Moon",
+        "Weightlessness",
+        "Station",
+        "Oxygen",
+        "Training",
+        "Mission"
+      ]
+    },
+    {
+      "id": "theme-336",
+      "name": "Rocket",
+      "domain": "space",
+      "difficulty": 1,
+      "words": [
+        "Launch",
+        "Fuel",
+        "Engine",
+        "Countdown",
+        "Booster",
+        "Capsule",
+        "Launchpad",
+        "Orbit",
+        "Exhaust",
+        "Nose cone",
+        "Parachute",
+        "Thruster"
+      ]
+    },
+    {
+      "id": "theme-337",
+      "name": "Earth",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Ocean",
+        "Continent",
+        "Atmosphere",
+        "Equator",
+        "North Pole",
+        "South Pole",
+        "Gravity",
+        "Land",
+        "Water",
+        "Globe",
+        "Crust",
+        "Mantle"
+      ]
+    },
+    {
+      "id": "theme-392",
+      "name": "Electricity",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Wire",
+        "Plug",
+        "Socket",
+        "Battery",
+        "Switch",
+        "Current",
+        "Voltage",
+        "Circuit",
+        "Fuse",
+        "Bulb",
+        "Power",
+        "Generator"
+      ]
+    },
+    {
+      "id": "theme-393",
+      "name": "Fire",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Flame",
+        "Heat",
+        "Smoke",
+        "Ember",
+        "Ash",
+        "Spark",
+        "Fuel",
+        "Oxygen",
+        "Match",
+        "Kindling",
+        "Fireplace",
+        "Extinguisher"
+      ]
+    },
+    {
+      "id": "theme-394",
+      "name": "Water",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Liquid",
+        "Ice",
+        "Steam",
+        "Rain",
+        "Snow",
+        "River",
+        "Ocean",
+        "Pond",
+        "Drinking",
+        "Boiling",
+        "Freezing",
+        "Evaporation",
+        "Droplet"
+      ]
+    },
+    {
+      "id": "theme-395",
+      "name": "Magnet",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "North",
+        "South",
+        "Attraction",
+        "Repulsion",
+        "Iron",
+        "Steel",
+        "Compass",
+        "Field",
+        "Bar",
+        "Horseshoe"
+      ]
+    },
+    {
+      "id": "theme-396",
+      "name": "Sound",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Vibration",
+        "Echo",
+        "Volume",
+        "Pitch",
+        "Wave",
+        "Noise",
+        "Music",
+        "Voice",
+        "Hearing",
+        "Speaker",
+        "Microphone",
+        "Frequency"
+      ]
+    },
+    {
+      "id": "theme-397",
+      "name": "Light",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Reflection",
+        "Shadow",
+        "Prism",
+        "Rainbow",
+        "Lens",
+        "Mirror",
+        "Refraction",
+        "Beam",
+        "Color",
+        "Sun",
+        "Lamp",
+        "Flashlight"
+      ]
+    },
+    {
+      "id": "theme-398",
+      "name": "Weather station",
+      "domain": "science",
+      "difficulty": 2,
+      "words": [
+        "Thermometer",
+        "Barometer",
+        "Gauge",
+        "Vane",
+        "Anemometer",
+        "Humidity",
+        "Speed",
+        "Pressure",
+        "Forecast",
+        "Temperature"
+      ]
+    },
+    {
+      "id": "theme-400",
+      "name": "Renewable energy",
+      "domain": "science",
+      "difficulty": 2,
+      "words": [
+        "Solar",
+        "Wind",
+        "Hydroelectric",
+        "Geothermal",
+        "Tidal",
+        "Biomass",
+        "Turbine",
+        "Panel"
+      ]
+    },
+    {
+      "id": "theme-401",
+      "name": "Body",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Head",
+        "Arm",
+        "Leg",
+        "Hand",
+        "Foot",
+        "Eye",
+        "Ear",
+        "Nose",
+        "Mouth",
+        "Back",
+        "Shoulder",
+        "Knee",
+        "Heart",
+        "Lung",
+        "Brain",
+        "Bone",
+        "Tooth",
+        "Tongue",
+        "Muscle",
+        "Fingerprint"
+      ]
+    },
+    {
+      "id": "theme-402",
+      "name": "Hand",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Palm",
+        "Thumb",
+        "Finger",
+        "Knuckle",
+        "Nail",
+        "Wrist",
+        "Fist",
+        "Grip",
+        "Index",
+        "Ring"
+      ]
+    },
+    {
+      "id": "theme-403",
+      "name": "Face",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Eye",
+        "Eyebrow",
+        "Eyelash",
+        "Nose",
+        "Cheek",
+        "Chin",
+        "Forehead",
+        "Lip",
+        "Smile",
+        "Freckle",
+        "Dimple",
+        "Mouth"
+      ]
+    },
+    {
+      "id": "theme-404",
+      "name": "Teeth",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Molar",
+        "Incisor",
+        "Canine",
+        "Enamel",
+        "Gum",
+        "Root",
+        "Bite",
+        "Chewing",
+        "Toothbrush",
+        "Floss",
+        "Dentist",
+        "Toothpaste"
+      ]
+    },
+    {
+      "id": "theme-405",
+      "name": "Skeleton",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Skull",
+        "Rib",
+        "Spine",
+        "Pelvis",
+        "Femur",
+        "Jaw",
+        "Collarbone",
+        "Kneecap",
+        "Joint",
+        "Bone"
+      ]
+    },
+    {
+      "id": "theme-459",
+      "name": "Science class",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Experiment",
+        "Beaker",
+        "Microscope",
+        "Test tube",
+        "Goggles",
+        "Magnet",
+        "Model",
+        "Coat",
+        "Thermometer",
+        "Cylinder"
+      ]
+    },
+    {
+      "id": "theme-516",
+      "name": "Computer",
+      "domain": "tech",
+      "difficulty": 1,
+      "words": [
+        "Keyboard",
+        "Mouse",
+        "Monitor",
+        "Processor",
+        "Memory",
+        "Motherboard",
+        "Drive",
+        "Webcam",
+        "Software",
+        "File",
+        "Desktop",
+        "USB"
+      ]
+    },
+    {
+      "id": "theme-517",
+      "name": "Phone",
+      "domain": "tech",
+      "difficulty": 1,
+      "words": [
+        "Screen",
+        "Camera",
+        "Speaker",
+        "Microphone",
+        "Battery",
+        "Charger",
+        "App",
+        "Call",
+        "Text",
+        "Notification",
+        "Touchscreen",
+        "Contact"
+      ]
+    },
+    {
+      "id": "theme-518",
+      "name": "Camera",
+      "domain": "tech",
+      "difficulty": 1,
+      "words": [
+        "Lens",
+        "Shutter",
+        "Flash",
+        "Tripod",
+        "Focus",
+        "Zoom",
+        "Memory card",
+        "Viewfinder",
+        "Photo",
+        "Aperture",
+        "Battery",
+        "Strap"
+      ]
+    },
+    {
+      "id": "theme-519",
+      "name": "Printer",
+      "domain": "tech",
+      "difficulty": 1,
+      "words": [
+        "Paper",
+        "Ink",
+        "Toner",
+        "Cartridge",
+        "Tray",
+        "Print",
+        "Copy",
+        "Scan",
+        "Page",
+        "Cable",
+        "Jam",
+        "Document"
+      ]
+    },
+    {
+      "id": "theme-520",
+      "name": "Email",
+      "domain": "tech",
+      "difficulty": 1,
+      "words": [
+        "Inbox",
+        "Outbox",
+        "Subject",
+        "Sender",
+        "Recipient",
+        "Attachment",
+        "Reply",
+        "Forward",
+        "Spam",
+        "Draft",
+        "Address",
+        "Signature"
+      ]
+    },
+    {
+      "id": "theme-521",
+      "name": "Browser",
+      "domain": "tech",
+      "difficulty": 1,
+      "words": [
+        "Tab",
+        "Bookmark",
+        "Address bar",
+        "Link",
+        "Website",
+        "Search",
+        "Refresh",
+        "Back",
+        "History",
+        "Download",
+        "Home page",
+        "Window"
+      ]
+    },
+    {
+      "id": "theme-522",
+      "name": "Website",
+      "domain": "tech",
+      "difficulty": 1,
+      "words": [
+        "Page",
+        "Link",
+        "Menu",
+        "Button",
+        "Header",
+        "Footer",
+        "Form",
+        "Search",
+        "Image",
+        "Text",
+        "Address",
+        "Home page",
+        "Radio button"
+      ]
+    },
+    {
+      "id": "theme-523",
+      "name": "Online safety",
+      "domain": "tech",
+      "difficulty": 1,
+      "words": [
+        "Password",
+        "Privacy",
+        "Backup",
+        "Antivirus",
+        "Encryption",
+        "Scam",
+        "Phishing",
+        "Firewall",
+        "Update",
+        "Two-factor login",
+        "Lock",
+        "Key",
+        "Shield"
+      ]
+    },
+    {
+      "id": "theme-524",
+      "name": "Apps",
+      "domain": "tech",
+      "difficulty": 1,
+      "words": [
+        "Calendar",
+        "Calculator",
+        "Maps",
+        "Camera",
+        "Music",
+        "Weather",
+        "Notes",
+        "Messages",
+        "Clock",
+        "Contacts",
+        "Browser",
+        "Games"
+      ]
+    },
+    {
+      "id": "theme-525",
+      "name": "Remote control",
+      "domain": "tech",
+      "difficulty": 1,
+      "words": [
+        "Button",
+        "Battery",
+        "Volume",
+        "Channel",
+        "Power",
+        "Mute",
+        "Pause",
+        "Play",
+        "Rewind",
+        "Fast-forward",
+        "Infrared",
+        "Television"
+      ]
+    },
+    {
+      "id": "theme-526",
+      "name": "Robot",
+      "domain": "tech",
+      "difficulty": 1,
+      "words": [
+        "Sensor",
+        "Motor",
+        "Arm",
+        "Wheel",
+        "Camera",
+        "Battery",
+        "Programming",
+        "Automation",
+        "Circuit",
+        "Machine",
+        "Gripper",
+        "Remote control"
+      ]
+    },
+    {
+      "id": "theme-527",
+      "name": "Screen",
+      "domain": "tech",
+      "difficulty": 1,
+      "words": [
+        "Pixel",
+        "Resolution",
+        "Display",
+        "Brightness",
+        "Contrast",
+        "Touchscreen",
+        "Monitor",
+        "Television",
+        "Phone",
+        "Tablet",
+        "Projector",
+        "Laptop"
+      ]
+    },
+    {
+      "id": "theme-528",
+      "name": "Internet connections",
+      "domain": "tech",
+      "difficulty": 1,
+      "words": [
+        "Wi-Fi",
+        "Broadband",
+        "Fiber",
+        "Ethernet",
+        "Mobile data",
+        "Satellite",
+        "Router",
+        "Modem",
+        "Hotspot",
+        "Network"
+      ]
+    },
+    {
+      "id": "theme-630",
+      "name": "Measurements",
+      "domain": "math",
+      "difficulty": 1,
+      "words": [
+        "Length",
+        "Width",
+        "Height",
+        "Weight",
+        "Volume",
+        "Area",
+        "Distance",
+        "Temperature",
+        "Speed",
+        "Time",
+        "Depth",
+        "Angle"
+      ]
+    },
+    {
+      "id": "theme-631",
+      "name": "Fractions",
+      "domain": "math",
+      "difficulty": 1,
+      "words": [
+        "Half",
+        "Quarter",
+        "Third",
+        "Eighth",
+        "Numerator",
+        "Denominator",
+        "Whole",
+        "Parts",
+        "Divide",
+        "Ratio"
+      ]
+    },
+    {
+      "id": "theme-632",
+      "name": "Counting",
+      "domain": "math",
+      "difficulty": 1,
+      "words": [
+        "One",
+        "Two",
+        "Three",
+        "Four",
+        "Five",
+        "Six",
+        "Seven",
+        "Eight",
+        "Nine",
+        "Ten",
+        "Eleven",
+        "Twelve"
+      ]
+    },
+    {
+      "id": "theme-633",
+      "name": "Shapes and lines",
+      "domain": "math",
+      "difficulty": 1,
+      "words": [
+        "Shapes",
+        "Circle",
+        "Square",
+        "Triangle",
+        "Rectangle",
+        "Oval",
+        "Curve",
+        "Straight",
+        "Angle",
+        "Parallel",
+        "Perpendicular",
+        "Diagonal"
+      ]
+    },
+    {
+      "id": "theme-928",
+      "name": "Fossil",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Bone",
+        "Tooth",
+        "Shell",
+        "Footprint",
+        "Imprint",
+        "Rock",
+        "Amber",
+        "Dinosaur",
+        "Excavation",
+        "Brush",
+        "Museum",
+        "Extinction"
+      ]
+    },
+    {
+      "id": "theme-929",
+      "name": "Telescope",
+      "domain": "space",
+      "difficulty": 1,
+      "words": [
+        "Lens",
+        "Mirror",
+        "Tripod",
+        "Eyepiece",
+        "Focus",
+        "Magnification",
+        "Stars",
+        "Moon",
+        "Planet",
+        "Observatory",
+        "Constellation",
+        "Night sky"
+      ]
+    },
+    {
+      "id": "theme-934",
+      "name": "Microscope",
+      "domain": "science",
+      "difficulty": 1,
+      "words": [
+        "Lens",
+        "Eyepiece",
+        "Slide",
+        "Specimen",
+        "Focus",
+        "Magnification",
+        "Light",
+        "Stage",
+        "Cell",
+        "Bacteria",
+        "Lab",
+        "Science class"
+      ]
+    }
+  ],
+  "pictures": {
+    "Rain": "🌧️",
+    "Snow": "❄️",
+    "Rocket": "🚀",
+    "Coat": "🧥",
+    "Ring": "💍",
+    "Compass": "🧭",
+    "Flashlight": "🔦",
+    "Kite": "🪁",
+    "Mouse": "🐁",
+    "Skull": "💀",
+    "Palm": "🌴",
+    "Rainbow": "🌈",
+    "Wind": "🌬️",
+    "Moon": "🌙",
+    "Star": "⭐",
+    "Comet": "☄️",
+    "Galaxy": "🌌",
+    "Earth": "🌍",
+    "Saturn": "🪐",
+    "Wave": "🌊",
+    "Rock": "🪨",
+    "Droplet": "💧",
+    "Ice": "🧊",
+    "Helmet": "🪖",
+    "Goggles": "🥽",
+    "Diamond": "💎",
+    "Microphone": "🎤",
+    "Camera": "📷",
+    "Slide": "🛝",
+    "Wheel": "🛞",
+    "Fuel": "⛽",
+    "Battery": "🔋",
+    "Bridge": "🌉",
+    "Station": "🚉",
+    "Mirror": "🪞",
+    "Window": "🪟",
+    "Bulb": "💡",
+    "Lamp": "🪔",
+    "Toothbrush": "🪥",
+    "Magnet": "🧲",
+    "Television": "📺",
+    "Ruler": "📏",
+    "Calendar": "📅",
+    "Bookmark": "🔖",
+    "Laptop": "💻",
+    "Keyboard": "⌨️",
+    "Printer": "🖨️",
+    "Monitor": "🖥️",
+    "Disk": "💾",
+    "CD": "💿",
+    "Phone": "📱",
+    "Satellite": "🛰️",
+    "Lock": "🔒",
+    "Key": "🔑",
+    "Shield": "🛡️",
+    "Plug": "🔌",
+    "Microscope": "🔬",
+    "Telescope": "🔭",
+    "Test tube": "🧪",
+    "Petri dish": "🧫",
+    "DNA": "🧬",
+    "Alembic": "⚗️",
+    "Atom": "⚛️",
+    "Thermometer": "🌡️",
+    "Hourglass": "⌛",
+    "Stopwatch": "⏱️",
+    "Brain": "🧠",
+    "Heart": "🫀",
+    "Bone": "🦴",
+    "Tooth": "🦷",
+    "Eye": "👁️",
+    "Ear": "👂",
+    "Nose": "👃",
+    "Tongue": "👅",
+    "Mouth": "👄",
+    "Hand": "✋",
+    "Foot": "🦶",
+    "Leg": "🦵",
+    "Muscle": "💪",
+    "Fingerprint": "🫆",
+    "Astronaut": "🧑‍🚀",
+    "Fist": "✊",
+    "Clock": "🕒",
+    "Circle": "🔴",
+    "Square": "🟦",
+    "Triangle": "🔺",
+    "Plus": "➕",
+    "Minus": "➖",
+    "Multiply": "✖️",
+    "Divide": "➗",
+    "Equals": "🟰",
+    "Infinity": "♾️",
+    "Aries": "♈",
+    "Taurus": "♉",
+    "Gemini": "♊",
+    "Cancer": "♋",
+    "Leo": "♌",
+    "Virgo": "♍",
+    "Libra": "♎",
+    "Scorpio": "♏",
+    "Sagittarius": "♐",
+    "Capricorn": "♑",
+    "Aquarius": "♒",
+    "Pisces": "♓",
+    "Music": "🎶",
+    "Radio button": "🔘",
+    "Scale": "⚖️",
+    "Lung": "🫁"
+  }
+}

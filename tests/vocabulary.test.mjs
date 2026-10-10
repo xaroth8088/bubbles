@@ -32,6 +32,6 @@ test('catalogue rows have canonical unique identifiers and clean clue text',()=>
   assert.equal(new Set(THEMES.map(t=>t.name.toLowerCase())).size,THEMES.length);
   for(const t of THEMES){
     assert.ok([1,2,3].includes(t.difficulty));
-    for(const word of t.words)assert.ok(word&&word===word.trim()&&!/[|,\n]/.test(word),`${t.name}: ${word}`);
+    for(const word of t.words)assert.ok(word&&word===word.trim()&&!/[\r\n]/.test(word),`${t.name}: ${word}`);
   }
 });

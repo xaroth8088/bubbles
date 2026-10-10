@@ -1,0 +1,545 @@
+{
+  "id": "travel",
+  "language": "de",
+  "name": "Reisen",
+  "themes": [
+    {
+      "id": "de-travel-reisegepack",
+      "name": "Reisegepäck",
+      "domain": "travel",
+      "difficulty": 1,
+      "words": [
+        "Koffer",
+        "Rucksack",
+        "Reisetasche",
+        "Kulturbeutel",
+        "Handgepäck",
+        "Kofferschloss",
+        "Gepäckanhänger",
+        "Packliste"
+      ]
+    },
+    {
+      "id": "de-travel-reisedokumente",
+      "name": "Reisedokumente",
+      "domain": "travel",
+      "difficulty": 1,
+      "words": [
+        "Reisepass",
+        "Personalausweis",
+        "Visum",
+        "Ticket",
+        "Bordkarte",
+        "Buchungsnummer",
+        "Führerschein",
+        "Reiseversicherung"
+      ]
+    },
+    {
+      "id": "de-travel-am-flughafen",
+      "name": "Am Flughafen",
+      "domain": "travel",
+      "difficulty": 1,
+      "words": [
+        "Terminal",
+        "Gate",
+        "Check-in",
+        "Sicherheitskontrolle",
+        "Landebahn",
+        "Gepäckband",
+        "Abflug",
+        "Ankunft"
+      ]
+    },
+    {
+      "id": "de-travel-im-flugzeug",
+      "name": "Im Flugzeug",
+      "domain": "travel",
+      "difficulty": 1,
+      "words": [
+        "Pilot",
+        "Stewardess",
+        "Sitzgurt",
+        "Fensterplatz",
+        "Gangplatz",
+        "Tragfläche",
+        "Cockpit",
+        "Handgepäckfach"
+      ]
+    },
+    {
+      "id": "de-travel-am-bahnhof",
+      "name": "Am Bahnhof",
+      "domain": "travel",
+      "difficulty": 1,
+      "words": [
+        "Bahnsteig",
+        "Gleis",
+        "Fahrplan",
+        "Fahrkarte",
+        "Schalter",
+        "Anzeigetafel",
+        "Unterführung",
+        "Wartehalle"
+      ]
+    },
+    {
+      "id": "de-travel-zugreise",
+      "name": "Zugreise",
+      "domain": "travel",
+      "difficulty": 1,
+      "words": [
+        "Lok",
+        "Waggon",
+        "Abteil",
+        "Speisewagen",
+        "Schlafwagen",
+        "Schaffner",
+        "Umstieg",
+        "Verspätung"
+      ]
+    },
+    {
+      "id": "de-travel-autoreise",
+      "name": "Autoreise",
+      "domain": "travel",
+      "difficulty": 1,
+      "words": [
+        "Autobahn",
+        "Raststätte",
+        "Tankstelle",
+        "Navi",
+        "Maut",
+        "Stau",
+        "Ausfahrt",
+        "Grenze"
+      ]
+    },
+    {
+      "id": "de-travel-im-hotel",
+      "name": "Im Hotel",
+      "domain": "travel",
+      "difficulty": 1,
+      "words": [
+        "Rezeption",
+        "Zimmerschlüssel",
+        "Frühstücksbuffet",
+        "Minibar",
+        "Aufzug",
+        "Einzelzimmer",
+        "Doppelzimmer",
+        "Check-out"
+      ]
+    },
+    {
+      "id": "de-travel-camping",
+      "name": "Camping",
+      "domain": "travel",
+      "difficulty": 1,
+      "words": [
+        "Zelt",
+        "Schlafsack",
+        "Isomatte",
+        "Hering",
+        "Gaskocher",
+        "Taschenlampe",
+        "Campingstuhl",
+        "Lagerfeuer"
+      ]
+    },
+    {
+      "id": "de-travel-strandurlaub",
+      "name": "Strandurlaub",
+      "domain": "travel",
+      "difficulty": 1,
+      "words": [
+        "Sand",
+        "Meer",
+        "Sonnenschirm",
+        "Liegestuhl",
+        "Sonnencreme",
+        "Badehose",
+        "Muschel",
+        "Strandtuch"
+      ]
+    },
+    {
+      "id": "de-travel-bergwanderung",
+      "name": "Bergwanderung",
+      "domain": "travel",
+      "difficulty": 1,
+      "words": [
+        "Wanderschuh",
+        "Wanderstock",
+        "Rucksack",
+        "Markierung",
+        "Gipfel",
+        "Hütte",
+        "Wanderkarte",
+        "Trinkflasche"
+      ]
+    },
+    {
+      "id": "de-travel-wintersportreise",
+      "name": "Wintersportreise",
+      "domain": "travel",
+      "difficulty": 1,
+      "words": [
+        "Ski",
+        "Snowboard",
+        "Skipass",
+        "Skilift",
+        "Piste",
+        "Skibrille",
+        "Skihütte",
+        "Schnee"
+      ]
+    },
+    {
+      "id": "de-travel-stadtereise",
+      "name": "Städtereise",
+      "domain": "travel",
+      "difficulty": 1,
+      "words": [
+        "Altstadt",
+        "Museum",
+        "Rathaus",
+        "Marktplatz",
+        "Stadtplan",
+        "Sehenswürdigkeit",
+        "Stadtführung",
+        "Souvenir"
+      ]
+    },
+    {
+      "id": "de-travel-bootsreise",
+      "name": "Bootsreise",
+      "domain": "travel",
+      "difficulty": 1,
+      "words": [
+        "Fähre",
+        "Hafen",
+        "Anker",
+        "Reling",
+        "Kabine",
+        "Deck",
+        "Steuerbord",
+        "Backbord"
+      ]
+    },
+    {
+      "id": "de-travel-radtour",
+      "name": "Radtour",
+      "domain": "travel",
+      "difficulty": 1,
+      "words": [
+        "Fahrrad",
+        "Helm",
+        "Radweg",
+        "Satteltasche",
+        "Luftpumpe",
+        "Flickzeug",
+        "Trinkflasche",
+        "Lenker"
+      ]
+    },
+    {
+      "id": "de-travel-deutschland",
+      "name": "Deutschland",
+      "domain": "travel",
+      "difficulty": 1,
+      "words": [
+        "Berlin",
+        "Hamburg",
+        "München",
+        "Köln",
+        "Dresden",
+        "Leipzig",
+        "Bremen",
+        "Stuttgart"
+      ]
+    },
+    {
+      "id": "de-travel-osterreich",
+      "name": "Österreich",
+      "domain": "travel",
+      "difficulty": 1,
+      "words": [
+        "Wien",
+        "Salzburg",
+        "Innsbruck",
+        "Graz",
+        "Linz",
+        "Klagenfurt",
+        "Bregenz",
+        "Eisenstadt"
+      ]
+    },
+    {
+      "id": "de-travel-schweiz",
+      "name": "Schweiz",
+      "domain": "travel",
+      "difficulty": 1,
+      "words": [
+        "Zürich",
+        "Bern",
+        "Genf",
+        "Basel",
+        "Luzern",
+        "Lugano",
+        "Lausanne",
+        "St. Gallen"
+      ]
+    },
+    {
+      "id": "de-travel-europaische-hauptstadte",
+      "name": "Hauptstädte",
+      "domain": "travel",
+      "difficulty": 1,
+      "words": [
+        "Paris",
+        "Rom",
+        "Madrid",
+        "Lissabon",
+        "London",
+        "Prag",
+        "Warschau",
+        "Athen"
+      ]
+    },
+    {
+      "id": "de-travel-urlaubsinseln",
+      "name": "Urlaubsinseln",
+      "domain": "travel",
+      "difficulty": 1,
+      "words": [
+        "Mallorca",
+        "Teneriffa",
+        "Kreta",
+        "Rhodos",
+        "Sizilien",
+        "Sardinien",
+        "Korsika",
+        "Zypern"
+      ]
+    },
+    {
+      "id": "de-travel-sehenswurdigkeiten",
+      "name": "Sehenswürdigkeiten",
+      "domain": "travel",
+      "difficulty": 2,
+      "words": [
+        "Eiffelturm",
+        "Kolosseum",
+        "Big Ben",
+        "Brandenburger Tor",
+        "Freiheitsstatue",
+        "Taj Mahal",
+        "Chinesische Mauer",
+        "Pyramiden"
+      ]
+    },
+    {
+      "id": "de-travel-nationalparks",
+      "name": "Nationalparks",
+      "domain": "travel",
+      "difficulty": 2,
+      "words": [
+        "Yellowstone",
+        "Yosemite",
+        "Grand Canyon",
+        "Kruger",
+        "Serengeti",
+        "Banff",
+        "Berchtesgaden",
+        "Wattenmeer"
+      ]
+    },
+    {
+      "id": "de-travel-fernreiseziele",
+      "name": "Fernreiseziele",
+      "domain": "travel",
+      "difficulty": 2,
+      "words": [
+        "Japan",
+        "Thailand",
+        "Vietnam",
+        "Australien",
+        "Neuseeland",
+        "Kanada",
+        "Mexiko",
+        "Südafrika"
+      ]
+    },
+    {
+      "id": "de-travel-gebirge",
+      "name": "Gebirge",
+      "domain": "travel",
+      "difficulty": 2,
+      "words": [
+        "Alpen",
+        "Pyrenäen",
+        "Karpaten",
+        "Anden",
+        "Himalaya",
+        "Rocky Mountains",
+        "Atlas",
+        "Kaukasus"
+      ]
+    },
+    {
+      "id": "de-travel-ozeane-und-meere",
+      "name": "Meere",
+      "domain": "travel",
+      "difficulty": 2,
+      "words": [
+        "Atlantik",
+        "Pazifik",
+        "Indischer Ozean",
+        "Mittelmeer",
+        "Nordsee",
+        "Ostsee",
+        "Karibik",
+        "Rotes Meer"
+      ]
+    },
+    {
+      "id": "de-travel-weltstadte",
+      "name": "Weltstädte",
+      "domain": "travel",
+      "difficulty": 2,
+      "words": [
+        "Tokio",
+        "New York",
+        "Sydney",
+        "Kapstadt",
+        "Bangkok",
+        "Singapur",
+        "Istanbul",
+        "Dubai"
+      ]
+    },
+    {
+      "id": "de-travel-abenteuerurlaub",
+      "name": "Abenteuerurlaub",
+      "domain": "travel",
+      "difficulty": 2,
+      "words": [
+        "Rafting",
+        "Safari",
+        "Trekking",
+        "Tauchen",
+        "Klettern",
+        "Canyoning",
+        "Gleitschirmfliegen",
+        "Kajakfahren"
+      ]
+    },
+    {
+      "id": "de-travel-unterkunfte",
+      "name": "Unterkünfte",
+      "domain": "travel",
+      "difficulty": 2,
+      "words": [
+        "Hostel",
+        "Ferienwohnung",
+        "Pension",
+        "Hotel",
+        "Jugendherberge",
+        "Bungalow",
+        "Berghütte",
+        "Wohnmobil"
+      ]
+    },
+    {
+      "id": "de-travel-reiseprobleme",
+      "name": "Reiseprobleme",
+      "domain": "travel",
+      "difficulty": 2,
+      "words": [
+        "Jetlag",
+        "Sonnenbrand",
+        "Koffer verloren",
+        "Flugausfall",
+        "Stau",
+        "Pass vergessen",
+        "Reisekrankheit",
+        "Sprachbarriere"
+      ]
+    },
+    {
+      "id": "de-travel-orientierung",
+      "name": "Orientierung",
+      "domain": "travel",
+      "difficulty": 2,
+      "words": [
+        "Kompass",
+        "Himmelsrichtung",
+        "Norden",
+        "Süden",
+        "Osten",
+        "Westen",
+        "Karte",
+        "Wegweiser"
+      ]
+    },
+    {
+      "id": "de-travel-urlaub",
+      "name": "Urlaub",
+      "domain": "travel",
+      "difficulty": 1,
+      "words": [
+        "Camping",
+        "Städtereise",
+        "Strandurlaub",
+        "Kreuzfahrt",
+        "Bergwanderung",
+        "Radtour",
+        "Safari",
+        "Wellness",
+        "Skireise",
+        "Roadtrip"
+      ]
+    },
+    {
+      "id": "de-travel-reiseanlaesse",
+      "name": "Reiseanlässe",
+      "domain": "travel",
+      "difficulty": 1,
+      "words": [
+        "Urlaub",
+        "Arbeit",
+        "Hochzeit",
+        "Familienbesuch",
+        "Studium",
+        "Pilgern",
+        "Sportturnier",
+        "Festival",
+        "Messe",
+        "Klassentreffen"
+      ]
+    }
+  ],
+  "pictures": {
+    "Koffer": "🧳",
+    "Rucksack": "🎒",
+    "Reisepass": "🛂",
+    "Ticket": "🎫",
+    "Bordkarte": "🎫",
+    "Lok": "🚂",
+    "Fahrkarte": "🎫",
+    "Autobahn": "🛣️",
+    "Tankstelle": "⛽",
+    "Hotel": "🏨",
+    "Zelt": "⛺",
+    "Taschenlampe": "🔦",
+    "Lagerfeuer": "🔥",
+    "Sonnenschirm": "⛱️",
+    "Muschel": "🐚",
+    "Gipfel": "🏔️",
+    "Ski": "🎿",
+    "Fahrrad": "🚲",
+    "Kompass": "🧭",
+    "Strandurlaub": "🏖️"
+  }
+}

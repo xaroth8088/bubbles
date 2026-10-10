@@ -1,0 +1,507 @@
+{
+  "id": "arts",
+  "language": "de",
+  "name": "Kunst",
+  "themes": [
+    {
+      "id": "de-arts-malwerkzeug",
+      "name": "Malwerkzeug",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Pinsel",
+        "Palette",
+        "Staffelei",
+        "Leinwand",
+        "Farbe",
+        "Spachtel",
+        "Farbrolle",
+        "Malkasten"
+      ]
+    },
+    {
+      "id": "de-arts-zeichenzeug",
+      "name": "Zeichenzeug",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Bleistift",
+        "Buntstift",
+        "Kohle",
+        "Kreide",
+        "Radiergummi",
+        "Spitzer",
+        "Skizzenbuch",
+        "Fineliner"
+      ]
+    },
+    {
+      "id": "de-arts-malfarben",
+      "name": "Malfarben",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Rot",
+        "Blau",
+        "Gelb",
+        "Grün",
+        "Orange",
+        "Violett",
+        "Schwarz",
+        "Weiß"
+      ]
+    },
+    {
+      "id": "de-arts-farbmischung",
+      "name": "Farbmischung",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Grundfarbe",
+        "Mischfarbe",
+        "Farbkreis",
+        "Kontrast",
+        "Farbton",
+        "Helligkeit",
+        "Sättigung",
+        "Komplementärfarbe"
+      ]
+    },
+    {
+      "id": "de-arts-bildmotive",
+      "name": "Bildmotive",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Porträt",
+        "Landschaft",
+        "Stillleben",
+        "Selbstporträt",
+        "Tierbild",
+        "Seestück",
+        "Blumenbild",
+        "Stadtansicht"
+      ]
+    },
+    {
+      "id": "de-arts-im-museum",
+      "name": "Im Museum",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Gemälde",
+        "Skulptur",
+        "Vitrine",
+        "Ausstellung",
+        "Führung",
+        "Eintritt",
+        "Katalog",
+        "Saal"
+      ]
+    },
+    {
+      "id": "de-arts-bildhauerei",
+      "name": "Bildhauerei",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Stein",
+        "Meißel",
+        "Hammer",
+        "Marmor",
+        "Ton",
+        "Bronze",
+        "Sockel",
+        "Statue"
+      ]
+    },
+    {
+      "id": "de-arts-topfern",
+      "name": "Töpfern",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Töpferscheibe",
+        "Lehm",
+        "Glasur",
+        "Brennofen",
+        "Schale",
+        "Krug",
+        "Vase",
+        "Henkel"
+      ]
+    },
+    {
+      "id": "de-arts-papierkunst",
+      "name": "Papierkunst",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Origami",
+        "Scherenschnitt",
+        "Collage",
+        "Faltboot",
+        "Papierflieger",
+        "Fächer",
+        "Papierblume",
+        "Falzkante"
+      ]
+    },
+    {
+      "id": "de-arts-textilkunst",
+      "name": "Textilkunst",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Stoff",
+        "Nadel",
+        "Faden",
+        "Stickerei",
+        "Webstuhl",
+        "Filz",
+        "Wolle",
+        "Patchwork"
+      ]
+    },
+    {
+      "id": "de-arts-fotografie",
+      "name": "Fotografie",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Kamera",
+        "Objektiv",
+        "Blitz",
+        "Stativ",
+        "Fokus",
+        "Blende",
+        "Belichtung",
+        "Porträt"
+      ]
+    },
+    {
+      "id": "de-arts-architektur",
+      "name": "Architektur",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Fassade",
+        "Dach",
+        "Fenster",
+        "Säule",
+        "Bogen",
+        "Treppe",
+        "Balkon",
+        "Kuppel"
+      ]
+    },
+    {
+      "id": "de-arts-theater",
+      "name": "Theater",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Bühne",
+        "Kulisse",
+        "Maske",
+        "Kostüm",
+        "Vorhang",
+        "Requisite",
+        "Rolle",
+        "Publikum"
+      ]
+    },
+    {
+      "id": "de-arts-tanzkunst",
+      "name": "Tanzkunst",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Ballett",
+        "Pirouette",
+        "Choreografie",
+        "Tänzerin",
+        "Spitzenschuh",
+        "Pas de deux",
+        "Ensemble",
+        "Tutu"
+      ]
+    },
+    {
+      "id": "de-arts-literatur",
+      "name": "Literatur",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Roman",
+        "Gedicht",
+        "Novelle",
+        "Märchen",
+        "Fabel",
+        "Kurzgeschichte",
+        "Drama",
+        "Erzählung"
+      ]
+    },
+    {
+      "id": "de-arts-buchgestaltung",
+      "name": "Buchgestaltung",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Einband",
+        "Titel",
+        "Seite",
+        "Schrift",
+        "Illustration",
+        "Kapitel",
+        "Lesebändchen",
+        "Schutzumschlag"
+      ]
+    },
+    {
+      "id": "de-arts-kunsthandwerk",
+      "name": "Kunsthandwerk",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Schnitzen",
+        "Weben",
+        "Töpfern",
+        "Schmieden",
+        "Sticken",
+        "Gravieren",
+        "Filzen",
+        "Flechten"
+      ]
+    },
+    {
+      "id": "de-arts-schmuckdesign",
+      "name": "Schmuckdesign",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Ring",
+        "Kette",
+        "Armband",
+        "Brosche",
+        "Ohrring",
+        "Anhänger",
+        "Perle",
+        "Edelstein"
+      ]
+    },
+    {
+      "id": "de-arts-strassenkunst",
+      "name": "Straßenkunst",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Graffiti",
+        "Schablone",
+        "Sprühdose",
+        "Wandbild",
+        "Sticker",
+        "Tag",
+        "Mural",
+        "Plakat"
+      ]
+    },
+    {
+      "id": "de-arts-grundformen",
+      "name": "Grundformen",
+      "domain": "arts",
+      "difficulty": 1,
+      "words": [
+        "Kreis",
+        "Quadrat",
+        "Dreieck",
+        "Rechteck",
+        "Oval",
+        "Spirale",
+        "Würfel",
+        "Kugel"
+      ]
+    },
+    {
+      "id": "de-arts-renaissance",
+      "name": "Renaissance",
+      "domain": "arts",
+      "difficulty": 2,
+      "words": [
+        "Leonardo",
+        "Michelangelo",
+        "Raffael",
+        "Donatello",
+        "Fresko",
+        "Perspektive",
+        "Florenz",
+        "Mona Lisa"
+      ]
+    },
+    {
+      "id": "de-arts-impressionismus",
+      "name": "Impressionismus",
+      "domain": "arts",
+      "difficulty": 2,
+      "words": [
+        "Monet",
+        "Renoir",
+        "Degas",
+        "Pissarro",
+        "Seerosen",
+        "Lichtspiel",
+        "Freilichtmalerei",
+        "Pinselstrich"
+      ]
+    },
+    {
+      "id": "de-arts-bauhaus",
+      "name": "Bauhaus",
+      "domain": "arts",
+      "difficulty": 2,
+      "words": [
+        "Gropius",
+        "Dessau",
+        "Weimar",
+        "Klee",
+        "Kandinsky",
+        "Stahlrohr",
+        "Geometrie",
+        "Funktionalität"
+      ]
+    },
+    {
+      "id": "de-arts-surrealismus",
+      "name": "Surrealismus",
+      "domain": "arts",
+      "difficulty": 2,
+      "words": [
+        "Dalí",
+        "Magritte",
+        "Traum",
+        "Unterbewusstsein",
+        "Schmelzende Uhren",
+        "Unwirklichkeit",
+        "Metamorphose",
+        "Fantastik"
+      ]
+    },
+    {
+      "id": "de-arts-antike-baukunst",
+      "name": "Antike Baukunst",
+      "domain": "arts",
+      "difficulty": 2,
+      "words": [
+        "Tempel",
+        "Amphitheater",
+        "Aquädukt",
+        "Kapitell",
+        "Säulengang",
+        "Mosaik",
+        "Triumphbogen",
+        "Forum"
+      ]
+    },
+    {
+      "id": "de-arts-gotische-kirchen",
+      "name": "Gotische Kirchen",
+      "domain": "arts",
+      "difficulty": 2,
+      "words": [
+        "Spitzbogen",
+        "Rosette",
+        "Strebewerk",
+        "Kreuzrippengewölbe",
+        "Kirchturm",
+        "Glasfenster",
+        "Kathedrale",
+        "Wasserspeier"
+      ]
+    },
+    {
+      "id": "de-arts-drucktechniken",
+      "name": "Drucktechniken",
+      "domain": "arts",
+      "difficulty": 2,
+      "words": [
+        "Holzschnitt",
+        "Linolschnitt",
+        "Kupferstich",
+        "Radierung",
+        "Lithografie",
+        "Siebdruck",
+        "Monotypie",
+        "Stempel"
+      ]
+    },
+    {
+      "id": "de-arts-typografie",
+      "name": "Typografie",
+      "domain": "arts",
+      "difficulty": 2,
+      "words": [
+        "Serife",
+        "Grotesk",
+        "Schriftgrad",
+        "Laufweite",
+        "Zeilenabstand",
+        "Fettdruck",
+        "Kursiv",
+        "Ligatur"
+      ]
+    },
+    {
+      "id": "de-arts-designberufe",
+      "name": "Designberufe",
+      "domain": "arts",
+      "difficulty": 2,
+      "words": [
+        "Grafikdesigner",
+        "Illustrator",
+        "Modedesigner",
+        "Produktdesigner",
+        "Innenarchitekt",
+        "Typograf",
+        "Keramiker",
+        "Goldschmied"
+      ]
+    },
+    {
+      "id": "de-arts-kunstgeschichte",
+      "name": "Kunstgeschichte",
+      "domain": "arts",
+      "difficulty": 2,
+      "words": [
+        "Romanik",
+        "Gotik",
+        "Renaissance",
+        "Barock",
+        "Rokoko",
+        "Klassizismus",
+        "Romantik",
+        "Moderne"
+      ]
+    }
+  ],
+  "pictures": {
+    "Pinsel": "🖌️",
+    "Palette": "🎨",
+    "Bleistift": "✏️",
+    "Kreide": "🖍️",
+    "Kamera": "📷",
+    "Hammer": "🔨",
+    "Statue": "🗿",
+    "Vase": "🏺",
+    "Nadel": "🪡",
+    "Faden": "🧵",
+    "Wolle": "🧶",
+    "Fenster": "🪟",
+    "Ballett": "🩰",
+    "Ring": "💍",
+    "Perle": "🦪",
+    "Kreis": "⭕",
+    "Quadrat": "⬜",
+    "Dreieck": "🔺"
+  }
+}

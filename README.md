@@ -12,7 +12,7 @@ The game is about semantic ambiguity, not spotting repeated category labels. Pre
 
 Every entry in `PICTURES` must appear verbatim in at least one playable theme. An emoji supplies a word, so another sense of that word may be relevant (a bat picture can represent the sports tool). Picture selection is seeded and samples eligible clues rather than favoring the first mapped word. Do not replace split/locked or other special mechanics merely to force an image. A small stacked-special board can retain text if every mapped clue is obstructed.
 
-New puzzles use the v6 seed namespace. Existing saves retain their stored clues and state. Keep existing theme IDs and append new packs after all earlier packs.
+New puzzles use the v6 seed namespace. Existing saves retain their stored clues and state. Keep existing theme IDs stable. Pack order never creates or changes IDs. New puzzles record their language and selected packs; existing saves keep their stored clues when settings change.
 
 ## Play locally
 
@@ -89,17 +89,35 @@ The requested mobile mechanics and three helpers were researched through the [Go
 
 ## The dictionary
 
-`src/data.js` contains **308 original themes, 2,433 word-to-theme associations, and 2,213 distinct words across 17 domains**. Domains cover nature, food, animals, space, science, home, style, sport, music, arts, travel, technology, games, language, everyday life, mathematics, and wordplay.
+Vocabulary lives in `src/packs/<language>/<pack-id>.json`. English retains all **995 original theme IDs, 10,104 original word-to-theme associations, and 705 emoji mappings**, plus a punctuation-bearing song title and a Disney–Pixar category connection. German has its own curated clues and emoji spellings rather than mixing translated and English clues within a puzzle.
 
-Each theme has at least four words; most have eight. A puzzle draws four and filters out words already used in that deck, including future category terms. Words remain reusable in other themes and other puzzles. Easy boards favor distinct subject areas; Curious boards include narrower concepts, proper names, and language connections. The whole collection is searchable through **The word library** in the game and remains available offline.
+The twelve independently selectable genres are Everyday, Nature & animals, Food & drink, Science & technology, Sports, Travel & places, Arts & creativity, Language & wordplay, Tabletop & games, Video games, Movies & TV, and Music & artists. All are enabled initially. Everyday (`base`) is optional: any one genre can supply an entire game, including tutorials and special-bubble practice. At least one pack must remain selected. Difficulty widens within the selected pool when necessary; it never silently adds another genre or language.
 
-To add a theme, append a row to the data string:
+`src/catalog.js` exports `PACKS` (localized names), `ALL_PACK_IDS`, `normalizeLanguage`, `normalizePackIds`, and `getCatalog({language: 'en', packIds: ['science', 'movies']})`. A catalogue supplies immutable `themes`, `pictures`, `stats`, `language`, `packIds`, and `version`. Omitted pack IDs select all genres; empty or unrecognized selections normalize to Everyday. `src/data.js` preserves default English exports for compatibility and holds the special-bubble guide.
 
-```text
-Theme name|domain|difficulty|First word,Second word,Third word,Fourth word,Other word
+Each JSON pack has this shape:
+
+```json
+{
+  "id": "music",
+  "language": "en",
+  "name": "Music & artists",
+  "themes": [
+    {
+      "id": "stable-unique-id",
+      "name": "Example songs",
+      "domain": "music",
+      "difficulty": 1,
+      "words": ["Hello, Goodbye", "A | B", "What's next?", "A \"quoted\" title"]
+    }
+  ],
+  "pictures": {}
+}
 ```
 
-Use difficulty `1`, `2`, or `3` and at least four distinct words within that theme. Sharing words between themes is encouraged. Avoid commas within words. Run the checks after editing. Special-bubble decorations are independent of the word pools. The mixed dealer checks the live board before feeding the reserve so an available group is never stranded above the screen.
+Themes need stable unique IDs, unique names per language, difficulty `1`, `2`, or `3`, and at least four distinct clues. Words are JSON strings: commas, pipes, apostrophes, and other punctuation have no delimiter meaning; escape double quotes and backslashes according to JSON syntax. Shared words across themes are intentional. Prefer short meaningful theme names; preserve recognizable titles where abbreviating would make the association unfair. If a theme name is used as a clue elsewhere, keep that exact reference coherent when renaming it.
+
+Pictures map exact playable clue spellings to emoji inside their own language's packs. Repeat a mapping in every pack that can supply its word. Both languages and every JSON pack ship in the offline cache. The word library and newly generated puzzles use the selected language and packs; saved boards keep their original clues, mechanics, and progress.
 
 ## Verify
 
@@ -155,7 +173,8 @@ Checks use browser emulation; installation and haptics should also be tried on t
 | `src/nesting.js` | Runtime dictionary routes and allocation of unique nested clues |
 | `src/engine.js` | Deterministic puzzles, merge rules, special mechanics, and save validation |
 | `src/physics.js` | Rapier elastic membranes, surface collisions, pressure, shape recovery, and held-bubble handling |
-| `src/data.js` | Original theme pools, image mappings, and special-bubble guide |
+| `src/catalog.js`, `src/packs/` | Locale-aware genre catalogues, JSON theme pools, and image mappings |
+| `src/data.js` | Default-catalogue compatibility exports and special-bubble guide |
 | `src/art.js` | Original underwater scenery and illustrated bubble hardware |
 | `manifest.webmanifest`, `sw.js`, `icons/` | Installation and complete offline caching |
 | `scripts/` | Vite build, static server, checks, and optional browser/icon tools |
@@ -165,3 +184,11 @@ The build fingerprints all precached content and emits a matching service worker
 MIT licensed. See `LICENSE`.
 
 The special-bubble refinement check (`node scripts/specials-check.mjs`) covers linked-pair boundaries in both motion modes, secret decoy pops, lock-word concealment and reveal, kelp and pin release animations, two-step category returns, demo-only bonus move budgets, migration of retired mechanics, and offline play.
+
+## Pull requests and automatic builds
+
+`.github/workflows/ci.yml` runs the unit/regression suite, production build, offline checks, and language/pack browser checks for pull requests and pushes to `main`. It uploads the static `dist/` output as a `bubble-grove-<commit>` Actions artifact retained for 14 days. This requires no repository secrets and requests only read access to repository contents.
+
+This workflow **does not deploy to OpenAI Sites**. The available public-Site publishing workflow uses authenticated Sites version-save and deployment operations; there is no verified external GitHub Actions deployment API or unattended authentication method. Short-lived Site source-repository credentials must not be saved as GitHub secrets, and an OpenAI API key is not documented as a Sites publishing credential. Publication to the existing OpenAI Site remains a separate supported publishing step after a reviewed merge.
+
+The existing manually dispatched GitHub Pages workflow remains unchanged. It deploys to GitHub Pages, not to the OpenAI Site.
