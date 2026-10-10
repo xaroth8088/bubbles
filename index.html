@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="theme-color" content="#083e49">
+  <meta name="description" content="Find the connection. Bring four word bubbles together. A little wordplay, a little peace. Free, private, and playable offline.">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" href="/icons/icon.svg" type="image/svg+xml">
+  <link rel="apple-touch-icon" href="/icons/icon-192.png">
+  <link rel="stylesheet" href="./styles.css">
+  <link rel="stylesheet" href="./polish.css">
+  <title>Bubble Grove · a little wordplay</title>
+</head>
+<body>
+  <aside class="desktop-note" aria-hidden="true">
+    <div class="note-orbit"><span></span><span></span><span></span></div>
+    <p class="eyebrow">MAKE A LITTLE SPACE</p>
+    <h1>Small bubbles.<br>Lovely connections.</h1>
+    <p>A quiet place for a curious mind.<br>Find four words. Follow the feeling.</p>
+    <div class="note-tag">No ads. No rush. Just wordplay.</div>
+  </aside>
+  <main class="app" id="app">
+    <header class="header" data-game-hud>
+      <a class="brand" href="./" aria-label="Bubble Grove home"><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="14" cy="24" r="11"/><circle cx="28" cy="17" r="8"/><circle cx="14" cy="7" r="5"/></svg><span>bubble<span class="brand-light">grove</span></span></a>
+      <div class="header-actions"><button class="icon-button" id="help-button" aria-label="How to play" title="How to play">?</button><button class="icon-button" id="tools-button" aria-label="Helpers and word library" aria-expanded="false" aria-controls="actions-menu"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="5" cy="12" r="1.6"/><circle cx="12" cy="12" r="1.6"/><circle cx="19" cy="12" r="1.6"/></svg></button><button class="icon-button" id="settings-button" aria-label="Settings" title="Settings"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 7h16M4 17h16"/><circle cx="9" cy="7" r="3"/><circle cx="15" cy="17" r="3"/></svg></button></div>
+    </header>
+    <nav class="mode-switch" data-game-hud aria-label="Game mode"><button data-mode="journey" class="active">Journey</button><button data-mode="daily">Daily <span class="tiny-dot"></span></button><button data-mode="endless">Free play</button></nav>
+    <section class="level-header" data-game-hud>
+      <div><p class="eyebrow" id="level-label">JOURNEY · LEVEL 01</p><h1 id="level-title">A little connection</h1></div>
+      <button class="level-badge" id="levels-button" aria-label="Choose a journey level"><span id="level-number">01</span><svg viewBox="0 0 20 20" aria-hidden="true"><path d="m7 5 5 5-5 5"/></svg></button>
+    </section>
+    <section class="progress-area" data-game-hud aria-label="Puzzle progress"><div class="progress-top"><span id="progress-text">Find 4 groups of four</span><span id="moves-text">Take your time <span>∞</span></span></div><div class="progress-track" id="progress-track"></div></section>
+    <section class="physics-panel" id="physics-panel" aria-labelledby="physics-title" hidden>
+      <div class="physics-toolbar"><h2 id="physics-title">Bubble physics</h2><button id="physics-reset">Reset</button><button id="physics-done">Done <span aria-hidden="true">✓</span></button></div>
+      <div class="physics-row"><label for="physics-gravity">Gravity<small>Floaty ↔ heavy</small></label><input id="physics-gravity" type="range" min="0" max="200" step="5" value="100"><output id="physics-gravity-value" for="physics-gravity">100%</output></div>
+      <div class="physics-row"><label for="physics-pressure">Pressure<small>Squishy ↔ firm</small></label><input id="physics-pressure" type="range" min="25" max="200" step="5" value="100"><output id="physics-pressure-value" for="physics-pressure">100%</output></div>
+      <div class="physics-row"><label for="physics-damping">Damping<small>Lively ↔ calm</small></label><input id="physics-damping" type="range" min="0" max="200" step="5" value="100"><output id="physics-damping-value" for="physics-damping">100%</output></div>
+    </section>
+    <section class="board-wrap" aria-label="Word bubble board">
+      <div class="board-decoration decoration-one"></div><div class="board-decoration decoration-two"></div>
+      <div class="board" id="board" role="group" aria-label="Drag related word bubbles together"></div>
+      <div class="board-empty" id="board-empty" hidden><span>✦</span><h2>Everything connects.</h2><p>That was a lovely bit of wordplay.</p><button class="primary-button" id="board-next">Next puzzle →</button></div>
+    </section>
+    <div class="actions-menu" id="actions-menu" hidden>
+    <footer class="tools"><button id="hint-button"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5"/></svg><span>Hint</span></button><button id="magnet-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4v9a7 7 0 0 0 14 0V4h-5v9a2 2 0 0 1-4 0V4Z"/><path d="M5 8h5m4 0h5"/></svg><span>Magnet</span></button><button id="space-button"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8"/><path d="M8 12h8m-4-4v8"/></svg><span>More room</span></button><span class="tools-divider"></span><button id="undo-button" disabled><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m8 4-5 5 5 5M3 9h10a7 7 0 0 1 0 14"/></svg><span>Undo</span></button><button id="shuffle-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m17 3 4 4-4 4M3 17l6-6m6-4h6M3 7h3l12 10h3m-4-4 4 4-4 4"/></svg><span>Shuffle</span></button></footer>
+    <div class="bottom-line"><span><i></i><span id="offline-label">A little wordplay. Always free.</span></span><button id="physics-button"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 8h18M3 16h18"/><circle cx="8" cy="8" r="3"/><circle cx="16" cy="16" r="3"/></svg><span>Bubble physics</span></button><button id="library-button">The word library <span>↗</span></button></div>
+    <!-- Compatibility for an older cached script while the new worker activates. -->
+    <div hidden aria-hidden="true"><span id="instruction-text"></span><span id="reserve-text"></span><div id="solved-groups"></div></div>
+    </div>
+  </main>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <dialog id="sheet"><div class="sheet-header"><h2 id="sheet-title"></h2><button class="icon-button" id="close-sheet" aria-label="Close dialog">×</button></div><div id="sheet-body"></div></dialog>
+  <div class="celebration" id="celebration" aria-hidden="true"></div>
+  <script>if('serviceWorker' in navigator){let previousController=navigator.serviceWorker.controller;navigator.serviceWorker.addEventListener('controllerchange',()=>{if(previousController)location.reload();previousController=navigator.serviceWorker.controller;});navigator.serviceWorker.register('./sw.js').catch(()=>{});}</script>
+  <script type="module" src="./src/app.js"></script>
+</body>
+</html>

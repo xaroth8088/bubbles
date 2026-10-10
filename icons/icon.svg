@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="512" viewBox="0 0 512 512">
+<defs><linearGradient id="water" x2=".8" y2="1"><stop stop-color="#246f70"/><stop offset="1" stop-color="#073947"/></linearGradient><radialGradient id="glass" cx="30%" cy="20%" r="80%"><stop stop-color="#f7ffe8"/><stop offset=".48" stop-color="#cdf0d7"/><stop offset="1" stop-color="#75bea6"/></radialGradient><radialGradient id="gold" cx="30%" cy="20%" r="80%"><stop stop-color="#fffae3"/><stop offset="1" stop-color="#ddbc80"/></radialGradient><filter id="shadow"><feDropShadow dx="0" dy="12" stdDeviation="12" flood-color="#002b3b" flood-opacity=".35"/></filter></defs>
+<rect width="512" height="512" rx="112" fill="url(#water)"/>
+<path d="M-30 500Q70 320 100 420T160 510M380 510Q405 370 430 430T550 310" fill="none" stroke="#61a893" stroke-width="15" opacity=".24"/>
+<g filter="url(#shadow)" stroke="#d7f7df" stroke-width="3"><circle cx="191" cy="307" r="96" fill="url(#glass)"/><circle cx="320" cy="232" r="65" fill="url(#glass)"/><circle cx="197" cy="141" r="38" fill="url(#gold)"/></g>
+<g fill="#ffffffb8"><ellipse cx="156" cy="258" rx="26" ry="10" transform="rotate(-30 156 258)"/><ellipse cx="299" cy="198" rx="18" ry="7" transform="rotate(-30 299 198)"/><ellipse cx="183" cy="124" rx="10" ry="4" transform="rotate(-30 183 124)"/></g>
+<path d="m365 355 5-15 5 15 15 5-15 5-5 15-5-15-15-5ZM112 166l3-9 3 9 9 3-9 3-3 9-3-9-9-3Z" fill="#eedca4" opacity=".85"/>
+</svg>
