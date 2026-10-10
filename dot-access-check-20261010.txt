@@ -1,0 +1,5 @@
+Temporary dot GitHub access check.
+
+Created with repository owner approval on 2026-10-10 to verify branch creation,
+file commits, and draft pull requests. This file makes no functional changes.
+The test pull request will be closed without merging; the owner will delete this branch.
