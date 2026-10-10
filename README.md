@@ -6,6 +6,14 @@ Built with HTML, CSS, and JavaScript, with Vite bundling Rapier 2D soft-body phy
 
 OpenAI Sites hosting is configured for [Bubble Grove](https://bubble-grove.xaroth.chatgpt.site). Open the hosted game in Chrome on your phone to install it. `.openai/hosting.json` retains this Site's identity for future updates.
 
+## Vocabulary and picture clues
+
+The game is about semantic ambiguity, not spotting repeated category labels. Prefer concise meaningful clues: a Bicycles pool uses **Mountain**, **Road**, **Electric**, and **Folding**, rather than repeating “bike.” Keep compounds or recognizable titles when removing a word would make the clue unfair. Themes still need at least four distinct clues; pop-culture pools stay focused. Shared words across themes are intentional.
+
+Every entry in `PICTURES` must appear verbatim in at least one playable theme. An emoji supplies a word, so another sense of that word may be relevant (a bat picture can represent the sports tool). Picture selection is seeded and samples eligible clues rather than favoring the first mapped word. Do not replace split/locked or other special mechanics merely to force an image. A small stacked-special board can retain text if every mapped clue is obstructed.
+
+New puzzles use the v6 seed namespace. Existing saves retain their stored clues and state. Keep existing theme IDs and append new packs after all earlier packs.
+
 ## Play locally
 
 Install Node.js 22.12 or newer (Node.js 24 is recommended), then run:

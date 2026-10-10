@@ -1,5 +1,5 @@
 const CACHE = 'bubble-grove-v11';
-const ASSETS = ['./','./index.html','./styles.css','./src/app.js','./src/engine.js','./src/data.js','./src/physics.js','./src/art.js','./manifest.webmanifest','./icons/icon.svg','./icons/icon-192.png','./icons/icon-512.png','./icons/maskable-512.png'];
+const ASSETS = ['./','./index.html','./styles.css','./src/app.js','./src/engine.js','./src/data.js','./src/vocabulary.js','./src/physics.js','./src/art.js','./manifest.webmanifest','./icons/icon.svg','./icons/icon-192.png','./icons/icon-512.png','./icons/maskable-512.png'];
 self.addEventListener('install',event=>{
   event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(ASSETS)).then(()=>self.skipWaiting()));
 });

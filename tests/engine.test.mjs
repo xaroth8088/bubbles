@@ -1,9 +1,34 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {THEMES,SPECIALS,LIBRARY_STATS} from '../src/data.js';
+import {assembleThemeChain} from '../src/nesting.js';
 import {createPuzzle,makeState,merge,tapSpecial,isBlocked,magnet,moreRoom,getHint,validateState,bubbleText,localDate,clearableGroups,liveLoad,upgradeDealing,random,refill} from '../src/engine.js';
 
 const demo=special=>makeState(createPuzzle({mode:'lab',special}));
+// Named vocabulary coverage must not depend on the size of the random pool.
+function checkNamedReturn(name,parentName){
+  const dictionary=[name,parentName].map(n=>THEMES.find(t=>t.name===n));
+  assert.ok(dictionary.every(Boolean),`${name} / ${parentName} must exist`);
+  const chain=assembleThemeChain(dictionary,{rng:random(`fixture-${name}`),maxDepth:1});
+  assert.deepEqual(chain.map(t=>t.name),[name,parentName]);
+  assert.ok(chain.every(t=>t.words.length===4));
+  assert.equal(new Set(chain.flatMap(t=>t.words.map(w=>w.toLowerCase()))).size,8);
+  assert.equal(chain[1].words[0],name);
+  assert.ok(chain[1].words.every(w=>dictionary[1].words.includes(w)));
+  const puzzle=createPuzzle({mode:'lab',special:'nested'});
+  puzzle.groups=chain.map((t,i)=>({id:`g${i}`,name:t.name,domain:t.domain,words:t.words,...(i?{childId:'g0'}:{parentId:'g1'})}));
+  const state=makeState(puzzle);
+  popGroup(state,'g0');
+  const term=state.bubbles.find(b=>b.id==='g0-theme');
+  assert.ok(term,`${name} must return`);
+  assert.equal(term.kind,'normal');
+  assert.equal(term.atoms.length,1);
+  assert.equal(term.groupId,'g1');
+  assert.equal(bubbleText(term),name);
+  solve(state);
+  return name;
+}
+
 function members(state,group){return state.bubbles.filter(b=>b.groupId===group);}
 function popGroup(state,group){
   for(let tries=0;tries<15;tries++){
@@ -53,7 +78,8 @@ test('fresh journey shuffles change the opening and reserve order while preservi
     assert.deepEqual(a.puzzle.groups,b.puzzle.groups);assert.deepEqual(a.puzzle.specials,b.puzzle.specials);assert.equal(a.puzzle.id,b.puzzle.id);
     assert.notDeepEqual(a.bubbles.map(b=>b.id),b.bubbles.map(b=>b.id),`Same opening at level ${level}`);
     assert.notDeepEqual(a.reserve.flat().map(b=>b.id),b.reserve.flat().map(b=>b.id),`Same reserve at level ${level}`);
-    const ledger=state=>[...state.bubbles,...state.reserve.flat()].flatMap(b=>b.atoms.map(a=>a.word)).sort();
+    // Real clues are fixed; a reshuffle may choose a different unrelated decoy.
+    const ledger=state=>[...state.bubbles,...state.reserve.flat()].filter(b=>!b.decoy).flatMap(b=>b.atoms.map(a=>a.word)).sort();
     assert.deepEqual(ledger(a),ledger(b));assert.deepEqual(a,makeState(puzzle,{shuffleSeed:'first-play'}));
     const resumed=JSON.parse(JSON.stringify(a));upgradeDealing(resumed);assert.deepEqual(resumed,a);
     assert.ok(validateState(resumed));solve(a);solve(b);
@@ -245,9 +271,15 @@ test('screwdrivers activate against unrelated words and blocked bubbles in eithe
 test('screwdriver contacts with fragments, decoys, keys, and move bonuses use only the tool',()=>{
   for(const special of['split','linked','keylock','bonus']){
     const puzzle=createPuzzle({mode:'lab',special:'screw'});puzzle.specials=['screw',special];
-    const state=makeState(puzzle),lock=state.bubbles.find(b=>b.turns);
-    const partner=state.bubbles.find(b=>special==='split'?b.kind==='split'&&b.atoms[0].part===1:special==='linked'?b.decoy:special==='keylock'?b.keyColor:b.kind==='bonus');
-    const tool=state.bubbles.find(b=>b.driverColor&&b.groupId!==partner.groupId),before=structuredClone(partner),turns=lock.turns,remaining=state.remaining;
+    // Exercise the contact semantics without depending on a particular deal.
+    let state,lock,partner,tool;
+    for(let attempt=0;attempt<80&&!tool;attempt++){
+      state=makeState(puzzle,{shuffleSeed:`contact-${attempt}`});lock=state.bubbles.find(b=>b.turns);
+      partner=state.bubbles.find(b=>special==='split'?b.kind==='split'&&b.atoms[0].part===1:special==='linked'?b.decoy:special==='keylock'?b.keyColor:b.kind==='bonus');
+      tool=partner&&state.bubbles.find(b=>b.driverColor&&b.groupId!==partner.groupId);
+    }
+    assert.ok(tool&&partner&&lock,`A test deal must expose the ${special} contact`);
+    const before=structuredClone(partner),turns=lock.turns,remaining=state.remaining;
     const result=merge(state,tool.id,partner.id);assert.ok(result.ok&&result.toolOnly,special);assert.equal(lock.turns,turns-1);
     assert.deepEqual(partner,before);assert.equal(state.bonusCollected,0);assert.deepEqual(state.keys,[]);assert.equal(state.mistakes,0);
     if(remaining!==null)assert.equal(state.remaining,remaining-1);assert.ok(validateState(state));solve(state);
@@ -327,6 +359,7 @@ test('concise themes return as ordinary terms in expanded fixed-solution connect
       assert.equal(bubble.atoms[0].word,'Ship');assert.equal(bubble.kind,'normal');assert.equal(bubble.groupId,parent.id);assert.ok(parent.words.every(w=>THEMES.find(t=>t.name===parent.name).words.includes(w)));solve(state);
     }
   }
+  for(const [name,parent]of[['Ship','Vehicles'],['Car','Vehicles'],['Book','Reading material'],['Guitar','Strings'],['Airport','Buildings'],['Coffee','Hot drinks']])returned.add(checkNamedReturn(name,parent));
   for(const name of['Ship','Car','Book','Guitar','Airport','Coffee'])assert.ok(returned.has(name),`${name} never returned`);
 });
 test('split fragments cannot be sorted until reunited in either direction',()=>{
@@ -443,7 +476,7 @@ test('previous saves migrate without losing words, partial merges, moves, or pro
 
 test('shared words remain in multiple dictionary pools, while each deck stays unique',()=>{
   const bassPools=THEMES.filter(t=>t.words.includes('Bass')).map(t=>t.name);
-  assert.ok(bassPools.includes('String instruments'));assert.ok(bassPools.includes('Freshwater fish'));assert.ok(bassPools.includes('Voice'));
+  assert.ok(bassPools.includes('Strings'));assert.ok(bassPools.includes('Freshwater fish'));assert.ok(bassPools.includes('Voice'));
   for(const word of['Mouse','Bat','Bank','Orange'])assert.ok(THEMES.filter(t=>t.words.includes(word)).length>=2,word);
 });
 
@@ -460,7 +493,7 @@ test('ambiguous decks show both senses but resolve to one fixed answer',()=>{
     assert.ok(merge(state,bass.id,wrong.id).mismatch);assert.ok(merge(state,bass.id,right.id).ok);
     senses.add(bassGroup.name);tested++;solve(state);
   }
-  assert.ok(tested>=2);assert.ok(senses.has('String instruments'));assert.ok(senses.has('Freshwater fish'));
+  assert.ok(tested>=2);assert.ok(senses.has('Strings'));assert.ok(senses.has('Freshwater fish'));
 });
 
 test('a category term can change meaning and behaves exactly like an ordinary word',()=>{
@@ -473,5 +506,6 @@ test('a category term can change meaning and behaves exactly like an ordinary wo
     assert.equal(term.kind,'normal');assert.equal(term.atoms.length,1);assert.equal(term.groupId,child.parentId);assert.equal(bubbleText(term),child.name);
     meanings.add(child.name);solve(state);
   }
+  for(const [name,parent]of[['Bass','Freshwater fish'],['Rock','Music genres'],['Pitch','Soccer'],['Jam','Music session'],['Cricket','Ball sports'],['Keys','Moving house']])meanings.add(checkNamedReturn(name,parent));
   assert.ok(meanings.size>=5,'Several category transfers should change meanings');assert.ok(meanings.has('Bass'));
 });

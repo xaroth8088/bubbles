@@ -27,7 +27,7 @@ export function localDate(date = new Date()) {
 const titles = ['A little connection','Picture this','Let it thaw','Better together','Between the letters','The key to it','A little twist','A different direction','Ties that bind','A little spark','The bigger picture','Unwind a little','Little pin moments','Room for one more'];
 const canonicalSpecials = specials => [...new Set(specials.map(s=>s==='hidden'?'cryptic':s).filter(s=>SPECIALS.some(x=>x.id===s)))];
 const ambiguousPairs=[
-  {word:'Bass',themes:['String instruments','Freshwater fish'],clues:['Guitar','Carp']},
+  {word:'Bass',themes:['Strings','Freshwater fish'],clues:['Guitar','Carp']},
   {word:'Mouse',themes:['Computer hardware','Small mammals'],clues:['Keyboard','Shrew']},
   {word:'Bat',themes:['Sports gear','Nocturnal animals'],clues:['Ball','Owl']},
   {word:'Bank',themes:['At the bank','River features'],clues:['Teller','Rapids']},
@@ -36,7 +36,7 @@ const ambiguousPairs=[
 
 export function createPuzzle({mode = 'journey', level = 1, date = localDate(), round = 1, difficulty = 'balanced', special = null} = {}) {
   if (mode === 'daily') difficulty = 'balanced';
-  const seed = mode === 'daily' ? `daily-v5-${date}` : mode === 'lab' ? `lab-v5-${special}` : `${mode}-v5-${level}-${round}-${difficulty}`;
+  const seed = mode === 'daily' ? `daily-v6-${date}` : mode === 'lab' ? `lab-v6-${special}` : `${mode}-v6-${level}-${round}-${difficulty}`;
   const rng = random(seed);
   let count = mode === 'lab' ? 4 : difficulty === 'tricky' ? 17 : difficulty === 'gentle' || (mode === 'journey' && level <= 4) ? 10 : 14;
   const maxDifficulty = mode === 'journey' && level <= 5 ? 1 : difficulty === 'gentle' ? 1 : difficulty === 'tricky' || (mode === 'journey' && level > 30) || mode === 'daily' ? 3 : 2;
@@ -76,26 +76,23 @@ export function createPuzzle({mode = 'journey', level = 1, date = localDate(), r
       }
     }
   }
-  const pictureCandidate = theme => theme.words.filter(w => PICTURES[w]).length >= 1;
+  const pictureCandidate = theme => theme.words.some(w => PICTURES[w]);
   for (let pass = 0; pass < 2 && selected.length < count; pass++) {
     for (const theme of shuffle(THEMES.filter(t => t.difficulty <= (mode === 'daily' ? 3 : maxDifficulty)), rng)) {
       if (selected.length >= count) break;
       if (selected.some(t => t.id === theme.id) || chain.some(n=>n.name===theme.name) || (pass === 0 && domains.has(theme.domain))) continue;
-      let pool = theme.words.filter(w => !used.has(w.toLowerCase()));
+      const pool = theme.words.filter(w => !used.has(w.toLowerCase()));
+      const pictures = pool.filter(w => PICTURES[w]);
       if (pool.length < 4) continue;
-      if (specials.includes('picture') && !selected.some(pictureCandidate) && selected.length === count - 1 && !pictureCandidate(theme)) continue;
+      if (specials.includes('picture') && !selected.some(pictureCandidate) && selected.length === count - 1 && !pictures.length) continue;
       const words = shuffle(pool, rng).slice(0,4);
-      if (specials.includes('picture') && !selected.some(t => t.words.some(w => PICTURES[w])) && pictureCandidate(theme)) {
-        words[0] = pool.find(w => PICTURES[w]);
-        if (new Set(words).size < 4) words.splice(1,3,...shuffle(pool.filter(w => w !== words[0]), rng).slice(0,3));
+      if (specials.includes('picture') && !selected.some(pictureCandidate) && !words.some(w => PICTURES[w]) && pictures.length) {
+        // Only repair a picture-free draw, sampling the available pool rather
+        // than always promoting its first mapped word. Keep the other clues.
+        words[Math.floor(rng()*words.length)] = pictures[Math.floor(rng()*pictures.length)];
       }
       selected.push({...theme,words}); words.forEach(w => used.add(w.toLowerCase())); domains.add(theme.domain);
     }
-  }
-  // Picture demos must always contain an actual picture, even with a restrictive word pool.
-  if (specials.includes('picture') && !selected.some(t => t.words.some(w => PICTURES[w]))) {
-    const theme = THEMES.find(t => t.name === 'Fruit');
-    selected[0] = {...theme,words:theme.words.slice(0,4)};
   }
   const groups = selected.map((t,i) => ({id:`g${i}`,name:t.name,domain:t.domain,words:t.words}));
   let child=groups[0];
@@ -124,7 +121,6 @@ export function makeState(puzzle, {challenge = false, shuffleSeed = null} = {}) 
   if (special.includes('pinlock')) { target.pinsNeeded=2; target.kind='pinlock'; chunks[0][1].pinCarrier=true; chunks[1][1].pinCarrier=true; }
   if (special.includes('backward')) chunks[1][0].kind='backward';
   if (special.includes('cryptic')) {const b=chunks[2][2]; b.kind='cryptic'; b.atoms[0].revealed=Math.min(1,letterCount(b.atoms[0].word));}
-  if (special.includes('picture')) { const b=chunks.flat().find(b => PICTURES[b.atoms[0].word]); if (b) b.kind='picture'; }
   if (special.includes('burst')) { const b=chunks[0][2]; b.timer=9; b.kind='burst'; }
   if (special.includes('linked')) {const real=chunks[0][3];real.link='pair-a';real.kind='linked';chunks[0].push(makeDecoy(puzzle,real.link));}
   if (special.includes('split')) {
@@ -153,6 +149,30 @@ export function makeState(puzzle, {challenge = false, shuffleSeed = null} = {}) 
     remaining:challenge||puzzle.mode==='lab'&&special.includes('bonus') ? puzzle.groups.length*3+Number(special.includes('split'))+7 : null,
     capacity:puzzle.mode==='lab'?12:24,dealVersion:4,pressure:0,pins:0,keys:[],status:'playing',bonusCollected:0};
   refill(state,{initial:true});
+  if(special.includes('picture')) {
+    // Decorate after other mechanics and dealing so a picture never replaces
+    // a split, timer, lock, or cryptic clue. Every suitable live clue can win.
+    const ordinary=b=>b.kind==='normal'&&!isBlocked(b)&&!b.decoy&&!b.keyColor&&!b.driverColor&&!b.pinCarrier&&b.atoms.length===1&&b.atoms[0].part===undefined;
+    const eligible=b=>ordinary(b)&&PICTURES[b.atoms[0].word];
+    const rng=random(`${puzzle.shuffleSeed||puzzle.seed}-picture`);
+    const visible=state.bubbles.filter(eligible),waiting=state.reserve.flat().filter(eligible);
+    // If all mapped clues carry other mechanics, leave those clues intact.
+    const candidates=visible.length?visible:waiting;
+    const picture=candidates[Math.floor(rng()*candidates.length)];
+    if(picture){
+      picture.kind='picture';
+      if(!visible.length){
+        // The lab previews every group, but its mapped word may be waiting.
+        // Exchange equal-load ordinary clues within that group to show the
+        // picture immediately without taking away a playable connection.
+        const index=state.bubbles.findIndex(b=>b.groupId===picture.groupId&&b.kind==='normal'&&!isBlocked(b)&&!b.keyColor&&!b.driverColor&&!b.pinCarrier&&b.atoms.length===1&&b.atoms[0].part===undefined);
+        if(index!==-1){
+          const chunk=state.reserve.find(c=>c.includes(picture)),at=chunk.indexOf(picture);
+          [state.bubbles[index],chunk[at]]=[picture,state.bubbles[index]];
+        }
+      }
+    }
+  }
   if(special.includes('bonus')) state.bubbles.push({id:'bonus',groupId:null,atoms:[],kind:'bonus'});
   return state;
 }

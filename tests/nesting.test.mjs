@@ -38,7 +38,7 @@ test('runtime routes reject cycles, insufficient unique words, forbidden clues a
   assert.deepEqual(assembleThemeChain(dictionary,{maxDepth:0}),[]);
 });
 test('dictionary connections choose varying companion clues and alternate meanings at runtime',()=>{
-  const dictionary=THEMES.filter(t=>['Bass','String instruments','Freshwater fish','Voice'].includes(t.name)),parents=new Set(),companions=new Set();
+  const dictionary=THEMES.filter(t=>['Bass','Strings','Freshwater fish','Voice'].includes(t.name)),parents=new Set(),companions=new Set();
   for(let seed=0;seed<120;seed++){
     const chain=assembleThemeChain(dictionary,{rng:random(seed)});checkChain(chain);assert.equal(chain[0].name,'Bass');
     parents.add(chain[1].name);companions.add(JSON.stringify(chain[1].words.slice(1).sort()));

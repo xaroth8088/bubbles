@@ -12,7 +12,7 @@ for(const file of['manifest.webmanifest','icons/icon.svg','icons/icon-192.png','
   const target=path.join(root,'public',file);await mkdir(path.dirname(target),{recursive:true});await copyFile(path.join(root,file),target);
 }
 await build({root,configFile:path.join(root,'vite.config.js')});
-for(const file of['LICENSE','src/physics.js','src/engine.js','src/data.js','src/art.js']){
+for(const file of['LICENSE','src/physics.js','src/engine.js','src/data.js','src/vocabulary.js','src/art.js']){
   const target=path.join(dist,file);await mkdir(path.dirname(target),{recursive:true});await copyFile(path.join(root,file),target);
 }
 const notices=[];
