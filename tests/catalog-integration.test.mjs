@@ -66,11 +66,12 @@ test('split/link/tool mixtures stay independent and preserve selected language o
   for (const language of ['en', 'de']) for (const {id} of PACKS) for (let round = 1; round <= 3; round++) {
     const puzzle = createPuzzle({language, packIds: [id], mode: 'endless', difficulty: 'tricky', special: 'split', round});
     puzzle.specials = ['split', 'linked', 'screw', 'keylock', 'frozen', 'bonus'];
+    puzzle.groups=puzzle.groups.slice(0,Math.floor((70-puzzle.splitCount-2)/4));
     let state = makeState(puzzle, {challenge: true, shuffleSeed: `mixed-${round}`});
     checkCatalog(state);
     const fragments = all(state).filter(b => b.kind === 'split');
-    assert.equal(fragments.length, 8); assert.equal(new Set(fragments.map(b => b.atoms[0].word)).size, 4);
-    assert.ok(fragments.every(b => !b.link)); assert.equal(state.bubbles.filter(b => b.kind === 'split').length, 8);
+    assert.equal(fragments.length, state.puzzle.splitCount*2); assert.equal(new Set(fragments.map(b => b.atoms[0].word)).size, state.puzzle.splitCount);
+    assert.ok(fragments.every(b => !b.link)); assert.equal(state.bubbles.filter(b => b.kind === 'split').length, state.puzzle.splitCount*2);
     state = JSON.parse(JSON.stringify(state));
     const before = structuredClone(state); upgradeDealing(state);
     assert.deepEqual(state, before); solve(state);
@@ -94,7 +95,7 @@ test('punctuation and Unicode survive split assembly and saved-state round trips
   const state = makeState(puzzle);
   for (const word of words) {
     const pair = state.bubbles.filter(b => b.atoms[0].word === word);
-    assert.equal(pair.length, 2); assert.equal(pair.map(bubbleText).join(''), word);
+    assert.equal(pair.length, 2); assert.equal(pair.map(bubbleText).join(''), word.toLowerCase());
     const result = merge(state, pair[0].id, pair[1].id); assert.ok(result.assembled);
     assert.equal(bubbleText(state.bubbles.find(b => b.id === result.bubbleId)), word);
   }
@@ -108,4 +109,19 @@ test('normalized selection deduplicates while keeping base optional and seeds sc
   assert.deepEqual(createPuzzle(options), createPuzzle({...options, packIds: ['music', 'music', 'unknown']}));
   assert.notEqual(createPuzzle(options).seed, createPuzzle({...options, language: 'en'}).seed);
   assert.notEqual(createPuzzle(options).seed, createPuzzle({...options, packIds: ['music', 'base']}).seed);
+});
+
+test('German proper names conceal their initial capitals until both halves are joined', () => {
+  const words=['Berlin','Ludwig van Beethoven','Österreich','München'];
+  const puzzle=createPuzzle({mode:'lab',special:'split',language:'de'});puzzle.splitCount=4;
+  puzzle.groups=words.map((word,i)=>({id:`g${i}`,name:`Thema ${i}`,domain:'Fixture',words:[word,`aa${i}`,`bb${i}`,`cc${i}`]}));
+  const state=makeState(puzzle);
+  for(const word of words){
+    const pair=state.bubbles.filter(b=>b.atoms[0].word===word).sort((a,b)=>a.atoms[0].part-b.atoms[0].part);
+    assert.equal(pair.length,2);assert.equal(pair.map(bubbleText).join(''),word.toLowerCase());
+    for(const half of pair)assert.equal(bubbleText(half),bubbleText(half).toLowerCase());
+    const joined=merge(state,pair[1].id,pair[0].id);assert.ok(joined.assembled);
+    assert.equal(bubbleText(state.bubbles.find(b=>b.id===joined.bubbleId)),word);
+  }
+  assert.ok(validateState(state));solve(state);
 });

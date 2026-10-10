@@ -39,7 +39,7 @@ test('picture generation is seeded, diverse, and keeps the clue ledger distinct'
     const puzzle = createPuzzle(options), state = makeState(puzzle);
     assert.deepEqual(puzzle, createPuzzle(options));
     assert.deepEqual(state, makeState(createPuzzle(options)));
-    assert.match(puzzle.seed, /-v6-/);
+    assert.match(puzzle.seed, /-v7-/);
     const words = puzzle.groups.flatMap(g => g.words.map(w => w.toLowerCase()));
     assert.equal(new Set(words).size, words.length);
     assert.equal(pictures(state).length, 1);
@@ -149,10 +149,10 @@ test('fully obstructed picture clues retain their original special mechanics', (
     assert.ok(validateState(state));
     if (special === 'split') {
       const halves = all(state).filter(b => b.kind === 'split');
-      assert.equal(halves.length,8);
+      assert.equal(halves.length,state.puzzle.splitCount*2);
       for(const id of new Set(halves.map(b=>b.atoms[0].id))){
         const pair=halves.filter(b=>b.atoms[0].id===id).sort((a,b)=>a.atoms[0].part-b.atoms[0].part);
-        assert.equal(pair.map(b=>b.atoms[0].label).join(''),pair[0].atoms[0].word);
+        assert.equal(pair.map(b=>b.atoms[0].label).join(''),pair[0].atoms[0].word.toLowerCase());
       }
     }
   }

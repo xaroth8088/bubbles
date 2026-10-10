@@ -122,9 +122,28 @@ try{
   assert.ok((await active()).bubbles.some(b=>b.atoms.length===2),'Keyboard join failed');await textFits();
   await page.locator('#help-button').click();assert.equal(await page.locator('#sheet-title').textContent(),'Ein kleines Wortspiel');await page.locator('#specials-button').click();assert.match(await page.locator('[data-special="frozen"]').textContent(),/Verbindungen tauen das Eis/);await page.locator('#close-sheet').click();
   await page.locator('#tools-button').click();await page.locator('#library-button').click();assert.equal(await page.locator('#sheet-title').textContent(),'Die Wortbibliothek');await page.locator('#library-search').fill('NOT_A_REAL_CLUE');assert.match(await page.locator('#library-results').textContent(),/Nichts gefunden/);await page.locator('#close-sheet').click();
+  // Fragments conceal capitalization clues in both locales, then restore the canonical word.
+  for(const language of ['en','de']){
+    await choose(language,['science']);
+    await page.locator('#help-button').click();await page.locator('#specials-button').click();await page.locator('[data-special="split"]').click();
+    await page.waitForFunction(()=>document.querySelector('#board').dataset.arriving==='0');
+    const split=await active(),parts=split.bubbles.filter(b=>b.kind==='split');
+    assert.ok(split.puzzle.splitCount>=4&&split.puzzle.splitCount<=8);
+    assert.equal(parts.length,split.puzzle.splitCount*2);assert.equal(new Set(parts.map(b=>b.atoms[0].id)).size,split.puzzle.splitCount);
+    for(const part of parts){
+      assert.ok(!part.link);const label=await page.locator(`.bubble[data-id="${part.id}"] .bubble-label`).textContent();
+      assert.equal(label,part.atoms[0].label.toLowerCase());
+    }
+    const pair=[parts[0],parts.find(b=>b.id!==parts[0].id&&b.atoms[0].id===parts[0].atoms[0].id)];
+    for(const part of pair){await page.locator(`.bubble[data-id="${part.id}"]`).focus();await page.keyboard.press('Enter');}
+    const restored=(await active()).bubbles.find(b=>b.id===pair[1].id);
+    assert.equal(restored.kind,'normal');assert.equal(restored.atoms[0].part,undefined);
+    assert.equal(await page.locator(`.bubble[data-id="${restored.id}"] .bubble-label`).textContent(),pair[0].atoms[0].word);
+    await textFits();
+  }
   // Both locales and every pack remain usable after the service worker caches them.
   await page.evaluate(async()=>navigator.serviceWorker.ready);await page.waitForFunction(()=>!!navigator.serviceWorker.controller);await context.setOffline(true);await page.reload();await page.locator('.bubble').first().waitFor();await assertCatalog('de',['science']);await choose('en',['movies']);await assertCatalog('en',['movies']);await context.setOffline(false);
   await choose('de',['science']);await textFits();
   const output=fileURLToPath(new URL('../test-results/',import.meta.url));await mkdir(output,{recursive:true});await page.screenshot({path:output+'german-science-s23.png'});await settings();await page.screenshot({path:output+'german-pack-settings.png'});
-  assert.deepEqual(errors,[]);console.log('Catalog browser checks passed: bilingual UI, standalone packs, optional base, empty-selection validation, scoped fresh sessions, reload, offline language switching, merged text, and responsive large typography.');
+  assert.deepEqual(errors,[]);console.log('Catalog browser checks passed: bilingual UI, standalone packs, optional base, empty-selection validation, scoped fresh sessions, reload, offline language switching, merged text, lowercase split pairs and canonical assembly in both languages, and responsive large typography.');
 }finally{await browser?.close();server?.kill();}
