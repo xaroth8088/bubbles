@@ -33,7 +33,7 @@ export function createPuzzle({mode = 'journey', level = 1, date = localDate(), r
   language=catalog.language;packIds=[...catalog.packIds].sort();
   const catalogKey=`${language}-${hash(`${CATALOG_VERSION}:${packIds.join(',')}`).toString(36)}`;
   if (mode === 'daily') difficulty = 'balanced';
-  const baseSeed = mode === 'daily' ? `daily-v7-${date}` : mode === 'lab' ? `lab-v7-${special}-${round}` : `${mode}-v7-${level}-${round}-${difficulty}`;
+  const baseSeed = mode === 'daily' ? `daily-v8-${date}` : mode === 'lab' ? `lab-v8-${special}-${round}` : `${mode}-v8-${level}-${round}-${difficulty}`;
   const seed=`${baseSeed}-${catalogKey}`;
   const rng = random(seed);
   let count = mode === 'lab' ? 4 : difficulty === 'tricky' ? 17 : difficulty === 'gentle' || (mode === 'journey' && level <= 4) ? 10 : 14;
@@ -46,34 +46,22 @@ export function createPuzzle({mode = 'journey', level = 1, date = localDate(), r
   if (mode === 'daily') specials = [shuffle(['picture','frozen','split','cryptic','keylock','screw','backward','pinlock'], rng)[0]];
   const splitCount=specials.includes('split')?4+hash(`${seed}-split-count`)%5:0;
   count=Math.min(count,Math.floor((70-specials.reduce((n,s)=>n+(s==='split'?splitCount:['linked','bonus'].includes(s)?1:0),0))/4));
-  const selected = [], used = new Set(), domains = new Set();
-  let chain=[];
+  let planned=[];
   if(specials.includes('nested')){
     const maxDepth=mode==='lab'?2:difficulty==='tricky'?3:difficulty==='gentle'?1:2;
-    const planned=assembleThemeChain(themes,{rng,maxDifficulty,maxDepth,minDepth:mode==='lab'?2:rng()<.65?Math.min(2,maxDepth):1,usedWords:used,usedThemes:new Set(selected.map(t=>t.id))});
+    planned=assembleThemeChain(themes,{rng,maxDifficulty,maxDepth,minDepth:mode==='lab'?2:rng()<.65?Math.min(2,maxDepth):1});
     if(planned.length){
-      selected.push(planned[0]);chain=planned.slice(1);
-      for(const theme of planned){[theme.name,...theme.words].forEach(w=>used.add(w.toLowerCase()));domains.add(theme.domain);}
-      count=Math.min(count,Math.floor((70-chain.length*3-specials.reduce((n,s)=>n+(s==='split'?splitCount:['linked','bonus'].includes(s)?1:0),0))/4));
+      count=Math.min(count,Math.floor((70-(planned.length-1)*3-specials.reduce((n,s)=>n+(s==='split'?splitCount:['linked','bonus'].includes(s)?1:0),0))/4));
     }else specials=specials.filter(s=>s!=='nested');
   }
-  const pictureCandidate = theme => theme.words.some(w => pictures[w]);
-  for (let pass = 0; pass < 2 && selected.length < count; pass++) {
-    for (const theme of shuffle(themes.filter(t => t.difficulty <= (mode === 'daily' ? 3 : maxDifficulty)), rng)) {
-      if (selected.length >= count) break;
-      if (selected.some(t => t.id === theme.id) || chain.some(n=>n.name===theme.name) || (pass === 0 && domains.has(theme.domain))) continue;
-      const pool = theme.words.filter(w => !used.has(w.toLowerCase()));
-      const pictureWords = pool.filter(w => pictures[w]);
-      if (pool.length < 4) continue;
-      if (specials.includes('picture') && Object.keys(pictures).length && !selected.some(pictureCandidate) && selected.length === count - 1 && !pictureWords.length) continue;
-      const words = shuffle(pool, rng).slice(0,4);
-      if (specials.includes('picture') && !selected.some(pictureCandidate) && !words.some(w => pictures[w]) && pictureWords.length) {
-        // Only repair a picture-free draw, sampling the available pool rather
-        // than always promoting its first mapped word. Keep the other clues.
-        words[Math.floor(rng()*words.length)] = pictureWords[Math.floor(rng()*pictureWords.length)];
-      }
-      selected.push({...theme,words}); words.forEach(w => used.add(w.toLowerCase())); domains.add(theme.domain);
-    }
+  const chain=planned.slice(1);
+  let selected=[];
+  // Dense standalone packs may need another draw to reach the usual deck size.
+  // Retries remain seeded and bounded, and never relax exclusive membership.
+  for(let attempt=0;attempt<24;attempt++){
+    const candidate=selectDeckThemes({themes,planned,count,maxDifficulty,specials,pictures,rng});
+    if(candidate.length>selected.length)selected=candidate;
+    if(selected.length===count)break;
   }
   const groups = selected.map((t,i) => ({id:`g${i}`,name:t.name,domain:t.domain,words:t.words}));
   let child=groups[0];
@@ -83,6 +71,43 @@ export function createPuzzle({mode = 'journey', level = 1, date = localDate(), r
   }
   return {id:seed,seed,language,packIds,catalogKey,mode,level,date,round,difficulty,specials,splitCount,groups,
     title:mode === 'lab' ? SPECIALS.find(s => s.id === specials[0])?.name || 'Word bubbles' : mode === 'daily' ? 'A fresh little challenge' : mode === 'journey' && level <= INTRO_LEVELS ? titles[level-1] : mode === 'endless' ? 'Follow your curiosity' : ['Little discoveries','Find your flow','Room for wonder','One thing leads to another'][level%4]};
+}
+
+const fold=word=>word.trim().toLowerCase();
+function selectDeckThemes({themes,planned,count,maxDifficulty,specials,pictures,rng}){
+  const selected=planned.length?[planned[0]]:[],chosenIds=new Set(planned.map(t=>t.id));
+  const used=new Set(planned.map(t=>fold(t.name))),dealtWords=new Set(),selectedPool=new Set(),domains=new Set();
+  const originals=new Map(themes.map(t=>[t.id,t]));
+  const addTheme=theme=>{
+    theme.words.forEach(word=>{used.add(fold(word));dealtWords.add(fold(word));});
+    originals.get(theme.id).words.forEach(word=>selectedPool.add(fold(word)));
+    domains.add(theme.domain);chosenIds.add(theme.id);
+  };
+  for(const theme of planned)addTheme(theme);
+  const pictureCandidate=theme=>theme.words.some(w=>pictures[w]);
+  // Widen within the selected packs only if the easier pools cannot fill a deck.
+  for(let limit=maxDifficulty;limit<=3&&selected.length<count;limit++){
+    for(let pass=0;pass<2&&selected.length<count;pass++){
+      for(const theme of shuffle(themes.filter(t=>t.difficulty<=limit),rng)){
+        if(selected.length>=count)break;
+        if(chosenIds.has(theme.id)||(pass===0&&domains.has(theme.domain)))continue;
+        // Compare full catalog pools in both directions. Existing clues must
+        // not gain a second meaning, and new clues must not fit prior themes.
+        // The ledger includes nested labels before those labels become live.
+        if(theme.words.some(word=>dealtWords.has(fold(word))))continue;
+        const pool=theme.words.filter(w=>!used.has(fold(w))&&!selectedPool.has(fold(w)));
+        if(pool.length<4)continue;
+        const pictureWords=pool.filter(w=>pictures[w]);
+        if(specials.includes('picture')&&Object.keys(pictures).length&&!selected.some(pictureCandidate)&&selected.length===count-1&&!pictureWords.length)continue;
+        const words=shuffle(pool,rng).slice(0,4);
+        if(specials.includes('picture')&&!selected.some(pictureCandidate)&&!words.some(w=>pictures[w])&&pictureWords.length){
+          words[Math.floor(rng()*words.length)]=pictureWords[Math.floor(rng()*pictureWords.length)];
+        }
+        const chosen={...theme,words};selected.push(chosen);addTheme(chosen);
+      }
+    }
+  }
+  return selected;
 }
 
 export function makeState(puzzle, {challenge = false, shuffleSeed = null} = {}) {

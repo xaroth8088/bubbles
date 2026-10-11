@@ -70,6 +70,12 @@ test('every standalone genre supports a returning category demo',()=>{
     const themes=getCatalog({language,packIds:[packId]}).themes;
     const chain=assembleThemeChain(themes,{rng:()=>.5,maxDepth:2,minDepth:2});
     assert.ok(chain.length>=2,`${language}/${packId} needs a category chain`);
-    if(language==='en')assert.ok(chain.length>=3,`${packId} preserves its two-return demo`);
+    // The only two-return video-game route is Kirby → Super Smash Bros. →
+    // Nintendo, whose last two themes both accept Kirby. Use one valid return.
+    if(language==='en'&&packId!=='video-games')assert.ok(chain.length>=3,`${packId} preserves its two-return demo`);
+    for(const owner of chain)for(const word of owner.words){
+      const matches=chain.filter(chosen=>themes.find(t=>t.id===chosen.id).words.some(w=>w.toLowerCase()===word.toLowerCase()));
+      assert.deepEqual(matches.map(t=>t.id),[owner.id]);
+    }
   }
 });
