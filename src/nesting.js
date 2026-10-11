@@ -30,20 +30,18 @@ export function assembleThemeChain(themes,{rng=Math.random,maxDifficulty=3,maxDe
   return [];
 }
 function distinctClues(path,reserved,rng){
-  const pools=path.map(theme=>mix(theme.words.filter(w=>!reserved.has(fold(w))),rng));
-  const slots=path.flatMap((_,i)=>Array(i?3:4).fill(i)),owner=new Map(),assigned=[];
-  // Match word slots to distinct clues. Reassign an earlier clue when a later
-  // group needs it, rather than rejecting a valid chain after a greedy choice.
-  function assign(slot,seen){
-    for(const word of pools[slots[slot]]){
-      const key=fold(word);if(seen.has(key))continue;seen.add(key);
-      const previous=owner.get(key);
-      if(previous===undefined||assign(previous,seen)){owner.set(key,slot);assigned[slot]=word;return true;}
-    }
-    return false;
+  const memberships=new Map();
+  for(const theme of path)for(const word of theme.words){
+    const key=fold(word);if(!memberships.has(key))memberships.set(key,new Set());memberships.get(key).add(theme.id);
   }
-  for(let slot=0;slot<slots.length;slot++)if(!assign(slot,new Set()))return null;
-  return path.map((_,i)=>assigned.filter((_,slot)=>slots[slot]===i));
+  // Returning labels are future clues too. A label must fit its immediate
+  // parent alone, even while that label has not appeared on the live board.
+  for(let i=1;i<path.length;i++)if(memberships.get(fold(path[i-1].name))?.size!==1)return null;
+  const pools=path.map(theme=>mix(theme.words.filter(word=>!reserved.has(fold(word))&&memberships.get(fold(word)).size===1),rng));
+  // Exclusive pools cannot compete for a clue. Sharing unused catalog words
+  // is fine; only the four words actually chosen must have one membership.
+  if(pools.some((pool,i)=>pool.length<(i?3:4)))return null;
+  return pools.map((pool,i)=>pool.slice(0,i?3:4));
 }
 function mix(items,rng){
   const copy=[...items];for(let i=copy.length-1;i>0;i--){const j=Math.floor(rng()*(i+1));[copy[i],copy[j]]=[copy[j],copy[i]];}return copy;

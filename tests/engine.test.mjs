@@ -480,13 +480,18 @@ test('shared words remain in multiple dictionary pools, while each deck stays un
   for(const word of['Mouse','Bat','Bank','Orange'])assert.ok(THEMES.filter(t=>t.words.includes(word)).length>=2,word);
 });
 
-test('ordinary overlapping clues have fixed answers without a special board template',()=>{
+test('legacy overlapping decks retain their fixed answers and progress on save migration',()=>{
   for(const name of ['Strings','Freshwater fish']){
     const other=name==='Strings'?'Freshwater fish':'Strings';
     const chosen=[name,other].map(n=>THEMES.find(t=>t.name===n));
     const puzzle=createPuzzle({mode:'lab',special:'picture'});puzzle.specials=[];
     puzzle.groups=chosen.map((t,i)=>({id:`g${i}`,name:t.name,domain:t.domain,words:i===0?['Bass',...t.words.filter(w=>w!=='Bass').slice(0,3)]:t.words.filter(w=>w!=='Bass').slice(0,4)}));
-    const state=makeState(puzzle),bass=state.bubbles.find(b=>b.atoms[0].word==='Bass');
+    puzzle.id=puzzle.seed='lab-v7-legacy-overlap';puzzle.title='Word bubbles';
+    const original=makeState(puzzle),partners=original.bubbles.filter(b=>b.groupId==='g1');
+    assert.ok(merge(original,partners[0].id,partners[1].id).ok);
+    const state=JSON.parse(JSON.stringify(original)),before=structuredClone(state);
+    assert.ok(validateState(state));upgradeDealing(state);assert.deepEqual(state,before);
+    const bass=state.bubbles.find(b=>b.atoms[0].word==='Bass');
     const wrong=state.bubbles.find(b=>b.groupId!==bass.groupId),right=state.bubbles.find(b=>b.groupId===bass.groupId&&b!==bass);
     assert.ok(merge(state,bass.id,wrong.id).mismatch);assert.ok(merge(state,bass.id,right.id).ok);solve(state);
   }

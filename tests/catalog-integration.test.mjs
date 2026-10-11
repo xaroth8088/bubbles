@@ -33,6 +33,13 @@ function checkCatalog(state) {
     const theme = catalog.themes.find(t => t.name === group.name && group.words.every(w => t.words.includes(w)));
     assert.ok(theme, `Foreign theme/word: ${state.puzzle.id}, ${group.name}`);
   }
+  // Inspect each selected theme's full catalog membership, not only its four
+  // sampled clues. Includes future category returns before they are dealt.
+  const pools=state.puzzle.groups.map(group=>({id:group.id,words:new Set(catalog.themes.find(t=>t.name===group.name).words.map(w=>w.trim().toLocaleLowerCase(catalog.language)))}));
+  for(const group of state.puzzle.groups)for(const word of group.words){
+    const matches=pools.filter(pool=>pool.words.has(word.trim().toLocaleLowerCase(catalog.language))).map(pool=>pool.id);
+    assert.deepEqual(matches,[group.id],`Ambiguous clue: ${state.puzzle.id}, ${group.name}: ${word}`);
+  }
   const words = state.puzzle.groups.flatMap(g => g.words.map(w => w.toLocaleLowerCase(catalog.language)));
   assert.equal(new Set(words).size, words.length, `Duplicate word: ${state.puzzle.id}`);
   assert.ok(all(state).length <= 70, `Oversized deck: ${state.puzzle.id}`);

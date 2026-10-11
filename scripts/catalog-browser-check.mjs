@@ -21,7 +21,11 @@ try{
     await page.locator('#apply-word-settings').click();await page.locator('#sheet').waitFor({state:'hidden'});
   };
   const assertCatalog=async(language,packIds)=>{
-    const state=await active(),available=new Set(getCatalog({language,packIds}).themes.map(theme=>theme.name));
+    const state=await active(),catalog=getCatalog({language,packIds}),available=new Set(catalog.themes.map(theme=>theme.name));
+    const pools=state.puzzle.groups.map(group=>({id:group.id,words:new Set(catalog.themes.find(t=>t.name===group.name).words.map(w=>w.toLowerCase()))}));
+    for(const group of state.puzzle.groups)for(const word of group.words){
+      assert.deepEqual(pools.filter(pool=>pool.words.has(word.toLowerCase())).map(pool=>pool.id),[group.id],`Ambiguous saved clue ${word} in ${language}/${packIds}`);
+    }
     assert.equal(state.puzzle.language,language);assert.deepEqual([...state.puzzle.packIds].sort(),[...packIds].sort());
     for(const group of state.puzzle.groups)assert.ok(available.has(group.name),`Foreign theme ${group.name} in ${language}/${packIds}`);
     assert.equal(await page.locator('html').getAttribute('lang'),language);
@@ -127,7 +131,7 @@ try{
     await choose(language,['science']);
     await page.locator('#help-button').click();await page.locator('#specials-button').click();await page.locator('[data-special="split"]').click();
     await page.waitForFunction(()=>document.querySelector('#board').dataset.arriving==='0');
-    const split=await active(),parts=split.bubbles.filter(b=>b.kind==='split');
+    const split=await assertCatalog(language,['science']),parts=split.bubbles.filter(b=>b.kind==='split');
     assert.ok(split.puzzle.splitCount>=4&&split.puzzle.splitCount<=8);
     assert.equal(parts.length,split.puzzle.splitCount*2);assert.equal(new Set(parts.map(b=>b.atoms[0].id)).size,split.puzzle.splitCount);
     for(const part of parts){
@@ -141,9 +145,29 @@ try{
     assert.equal(await page.locator(`.bubble[data-id="${restored.id}"] .bubble-label`).textContent(),pair[0].atoms[0].word);
     await textFits();
   }
+  // Verify future nested labels and all-pack boards in the actual saved UI
+  // state, then complete a child theme and resume its returned category clue.
+  for(const language of ['en','de']){
+    await choose(language,ALL_PACK_IDS);await assertCatalog(language,ALL_PACK_IDS);
+    await page.locator('#help-button').click();await page.locator('#specials-button').click();await page.locator('[data-special="nested"]').click();
+    await page.waitForFunction(()=>document.querySelector('#board').dataset.arriving==='0');
+    const nested=await assertCatalog(language,ALL_PACK_IDS),child=nested.puzzle.groups.find(g=>g.parentId&&!g.childId);
+    assert.ok(child,'Nested practice lost its category return');
+    for(let join=0;join<3;join++){
+      const members=(await active()).bubbles.filter(b=>b.groupId===child.id);
+      assert.ok(members.length>=2,'The nested child is not playable');
+      for(const b of members.slice(0,2)){await page.locator(`.bubble[data-id="${b.id}"]`).focus();await page.keyboard.press('Enter');}
+    }
+    const returned=await assertCatalog(language,ALL_PACK_IDS);
+    assert.ok(returned.bubbles.some(b=>b.groupId===child.parentId&&b.atoms.some(a=>a.word===child.name)),'Completed category did not return to its unique parent');
+    await page.reload();await page.locator('.bubble').first().waitFor();
+    const resumed=await assertCatalog(language,ALL_PACK_IDS);
+    assert.equal(resumed.moves,returned.moves);assert.deepEqual(resumed.puzzle.groups,returned.puzzle.groups);assert.deepEqual(resumed.solved,returned.solved);
+  }
+  await choose('de',['science']);
   // Both locales and every pack remain usable after the service worker caches them.
   await page.evaluate(async()=>navigator.serviceWorker.ready);await page.waitForFunction(()=>!!navigator.serviceWorker.controller);await context.setOffline(true);await page.reload();await page.locator('.bubble').first().waitFor();await assertCatalog('de',['science']);await choose('en',['movies']);await assertCatalog('en',['movies']);await context.setOffline(false);
   await choose('de',['science']);await textFits();
   const output=fileURLToPath(new URL('../test-results/',import.meta.url));await mkdir(output,{recursive:true});await page.screenshot({path:output+'german-science-s23.png'});await settings();await page.screenshot({path:output+'german-pack-settings.png'});
-  assert.deepEqual(errors,[]);console.log('Catalog browser checks passed: bilingual UI, standalone packs, optional base, empty-selection validation, scoped fresh sessions, reload, offline language switching, merged text, lowercase split pairs and canonical assembly in both languages, and responsive large typography.');
+  assert.deepEqual(errors,[]);console.log('Catalog browser checks passed: exclusive deck theme memberships, nested category returns and reload, bilingual UI, standalone and all packs, optional base, empty-selection validation, scoped fresh sessions, reload, offline language switching, merged text, lowercase split pairs and canonical assembly in both languages, and responsive large typography.');
 }finally{await browser?.close();server?.kill();}

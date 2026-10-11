@@ -18,13 +18,29 @@ test('new dictionary memberships create deeper chains without any template chang
   const deeper=assembleThemeChain(dictionary,{rng:random('new-words'),maxDepth:3,minDepth:3});
   assert.deepEqual(deeper.map(t=>t.name),['Bells','Music','Arts','Subjects']);checkChain(deeper);
 });
-test('shared clues are reassigned so valid chains are not lost to greedy word selection',()=>{
-  const dictionary=[theme('Seed',['A','B','C','D','E','F']),theme('Garden',['sEeD','A','B','C','X'])];
+test('nested paths need exclusive clues, not just a non-duplicating allocation',()=>{
+  const ambiguous=[theme('Seed',['A','B','C','D','E','F']),theme('Garden',['sEeD','A','B','C','X'])];
+  assert.deepEqual(assembleThemeChain(ambiguous),[],'Distributing shared A/B/C once each still leaves multiple theme memberships');
+  const dictionary=[theme('Seed',['A','B','C','D','E','F','G']),theme('Garden',['sEeD','A','B','C','X','Y','Z']),theme('Unused',['D','E','F','G'])];
+  const before=JSON.stringify(dictionary);
   for(let seed=0;seed<80;seed++){
     const chain=assembleThemeChain(dictionary,{rng:random(seed)});checkChain(chain);
-    assert.equal(chain[1].words[0],'Seed');assert.ok(chain[1].words.includes('X'));
-    assert.ok(chain[0].words.includes('D')&&chain[0].words.includes('E')&&chain[0].words.includes('F'));
+    assert.equal(chain[1].words[0],'Seed');assert.deepEqual(chain[0].words.slice().sort(),['D','E','F','G']);
+    assert.deepEqual(chain[1].words.slice(1).sort(),['X','Y','Z']);
+    assert.equal(JSON.stringify(dictionary),before,'Do not remove overlap from the catalog itself');
   }
+});
+test('returning category labels have one membership across the entire path',()=>{
+  const dictionary=[theme('Root',['A','B','C','D']),theme('Parent',['rOoT','E','F','G']),theme('Top',['Parent','ROOT','H','I','J'])];
+  for(let seed=0;seed<80;seed++){
+    const chain=assembleThemeChain(dictionary,{rng:random(seed),maxDepth:2,minDepth:2});checkChain(chain);
+    assert.equal(chain.length,2,'Root cannot return along Root → Parent → Top when both later themes accept it');
+    for(const owner of chain)for(const word of owner.words){
+      const matches=chain.filter(chosen=>dictionary.find(t=>t.id===chosen.id).words.some(w=>fold(w)===fold(word)));
+      assert.deepEqual(matches.map(t=>t.id),[owner.id]);
+    }
+  }
+  assert.deepEqual(assembleThemeChain([theme('Root',['Root','A','B','C','D']),theme('Parent',['Root','E','F','G'])]),[],'A returned label cannot also be a clue for its own child theme');
 });
 test('runtime routes reject cycles, insufficient unique words, forbidden clues and difficulty violations',()=>{
   const cycle=[theme('Alpha',['Beta','A','B','C','D']),theme('Beta',['Alpha','E','F','G','H'])];
