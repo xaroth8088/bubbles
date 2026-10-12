@@ -1,7 +1,7 @@
 import {SPECIALS,INTRO_LEVELS} from './data.js';
 import {getCatalog,PACKS,ALL_PACK_IDS,normalizePackIds,normalizeLanguage} from './catalog.js';
 import {translate,localizeUI} from './i18n.js';
-import {createPuzzle,makeState,merge,tapSpecial,getHint,magnet,moreRoom,bubbleText,specialLabel,isBlocked,blockedReason,validateState,localDate,random,shuffle,upgradeDealing,atomText,arrivalDependency,canUseDriver,linkedPartner} from './engine.js';
+import {createPuzzle,makeState,merge,tapSpecial,getHint,magnet,moreRoom,bubbleText,specialLabel,isBlocked,blockedReason,validateState,localDate,random,shuffle,upgradeDealing,atomText,arrivalDependency,canUseDriver,linkedPartner,countdownReady} from './engine.js';
 import {stepPhysics,simulatePhysics,bubbleDiameter,radialImpulse,resetPhysics,membranePath,membraneContains,translateBoundedGroup,PHYSICS_STEP,PHYSICS_DEFAULTS,normalizePhysics} from './physics.js';
 import {specialArt,oceanArt,membraneArt,KEY_PALETTE} from './art.js';
 import {createExperience} from './experience.js';
@@ -58,13 +58,16 @@ function fitTerm(el,size,count,badge){
   fitBubbleTerm(el,{maxFont:count>1?19:18,maxHeight:height});
 }
 function topInset(){return 0;}
+const onField=p=>p&&p.releaseAt===undefined&&!p.entering&&!p.rebirthPending;
+const arrivalDependencies=(b,bubbles)=>[arrivalDependency(b,bubbles),...(typeof b.timer==='number'?bubbles.filter(other=>other!==b&&other.groupId===b.groupId):[])].filter(Boolean);
+const countdownOnField=b=>countdownReady(state,b)&&state.bubbles.filter(other=>other!==b&&other.groupId===b.groupId).every(other=>onField(positions.get(other.id)));
 function placeBubbles(reset=false){
   const w=board.clientWidth,h=board.clientHeight,top=topInset();if(!w||!h)return;
   if(reset)shuffleNumber++;
   const rng=random(`${state.puzzle.shuffleSeed||state.puzzle.seed}-${state.moves}-${state.bubbles.length}-${shuffleNumber}`);
   const waiting=shuffle(state.bubbles,rng),order=[],lanes=shuffle([0,1,2,3,4],rng);
   // Logical deals and visible releases place locks before their keys or screwdrivers.
-  while(waiting.length){let i=waiting.findIndex(b=>!arrivalDependency(b,waiting));if(i<0)i=0;order.push(...waiting.splice(i,1));}
+  while(waiting.length){let i=waiting.findIndex(b=>!arrivalDependencies(b,waiting).length);if(i<0)i=0;order.push(...waiting.splice(i,1));}
   const count=order.filter(b=>(reset||!positions.has(b.id))&&!(restorePositions&&!reset&&b.position)).length;
   const now=performance.now(),reduced=reducedMotion();
   let releaseAt=Math.max(now+35,...(reset?[]:[...positions.values()]).map(p=>p.releaseAt===undefined?0:p.releaseAt+90));
@@ -80,7 +83,7 @@ function placeBubbles(reset=false){
       const y=stored?stored.y*h:top-r-8;
       const p={id:b.id,x:Math.max(r+3,Math.min(w-r-3,x)),y,vx:stored?0:(rng()-.5)*30,vy:0,r,entering:y<top+r+2};
       // Waiting bubbles have no physical presence until their individual release.
-      if(!stored&&!reduced){p.releaseAt=releaseAt;releaseAt+=(count>8?70:125)+rng()*(count>8?35:65);}
+      if(!stored&&!reduced||typeof b.timer==='number'&&!countdownOnField(b)){p.releaseAt=releaseAt;releaseAt+=(count>8?70:125)+rng()*(count>8?35:65);}
       positions.set(b.id,p);
     }else positions.get(b.id).r=r;
     positions.get(b.id).stiff=!!(b.ice>0||b.lockColor||b.turns>0||b.pinsNeeded>0||b.clearsNeeded>0);
@@ -99,13 +102,15 @@ function drawBubble(el,p){
   el.style.setProperty('--light-x',`${(32+p.x/Math.max(1,board.clientWidth)*12).toFixed(1)}%`);
   el.style.setProperty('--light-y',`${(18+p.y/Math.max(1,board.clientHeight)*7).toFixed(1)}%`);
 }
-function drawPositions(){board.dataset.arriving=String([...positions.values()].filter(p=>p.releaseAt!==undefined).length);for(const[bId,p]of positions){const el=elements.get(bId);if(el)drawBubble(el,p);}for(const p of completions.values())drawBubble(p.el,p);drawLinks();}
+// An arrival finishes when its full physical membrane enters the field, not
+// when it is merely released from the queue (its visual skin may still shrink).
+function drawPositions(){board.dataset.arriving=String([...positions.values()].filter(p=>!onField(p)).length);for(const[bId,p]of positions){const el=elements.get(bId);if(el)drawBubble(el,p);}for(const p of completions.values())drawBubble(p.el,p);drawLinks();}
 function animate(now){
   const pendingArrivals=state.bubbles.filter(b=>positions.get(b.id)?.releaseAt!==undefined);
   const arrivals=pendingArrivals.filter(b=>{
-    if((!b.keyColor&&!b.driverColor&&!b.decoy)||reducedMotion())return true;
-    const lock=arrivalDependency(b,state.bubbles),p=positions.get(lock?.id);
-    return p&&p.releaseAt===undefined&&!p.entering&&!p.rebirthPending;
+    if(typeof b.timer==='number'&&!countdownOnField(b))return false;
+    if(reducedMotion())return true;
+    return arrivalDependencies(b,state.bubbles).every(other=>onField(positions.get(other.id)));
   }).sort((a,b)=>positions.get(a.id).releaseAt-positions.get(b.id).releaseAt);
   const arrivalNow=performance.now();
   if(arrivals.length&&(reducedMotion()||arrivalNow>=positions.get(arrivals[0].id).releaseAt)){
@@ -282,7 +287,7 @@ async function animateAction(callback,{a,b,origin}={}){
   if(epoch!==animationEpoch)return;activeActions--;busy=activeActions>0;board.dataset.busy=String(busy);persist();wake();
   if(state.status==='won'&&!busy){render();onWin();}else if(state.status==='paused')showPause();
 }
-function combine(a,b,origin){return animateAction(()=>merge(state,a,b),{a,b,origin});}
+function combine(a,b,origin){return animateAction(()=>merge(state,a,b,{visibleIds:new Set(state.bubbles.filter(b=>onField(positions.get(b.id))).map(b=>b.id))}),{a,b,origin});}
 
 function pointerPoint(event){const rect=board.getBoundingClientRect();return{x:event.clientX-rect.left,y:event.clientY-rect.top};}
 board.addEventListener('pointerdown',event=>{

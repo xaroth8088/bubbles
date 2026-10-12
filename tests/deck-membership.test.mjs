@@ -29,7 +29,7 @@ function check(puzzle){
 
 test('known English and German cross-theme memberships do not recur in new decks',()=>{
   for(const options of [{mode:'journey',level:1},{mode:'endless',round:23,language:'de',packIds:['base']}]){
-    const puzzle=createPuzzle(options);assert.match(puzzle.id,/-v8-/);check(puzzle);
+    const puzzle=createPuzzle(options);assert.match(puzzle.id,/-v9-/);check(puzzle);
     assert.deepEqual(puzzle,createPuzzle(options));
   }
 });

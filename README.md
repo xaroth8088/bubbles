@@ -73,12 +73,12 @@ For another host, run `npm run build` and upload the contents of `dist/`. Routes
 | --- | --- |
 | Picture | An emoji represents a word; match its meaning. |
 | Frozen | Four successful merges thaw the bubble, including partial and split-word joins. Ice fragments fall away and cracks deepen at every step; the final layer melts. Wrong guesses and hardware taps do not thaw ice. |
-| Split word | Four to eight seeded word pairs per puzzle. Both fragments are lowercase; combine them in either order to restore the original spelling before sorting the whole word. |
+| Split word | Four to eight seeded single-word pairs per puzzle, shuffled throughout the deck alongside ordinary clues. Only contiguous letter words are eligible; phrases such as European Union stay whole. Both fragments are lowercase; combine them in either order to restore the original spelling before sorting the whole word. |
 | Lock & key | Any successful merge involving a key consumes it and reveals the hidden word in its matching colored lock immediately, including partial and fragment joins. Wrong guesses leave keys intact. Several pairs can coexist, with distinct matching colors on their keys, lock icons, and rims. Locks enter the visible board before their keys are sprinkled in. |
-| Screw | Two to five screwdrivers open a ring of the same color. Drag a screwdriver onto any other bubble to remove one matching screw, regardless of theme or whether the target is blocked. Each tool is used once. Unrelated words stay separate and incur no mistake; matching words also join normally. Using a tool spends one move. Rings arrive before their tools; tapping the ring does nothing. The final screw releases the ring. |
+| Screw | Two to five screwdrivers open a ring of the same color. A successful word merge consumes its screwdriver and removes one matching screw. Direct contact with the matching screw ring also uses the tool, even if the ring is blocked. Failed word joins preserve the screwdriver and every clue; wrong guesses still count as mistakes. Each tool is used once. Using a tool spends one move. Rings arrive before their tools; tapping the ring does nothing. The final screw releases the ring. |
 | Backward | Read the word right to left. |
 | Linked | A real clue and a secret decoy move together within the playfield. Merging the real word pops the decoy, which belongs to no deck theme. |
-| Burst | Complete its group before its nine-move countdown expires; thinking takes no time. |
+| Burst | Arrives only when every constituent is on the playfield and unblocked, including both split halves, partial joins, and earned returning category words. Complete its group before its nine-move countdown expires; waiting in reserve, arrival animations, and thinking take no countdown moves. Older premature countdowns wait safely without losing their clues or positive timer progress. |
 | Theme bubble | Selected categories return as ordinary words, sometimes with another meaning, and can form a chain of returning categories. |
 | Tangled | Kelp loosens when another group clears. |
 | Pinned | Completing each green-pin group pulls one pin out; two pins release the bubble. |
@@ -141,6 +141,7 @@ npm run test:arrivals
 npm run test:soft-bodies
 npm run test:input-keys
 npm run test:screws
+npm run test:special-rules
 npm run test:physics-controls
 ```
 
@@ -152,7 +153,9 @@ The arrival check verifies individually spaced opening and refill drops, varied 
 
 The input/key check verifies an immediate next drag while a merge is animating, reuse of newly merged targets, dragging during the category reveal, interruptible failed returns, overlapping four-word completions, undo cancellation, category rebirth during overlapping input, visible lock-before-key arrivals, distinct paired colors, partial-merge unlocks, consumed keys, color isolation, and saved unlock state. Existing saves retain their clues; old keys carried by multiword bubbles trigger their unlock once when loaded.
 
-The screw check verifies five distinct heads, colored screwdriver illustrations spread across themes, unrelated and matching partners, direct use on a blocked ring, visible ring-before-tool arrivals, immediate touch input, undo, saved and offline screw progress, ordinary key isolation, and reduced motion. Unit tests also cover single, pair, and triple partners in either direction; color isolation; frozen, keyed, tangled, pinned, fragment, decoy, and bonus targets; preservation of every clue; one-time tool consumption; and ordinary wrong-merge behavior. Legacy screw saves gain matching tools on existing clues without changing the word ledger, moves, or solved groups. If a late legacy save has no other clues left to carry tools, its ring opens so the remaining group stays playable.
+The screw check verifies five distinct heads, colored screwdriver illustrations spread across themes, retained tools after failed joins and successful matching partners, direct use on a blocked ring, visible ring-before-tool arrivals, immediate touch input, undo, saved and offline screw progress, ordinary key isolation, and reduced motion. Unit tests also cover single, pair, and triple partners in either direction; color isolation; frozen, keyed, tangled, pinned, fragment, decoy, and bonus targets; preservation of every clue; one-time tool consumption; and ordinary wrong-merge behavior. Legacy screw saves gain matching tools on existing clues without changing the word ledger, moves, or solved groups. If a late legacy save has no other clues left to carry tools, its ring opens so the remaining group stays playable.
+
+The special-rules browser check covers failed and repeated screwdriver joins, undo/reload, split reserve/refills, intact phrases, and countdown readiness with frozen words, fragments, partial joins, and returning categories. It verifies that hidden arrivals do not spend countdown moves and that the timer becomes visible only after every constituent enters the field, in both motion modes. A final thaw or unlock may release only its waiting countdown between clears; ordinary reserve clues still wait for a refill.
 
 The physics-controls check exercises native touch sliders, immediate gravity changes on live bubbles, continued dragging, HUD replacement, reset, preserved clues/moves, 320–393px portrait layouts, Done/Escape, and offline saved preferences. Physics tests compare pressure-dependent compression and damping-dependent recovery and check a full pile at the heavy/squishy extremes.
 
@@ -187,7 +190,7 @@ The special-bubble refinement check (`node scripts/specials-check.mjs`) covers l
 
 ## Pull requests and automatic builds
 
-`.github/workflows/ci.yml` runs the unit/regression suite, production build, offline checks, and language/pack browser checks for pull requests and pushes to `main`. It uploads the static `dist/` output as a `bubble-grove-<commit>` Actions artifact retained for 14 days. This requires no repository secrets and requests only read access to repository contents.
+`.github/workflows/ci.yml` runs the unit/regression suite, production build, offline checks, and language/pack and special-rule browser checks for pull requests and pushes to `main`. It uploads the static `dist/` output as a `bubble-grove-<commit>` Actions artifact retained for 14 days. This requires no repository secrets and requests only read access to repository contents.
 
 This workflow **does not deploy to OpenAI Sites**. The available public-Site publishing workflow uses authenticated Sites version-save and deployment operations; there is no verified external GitHub Actions deployment API or unattended authentication method. Short-lived Site source-repository credentials must not be saved as GitHub secrets, and an OpenAI API key is not documented as a Sites publishing credential. Publication to the existing OpenAI Site remains a separate supported publishing step after a reviewed merge.
 

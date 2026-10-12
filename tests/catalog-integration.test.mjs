@@ -78,7 +78,7 @@ test('split/link/tool mixtures stay independent and preserve selected language o
     checkCatalog(state);
     const fragments = all(state).filter(b => b.kind === 'split');
     assert.equal(fragments.length, state.puzzle.splitCount*2); assert.equal(new Set(fragments.map(b => b.atoms[0].word)).size, state.puzzle.splitCount);
-    assert.ok(fragments.every(b => !b.link)); assert.equal(state.bubbles.filter(b => b.kind === 'split').length, state.puzzle.splitCount*2);
+    assert.ok(fragments.every(b => !b.link)); assert.ok(state.bubbles.filter(b => b.kind === 'split').length<=state.puzzle.splitCount*2);
     state = JSON.parse(JSON.stringify(state));
     const before = structuredClone(state); upgradeDealing(state);
     assert.deepEqual(state, before); solve(state);
@@ -95,13 +95,15 @@ test('legacy saves without catalog metadata preserve clue ledger and progress', 
   assert.deepEqual(state, before); solve(state);
 });
 
-test('punctuation and Unicode survive split assembly and saved-state round trips', () => {
-  const words = ["Rock 'n' roll", 'A/B|C', 'Äpfel, Öl & Spaß', '東京：音楽'];
-  const puzzle = createPuzzle({mode: 'lab', special: 'split', language: 'de'});
-  puzzle.groups = words.map((word, i) => ({id: `g${i}`, name: `Thema ${i}`, domain: 'Fixture', words: [word, `Term ${i}a`, `Term ${i}b`, `Term ${i}c`]}));
-  const state = makeState(puzzle);
+test('phrases and punctuation remain intact while contiguous Unicode words can split', () => {
+  const phrases = ["Rock 'n' roll", 'A/B|C', 'Äpfel, Öl & Spaß', '東京：音楽'];
+  const words=['Äpfel','Österreich','Spielplatz','東京音楽'];
+  const puzzle = createPuzzle({mode: 'lab', special: 'split', language: 'de'});puzzle.splitCount=4;
+  puzzle.groups = words.map((word, i) => ({id: `g${i}`, name: `Thema ${i}`, domain: 'Fixture', words: [word,phrases[i],`Term ${i}b`,`Term ${i}c`]}));
+  const state = makeState(puzzle);state.bubbles=all(state);state.reserve=[];state.capacity=24;
+  for (const phrase of phrases)assert.equal(state.bubbles.filter(b=>b.atoms[0].word===phrase).length,1);
   for (const word of words) {
-    const pair = state.bubbles.filter(b => b.atoms[0].word === word);
+    const pair = state.bubbles.filter(b => b.atoms[0].word === word).sort((a,b)=>a.atoms[0].part-b.atoms[0].part);
     assert.equal(pair.length, 2); assert.equal(pair.map(bubbleText).join(''), word.toLowerCase());
     const result = merge(state, pair[0].id, pair[1].id); assert.ok(result.assembled);
     assert.equal(bubbleText(state.bubbles.find(b => b.id === result.bubbleId)), word);
@@ -119,10 +121,10 @@ test('normalized selection deduplicates while keeping base optional and seeds sc
 });
 
 test('German proper names conceal their initial capitals until both halves are joined', () => {
-  const words=['Berlin','Ludwig van Beethoven','Österreich','München'];
+  const words=['Berlin','Beethoven','Österreich','München'];
   const puzzle=createPuzzle({mode:'lab',special:'split',language:'de'});puzzle.splitCount=4;
   puzzle.groups=words.map((word,i)=>({id:`g${i}`,name:`Thema ${i}`,domain:'Fixture',words:[word,`aa${i}`,`bb${i}`,`cc${i}`]}));
-  const state=makeState(puzzle);
+  const state=makeState(puzzle);state.bubbles=all(state);state.reserve=[];state.capacity=24;
   for(const word of words){
     const pair=state.bubbles.filter(b=>b.atoms[0].word===word).sort((a,b)=>a.atoms[0].part-b.atoms[0].part);
     assert.equal(pair.length,2);assert.equal(pair.map(bubbleText).join(''),word.toLowerCase());

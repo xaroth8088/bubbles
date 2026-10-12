@@ -33,7 +33,7 @@ export function createPuzzle({mode = 'journey', level = 1, date = localDate(), r
   language=catalog.language;packIds=[...catalog.packIds].sort();
   const catalogKey=`${language}-${hash(`${CATALOG_VERSION}:${packIds.join(',')}`).toString(36)}`;
   if (mode === 'daily') difficulty = 'balanced';
-  const baseSeed = mode === 'daily' ? `daily-v8-${date}` : mode === 'lab' ? `lab-v8-${special}-${round}` : `${mode}-v8-${level}-${round}-${difficulty}`;
+  const baseSeed = mode === 'daily' ? `daily-v9-${date}` : mode === 'lab' ? `lab-v9-${special}-${round}` : `${mode}-v9-${level}-${round}-${difficulty}`;
   const seed=`${baseSeed}-${catalogKey}`;
   const rng = random(seed);
   let count = mode === 'lab' ? 4 : difficulty === 'tricky' ? 17 : difficulty === 'gentle' || (mode === 'journey' && level <= 4) ? 10 : 14;
@@ -74,6 +74,9 @@ export function createPuzzle({mode = 'journey', level = 1, date = localDate(), r
 }
 
 const fold=word=>word.trim().toLowerCase();
+const graphemes=new Intl.Segmenter(undefined,{granularity:'grapheme'});
+const letters=word=>[...graphemes.segment(word)].map(part=>part.segment);
+export const isSplittableWord=word=>/^\p{L}[\p{L}\p{M}]+$/u.test(word)&&letters(word).length>=2;
 function selectDeckThemes({themes,planned,count,maxDifficulty,specials,pictures,rng}){
   const selected=planned.length?[planned[0]]:[],chosenIds=new Set(planned.map(t=>t.id));
   const used=new Set(planned.map(t=>fold(t.name))),dealtWords=new Set(),selectedPool=new Set(),domains=new Set();
@@ -99,7 +102,10 @@ function selectDeckThemes({themes,planned,count,maxDifficulty,specials,pictures,
         if(pool.length<4)continue;
         const pictureWords=pool.filter(w=>pictures[w]);
         if(specials.includes('picture')&&Object.keys(pictures).length&&!selected.some(pictureCandidate)&&selected.length===count-1&&!pictureWords.length)continue;
-        const words=shuffle(pool,rng).slice(0,4);
+        // Prefer contiguous words on split decks without weakening exclusive membership.
+        const draw=shuffle(pool,rng);
+        if(specials.includes('split'))draw.sort((a,b)=>Number(isSplittableWord(b))-Number(isSplittableWord(a)));
+        const words=draw.slice(0,4);
         if(specials.includes('picture')&&!selected.some(pictureCandidate)&&!words.some(w=>pictures[w])&&pictureWords.length){
           words[Math.floor(rng()*words.length)]=pictureWords[Math.floor(rng()*pictureWords.length)];
         }
@@ -133,16 +139,19 @@ export function makeState(puzzle, {challenge = false, shuffleSeed = null} = {}) 
   if (special.includes('split')) {
     // Split four to eight distinct words, spread across themes. Never inherit a decoy
     // link or duplicate keys, pins, locks, or other one-shot decorations.
-    const eligible=(b,group,index)=>b.kind==='normal'&&!b.link&&!b.decoy&&!b.keyColor&&!b.pinCarrier&&b.atoms[0].word.length>=2&&!(special.includes('screw')&&group===1&&index<=1);
+    const eligible=(b,group,index)=>b.kind==='normal'&&!b.link&&!b.decoy&&!b.keyColor&&!b.pinCarrier&&isSplittableWord(b.atoms[0].word)&&!(special.includes('screw')&&group===1&&index<=1);
     const pools=chunks.map((chunk,group)=>chunk.filter((b,index)=>eligible(b,group,index)).sort((a,b)=>Number(b.atoms[0].word.length>=5)-Number(a.atoms[0].word.length>=5)));
     const requested=Number.isInteger(puzzle.splitCount)&&puzzle.splitCount>=4&&puzzle.splitCount<=8?puzzle.splitCount:4+hash(`${puzzle.seed}-split-count`)%5;
     const chosen=[];
     for(let i=0;chosen.length<requested&&pools.some(pool=>pool[i]);i++)for(const pool of pools)if(pool[i]&&chosen.length<requested)chosen.push(pool[i]);
+    // A legacy/custom phrase-only deck may lack four eligible words. Keep
+    // its clues intact rather than splitting a phrase or creating an invalid save.
+    if(chosen.length<4){chosen.length=0;puzzle.specials=puzzle.specials.filter(s=>s!=='split');}
     puzzle.splitCount=chosen.length;
     for(const b of chosen){
-      const chunk=chunks.find(c=>c.includes(b)),at=chunk.indexOf(b),atom=b.atoms[0],cut=Math.max(1,Math.floor(atom.word.length/2));
-      chunk.splice(at,1,{...b,id:`${b.id}l`,atoms:[{...atom,part:0,label:atom.word.slice(0,cut).toLowerCase()}],kind:'split'},
-        {...b,id:`${b.id}r`,atoms:[{...atom,part:1,label:atom.word.slice(cut).toLowerCase()}],kind:'split'});
+      const chunk=chunks.find(c=>c.includes(b)),at=chunk.indexOf(b),atom=b.atoms[0],characters=letters(atom.word),cut=Math.floor(characters.length/2);
+      chunk.splice(at,1,{...b,id:`${b.id}l`,atoms:[{...atom,part:0,label:characters.slice(0,cut).join('').toLowerCase()}],kind:'split'},
+        {...b,id:`${b.id}r`,atoms:[{...atom,part:1,label:characters.slice(cut).join('').toLowerCase()}],kind:'split'});
     }
   }
   if(!special.includes('split'))puzzle.splitCount=0;
@@ -158,8 +167,8 @@ export function makeState(puzzle, {challenge = false, shuffleSeed = null} = {}) 
     }
     for(const b of tools.slice(0,lock.turns))b.driverColor=lock.screwColor;
   }
-  if(puzzle.shuffleSeed){
-    const rng=random(puzzle.shuffleSeed);
+  if(puzzle.shuffleSeed||special.includes('split')){
+    const rng=random(puzzle.shuffleSeed||`${puzzle.seed}-deck`);
     chunks=shuffle(chunks.map(chunk=>shuffle(chunk,rng)),rng);
   }
   const state={schema:SCHEMA,puzzle,bubbles:[],reserve:chunks,solved:[],moves:0,mistakes:0,hints:0,assists:0,
@@ -208,7 +217,7 @@ export function blockedReason(b) {
   if(b.pinsNeeded>0) return `Collect ${b.pinsNeeded} green pin${b.pinsNeeded===1?'':'s'} by completing their groups.`;
   if(b.clearsNeeded>0) return 'Clear another group to loosen the kelp.';
   if(b.hiddenUntil>0) return 'Clear another group to lift this cloud.';
-  if(b.turns>0) return `Use a ${b.screwColor||'matching'} screwdriver on any bubble to remove one screw; ${b.turns} remain.`;
+  if(b.turns>0) return `Merge a ${b.screwColor||'matching'} screwdriver word correctly or use it on this ring; ${b.turns} screws remain.`;
   if(b.shell) return 'Tap to break the shell first.';
   return '';
 }
@@ -219,6 +228,10 @@ const hardBlocked=b=>Boolean(b.ice>0||b.lockColor||b.turns>0||b.clearsNeeded>0||
 const completeAtoms=bubbles=>{const atoms=bubbles.flatMap(b=>b.atoms),ids=new Set(atoms.map(a=>a.id));return ids.size===4&&[...ids].every(id=>{const parts=atoms.filter(a=>a.id===id);return parts.some(a=>a.part===undefined)||parts.some(a=>a.part===0)&&parts.some(a=>a.part===1);});};
 // Shells/fragments can be prepared using only the live board; hard locks cannot.
 export function clearableGroups(state){return state.puzzle.groups.filter(g=>!state.solved.some(s=>s.id===g.id)&&completeAtoms(state.bubbles.filter(b=>b.groupId===g.id))&&!state.bubbles.some(b=>b.groupId===g.id&&hardBlocked(b)));}
+export function countdownReady(state,b,bubbles=state.bubbles){
+  const members=bubbles.filter(other=>other.groupId===b.groupId);
+  return members.includes(b)&&completeAtoms(members)&&!members.some(hardBlocked);
+}
 
 export function refill(state,{initial=false,budget=4}={}) {
   retireKeys(state);
@@ -226,21 +239,40 @@ export function refill(state,{initial=false,budget=4}={}) {
   let allowance=Math.min(room,initial?room:budget);
   const dealt=new Map();
   const prerequisite=b=>arrivalDependency(b,state.bubbles)?null:arrivalDependency(b,state.reserve.flat());
-  const canTake=b=>bubbleLoad(b)+(prerequisite(b)?bubbleLoad(prerequisite(b)):0)<=allowance+.001;
+  // Plan before mutating: a countdown arrives last, together with every missing
+  // constituent (including both fragments and tool prerequisites), or waits.
+  const plan=items=>{
+    const result=[],visiting=new Set(),waiting=state.reserve.flat();
+    const add=b=>{
+      if(state.bubbles.includes(b)||result.includes(b))return true;
+      if(!waiting.includes(b)||visiting.has(b))return false;
+      visiting.add(b);
+      const lock=prerequisite(b);
+      if(lock&&!add(lock))return false;
+      if(typeof b.timer==='number'){
+        const members=allBubbles(state).filter(other=>other.groupId===b.groupId);
+        if(!completeAtoms(members)||members.some(hardBlocked))return false;
+        for(const other of members)if(other!==b&&!add(other))return false;
+      }
+      visiting.delete(b);result.push(b);return true;
+    };
+    return items.every(add)?result:null;
+  };
+  const cost=items=>items?.reduce((sum,b)=>sum+bubbleLoad(b),0)??Infinity;
+  const canTake=b=>cost(plan([b]))<=allowance+.001;
   const take=b=>{
-    if(!state.reserve.some(chunk=>chunk.some(item=>item.id===b.id)))return false;
-    if(!canTake(b))return false;
-    const lock=prerequisite(b);if(lock&&!take(lock))return false;
-    const cost=bubbleLoad(b);
-    state.bubbles.push(b);state.reserve=state.reserve.map(chunk=>chunk.filter(item=>item.id!==b.id)).filter(chunk=>chunk.length);
-    allowance-=cost;return true;
+    if(!state.reserve.some(chunk=>chunk.includes(b)))return false;
+    const incoming=plan([b]);if(cost(incoming)>allowance+.001)return false;
+    state.bubbles.push(...incoming);
+    state.reserve=state.reserve.map(chunk=>chunk.filter(item=>!incoming.includes(item))).filter(chunk=>chunk.length);
+    allowance-=cost(incoming);return true;
   };
   const seed=state.puzzle.shuffleSeed||state.puzzle.seed;
   const groupOrder=state.puzzle.shuffleSeed?shuffle(state.puzzle.groups,random(`${seed}-groups-${state.solved.length}`)):state.puzzle.groups;
   const candidates=()=>groupOrder.filter(g=>!state.solved.some(s=>s.id===g.id)).map(g=>{
     const live=state.bubbles.filter(b=>b.groupId===g.id),waiting=state.reserve.flat().filter(b=>b.groupId===g.id),all=[...live,...waiting];
-    const required=[...new Set([...waiting,...waiting.map(prerequisite).filter(Boolean)])];
-    return {g,live,waiting,complete:completeAtoms(all),blocked:all.some(hardBlocked),urgent:all.some(b=>typeof b.timer==='number'),cost:required.reduce((sum,b)=>sum+bubbleLoad(b),0)};
+    const required=plan(waiting);
+    return {g,live,waiting,complete:completeAtoms(all),blocked:all.some(hardBlocked),urgent:all.some(b=>typeof b.timer==='number'),cost:cost(required)};
   });
   // First reserve enough space for a playable four, regardless of merge order.
   if(!clearableGroups(state).length){
@@ -248,16 +280,15 @@ export function refill(state,{initial=false,budget=4}={}) {
     if(candidate)for(const b of candidate.waiting)take(b);
   }
   if(initial){
-    // Every split word starts with both halves visible, including practice.
-    for(const b of state.reserve.flat().filter(b=>b.atoms.some(a=>a.part!==undefined)))take(b);
     // A second full connection plus a mixture of other themes, including visible obstacles.
     const next=candidates().find(c=>!c.live.length&&c.complete&&!c.blocked&&c.cost<=allowance+.001);
     if(next)for(const b of next.waiting)take(b);
     // Introduce the level's obstacles even when its deck order is shuffled.
-    const previews=[...state.reserve].sort((a,b)=>Number(b.some(item=>item.kind!=='normal'))-Number(a.some(item=>item.kind!=='normal')));
+    const previewSpecial=b=>!['normal','split'].includes(b.kind);
+    const previews=[...state.reserve].sort((a,b)=>Number(b.some(previewSpecial))-Number(a.some(previewSpecial)));
     for(const chunk of previews){
       if(allowance<=0)break;
-      const preview=[...chunk].sort((a,b)=>Number(b.kind!=='normal')-Number(a.kind!=='normal'));
+      const preview=[...chunk].sort((a,b)=>Number(previewSpecial(b))-Number(previewSpecial(a)));
       for(const b of preview.slice(0,2))take(b);
     }
   }
@@ -324,7 +355,8 @@ export function upgradeDealing(state){
   // Older partial joins carried their key until the group cleared. Apply the
   // new trigger once, and bring any waiting lock onto an existing key's board.
   useKeys(state,state.bubbles.filter(b=>b.keyColor&&b.atoms.length>1));
-  useDrivers(state,state.bubbles.filter(b=>b.driverColor&&b.atoms.length>1));retireKeys(state);
+  // A saved screwdriver remains available until an actual successful action.
+  retireKeys(state);
   for(const key of state.bubbles.filter(b=>b.keyColor||b.driverColor))if(!toolLock(key,state.bubbles)){
     const lock=toolLock(key,state.reserve.flat());if(!lock)continue;
     state.reserve=state.reserve.map(chunk=>chunk.filter(b=>b!==lock)).filter(chunk=>chunk.length);state.bubbles.push(lock);
@@ -343,6 +375,7 @@ export function upgradeDealing(state){
     }),cost=Math.min(...costs);
     if(Number.isFinite(cost)&&liveLoad(state)+cost<=32){state.capacity=Math.max(state.capacity,liveLoad(state)+cost);refill(state,{budget:cost});}
   }
+  upgradeCountdowns(state);
   if(state.dealVersion===4)return state;
   // Shorten older oversized decks using only untouched, ordinary reserve groups.
   // Keep every seen word, completed connection, special, and parent/child dependency.
@@ -363,6 +396,32 @@ export function upgradeDealing(state){
   return state;
 }
 function allBubbles(state){return [...state.bubbles,...state.reserve.flat()];}
+// A final thaw/unlock can release only the waiting timer between clears;
+// ordinary clues still wait for the next refill, and capacity is never raised.
+function releaseCountdowns(state){
+  for(const b of state.reserve.flat().filter(b=>typeof b.timer==='number')){
+    if(liveLoad(state)+bubbleLoad(b)>state.capacity+.001||!countdownReady(state,b,[...state.bubbles,b]))continue;
+    const dependency=arrivalDependency(b,state.reserve.flat());
+    if(dependency&&!arrivalDependency(b,state.bubbles))continue;
+    state.reserve=state.reserve.map(chunk=>chunk.filter(other=>other!==b)).filter(chunk=>chunk.length);
+    state.bubbles.push(b);
+  }
+}
+function upgradeCountdowns(state){
+  let repairedExpiration=false;
+  for(const b of [...state.bubbles].filter(b=>typeof b.timer==='number'&&!countdownReady(state,b))){
+    state.bubbles=state.bubbles.filter(other=>other!==b);
+    const chunk=state.reserve.find(chunk=>chunk.some(other=>other.groupId===b.groupId));
+    if(chunk)chunk.push(b);else state.reserve.push([b]);
+    delete b.position;
+  }
+  // Old dealers spent timers even in reserve. Keep real progress, but repair a
+  // countdown that already expired before its group could ever be played.
+  for(const b of state.reserve.flat())if(typeof b.timer==='number'&&b.timer<=0){b.timer=9;repairedExpiration=true;}
+  if(repairedExpiration&&state.status==='paused'&&(state.remaining===null||state.remaining>0)&&!state.bubbles.some(b=>typeof b.timer==='number'&&b.timer<=0))state.status='playing';
+  releaseCountdowns(state);
+}
+
 function decoyPool(puzzle){
   const themes=getCatalog(puzzle).themes;
   const excluded=new Set(puzzle.groups.flatMap(g=>[g.name,...g.words,...(themes.find(t=>t.name===g.name)?.words||[])]).map(w=>w.toLowerCase()));
@@ -441,15 +500,15 @@ export function atomText(atom){
   const visible=new Set(order.slice(0,atom.revealed));
   return [...atom.word].map(c=>/\p{L}/u.test(c)?visible.has(index++)?c:'·':c).join('');
 }
-function spendMove(state) {
+function spendMove(state,activeTimers) {
   state.moves++;
   if(state.remaining!==null) state.remaining--;
-  for(const b of allBubbles(state)) if(typeof b.timer==='number') b.timer--;
+  for(const b of state.bubbles)if(typeof b.timer==='number'&&activeTimers.has(b.groupId))b.timer--;
 }
 function checkFailure(state) {
   if(state.status==='won') return;
   if(state.remaining!==null && state.remaining<=0) state.status='paused';
-  if(allBubbles(state).some(b=>typeof b.timer==='number'&&b.timer<=0)) state.status='paused';
+  if(state.bubbles.some(b=>typeof b.timer==='number'&&b.timer<=0&&countdownReady(state,b))) state.status='paused';
 }
 function unlink(state, bubble) {
   if(!bubble.link) return [];
@@ -483,12 +542,16 @@ function clearGroup(state, bubble) {
   return {group,released,completed,returnedId:group.parentId?`${group.id}-theme`:null};
 }
 
-export function merge(state, sourceId, targetId) {
+export function merge(state, sourceId, targetId, {visibleIds}={}) {
   if(state.status!=='playing') return {ok:false,message:'Take a little breathing room to continue.'};
   const a=state.bubbles.find(b=>b.id===sourceId),b=state.bubbles.find(b=>b.id===targetId);
   if(!a||!b||a.id===b.id) return {ok:false,message:'Choose two bubbles.'};
-  // Screwdrivers activate on contact independently of word matching or the other bubble's blockers.
-  const usedDrivers=useDrivers(state,[a,b].filter(canUseDriver));
+  const visible=visibleIds?state.bubbles.filter(b=>visibleIds.has(b.id)):state.bubbles;
+  const activeTimers=new Set(state.bubbles.filter(b=>typeof b.timer==='number'&&countdownReady(state,b,visible)).map(b=>b.groupId));
+  // Direct contact with the matching ring is an intentional tool action. All
+  // other contacts validate the word merge before consuming either tool.
+  const directDrivers=[a,b].filter((tool,i)=>canUseDriver(tool)&&[b,a][i].turns>0&&[b,a][i].screwColor===tool.driverColor);
+  const usedDrivers=directDrivers.length?useDrivers(state,directDrivers):[];
   const aFragment=a.atoms.some(x=>x.part!==undefined),bFragment=b.atoms.some(x=>x.part!==undefined);
   const sameFragments=aFragment&&bFragment&&a.atoms[0].id===b.atoms[0].id&&a.atoms[0].part!==b.atoms[0].part;
   const wordPair=a.kind!=='bonus'&&b.kind!=='bonus',blocked=isBlocked(a)||isBlocked(b);
@@ -496,14 +559,15 @@ export function merge(state, sourceId, targetId) {
   if(!wordPair||blocked||mismatch){
     if(usedDrivers.length){
       // Keep both words and their fixed solutions intact when only the tool can connect.
-      spendMove(state);checkFailure(state);
+      spendMove(state,activeTimers);releaseCountdowns(state);checkFailure(state);
       return {ok:true,toolOnly:true,usedDrivers};
     }
     if(!wordPair)return {ok:false,message:'Choose two word bubbles.'};
     if(blocked)return {ok:false,blocked:true,message:blockedReason(isBlocked(a)?a:b)};
-    spendMove(state);state.mistakes++;checkFailure(state);
+    spendMove(state,activeTimers);state.mistakes++;checkFailure(state);
     return {ok:false,mismatch:true,message:aFragment||bFragment?'Join the two pieces of the same word first.':'Different connections. Try another pair.'};
   }
+  usedDrivers.push(...useDrivers(state,[a,b].filter(canUseDriver)));
   // Positional merging keeps the bubble under the player's drop target.
   const usedKeys=useKeys(state,[a,b]);
   const carry={pinCarrier:(Number(a.pinCarrier)||0)+(Number(b.pinCarrier)||0),timer:Math.min(a.timer??Infinity,b.timer??Infinity)};
@@ -516,10 +580,10 @@ export function merge(state, sourceId, targetId) {
   state.bubbles=state.bubbles.filter(x=>x.id!==a.id);
   revealLetters(state);
   thawIce(state);
-  spendMove(state);
+  spendMove(state,activeTimers);
   let cleared=null;
   if(b.atoms.length===4&&!b.atoms.some(x=>x.part!==undefined)) cleared=clearGroup(state,b);
-  checkFailure(state);
+  releaseCountdowns(state);checkFailure(state);
   return {ok:true,bubbleId:b.id,assembled:sameFragments,cleared,usedKeys,usedDrivers,poppedDecoys,message:cleared?`${cleared.group.name} · a lovely connection${cleared.released?' · bubbles released':''}`:sameFragments?`${b.atoms[0].word} · better together`:`${b.atoms.length} of 4 connected`};
 }
 

@@ -131,14 +131,17 @@ try{
     await choose(language,['science']);
     await page.locator('#help-button').click();await page.locator('#specials-button').click();await page.locator('[data-special="split"]').click();
     await page.waitForFunction(()=>document.querySelector('#board').dataset.arriving==='0');
-    const split=await assertCatalog(language,['science']),parts=split.bubbles.filter(b=>b.kind==='split');
+    const split=await assertCatalog(language,['science']),parts=split.bubbles.filter(b=>b.kind==='split'),deckParts=[...parts,...split.reserve.flat().filter(b=>b.kind==='split')];
     assert.ok(split.puzzle.splitCount>=4&&split.puzzle.splitCount<=8);
-    assert.equal(parts.length,split.puzzle.splitCount*2);assert.equal(new Set(parts.map(b=>b.atoms[0].id)).size,split.puzzle.splitCount);
+    assert.equal(deckParts.length,split.puzzle.splitCount*2);assert.equal(new Set(deckParts.map(b=>b.atoms[0].id)).size,split.puzzle.splitCount);
+    for(const part of deckParts)assert.ok(!/\s/u.test(part.atoms[0].word),'A multiword phrase was split');
     for(const part of parts){
       assert.ok(!part.link);const label=await page.locator(`.bubble[data-id="${part.id}"] .bubble-label`).textContent();
       assert.equal(label,part.atoms[0].label.toLowerCase());
     }
-    const pair=[parts[0],parts.find(b=>b.id!==parts[0].id&&b.atoms[0].id===parts[0].atoms[0].id)];
+    const first=parts.find(part=>parts.some(other=>other.id!==part.id&&other.atoms[0].id===part.atoms[0].id));
+    assert.ok(first,'The split practice has no complete visible pair');
+    const pair=[first,parts.find(b=>b.id!==first.id&&b.atoms[0].id===first.atoms[0].id)];
     for(const part of pair){await page.locator(`.bubble[data-id="${part.id}"]`).focus();await page.keyboard.press('Enter');}
     const restored=(await active()).bubbles.find(b=>b.id===pair[1].id);
     assert.equal(restored.kind,'normal');assert.equal(restored.atoms[0].part,undefined);

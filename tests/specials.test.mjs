@@ -103,7 +103,7 @@ test('split boards expose four to eight independent word pairs, never real-decoy
     const puzzle=createPuzzle({mode,special:'split',round,difficulty:'tricky'});if(round%2===0){puzzle.specials.push('linked');puzzle.groups=puzzle.groups.slice(0,Math.floor((70-puzzle.splitCount-1)/4));}
     const state=makeState(puzzle,{shuffleSeed:`split-${round}`}),parts=all(state).filter(b=>b.kind==='split');
     assert.ok(state.puzzle.splitCount>=4&&state.puzzle.splitCount<=8);assert.equal(parts.length,state.puzzle.splitCount*2);assert.equal(new Set(parts.map(b=>b.atoms[0].id)).size,state.puzzle.splitCount);assert.ok(parts.every(b=>!b.link));
-    assert.equal(state.bubbles.filter(b=>b.kind==='split').length,state.puzzle.splitCount*2);assert.ok(clearableGroups(state).length);assert.ok(validateState(state));
+    assert.ok(state.bubbles.filter(b=>b.kind==='split').length<=state.puzzle.splitCount*2);assert.ok(clearableGroups(state).length);assert.ok(validateState(state));
     if(mode!=='lab')assert.ok(all(state).length<=70);
   }
 });
