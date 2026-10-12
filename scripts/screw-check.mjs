@@ -48,11 +48,17 @@ try{
   const centers=await f.bubble(lock.id).locator('.screw-head').evaluateAll(els=>els.map(el=>el.getAttribute('transform')));assert.equal(new Set(centers).size,5);
   await f.page.screenshot({path:output+'screwdrivers-s23.png'});
   await f.tap(lock.id);assert.equal((await f.read()).moves,0);assert.equal((await f.read()).bubbles.find(b=>b.id===lock.id).turns,5);
-  const a=tools[0],b=state.bubbles.find(b=>b.groupId!==a.groupId&&!b.driverColor&&!isBlocked(b)),atoms=structuredClone([a.atoms,b.atoms]);await f.join(a.id,b.id);
+  const a=tools[0],wrong=state.bubbles.find(b=>b.groupId!==a.groupId&&!b.driverColor&&!isBlocked(b)),atoms=structuredClone([a.atoms,wrong.atoms]);
+  await f.join(a.id,wrong.id);
+  state=await f.read();assert.equal(state.bubbles.find(b=>b.id===lock.id).turns,5);assert.equal(state.bubbles.find(b=>b.id===a.id).driverColor,lock.screwColor);
+  assert.deepEqual([state.bubbles.find(x=>x.id===a.id).atoms,state.bubbles.find(x=>x.id===wrong.id).atoms],atoms);assert.equal(state.mistakes,1);assert.equal(state.moves,1);
+  assert.equal(await f.page.locator('.state-effect.unscrew').count(),0,'A failed word merge removed a screw');await f.idle();
+  await f.page.locator('#tools-button').click();await f.page.locator('#undo-button').click();await f.page.locator('#tools-button').click();
+  const b=(await f.read()).bubbles.find(b=>b.id!==a.id&&b.groupId===a.groupId&&!b.driverColor&&!isBlocked(b));assert.ok(b);
+  await f.join(a.id,b.id);
   assert.equal((await f.read()).bubbles.find(b=>b.id===lock.id).turns,4);assert.equal(await f.bubble(lock.id).locator('.screw-head').count(),4);
-  assert.equal(await f.page.locator('.state-effect.unscrew').last().locator('.screw-head').count(),1);assert.equal(await f.bubble(a.id).locator('.screwdriver-art').count(),0);
-  state=await f.read();assert.deepEqual([state.bubbles.find(x=>x.id===a.id).atoms,state.bubbles.find(x=>x.id===b.id).atoms],atoms);assert.equal(state.mistakes,0);assert.equal(state.moves,1);
-  assert.equal(await f.page.locator('.bubble.rejected,.merge-ghost').count(),0,'Using a screwdriver on an unrelated word should succeed without a word-merge ghost');
+  assert.equal(await f.page.locator('.state-effect.unscrew').last().locator('.screw-head').count(),1);assert.equal(await f.bubble(b.id).locator('.screwdriver-art').count(),0);
+  state=await f.read();assert.equal(state.bubbles.find(x=>x.id===b.id).atoms.length,2);assert.equal(state.mistakes,0);assert.equal(state.moves,1);
   // The next touch can start while the removed screw and the merge are animating.
   const other=(await f.read()).bubbles.find(item=>item.id!==lock.id&&item.id!==b.id&&!item.driverColor&&!isBlocked(item)),box=await f.bubble(other.id).boundingBox();
   const cdp=await f.page.context().newCDPSession(f.page);await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:box.x+box.width/2,y:box.y+box.height/2}]});await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:180,y:250}]});
@@ -85,5 +91,5 @@ try{
   await reduced.join(driver.id,mate.id);assert.equal((await reduced.read()).bubbles.find(b=>b.id===reduced.lock.id).turns,2-1-Number(!!mate.driverColor));assert.ok(validateState(await reduced.read()));
   const legacy=await fixture({count:2,legacy:true});assert.equal((await legacy.read()).moves,0);assert.equal((await legacy.read()).bubbles.filter(b=>b.driverColor).length+(await legacy.read()).reserve.flat().filter(b=>b.driverColor).length,2);assert.ok(validateState(await legacy.read()));
   await f.page.context().setOffline(true);await f.page.reload();await f.bubble(lock.id).waitFor();assert.equal((await f.read()).bubbles.find(b=>b.id===lock.id).turns,0);assert.equal(await f.bubble(lock.id).locator('.screw-ring').count(),0);
-  assert.deepEqual(errors,[]);console.log('Screw checks passed: unrelated and matching partners, preserved clues without a mistake, native touch onto a blocked ring, one-time tool consumption, screw animations, immediate next touch, undo, reload/offline state, color/key isolation, legacy saves, and reduced motion.');
+  assert.deepEqual(errors,[]);console.log('Screw checks passed: failed word merges retain tools and record a mistake, legal matching partners consume tools, native touch onto a blocked ring, one-time tool consumption, screw animations, immediate next touch, undo, reload/offline state, color/key isolation, legacy saves, and reduced motion.');
 }finally{await browser.close();server?.kill();}

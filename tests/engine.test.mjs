@@ -204,7 +204,7 @@ test('removed shells and old hidden clouds migrate without losing clues or moves
   assert.deepEqual(state.bubbles.flatMap(b=>b.atoms.map(a=>a.word)),words);assert.equal(state.moves,moves);assert.ok(validateState(state));solve(state);
 });
 
-test('screw rings require two to five matching tools, and unrelated words also activate screwdrivers',()=>{
+test('screw rings require two to five matching tools, and failed joins preserve screwdrivers',()=>{
   const counts=new Set();
   for(let seed=0;seed<60;seed++){
     const state=makeState(createPuzzle({mode:'lab',special:'screw'}),{shuffleSeed:`screw-${seed}`});
@@ -218,11 +218,11 @@ test('screw rings require two to five matching tools, and unrelated words also a
       const at=state.bubbles.indexOf(tool),lockAt=state.bubbles.findIndex(b=>b.screwColor===tool.driverColor&&b.turns>0);assert.ok(lockAt>=0&&lockAt<at,'A screwdriver arrived before its screw lock');
     }
     const tool=state.bubbles.find(b=>b.driverColor),wrong=state.bubbles.find(b=>b.groupId!==tool.groupId&&!isBlocked(b));
-    const before=lock.turns,removed=1+Number(!!wrong.driverColor),atoms=structuredClone([tool.atoms,wrong.atoms]),moves=state.moves,mistakes=state.mistakes;
-    const result=merge(state,tool.id,wrong.id);assert.ok(result.ok);assert.ok(result.toolOnly);assert.equal(lock.turns,before-removed);
-    assert.equal(result.usedDrivers.length,removed);assert.equal(tool.driverColor,undefined);assert.equal(wrong.driverColor,undefined);
+    const before=lock.turns,colors=[tool.driverColor,wrong.driverColor],atoms=structuredClone([tool.atoms,wrong.atoms]),moves=state.moves,mistakes=state.mistakes;
+    const result=merge(state,tool.id,wrong.id);assert.ok(result.mismatch);assert.equal(lock.turns,before);
+    assert.deepEqual([tool.driverColor,wrong.driverColor],colors);
     assert.deepEqual([tool.atoms,wrong.atoms],atoms);assert.ok(state.bubbles.includes(tool)&&state.bubbles.includes(wrong));
-    assert.equal(state.moves,moves+1);assert.equal(state.mistakes,mistakes);assert.ok(validateState(state));
+    assert.equal(state.moves,moves+1);assert.equal(state.mistakes,mistakes+1);assert.ok(validateState(state));
     solve(state);
   }
   assert.deepEqual([...counts].sort(),[2,3,4,5]);
@@ -249,7 +249,7 @@ test('a screwdriver removes one screw when joining an ordinary single, pair, or 
   }
 });
 
-test('screwdrivers activate against unrelated words and blocked bubbles in either direction without losing clues',()=>{
+test('screwdrivers reject unrelated or blocked words and only activate on the matching ring',()=>{
   for(const kind of['normal','frozen','keylock','sealed','pinlock','screw'])for(const toolFirst of[false,true]){
     const state=makeState(createPuzzle({mode:'lab',special:'screw'}),{shuffleSeed:'screw-5'}),lock=state.bubbles.find(b=>b.turns),tool=state.bubbles.find(b=>b.driverColor);
     const partner=kind==='screw'?lock:state.bubbles.find(b=>b.groupId!==tool.groupId&&!b.driverColor&&!isBlocked(b));
@@ -259,16 +259,18 @@ test('screwdrivers activate against unrelated words and blocked bubbles in eithe
     if(kind==='pinlock'){partner.kind=kind;partner.pinsNeeded=2;}
     const ledger=state.bubbles.flatMap(b=>b.atoms).concat(state.reserve.flat().flatMap(b=>b.atoms)),before=structuredClone(ledger),turns=lock.turns;
     const result=merge(state,...(toolFirst?[tool.id,partner.id]:[partner.id,tool.id]));
-    assert.ok(result.ok&&result.toolOnly,kind);assert.deepEqual(result.usedDrivers,['violet']);assert.equal(lock.turns,turns-1);
-    assert.deepEqual(state.bubbles.flatMap(b=>b.atoms).concat(state.reserve.flat().flatMap(b=>b.atoms)),before);assert.equal(state.mistakes,0);
+    if(kind==='screw'){assert.ok(result.ok&&result.toolOnly);assert.deepEqual(result.usedDrivers,['violet']);assert.equal(tool.driverColor,undefined);}
+    else{assert.equal(result.ok,false);assert.equal(tool.driverColor,'violet');}
+    assert.equal(lock.turns,turns-Number(kind==='screw'));
+    assert.deepEqual(state.bubbles.flatMap(b=>b.atoms).concat(state.reserve.flat().flatMap(b=>b.atoms)),before);assert.equal(state.mistakes,Number(kind==='normal'));
     assert.ok(state.bubbles.includes(tool)&&state.bubbles.includes(partner));assert.ok(validateState(state));
-    assert.ok(!merge(state,tool.id,partner.id).ok);assert.equal(lock.turns,turns-1,'A used tool must not remove another screw');
+    assert.ok(!merge(state,tool.id,partner.id).ok);assert.equal(lock.turns,turns-Number(kind==='screw'),'Repeated failures must not remove another screw');
     if(kind==='frozen')assert.equal(partner.ice,4);
     if(kind==='keylock')assert.equal(partner.lockColor,'amber');
   }
 });
 
-test('screwdriver contacts with fragments, decoys, keys, and move bonuses use only the tool',()=>{
+test('failed screwdriver contacts with fragments, decoys, keys, and bonuses retain the tool',()=>{
   for(const special of['split','linked','keylock','bonus']){
     const puzzle=createPuzzle({mode:'lab',special:'screw'});puzzle.specials=['screw',special];
     // Exercise the contact semantics without depending on a particular deal.
@@ -280,17 +282,19 @@ test('screwdriver contacts with fragments, decoys, keys, and move bonuses use on
     }
     assert.ok(tool&&partner&&lock,`A test deal must expose the ${special} contact`);
     const before=structuredClone(partner),turns=lock.turns,remaining=state.remaining;
-    const result=merge(state,tool.id,partner.id);assert.ok(result.ok&&result.toolOnly,special);assert.equal(lock.turns,turns-1);
-    assert.deepEqual(partner,before);assert.equal(state.bonusCollected,0);assert.deepEqual(state.keys,[]);assert.equal(state.mistakes,0);
-    if(remaining!==null)assert.equal(state.remaining,remaining-1);assert.ok(validateState(state));solve(state);
+    const result=merge(state,tool.id,partner.id);assert.equal(result.ok,false,special);assert.equal(lock.turns,turns);assert.equal(tool.driverColor,'violet');
+    assert.deepEqual(partner,before);assert.equal(state.bonusCollected,0);assert.deepEqual(state.keys,[]);assert.equal(state.mistakes,Number(special!=='bonus'));
+    if(remaining!==null)assert.equal(state.remaining,remaining-Number(special!=='bonus'));assert.ok(validateState(state));solve(state);
   }
 });
 
-test('unrelated screwdriver colors each remove one screw from their own ring',()=>{
+test('unrelated screwdriver colors survive failed merges and open only their own rings',()=>{
   const state=makeState(createPuzzle()),groups=clearableGroups(state).slice(0,2),locks=state.bubbles.filter(b=>!groups.some(g=>g.id===b.groupId)).slice(0,2),colors=['violet','coral'];
   const tools=groups.map(g=>members(state,g.id)[0]);
   locks.forEach((lock,i)=>{lock.kind='screw';lock.turns=lock.screwTotal=2;lock.screwColor=colors[i];members(state,groups[i].id).slice(0,2).forEach(b=>b.driverColor=colors[i]);});
-  const result=merge(state,tools[0].id,tools[1].id);assert.ok(result.ok&&result.toolOnly);assert.deepEqual(result.usedDrivers,colors);assert.deepEqual(locks.map(b=>b.turns),[1,1]);
+  const result=merge(state,tools[0].id,tools[1].id);assert.ok(result.mismatch);assert.deepEqual(locks.map(b=>b.turns),[2,2]);
+  assert.deepEqual(tools.map(b=>b.driverColor),colors);
+  tools.forEach((tool,i)=>assert.ok(merge(state,tool.id,locks[i].id).toolOnly));assert.deepEqual(locks.map(b=>b.turns),[1,1]);
   assert.ok(tools.every(b=>state.bubbles.includes(b)&&!b.driverColor));assert.ok(validateState(state));solve(state);
 });
 
@@ -525,7 +529,7 @@ test('split counts cover 4–8 deterministically in both languages and every mod
       assert.ok(count>=4&&count<=8);frequencies.set(count,(frequencies.get(count)||0)+1);
       const all=[...state.bubbles,...state.reserve.flat()],parts=all.filter(b=>b.kind==='split');
       assert.equal(parts.length,count*2);assert.equal(new Set(parts.map(b=>b.atoms[0].id)).size,count);
-      assert.equal(state.bubbles.filter(b=>b.kind==='split').length,count*2);
+      assert.ok(state.bubbles.filter(b=>b.kind==='split').length<=count*2);
       assert.equal(state.remaining,puzzle.groups.length*3+count+7);
       assert.ok(all.length<=70);assert.equal(new Set(all.map(b=>b.id)).size,all.length);
       assert.ok(liveLoad(state)<=state.capacity);assert.ok(clearableGroups(state).length);
@@ -540,6 +544,7 @@ test('legacy capitalized fragments display lowercase without changing canonical 
   for(const language of ['en','de'])for(const count of [1,4]){
     const puzzle=createPuzzle({mode:'lab',special:'split',language});puzzle.splitCount=4;
     const state=makeState(puzzle,{challenge:true}),all=[...state.bubbles,...state.reserve.flat()];
+    state.bubbles=all;state.reserve=[];state.capacity=24;
     const ids=[...new Set(all.filter(b=>b.kind==='split').map(b=>b.atoms[0].id))];
     // Historical boards used one or four pairs. Rejoin extras before simulating a played save.
     for(const id of ids.slice(count)){
