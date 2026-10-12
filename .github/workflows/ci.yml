@@ -31,6 +31,14 @@ jobs:
         run: node scripts/catalog-browser-check.mjs
       - name: Check screwdriver, split, and countdown rules in a browser
         run: node scripts/special-rules-check.mjs
+      - name: Save browser failure diagnostics
+        if: failure()
+        uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: bubble-grove-browser-diagnostics-${{ github.sha }}
+          path: test-results/
+          if-no-files-found: ignore
+          retention-days: 14
       - name: Save the static game build
         uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
         with:

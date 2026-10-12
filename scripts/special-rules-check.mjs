@@ -2,7 +2,7 @@
 // Run against the production bundle; no engine functions are invoked in the page.
 import assert from 'node:assert/strict';
 import {spawn} from 'node:child_process';
-import {mkdir} from 'node:fs/promises';
+import {mkdir,writeFile} from 'node:fs/promises';
 import {fileURLToPath,pathToFileURL} from 'node:url';
 import {createPuzzle,makeState,validateState,clearableGroups,isBlocked} from '../src/engine.js';
 
@@ -133,8 +133,8 @@ if(process.argv.includes('--fixtures-only')){
       const read=()=>page.evaluate(key=>JSON.parse(localStorage.getItem(key)).sessions.lab,STORAGE);
       const idle=async()=>{
         await page.waitForFunction(()=>document.querySelector('#board').dataset.busy!=='true'&&document.querySelector('#board').dataset.arriving==='0');
-        // Release is only the start of a fall. Wait until new membranes have
-        // actually crossed the top edge before spending another test move.
+        // The app's arrival count includes queued, physically entering, and
+        // hidden returning bubbles. Also check the actual rendered membrane.
         await page.waitForFunction(()=>{
           const board=document.querySelector('#board'),top=board.getBoundingClientRect().top;
           return [...board.querySelectorAll('.bubble[data-id]:not([hidden]) .membrane-fill')].every(el=>el.getBoundingClientRect().top>=top-1);
@@ -222,7 +222,11 @@ if(process.argv.includes('--fixtures-only')){
       await frozen.keyJoin('g1w2','g1w3');await frozen.idle();
       assert.ok((await frozen.read()).bubbles.some(b=>b.id===timer.id),'Thawing the last blocker did not release a ready countdown');
       assert.equal(timerIn(await frozen.read()).timer,9,'The release move spent a countdown tick');await frozen.arrivals();
-      await frozen.keyJoin('g0w1','g1w1');await frozen.idle();assert.equal(timerIn(await frozen.read()).timer,8,'A visible eligible countdown did not tick');
+      const beforeTick=await frozen.read();
+      await frozen.keyJoin('g0w1','g1w1');await frozen.idle();const afterTick=await frozen.read();
+      assert.equal(afterTick.moves,beforeTick.moves+1,'The countdown test did not make its intended move');
+      assert.equal(afterTick.mistakes,beforeTick.mistakes+1,'The countdown test did not make its intended mismatch');
+      assert.equal(timerIn(afterTick).timer,8,'A visible eligible countdown did not tick');
       await frozen.reload();assert.equal(timerIn(await frozen.read()).timer,8);assert.ok(validateState(await frozen.read()));await frozen.context.close();
 
       const fragments=await open(splitTimerFixture(),motion),splitTimer=timerIn(await fragments.read());
@@ -249,7 +253,11 @@ if(process.argv.includes('--fixtures-only')){
     }
     assert.deepEqual(errors,[]);console.log('Special-rule browser checks passed: real repeated tap/drag mismatch and blocked-target screwdriver retention, legal merge and direct-ring consumption, undo/reload, mixed split reserve/refills, unsplit phrases, frozen/partial/split/nested countdown eligibility, reserve and hidden-arrival tick protection, and visible constituent arrival order in both motion modes.');
   }catch(error){
-    if(activePage&&!activePage.isClosed())await activePage.screenshot({path:output+'special-rules-failure.png'}).catch(()=>{});
+    if(activePage&&!activePage.isClosed()){
+      await activePage.screenshot({path:output+'special-rules-failure.png'}).catch(()=>{});
+      const diagnostic=await activePage.evaluate(key=>({save:JSON.parse(localStorage.getItem(key)),board:document.querySelector('#board')?.dataset,arrivals:window.countdownAppearances,violations:window.countdownArrivalViolations,bubbles:[...document.querySelectorAll('.bubble[data-id]')].map(el=>({id:el.dataset.id,hidden:el.hidden,classes:el.className,rect:el.getBoundingClientRect().toJSON(),arrival:getComputedStyle(el).getPropertyValue('--arrival')}))}),STORAGE).catch(()=>null);
+      await writeFile(output+'special-rules-failure.json',JSON.stringify({error:String(error),diagnostic},null,2));
+    }
     throw error;
   }finally{
     for(const context of contexts)await context.close().catch(()=>{});await browser?.close();server?.kill();

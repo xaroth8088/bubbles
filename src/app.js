@@ -102,7 +102,9 @@ function drawBubble(el,p){
   el.style.setProperty('--light-x',`${(32+p.x/Math.max(1,board.clientWidth)*12).toFixed(1)}%`);
   el.style.setProperty('--light-y',`${(18+p.y/Math.max(1,board.clientHeight)*7).toFixed(1)}%`);
 }
-function drawPositions(){board.dataset.arriving=String([...positions.values()].filter(p=>p.releaseAt!==undefined).length);for(const[bId,p]of positions){const el=elements.get(bId);if(el)drawBubble(el,p);}for(const p of completions.values())drawBubble(p.el,p);drawLinks();}
+// An arrival finishes when its full physical membrane enters the field, not
+// when it is merely released from the queue (its visual skin may still shrink).
+function drawPositions(){board.dataset.arriving=String([...positions.values()].filter(p=>!onField(p)).length);for(const[bId,p]of positions){const el=elements.get(bId);if(el)drawBubble(el,p);}for(const p of completions.values())drawBubble(p.el,p);drawLinks();}
 function animate(now){
   const pendingArrivals=state.bubbles.filter(b=>positions.get(b.id)?.releaseAt!==undefined);
   const arrivals=pendingArrivals.filter(b=>{
