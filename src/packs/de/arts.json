@@ -69,7 +69,7 @@
     },
     {
       "id": "de-arts-bildmotive",
-      "name": "Bildmotive",
+      "name": "Motive",
       "domain": "arts",
       "difficulty": 1,
       "words": [
@@ -81,11 +81,14 @@
         "Seestück",
         "Blumenbild",
         "Stadtansicht"
+      ],
+      "legacyNames": [
+        "Bildmotive"
       ]
     },
     {
       "id": "de-arts-im-museum",
-      "name": "Im Museum",
+      "name": "Museum",
       "domain": "arts",
       "difficulty": 1,
       "words": [
@@ -97,6 +100,9 @@
         "Eintritt",
         "Katalog",
         "Saal"
+      ],
+      "legacyNames": [
+        "Im Museum"
       ]
     },
     {
@@ -245,7 +251,7 @@
     },
     {
       "id": "de-arts-buchgestaltung",
-      "name": "Buchgestaltung",
+      "name": "Buch",
       "domain": "arts",
       "difficulty": 1,
       "words": [
@@ -257,6 +263,9 @@
         "Kapitel",
         "Lesebändchen",
         "Schutzumschlag"
+      ],
+      "legacyNames": [
+        "Buchgestaltung"
       ]
     },
     {
@@ -389,7 +398,7 @@
     },
     {
       "id": "de-arts-antike-baukunst",
-      "name": "Antike Baukunst",
+      "name": "Antike",
       "domain": "arts",
       "difficulty": 2,
       "words": [
@@ -401,11 +410,14 @@
         "Mosaik",
         "Triumphbogen",
         "Forum"
+      ],
+      "legacyNames": [
+        "Antike Baukunst"
       ]
     },
     {
       "id": "de-arts-gotische-kirchen",
-      "name": "Gotische Kirchen",
+      "name": "Gotik",
       "domain": "arts",
       "difficulty": 2,
       "words": [
@@ -417,6 +429,9 @@
         "Glasfenster",
         "Kathedrale",
         "Wasserspeier"
+      ],
+      "legacyNames": [
+        "Gotische Kirchen"
       ]
     },
     {
@@ -453,7 +468,7 @@
     },
     {
       "id": "de-arts-designberufe",
-      "name": "Designberufe",
+      "name": "Design",
       "domain": "arts",
       "difficulty": 2,
       "words": [
@@ -465,6 +480,9 @@
         "Typograf",
         "Keramiker",
         "Goldschmied"
+      ],
+      "legacyNames": [
+        "Designberufe"
       ]
     },
     {

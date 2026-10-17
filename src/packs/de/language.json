@@ -275,7 +275,7 @@
     },
     {
       "id": "de-language-wochentage-co",
-      "name": "Wochentage & Co.",
+      "name": "Woche",
       "domain": "language",
       "difficulty": 1,
       "words": [
@@ -289,6 +289,9 @@
         "Werktag",
         "Feiertag",
         "Wochenende"
+      ],
+      "legacyNames": [
+        "Wochentage & Co."
       ]
     },
     {
@@ -439,7 +442,7 @@
     },
     {
       "id": "de-language-maerchenwoerter",
-      "name": "Märchenwörter",
+      "name": "Märchen",
       "domain": "language",
       "difficulty": 1,
       "words": [
@@ -453,6 +456,9 @@
         "Riese",
         "Zwerg",
         "Fee"
+      ],
+      "legacyNames": [
+        "Märchenwörter"
       ]
     },
     {

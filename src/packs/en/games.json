@@ -137,7 +137,7 @@
     },
     {
       "id": "theme-212",
-      "name": "Classic toys",
+      "name": "Toys",
       "domain": "games",
       "difficulty": 1,
       "words": [
@@ -158,6 +158,9 @@
         "Dollhouse",
         "Building blocks",
         "Teddy"
+      ],
+      "legacyNames": [
+        "Classic toys"
       ]
     },
     {

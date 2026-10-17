@@ -9,7 +9,7 @@ test('pack selection is stable, explicit, and never empty',()=>{
   assert.deepEqual(normalizePackIds([]),['base']);
   assert.deepEqual(normalizePackIds(['movies','invalid','movies','science']),['science','movies']);
   assert.equal(normalizeLanguage('de'),'de');assert.equal(normalizeLanguage('unknown'),'en');
-  assert.equal(new Set(PACKS.map(p=>p.id)).size,12);
+  assert.equal(new Set(PACKS.map(p=>p.id)).size,16);
 });
 
 test('every language and standalone genre supplies a complete immutable dictionary',()=>{
@@ -40,8 +40,8 @@ test('each language has globally unique names and IDs',()=>{
   }
 });
 
-test('the English migration preserves all 995 stable IDs and all emoji mappings',()=>{
-  const catalog=getCatalog();
+test('the original English packs preserve all 995 stable IDs and all emoji mappings',()=>{
+  const catalog=getCatalog({packIds:ALL_PACK_IDS.filter(id=>!['history','books','mythology','comics'].includes(id))});
   assert.equal(catalog.themes.length,995);
   for(let i=1;i<=995;i++)assert.ok(catalog.themes.some(t=>t.id===`theme-${String(i).padStart(3,'0')}`));
   assert.equal(Object.keys(catalog.pictures).length,705);
@@ -76,6 +76,22 @@ test('every standalone genre supports a returning category demo',()=>{
     for(const owner of chain)for(const word of owner.words){
       const matches=chain.filter(chosen=>themes.find(t=>t.id===chosen.id).words.some(w=>w.toLowerCase()===word.toLowerCase()));
       assert.deepEqual(matches.map(t=>t.id),[owner.id]);
+    }
+  }
+});
+
+
+test('four new localized packs expand the catalog without changing saved selections',()=>{
+  const names={history:['History','Geschichte'],books:['Books','Bücher'],mythology:['Myth & folklore','Mythen & Sagen'],comics:['Comics & manga','Comics & Manga']};
+  const original=ALL_PACK_IDS.filter(id=>!Object.hasOwn(names,id));
+  assert.equal(original.length,12);assert.deepEqual(normalizePackIds(original),original);
+  for(const [id,[en,de]] of Object.entries(names)){
+    const pack=PACKS.find(pack=>pack.id===id);assert.deepEqual(pack.name,{en,de});
+    for(const language of ['en','de']){
+      const catalog=getCatalog({language,packIds:[id]});
+      assert.ok(catalog.themes.length>=35,`${language}/${id} needs a varied standalone pool`);
+      assert.ok(catalog.themes.every(t=>t.id.startsWith(`${language}-${id}-`)),`${language}/${id}: stable namespaced IDs`);
+      assert.ok(catalog.themes.every(t=>!t.words.includes(t.name)),`${language}/${id}: avoid giving away the category itself`);
     }
   }
 });

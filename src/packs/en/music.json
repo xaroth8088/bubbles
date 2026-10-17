@@ -87,7 +87,7 @@
     },
     {
       "id": "theme-153",
-      "name": "Tempo markings",
+      "name": "Tempo",
       "domain": "music",
       "difficulty": 2,
       "words": [
@@ -99,6 +99,9 @@
         "Moderato",
         "Vivace",
         "Lento"
+      ],
+      "legacyNames": [
+        "Tempo markings"
       ]
     },
     {
@@ -136,7 +139,7 @@
     },
     {
       "id": "theme-156",
-      "name": "Classical composers",
+      "name": "Composers",
       "domain": "music",
       "difficulty": 2,
       "words": [
@@ -148,11 +151,14 @@
         "Debussy",
         "Handel",
         "Schubert"
+      ],
+      "legacyNames": [
+        "Classical composers"
       ]
     },
     {
       "id": "theme-157",
-      "name": "Song sections",
+      "name": "Song",
       "domain": "music",
       "difficulty": 1,
       "words": [
@@ -164,6 +170,9 @@
         "Refrain",
         "Pre-chorus",
         "Interlude"
+      ],
+      "legacyNames": [
+        "Song sections"
       ]
     },
     {

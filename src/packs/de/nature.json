@@ -293,7 +293,7 @@
     },
     {
       "id": "de-nature-am-baum",
-      "name": "Am Baum",
+      "name": "Baum",
       "domain": "nature",
       "difficulty": 1,
       "words": [
@@ -307,6 +307,9 @@
         "Knospe",
         "Frucht",
         "Baumscheibe"
+      ],
+      "legacyNames": [
+        "Am Baum"
       ]
     },
     {

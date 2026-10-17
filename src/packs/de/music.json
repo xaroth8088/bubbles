@@ -101,7 +101,7 @@
     },
     {
       "id": "de-music-auf-der-buhne",
-      "name": "Auf der Bühne",
+      "name": "Bühne",
       "domain": "music",
       "difficulty": 1,
       "words": [
@@ -113,11 +113,14 @@
         "Bühnenrand",
         "Soundcheck",
         "Auftritt"
+      ],
+      "legacyNames": [
+        "Auf der Bühne"
       ]
     },
     {
       "id": "de-music-konzertbesuch",
-      "name": "Konzertbesuch",
+      "name": "Konzert",
       "domain": "music",
       "difficulty": 1,
       "words": [
@@ -129,6 +132,9 @@
         "Stehplatz",
         "Einlass",
         "Vorband"
+      ],
+      "legacyNames": [
+        "Konzertbesuch"
       ]
     },
     {
@@ -277,7 +283,7 @@
     },
     {
       "id": "de-music-klang-beschreiben",
-      "name": "Klang beschreiben",
+      "name": "Klang",
       "domain": "music",
       "difficulty": 1,
       "words": [
@@ -289,6 +295,9 @@
         "Dunkel",
         "Sanft",
         "Schrill"
+      ],
+      "legacyNames": [
+        "Klang beschreiben"
       ]
     },
     {

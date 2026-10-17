@@ -1,0 +1,825 @@
+{
+  "id": "history",
+  "language": "de",
+  "name": "Geschichte",
+  "themes": [
+    {
+      "id": "de-history-ancient-worlds",
+      "name": "Antike Kulturen",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Altes Ägypten",
+        "Antikes Griechenland",
+        "Antikes Rom",
+        "Mesopotamien",
+        "Persien",
+        "Phönizien",
+        "Karthago",
+        "Industal",
+        "Han-China",
+        "Nubien",
+        "Minoer",
+        "Etrusker"
+      ]
+    },
+    {
+      "id": "de-history-ancient-egypt",
+      "name": "Altes Ägypten",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Pyramiden",
+        "Pharao",
+        "Nil",
+        "Sphinx",
+        "Hieroglyphen",
+        "Papyrus",
+        "Skarabäus",
+        "Obelisk",
+        "Mumie",
+        "Sarkophag",
+        "Tutanchamun",
+        "Streitwagen"
+      ]
+    },
+    {
+      "id": "de-history-pyramids",
+      "name": "Pyramiden",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Gizeh",
+        "Cheops",
+        "Grab",
+        "Kalkstein",
+        "Granit",
+        "Steinblöcke",
+        "Gang",
+        "Kammer",
+        "Grundfläche",
+        "Spitze",
+        "Stufenpyramide",
+        "Verkleidung"
+      ]
+    },
+    {
+      "id": "de-history-mummification",
+      "name": "Mumifizierung",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Leinen",
+        "Natron",
+        "Harz",
+        "Binden",
+        "Kanopen",
+        "Amulette",
+        "Einbalsamierung",
+        "Maske",
+        "Sarg",
+        "Jenseits",
+        "Anubis",
+        "Konservierung"
+      ]
+    },
+    {
+      "id": "de-history-hieroglyphs",
+      "name": "Hieroglyphen",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Schreiber",
+        "Schilf",
+        "Tinte",
+        "Zeichen",
+        "Kartusche",
+        "Stein von Rosetta",
+        "Laut",
+        "Papyrus",
+        "Eule",
+        "Anch",
+        "Tempel",
+        "Inschrift"
+      ]
+    },
+    {
+      "id": "de-history-ancient-greece",
+      "name": "Antikes Griechenland",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Athen",
+        "Sparta",
+        "Orakel",
+        "Akropolis",
+        "Hoplit",
+        "Philosophie",
+        "Theater",
+        "Amphore",
+        "Demokratie",
+        "Agora",
+        "Triere",
+        "Antike Spiele"
+      ]
+    },
+    {
+      "id": "de-history-athens",
+      "name": "Athen",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Parthenon",
+        "Athene",
+        "Perikles",
+        "Sokrates",
+        "Volksversammlung",
+        "Bürger",
+        "Scherbengericht",
+        "Piräus",
+        "Keramik",
+        "Silber",
+        "Oliven",
+        "Marathon"
+      ]
+    },
+    {
+      "id": "de-history-sparta",
+      "name": "Sparta",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Leonidas",
+        "Thermopylen",
+        "Schild",
+        "Speer",
+        "Ausbildung",
+        "Kaserne",
+        "Heloten",
+        "Lakonien",
+        "Krieger",
+        "Disziplin",
+        "Phalanx",
+        "Doppelkönigtum"
+      ]
+    },
+    {
+      "id": "de-history-ancient-olympics",
+      "name": "Antike Spiele",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Olympia",
+        "Zeus",
+        "Kranz",
+        "Olive",
+        "Stadion",
+        "Ringen",
+        "Diskus",
+        "Speerwurf",
+        "Weitsprung",
+        "Wettlauf",
+        "Wagenrennen",
+        "Fünfkampf"
+      ]
+    },
+    {
+      "id": "de-history-ancient-rome",
+      "name": "Antikes Rom",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Römische Herrscher",
+        "Senat",
+        "Forum",
+        "Kolosseum",
+        "Aquädukt",
+        "Toga",
+        "Gladiator",
+        "Thermen",
+        "Latein",
+        "Römische Legion",
+        "Mosaik",
+        "Denar"
+      ]
+    },
+    {
+      "id": "de-history-roman-rulers",
+      "name": "Römische Herrscher",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Caesar",
+        "Augustus",
+        "Tiberius",
+        "Caligula",
+        "Claudius",
+        "Nero",
+        "Vespasian",
+        "Titus",
+        "Trajan",
+        "Hadrian",
+        "Mark Aurel",
+        "Konstantin"
+      ]
+    },
+    {
+      "id": "de-history-caesar",
+      "name": "Caesar",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Rubikon",
+        "Gallien",
+        "Brutus",
+        "Pompeius",
+        "Kleopatra",
+        "Diktator",
+        "Iden",
+        "Lorbeer",
+        "Triumph",
+        "Kalender",
+        "Konsul",
+        "Senat"
+      ]
+    },
+    {
+      "id": "de-history-roman-legion",
+      "name": "Römische Legion",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Zenturio",
+        "Adler",
+        "Schild",
+        "Wurfspeer",
+        "Schwert",
+        "Helm",
+        "Sandalen",
+        "Rüstung",
+        "Lager",
+        "Kohorte",
+        "Marsch",
+        "Feldzeichen"
+      ]
+    },
+    {
+      "id": "de-history-pompeii",
+      "name": "Pompeji",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Vesuv",
+        "Asche",
+        "Ausbruch",
+        "Fresko",
+        "Mosaik",
+        "Villa",
+        "Bäckerei",
+        "Thermen",
+        "Graffiti",
+        "Amphitheater",
+        "Bimsstein",
+        "Ausgrabung"
+      ]
+    },
+    {
+      "id": "de-history-mesopotamia",
+      "name": "Mesopotamien",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Tigris",
+        "Euphrat",
+        "Keilschrift",
+        "Tontafeln",
+        "Zikkurat",
+        "Babylon",
+        "Sumer",
+        "Bewässerung",
+        "Rollsiegel",
+        "Stadtstaat",
+        "Hammurabi",
+        "Ur"
+      ]
+    },
+    {
+      "id": "de-history-silk-road",
+      "name": "Seidenstraße",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Karawane",
+        "Kamel",
+        "Seide",
+        "Gewürze",
+        "Oase",
+        "Händler",
+        "Wüste",
+        "Samarkand",
+        "Jade",
+        "Porzellan",
+        "Buddhismus",
+        "Karawanserei"
+      ]
+    },
+    {
+      "id": "de-history-vikings",
+      "name": "Wikinger",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Langschiff",
+        "Runen",
+        "Schild",
+        "Axt",
+        "Fjord",
+        "Saga",
+        "Langhaus",
+        "Handel",
+        "Raubzug",
+        "Island",
+        "Grönland",
+        "Vinland"
+      ]
+    },
+    {
+      "id": "de-history-medieval-life",
+      "name": "Mittelalter",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Ritter",
+        "Klöster",
+        "Wappenkunde",
+        "Mittelalterliche Stadt",
+        "Bauer",
+        "Pflug",
+        "Mühle",
+        "Zehnt",
+        "Pilgerfahrt",
+        "Zunft",
+        "Markt",
+        "Grundherrschaft"
+      ]
+    },
+    {
+      "id": "de-history-knights",
+      "name": "Ritter",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Rüstung",
+        "Helm",
+        "Lanze",
+        "Pferd",
+        "Knappe",
+        "Sporen",
+        "Schwert",
+        "Schild",
+        "Turnier",
+        "Lanzenstechen",
+        "Ritterlichkeit",
+        "Kettenhemd"
+      ]
+    },
+    {
+      "id": "de-history-castle-siege",
+      "name": "Burgbelagerung",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Rammbock",
+        "Blide",
+        "Katapult",
+        "Leiter",
+        "Belagerungsturm",
+        "Mauer",
+        "Graben",
+        "Tor",
+        "Bogenschützen",
+        "Blockade",
+        "Verteidiger",
+        "Kapitulation"
+      ]
+    },
+    {
+      "id": "de-history-medieval-town",
+      "name": "Mittelalterliche Stadt",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Stadtmauer",
+        "Torhaus",
+        "Marktplatz",
+        "Schmied",
+        "Gerber",
+        "Bäcker",
+        "Schuster",
+        "Rathaus",
+        "Zunfthaus",
+        "Nachtwächter",
+        "Pflastersteine",
+        "Dom"
+      ]
+    },
+    {
+      "id": "de-history-monasteries",
+      "name": "Klöster",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Mönch",
+        "Nonne",
+        "Abt",
+        "Kreuzgang",
+        "Kapelle",
+        "Glocke",
+        "Gebet",
+        "Handschrift",
+        "Skriptorium",
+        "Kräutergarten",
+        "Schlafsaal",
+        "Refektorium"
+      ]
+    },
+    {
+      "id": "de-history-heraldry",
+      "name": "Wappenkunde",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Schild",
+        "Helmzier",
+        "Wahlspruch",
+        "Löwe",
+        "Adler",
+        "Krone",
+        "Helm",
+        "Banner",
+        "Einhorn",
+        "Lilie",
+        "Kreuz",
+        "Greif"
+      ]
+    },
+    {
+      "id": "de-history-renaissance-age",
+      "name": "Renaissancezeit",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Florenz",
+        "Humanismus",
+        "Mäzen",
+        "Perspektive",
+        "Fresko",
+        "Medici",
+        "Leonardo",
+        "Michelangelo",
+        "Antikenstudium",
+        "Buchdruck",
+        "Anatomie",
+        "Werkstatt"
+      ]
+    },
+    {
+      "id": "de-history-printing-press",
+      "name": "Buchdruck",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Gutenberg",
+        "Letter",
+        "Tinte",
+        "Papier",
+        "Presse",
+        "Setzer",
+        "Seite",
+        "Abzug",
+        "Korrekturbogen",
+        "Druckfarbe",
+        "Holzschnitt",
+        "Auflage"
+      ]
+    },
+    {
+      "id": "de-history-gutenberg",
+      "name": "Gutenberg",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Mainz",
+        "Bibel",
+        "Metall",
+        "Gussform",
+        "Bewegliche Lettern",
+        "Ölhaltige Farbe",
+        "Schraubenpresse",
+        "42 Zeilen",
+        "Werkstatt",
+        "Drucker",
+        "Latein",
+        "Pergament"
+      ]
+    },
+    {
+      "id": "de-history-age-of-sail",
+      "name": "Segelschifffahrt",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Galeone",
+        "Fregatte",
+        "Mast",
+        "Takelage",
+        "Kompass",
+        "Sextant",
+        "Seekarte",
+        "Anker",
+        "Kanone",
+        "Steuerrad",
+        "Ausguck",
+        "Segel"
+      ]
+    },
+    {
+      "id": "de-history-industrial-age",
+      "name": "Industriezeitalter",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Dampfmaschinen",
+        "Fabrik",
+        "Kohle",
+        "Eisen",
+        "Eisenbahn",
+        "Textilfabrik",
+        "Schornstein",
+        "Webstuhl",
+        "Kanal",
+        "Mechanisierung",
+        "Verstädterung",
+        "Telegraf"
+      ]
+    },
+    {
+      "id": "de-history-steam-engines",
+      "name": "Dampfmaschinen",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Kessel",
+        "Kolben",
+        "Zylinder",
+        "Ventil",
+        "Schwungrad",
+        "Druck",
+        "Dampf",
+        "Kohle",
+        "Feuerung",
+        "Kondensator",
+        "Fliehkraftregler",
+        "Lokomotive"
+      ]
+    },
+    {
+      "id": "de-history-gold-rush",
+      "name": "Goldrausch",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Goldsucher",
+        "Nugget",
+        "Waschpfanne",
+        "Waschrinne",
+        "Claim",
+        "Spitzhacke",
+        "Schaufel",
+        "Fluss",
+        "Kalifornien",
+        "Klondike",
+        "Goldgräberstadt",
+        "Goldprobe"
+      ]
+    },
+    {
+      "id": "de-history-ancient-china",
+      "name": "Altes China",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Große Mauer",
+        "Terrakottaarmee",
+        "Kaiser",
+        "Seide",
+        "Jade",
+        "Kalligrafie",
+        "Konfuzius",
+        "Dynastie",
+        "Bronze",
+        "Reis",
+        "Streitwagen",
+        "Bambus"
+      ]
+    },
+    {
+      "id": "de-history-samurai",
+      "name": "Samurai",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Katana",
+        "Rüstung",
+        "Helm",
+        "Bogen",
+        "Pferd",
+        "Daimyo",
+        "Shogun",
+        "Ronin",
+        "Wakizashi",
+        "Banner",
+        "Gefolgsmann",
+        "Burg"
+      ]
+    },
+    {
+      "id": "de-history-inca-empire",
+      "name": "Inkareich",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Cusco",
+        "Machu Picchu",
+        "Anden",
+        "Lama",
+        "Quipu",
+        "Terrassen",
+        "Kartoffeln",
+        "Mais",
+        "Straßen",
+        "Hängebrücke",
+        "Sonnentempel",
+        "Steinmauern"
+      ]
+    },
+    {
+      "id": "de-history-maya-cities",
+      "name": "Mayastädte",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Tikal",
+        "Palenque",
+        "Chichén Itzá",
+        "Pyramide",
+        "Tempel",
+        "Platz",
+        "Ballspielplatz",
+        "Stele",
+        "Glyphen",
+        "Kalkstein",
+        "Palast",
+        "Wasserreservoir"
+      ]
+    },
+    {
+      "id": "de-history-archaeology",
+      "name": "Archäologie",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Kelle",
+        "Pinsel",
+        "Keramik",
+        "Grabungsschnitt",
+        "Schichten",
+        "Fundstück",
+        "Scherbe",
+        "Skelett",
+        "Vermessung",
+        "Sieb",
+        "Datierung",
+        "Ausgrabung"
+      ]
+    },
+    {
+      "id": "de-history-historical-sources",
+      "name": "Geschichtsquellen",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Tagebuch",
+        "Brief",
+        "Chronik",
+        "Münze",
+        "Inschrift",
+        "Karte",
+        "Volkszählung",
+        "Fotografie",
+        "Zeitung",
+        "Zeitzeugenbericht",
+        "Archiv",
+        "Vertrag"
+      ]
+    },
+    {
+      "id": "de-history-mali-empire",
+      "name": "Malireich",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Mansa Musa",
+        "Timbuktu",
+        "Gold",
+        "Salz",
+        "Sahara",
+        "Karawane",
+        "Niger",
+        "Griots",
+        "Pilgerfahrt",
+        "Handel",
+        "Moscheen",
+        "Handschriften"
+      ]
+    },
+    {
+      "id": "de-history-pacific-voyagers",
+      "name": "Polynesien",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Kanu",
+        "Ausleger",
+        "Sterne",
+        "Dünung",
+        "Inseln",
+        "Segel",
+        "Paddel",
+        "Navigator",
+        "Riff",
+        "Ozean",
+        "Strömungen",
+        "Landgang"
+      ]
+    },
+    {
+      "id": "de-history-stone-age",
+      "name": "Steinzeit",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Feuerstein",
+        "Speer",
+        "Höhle",
+        "Feuer",
+        "Fell",
+        "Mammut",
+        "Schaber",
+        "Axt",
+        "Jäger",
+        "Sammler",
+        "Handabdruck",
+        "Unterschlupf"
+      ]
+    },
+    {
+      "id": "de-history-bronze-age",
+      "name": "Bronzezeit",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Zinn",
+        "Kupfer",
+        "Legierung",
+        "Guss",
+        "Schwert",
+        "Streitwagen",
+        "Handel",
+        "Siedlung",
+        "Grabhügel",
+        "Sichel",
+        "Schild",
+        "Gussform"
+      ]
+    }
+  ],
+  "pictures": {
+    "Kamel": "🐪",
+    "Schild": "🛡️",
+    "Axt": "🪓",
+    "Pferd": "🐎",
+    "Bogen": "🏹",
+    "Krone": "👑",
+    "Glocke": "🔔",
+    "Anker": "⚓",
+    "Kompass": "🧭",
+    "Lama": "🦙",
+    "Segel": "⛵",
+    "Feuer": "🔥",
+    "Eule": "🦉",
+    "Adler": "🦅",
+    "Löwe": "🦁",
+    "Münze": "🪙"
+  }
+}

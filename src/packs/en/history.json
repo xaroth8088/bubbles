@@ -1,0 +1,825 @@
+{
+  "id": "history",
+  "language": "en",
+  "name": "History",
+  "themes": [
+    {
+      "id": "en-history-ancient-worlds",
+      "name": "Ancient worlds",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Ancient Egypt",
+        "Ancient Greece",
+        "Ancient Rome",
+        "Mesopotamia",
+        "Persia",
+        "Phoenicia",
+        "Carthage",
+        "Indus Valley",
+        "Han China",
+        "Nubia",
+        "Minoans",
+        "Etruscans"
+      ]
+    },
+    {
+      "id": "en-history-ancient-egypt",
+      "name": "Ancient Egypt",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Pyramids",
+        "Pharaoh",
+        "Nile",
+        "Sphinx",
+        "Hieroglyphs",
+        "Papyrus",
+        "Scarab",
+        "Obelisk",
+        "Mummy",
+        "Sarcophagus",
+        "Tutankhamun",
+        "Chariot"
+      ]
+    },
+    {
+      "id": "en-history-pyramids",
+      "name": "Pyramids",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Giza",
+        "Khufu",
+        "Tomb",
+        "Limestone",
+        "Granite",
+        "Blocks",
+        "Passage",
+        "Chamber",
+        "Base",
+        "Apex",
+        "Step pyramid",
+        "Casing"
+      ]
+    },
+    {
+      "id": "en-history-mummification",
+      "name": "Mummification",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Linen",
+        "Natron",
+        "Resin",
+        "Bandages",
+        "Canopic jars",
+        "Amulets",
+        "Embalming",
+        "Mask",
+        "Coffin",
+        "Afterlife",
+        "Anubis",
+        "Preservation"
+      ]
+    },
+    {
+      "id": "en-history-hieroglyphs",
+      "name": "Hieroglyphs",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Scribe",
+        "Reed",
+        "Ink",
+        "Signs",
+        "Cartouche",
+        "Rosetta Stone",
+        "Sound",
+        "Papyrus",
+        "Owl",
+        "Ankh",
+        "Temple",
+        "Inscription"
+      ]
+    },
+    {
+      "id": "en-history-ancient-greece",
+      "name": "Ancient Greece",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Athens",
+        "Sparta",
+        "Oracle",
+        "Acropolis",
+        "Hoplite",
+        "Philosophy",
+        "Theater",
+        "Amphora",
+        "Democracy",
+        "Agora",
+        "Trireme",
+        "Ancient Olympics"
+      ]
+    },
+    {
+      "id": "en-history-athens",
+      "name": "Athens",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Parthenon",
+        "Athena",
+        "Pericles",
+        "Socrates",
+        "Assembly",
+        "Citizens",
+        "Ostracism",
+        "Piraeus",
+        "Pottery",
+        "Silver",
+        "Olives",
+        "Marathon"
+      ]
+    },
+    {
+      "id": "en-history-sparta",
+      "name": "Sparta",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Leonidas",
+        "Thermopylae",
+        "Shield",
+        "Spear",
+        "Training",
+        "Barracks",
+        "Helots",
+        "Laconia",
+        "Warriors",
+        "Discipline",
+        "Phalanx",
+        "Two kings"
+      ]
+    },
+    {
+      "id": "en-history-ancient-olympics",
+      "name": "Ancient Olympics",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Olympia",
+        "Zeus",
+        "Wreath",
+        "Olive",
+        "Stadium",
+        "Wrestling",
+        "Discus",
+        "Javelin",
+        "Long jump",
+        "Footrace",
+        "Chariots",
+        "Pentathlon"
+      ]
+    },
+    {
+      "id": "en-history-ancient-rome",
+      "name": "Ancient Rome",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Roman rulers",
+        "Senate",
+        "Forum",
+        "Colosseum",
+        "Aqueduct",
+        "Toga",
+        "Gladiator",
+        "Baths",
+        "Latin",
+        "Roman legion",
+        "Mosaic",
+        "Denarius"
+      ]
+    },
+    {
+      "id": "en-history-roman-rulers",
+      "name": "Roman rulers",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Caesar",
+        "Augustus",
+        "Tiberius",
+        "Caligula",
+        "Claudius",
+        "Nero",
+        "Vespasian",
+        "Titus",
+        "Trajan",
+        "Hadrian",
+        "Marcus Aurelius",
+        "Constantine"
+      ]
+    },
+    {
+      "id": "en-history-caesar",
+      "name": "Caesar",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Rubicon",
+        "Gaul",
+        "Brutus",
+        "Pompey",
+        "Cleopatra",
+        "Dictator",
+        "Ides",
+        "Laurel",
+        "Triumph",
+        "Calendar",
+        "Consul",
+        "Senate"
+      ]
+    },
+    {
+      "id": "en-history-roman-legion",
+      "name": "Roman legion",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Centurion",
+        "Eagle",
+        "Shield",
+        "Javelin",
+        "Sword",
+        "Helmet",
+        "Sandals",
+        "Armor",
+        "Camp",
+        "Cohort",
+        "March",
+        "Standard"
+      ]
+    },
+    {
+      "id": "en-history-pompeii",
+      "name": "Pompeii",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Vesuvius",
+        "Ash",
+        "Eruption",
+        "Fresco",
+        "Mosaic",
+        "Villa",
+        "Bakery",
+        "Baths",
+        "Graffiti",
+        "Amphitheater",
+        "Pumice",
+        "Excavation"
+      ]
+    },
+    {
+      "id": "en-history-mesopotamia",
+      "name": "Mesopotamia",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Tigris",
+        "Euphrates",
+        "Cuneiform",
+        "Clay tablets",
+        "Ziggurat",
+        "Babylon",
+        "Sumer",
+        "Irrigation",
+        "Cylinder seal",
+        "City-state",
+        "Hammurabi",
+        "Ur"
+      ]
+    },
+    {
+      "id": "en-history-silk-road",
+      "name": "Silk Road",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Caravan",
+        "Camel",
+        "Silk",
+        "Spices",
+        "Oasis",
+        "Merchant",
+        "Desert",
+        "Samarkand",
+        "Jade",
+        "Porcelain",
+        "Buddhism",
+        "Caravanserai"
+      ]
+    },
+    {
+      "id": "en-history-vikings",
+      "name": "Vikings",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Longship",
+        "Runes",
+        "Shield",
+        "Axe",
+        "Fjord",
+        "Saga",
+        "Longhouse",
+        "Trade",
+        "Raid",
+        "Iceland",
+        "Greenland",
+        "Vinland"
+      ]
+    },
+    {
+      "id": "en-history-medieval-life",
+      "name": "Medieval life",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Knights",
+        "Monasteries",
+        "Heraldry",
+        "Medieval town",
+        "Peasant",
+        "Plow",
+        "Mill",
+        "Tithe",
+        "Pilgrimage",
+        "Guild",
+        "Market",
+        "Manor"
+      ]
+    },
+    {
+      "id": "en-history-knights",
+      "name": "Knights",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Armor",
+        "Helmet",
+        "Lance",
+        "Horse",
+        "Squire",
+        "Spurs",
+        "Sword",
+        "Shield",
+        "Tournament",
+        "Joust",
+        "Chivalry",
+        "Chain mail"
+      ]
+    },
+    {
+      "id": "en-history-castle-siege",
+      "name": "Castle siege",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Battering ram",
+        "Trebuchet",
+        "Catapult",
+        "Ladder",
+        "Siege tower",
+        "Wall",
+        "Moat",
+        "Gate",
+        "Archers",
+        "Blockade",
+        "Defenders",
+        "Surrender"
+      ]
+    },
+    {
+      "id": "en-history-medieval-town",
+      "name": "Medieval town",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Town wall",
+        "Gatehouse",
+        "Market square",
+        "Blacksmith",
+        "Tanner",
+        "Baker",
+        "Cobbler",
+        "Town hall",
+        "Guildhall",
+        "Watchman",
+        "Cobblestones",
+        "Cathedral"
+      ]
+    },
+    {
+      "id": "en-history-monasteries",
+      "name": "Monasteries",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Monk",
+        "Nun",
+        "Abbot",
+        "Cloister",
+        "Chapel",
+        "Bell",
+        "Prayer",
+        "Manuscript",
+        "Scriptorium",
+        "Herb garden",
+        "Dormitory",
+        "Refectory"
+      ]
+    },
+    {
+      "id": "en-history-heraldry",
+      "name": "Heraldry",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Shield",
+        "Crest",
+        "Motto",
+        "Lion",
+        "Eagle",
+        "Crown",
+        "Helmet",
+        "Banner",
+        "Unicorn",
+        "Fleur-de-lis",
+        "Cross",
+        "Griffin"
+      ]
+    },
+    {
+      "id": "en-history-renaissance-age",
+      "name": "Renaissance",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Florence",
+        "Humanism",
+        "Patron",
+        "Perspective",
+        "Fresco",
+        "Medici",
+        "Leonardo",
+        "Michelangelo",
+        "Classics",
+        "Printing press",
+        "Anatomy",
+        "Workshop"
+      ]
+    },
+    {
+      "id": "en-history-printing-press",
+      "name": "Printing press",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Gutenberg",
+        "Type",
+        "Ink",
+        "Paper",
+        "Press",
+        "Compositor",
+        "Page",
+        "Impression",
+        "Proof",
+        "Letter",
+        "Woodcut",
+        "Edition"
+      ]
+    },
+    {
+      "id": "en-history-gutenberg",
+      "name": "Gutenberg",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Mainz",
+        "Bible",
+        "Metal",
+        "Mold",
+        "Movable type",
+        "Oil-based ink",
+        "Screw press",
+        "42 lines",
+        "Workshop",
+        "Printer",
+        "Latin",
+        "Vellum"
+      ]
+    },
+    {
+      "id": "en-history-age-of-sail",
+      "name": "Age of sail",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Galleon",
+        "Frigate",
+        "Mast",
+        "Rigging",
+        "Compass",
+        "Sextant",
+        "Chart",
+        "Anchor",
+        "Cannon",
+        "Helm",
+        "Lookout",
+        "Sail"
+      ]
+    },
+    {
+      "id": "en-history-industrial-age",
+      "name": "Industrial age",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Steam engines",
+        "Factory",
+        "Coal",
+        "Iron",
+        "Railway",
+        "Textile mill",
+        "Chimney",
+        "Loom",
+        "Canal",
+        "Mechanization",
+        "Urbanization",
+        "Telegraph"
+      ]
+    },
+    {
+      "id": "en-history-steam-engines",
+      "name": "Steam engines",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Boiler",
+        "Piston",
+        "Cylinder",
+        "Valve",
+        "Flywheel",
+        "Pressure",
+        "Steam",
+        "Coal",
+        "Furnace",
+        "Condenser",
+        "Governor",
+        "Locomotive"
+      ]
+    },
+    {
+      "id": "en-history-gold-rush",
+      "name": "Gold rush",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Prospector",
+        "Nugget",
+        "Pan",
+        "Sluice",
+        "Claim",
+        "Pickaxe",
+        "Shovel",
+        "River",
+        "California",
+        "Klondike",
+        "Boomtown",
+        "Assay"
+      ]
+    },
+    {
+      "id": "en-history-ancient-china",
+      "name": "Ancient China",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Great Wall",
+        "Terracotta Army",
+        "Emperor",
+        "Silk",
+        "Jade",
+        "Calligraphy",
+        "Confucius",
+        "Dynasty",
+        "Bronze",
+        "Rice",
+        "Chariot",
+        "Bamboo"
+      ]
+    },
+    {
+      "id": "en-history-samurai",
+      "name": "Samurai",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Katana",
+        "Armor",
+        "Helmet",
+        "Bow",
+        "Horse",
+        "Daimyo",
+        "Shogun",
+        "Ronin",
+        "Wakizashi",
+        "Banner",
+        "Retainer",
+        "Castle"
+      ]
+    },
+    {
+      "id": "en-history-inca-empire",
+      "name": "Inca Empire",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Cusco",
+        "Machu Picchu",
+        "Andes",
+        "Llama",
+        "Quipu",
+        "Terraces",
+        "Potatoes",
+        "Maize",
+        "Roads",
+        "Rope bridge",
+        "Sun temple",
+        "Stonework"
+      ]
+    },
+    {
+      "id": "en-history-maya-cities",
+      "name": "Maya cities",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Tikal",
+        "Palenque",
+        "Chichen Itza",
+        "Pyramid",
+        "Temple",
+        "Plaza",
+        "Ball court",
+        "Stela",
+        "Glyphs",
+        "Limestone",
+        "Palace",
+        "Reservoir"
+      ]
+    },
+    {
+      "id": "en-history-archaeology",
+      "name": "Archaeology",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Trowel",
+        "Brush",
+        "Pottery",
+        "Trench",
+        "Stratigraphy",
+        "Artifact",
+        "Shard",
+        "Skeleton",
+        "Survey",
+        "Sieve",
+        "Dating",
+        "Excavation"
+      ]
+    },
+    {
+      "id": "en-history-historical-sources",
+      "name": "Historical sources",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Diary",
+        "Letter",
+        "Chronicle",
+        "Coin",
+        "Inscription",
+        "Map",
+        "Census",
+        "Photograph",
+        "Newspaper",
+        "Oral history",
+        "Archive",
+        "Treaty"
+      ]
+    },
+    {
+      "id": "en-history-mali-empire",
+      "name": "Mali Empire",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Mansa Musa",
+        "Timbuktu",
+        "Gold",
+        "Salt",
+        "Sahara",
+        "Caravan",
+        "Niger",
+        "Griots",
+        "Pilgrimage",
+        "Trade",
+        "Mosques",
+        "Manuscripts"
+      ]
+    },
+    {
+      "id": "en-history-pacific-voyagers",
+      "name": "Polynesia",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Canoe",
+        "Outrigger",
+        "Stars",
+        "Swell",
+        "Islands",
+        "Sail",
+        "Paddle",
+        "Navigator",
+        "Reef",
+        "Ocean",
+        "Currents",
+        "Landfall"
+      ]
+    },
+    {
+      "id": "en-history-stone-age",
+      "name": "Stone Age",
+      "domain": "history",
+      "difficulty": 1,
+      "words": [
+        "Flint",
+        "Spear",
+        "Cave",
+        "Fire",
+        "Hide",
+        "Mammoth",
+        "Scraper",
+        "Axe",
+        "Hunter",
+        "Gatherer",
+        "Handprint",
+        "Shelter"
+      ]
+    },
+    {
+      "id": "en-history-bronze-age",
+      "name": "Bronze Age",
+      "domain": "history",
+      "difficulty": 2,
+      "words": [
+        "Tin",
+        "Copper",
+        "Alloy",
+        "Casting",
+        "Sword",
+        "Chariot",
+        "Trade",
+        "Settlement",
+        "Burial mound",
+        "Sickle",
+        "Shield",
+        "Mold"
+      ]
+    }
+  ],
+  "pictures": {
+    "Camel": "🐪",
+    "Shield": "🛡️",
+    "Axe": "🪓",
+    "Horse": "🐎",
+    "Bow": "🏹",
+    "Crown": "👑",
+    "Bell": "🔔",
+    "Anchor": "⚓",
+    "Compass": "🧭",
+    "Llama": "🦙",
+    "Sail": "⛵",
+    "Fire": "🔥",
+    "Owl": "🦉",
+    "Eagle": "🦅",
+    "Lion": "🦁",
+    "Coin": "🪙"
+  }
+}

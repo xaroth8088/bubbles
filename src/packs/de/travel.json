@@ -5,7 +5,7 @@
   "themes": [
     {
       "id": "de-travel-reisegepack",
-      "name": "Reisegepäck",
+      "name": "Gepäck",
       "domain": "travel",
       "difficulty": 1,
       "words": [
@@ -17,6 +17,9 @@
         "Kofferschloss",
         "Gepäckanhänger",
         "Packliste"
+      ],
+      "legacyNames": [
+        "Reisegepäck"
       ]
     },
     {
@@ -37,7 +40,7 @@
     },
     {
       "id": "de-travel-am-flughafen",
-      "name": "Am Flughafen",
+      "name": "Flughafen",
       "domain": "travel",
       "difficulty": 1,
       "words": [
@@ -49,11 +52,14 @@
         "Gepäckband",
         "Abflug",
         "Ankunft"
+      ],
+      "legacyNames": [
+        "Am Flughafen"
       ]
     },
     {
       "id": "de-travel-im-flugzeug",
-      "name": "Im Flugzeug",
+      "name": "Flugzeug",
       "domain": "travel",
       "difficulty": 1,
       "words": [
@@ -65,11 +71,14 @@
         "Tragfläche",
         "Cockpit",
         "Handgepäckfach"
+      ],
+      "legacyNames": [
+        "Im Flugzeug"
       ]
     },
     {
       "id": "de-travel-am-bahnhof",
-      "name": "Am Bahnhof",
+      "name": "Bahnhof",
       "domain": "travel",
       "difficulty": 1,
       "words": [
@@ -81,11 +90,14 @@
         "Anzeigetafel",
         "Unterführung",
         "Wartehalle"
+      ],
+      "legacyNames": [
+        "Am Bahnhof"
       ]
     },
     {
       "id": "de-travel-zugreise",
-      "name": "Zugreise",
+      "name": "Zug",
       "domain": "travel",
       "difficulty": 1,
       "words": [
@@ -97,6 +109,9 @@
         "Schaffner",
         "Umstieg",
         "Verspätung"
+      ],
+      "legacyNames": [
+        "Zugreise"
       ]
     },
     {
@@ -117,7 +132,7 @@
     },
     {
       "id": "de-travel-im-hotel",
-      "name": "Im Hotel",
+      "name": "Hotel",
       "domain": "travel",
       "difficulty": 1,
       "words": [
@@ -129,6 +144,9 @@
         "Einzelzimmer",
         "Doppelzimmer",
         "Check-out"
+      ],
+      "legacyNames": [
+        "Im Hotel"
       ]
     },
     {
@@ -149,7 +167,7 @@
     },
     {
       "id": "de-travel-strandurlaub",
-      "name": "Strandurlaub",
+      "name": "Strand",
       "domain": "travel",
       "difficulty": 1,
       "words": [
@@ -161,6 +179,9 @@
         "Badehose",
         "Muschel",
         "Strandtuch"
+      ],
+      "legacyNames": [
+        "Strandurlaub"
       ]
     },
     {
@@ -181,7 +202,7 @@
     },
     {
       "id": "de-travel-wintersportreise",
-      "name": "Wintersportreise",
+      "name": "Skiurlaub",
       "domain": "travel",
       "difficulty": 1,
       "words": [
@@ -193,6 +214,9 @@
         "Skibrille",
         "Skihütte",
         "Schnee"
+      ],
+      "legacyNames": [
+        "Wintersportreise"
       ]
     },
     {
@@ -309,7 +333,7 @@
     },
     {
       "id": "de-travel-urlaubsinseln",
-      "name": "Urlaubsinseln",
+      "name": "Inseln",
       "domain": "travel",
       "difficulty": 1,
       "words": [
@@ -321,6 +345,9 @@
         "Sardinien",
         "Korsika",
         "Zypern"
+      ],
+      "legacyNames": [
+        "Urlaubsinseln"
       ]
     },
     {
@@ -491,7 +518,7 @@
       "words": [
         "Camping",
         "Städtereise",
-        "Strandurlaub",
+        "Strand",
         "Kreuzfahrt",
         "Bergwanderung",
         "Radtour",
@@ -540,6 +567,6 @@
     "Ski": "🎿",
     "Fahrrad": "🚲",
     "Kompass": "🧭",
-    "Strandurlaub": "🏖️"
+    "Strand": "🏖️"
   }
 }

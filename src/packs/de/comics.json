@@ -1,0 +1,784 @@
+{
+  "id": "comics",
+  "language": "de",
+  "name": "Comics & Manga",
+  "themes": [
+    {
+      "id": "de-comics-tintin",
+      "name": "Tim und Struppi",
+      "domain": "comics",
+      "difficulty": 1,
+      "words": [
+        "Struppi",
+        "Kapitän Haddock",
+        "Professor Bienlein",
+        "Schulze und Schultze",
+        "Bianca Castafiore",
+        "Schloss Mühlenhof",
+        "Reporter",
+        "Haartolle",
+        "Rakete",
+        "Hergé"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-asterix",
+      "name": "Asterix",
+      "domain": "comics",
+      "difficulty": 1,
+      "words": [
+        "Obelix",
+        "Miraculix",
+        "Idefix",
+        "Troubadix",
+        "Majestix",
+        "Zaubertrank",
+        "Hinkelstein",
+        "Römer",
+        "Gallien",
+        "Wildschwein"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-peanuts",
+      "name": "Peanuts",
+      "domain": "comics",
+      "difficulty": 1,
+      "words": [
+        "Snoopy",
+        "Charlie Brown",
+        "Lucy",
+        "Linus",
+        "Woodstock",
+        "Sally",
+        "Peppermint Patty",
+        "Marcie",
+        "Baseball",
+        "Schmusedecke"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-garfield",
+      "name": "Garfield",
+      "domain": "comics",
+      "difficulty": 1,
+      "words": [
+        "Jon Arbuckle",
+        "Odie",
+        "Nermal",
+        "Pooky",
+        "Arlene",
+        "Lasagne",
+        "Montag",
+        "Nickerchen",
+        "Katze",
+        "Jim Davis"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-calvin-hobbes",
+      "name": "Calvin und Hobbes",
+      "domain": "comics",
+      "difficulty": 2,
+      "words": [
+        "Calvin",
+        "Hobbes",
+        "Calvin-Ball",
+        "Raumfahrer Spiff",
+        "Schneemänner",
+        "Schlitten",
+        "Tiger",
+        "Fantasie",
+        "Hausaufgaben",
+        "Bill Watterson"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-smurfs",
+      "name": "Die Schlümpfe",
+      "domain": "comics",
+      "difficulty": 1,
+      "words": [
+        "Papa Schlumpf",
+        "Schlumpfine",
+        "Schlaubi",
+        "Gargamel",
+        "Azrael",
+        "Pilzhäuser",
+        "Blau",
+        "Weiße Mützen",
+        "Schlumpfdorf",
+        "Peyo"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-lucky-luke",
+      "name": "Lucky Luke",
+      "domain": "comics",
+      "difficulty": 2,
+      "words": [
+        "Jolly Jumper",
+        "Rantanplan",
+        "Lasso",
+        "Joe Dalton",
+        "Averell Dalton",
+        "Cowboy",
+        "Saloon",
+        "Revolver",
+        "Morris",
+        "Wilder Westen"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-spirou",
+      "name": "Spirou und Fantasio",
+      "domain": "comics",
+      "difficulty": 3,
+      "words": [
+        "Spirou",
+        "Fantasio",
+        "Pips",
+        "Marsupilami",
+        "Graf von Rummelsdorf",
+        "Zyklotrop",
+        "Steffani",
+        "Hotelpage",
+        "Erfindungen",
+        "Franquin"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-donald-duck",
+      "name": "Donald Duck",
+      "domain": "comics",
+      "difficulty": 1,
+      "words": [
+        "Daisy Duck",
+        "Tick",
+        "Trick",
+        "Track",
+        "Dagobert Duck",
+        "Daniel Düsentrieb",
+        "Gustav Gans",
+        "Entenhausen",
+        "Matrosenanzug",
+        "Carl Barks",
+        "Ente"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-mickey-mouse",
+      "name": "Micky Maus",
+      "domain": "comics",
+      "difficulty": 1,
+      "words": [
+        "Minni Maus",
+        "Goofy",
+        "Pluto",
+        "Kater Karlo",
+        "Rudi Ross",
+        "Klarabella Kuh",
+        "Mack und Muck",
+        "Weiße Handschuhe",
+        "Runde Ohren",
+        "Maus"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-popeye",
+      "name": "Popeye",
+      "domain": "comics",
+      "difficulty": 2,
+      "words": [
+        "Olivia",
+        "Bluto",
+        "Wimpy",
+        "Spinat",
+        "Seemann",
+        "Pfeife",
+        "Anker",
+        "Unterarme",
+        "Tätowierung",
+        "E. C. Segar"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-x-men",
+      "name": "X-Men",
+      "domain": "comics",
+      "difficulty": 1,
+      "words": [
+        "Wolverine",
+        "Cyclops",
+        "Jean Grey",
+        "Storm",
+        "Professor X",
+        "Magneto",
+        "Beast",
+        "Rogue",
+        "Mutanten",
+        "Cerebro"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-fantastic-four",
+      "name": "Fantastic Four",
+      "domain": "comics",
+      "difficulty": 2,
+      "words": [
+        "Mister Fantastic",
+        "Unsichtbare Frau",
+        "Menschliche Fackel",
+        "Das Ding",
+        "Doctor Doom",
+        "Silver Surfer",
+        "Galactus",
+        "Baxter Building",
+        "Kosmische Strahlung",
+        "Franklin Richards"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-justice-league",
+      "name": "Justice League",
+      "domain": "comics",
+      "difficulty": 2,
+      "words": [
+        "Superman",
+        "Batman",
+        "Wonder Woman",
+        "Flash",
+        "Green Lantern",
+        "Aquaman",
+        "Martian Manhunter",
+        "Cyborg",
+        "Wachturm",
+        "Darkseid"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-watchmen",
+      "name": "Watchmen",
+      "domain": "comics",
+      "difficulty": 3,
+      "words": [
+        "Rorschach",
+        "Dr. Manhattan",
+        "Nite Owl",
+        "Silk Spectre",
+        "Ozymandias",
+        "Comedian",
+        "Smiley",
+        "Weltuntergangsuhr",
+        "Alan Moore",
+        "Dave Gibbons"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-one-piece",
+      "name": "One Piece",
+      "domain": "comics",
+      "difficulty": 1,
+      "words": [
+        "Ruffy",
+        "Zorro",
+        "Nami",
+        "Lysop",
+        "Sanji",
+        "Chopper",
+        "Strohhutbande",
+        "Teufelsfrucht",
+        "Grandline",
+        "Piratenkönig"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-naruto",
+      "name": "Naruto",
+      "domain": "comics",
+      "difficulty": 1,
+      "words": [
+        "Sasuke",
+        "Sakura",
+        "Kakashi",
+        "Hinata",
+        "Iruka",
+        "Hokage",
+        "Chakra",
+        "Rasengan",
+        "Konoha",
+        "Kurama"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-sailor-moon",
+      "name": "Sailor Moon",
+      "domain": "comics",
+      "difficulty": 1,
+      "words": [
+        "Usagi",
+        "Luna",
+        "Artemis",
+        "Tuxedo Mask",
+        "Sailor Merkur",
+        "Sailor Mars",
+        "Sailor Jupiter",
+        "Sailor Venus",
+        "Chibiusa",
+        "Silberkristall"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-detective-conan",
+      "name": "Detektiv Conan",
+      "domain": "comics",
+      "difficulty": 2,
+      "words": [
+        "Conan Edogawa",
+        "Brille",
+        "Ran Mori",
+        "Kogoro Mori",
+        "Professor Agasa",
+        "Schwarze Organisation",
+        "Fliege",
+        "Stimmenverzerrer",
+        "Schrumpfen",
+        "Ermittlungen"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-death-note",
+      "name": "Death Note",
+      "domain": "comics",
+      "difficulty": 2,
+      "words": [
+        "Light Yagami",
+        "L",
+        "Ryuk",
+        "Misa Amane",
+        "Rem",
+        "Near",
+        "Mello",
+        "Ermittlerteam",
+        "Notizbuch",
+        "Todesgötter",
+        "Apfel"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-demon-slayer",
+      "name": "Demon Slayer",
+      "domain": "comics",
+      "difficulty": 2,
+      "words": [
+        "Tanjiro Kamado",
+        "Nezuko Kamado",
+        "Zenitsu",
+        "Inosuke",
+        "Muzan",
+        "Hashira",
+        "Dämonen",
+        "Atemtechnik",
+        "Nichirin-Klinge",
+        "Bambus"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-my-hero-academia",
+      "name": "My Hero Academia",
+      "domain": "comics",
+      "difficulty": 2,
+      "words": [
+        "Deku",
+        "All Might",
+        "Bakugo",
+        "Todoroki",
+        "Uraraka",
+        "Yuei",
+        "Spezialitäten",
+        "One For All",
+        "Helden",
+        "Schurken"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-attack-on-titan",
+      "name": "Attack on Titan",
+      "domain": "comics",
+      "difficulty": 2,
+      "words": [
+        "Eren",
+        "Mikasa",
+        "Armin",
+        "Levi",
+        "Erwin",
+        "Titanen",
+        "Mauern",
+        "Aufklärungstrupp",
+        "Shiganshina",
+        "Kolossaler Titan"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-fullmetal-alchemist",
+      "name": "Fullmetal Alchemist",
+      "domain": "comics",
+      "difficulty": 2,
+      "words": [
+        "Edward Elric",
+        "Alphonse Elric",
+        "Winry",
+        "Roy Mustang",
+        "Riza Hawkeye",
+        "Alchemie",
+        "Homunkuli",
+        "Stein der Weisen",
+        "Transmutation",
+        "Automail"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-spy-family",
+      "name": "Spy x Family",
+      "domain": "comics",
+      "difficulty": 2,
+      "words": [
+        "Loid",
+        "Yor",
+        "Anya",
+        "Bond",
+        "Franky",
+        "Eden",
+        "Telepathie",
+        "Spion",
+        "Attentäterin",
+        "Erdnüsse"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-haikyu",
+      "name": "Haikyu!!",
+      "domain": "comics",
+      "difficulty": 2,
+      "words": [
+        "Hinata",
+        "Kageyama",
+        "Tsukishima",
+        "Nishinoya",
+        "Daichi",
+        "Sugawara",
+        "Karasuno",
+        "Volleyball",
+        "Libero",
+        "Netz"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-fruits-basket",
+      "name": "Fruits Basket",
+      "domain": "comics",
+      "difficulty": 2,
+      "words": [
+        "Toru Honda",
+        "Yuki Soma",
+        "Kyo Soma",
+        "Shigure Soma",
+        "Akito Soma",
+        "Momiji Soma",
+        "Tierkreis",
+        "Fluch",
+        "Verwandlung",
+        "Umarmung"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-cardcaptor-sakura",
+      "name": "Card Captor Sakura",
+      "domain": "comics",
+      "difficulty": 2,
+      "words": [
+        "Sakura Kinomoto",
+        "Tomoyo",
+        "Shaolan",
+        "Kerberos",
+        "Yue",
+        "Clow Reed",
+        "Clow Cards",
+        "Magie",
+        "Zauberstab",
+        "Versiegelung"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-bleach",
+      "name": "Bleach",
+      "domain": "comics",
+      "difficulty": 2,
+      "words": [
+        "Ichigo Kurosaki",
+        "Rukia",
+        "Orihime",
+        "Uryu",
+        "Chad",
+        "Renji",
+        "Soul Society",
+        "Bankai",
+        "Hollows",
+        "Zanpakuto"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-yu-gi-oh",
+      "name": "Yu-Gi-Oh!",
+      "domain": "comics",
+      "difficulty": 2,
+      "words": [
+        "Yugi Muto",
+        "Seto Kaiba",
+        "Mokuba Kaiba",
+        "Bakura",
+        "Pegasus",
+        "Millenniumspuzzle",
+        "Duel Monsters",
+        "Exodia",
+        "Dunkler Magier",
+        "Blauäugiger weißer Drache"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-doraemon",
+      "name": "Doraemon",
+      "domain": "comics",
+      "difficulty": 2,
+      "words": [
+        "Nobita",
+        "Shizuka",
+        "Suneo",
+        "Gian",
+        "Dorami",
+        "Roboterkatze",
+        "Erfindungen",
+        "Zeitmaschine",
+        "Bauchtasche",
+        "Dorayaki"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-inuyasha",
+      "name": "Inuyasha",
+      "domain": "comics",
+      "difficulty": 2,
+      "words": [
+        "Kagome",
+        "Miroku",
+        "Sango",
+        "Shippo",
+        "Kikyo",
+        "Sesshomaru",
+        "Naraku",
+        "Tessaiga",
+        "Juwel der vier Seelen",
+        "Dämonen"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-astro-boy",
+      "name": "Astro Boy",
+      "domain": "comics",
+      "difficulty": 3,
+      "words": [
+        "Atom",
+        "Dr. Tenma",
+        "Dr. Ochanomizu",
+        "Uran",
+        "Tobio",
+        "Roboter",
+        "Superkraft",
+        "Raketenstiefel",
+        "Osamu Tezuka",
+        "Zukunft"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-akira",
+      "name": "Akira",
+      "domain": "comics",
+      "difficulty": 3,
+      "words": [
+        "Kaneda",
+        "Tetsuo",
+        "Kei",
+        "Neo-Tokyo",
+        "Motorrad",
+        "Telekinese",
+        "Oberst",
+        "Esper",
+        "Katsuhiro Otomo",
+        "Zerstörung"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-comics-comic-strips",
+      "name": "Comicstrips",
+      "domain": "comics",
+      "difficulty": 2,
+      "words": [
+        "Peanuts",
+        "Garfield",
+        "Calvin und Hobbes",
+        "Popeye",
+        "Blondie",
+        "Beetle Bailey",
+        "Hägar der Schreckliche",
+        "Mafalda",
+        "Doonesbury",
+        "Andy Capp"
+      ]
+    },
+    {
+      "id": "de-comics-franco-belgian",
+      "name": "Franko-belgische Comics",
+      "domain": "comics",
+      "difficulty": 2,
+      "words": [
+        "Tim und Struppi",
+        "Asterix",
+        "Die Schlümpfe",
+        "Lucky Luke",
+        "Spirou und Fantasio",
+        "Gaston",
+        "Blake und Mortimer",
+        "Die Blauen Boys",
+        "Thorgal",
+        "Valerian und Veronique"
+      ]
+    },
+    {
+      "id": "de-comics-manga",
+      "name": "Manga",
+      "domain": "comics",
+      "difficulty": 1,
+      "words": [
+        "One Piece",
+        "Naruto",
+        "Sailor Moon",
+        "Death Note",
+        "Demon Slayer",
+        "My Hero Academia",
+        "Fruits Basket",
+        "Fullmetal Alchemist",
+        "Spy x Family",
+        "Haikyu!!",
+        "Bleach",
+        "Doraemon"
+      ]
+    },
+    {
+      "id": "de-comics-comic-formats",
+      "name": "Comicformate",
+      "domain": "comics",
+      "difficulty": 2,
+      "words": [
+        "Comicstrips",
+        "Graphic Novels",
+        "Webcomics",
+        "Comichefte",
+        "Comicalben",
+        "Sammelbände",
+        "Einzelbände",
+        "Miniserien"
+      ]
+    },
+    {
+      "id": "de-comics-comic-making",
+      "name": "Comics zeichnen",
+      "domain": "comics",
+      "difficulty": 1,
+      "words": [
+        "Bleistift",
+        "Stift",
+        "Pinsel",
+        "Lineal",
+        "Radiergummi",
+        "Tusche",
+        "Panel",
+        "Lettering",
+        "Skript",
+        "Storyboard",
+        "Skizze",
+        "Sprechblase"
+      ]
+    },
+    {
+      "id": "de-comics-comic-sounds",
+      "name": "Comic-Laute",
+      "domain": "comics",
+      "difficulty": 1,
+      "words": [
+        "Peng",
+        "Bumm",
+        "Krach",
+        "Zack",
+        "Wusch",
+        "Platsch",
+        "Klirr",
+        "Rums",
+        "Knall",
+        "Klick"
+      ]
+    }
+  ],
+  "pictures": {
+    "Rakete": "🚀",
+    "Wildschwein": "🐗",
+    "Baseball": "⚾",
+    "Katze": "🐈",
+    "Schlitten": "🛷",
+    "Tiger": "🐅",
+    "Ente": "🦆",
+    "Anker": "⚓",
+    "Apfel": "🍎",
+    "Volleyball": "🏐",
+    "Roboter": "🤖",
+    "Motorrad": "🏍️",
+    "Bleistift": "✏️",
+    "Stift": "🖊️",
+    "Pinsel": "🖌️",
+    "Lineal": "📏",
+    "Sprechblase": "💬"
+  }
+}

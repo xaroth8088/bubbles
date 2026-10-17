@@ -33,7 +33,7 @@ export function createPuzzle({mode = 'journey', level = 1, date = localDate(), r
   language=catalog.language;packIds=[...catalog.packIds].sort();
   const catalogKey=`${language}-${hash(`${CATALOG_VERSION}:${packIds.join(',')}`).toString(36)}`;
   if (mode === 'daily') difficulty = 'balanced';
-  const baseSeed = mode === 'daily' ? `daily-v9-${date}` : mode === 'lab' ? `lab-v9-${special}-${round}` : `${mode}-v9-${level}-${round}-${difficulty}`;
+  const baseSeed = mode === 'daily' ? `daily-v10-${date}` : mode === 'lab' ? `lab-v10-${special}-${round}` : `${mode}-v10-${level}-${round}-${difficulty}`;
   const seed=`${baseSeed}-${catalogKey}`;
   const rng = random(seed);
   let count = mode === 'lab' ? 4 : difficulty === 'tricky' ? 17 : difficulty === 'gentle' || (mode === 'journey' && level <= 4) ? 10 : 14;
@@ -41,15 +41,30 @@ export function createPuzzle({mode = 'journey', level = 1, date = localDate(), r
   // A selected pack may contain mostly advanced themes. Widen difficulty
   // within that pack rather than silently adding unselected vocabulary.
   while(maxDifficulty<3&&themes.filter(t=>t.difficulty<=maxDifficulty).length<count)maxDifficulty++;
-  let specials = special ? canonicalSpecials([special]) : mode === 'journey' && level === 1 ? [] : mode === 'journey' && level <= INTRO_LEVELS ? [SPECIALS.find(s => s.level === level)?.id].filter(Boolean) : shuffle(SPECIALS.map(s => s.id), rng).slice(0, level > 35 || difficulty === 'tricky' ? 3 : 2);
-  // Daily boards are deterministic within a language and selected catalogue.
-  if (mode === 'daily') specials = [shuffle(['picture','frozen','split','cryptic','keylock','screw','backward','pinlock'], rng)[0]];
+  const introduction=mode==='journey'&&level<=INTRO_LEVELS;
+  // Theme returns are a regular part of play: four boards in each five,
+  // independent of the selected language/packs. Keep focused tutorials/labs
+  // and explicit mechanic requests intact, and retain the usual twist budget.
+  const day=Math.floor(Date.parse(`${date}T00:00:00Z`)/86400000);
+  const sequence=mode==='daily'?(Number.isFinite(day)?day:hash(date)):mode==='journey'?level-INTRO_LEVELS:round;
+  const withTheme=!special&&mode!=='lab'&&!introduction&&sequence%5!==0;
+  const twists=shuffle(SPECIALS.filter(s=>s.id!=='nested').map(s=>s.id),rng);
+  let specials=special?canonicalSpecials([special]):introduction?[SPECIALS.find(s=>s.level===level)?.id].filter(Boolean)
+    :[...(withTheme?['nested']:[]),...twists.slice(0,(level>35||difficulty==='tricky'?3:2)-Number(withTheme))];
+  // Daily boards remain deterministic; their one obstacle accompanies the
+  // returning-category chain on four out of every five calendar days.
+  if(mode==='daily'&&!special)specials=[...(withTheme?['nested']:[]),shuffle(['picture','frozen','split','cryptic','keylock','screw','backward','pinlock'],rng)[0]];
   const splitCount=specials.includes('split')?4+hash(`${seed}-split-count`)%5:0;
   count=Math.min(count,Math.floor((70-specials.reduce((n,s)=>n+(s==='split'?splitCount:['linked','bonus'].includes(s)?1:0),0))/4));
   let planned=[];
   if(specials.includes('nested')){
     const maxDepth=mode==='lab'?2:difficulty==='tricky'?3:difficulty==='gentle'?1:2;
-    planned=assembleThemeChain(themes,{rng,maxDifficulty,maxDepth,minDepth:mode==='lab'?2:rng()<.65?Math.min(2,maxDepth):1});
+    const minDepth=mode==='lab'?2:rng()<.65?Math.min(2,maxDepth):1;
+    planned=assembleThemeChain(themes,{rng,maxDifficulty,maxDepth,minDepth});
+    // Some standalone packs have their first valid connection above the
+    // opening difficulty. Widen only the chain search within those packs;
+    // never silently drop a scheduled Theme board or add another genre.
+    for(let limit=maxDifficulty+1;!planned.length&&limit<=3;limit++)planned=assembleThemeChain(themes,{rng,maxDifficulty:limit,maxDepth,minDepth});
     if(planned.length){
       count=Math.min(count,Math.floor((70-(planned.length-1)*3-specials.reduce((n,s)=>n+(s==='split'?splitCount:['linked','bonus'].includes(s)?1:0),0))/4));
     }else specials=specials.filter(s=>s!=='nested');
@@ -424,7 +439,10 @@ function upgradeCountdowns(state){
 
 function decoyPool(puzzle){
   const themes=getCatalog(puzzle).themes;
-  const excluded=new Set(puzzle.groups.flatMap(g=>[g.name,...g.words,...(themes.find(t=>t.name===g.name)?.words||[])]).map(w=>w.toLowerCase()));
+  // Old boards keep their displayed labels. Resolve renamed categories only
+  // for membership checks so a refreshed decoy still fits none of their pools.
+  const original=g=>themes.find(t=>t.name===g.name)||themes.find(t=>t.legacyNames?.includes(g.name));
+  const excluded=new Set(puzzle.groups.flatMap(g=>[g.name,...g.words,...(original(g)?.words||[])]).map(w=>w.toLowerCase()));
   return [...new Set(themes.flatMap(t=>t.words))].filter(w=>!excluded.has(w.toLowerCase()));
 }
 function makeDecoy(puzzle,link){

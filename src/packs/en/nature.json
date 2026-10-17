@@ -304,7 +304,7 @@
     },
     {
       "id": "theme-016",
-      "name": "Evergreen trees",
+      "name": "Evergreens",
       "domain": "nature",
       "difficulty": 2,
       "words": [
@@ -316,6 +316,9 @@
         "Sequoia",
         "Cypress",
         "Redwood"
+      ],
+      "legacyNames": [
+        "Evergreen trees"
       ]
     },
     {
@@ -400,7 +403,7 @@
     },
     {
       "id": "theme-022",
-      "name": "Named winds",
+      "name": "Winds",
       "domain": "nature",
       "difficulty": 3,
       "words": [
@@ -412,6 +415,9 @@
         "Trade",
         "Harmattan",
         "Zonda"
+      ],
+      "legacyNames": [
+        "Named winds"
       ]
     },
     {
@@ -468,7 +474,7 @@
     },
     {
       "id": "theme-050",
-      "name": "Household pets",
+      "name": "Pets",
       "domain": "animals",
       "difficulty": 1,
       "words": [
@@ -488,6 +494,9 @@
         "Mouse",
         "Parrot",
         "Poodle"
+      ],
+      "legacyNames": [
+        "Household pets"
       ]
     },
     {

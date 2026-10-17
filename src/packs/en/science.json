@@ -217,7 +217,7 @@
     },
     {
       "id": "theme-086",
-      "name": "Satellite purposes",
+      "name": "Satellites",
       "domain": "space",
       "difficulty": 2,
       "words": [
@@ -229,6 +229,9 @@
         "Astronomy",
         "Mapping",
         "Research"
+      ],
+      "legacyNames": [
+        "Satellite purposes"
       ]
     },
     {
@@ -269,7 +272,7 @@
     },
     {
       "id": "theme-089",
-      "name": "Chemical elements",
+      "name": "Elements",
       "domain": "science",
       "difficulty": 2,
       "words": [
@@ -281,6 +284,9 @@
         "Neon",
         "Sodium",
         "Iron"
+      ],
+      "legacyNames": [
+        "Chemical elements"
       ]
     },
     {
@@ -297,7 +303,7 @@
     },
     {
       "id": "theme-091",
-      "name": "Human bones",
+      "name": "Bones",
       "domain": "science",
       "difficulty": 2,
       "words": [
@@ -309,11 +315,14 @@
         "Ulna",
         "Patella",
         "Scapula"
+      ],
+      "legacyNames": [
+        "Human bones"
       ]
     },
     {
       "id": "theme-092",
-      "name": "Body organs",
+      "name": "Organs",
       "domain": "science",
       "difficulty": 1,
       "words": [
@@ -325,6 +334,9 @@
         "Stomach",
         "Pancreas",
         "Spleen"
+      ],
+      "legacyNames": [
+        "Body organs"
       ]
     },
     {
@@ -375,7 +387,7 @@
     },
     {
       "id": "theme-096",
-      "name": "Physics concepts",
+      "name": "Physics",
       "domain": "science",
       "difficulty": 2,
       "words": [
@@ -387,6 +399,9 @@
         "Acceleration",
         "Energy",
         "Force"
+      ],
+      "legacyNames": [
+        "Physics concepts"
       ]
     },
     {
@@ -421,7 +436,7 @@
     },
     {
       "id": "theme-099",
-      "name": "Biology fields",
+      "name": "Biology",
       "domain": "science",
       "difficulty": 2,
       "words": [
@@ -433,6 +448,9 @@
         "Anatomy",
         "Entomology",
         "Mycology"
+      ],
+      "legacyNames": [
+        "Biology fields"
       ]
     },
     {
@@ -485,7 +503,7 @@
     },
     {
       "id": "theme-103",
-      "name": "Blood components",
+      "name": "Blood",
       "domain": "science",
       "difficulty": 2,
       "words": [
@@ -493,11 +511,14 @@
         "Platelet",
         "Red cell",
         "White cell"
+      ],
+      "legacyNames": [
+        "Blood components"
       ]
     },
     {
       "id": "theme-104",
-      "name": "Scientific pioneers",
+      "name": "Scientists",
       "domain": "science",
       "difficulty": 2,
       "words": [
@@ -509,11 +530,14 @@
         "Tesla",
         "Faraday",
         "Bohr"
+      ],
+      "legacyNames": [
+        "Scientific pioneers"
       ]
     },
     {
       "id": "theme-192",
-      "name": "Computer hardware",
+      "name": "Hardware",
       "domain": "tech",
       "difficulty": 1,
       "words": [
@@ -529,6 +553,9 @@
         "Printer",
         "Disk",
         "CD"
+      ],
+      "legacyNames": [
+        "Computer hardware"
       ]
     },
     {
@@ -613,7 +640,7 @@
     },
     {
       "id": "theme-198",
-      "name": "Coding concepts",
+      "name": "Coding",
       "domain": "tech",
       "difficulty": 2,
       "words": [
@@ -625,6 +652,9 @@
         "Boolean",
         "Class",
         "Exception"
+      ],
+      "legacyNames": [
+        "Coding concepts"
       ]
     },
     {
@@ -802,7 +832,7 @@
     },
     {
       "id": "theme-253",
-      "name": "Statistical terms",
+      "name": "Statistics",
       "domain": "math",
       "difficulty": 2,
       "words": [
@@ -814,6 +844,9 @@
         "Deviation",
         "Quartile",
         "Percentile"
+      ],
+      "legacyNames": [
+        "Statistical terms"
       ]
     },
     {

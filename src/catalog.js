@@ -11,6 +11,10 @@ import en_games from './packs/en/games.json' with {type:'json'};
 import en_video_games from './packs/en/video-games.json' with {type:'json'};
 import en_movies from './packs/en/movies.json' with {type:'json'};
 import en_music from './packs/en/music.json' with {type:'json'};
+import en_history from './packs/en/history.json' with {type:'json'};
+import en_books from './packs/en/books.json' with {type:'json'};
+import en_mythology from './packs/en/mythology.json' with {type:'json'};
+import en_comics from './packs/en/comics.json' with {type:'json'};
 import de_base from './packs/de/base.json' with {type:'json'};
 import de_nature from './packs/de/nature.json' with {type:'json'};
 import de_food from './packs/de/food.json' with {type:'json'};
@@ -23,8 +27,12 @@ import de_games from './packs/de/games.json' with {type:'json'};
 import de_video_games from './packs/de/video-games.json' with {type:'json'};
 import de_movies from './packs/de/movies.json' with {type:'json'};
 import de_music from './packs/de/music.json' with {type:'json'};
+import de_history from './packs/de/history.json' with {type:'json'};
+import de_books from './packs/de/books.json' with {type:'json'};
+import de_mythology from './packs/de/mythology.json' with {type:'json'};
+import de_comics from './packs/de/comics.json' with {type:'json'};
 
-export const CATALOG_VERSION = 1;
+export const CATALOG_VERSION = 2;
 export const PACKS = Object.freeze([
   {
     "id": "base",
@@ -109,12 +117,16 @@ export const PACKS = Object.freeze([
       "en": "Music & artists",
       "de": "Musik & Interpreten"
     }
-  }
+  },
+  {id:'history',name:{en:'History',de:'Geschichte'}},
+  {id:'books',name:{en:'Books',de:'Bücher'}},
+  {id:'mythology',name:{en:'Myth & folklore',de:'Mythen & Sagen'}},
+  {id:'comics',name:{en:'Comics & manga',de:'Comics & Manga'}}
 ].map(pack=>Object.freeze({...pack,name:Object.freeze(pack.name)})));
 export const ALL_PACK_IDS = Object.freeze(PACKS.map(pack=>pack.id));
 const source = {
-en:[en_base,en_nature,en_food,en_science,en_sports,en_travel,en_arts,en_language,en_games,en_video_games,en_movies,en_music],
-de:[de_base,de_nature,de_food,de_science,de_sports,de_travel,de_arts,de_language,de_games,de_video_games,de_movies,de_music],
+en:[en_base,en_nature,en_food,en_science,en_sports,en_travel,en_arts,en_language,en_games,en_video_games,en_movies,en_music,en_history,en_books,en_mythology,en_comics],
+de:[de_base,de_nature,de_food,de_science,de_sports,de_travel,de_arts,de_language,de_games,de_video_games,de_movies,de_music,de_history,de_books,de_mythology,de_comics],
 };
 export function normalizeLanguage(language) { return language === 'de' ? 'de' : 'en'; }
 export function normalizePackIds(packIds) {
@@ -130,7 +142,7 @@ export function getCatalog({language='en',packIds}={}) {
   const key = language + ':' + packIds.join(',');
   if (cache.has(key)) return cache.get(key);
   const selected = source[language].filter(pack=>packIds.includes(pack.id));
-  const themes = Object.freeze(selected.flatMap(pack=>pack.themes.map(theme=>Object.freeze({...theme,packId:pack.id,words:Object.freeze([...theme.words])}))).sort((a,b)=>a.id.localeCompare(b.id)));
+  const themes = Object.freeze(selected.flatMap(pack=>pack.themes.map(theme=>Object.freeze({...theme,packId:pack.id,words:Object.freeze([...theme.words]),...(theme.legacyNames?{legacyNames:Object.freeze([...theme.legacyNames])}:{})}))).sort((a,b)=>a.id.localeCompare(b.id)));
   const eligible = new Set(themes.flatMap(theme=>theme.words));
   const pictures = Object.freeze(Object.fromEntries(selected.flatMap(pack=>Object.entries(pack.pictures||{})).filter(([word])=>eligible.has(word))));
   const stats = Object.freeze({themes:themes.length,entries:themes.reduce((sum,theme)=>sum+theme.words.length,0),words:new Set(themes.flatMap(theme=>theme.words.map(word=>word.toLocaleLowerCase(language)))).size,domains:new Set(themes.map(theme=>theme.domain)).size,popCulture:themes.filter(theme=>theme.popCulture).length,pictures:Object.keys(pictures).length});

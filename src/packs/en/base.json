@@ -27,7 +27,7 @@
     },
     {
       "id": "theme-106",
-      "name": "Kitchen utensils",
+      "name": "Utensils",
       "domain": "home",
       "difficulty": 1,
       "words": [
@@ -46,6 +46,9 @@
         "Sieve",
         "Funnel",
         "Pan"
+      ],
+      "legacyNames": [
+        "Kitchen utensils"
       ]
     },
     {
@@ -246,7 +249,7 @@
     },
     {
       "id": "theme-116",
-      "name": "Bed linens",
+      "name": "Bedding",
       "domain": "home",
       "difficulty": 1,
       "words": [
@@ -258,6 +261,9 @@
         "Bedspread",
         "Throw",
         "Valance"
+      ],
+      "legacyNames": [
+        "Bed linens"
       ]
     },
     {
@@ -432,7 +438,7 @@
     },
     {
       "id": "theme-125",
-      "name": "Clothing patterns",
+      "name": "Patterns",
       "domain": "style",
       "difficulty": 2,
       "words": [
@@ -444,11 +450,14 @@
         "Gingham",
         "Argyle",
         "Paisley"
+      ],
+      "legacyNames": [
+        "Clothing patterns"
       ]
     },
     {
       "id": "theme-126",
-      "name": "Clothing fasteners",
+      "name": "Fasteners",
       "domain": "style",
       "difficulty": 2,
       "words": [
@@ -460,6 +469,9 @@
         "Hook",
         "Lace",
         "Toggle"
+      ],
+      "legacyNames": [
+        "Clothing fasteners"
       ]
     },
     {
@@ -754,7 +766,7 @@
     },
     {
       "id": "theme-236",
-      "name": "Birthday party",
+      "name": "Birthday",
       "domain": "life",
       "difficulty": 1,
       "words": [
@@ -774,6 +786,9 @@
         "Bag",
         "Friends",
         "Celebration"
+      ],
+      "legacyNames": [
+        "Birthday party"
       ]
     },
     {
@@ -866,7 +881,7 @@
     },
     {
       "id": "theme-242",
-      "name": "Family relations",
+      "name": "Family",
       "domain": "life",
       "difficulty": 1,
       "words": [
@@ -880,6 +895,9 @@
         "Grandparent",
         "Grandfather",
         "Grandmother"
+      ],
+      "legacyNames": [
+        "Family relations"
       ]
     },
     {

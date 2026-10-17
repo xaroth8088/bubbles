@@ -300,7 +300,7 @@
     },
     {
       "id": "theme-040",
-      "name": "Citrus fruits",
+      "name": "Citrus",
       "domain": "food",
       "difficulty": 2,
       "words": [
@@ -312,6 +312,9 @@
         "Kumquat",
         "Yuzu",
         "Pomelo"
+      ],
+      "legacyNames": [
+        "Citrus fruits"
       ]
     },
     {
@@ -367,7 +370,7 @@
     },
     {
       "id": "theme-044",
-      "name": "Cooking methods",
+      "name": "Cooking",
       "domain": "food",
       "difficulty": 1,
       "words": [
@@ -379,6 +382,9 @@
         "Saute",
         "Poach",
         "Braise"
+      ],
+      "legacyNames": [
+        "Cooking methods"
       ]
     },
     {
@@ -1163,7 +1169,7 @@
       "words": [
         "Fruit",
         "Berries",
-        "Citrus fruits",
+        "Citrus",
         "Apple",
         "Banana",
         "Grape",

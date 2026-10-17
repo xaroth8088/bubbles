@@ -185,7 +185,7 @@
     },
     {
       "id": "theme-182",
-      "name": "World landmarks",
+      "name": "Landmarks",
       "domain": "travel",
       "difficulty": 1,
       "words": [
@@ -197,11 +197,14 @@
         "Machu Picchu",
         "Petra",
         "Pyramids"
+      ],
+      "legacyNames": [
+        "World landmarks"
       ]
     },
     {
       "id": "theme-183",
-      "name": "Famous bridges",
+      "name": "Bridges",
       "domain": "travel",
       "difficulty": 2,
       "words": [
@@ -213,6 +216,9 @@
         "Sydney Harbour",
         "Akashi Kaikyo",
         "Forth"
+      ],
+      "legacyNames": [
+        "Famous bridges"
       ]
     },
     {
