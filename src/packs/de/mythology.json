@@ -1,0 +1,927 @@
+{
+  "id": "mythology",
+  "language": "de",
+  "name": "Mythen & Märchen",
+  "themes": [
+    {
+      "id": "de-mythology-folklore",
+      "name": "Folklore",
+      "domain": "mythology",
+      "difficulty": 1,
+      "words": [
+        "Grimms Märchen",
+        "Tausendundeine Nacht",
+        "Nordische Mythen",
+        "Griechische Sagen",
+        "Yokai",
+        "Anansi",
+        "Baba Jaga",
+        "Selkies",
+        "Robin Hood",
+        "Camelot",
+        "Drachen",
+        "Riesen"
+      ]
+    },
+    {
+      "id": "de-mythology-greek-legends",
+      "name": "Griechische Sagen",
+      "domain": "mythology",
+      "difficulty": 2,
+      "words": [
+        "Olymp",
+        "Griechische Helden",
+        "Trojanischer Krieg",
+        "Labyrinth",
+        "Argonauten",
+        "Goldenes Vlies",
+        "Orakel",
+        "Titanen",
+        "Zyklop",
+        "Nymphen",
+        "Sirenen",
+        "Pandora"
+      ]
+    },
+    {
+      "id": "de-mythology-olympus",
+      "name": "Olymp",
+      "domain": "mythology",
+      "difficulty": 2,
+      "words": [
+        "Zeus",
+        "Hera",
+        "Athene",
+        "Apollon",
+        "Artemis",
+        "Poseidon",
+        "Hermes",
+        "Demeter",
+        "Aphrodite",
+        "Ares",
+        "Hephaistos",
+        "Dionysos"
+      ]
+    },
+    {
+      "id": "de-mythology-athena",
+      "name": "Athene",
+      "domain": "mythology",
+      "difficulty": 2,
+      "words": [
+        "Eule",
+        "Olive",
+        "Weisheit",
+        "Schild",
+        "Helm",
+        "Speer",
+        "Athen",
+        "Parthenon",
+        "Weben",
+        "Arachne",
+        "Ägis",
+        "Strategie"
+      ]
+    },
+    {
+      "id": "de-mythology-zeus",
+      "name": "Zeus",
+      "domain": "mythology",
+      "difficulty": 2,
+      "words": [
+        "Blitzbündel",
+        "Adler",
+        "Eiche",
+        "Himmel",
+        "Sturm",
+        "Hera",
+        "Kronos",
+        "Rhea",
+        "König",
+        "Donner",
+        "Stier",
+        "Schwan"
+      ]
+    },
+    {
+      "id": "de-mythology-poseidon",
+      "name": "Poseidon",
+      "domain": "mythology",
+      "difficulty": 2,
+      "words": [
+        "Dreizack",
+        "Meer",
+        "Pferd",
+        "Erdbeben",
+        "Welle",
+        "Delfin",
+        "Sturm",
+        "Amphitrite",
+        "Triton",
+        "Wagen",
+        "Atlantis",
+        "Quelle"
+      ]
+    },
+    {
+      "id": "de-mythology-hermes",
+      "name": "Hermes",
+      "domain": "mythology",
+      "difficulty": 2,
+      "words": [
+        "Bote",
+        "Sandalen",
+        "Flügel",
+        "Heroldstab",
+        "Reisender",
+        "Händler",
+        "Dieb",
+        "Leier",
+        "Schildkröte",
+        "Weg",
+        "Grenze",
+        "Begleiter"
+      ]
+    },
+    {
+      "id": "de-mythology-greek-heroes",
+      "name": "Griechische Helden",
+      "domain": "mythology",
+      "difficulty": 2,
+      "words": [
+        "Herakles",
+        "Perseus",
+        "Theseus",
+        "Odysseus",
+        "Achilles",
+        "Jason",
+        "Atalante",
+        "Orpheus",
+        "Bellerophon",
+        "Ödipus",
+        "Hektor",
+        "Aeneas"
+      ]
+    },
+    {
+      "id": "de-mythology-heracles",
+      "name": "Herakles",
+      "domain": "mythology",
+      "difficulty": 2,
+      "words": [
+        "Löwe",
+        "Hydra",
+        "Eber",
+        "Hirschkuh",
+        "Ställe",
+        "Vögel",
+        "Stier",
+        "Stuten",
+        "Gürtel",
+        "Rinder",
+        "Äpfel",
+        "Kerberos"
+      ]
+    },
+    {
+      "id": "de-mythology-perseus",
+      "name": "Perseus",
+      "domain": "mythology",
+      "difficulty": 2,
+      "words": [
+        "Medusa",
+        "Spiegelbild",
+        "Schild",
+        "Schlangen",
+        "Stein",
+        "Andromeda",
+        "Seeungeheuer",
+        "Flügelschuhe",
+        "Helm",
+        "Schwert",
+        "Danae",
+        "Gorgone"
+      ]
+    },
+    {
+      "id": "de-mythology-theseus",
+      "name": "Theseus",
+      "domain": "mythology",
+      "difficulty": 2,
+      "words": [
+        "Minotaurus",
+        "Labyrinth",
+        "Ariadne",
+        "Faden",
+        "Kreta",
+        "Athen",
+        "Aigeus",
+        "Schwarze Segel",
+        "Schwert",
+        "Sandalen",
+        "Stier",
+        "Minos"
+      ]
+    },
+    {
+      "id": "de-mythology-odysseus",
+      "name": "Odysseus",
+      "domain": "mythology",
+      "difficulty": 2,
+      "words": [
+        "Ithaka",
+        "Penelope",
+        "Telemach",
+        "Zyklop",
+        "Polyphem",
+        "Kirke",
+        "Sirenen",
+        "Bogen",
+        "Freier",
+        "Floß",
+        "Kalypso",
+        "Lotus"
+      ]
+    },
+    {
+      "id": "de-mythology-trojan-war",
+      "name": "Trojanischer Krieg",
+      "domain": "mythology",
+      "difficulty": 2,
+      "words": [
+        "Troja",
+        "Helena",
+        "Paris",
+        "Achilles",
+        "Hektor",
+        "Agamemnon",
+        "Menelaos",
+        "Holzpferd",
+        "Belagerung",
+        "Kassandra",
+        "Priamos",
+        "Patroklos"
+      ]
+    },
+    {
+      "id": "de-mythology-greek-underworld",
+      "name": "Griechische Unterwelt",
+      "domain": "mythology",
+      "difficulty": 2,
+      "words": [
+        "Hades",
+        "Persephone",
+        "Charon",
+        "Kerberos",
+        "Styx",
+        "Münze",
+        "Schatten",
+        "Granatapfel",
+        "Tartaros",
+        "Elysium",
+        "Lethe",
+        "Fährmann"
+      ]
+    },
+    {
+      "id": "de-mythology-norse-legends",
+      "name": "Nordische Mythen",
+      "domain": "mythology",
+      "difficulty": 2,
+      "words": [
+        "Asgard",
+        "Yggdrasil",
+        "Ragnarök",
+        "Walhall",
+        "Walküre",
+        "Bifröst",
+        "Runen",
+        "Frostriesen",
+        "Zwerge",
+        "Nornen",
+        "Midgard",
+        "Fenrir"
+      ]
+    },
+    {
+      "id": "de-mythology-asgard",
+      "name": "Asgard",
+      "domain": "mythology",
+      "difficulty": 2,
+      "words": [
+        "Odin",
+        "Thor",
+        "Loki",
+        "Frigg",
+        "Heimdall",
+        "Balder",
+        "Asen",
+        "Götter",
+        "Mauer",
+        "Festung",
+        "Bifröst",
+        "Regenbogen"
+      ]
+    },
+    {
+      "id": "de-mythology-odin",
+      "name": "Odin",
+      "domain": "mythology",
+      "difficulty": 2,
+      "words": [
+        "Rabe",
+        "Wolf",
+        "Speer",
+        "Ein Auge",
+        "Weisheit",
+        "Runen",
+        "Sleipnir",
+        "Wanderer",
+        "Opfer",
+        "Dichtung",
+        "Met",
+        "Rätsel"
+      ]
+    },
+    {
+      "id": "de-mythology-ragnarok",
+      "name": "Ragnarök",
+      "domain": "mythology",
+      "difficulty": 2,
+      "words": [
+        "Götterdämmerung",
+        "Schlacht",
+        "Fenrir",
+        "Midgardschlange",
+        "Feuer",
+        "Flut",
+        "Surt",
+        "Loki",
+        "Thor",
+        "Odin",
+        "Neubeginn",
+        "Winter"
+      ]
+    },
+    {
+      "id": "de-mythology-yggdrasil",
+      "name": "Yggdrasil",
+      "domain": "mythology",
+      "difficulty": 2,
+      "words": [
+        "Esche",
+        "Wurzeln",
+        "Äste",
+        "Neun Welten",
+        "Brunnen",
+        "Nornen",
+        "Eichhörnchen",
+        "Adler",
+        "Drache",
+        "Hirsche",
+        "Odin",
+        "Weltenbaum"
+      ]
+    },
+    {
+      "id": "de-mythology-camelot",
+      "name": "Camelot",
+      "domain": "mythology",
+      "difficulty": 1,
+      "words": [
+        "König Artus",
+        "Tafelrunde",
+        "Guinevere",
+        "Lancelot",
+        "Gawain",
+        "Parzival",
+        "Galahad",
+        "Ritter",
+        "Turnier",
+        "Gral",
+        "Hof",
+        "Ritterlichkeit"
+      ]
+    },
+    {
+      "id": "de-mythology-king-arthur",
+      "name": "König Artus",
+      "domain": "mythology",
+      "difficulty": 1,
+      "words": [
+        "Excalibur",
+        "Merlin",
+        "Avalon",
+        "Pendragon",
+        "Schwert",
+        "Stein",
+        "Krone",
+        "Uther",
+        "Mordred",
+        "See",
+        "Briten",
+        "Schwertscheide"
+      ]
+    },
+    {
+      "id": "de-mythology-merlin",
+      "name": "Merlin",
+      "domain": "mythology",
+      "difficulty": 2,
+      "words": [
+        "Zauberer",
+        "Prophezeiung",
+        "Verzauberung",
+        "Verkleidung",
+        "Rat",
+        "Uther",
+        "Nimue",
+        "Turm",
+        "Drachen",
+        "Stonehenge",
+        "Magie",
+        "Artus"
+      ]
+    },
+    {
+      "id": "de-mythology-robin-hood",
+      "name": "Robin Hood",
+      "domain": "mythology",
+      "difficulty": 1,
+      "words": [
+        "Sherwood",
+        "Bogen",
+        "Pfeil",
+        "Little John",
+        "Maid Marian",
+        "Bruder Tuck",
+        "Sheriff",
+        "Nottingham",
+        "Geächteter",
+        "Wald",
+        "Gefährten",
+        "Richard Löwenherz"
+      ]
+    },
+    {
+      "id": "de-mythology-dragons",
+      "name": "Drachen",
+      "domain": "mythology",
+      "difficulty": 1,
+      "words": [
+        "Feuer",
+        "Flügel",
+        "Schuppen",
+        "Krallen",
+        "Fänge",
+        "Schwanz",
+        "Höhle",
+        "Hort",
+        "Rauch",
+        "Ritter",
+        "Schlange",
+        "Schatz"
+      ]
+    },
+    {
+      "id": "de-mythology-yokai",
+      "name": "Yokai",
+      "domain": "mythology",
+      "difficulty": 3,
+      "words": [
+        "Kappa",
+        "Tengu",
+        "Kitsune",
+        "Oni",
+        "Tanuki",
+        "Ungeheuer",
+        "Geist",
+        "Gestaltwandler",
+        "Maske",
+        "Laterne",
+        "Bildrolle",
+        "Nachtparade"
+      ]
+    },
+    {
+      "id": "de-mythology-kitsune",
+      "name": "Kitsune",
+      "domain": "mythology",
+      "difficulty": 3,
+      "words": [
+        "Fuchs",
+        "Schweife",
+        "Neun",
+        "Verwandlung",
+        "Täuschung",
+        "Inari",
+        "Schrein",
+        "List",
+        "Fuchsfeuer",
+        "Bote",
+        "Reis",
+        "Statue"
+      ]
+    },
+    {
+      "id": "de-mythology-tengu",
+      "name": "Tengu",
+      "domain": "mythology",
+      "difficulty": 3,
+      "words": [
+        "Lange Nase",
+        "Flügel",
+        "Federn",
+        "Berg",
+        "Wald",
+        "Krähe",
+        "Rotes Gesicht",
+        "Fächer",
+        "Maske",
+        "Mönch",
+        "Flug",
+        "List"
+      ]
+    },
+    {
+      "id": "de-mythology-kappa",
+      "name": "Kappa",
+      "domain": "mythology",
+      "difficulty": 3,
+      "words": [
+        "Fluss",
+        "Teich",
+        "Schildkrötenpanzer",
+        "Schnabel",
+        "Gurke",
+        "Wasser",
+        "Schale",
+        "Verbeugung",
+        "Sumo",
+        "Schwimmhäute",
+        "Schabernack",
+        "Schwimmen"
+      ]
+    },
+    {
+      "id": "de-mythology-egyptian-gods",
+      "name": "Ägyptische Götter",
+      "domain": "mythology",
+      "difficulty": 2,
+      "words": [
+        "Re",
+        "Osiris",
+        "Isis",
+        "Horus",
+        "Anubis",
+        "Thot",
+        "Hathor",
+        "Bastet",
+        "Sachmet",
+        "Seth",
+        "Sobek",
+        "Nut"
+      ]
+    },
+    {
+      "id": "de-mythology-osiris",
+      "name": "Osiris",
+      "domain": "mythology",
+      "difficulty": 2,
+      "words": [
+        "Anch",
+        "Krummstab",
+        "Geißel",
+        "Krone",
+        "Mumie",
+        "Grüne Haut",
+        "Isis",
+        "Horus",
+        "Seth",
+        "Auferstehung",
+        "Unterwelt",
+        "Totengericht"
+      ]
+    },
+    {
+      "id": "de-mythology-anansi",
+      "name": "Anansi",
+      "domain": "mythology",
+      "difficulty": 3,
+      "words": [
+        "Spinne",
+        "Netz",
+        "Trickser",
+        "Geschichten",
+        "Weisheit",
+        "Kalebasse",
+        "Nyame",
+        "Python",
+        "Hornissen",
+        "Leopard",
+        "Ghana",
+        "Schlauheit"
+      ]
+    },
+    {
+      "id": "de-mythology-arabian-nights",
+      "name": "Tausendundeine Nacht",
+      "domain": "mythology",
+      "difficulty": 2,
+      "words": [
+        "Ali Baba",
+        "Sindbad",
+        "Scheherazade",
+        "Sultan",
+        "Erzählerin",
+        "Palast",
+        "Dschinn",
+        "Basar",
+        "Schatz",
+        "Kaufmann",
+        "Lampe",
+        "Fliegender Teppich"
+      ]
+    },
+    {
+      "id": "de-mythology-ali-baba",
+      "name": "Ali Baba",
+      "domain": "mythology",
+      "difficulty": 1,
+      "words": [
+        "Sesam öffne dich",
+        "Höhle",
+        "Vierzig Räuber",
+        "Schatz",
+        "Ölkrüge",
+        "Morgiane",
+        "Kasim",
+        "Esel",
+        "Gold",
+        "Holzfäller",
+        "Tür",
+        "Kreide"
+      ]
+    },
+    {
+      "id": "de-mythology-sinbad",
+      "name": "Sindbad",
+      "domain": "mythology",
+      "difficulty": 2,
+      "words": [
+        "Seefahrer",
+        "Sieben Reisen",
+        "Vogel Roch",
+        "Ei",
+        "Diamanten",
+        "Schlangen",
+        "Insel",
+        "Schiffbruch",
+        "Riesenfisch",
+        "Bagdad",
+        "Lastenträger",
+        "Meeresgreis"
+      ]
+    },
+    {
+      "id": "de-mythology-grimm-tales",
+      "name": "Grimms Märchen",
+      "domain": "mythology",
+      "difficulty": 1,
+      "words": [
+        "Hänsel und Gretel",
+        "Rotkäppchen",
+        "Rapunzel",
+        "Rumpelstilzchen",
+        "Froschkönig",
+        "Bremer Stadtmusikanten",
+        "Frau Holle",
+        "Die sechs Schwäne",
+        "Die goldene Gans",
+        "Das tapfere Schneiderlein",
+        "Der Wolf und die sieben Geißlein",
+        "Schneewittchen"
+      ]
+    },
+    {
+      "id": "de-mythology-hansel-gretel",
+      "name": "Hänsel und Gretel",
+      "domain": "mythology",
+      "difficulty": 1,
+      "words": [
+        "Brotkrumen",
+        "Kieselsteine",
+        "Wald",
+        "Hexe",
+        "Ofen",
+        "Lebkuchen",
+        "Stall",
+        "Knochen",
+        "Ente",
+        "Edelsteine",
+        "Holzfäller",
+        "Knusperhäuschen"
+      ]
+    },
+    {
+      "id": "de-mythology-red-riding-hood",
+      "name": "Rotkäppchen",
+      "domain": "mythology",
+      "difficulty": 1,
+      "words": [
+        "Korb",
+        "Kuchen",
+        "Großmutter",
+        "Wolf",
+        "Wald",
+        "Jäger",
+        "Ohren",
+        "Augen",
+        "Zähne",
+        "Verkleidung",
+        "Steine",
+        "Käppchen"
+      ]
+    },
+    {
+      "id": "de-mythology-rapunzel",
+      "name": "Rapunzel",
+      "domain": "mythology",
+      "difficulty": 1,
+      "words": [
+        "Turm",
+        "Zopf",
+        "Fenster",
+        "Prinz",
+        "Zauberin",
+        "Garten",
+        "Haare",
+        "Feldsalat",
+        "Wüste",
+        "Tränen",
+        "Zwillinge",
+        "Gesang"
+      ]
+    },
+    {
+      "id": "de-mythology-rumpelstiltskin",
+      "name": "Rumpelstilzchen",
+      "domain": "mythology",
+      "difficulty": 1,
+      "words": [
+        "Stroh",
+        "Gold",
+        "Spinnrad",
+        "Müller",
+        "Tochter",
+        "König",
+        "Halskette",
+        "Ring",
+        "Baby",
+        "Name",
+        "Feuer",
+        "Handel"
+      ]
+    },
+    {
+      "id": "de-mythology-frog-prince",
+      "name": "Froschkönig",
+      "domain": "mythology",
+      "difficulty": 1,
+      "words": [
+        "Goldene Kugel",
+        "Brunnen",
+        "Prinzessin",
+        "Versprechen",
+        "Tisch",
+        "Teller",
+        "Bett",
+        "König",
+        "Wand",
+        "Verwandlung",
+        "Eiserner Heinrich",
+        "Eisenbänder"
+      ]
+    },
+    {
+      "id": "de-mythology-pied-piper",
+      "name": "Rattenfänger",
+      "domain": "mythology",
+      "difficulty": 1,
+      "words": [
+        "Hameln",
+        "Ratten",
+        "Spielmann",
+        "Flöte",
+        "Kinder",
+        "Bürgermeister",
+        "Lohn",
+        "Fluss",
+        "Berg",
+        "Versprechen",
+        "Musik",
+        "Zug"
+      ]
+    },
+    {
+      "id": "de-mythology-bremen-musicians",
+      "name": "Bremer Stadtmusikanten",
+      "domain": "mythology",
+      "difficulty": 1,
+      "words": [
+        "Esel",
+        "Hund",
+        "Katze",
+        "Hahn",
+        "Räuber",
+        "Wald",
+        "Haus",
+        "Fenster",
+        "Musik",
+        "Hufe",
+        "Krallen",
+        "Krähen"
+      ]
+    },
+    {
+      "id": "de-mythology-mother-holle",
+      "name": "Frau Holle",
+      "domain": "mythology",
+      "difficulty": 1,
+      "words": [
+        "Brunnen",
+        "Spindel",
+        "Federn",
+        "Schnee",
+        "Brot",
+        "Ofen",
+        "Äpfel",
+        "Gold",
+        "Pech",
+        "Hahn",
+        "Fleiß",
+        "Faulheit"
+      ]
+    },
+    {
+      "id": "de-mythology-baba-yaga",
+      "name": "Baba Jaga",
+      "domain": "mythology",
+      "difficulty": 2,
+      "words": [
+        "Hütte",
+        "Hühnerbeine",
+        "Wald",
+        "Mörser",
+        "Stößel",
+        "Besen",
+        "Hexe",
+        "Schädel",
+        "Zaun",
+        "Wassilissa",
+        "Puppe",
+        "Feuer"
+      ]
+    },
+    {
+      "id": "de-mythology-selkies",
+      "name": "Selkies",
+      "domain": "mythology",
+      "difficulty": 3,
+      "words": [
+        "Robbe",
+        "Haut",
+        "Ufer",
+        "Meer",
+        "Inseln",
+        "Mensch",
+        "Verwandlung",
+        "Lied",
+        "Sehnsucht",
+        "Ehe",
+        "Rückkehr",
+        "Orkney"
+      ]
+    }
+  ],
+  "pictures": {
+    "Eule": "🦉",
+    "Adler": "🦅",
+    "Pferd": "🐎",
+    "Fuchs": "🦊",
+    "Wolf": "🐺",
+    "Spinne": "🕷️",
+    "Krone": "👑",
+    "Feuer": "🔥",
+    "Drache": "🐉",
+    "Bogen": "🏹",
+    "Gurke": "🥒",
+    "Ei": "🥚",
+    "Esel": "🫏",
+    "Katze": "🐈",
+    "Hund": "🐕",
+    "Hahn": "🐓",
+    "Robbe": "🦭",
+    "Schnee": "❄️"
+  }
+}

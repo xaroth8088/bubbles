@@ -491,7 +491,7 @@
     },
     {
       "id": "de-food-kocharten",
-      "name": "Kocharten",
+      "name": "Garen",
       "domain": "food",
       "difficulty": 2,
       "words": [
@@ -505,6 +505,9 @@
         "Schmoren",
         "Rösten",
         "Pochieren"
+      ],
+      "legacyNames": [
+        "Kocharten"
       ]
     },
     {
@@ -527,7 +530,7 @@
     },
     {
       "id": "de-food-reisgerichte",
-      "name": "Reisgerichte",
+      "name": "Reis",
       "domain": "food",
       "difficulty": 2,
       "words": [
@@ -541,6 +544,9 @@
         "Onigiri",
         "Biryani",
         "Reissalat"
+      ],
+      "legacyNames": [
+        "Reisgerichte"
       ]
     },
     {

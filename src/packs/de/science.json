@@ -113,7 +113,7 @@
     },
     {
       "id": "de-science-koerperwissen",
-      "name": "Körperwissen",
+      "name": "Anatomie",
       "domain": "science",
       "difficulty": 1,
       "words": [
@@ -127,6 +127,9 @@
         "Muskel",
         "Blut",
         "Haut"
+      ],
+      "legacyNames": [
+        "Körperwissen"
       ]
     },
     {
@@ -419,7 +422,7 @@
     },
     {
       "id": "de-science-fahrradtechnik",
-      "name": "Fahrradtechnik",
+      "name": "Fahrrad",
       "domain": "science",
       "difficulty": 1,
       "words": [
@@ -433,6 +436,9 @@
         "Ventil",
         "Lenker",
         "Sattel"
+      ],
+      "legacyNames": [
+        "Fahrradtechnik"
       ]
     },
     {
@@ -509,7 +515,7 @@
     },
     {
       "id": "de-science-pflanzenleben",
-      "name": "Pflanzenleben",
+      "name": "Pflanzen",
       "domain": "science",
       "difficulty": 1,
       "words": [
@@ -523,6 +529,9 @@
         "Licht",
         "Keimling",
         "Frucht"
+      ],
+      "legacyNames": [
+        "Pflanzenleben"
       ]
     },
     {

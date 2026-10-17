@@ -230,7 +230,7 @@
     },
     {
       "id": "theme-146",
-      "name": "Cycling gear",
+      "name": "Cycling",
       "domain": "sport",
       "difficulty": 1,
       "words": [
@@ -242,6 +242,9 @@
         "Spoke",
         "Derailleur",
         "Pump"
+      ],
+      "legacyNames": [
+        "Cycling gear"
       ]
     },
     {

@@ -1,0 +1,861 @@
+{
+  "id": "books",
+  "language": "de",
+  "name": "Bücher",
+  "themes": [
+    {
+      "id": "de-books-schriftsteller",
+      "name": "Schriftsteller",
+      "domain": "books",
+      "difficulty": 1,
+      "words": [
+        "Agatha Christie",
+        "Jane Austen",
+        "Charles Dickens",
+        "Roald Dahl",
+        "Astrid Lindgren",
+        "Michael Ende",
+        "Otfried Preußler",
+        "Erich Kästner",
+        "Cornelia Funke",
+        "Jules Verne"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-agatha-christie",
+      "name": "Agatha Christie",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Hercule Poirot",
+        "Miss Marple",
+        "Die Mausefalle",
+        "Mord im Orient-Express",
+        "Tod auf dem Nil",
+        "Und dann gabs keines mehr",
+        "Tommy und Tuppence",
+        "Das krumme Haus"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-hercule-poirot",
+      "name": "Hercule Poirot",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Captain Hastings",
+        "Inspektor Japp",
+        "Miss Lemon",
+        "Ariadne Oliver",
+        "Belgien",
+        "Schnurrbart",
+        "Graue Zellen",
+        "Ordnung",
+        "Symmetrie",
+        "Detektiv"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-sherlock-holmes",
+      "name": "Sherlock Holmes",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Dr. Watson",
+        "Moriarty",
+        "Mycroft Holmes",
+        "Irene Adler",
+        "Inspektor Lestrade",
+        "Mrs. Hudson",
+        "Baker Street",
+        "Geige",
+        "Pfeife",
+        "Deduktion"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-narnia",
+      "name": "Narnia",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Aslan",
+        "Lucy",
+        "Edmund",
+        "Susan",
+        "Peter",
+        "Weiße Hexe",
+        "Herr Tumnus",
+        "Prinz Kaspian",
+        "Kleiderschrank",
+        "Cair Paravel"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-scheibenwelt",
+      "name": "Scheibenwelt",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Rincewind",
+        "Tod",
+        "Oma Wetterwachs",
+        "Samuel Mumm",
+        "Nanny Ogg",
+        "Vetinari",
+        "Truhe",
+        "Ankh-Morpork",
+        "Groß A’Tuin",
+        "Tiffany Weh"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-jane-austen",
+      "name": "Jane Austen",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Stolz und Vorurteil",
+        "Emma",
+        "Verstand und Gefühl",
+        "Überredung",
+        "Northanger Abbey",
+        "Mansfield Park",
+        "Sanditon",
+        "Die Watsons"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-stolz-und-vorurteil",
+      "name": "Stolz und Vorurteil",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Elizabeth Bennet",
+        "Mr. Darcy",
+        "Jane Bennet",
+        "Mr. Bingley",
+        "Mr. Collins",
+        "Lady Catherine",
+        "Wickham",
+        "Pemberley",
+        "Netherfield",
+        "Longbourn"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-charles-dickens",
+      "name": "Charles Dickens",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Oliver Twist",
+        "Eine Weihnachtsgeschichte",
+        "Große Erwartungen",
+        "David Copperfield",
+        "Bleak House",
+        "Eine Geschichte aus zwei Städten",
+        "Harte Zeiten",
+        "Die Pickwickier"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-oliver-twist",
+      "name": "Oliver Twist",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Fagin",
+        "Artful Dodger",
+        "Nancy",
+        "Bill Sikes",
+        "Mr. Bumble",
+        "Mr. Brownlow",
+        "Armenhaus",
+        "Haferschleim",
+        "Taschendiebe",
+        "London"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-eine-weihnachtsgeschichte",
+      "name": "Eine Weihnachtsgeschichte",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Ebenezer Scrooge",
+        "Bob Cratchit",
+        "Tiny Tim",
+        "Jacob Marley",
+        "Geister",
+        "Ketten",
+        "Geiz",
+        "Weihnachten",
+        "Läuterung",
+        "London"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-roald-dahl",
+      "name": "Roald Dahl",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Matilda",
+        "Sophiechen und der Riese",
+        "Hexen hexen",
+        "Der fantastische Mr. Fox",
+        "Die Zwicks stehen kopf",
+        "Charlie und die Schokoladenfabrik",
+        "James und der Riesenpfirsich",
+        "Der Zauberfinger"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-matilda",
+      "name": "Matilda",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Fräulein Honig",
+        "Frau Knüppelkuh",
+        "Herr Wurmwald",
+        "Frau Wurmwald",
+        "Telekinese",
+        "Bücherei",
+        "Kreide",
+        "Schokoladenkuchen",
+        "Schule",
+        "Molch"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-der-kleine-prinz",
+      "name": "Der kleine Prinz",
+      "domain": "books",
+      "difficulty": 1,
+      "words": [
+        "Rose",
+        "Fuchs",
+        "Schaf",
+        "Schlange",
+        "Pilot",
+        "Asteroid",
+        "Affenbrotbäume",
+        "Wüste",
+        "Laternenanzünder",
+        "Sonnenuntergang"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-heidi",
+      "name": "Heidi",
+      "domain": "books",
+      "difficulty": 1,
+      "words": [
+        "Alm-Öhi",
+        "Geißenpeter",
+        "Klara",
+        "Tante Dete",
+        "Fräulein Rottenmeier",
+        "Alpen",
+        "Ziegen",
+        "Frankfurt",
+        "Almhütte",
+        "Heimweh"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-astrid-lindgren",
+      "name": "Astrid Lindgren",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Pippi Langstrumpf",
+        "Michel aus Lönneberga",
+        "Ronja Räubertochter",
+        "Bullerbü",
+        "Die Brüder Löwenherz",
+        "Karlsson vom Dach",
+        "Mio, mein Mio",
+        "Madita"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-pippi-langstrumpf",
+      "name": "Pippi Langstrumpf",
+      "domain": "books",
+      "difficulty": 1,
+      "words": [
+        "Tommy",
+        "Annika",
+        "Herr Nilsson",
+        "Pferd",
+        "Villa Kunterbunt",
+        "Zöpfe",
+        "Goldstücke",
+        "Seeräuber",
+        "Pfannkuchen",
+        "Stärke"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-michel-aus-loenneberga",
+      "name": "Michel aus Lönneberga",
+      "domain": "books",
+      "difficulty": 1,
+      "words": [
+        "Ida",
+        "Alfred",
+        "Lina",
+        "Anton",
+        "Alma",
+        "Katthult",
+        "Holzmännchen",
+        "Tischlerschuppen",
+        "Suppenschüssel",
+        "Streiche"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-ronja-raeubertochter",
+      "name": "Ronja Räubertochter",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Birk",
+        "Mattis",
+        "Lovis",
+        "Borka",
+        "Glatzen-Per",
+        "Mattisburg",
+        "Höllenschlund",
+        "Graugnome",
+        "Wilddruden",
+        "Bärenhöhle"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-bullerbue",
+      "name": "Bullerbü",
+      "domain": "books",
+      "difficulty": 1,
+      "words": [
+        "Lisa",
+        "Lasse",
+        "Bosse",
+        "Britta",
+        "Anna",
+        "Ole",
+        "Kerstin",
+        "Nordhof",
+        "Mittelhof",
+        "Südhof"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-die-brueder-loewenherz",
+      "name": "Die Brüder Löwenherz",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Jonathan",
+        "Krümel",
+        "Sofia",
+        "Tengil",
+        "Katla",
+        "Nangijala",
+        "Kirschtal",
+        "Heckenrosental",
+        "Tauben",
+        "Mut"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-michael-ende",
+      "name": "Michael Ende",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Momo",
+        "Die unendliche Geschichte",
+        "Jim Knopf",
+        "Der Wunschpunsch",
+        "Tranquilla Trampeltreu",
+        "Der Spiegel im Spiegel",
+        "Das Traumfresserchen",
+        "Ophelias Schattentheater"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-momo",
+      "name": "Momo",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Kassiopeia",
+        "Meister Hora",
+        "Beppo Straßenkehrer",
+        "Gigi Fremdenführer",
+        "Graue Herren",
+        "Amphitheater",
+        "Stundenblumen",
+        "Zeit",
+        "Schildkröte",
+        "Zuhören"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-die-unendliche-geschichte",
+      "name": "Die unendliche Geschichte",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Bastian Balthasar Bux",
+        "Atréju",
+        "Fuchur",
+        "Kindliche Kaiserin",
+        "Gmork",
+        "Artax",
+        "Phantásien",
+        "Auryn",
+        "Das Nichts",
+        "Elfenbeinturm"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-jim-knopf",
+      "name": "Jim Knopf",
+      "domain": "books",
+      "difficulty": 1,
+      "words": [
+        "Lukas",
+        "Emma",
+        "Lummerland",
+        "Frau Waas",
+        "König Alfons",
+        "Frau Mahlzahn",
+        "Herr Tur-Tur",
+        "Li Si",
+        "Nepomuk",
+        "Lokomotive"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-otfried-preussler",
+      "name": "Otfried Preußler",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Der Räuber Hotzenplotz",
+        "Die kleine Hexe",
+        "Das kleine Gespenst",
+        "Der kleine Wassermann",
+        "Krabat",
+        "Hörbe mit dem großen Hut",
+        "Die dumme Augustine",
+        "Der starke Wanja"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-der-raeuber-hotzenplotz",
+      "name": "Der Räuber Hotzenplotz",
+      "domain": "books",
+      "difficulty": 1,
+      "words": [
+        "Kasperl",
+        "Seppel",
+        "Großmutter",
+        "Dimpfelmoser",
+        "Petrosilius Zwackelmann",
+        "Kaffeemühle",
+        "Räuberhöhle",
+        "Pfefferpistole",
+        "Hüte",
+        "Kartoffeln"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-die-kleine-hexe",
+      "name": "Die kleine Hexe",
+      "domain": "books",
+      "difficulty": 1,
+      "words": [
+        "Abraxas",
+        "Rumpumpel",
+        "Blocksberg",
+        "Walpurgisnacht",
+        "Besen",
+        "Hexenbuch",
+        "Rabe",
+        "Gute Taten",
+        "Zaubersprüche",
+        "Hexenrat"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-das-kleine-gespenst",
+      "name": "Das kleine Gespenst",
+      "domain": "books",
+      "difficulty": 1,
+      "words": [
+        "Uhu Schuhu",
+        "Burg Eulenstein",
+        "Schlüsselbund",
+        "Rathausuhr",
+        "Mitternacht",
+        "Schatztruhe",
+        "Tageslicht",
+        "Eiche",
+        "Schwarz",
+        "Weiß"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-krabat",
+      "name": "Krabat",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Tonda",
+        "Juro",
+        "Lyschko",
+        "Kantorka",
+        "Meister",
+        "Schwarzkollm",
+        "Mühle",
+        "Raben",
+        "Schwarze Kunst",
+        "Osternacht"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-das-sams",
+      "name": "Das Sams",
+      "domain": "books",
+      "difficulty": 1,
+      "words": [
+        "Herr Taschenbier",
+        "Frau Rotkohl",
+        "Herr Mon",
+        "Wunschpunkte",
+        "Wunschmaschine",
+        "Samstag",
+        "Schweinenase",
+        "Reime",
+        "Chaos",
+        "Taucheranzug"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-die-drei",
+      "name": "Die drei ???",
+      "domain": "books",
+      "difficulty": 1,
+      "words": [
+        "Justus Jonas",
+        "Peter Shaw",
+        "Bob Andrews",
+        "Tante Mathilda",
+        "Onkel Titus",
+        "Rocky Beach",
+        "Schrottplatz",
+        "Zentrale",
+        "Visitenkarte",
+        "Detektive"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-tkkg",
+      "name": "TKKG",
+      "domain": "books",
+      "difficulty": 1,
+      "words": [
+        "Tim",
+        "Karl",
+        "Klößchen",
+        "Gaby",
+        "Oskar",
+        "Internat",
+        "Schokolade",
+        "Kommissar Glockner",
+        "Fahrräder",
+        "Verbrechen"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-emil-und-die-detektive",
+      "name": "Emil und die Detektive",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Emil Tischbein",
+        "Gustav",
+        "Pony Hütchen",
+        "Grundeis",
+        "Professor",
+        "Berlin",
+        "Straßenbahn",
+        "Geld",
+        "Zugfahrt",
+        "Verfolgung"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-das-doppelte-lottchen",
+      "name": "Das doppelte Lottchen",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Luise",
+        "Lotte",
+        "Zwillinge",
+        "Wien",
+        "München",
+        "Ferienheim",
+        "Rollentausch",
+        "Eltern",
+        "Zöpfe",
+        "Wiedervereinigung"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-pettersson-und-findus",
+      "name": "Pettersson und Findus",
+      "domain": "books",
+      "difficulty": 1,
+      "words": [
+        "Kater",
+        "Mucklas",
+        "Hühner",
+        "Pfannkuchentorte",
+        "Gustavsson",
+        "Angel",
+        "Werkstatt",
+        "Latzhose",
+        "Bauernhof",
+        "Erfindungen"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-die-kleine-raupe-nimmersatt",
+      "name": "Die kleine Raupe Nimmersatt",
+      "domain": "books",
+      "difficulty": 1,
+      "words": [
+        "Apfel",
+        "Birnen",
+        "Pflaumen",
+        "Erdbeeren",
+        "Apfelsinen",
+        "Blatt",
+        "Kokon",
+        "Schmetterling",
+        "Hunger",
+        "Samstag"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-der-grueffelo",
+      "name": "Der Grüffelo",
+      "domain": "books",
+      "difficulty": 1,
+      "words": [
+        "Maus",
+        "Fuchs",
+        "Eule",
+        "Schlange",
+        "Hauer",
+        "Klauen",
+        "Stacheln",
+        "Wald"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-percy-jackson",
+      "name": "Percy Jackson",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Annabeth Chase",
+        "Grover Underwood",
+        "Chiron",
+        "Luke Castellan",
+        "Poseidon",
+        "Tyson",
+        "Camp Half-Blood",
+        "Anaklusmos",
+        "Halbgötter",
+        "Olymp"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-der-goldene-kompass",
+      "name": "Der Goldene Kompass",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Lyra Belacqua",
+        "Pantalaimon",
+        "Iorek Byrnison",
+        "Mrs. Coulter",
+        "Lord Asriel",
+        "Lee Scoresby",
+        "Alethiometer",
+        "Staub",
+        "Dæmonen",
+        "Panzerbären"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-der-wuestenplanet",
+      "name": "Der Wüstenplanet",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Paul Atreides",
+        "Lady Jessica",
+        "Chani",
+        "Duncan Idaho",
+        "Stilgar",
+        "Arrakis",
+        "Fremen",
+        "Gewürz",
+        "Sandwurm",
+        "Bene Gesserit"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-die-schatzinsel",
+      "name": "Die Schatzinsel",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Jim Hawkins",
+        "Long John Silver",
+        "Billy Bones",
+        "Ben Gunn",
+        "Kapitän Smollett",
+        "Hispaniola",
+        "Schatzkarte",
+        "Schwarzer Fleck",
+        "Papagei",
+        "Piraten"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-robinson-crusoe",
+      "name": "Robinson Crusoe",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Freitag",
+        "Schiffbruch",
+        "Insel",
+        "Fußabdruck",
+        "Hütte",
+        "Ziegen",
+        "Papagei",
+        "Kanu",
+        "Schiffbrüchiger",
+        "Tagebuch"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-dracula",
+      "name": "Dracula",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Jonathan Harker",
+        "Mina Harker",
+        "Lucy Westenra",
+        "Van Helsing",
+        "Renfield",
+        "Transsilvanien",
+        "Whitby",
+        "Vampir",
+        "Blut",
+        "Sarg"
+      ],
+      "popCulture": true
+    },
+    {
+      "id": "de-books-frankenstein",
+      "name": "Frankenstein",
+      "domain": "books",
+      "difficulty": 2,
+      "words": [
+        "Victor Frankenstein",
+        "Kreatur",
+        "Henry Clerval",
+        "Elizabeth Lavenza",
+        "Robert Walton",
+        "Ingolstadt",
+        "Arktis",
+        "Schöpfung",
+        "Rache",
+        "Einsamkeit"
+      ],
+      "popCulture": true
+    }
+  ],
+  "pictures": {
+    "Rose": "🌹",
+    "Fuchs": "🦊",
+    "Schaf": "🐑",
+    "Schlange": "🐍",
+    "Schmetterling": "🦋",
+    "Apfel": "🍎",
+    "Blatt": "🍃",
+    "Schildkröte": "🐢",
+    "Papagei": "🦜",
+    "Kanu": "🛶",
+    "Eule": "🦉",
+    "Besen": "🧹",
+    "Geige": "🎻"
+  }
+}

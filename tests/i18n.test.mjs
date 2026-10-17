@@ -20,3 +20,10 @@ test('UI templates interpolate values without translating clues',()=>{
 test('message placeholders remain aligned between languages',()=>{
   for(const [source,translated] of Object.entries(GERMAN))assert.deepEqual([...source.matchAll(/\{\w+\}/g)].map(m=>m[0]).sort(),[...translated.matchAll(/\{\w+\}/g)].map(m=>m[0]).sort(),source);
 });
+
+
+test('new pack domains and the frequent Theme explanation are localized',()=>{
+  for(const [source,target] of Object.entries({history:'Geschichte',books:'Bücher',mythology:'Mythen & Sagen',comics:'Comics & Manga'}))assert.equal(translate(source,'de'),target);
+  const help='A few new words fall in after a group clears. On most later boards, a solved category returns as a word. Its new connection may use another meaning.';
+  assert.ok(GERMAN[help]);assert.notEqual(translate(help,'de'),help);
+});

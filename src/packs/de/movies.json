@@ -5,7 +5,7 @@
   "themes": [
     {
       "id": "de-movies-im-kino",
-      "name": "Im Kino",
+      "name": "Kino",
       "domain": "movies",
       "difficulty": 1,
       "words": [
@@ -17,11 +17,14 @@
         "Trailer",
         "Vorstellung",
         "Nachos"
+      ],
+      "legacyNames": [
+        "Im Kino"
       ]
     },
     {
       "id": "de-movies-am-filmset",
-      "name": "Am Filmset",
+      "name": "Filmset",
       "domain": "movies",
       "difficulty": 1,
       "words": [
@@ -33,6 +36,9 @@
         "Kostüm",
         "Kulisse",
         "Mikrofon"
+      ],
+      "legacyNames": [
+        "Am Filmset"
       ]
     },
     {
@@ -101,7 +107,7 @@
     },
     {
       "id": "de-movies-kriminalfilm",
-      "name": "Kriminalfilm",
+      "name": "Krimi",
       "domain": "movies",
       "difficulty": 1,
       "words": [
@@ -113,6 +119,9 @@
         "Beweis",
         "Täter",
         "Verhör"
+      ],
+      "legacyNames": [
+        "Kriminalfilm"
       ]
     },
     {
