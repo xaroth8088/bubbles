@@ -1,0 +1,1241 @@
+[
+  {
+    "language": "en",
+    "pack": "arts",
+    "id": "theme-161",
+    "old": "Art supplies",
+    "name": "Art kit"
+  },
+  {
+    "language": "en",
+    "pack": "arts",
+    "id": "theme-162",
+    "old": "Painting styles",
+    "name": "Movements"
+  },
+  {
+    "language": "en",
+    "pack": "arts",
+    "id": "theme-163",
+    "old": "Art media",
+    "name": "Media"
+  },
+  {
+    "language": "en",
+    "pack": "arts",
+    "id": "theme-297",
+    "old": "Warm colors",
+    "name": "Warm hues"
+  },
+  {
+    "language": "en",
+    "pack": "arts",
+    "id": "theme-529",
+    "old": "Photography kit",
+    "name": "Camera gear"
+  },
+  {
+    "language": "en",
+    "pack": "arts",
+    "id": "theme-541",
+    "old": "Magic show",
+    "name": "Illusions"
+  },
+  {
+    "language": "en",
+    "pack": "arts",
+    "id": "theme-650",
+    "old": "Fabric crafts",
+    "name": "Needlework"
+  },
+  {
+    "language": "en",
+    "pack": "base",
+    "id": "theme-113",
+    "old": "Building materials",
+    "name": "Materials"
+  },
+  {
+    "language": "en",
+    "pack": "base",
+    "id": "theme-115",
+    "old": "Door hardware",
+    "name": "Fittings"
+  },
+  {
+    "language": "en",
+    "pack": "base",
+    "id": "theme-231",
+    "old": "Office supplies",
+    "name": "Stationery"
+  },
+  {
+    "language": "en",
+    "pack": "base",
+    "id": "theme-238",
+    "old": "Relaxing activities",
+    "name": "Pastimes"
+  },
+  {
+    "language": "en",
+    "pack": "base",
+    "id": "theme-240",
+    "old": "Emergency services",
+    "name": "Rescue"
+  },
+  {
+    "language": "en",
+    "pack": "base",
+    "id": "theme-241",
+    "old": "Time units",
+    "name": "Intervals"
+  },
+  {
+    "language": "en",
+    "pack": "base",
+    "id": "theme-244",
+    "old": "School subjects",
+    "name": "Curriculum"
+  },
+  {
+    "language": "en",
+    "pack": "base",
+    "id": "theme-293",
+    "old": "Bank visit",
+    "name": "Transactions"
+  },
+  {
+    "language": "en",
+    "pack": "base",
+    "id": "theme-406",
+    "old": "Healthy habits",
+    "name": "Wellness"
+  },
+  {
+    "language": "en",
+    "pack": "base",
+    "id": "theme-613",
+    "old": "Moving house",
+    "name": "Moving"
+  },
+  {
+    "language": "en",
+    "pack": "base",
+    "id": "theme-641",
+    "old": "Black and white",
+    "name": "Monochrome"
+  },
+  {
+    "language": "en",
+    "pack": "base",
+    "id": "theme-649",
+    "old": "Hair salon",
+    "name": "Salon"
+  },
+  {
+    "language": "en",
+    "pack": "base",
+    "id": "theme-846",
+    "old": "Shopping mall",
+    "name": "Mall"
+  },
+  {
+    "language": "en",
+    "pack": "base",
+    "id": "theme-994",
+    "old": "Hand gestures",
+    "name": "Gestures"
+  },
+  {
+    "language": "en",
+    "pack": "comics",
+    "id": "en-comics-comic-strips",
+    "old": "Comic strips",
+    "name": "Strips"
+  },
+  {
+    "language": "en",
+    "pack": "comics",
+    "id": "en-comics-comic-formats",
+    "old": "Comic formats",
+    "name": "Publications"
+  },
+  {
+    "language": "en",
+    "pack": "comics",
+    "id": "en-comics-comic-making",
+    "old": "Making comics",
+    "name": "Illustration"
+  },
+  {
+    "language": "en",
+    "pack": "comics",
+    "id": "en-comics-comic-sounds",
+    "old": "Comic sounds",
+    "name": "Effects"
+  },
+  {
+    "language": "en",
+    "pack": "food",
+    "id": "theme-437",
+    "old": "Pizza kitchen",
+    "name": "Pizzeria"
+  },
+  {
+    "language": "en",
+    "pack": "food",
+    "id": "theme-455",
+    "old": "Bakery counter",
+    "name": "Baked goods"
+  },
+  {
+    "language": "en",
+    "pack": "food",
+    "id": "theme-992",
+    "old": "Chinese takeout",
+    "name": "Takeout"
+  },
+  {
+    "language": "en",
+    "pack": "games",
+    "id": "theme-205",
+    "old": "Chess pieces",
+    "name": "Chessmen"
+  },
+  {
+    "language": "en",
+    "pack": "games",
+    "id": "theme-206",
+    "old": "Card ranks",
+    "name": "Ranks"
+  },
+  {
+    "language": "en",
+    "pack": "games",
+    "id": "theme-207",
+    "old": "Card suits",
+    "name": "Suits"
+  },
+  {
+    "language": "en",
+    "pack": "games",
+    "id": "theme-210",
+    "old": "Game pieces",
+    "name": "Pieces"
+  },
+  {
+    "language": "en",
+    "pack": "games",
+    "id": "theme-213",
+    "old": "Logic puzzles",
+    "name": "Logic"
+  },
+  {
+    "language": "en",
+    "pack": "games",
+    "id": "theme-890",
+    "old": "Pool table",
+    "name": "Billiards"
+  },
+  {
+    "language": "en",
+    "pack": "games",
+    "id": "theme-895",
+    "old": "Teddy bear",
+    "name": "Teddy"
+  },
+  {
+    "language": "en",
+    "pack": "games",
+    "id": "theme-896",
+    "old": "Building blocks",
+    "name": "Blocks"
+  },
+  {
+    "language": "en",
+    "pack": "history",
+    "id": "en-history-ancient-worlds",
+    "old": "Ancient worlds",
+    "name": "Antiquity"
+  },
+  {
+    "language": "en",
+    "pack": "history",
+    "id": "en-history-roman-rulers",
+    "old": "Roman rulers",
+    "name": "Rulers"
+  },
+  {
+    "language": "en",
+    "pack": "history",
+    "id": "en-history-roman-legion",
+    "old": "Roman legion",
+    "name": "Legion"
+  },
+  {
+    "language": "en",
+    "pack": "history",
+    "id": "en-history-medieval-life",
+    "old": "Medieval life",
+    "name": "Middle Ages"
+  },
+  {
+    "language": "en",
+    "pack": "history",
+    "id": "en-history-castle-siege",
+    "old": "Castle siege",
+    "name": "Siege"
+  },
+  {
+    "language": "en",
+    "pack": "history",
+    "id": "en-history-medieval-town",
+    "old": "Medieval town",
+    "name": "Borough"
+  },
+  {
+    "language": "en",
+    "pack": "history",
+    "id": "en-history-historical-sources",
+    "old": "Historical sources",
+    "name": "Sources"
+  },
+  {
+    "language": "en",
+    "pack": "language",
+    "id": "theme-219",
+    "old": "Parts of speech",
+    "name": "Grammar"
+  },
+  {
+    "language": "en",
+    "pack": "language",
+    "id": "theme-220",
+    "old": "Literary devices",
+    "name": "Devices"
+  },
+  {
+    "language": "en",
+    "pack": "language",
+    "id": "theme-222",
+    "old": "Mythical creatures",
+    "name": "Creatures"
+  },
+  {
+    "language": "en",
+    "pack": "language",
+    "id": "theme-223",
+    "old": "Greek gods",
+    "name": "Olympians"
+  },
+  {
+    "language": "en",
+    "pack": "language",
+    "id": "theme-225",
+    "old": "Shakespeare plays",
+    "name": "Shakespeare"
+  },
+  {
+    "language": "en",
+    "pack": "language",
+    "id": "theme-226",
+    "old": "Story ingredients",
+    "name": "Storytelling"
+  },
+  {
+    "language": "en",
+    "pack": "language",
+    "id": "theme-227",
+    "old": "Writing tools",
+    "name": "Writing kit"
+  },
+  {
+    "language": "en",
+    "pack": "language",
+    "id": "theme-265",
+    "old": "With rings",
+    "name": "Rings"
+  },
+  {
+    "language": "en",
+    "pack": "language",
+    "id": "theme-267",
+    "old": "With heads",
+    "name": "Heads"
+  },
+  {
+    "language": "en",
+    "pack": "language",
+    "id": "theme-268",
+    "old": "With wings",
+    "name": "Wings"
+  },
+  {
+    "language": "en",
+    "pack": "language",
+    "id": "theme-269",
+    "old": "With eyes",
+    "name": "Eyes"
+  },
+  {
+    "language": "en",
+    "pack": "language",
+    "id": "theme-270",
+    "old": "Drawn things",
+    "name": "Drawn"
+  },
+  {
+    "language": "en",
+    "pack": "language",
+    "id": "theme-271",
+    "old": "Broken things",
+    "name": "Broken"
+  },
+  {
+    "language": "en",
+    "pack": "language",
+    "id": "theme-272",
+    "old": "Caught things",
+    "name": "Caught"
+  },
+  {
+    "language": "en",
+    "pack": "language",
+    "id": "theme-304",
+    "old": "Reading material",
+    "name": "Reading"
+  },
+  {
+    "language": "en",
+    "pack": "language",
+    "id": "theme-596",
+    "old": "Roman gods",
+    "name": "Roman pantheon"
+  },
+  {
+    "language": "en",
+    "pack": "language",
+    "id": "theme-629",
+    "old": "Feel-good words",
+    "name": "Comforts"
+  },
+  {
+    "language": "en",
+    "pack": "language",
+    "id": "theme-651",
+    "old": "Soft things",
+    "name": "Soft"
+  },
+  {
+    "language": "en",
+    "pack": "language",
+    "id": "theme-652",
+    "old": "Round things",
+    "name": "Round"
+  },
+  {
+    "language": "en",
+    "pack": "movies",
+    "id": "theme-166",
+    "old": "Film crew",
+    "name": "Crew"
+  },
+  {
+    "language": "en",
+    "pack": "movies",
+    "id": "theme-668",
+    "old": "Animation studios",
+    "name": "Studios"
+  },
+  {
+    "language": "en",
+    "pack": "music",
+    "id": "theme-152",
+    "old": "Music genres",
+    "name": "Styles"
+  },
+  {
+    "language": "en",
+    "pack": "music",
+    "id": "theme-155",
+    "old": "Music notation",
+    "name": "Notation"
+  },
+  {
+    "language": "en",
+    "pack": "music",
+    "id": "theme-298",
+    "old": "Musical qualities",
+    "name": "Composition"
+  },
+  {
+    "language": "en",
+    "pack": "music",
+    "id": "theme-300",
+    "old": "Music session",
+    "name": "Jamming"
+  },
+  {
+    "language": "en",
+    "pack": "music",
+    "id": "theme-305",
+    "old": "Instrument families",
+    "name": "Instrumentation"
+  },
+  {
+    "language": "en",
+    "pack": "music",
+    "id": "theme-308",
+    "old": "Musical topics",
+    "name": "Musicianship"
+  },
+  {
+    "language": "en",
+    "pack": "music",
+    "id": "theme-461",
+    "old": "Music class",
+    "name": "Lesson"
+  },
+  {
+    "language": "en",
+    "pack": "music",
+    "id": "theme-550",
+    "old": "Recording studio",
+    "name": "Studio"
+  },
+  {
+    "language": "en",
+    "pack": "music",
+    "id": "theme-551",
+    "old": "Music formats",
+    "name": "Playback"
+  },
+  {
+    "language": "en",
+    "pack": "mythology",
+    "id": "en-mythology-greek-legends",
+    "old": "Greek legends",
+    "name": "Legends"
+  },
+  {
+    "language": "en",
+    "pack": "mythology",
+    "id": "en-mythology-greek-heroes",
+    "old": "Greek heroes",
+    "name": "Heroes"
+  },
+  {
+    "language": "en",
+    "pack": "mythology",
+    "id": "en-mythology-greek-underworld",
+    "old": "Greek underworld",
+    "name": "Underworld"
+  },
+  {
+    "language": "en",
+    "pack": "mythology",
+    "id": "en-mythology-norse-legends",
+    "old": "Norse legends",
+    "name": "Sagas"
+  },
+  {
+    "language": "en",
+    "pack": "mythology",
+    "id": "en-mythology-egyptian-gods",
+    "old": "Egyptian gods",
+    "name": "Pantheon"
+  },
+  {
+    "language": "en",
+    "pack": "mythology",
+    "id": "en-mythology-grimm-tales",
+    "old": "Grimm tales",
+    "name": "Grimm"
+  },
+  {
+    "language": "en",
+    "pack": "nature",
+    "id": "theme-013",
+    "old": "Natural disasters",
+    "name": "Disasters"
+  },
+  {
+    "language": "en",
+    "pack": "nature",
+    "id": "theme-019",
+    "old": "Ocean currents",
+    "name": "Currents"
+  },
+  {
+    "language": "en",
+    "pack": "nature",
+    "id": "theme-020",
+    "old": "Glowing things",
+    "name": "Glow"
+  },
+  {
+    "language": "en",
+    "pack": "nature",
+    "id": "theme-023",
+    "old": "Geological periods",
+    "name": "Periods"
+  },
+  {
+    "language": "en",
+    "pack": "nature",
+    "id": "theme-049",
+    "old": "Farm animals",
+    "name": "Livestock"
+  },
+  {
+    "language": "en",
+    "pack": "nature",
+    "id": "theme-061",
+    "old": "Animal groups",
+    "name": "Collectives"
+  },
+  {
+    "language": "en",
+    "pack": "nature",
+    "id": "theme-062",
+    "old": "Baby animals",
+    "name": "Young"
+  },
+  {
+    "language": "en",
+    "pack": "nature",
+    "id": "theme-063",
+    "old": "Animal homes",
+    "name": "Shelters"
+  },
+  {
+    "language": "en",
+    "pack": "nature",
+    "id": "theme-070",
+    "old": "Animal defenses",
+    "name": "Defenses"
+  },
+  {
+    "language": "en",
+    "pack": "nature",
+    "id": "theme-072",
+    "old": "Animal sounds",
+    "name": "Calls"
+  },
+  {
+    "language": "en",
+    "pack": "nature",
+    "id": "theme-299",
+    "old": "Garden bugs",
+    "name": "Creepy-crawlies"
+  },
+  {
+    "language": "en",
+    "pack": "nature",
+    "id": "theme-371",
+    "old": "Animal coverings",
+    "name": "Coverings"
+  },
+  {
+    "language": "en",
+    "pack": "nature",
+    "id": "theme-372",
+    "old": "Animal movement",
+    "name": "Movement"
+  },
+  {
+    "language": "en",
+    "pack": "science",
+    "id": "theme-074",
+    "old": "Night sky",
+    "name": "Stargazing"
+  },
+  {
+    "language": "en",
+    "pack": "science",
+    "id": "theme-075",
+    "old": "Space travel",
+    "name": "Spaceflight"
+  },
+  {
+    "language": "en",
+    "pack": "science",
+    "id": "theme-076",
+    "old": "Moon phases",
+    "name": "Phases"
+  },
+  {
+    "language": "en",
+    "pack": "science",
+    "id": "theme-078",
+    "old": "Zodiac signs",
+    "name": "Zodiac"
+  },
+  {
+    "language": "en",
+    "pack": "science",
+    "id": "theme-080",
+    "old": "Space probes",
+    "name": "Probes"
+  },
+  {
+    "language": "en",
+    "pack": "science",
+    "id": "theme-081",
+    "old": "Stellar objects",
+    "name": "Deep sky"
+  },
+  {
+    "language": "en",
+    "pack": "science",
+    "id": "theme-083",
+    "old": "Space agencies",
+    "name": "Agencies"
+  },
+  {
+    "language": "en",
+    "pack": "science",
+    "id": "theme-087",
+    "old": "Distance units",
+    "name": "Distances"
+  },
+  {
+    "language": "en",
+    "pack": "science",
+    "id": "theme-098",
+    "old": "Subatomic particles",
+    "name": "Particles"
+  },
+  {
+    "language": "en",
+    "pack": "science",
+    "id": "theme-100",
+    "old": "Metric prefixes",
+    "name": "Prefixes"
+  },
+  {
+    "language": "en",
+    "pack": "science",
+    "id": "theme-195",
+    "old": "File extensions",
+    "name": "Extensions"
+  },
+  {
+    "language": "en",
+    "pack": "science",
+    "id": "theme-196",
+    "old": "Keyboard commands",
+    "name": "Commands"
+  },
+  {
+    "language": "en",
+    "pack": "science",
+    "id": "theme-197",
+    "old": "Storage units",
+    "name": "Capacity"
+  },
+  {
+    "language": "en",
+    "pack": "science",
+    "id": "theme-199",
+    "old": "Network hardware",
+    "name": "Networking"
+  },
+  {
+    "language": "en",
+    "pack": "science",
+    "id": "theme-201",
+    "old": "Web formats",
+    "name": "Formats"
+  },
+  {
+    "language": "en",
+    "pack": "science",
+    "id": "theme-202",
+    "old": "Computer keys",
+    "name": "Keyboard"
+  },
+  {
+    "language": "en",
+    "pack": "science",
+    "id": "theme-400",
+    "old": "Renewable energy",
+    "name": "Renewables"
+  },
+  {
+    "language": "en",
+    "pack": "science",
+    "id": "theme-459",
+    "old": "Science class",
+    "name": "Experiments"
+  },
+  {
+    "language": "en",
+    "pack": "science",
+    "id": "theme-523",
+    "old": "Online safety",
+    "name": "Security"
+  },
+  {
+    "language": "en",
+    "pack": "science",
+    "id": "theme-525",
+    "old": "Remote control",
+    "name": "Remote"
+  },
+  {
+    "language": "en",
+    "pack": "science",
+    "id": "theme-528",
+    "old": "Internet connections",
+    "name": "Connections"
+  },
+  {
+    "language": "en",
+    "pack": "science",
+    "id": "theme-633",
+    "old": "Shapes and lines",
+    "name": "Outlines"
+  },
+  {
+    "language": "en",
+    "pack": "sports",
+    "id": "theme-132",
+    "old": "Ball sports",
+    "name": "Ballgames"
+  },
+  {
+    "language": "en",
+    "pack": "sports",
+    "id": "theme-134",
+    "old": "Athletics events",
+    "name": "Track and field"
+  },
+  {
+    "language": "en",
+    "pack": "sports",
+    "id": "theme-137",
+    "old": "Gym equipment",
+    "name": "Gym"
+  },
+  {
+    "language": "en",
+    "pack": "sports",
+    "id": "theme-138",
+    "old": "Basketball terms",
+    "name": "Hoops"
+  },
+  {
+    "language": "en",
+    "pack": "sports",
+    "id": "theme-139",
+    "old": "Soccer terms",
+    "name": "Football"
+  },
+  {
+    "language": "en",
+    "pack": "sports",
+    "id": "theme-141",
+    "old": "Baseball positions",
+    "name": "Positions"
+  },
+  {
+    "language": "en",
+    "pack": "sports",
+    "id": "theme-142",
+    "old": "Tennis scoring",
+    "name": "Scoring"
+  },
+  {
+    "language": "en",
+    "pack": "sports",
+    "id": "theme-143",
+    "old": "Swimming strokes",
+    "name": "Strokes"
+  },
+  {
+    "language": "en",
+    "pack": "sports",
+    "id": "theme-145",
+    "old": "Yoga poses",
+    "name": "Yoga"
+  },
+  {
+    "language": "en",
+    "pack": "sports",
+    "id": "theme-296",
+    "old": "Sports gear",
+    "name": "Equipment"
+  },
+  {
+    "language": "en",
+    "pack": "sports",
+    "id": "theme-568",
+    "old": "Football gear",
+    "name": "Kit"
+  },
+  {
+    "language": "en",
+    "pack": "sports",
+    "id": "theme-885",
+    "old": "Horse riding",
+    "name": "Riding"
+  },
+  {
+    "language": "en",
+    "pack": "travel",
+    "id": "theme-172",
+    "old": "Travel modes",
+    "name": "Transit"
+  },
+  {
+    "language": "en",
+    "pack": "travel",
+    "id": "theme-176",
+    "old": "Travel documents",
+    "name": "Documents"
+  },
+  {
+    "language": "en",
+    "pack": "travel",
+    "id": "theme-184",
+    "old": "US national parks",
+    "name": "National parks"
+  },
+  {
+    "language": "en",
+    "pack": "travel",
+    "id": "theme-185",
+    "old": "Mountain ranges",
+    "name": "Ranges"
+  },
+  {
+    "language": "en",
+    "pack": "travel",
+    "id": "theme-191",
+    "old": "Road signs",
+    "name": "Signs"
+  },
+  {
+    "language": "en",
+    "pack": "travel",
+    "id": "theme-301",
+    "old": "Outdoor places",
+    "name": "Outdoors"
+  },
+  {
+    "language": "en",
+    "pack": "travel",
+    "id": "theme-307",
+    "old": "Map features",
+    "name": "Topography"
+  },
+  {
+    "language": "en",
+    "pack": "travel",
+    "id": "theme-473",
+    "old": "Airport terminal",
+    "name": "Terminal"
+  },
+  {
+    "language": "en",
+    "pack": "travel",
+    "id": "theme-515",
+    "old": "Continental Europe",
+    "name": "Europe"
+  },
+  {
+    "language": "en",
+    "pack": "video-games",
+    "id": "theme-215",
+    "old": "Game actions",
+    "name": "Actions"
+  },
+  {
+    "language": "de",
+    "pack": "comics",
+    "id": "de-comics-comic-formats",
+    "old": "Comicformate",
+    "name": "Publikationsformen"
+  },
+  {
+    "language": "de",
+    "pack": "comics",
+    "id": "de-comics-comic-making",
+    "old": "Comics zeichnen",
+    "name": "Zeichnen"
+  },
+  {
+    "language": "de",
+    "pack": "comics",
+    "id": "de-comics-comic-sounds",
+    "old": "Comic-Laute",
+    "name": "Geräusche"
+  },
+  {
+    "language": "de",
+    "pack": "games",
+    "id": "de-games-spielregeln",
+    "old": "Spielregeln",
+    "name": "Regeln"
+  },
+  {
+    "language": "de",
+    "pack": "games",
+    "id": "de-games-draussen-spielen",
+    "old": "Draußen spielen",
+    "name": "Draußen"
+  },
+  {
+    "language": "de",
+    "pack": "games",
+    "id": "de-games-gewinnen-und-verlieren",
+    "old": "Spielausgang",
+    "name": "Ausgang"
+  },
+  {
+    "language": "de",
+    "pack": "history",
+    "id": "de-history-ancient-worlds",
+    "old": "Antike Kulturen",
+    "name": "Hochkulturen"
+  },
+  {
+    "language": "de",
+    "pack": "history",
+    "id": "de-history-ancient-egypt",
+    "old": "Altes Ägypten",
+    "name": "Ägypten"
+  },
+  {
+    "language": "de",
+    "pack": "history",
+    "id": "de-history-ancient-greece",
+    "old": "Antikes Griechenland",
+    "name": "Griechenland"
+  },
+  {
+    "language": "de",
+    "pack": "history",
+    "id": "de-history-ancient-olympics",
+    "old": "Antike Spiele",
+    "name": "Wettkämpfe"
+  },
+  {
+    "language": "de",
+    "pack": "history",
+    "id": "de-history-ancient-rome",
+    "old": "Antikes Rom",
+    "name": "Rom"
+  },
+  {
+    "language": "de",
+    "pack": "history",
+    "id": "de-history-roman-rulers",
+    "old": "Römische Herrscher",
+    "name": "Imperatoren"
+  },
+  {
+    "language": "de",
+    "pack": "history",
+    "id": "de-history-roman-legion",
+    "old": "Römische Legion",
+    "name": "Legion"
+  },
+  {
+    "language": "de",
+    "pack": "history",
+    "id": "de-history-medieval-town",
+    "old": "Mittelalterliche Stadt",
+    "name": "Stadtleben"
+  },
+  {
+    "language": "de",
+    "pack": "history",
+    "id": "de-history-ancient-china",
+    "old": "Altes China",
+    "name": "China"
+  },
+  {
+    "language": "de",
+    "pack": "language",
+    "id": "de-language-hand-woerter",
+    "old": "Hand-Wörter",
+    "name": "Hand ergänzen"
+  },
+  {
+    "language": "de",
+    "pack": "language",
+    "id": "de-language-wasser-woerter",
+    "old": "Wasser-Wörter",
+    "name": "Wasser ergänzen"
+  },
+  {
+    "language": "de",
+    "pack": "language",
+    "id": "de-language-spiel-woerter",
+    "old": "Spiel-Wörter",
+    "name": "Spiel ergänzen"
+  },
+  {
+    "language": "de",
+    "pack": "language",
+    "id": "de-language-buch-woerter",
+    "old": "Buch-Wörter",
+    "name": "Buch ergänzen"
+  },
+  {
+    "language": "de",
+    "pack": "language",
+    "id": "de-language-schnee-woerter",
+    "old": "Schnee-Wörter",
+    "name": "Schnee ergänzen"
+  },
+  {
+    "language": "de",
+    "pack": "movies",
+    "id": "de-movies-filmberufe",
+    "old": "Filmberufe",
+    "name": "Filmteam"
+  },
+  {
+    "language": "de",
+    "pack": "movies",
+    "id": "de-movies-filmgenres",
+    "old": "Filmgenres",
+    "name": "Genres"
+  },
+  {
+    "language": "de",
+    "pack": "movies",
+    "id": "de-movies-weltraumkino",
+    "old": "Weltraumkino",
+    "name": "Science-Fiction"
+  },
+  {
+    "language": "de",
+    "pack": "music",
+    "id": "de-music-streichinstrumente",
+    "old": "Streichinstrumente",
+    "name": "Streicher"
+  },
+  {
+    "language": "de",
+    "pack": "music",
+    "id": "de-music-tasteninstrumente",
+    "old": "Tasteninstrumente",
+    "name": "Tasten"
+  },
+  {
+    "language": "de",
+    "pack": "music",
+    "id": "de-music-blasinstrumente",
+    "old": "Blasinstrumente",
+    "name": "Bläser"
+  },
+  {
+    "language": "de",
+    "pack": "music",
+    "id": "de-music-schlaginstrumente",
+    "old": "Schlaginstrumente",
+    "name": "Schlagwerk"
+  },
+  {
+    "language": "de",
+    "pack": "music",
+    "id": "de-music-musik-horen",
+    "old": "Musik hören",
+    "name": "Hören"
+  },
+  {
+    "language": "de",
+    "pack": "music",
+    "id": "de-music-musikstile",
+    "old": "Musikstile",
+    "name": "Stilrichtungen"
+  },
+  {
+    "language": "de",
+    "pack": "music",
+    "id": "de-music-musik-im-alltag",
+    "old": "Musik im Alltag",
+    "name": "Alltagsklänge"
+  },
+  {
+    "language": "de",
+    "pack": "music",
+    "id": "de-music-musikproduktion",
+    "old": "Musikproduktion",
+    "name": "Produktion"
+  },
+  {
+    "language": "de",
+    "pack": "music",
+    "id": "de-music-musikalische-formen",
+    "old": "Musikformen",
+    "name": "Kompositionen"
+  },
+  {
+    "language": "de",
+    "pack": "music",
+    "id": "de-music-musiktheorie",
+    "old": "Musiktheorie",
+    "name": "Harmonik"
+  },
+  {
+    "language": "de",
+    "pack": "music",
+    "id": "de-music-saiteninstrumente",
+    "old": "Saiteninstrumente",
+    "name": "Saiten"
+  },
+  {
+    "language": "de",
+    "pack": "mythology",
+    "id": "de-mythology-greek-heroes",
+    "old": "Griechische Helden",
+    "name": "Heroen"
+  },
+  {
+    "language": "de",
+    "pack": "mythology",
+    "id": "de-mythology-greek-underworld",
+    "old": "Griechische Unterwelt",
+    "name": "Totenreich"
+  },
+  {
+    "language": "de",
+    "pack": "mythology",
+    "id": "de-mythology-king-arthur",
+    "old": "König Artus",
+    "name": "Artus"
+  },
+  {
+    "language": "de",
+    "pack": "travel",
+    "id": "de-travel-reiseanlaesse",
+    "old": "Reiseanlässe",
+    "name": "Anlässe"
+  },
+  {
+    "language": "de",
+    "pack": "video-games",
+    "id": "de-video-games-spielmenu",
+    "old": "Spielmenü",
+    "name": "Menü"
+  },
+  {
+    "language": "de",
+    "pack": "video-games",
+    "id": "de-video-games-spielziele",
+    "old": "Spielziele",
+    "name": "Ziele"
+  },
+  {
+    "language": "de",
+    "pack": "video-games",
+    "id": "de-video-games-spielestudios",
+    "old": "Spielestudios",
+    "name": "Studios"
+  }
+]

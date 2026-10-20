@@ -5,7 +5,7 @@
   "themes": [
     {
       "id": "en-history-ancient-worlds",
-      "name": "Ancient worlds",
+      "name": "Antiquity",
       "domain": "history",
       "difficulty": 2,
       "words": [
@@ -21,6 +21,9 @@
         "Nubia",
         "Minoans",
         "Etruscans"
+      ],
+      "legacyNames": [
+        "Ancient worlds"
       ]
     },
     {
@@ -59,7 +62,7 @@
         "Chamber",
         "Base",
         "Apex",
-        "Step pyramid",
+        "Dance styles",
         "Casing"
       ]
     },
@@ -73,7 +76,7 @@
         "Natron",
         "Resin",
         "Bandages",
-        "Canopic jars",
+        "Jars",
         "Amulets",
         "Embalming",
         "Mask",
@@ -160,7 +163,7 @@
         "Warriors",
         "Discipline",
         "Phalanx",
-        "Two kings"
+        "Kings"
       ]
     },
     {
@@ -189,7 +192,7 @@
       "domain": "history",
       "difficulty": 1,
       "words": [
-        "Roman rulers",
+        "Rulers",
         "Senate",
         "Forum",
         "Colosseum",
@@ -198,14 +201,14 @@
         "Gladiator",
         "Baths",
         "Latin",
-        "Roman legion",
+        "Legion",
         "Mosaic",
         "Denarius"
       ]
     },
     {
       "id": "en-history-roman-rulers",
-      "name": "Roman rulers",
+      "name": "Rulers",
       "domain": "history",
       "difficulty": 2,
       "words": [
@@ -221,6 +224,9 @@
         "Hadrian",
         "Marcus Aurelius",
         "Constantine"
+      ],
+      "legacyNames": [
+        "Roman rulers"
       ]
     },
     {
@@ -245,7 +251,7 @@
     },
     {
       "id": "en-history-roman-legion",
-      "name": "Roman legion",
+      "name": "Legion",
       "domain": "history",
       "difficulty": 2,
       "words": [
@@ -261,6 +267,9 @@
         "Cohort",
         "March",
         "Standard"
+      ],
+      "legacyNames": [
+        "Roman legion"
       ]
     },
     {
@@ -292,12 +301,12 @@
         "Tigris",
         "Euphrates",
         "Cuneiform",
-        "Clay tablets",
+        "Tablets",
         "Ziggurat",
         "Babylon",
         "Sumer",
         "Irrigation",
-        "Cylinder seal",
+        "Seal",
         "City-state",
         "Hammurabi",
         "Ur"
@@ -345,14 +354,14 @@
     },
     {
       "id": "en-history-medieval-life",
-      "name": "Medieval life",
+      "name": "Middle Ages",
       "domain": "history",
       "difficulty": 1,
       "words": [
         "Knights",
         "Monasteries",
         "Heraldry",
-        "Medieval town",
+        "Borough",
         "Peasant",
         "Plow",
         "Mill",
@@ -361,6 +370,9 @@
         "Guild",
         "Market",
         "Manor"
+      ],
+      "legacyNames": [
+        "Medieval life"
       ]
     },
     {
@@ -380,20 +392,20 @@
         "Tournament",
         "Joust",
         "Chivalry",
-        "Chain mail"
+        "Mail"
       ]
     },
     {
       "id": "en-history-castle-siege",
-      "name": "Castle siege",
+      "name": "Siege",
       "domain": "history",
       "difficulty": 2,
       "words": [
-        "Battering ram",
+        "Ram",
         "Trebuchet",
         "Catapult",
         "Ladder",
-        "Siege tower",
+        "Tower",
         "Wall",
         "Moat",
         "Gate",
@@ -401,26 +413,32 @@
         "Blockade",
         "Defenders",
         "Surrender"
+      ],
+      "legacyNames": [
+        "Castle siege"
       ]
     },
     {
       "id": "en-history-medieval-town",
-      "name": "Medieval town",
+      "name": "Borough",
       "domain": "history",
       "difficulty": 1,
       "words": [
-        "Town wall",
+        "Wall",
         "Gatehouse",
-        "Market square",
+        "Square",
         "Blacksmith",
         "Tanner",
         "Baker",
         "Cobbler",
-        "Town hall",
+        "Hall",
         "Guildhall",
         "Watchman",
         "Cobblestones",
         "Cathedral"
+      ],
+      "legacyNames": [
+        "Medieval town"
       ]
     },
     {
@@ -438,7 +456,7 @@
         "Prayer",
         "Manuscript",
         "Scriptorium",
-        "Herb garden",
+        "Garden",
         "Dormitory",
         "Refectory"
       ]
@@ -513,10 +531,10 @@
         "Bible",
         "Metal",
         "Mold",
-        "Movable type",
-        "Oil-based ink",
-        "Screw press",
-        "42 lines",
+        "Type",
+        "Ink",
+        "Press",
+        "Columns",
         "Workshop",
         "Printer",
         "Latin",
@@ -554,7 +572,7 @@
         "Coal",
         "Iron",
         "Railway",
-        "Textile mill",
+        "Mill",
         "Chimney",
         "Loom",
         "Canal",
@@ -658,8 +676,8 @@
         "Potatoes",
         "Maize",
         "Roads",
-        "Rope bridge",
-        "Sun temple",
+        "Bridge",
+        "Temple",
         "Stonework"
       ]
     },
@@ -675,7 +693,7 @@
         "Pyramid",
         "Temple",
         "Plaza",
-        "Ball court",
+        "Court",
         "Stela",
         "Glyphs",
         "Limestone",
@@ -705,7 +723,7 @@
     },
     {
       "id": "en-history-historical-sources",
-      "name": "Historical sources",
+      "name": "Sources",
       "domain": "history",
       "difficulty": 1,
       "words": [
@@ -721,6 +739,9 @@
         "Oral history",
         "Archive",
         "Treaty"
+      ],
+      "legacyNames": [
+        "Historical sources"
       ]
     },
     {
@@ -797,7 +818,7 @@
         "Chariot",
         "Trade",
         "Settlement",
-        "Burial mound",
+        "Barrow",
         "Sickle",
         "Shield",
         "Mold"

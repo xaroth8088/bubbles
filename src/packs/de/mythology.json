@@ -30,7 +30,7 @@
       "difficulty": 2,
       "words": [
         "Olymp",
-        "Griechische Helden",
+        "Heroen",
         "Trojanischer Krieg",
         "Labyrinth",
         "Argonauten",
@@ -145,7 +145,7 @@
     },
     {
       "id": "de-mythology-greek-heroes",
-      "name": "Griechische Helden",
+      "name": "Heroen",
       "domain": "mythology",
       "difficulty": 2,
       "words": [
@@ -161,6 +161,9 @@
         "Ödipus",
         "Hektor",
         "Aeneas"
+      ],
+      "legacyNames": [
+        "Griechische Helden"
       ]
     },
     {
@@ -216,7 +219,7 @@
         "Kreta",
         "Athen",
         "Aigeus",
-        "Schwarze Segel",
+        "Segel",
         "Schwert",
         "Sandalen",
         "Stier",
@@ -265,7 +268,7 @@
     },
     {
       "id": "de-mythology-greek-underworld",
-      "name": "Griechische Unterwelt",
+      "name": "Totenreich",
       "domain": "mythology",
       "difficulty": 2,
       "words": [
@@ -281,6 +284,9 @@
         "Elysium",
         "Lethe",
         "Fährmann"
+      ],
+      "legacyNames": [
+        "Griechische Unterwelt"
       ]
     },
     {
@@ -332,7 +338,7 @@
         "Rabe",
         "Wolf",
         "Speer",
-        "Ein Auge",
+        "Auge",
         "Weisheit",
         "Runen",
         "Sleipnir",
@@ -372,7 +378,7 @@
         "Esche",
         "Wurzeln",
         "Äste",
-        "Neun Welten",
+        "Welten",
         "Brunnen",
         "Nornen",
         "Eichhörnchen",
@@ -389,7 +395,7 @@
       "domain": "mythology",
       "difficulty": 1,
       "words": [
-        "König Artus",
+        "Artus",
         "Tafelrunde",
         "Guinevere",
         "Lancelot",
@@ -405,7 +411,7 @@
     },
     {
       "id": "de-mythology-king-arthur",
-      "name": "König Artus",
+      "name": "Artus",
       "domain": "mythology",
       "difficulty": 1,
       "words": [
@@ -421,6 +427,9 @@
         "See",
         "Briten",
         "Schwertscheide"
+      ],
+      "legacyNames": [
+        "König Artus"
       ]
     },
     {
@@ -529,13 +538,13 @@
       "domain": "mythology",
       "difficulty": 3,
       "words": [
-        "Lange Nase",
+        "Nase",
         "Flügel",
         "Federn",
         "Berg",
         "Wald",
         "Krähe",
-        "Rotes Gesicht",
+        "Gesicht",
         "Fächer",
         "Maske",
         "Mönch",
@@ -594,7 +603,7 @@
         "Geißel",
         "Krone",
         "Mumie",
-        "Grüne Haut",
+        "Haut",
         "Isis",
         "Horus",
         "Seth",
@@ -640,7 +649,7 @@
         "Schatz",
         "Kaufmann",
         "Lampe",
-        "Fliegender Teppich"
+        "Teppich"
       ]
     },
     {
@@ -649,9 +658,9 @@
       "domain": "mythology",
       "difficulty": 1,
       "words": [
-        "Sesam öffne dich",
+        "Sesam",
         "Höhle",
-        "Vierzig Räuber",
+        "Räuber",
         "Schatz",
         "Ölkrüge",
         "Morgiane",
@@ -670,8 +679,8 @@
       "difficulty": 2,
       "words": [
         "Seefahrer",
-        "Sieben Reisen",
-        "Vogel Roch",
+        "Reisen",
+        "Roch",
         "Ei",
         "Diamanten",
         "Schlangen",
@@ -789,7 +798,7 @@
       "domain": "mythology",
       "difficulty": 1,
       "words": [
-        "Goldene Kugel",
+        "Kugel",
         "Brunnen",
         "Prinzessin",
         "Versprechen",

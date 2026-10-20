@@ -1,6 +1,6 @@
 import { PICTURES, SPECIALS, INTRO_LEVELS, themeName } from './data.js';
 import { getCatalog, CATALOG_VERSION } from './catalog.js';
-import { assembleThemeChain } from './nesting.js';
+import { assembleThemeChain, normalizeLabel } from './nesting.js';
 
 export const SCHEMA = 1;
 export const FROZEN_MERGES = 4;
@@ -88,15 +88,16 @@ export function createPuzzle({mode = 'journey', level = 1, date = localDate(), r
     title:mode === 'lab' ? SPECIALS.find(s => s.id === specials[0])?.name || 'Word bubbles' : mode === 'daily' ? 'A fresh little challenge' : mode === 'journey' && level <= INTRO_LEVELS ? titles[level-1] : mode === 'endless' ? 'Follow your curiosity' : ['Little discoveries','Find your flow','Room for wonder','One thing leads to another'][level%4]};
 }
 
-const fold=word=>word.trim().toLowerCase();
+const fold=normalizeLabel;
 const graphemes=new Intl.Segmenter(undefined,{granularity:'grapheme'});
 const letters=word=>[...graphemes.segment(word)].map(part=>part.segment);
 export const isSplittableWord=word=>/^\p{L}[\p{L}\p{M}]+$/u.test(word)&&letters(word).length>=2;
-function selectDeckThemes({themes,planned,count,maxDifficulty,specials,pictures,rng}){
+export function selectDeckThemes({themes,planned,count,maxDifficulty,specials,pictures,rng}){
   const selected=planned.length?[planned[0]]:[],chosenIds=new Set(planned.map(t=>t.id));
   const used=new Set(planned.map(t=>fold(t.name))),dealtWords=new Set(),selectedPool=new Set(),domains=new Set();
   const originals=new Map(themes.map(t=>[t.id,t]));
   const addTheme=theme=>{
+    used.add(fold(theme.name));
     theme.words.forEach(word=>{used.add(fold(word));dealtWords.add(fold(word));});
     originals.get(theme.id).words.forEach(word=>selectedPool.add(fold(word)));
     domains.add(theme.domain);chosenIds.add(theme.id);
@@ -108,12 +109,16 @@ function selectDeckThemes({themes,planned,count,maxDifficulty,specials,pictures,
     for(let pass=0;pass<2&&selected.length<count;pass++){
       for(const theme of shuffle(themes.filter(t=>t.difficulty<=limit),rng)){
         if(selected.length>=count)break;
-        if(chosenIds.has(theme.id)||(pass===0&&domains.has(theme.domain)))continue;
+        // Only the preassembled chain may deliberately reuse a label as a
+        // clue. Ordinary themes cannot reuse any earlier label or dealt word,
+        // and their own name must be reserved before drawing their clues.
+        const name=fold(theme.name);
+        if(chosenIds.has(theme.id)||used.has(name)||(pass===0&&domains.has(theme.domain)))continue;
         // Compare full catalog pools in both directions. Existing clues must
         // not gain a second meaning, and new clues must not fit prior themes.
         // The ledger includes nested labels before those labels become live.
         if(theme.words.some(word=>dealtWords.has(fold(word))))continue;
-        const pool=theme.words.filter(w=>!used.has(fold(w))&&!selectedPool.has(fold(w)));
+        const pool=theme.words.filter(w=>fold(w)!==name&&!used.has(fold(w))&&!selectedPool.has(fold(w)));
         if(pool.length<4)continue;
         const pictureWords=pool.filter(w=>pictures[w]);
         if(specials.includes('picture')&&Object.keys(pictures).length&&!selected.some(pictureCandidate)&&selected.length===count-1&&!pictureWords.length)continue;

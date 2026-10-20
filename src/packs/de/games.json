@@ -73,19 +73,19 @@
       "domain": "games",
       "difficulty": 1,
       "words": [
-        "Spielbrett",
-        "Spielstein",
+        "Brett",
+        "Stein",
         "Karte",
         "Würfel",
         "Sanduhr",
         "Figur",
         "Plättchen",
-        "Spielgeld"
+        "Geld"
       ]
     },
     {
       "id": "de-games-spielregeln",
-      "name": "Spielregeln",
+      "name": "Regeln",
       "domain": "games",
       "difficulty": 1,
       "words": [
@@ -97,6 +97,9 @@
         "Strafpunkt",
         "Bonus",
         "Sieg"
+      ],
+      "legacyNames": [
+        "Spielregeln"
       ]
     },
     {
@@ -111,7 +114,7 @@
         "Abklatschen",
         "Entdecken",
         "Verbergen",
-        "Augen zu",
+        "Blind",
         "Baum"
       ]
     },
@@ -201,9 +204,9 @@
       "domain": "games",
       "difficulty": 1,
       "words": [
-        "Puzzleteil",
-        "Randstück",
-        "Eckstück",
+        "Teil",
+        "Rand",
+        "Ecke",
         "Motiv",
         "Zusammensetzen",
         "Sortieren",
@@ -223,7 +226,7 @@
         "Umdrehen",
         "Gedächtnis",
         "Bildkarte",
-        "Gleiche Bilder",
+        "Gleichheit",
         "Paar"
       ]
     },
@@ -277,7 +280,7 @@
     },
     {
       "id": "de-games-draussen-spielen",
-      "name": "Draußen spielen",
+      "name": "Draußen",
       "domain": "games",
       "difficulty": 1,
       "words": [
@@ -289,6 +292,9 @@
         "Rollreifen",
         "Stelzen",
         "Sackhüpfen"
+      ],
+      "legacyNames": [
+        "Draußen spielen"
       ]
     },
     {
@@ -303,13 +309,13 @@
         "Murmel",
         "Teddybär",
         "Bauklotz",
-        "Spielzeugauto",
+        "Auto",
         "Eisenbahn"
       ]
     },
     {
       "id": "de-games-gewinnen-und-verlieren",
-      "name": "Spielausgang",
+      "name": "Ausgang",
       "domain": "games",
       "difficulty": 1,
       "words": [
@@ -321,6 +327,9 @@
         "Revanche",
         "Glück",
         "Pech"
+      ],
+      "legacyNames": [
+        "Spielausgang"
       ]
     },
     {
@@ -381,13 +390,13 @@
       "difficulty": 2,
       "words": [
         "Buchstabenstein",
-        "Wortwert",
+        "Wert",
         "Doppelwort",
         "Dreifachwort",
         "Joker",
         "Steinhalter",
         "Wörterbuch",
-        "Buchstabenwert"
+        "Punkte"
       ],
       "popCulture": true
     },
@@ -501,7 +510,6 @@
     "König": "🤴",
     "Dame": "👸",
     "Teddybär": "🧸",
-    "Spielzeugauto": "🚗",
     "Eisenbahn": "🚂",
     "Schlüssel": "🔑",
     "Schloss": "🏰",
@@ -512,6 +520,7 @@
     "Zauber": "🪄",
     "Holz": "🪵",
     "Wolle": "🧶",
-    "Getreide": "🌾"
+    "Getreide": "🌾",
+    "Auto": "🚗"
   }
 }

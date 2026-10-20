@@ -21,7 +21,7 @@
     },
     {
       "id": "theme-166",
-      "name": "Film crew",
+      "name": "Crew",
       "domain": "arts",
       "difficulty": 2,
       "words": [
@@ -32,7 +32,10 @@
         "Cinematographer",
         "Screenwriter",
         "Grip",
-        "Sound designer"
+        "Mixer"
+      ],
+      "legacyNames": [
+        "Film crew"
       ]
     },
     {
@@ -65,7 +68,7 @@
         "Ghost",
         "Vampire",
         "Monster",
-        "Haunted house",
+        "Haunting",
         "Scream",
         "Darkness",
         "Zombie",
@@ -164,7 +167,7 @@
     },
     {
       "id": "theme-668",
-      "name": "Animation studios",
+      "name": "Studios",
       "domain": "arts",
       "difficulty": 2,
       "words": [
@@ -176,6 +179,9 @@
         "Illumination",
         "Laika",
         "Blue Sky"
+      ],
+      "legacyNames": [
+        "Animation studios"
       ]
     },
     {
@@ -237,7 +243,7 @@
         "Boo",
         "Randall",
         "Monstropolis",
-        "Scare floor"
+        "Floor"
       ],
       "popCulture": true
     },
@@ -650,8 +656,8 @@
         "Jane",
         "Michael",
         "Umbrella",
-        "Carpet bag",
-        "Chimney sweep"
+        "Bag",
+        "Sweep"
       ],
       "popCulture": true
     },
@@ -663,7 +669,7 @@
       "words": [
         "Charlie",
         "Oompa-Loompa",
-        "Golden ticket",
+        "Ticket",
         "Chocolate",
         "Augustus",
         "Veruca"
@@ -698,7 +704,7 @@
         "Mad Hatter",
         "Cheshire Cat",
         "Queen of Hearts",
-        "Tea party",
+        "Tea",
         "Tweedledum",
         "Tweedledee"
       ],
@@ -814,7 +820,7 @@
         "Flux capacitor",
         "Hill Valley",
         "Biff",
-        "Clock tower",
+        "Clock",
         "Time travel"
       ],
       "popCulture": true
@@ -876,8 +882,8 @@
         "Trinity",
         "Morpheus",
         "Smith",
-        "Red pill",
-        "Blue pill"
+        "Red",
+        "Blue"
       ],
       "popCulture": true
     },
@@ -921,7 +927,7 @@
       "words": [
         "Alan",
         "Jungle",
-        "Board game",
+        "Board",
         "Dice",
         "Stampede",
         "Van Pelt"
@@ -1434,7 +1440,7 @@
         "Tom",
         "Jerry",
         "Spike",
-        "Mouse hole",
+        "Hole",
         "Cheese",
         "Chase"
       ],
@@ -1692,7 +1698,7 @@
         "Gothel",
         "Lanterns",
         "Hair",
-        "Frying pan"
+        "Pan"
       ],
       "popCulture": true
     },

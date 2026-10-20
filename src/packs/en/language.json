@@ -38,7 +38,7 @@
         "Illustration",
         "Contents",
         "Bookmark",
-        "Dust jacket"
+        "Jacket"
       ]
     },
     {
@@ -61,7 +61,7 @@
     },
     {
       "id": "theme-219",
-      "name": "Parts of speech",
+      "name": "Grammar",
       "domain": "language",
       "difficulty": 2,
       "words": [
@@ -73,11 +73,14 @@
         "Preposition",
         "Conjunction",
         "Interjection"
+      ],
+      "legacyNames": [
+        "Parts of speech"
       ]
     },
     {
       "id": "theme-220",
-      "name": "Literary devices",
+      "name": "Devices",
       "domain": "language",
       "difficulty": 2,
       "words": [
@@ -89,6 +92,9 @@
         "Personification",
         "Onomatopoeia",
         "Oxymoron"
+      ],
+      "legacyNames": [
+        "Literary devices"
       ]
     },
     {
@@ -105,12 +111,12 @@
         "Witch",
         "Knight",
         "King",
-        "Fairy Godmother"
+        "Godmother"
       ]
     },
     {
       "id": "theme-222",
-      "name": "Mythical creatures",
+      "name": "Creatures",
       "domain": "language",
       "difficulty": 2,
       "words": [
@@ -127,11 +133,14 @@
         "Elf",
         "Genie",
         "Troll"
+      ],
+      "legacyNames": [
+        "Mythical creatures"
       ]
     },
     {
       "id": "theme-223",
-      "name": "Greek gods",
+      "name": "Olympians",
       "domain": "language",
       "difficulty": 2,
       "words": [
@@ -143,6 +152,9 @@
         "Hermes",
         "Poseidon",
         "Demeter"
+      ],
+      "legacyNames": [
+        "Greek gods"
       ]
     },
     {
@@ -163,7 +175,7 @@
     },
     {
       "id": "theme-225",
-      "name": "Shakespeare plays",
+      "name": "Shakespeare",
       "domain": "language",
       "difficulty": 2,
       "words": [
@@ -175,11 +187,14 @@
         "Twelfth Night",
         "Julius Caesar",
         "As You Like It"
+      ],
+      "legacyNames": [
+        "Shakespeare plays"
       ]
     },
     {
       "id": "theme-226",
-      "name": "Story ingredients",
+      "name": "Storytelling",
       "domain": "language",
       "difficulty": 1,
       "words": [
@@ -191,11 +206,14 @@
         "Dialogue",
         "Climax",
         "Resolution"
+      ],
+      "legacyNames": [
+        "Story ingredients"
       ]
     },
     {
       "id": "theme-227",
-      "name": "Writing tools",
+      "name": "Writing kit",
       "domain": "language",
       "difficulty": 1,
       "words": [
@@ -213,6 +231,9 @@
         "Paper",
         "Chalk",
         "Brush"
+      ],
+      "legacyNames": [
+        "Writing tools"
       ]
     },
     {
@@ -393,7 +414,7 @@
     },
     {
       "id": "theme-265",
-      "name": "With rings",
+      "name": "Rings",
       "domain": "wordplay",
       "difficulty": 3,
       "words": [
@@ -405,6 +426,9 @@
         "Circus",
         "Onion",
         "Target"
+      ],
+      "legacyNames": [
+        "With rings"
       ]
     },
     {
@@ -425,7 +449,7 @@
     },
     {
       "id": "theme-267",
-      "name": "With heads",
+      "name": "Heads",
       "domain": "wordplay",
       "difficulty": 3,
       "words": [
@@ -437,11 +461,14 @@
         "Pin",
         "Garlic",
         "Lettuce"
+      ],
+      "legacyNames": [
+        "With heads"
       ]
     },
     {
       "id": "theme-268",
-      "name": "With wings",
+      "name": "Wings",
       "domain": "wordplay",
       "difficulty": 3,
       "words": [
@@ -453,11 +480,14 @@
         "Angel",
         "Bat",
         "Dragon"
+      ],
+      "legacyNames": [
+        "With wings"
       ]
     },
     {
       "id": "theme-269",
-      "name": "With eyes",
+      "name": "Eyes",
       "domain": "wordplay",
       "difficulty": 3,
       "words": [
@@ -469,11 +499,14 @@
         "Hook",
         "Coconut",
         "Person"
+      ],
+      "legacyNames": [
+        "With eyes"
       ]
     },
     {
       "id": "theme-270",
-      "name": "Drawn things",
+      "name": "Drawn",
       "domain": "wordplay",
       "difficulty": 3,
       "words": [
@@ -485,11 +518,14 @@
         "Breath",
         "Attention",
         "Weapon"
+      ],
+      "legacyNames": [
+        "Drawn things"
       ]
     },
     {
       "id": "theme-271",
-      "name": "Broken things",
+      "name": "Broken",
       "domain": "wordplay",
       "difficulty": 3,
       "words": [
@@ -501,11 +537,14 @@
         "Rule",
         "Glass",
         "Habit"
+      ],
+      "legacyNames": [
+        "Broken things"
       ]
     },
     {
       "id": "theme-272",
-      "name": "Caught things",
+      "name": "Caught",
       "domain": "wordplay",
       "difficulty": 3,
       "words": [
@@ -517,6 +556,9 @@
         "Attention",
         "Wave",
         "Drift"
+      ],
+      "legacyNames": [
+        "Caught things"
       ]
     },
     {
@@ -729,7 +771,7 @@
     },
     {
       "id": "theme-304",
-      "name": "Reading material",
+      "name": "Reading",
       "domain": "language",
       "difficulty": 1,
       "words": [
@@ -741,6 +783,9 @@
         "Atlas",
         "Dictionary",
         "Novel"
+      ],
+      "legacyNames": [
+        "Reading material"
       ]
     },
     {
@@ -931,7 +976,7 @@
       "difficulty": 1,
       "words": [
         "Panel",
-        "Speech bubble",
+        "Bubble",
         "Caption",
         "Illustration",
         "Hero",
@@ -961,7 +1006,7 @@
         "Weather",
         "Editorial",
         "Sports",
-        "Front page"
+        "Front"
       ]
     },
     {
@@ -981,7 +1026,7 @@
         "Advert",
         "Feature",
         "Contents",
-        "Glossy paper"
+        "Gloss"
       ]
     },
     {
@@ -998,7 +1043,7 @@
         "Meaning",
         "Spelling",
         "Example",
-        "Part of speech",
+        "Class",
         "Page"
       ]
     },
@@ -1068,9 +1113,9 @@
       "domain": "language",
       "difficulty": 2,
       "words": [
-        "Greek gods",
+        "Olympians",
         "Norse gods",
-        "Mythical creatures",
+        "Creatures",
         "Zeus",
         "Odin",
         "Thor",
@@ -1100,7 +1145,7 @@
     },
     {
       "id": "theme-596",
-      "name": "Roman gods",
+      "name": "Roman pantheon",
       "domain": "language",
       "difficulty": 2,
       "words": [
@@ -1114,6 +1159,9 @@
         "Minerva",
         "Diana",
         "Vulcan"
+      ],
+      "legacyNames": [
+        "Roman gods"
       ]
     },
     {
@@ -1164,7 +1212,7 @@
         "Parrot",
         "Treasure",
         "Map",
-        "Eye patch",
+        "Patch",
         "Hook",
         "Skull",
         "Cutlass",
@@ -1196,7 +1244,7 @@
     },
     {
       "id": "theme-629",
-      "name": "Feel-good words",
+      "name": "Comforts",
       "domain": "language",
       "difficulty": 1,
       "words": [
@@ -1212,11 +1260,14 @@
         "Comfort",
         "Gratitude",
         "Wonder"
+      ],
+      "legacyNames": [
+        "Feel-good words"
       ]
     },
     {
       "id": "theme-651",
-      "name": "Soft things",
+      "name": "Soft",
       "domain": "wordplay",
       "difficulty": 2,
       "words": [
@@ -1230,11 +1281,14 @@
         "Marshmallow",
         "Blanket",
         "Plush"
+      ],
+      "legacyNames": [
+        "Soft things"
       ]
     },
     {
       "id": "theme-652",
-      "name": "Round things",
+      "name": "Round",
       "domain": "wordplay",
       "difficulty": 2,
       "words": [
@@ -1248,6 +1302,9 @@
         "Clock",
         "Marble",
         "Hoop"
+      ],
+      "legacyNames": [
+        "Round things"
       ]
     },
     {
@@ -1276,7 +1333,7 @@
       "words": [
         "Shirt",
         "Coat",
-        "Remote control",
+        "Remote",
         "Keyboard",
         "Phone",
         "Elevator",
@@ -1313,8 +1370,8 @@
         "Bus",
         "Skateboard",
         "Wheelchair",
-        "Shopping cart",
-        "Roller skate",
+        "Cart",
+        "Skate",
         "Suitcase"
       ]
     },
@@ -1328,10 +1385,10 @@
         "Tiger",
         "Barcode",
         "Candy cane",
-        "Rugby shirt",
+        "Jersey",
         "Flag",
         "Skunk",
-        "Railroad crossing"
+        "Crossing"
       ]
     },
     {
@@ -1346,7 +1403,7 @@
         "Die",
         "Giraffe",
         "Domino",
-        "Polka dot",
+        "Dot",
         "Freckle"
       ]
     },
@@ -1365,7 +1422,7 @@
         "Bee",
         "Dragonfly",
         "Glider",
-        "Hot-air balloon"
+        "Balloon"
       ]
     },
     {
@@ -1378,11 +1435,11 @@
         "Ship",
         "Cork",
         "Iceberg",
-        "Lily pad",
+        "Lily",
         "Life jacket",
         "Raft",
         "Buoy",
-        "Rubber duck",
+        "Duck",
         "Driftwood"
       ]
     },
@@ -1399,9 +1456,9 @@
         "Razor",
         "Shears",
         "Chisel",
-        "Paper cutter",
-        "Pruning saw",
-        "Pizza cutter"
+        "Guillotine",
+        "Pruner",
+        "Scalpel"
       ]
     },
     {
@@ -1416,7 +1473,7 @@
         "Chocolate",
         "Jam",
         "Caramel",
-        "Maple syrup",
+        "Syrup",
         "Toffee",
         "Marshmallow",
         "Cake"

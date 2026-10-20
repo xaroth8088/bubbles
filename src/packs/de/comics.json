@@ -10,11 +10,11 @@
       "difficulty": 1,
       "words": [
         "Struppi",
-        "Kapitän Haddock",
-        "Professor Bienlein",
+        "Haddock",
+        "Bienlein",
         "Schulze und Schultze",
         "Bianca Castafiore",
-        "Schloss Mühlenhof",
+        "Mühlenhof",
         "Reporter",
         "Haartolle",
         "Rakete",
@@ -111,7 +111,7 @@
         "Azrael",
         "Pilzhäuser",
         "Blau",
-        "Weiße Mützen",
+        "Mützen",
         "Schlumpfdorf",
         "Peyo"
       ],
@@ -126,8 +126,8 @@
         "Jolly Jumper",
         "Rantanplan",
         "Lasso",
-        "Joe Dalton",
-        "Averell Dalton",
+        "Joe",
+        "Averell",
         "Cowboy",
         "Saloon",
         "Revolver",
@@ -161,11 +161,11 @@
       "domain": "comics",
       "difficulty": 1,
       "words": [
-        "Daisy Duck",
+        "Daisy",
         "Tick",
         "Trick",
         "Track",
-        "Dagobert Duck",
+        "Dagobert",
         "Daniel Düsentrieb",
         "Gustav Gans",
         "Entenhausen",
@@ -188,8 +188,8 @@
         "Rudi Ross",
         "Klarabella Kuh",
         "Mack und Muck",
-        "Weiße Handschuhe",
-        "Runde Ohren",
+        "Handschuhe",
+        "Ohren",
         "Maus"
       ],
       "popCulture": true
@@ -246,7 +246,7 @@
         "Silver Surfer",
         "Galactus",
         "Baxter Building",
-        "Kosmische Strahlung",
+        "Strahlung",
         "Franklin Richards"
       ],
       "popCulture": true
@@ -337,10 +337,10 @@
         "Luna",
         "Artemis",
         "Tuxedo Mask",
-        "Sailor Merkur",
-        "Sailor Mars",
-        "Sailor Jupiter",
-        "Sailor Venus",
+        "Merkur",
+        "Mars",
+        "Jupiter",
+        "Venus",
         "Chibiusa",
         "Silberkristall"
       ],
@@ -354,9 +354,9 @@
       "words": [
         "Conan Edogawa",
         "Brille",
-        "Ran Mori",
-        "Kogoro Mori",
-        "Professor Agasa",
+        "Ran",
+        "Kogoro",
+        "Agasa",
         "Schwarze Organisation",
         "Fliege",
         "Stimmenverzerrer",
@@ -391,8 +391,8 @@
       "domain": "comics",
       "difficulty": 2,
       "words": [
-        "Tanjiro Kamado",
-        "Nezuko Kamado",
+        "Tanjiro",
+        "Nezuko",
         "Zenitsu",
         "Inosuke",
         "Muzan",
@@ -438,7 +438,7 @@
         "Mauern",
         "Aufklärungstrupp",
         "Shiganshina",
-        "Kolossaler Titan"
+        "Koloss"
       ],
       "popCulture": true
     },
@@ -448,8 +448,8 @@
       "domain": "comics",
       "difficulty": 2,
       "words": [
-        "Edward Elric",
-        "Alphonse Elric",
+        "Edward",
+        "Alphonse",
         "Winry",
         "Roy Mustang",
         "Riza Hawkeye",
@@ -506,11 +506,11 @@
       "difficulty": 2,
       "words": [
         "Toru Honda",
-        "Yuki Soma",
-        "Kyo Soma",
-        "Shigure Soma",
-        "Akito Soma",
-        "Momiji Soma",
+        "Yuki",
+        "Kyo",
+        "Shigure",
+        "Akito",
+        "Momiji",
         "Tierkreis",
         "Fluch",
         "Verwandlung",
@@ -530,7 +530,7 @@
         "Kerberos",
         "Yue",
         "Clow Reed",
-        "Clow Cards",
+        "Karten",
         "Magie",
         "Zauberstab",
         "Versiegelung"
@@ -563,8 +563,8 @@
       "difficulty": 2,
       "words": [
         "Yugi Muto",
-        "Seto Kaiba",
-        "Mokuba Kaiba",
+        "Seto",
+        "Mokuba",
         "Bakura",
         "Pegasus",
         "Millenniumspuzzle",
@@ -620,8 +620,8 @@
       "difficulty": 3,
       "words": [
         "Atom",
-        "Dr. Tenma",
-        "Dr. Ochanomizu",
+        "Tenma",
+        "Ochanomizu",
         "Uran",
         "Tobio",
         "Roboter",
@@ -709,23 +709,26 @@
     },
     {
       "id": "de-comics-comic-formats",
-      "name": "Comicformate",
+      "name": "Publikationsformen",
       "domain": "comics",
       "difficulty": 2,
       "words": [
         "Comicstrips",
         "Graphic Novels",
         "Webcomics",
-        "Comichefte",
-        "Comicalben",
+        "Hefte",
+        "Alben",
         "Sammelbände",
         "Einzelbände",
         "Miniserien"
+      ],
+      "legacyNames": [
+        "Comicformate"
       ]
     },
     {
       "id": "de-comics-comic-making",
-      "name": "Comics zeichnen",
+      "name": "Zeichnen",
       "domain": "comics",
       "difficulty": 1,
       "words": [
@@ -741,11 +744,14 @@
         "Storyboard",
         "Skizze",
         "Sprechblase"
+      ],
+      "legacyNames": [
+        "Comics zeichnen"
       ]
     },
     {
       "id": "de-comics-comic-sounds",
-      "name": "Comic-Laute",
+      "name": "Geräusche",
       "domain": "comics",
       "difficulty": 1,
       "words": [
@@ -759,6 +765,9 @@
         "Rums",
         "Knall",
         "Klick"
+      ],
+      "legacyNames": [
+        "Comic-Laute"
       ]
     }
   ],

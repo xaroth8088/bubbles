@@ -136,7 +136,7 @@
         "Cider",
         "Hayride",
         "Chestnut",
-        "Leaf pile",
+        "Pile",
         "Bonfire",
         "Sweater",
         "Scarf",
@@ -250,12 +250,12 @@
         "Watering can",
         "Flowers",
         "Greenhouse",
-        "Bird feeder"
+        "Feeder"
       ]
     },
     {
       "id": "theme-013",
-      "name": "Natural disasters",
+      "name": "Disasters",
       "domain": "nature",
       "difficulty": 2,
       "words": [
@@ -268,6 +268,9 @@
         "Wildfire",
         "Drought",
         "Fire"
+      ],
+      "legacyNames": [
+        "Natural disasters"
       ]
     },
     {
@@ -355,7 +358,7 @@
     },
     {
       "id": "theme-019",
-      "name": "Ocean currents",
+      "name": "Currents",
       "domain": "nature",
       "difficulty": 3,
       "words": [
@@ -367,11 +370,14 @@
         "Canary",
         "Agulhas",
         "Oyashio"
+      ],
+      "legacyNames": [
+        "Ocean currents"
       ]
     },
     {
       "id": "theme-020",
-      "name": "Glowing things",
+      "name": "Glow",
       "domain": "nature",
       "difficulty": 2,
       "words": [
@@ -383,6 +389,9 @@
         "Neon",
         "Bioluminescence",
         "Phosphor"
+      ],
+      "legacyNames": [
+        "Glowing things"
       ]
     },
     {
@@ -422,7 +431,7 @@
     },
     {
       "id": "theme-023",
-      "name": "Geological periods",
+      "name": "Periods",
       "domain": "nature",
       "difficulty": 3,
       "words": [
@@ -434,6 +443,9 @@
         "Triassic",
         "Jurassic",
         "Cretaceous"
+      ],
+      "legacyNames": [
+        "Geological periods"
       ]
     },
     {
@@ -454,7 +466,7 @@
     },
     {
       "id": "theme-049",
-      "name": "Farm animals",
+      "name": "Livestock",
       "domain": "animals",
       "difficulty": 1,
       "words": [
@@ -470,6 +482,9 @@
         "Turkey",
         "Ram",
         "Ox"
+      ],
+      "legacyNames": [
+        "Farm animals"
       ]
     },
     {
@@ -688,7 +703,7 @@
     },
     {
       "id": "theme-061",
-      "name": "Animal groups",
+      "name": "Collectives",
       "domain": "animals",
       "difficulty": 2,
       "words": [
@@ -700,11 +715,14 @@
         "Pod",
         "Colony",
         "Troop"
+      ],
+      "legacyNames": [
+        "Animal groups"
       ]
     },
     {
       "id": "theme-062",
-      "name": "Baby animals",
+      "name": "Young",
       "domain": "animals",
       "difficulty": 1,
       "words": [
@@ -722,11 +740,14 @@
         "Kid",
         "Piglet",
         "Tadpole"
+      ],
+      "legacyNames": [
+        "Baby animals"
       ]
     },
     {
       "id": "theme-063",
-      "name": "Animal homes",
+      "name": "Shelters",
       "domain": "animals",
       "difficulty": 1,
       "words": [
@@ -744,6 +765,9 @@
         "Doghouse",
         "Shell",
         "Reef"
+      ],
+      "legacyNames": [
+        "Animal homes"
       ]
     },
     {
@@ -848,7 +872,7 @@
     },
     {
       "id": "theme-070",
-      "name": "Animal defenses",
+      "name": "Defenses",
       "domain": "animals",
       "difficulty": 2,
       "words": [
@@ -860,6 +884,9 @@
         "Antler",
         "Claw",
         "Sting"
+      ],
+      "legacyNames": [
+        "Animal defenses"
       ]
     },
     {
@@ -881,7 +908,7 @@
     },
     {
       "id": "theme-072",
-      "name": "Animal sounds",
+      "name": "Calls",
       "domain": "animals",
       "difficulty": 1,
       "words": [
@@ -901,6 +928,9 @@
         "Squeak",
         "Cluck",
         "Bray"
+      ],
+      "legacyNames": [
+        "Animal sounds"
       ]
     },
     {
@@ -956,7 +986,7 @@
     },
     {
       "id": "theme-299",
-      "name": "Garden bugs",
+      "name": "Creepy-crawlies",
       "domain": "animals",
       "difficulty": 1,
       "words": [
@@ -971,6 +1001,9 @@
         "Snail",
         "Worm",
         "Spider"
+      ],
+      "legacyNames": [
+        "Garden bugs"
       ]
     },
     {
@@ -1432,7 +1465,7 @@
         "Heat",
         "Daylight",
         "Shadow",
-        "Solar panel",
+        "Panel",
         "Sundial",
         "Sunburn",
         "Sunbeam",
@@ -1497,15 +1530,14 @@
         "Stem",
         "Green",
         "Autumn",
-        "Maple",
+        "Maple leaf",
         "Oak",
         "Chlorophyll",
         "Photosynthesis",
         "Falling",
         "Tree",
         "Fern",
-        "Blade",
-        "Maple leaf"
+        "Blade"
       ]
     },
     {
@@ -1883,7 +1915,7 @@
         "Brush",
         "Vet",
         "Treat",
-        "Litter box",
+        "Litter",
         "Kennel",
         "Toy",
         "Bed",
@@ -1923,9 +1955,9 @@
         "Claw",
         "Tail",
         "Kitten",
-        "Litter box",
+        "Litter",
         "Catnip",
-        "Scratch post",
+        "Post",
         "Nap",
         "Fur"
       ]
@@ -2022,7 +2054,7 @@
         "Emperor",
         "Colony",
         "Swimming",
-        "Black and white",
+        "Monochrome",
         "Tuxedo"
       ]
     },
@@ -2106,7 +2138,7 @@
     },
     {
       "id": "theme-371",
-      "name": "Animal coverings",
+      "name": "Coverings",
       "domain": "animals",
       "difficulty": 1,
       "words": [
@@ -2120,11 +2152,14 @@
         "Hide",
         "Spine",
         "Down"
+      ],
+      "legacyNames": [
+        "Animal coverings"
       ]
     },
     {
       "id": "theme-372",
-      "name": "Animal movement",
+      "name": "Movement",
       "domain": "animals",
       "difficulty": 1,
       "words": [
@@ -2140,6 +2175,9 @@
         "Soar",
         "Glide",
         "Trot"
+      ],
+      "legacyNames": [
+        "Animal movement"
       ]
     },
     {
@@ -2231,7 +2269,7 @@
         "Binoculars",
         "Guide",
         "Notebook",
-        "Bird feeder",
+        "Feeder",
         "Bird",
         "Feather",
         "Nest",
@@ -2372,7 +2410,7 @@
         "Roost",
         "Cave",
         "Echolocation",
-        "Nocturnal",
+        "Nocturnal animals",
         "Fur",
         "Mammal",
         "Insect",

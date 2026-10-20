@@ -9,10 +9,10 @@
       "domain": "mythology",
       "difficulty": 1,
       "words": [
-        "Grimm tales",
+        "Grimm",
         "Arabian Nights",
-        "Norse legends",
-        "Greek legends",
+        "Sagas",
+        "Legends",
         "Yokai",
         "Anansi",
         "Baba Yaga",
@@ -25,12 +25,12 @@
     },
     {
       "id": "en-mythology-greek-legends",
-      "name": "Greek legends",
+      "name": "Legends",
       "domain": "mythology",
       "difficulty": 2,
       "words": [
         "Olympus",
-        "Greek heroes",
+        "Heroes",
         "Trojan War",
         "Labyrinth",
         "Argonauts",
@@ -41,6 +41,9 @@
         "Nymphs",
         "Sirens",
         "Pandora"
+      ],
+      "legacyNames": [
+        "Greek legends"
       ]
     },
     {
@@ -145,7 +148,7 @@
     },
     {
       "id": "en-mythology-greek-heroes",
-      "name": "Greek heroes",
+      "name": "Heroes",
       "domain": "mythology",
       "difficulty": 2,
       "words": [
@@ -161,6 +164,9 @@
         "Oedipus",
         "Hector",
         "Aeneas"
+      ],
+      "legacyNames": [
+        "Greek heroes"
       ]
     },
     {
@@ -195,8 +201,8 @@
         "Snakes",
         "Stone",
         "Andromeda",
-        "Sea monster",
-        "Winged sandals",
+        "Monster",
+        "Sandals",
         "Helmet",
         "Sword",
         "Danae",
@@ -216,7 +222,7 @@
         "Crete",
         "Athens",
         "Aegeus",
-        "Black sails",
+        "Sails",
         "Sword",
         "Sandals",
         "Bull",
@@ -256,7 +262,7 @@
         "Hector",
         "Agamemnon",
         "Menelaus",
-        "Wooden horse",
+        "Horse",
         "Siege",
         "Cassandra",
         "Priam",
@@ -265,7 +271,7 @@
     },
     {
       "id": "en-mythology-greek-underworld",
-      "name": "Greek underworld",
+      "name": "Underworld",
       "domain": "mythology",
       "difficulty": 2,
       "words": [
@@ -281,11 +287,14 @@
         "Elysium",
         "Lethe",
         "Ferryman"
+      ],
+      "legacyNames": [
+        "Greek underworld"
       ]
     },
     {
       "id": "en-mythology-norse-legends",
-      "name": "Norse legends",
+      "name": "Sagas",
       "domain": "mythology",
       "difficulty": 2,
       "words": [
@@ -296,11 +305,14 @@
         "Valkyrie",
         "Bifrost",
         "Runes",
-        "Frost giants",
+        "Giants",
         "Dwarves",
         "Norns",
         "Midgard",
         "Fenrir"
+      ],
+      "legacyNames": [
+        "Norse legends"
       ]
     },
     {
@@ -332,7 +344,7 @@
         "Raven",
         "Wolf",
         "Spear",
-        "One eye",
+        "Eye",
         "Wisdom",
         "Runes",
         "Sleipnir",
@@ -372,7 +384,7 @@
         "Ash",
         "Roots",
         "Branches",
-        "Nine worlds",
+        "Worlds",
         "Well",
         "Norns",
         "Squirrel",
@@ -380,7 +392,7 @@
         "Dragon",
         "Deer",
         "Odin",
-        "World tree"
+        "Tree"
       ]
     },
     {
@@ -500,7 +512,7 @@
         "Mask",
         "Lantern",
         "Scroll",
-        "Night parade"
+        "Parade"
       ]
     },
     {
@@ -529,13 +541,13 @@
       "domain": "mythology",
       "difficulty": 3,
       "words": [
-        "Long nose",
+        "Nose",
         "Wings",
         "Feathers",
         "Mountain",
         "Forest",
         "Crow",
-        "Red face",
+        "Face",
         "Fan",
         "Mask",
         "Monk",
@@ -551,21 +563,21 @@
       "words": [
         "River",
         "Pond",
-        "Turtle shell",
+        "Shell",
         "Beak",
         "Cucumber",
         "Water",
         "Bowl",
         "Bowing",
         "Sumo",
-        "Webbed feet",
+        "Feet",
         "Mischief",
         "Swimming"
       ]
     },
     {
       "id": "en-mythology-egyptian-gods",
-      "name": "Egyptian gods",
+      "name": "Pantheon",
       "domain": "mythology",
       "difficulty": 2,
       "words": [
@@ -581,6 +593,9 @@
         "Set",
         "Sobek",
         "Nut"
+      ],
+      "legacyNames": [
+        "Egyptian gods"
       ]
     },
     {
@@ -594,7 +609,7 @@
         "Flail",
         "Crown",
         "Mummy",
-        "Green skin",
+        "Skin",
         "Isis",
         "Horus",
         "Set",
@@ -640,7 +655,7 @@
         "Treasure",
         "Merchant",
         "Lamp",
-        "Magic carpet"
+        "Carpet"
       ]
     },
     {
@@ -651,9 +666,9 @@
       "words": [
         "Open sesame",
         "Cave",
-        "Forty thieves",
+        "Thieves",
         "Treasure",
-        "Oil jars",
+        "Jars",
         "Morgiana",
         "Cassim",
         "Donkey",
@@ -670,14 +685,14 @@
       "difficulty": 2,
       "words": [
         "Sailor",
-        "Seven voyages",
+        "Voyages",
         "Roc",
         "Egg",
         "Diamonds",
         "Serpents",
         "Island",
         "Shipwreck",
-        "Giant fish",
+        "Fish",
         "Baghdad",
         "Porter",
         "Old Man of the Sea"
@@ -685,7 +700,7 @@
     },
     {
       "id": "en-mythology-grimm-tales",
-      "name": "Grimm tales",
+      "name": "Grimm",
       "domain": "mythology",
       "difficulty": 1,
       "words": [
@@ -701,6 +716,9 @@
         "The Brave Little Tailor",
         "The Wolf and Seven Kids",
         "Snow White"
+      ],
+      "legacyNames": [
+        "Grimm tales"
       ]
     },
     {
@@ -740,7 +758,7 @@
         "Teeth",
         "Disguise",
         "Stones",
-        "Red hood"
+        "Hood"
       ]
     },
     {
@@ -789,7 +807,7 @@
       "domain": "mythology",
       "difficulty": 1,
       "words": [
-        "Golden ball",
+        "Ball",
         "Well",
         "Princess",
         "Promise",
@@ -800,7 +818,7 @@
         "Wall",
         "Transformation",
         "Faithful Henry",
-        "Iron bands"
+        "Bands"
       ]
     },
     {
@@ -870,7 +888,7 @@
       "difficulty": 2,
       "words": [
         "Hut",
-        "Chicken legs",
+        "Legs",
         "Forest",
         "Mortar",
         "Pestle",

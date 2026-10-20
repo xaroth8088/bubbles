@@ -190,13 +190,13 @@
       "domain": "travel",
       "difficulty": 1,
       "words": [
-        "Wanderschuh",
-        "Wanderstock",
+        "Schuh",
+        "Stock",
         "Rucksack",
         "Markierung",
         "Gipfel",
         "Hütte",
-        "Wanderkarte",
+        "Karte",
         "Trinkflasche"
       ]
     },
@@ -208,11 +208,11 @@
       "words": [
         "Ski",
         "Snowboard",
-        "Skipass",
-        "Skilift",
+        "Pass",
+        "Lift",
         "Piste",
-        "Skibrille",
-        "Skihütte",
+        "Brille",
+        "Hütte",
         "Schnee"
       ],
       "legacyNames": [
@@ -486,10 +486,10 @@
       "words": [
         "Jetlag",
         "Sonnenbrand",
-        "Koffer verloren",
+        "Verlust",
         "Flugausfall",
         "Stau",
-        "Pass vergessen",
+        "Vergesslichkeit",
         "Reisekrankheit",
         "Sprachbarriere"
       ]
@@ -530,7 +530,7 @@
     },
     {
       "id": "de-travel-reiseanlaesse",
-      "name": "Reiseanlässe",
+      "name": "Anlässe",
       "domain": "travel",
       "difficulty": 1,
       "words": [
@@ -544,6 +544,9 @@
         "Festival",
         "Messe",
         "Klassentreffen"
+      ],
+      "legacyNames": [
+        "Reiseanlässe"
       ]
     }
   ],

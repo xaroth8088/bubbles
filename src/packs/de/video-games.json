@@ -21,7 +21,7 @@
     },
     {
       "id": "de-video-games-spielmenu",
-      "name": "Spielmenü",
+      "name": "Menü",
       "domain": "video-games",
       "difficulty": 1,
       "words": [
@@ -33,11 +33,14 @@
         "Neustart",
         "Beenden",
         "Fortsetzen"
+      ],
+      "legacyNames": [
+        "Spielmenü"
       ]
     },
     {
       "id": "de-video-games-spielziele",
-      "name": "Spielziele",
+      "name": "Ziele",
       "domain": "video-games",
       "difficulty": 1,
       "words": [
@@ -49,6 +52,9 @@
         "Highscore",
         "Pokal",
         "Belohnung"
+      ],
+      "legacyNames": [
+        "Spielziele"
       ]
     },
     {
@@ -187,8 +193,8 @@
       "difficulty": 1,
       "words": [
         "Bananenschale",
-        "Roter Panzer",
-        "Blauer Panzer",
+        "Panzer",
+        "Stachi",
         "Regenbogen-Boulevard",
         "Blitz",
         "Pilz",
@@ -260,7 +266,7 @@
         "Kirsche",
         "Kraftpille",
         "Verfolgung",
-        "Gelber Kreis",
+        "Kreis",
         "Tunnel"
       ],
       "popCulture": true
@@ -305,10 +311,10 @@
       "domain": "video-games",
       "difficulty": 1,
       "words": [
-        "Sonic",
+        "Tempo",
         "Tails",
         "Knuckles",
-        "Dr. Eggman",
+        "Eggman",
         "Goldring",
         "Looping",
         "Igel",
@@ -323,7 +329,7 @@
       "difficulty": 1,
       "words": [
         "Link",
-        "Zelda",
+        "Prinzessin",
         "Hyrule",
         "Ganon",
         "Triforce",
@@ -339,7 +345,7 @@
       "domain": "video-games",
       "difficulty": 2,
       "words": [
-        "Battle Bus",
+        "Bus",
         "Sturm",
         "Spitzhacke",
         "Bauwand",
@@ -390,7 +396,7 @@
       "domain": "video-games",
       "difficulty": 2,
       "words": [
-        "Kluft der Beschwörer",
+        "Kluft",
         "Nexus",
         "Turm",
         "Champion",
@@ -424,7 +430,7 @@
       "domain": "video-games",
       "difficulty": 2,
       "words": [
-        "Portal",
+        "Durchgang",
         "Portalgun",
         "GLaDOS",
         "Chell",
@@ -443,7 +449,7 @@
       "words": [
         "Hogwarts",
         "Zauberstab",
-        "Sprechender Hut",
+        "Hut",
         "Hogsmeade",
         "Hippogreif",
         "Zaubertrank",
@@ -524,7 +530,7 @@
     },
     {
       "id": "de-video-games-spielestudios",
-      "name": "Spielestudios",
+      "name": "Studios",
       "domain": "video-games",
       "difficulty": 2,
       "words": [
@@ -539,7 +545,10 @@
         "Naughty Dog",
         "Blizzard"
       ],
-      "popCulture": true
+      "popCulture": true,
+      "legacyNames": [
+        "Spielestudios"
+      ]
     }
   ],
   "pictures": {

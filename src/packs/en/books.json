@@ -45,13 +45,13 @@
       "domain": "books",
       "difficulty": 2,
       "words": [
-        "Captain Hastings",
-        "Inspector Japp",
-        "Miss Lemon",
+        "Hastings",
+        "Japp",
+        "Lemon",
         "Ariadne Oliver",
         "Belgium",
         "Moustache",
-        "Grey cells",
+        "Cells",
         "Order",
         "Symmetry",
         "Detective"
@@ -85,7 +85,7 @@
         "Moriarty",
         "Mycroft Holmes",
         "Irene Adler",
-        "Inspector Lestrade",
+        "Lestrade",
         "Mrs Hudson",
         "Baker Street",
         "Violin",
@@ -155,11 +155,11 @@
       "domain": "books",
       "difficulty": 2,
       "words": [
-        "Elizabeth Bennet",
-        "Mr Darcy",
-        "Jane Bennet",
-        "Mr Bingley",
-        "Mr Collins",
+        "Elizabeth",
+        "Darcy",
+        "Jane",
+        "Bingley",
+        "Collins",
         "Lady Catherine",
         "Wickham",
         "Pemberley",
@@ -214,8 +214,8 @@
         "Artful Dodger",
         "Nancy",
         "Bill Sikes",
-        "Mr Bumble",
-        "Mr Brownlow",
+        "Bumble",
+        "Brownlow",
         "Workhouse",
         "Gruel",
         "Pickpockets",
@@ -265,8 +265,8 @@
       "domain": "books",
       "difficulty": 2,
       "words": [
-        "Miss Honey",
-        "Miss Trunchbull",
+        "Honey",
+        "Trunchbull",
         "Mr Wormwood",
         "Mrs Wormwood",
         "Lavender",
@@ -274,7 +274,7 @@
         "Telekinesis",
         "Library",
         "Chalk",
-        "Chocolate cake"
+        "Cake"
       ],
       "popCulture": true
     },
@@ -290,7 +290,6 @@
         "Snozzcumber",
         "Frobscottle",
         "Whizzpoppers",
-        "Dream jars",
         "Queen",
         "Trumpet",
         "Giant Country"
@@ -311,7 +310,7 @@
         "Chickens",
         "Tunnel",
         "Cider",
-        "Fox cubs",
+        "Cubs",
         "Farmers"
       ],
       "popCulture": true
@@ -328,7 +327,7 @@
         "Ben Gunn",
         "Captain Smollett",
         "Hispaniola",
-        "Treasure map",
+        "Map",
         "Black spot",
         "Parrot",
         "Pirates"
@@ -365,7 +364,7 @@
         "Queequeg",
         "Starbuck",
         "Pequod",
-        "White whale",
+        "Whale",
         "Harpoon",
         "Whaling",
         "Obsession",
@@ -385,8 +384,7 @@
         "Houyhnhnms",
         "Yahoos",
         "Giants",
-        "Tiny people",
-        "Floating island",
+        "Lilliputians",
         "Voyages",
         "Satire"
       ],
@@ -417,10 +415,10 @@
       "domain": "books",
       "difficulty": 2,
       "words": [
-        "Jo March",
-        "Meg March",
-        "Beth March",
-        "Amy March",
+        "Jo",
+        "Meg",
+        "Beth",
+        "Amy",
         "Marmee",
         "Laurie",
         "Professor Bhaer",
@@ -442,7 +440,7 @@
         "Diana Barry",
         "Gilbert Blythe",
         "Avonlea",
-        "Red hair",
+        "Redhead",
         "Raspberry cordial",
         "Slate",
         "Puffed sleeves"
@@ -521,7 +519,7 @@
         "Robin",
         "Key",
         "Roses",
-        "Garden wall"
+        "Wall"
       ],
       "popCulture": true
     },
@@ -539,7 +537,7 @@
         "Alps",
         "Goats",
         "Frankfurt",
-        "Mountain hut",
+        "Hut",
         "Homesickness"
       ],
       "popCulture": true
@@ -556,7 +554,7 @@
         "Villa Villekulla",
         "Horse",
         "Pigtails",
-        "Gold coins",
+        "Coins",
         "Pirates",
         "Pancakes",
         "Strength"
@@ -662,14 +660,14 @@
       "domain": "books",
       "difficulty": 2,
       "words": [
-        "Violet Baudelaire",
-        "Klaus Baudelaire",
-        "Sunny Baudelaire",
+        "Violet",
+        "Klaus",
+        "Sunny",
         "Count Olaf",
         "Lemony Snicket",
         "Mr Poe",
         "V.F.D.",
-        "Sugar bowl",
+        "Sugar",
         "Disguises",
         "Orphans"
       ],
@@ -799,9 +797,9 @@
         "Flopsy",
         "Mopsy",
         "Cotton-tail",
-        "Blue jacket",
+        "Jacket",
         "Radishes",
-        "Camomile tea",
+        "Camomile",
         "Garden",
         "Shoes",
         "Blackberries"
@@ -818,7 +816,7 @@
         "Thing One",
         "Thing Two",
         "Fish",
-        "Striped hat",
+        "Hat",
         "Kite",
         "Box",
         "Umbrella",

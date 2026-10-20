@@ -5,7 +5,7 @@
   "themes": [
     {
       "id": "de-music-streichinstrumente",
-      "name": "Streichinstrumente",
+      "name": "Streicher",
       "domain": "music",
       "difficulty": 1,
       "words": [
@@ -17,11 +17,14 @@
         "Saite",
         "Kolophonium",
         "Wirbel"
+      ],
+      "legacyNames": [
+        "Streichinstrumente"
       ]
     },
     {
       "id": "de-music-tasteninstrumente",
-      "name": "Tasteninstrumente",
+      "name": "Tasten",
       "domain": "music",
       "difficulty": 1,
       "words": [
@@ -33,11 +36,14 @@
         "Akkordeon",
         "Celesta",
         "Cembalo"
+      ],
+      "legacyNames": [
+        "Tasteninstrumente"
       ]
     },
     {
       "id": "de-music-blasinstrumente",
-      "name": "Blasinstrumente",
+      "name": "Bläser",
       "domain": "music",
       "difficulty": 1,
       "words": [
@@ -49,11 +55,14 @@
         "Oboe",
         "Fagott",
         "Saxofon"
+      ],
+      "legacyNames": [
+        "Blasinstrumente"
       ]
     },
     {
       "id": "de-music-schlaginstrumente",
-      "name": "Schlaginstrumente",
+      "name": "Schlagwerk",
       "domain": "music",
       "difficulty": 1,
       "words": [
@@ -65,6 +74,9 @@
         "Marimba",
         "Tamburin",
         "Gong"
+      ],
+      "legacyNames": [
+        "Schlaginstrumente"
       ]
     },
     {
@@ -73,14 +85,14 @@
       "domain": "music",
       "difficulty": 1,
       "words": [
-        "Gitarre",
+        "Resonanzkörper",
         "Saite",
         "Plektrum",
         "Verstärker",
         "Griffbrett",
         "Bund",
         "Kapodaster",
-        "Gitarrenkoffer"
+        "Koffer"
       ]
     },
     {
@@ -110,7 +122,7 @@
         "Box",
         "Monitor",
         "Vorhang",
-        "Bühnenrand",
+        "Rand",
         "Soundcheck",
         "Auftritt"
       ],
@@ -139,7 +151,7 @@
     },
     {
       "id": "de-music-musik-horen",
-      "name": "Musik hören",
+      "name": "Hören",
       "domain": "music",
       "difficulty": 1,
       "words": [
@@ -151,11 +163,14 @@
         "Single",
         "Lautsprecher",
         "Streaming"
+      ],
+      "legacyNames": [
+        "Musik hören"
       ]
     },
     {
       "id": "de-music-musikstile",
-      "name": "Musikstile",
+      "name": "Stilrichtungen",
       "domain": "music",
       "difficulty": 1,
       "words": [
@@ -167,6 +182,9 @@
         "Techno",
         "Hip-Hop",
         "Schlager"
+      ],
+      "legacyNames": [
+        "Musikstile"
       ]
     },
     {
@@ -256,13 +274,13 @@
       "difficulty": 1,
       "words": [
         "Note",
-        "Notenlinie",
-        "Notenschlüssel",
+        "Linie",
+        "Schlüssel",
         "Taktstrich",
         "Pause",
         "Kreuz",
         "Be",
-        "Violinschlüssel"
+        "G-Schlüssel"
       ]
     },
     {
@@ -302,7 +320,7 @@
     },
     {
       "id": "de-music-musik-im-alltag",
-      "name": "Musik im Alltag",
+      "name": "Alltagsklänge",
       "domain": "music",
       "difficulty": 1,
       "words": [
@@ -314,6 +332,9 @@
         "Hintergrundmusik",
         "Titelmelodie",
         "Pausengong"
+      ],
+      "legacyNames": [
+        "Musik im Alltag"
       ]
     },
     {
@@ -325,7 +346,7 @@
         "Zelt",
         "Wiese",
         "Armband",
-        "Hauptbühne",
+        "Bühne",
         "Camping",
         "Line-up",
         "Headliner",
@@ -445,13 +466,13 @@
         "Aber bitte mit Sahne",
         "Ein ehrenwertes Haus",
         "Pianist",
-        "Weißer Bademantel"
+        "Bademantel"
       ],
       "popCulture": true
     },
     {
       "id": "de-music-musikproduktion",
-      "name": "Musikproduktion",
+      "name": "Produktion",
       "domain": "music",
       "difficulty": 2,
       "words": [
@@ -463,11 +484,14 @@
         "Abmischen",
         "Mastering",
         "Hall"
+      ],
+      "legacyNames": [
+        "Musikproduktion"
       ]
     },
     {
       "id": "de-music-musikalische-formen",
-      "name": "Musikformen",
+      "name": "Kompositionen",
       "domain": "music",
       "difficulty": 2,
       "words": [
@@ -479,11 +503,14 @@
         "Rondo",
         "Etüde",
         "Suite"
+      ],
+      "legacyNames": [
+        "Musikformen"
       ]
     },
     {
       "id": "de-music-musiktheorie",
-      "name": "Musiktheorie",
+      "name": "Harmonik",
       "domain": "music",
       "difficulty": 2,
       "words": [
@@ -495,11 +522,14 @@
         "Quinte",
         "Oktave",
         "Grundton"
+      ],
+      "legacyNames": [
+        "Musiktheorie"
       ]
     },
     {
       "id": "de-music-saiteninstrumente",
-      "name": "Saiteninstrumente",
+      "name": "Saiten",
       "domain": "music",
       "difficulty": 1,
       "words": [
@@ -513,6 +543,9 @@
         "Sitar",
         "Geige",
         "Cello"
+      ],
+      "legacyNames": [
+        "Saiteninstrumente"
       ]
     },
     {
@@ -521,14 +554,14 @@
       "domain": "music",
       "difficulty": 1,
       "words": [
-        "Saiteninstrumente",
-        "Tasteninstrumente",
-        "Blasinstrumente",
-        "Schlaginstrumente",
-        "Streichinstrumente",
-        "Holzbläser",
-        "Blechbläser",
-        "Zupfinstrumente"
+        "Saiten",
+        "Tasten",
+        "Bläser",
+        "Schlagwerk",
+        "Streicher",
+        "Holz",
+        "Blech",
+        "Zupfen"
       ]
     }
   ],
@@ -543,7 +576,6 @@
     "Kopfhörer": "🎧",
     "Radio": "📻",
     "Note": "🎵",
-    "Notenschlüssel": "🎼",
     "Eintrittskarte": "🎟️",
     "Applaus": "👏",
     "Zelt": "⛺",
@@ -551,6 +583,7 @@
     "Leuchtturm": "🗼",
     "Album": "💿",
     "Lautsprecher": "🔊",
-    "Akkordeon": "🪗"
+    "Akkordeon": "🪗",
+    "Schlüssel": "🎼"
   }
 }
