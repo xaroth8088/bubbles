@@ -5,13 +5,13 @@
   "themes": [
     {
       "id": "de-history-ancient-worlds",
-      "name": "Antike Kulturen",
+      "name": "Hochkulturen",
       "domain": "history",
       "difficulty": 2,
       "words": [
-        "Altes Ägypten",
-        "Antikes Griechenland",
-        "Antikes Rom",
+        "Ägypten",
+        "Griechenland",
+        "Rom",
         "Mesopotamien",
         "Persien",
         "Phönizien",
@@ -21,11 +21,14 @@
         "Nubien",
         "Minoer",
         "Etrusker"
+      ],
+      "legacyNames": [
+        "Antike Kulturen"
       ]
     },
     {
       "id": "de-history-ancient-egypt",
-      "name": "Altes Ägypten",
+      "name": "Ägypten",
       "domain": "history",
       "difficulty": 1,
       "words": [
@@ -41,6 +44,9 @@
         "Sarkophag",
         "Tutanchamun",
         "Streitwagen"
+      ],
+      "legacyNames": [
+        "Altes Ägypten"
       ]
     },
     {
@@ -54,12 +60,12 @@
         "Grab",
         "Kalkstein",
         "Granit",
-        "Steinblöcke",
+        "Blöcke",
         "Gang",
         "Kammer",
         "Grundfläche",
         "Spitze",
-        "Stufenpyramide",
+        "Stufen",
         "Verkleidung"
       ]
     },
@@ -105,7 +111,7 @@
     },
     {
       "id": "de-history-ancient-greece",
-      "name": "Antikes Griechenland",
+      "name": "Griechenland",
       "domain": "history",
       "difficulty": 1,
       "words": [
@@ -120,7 +126,10 @@
         "Demokratie",
         "Agora",
         "Triere",
-        "Antike Spiele"
+        "Wettkämpfe"
+      ],
+      "legacyNames": [
+        "Antikes Griechenland"
       ]
     },
     {
@@ -165,7 +174,7 @@
     },
     {
       "id": "de-history-ancient-olympics",
-      "name": "Antike Spiele",
+      "name": "Wettkämpfe",
       "domain": "history",
       "difficulty": 2,
       "words": [
@@ -181,15 +190,18 @@
         "Wettlauf",
         "Wagenrennen",
         "Fünfkampf"
+      ],
+      "legacyNames": [
+        "Antike Spiele"
       ]
     },
     {
       "id": "de-history-ancient-rome",
-      "name": "Antikes Rom",
+      "name": "Rom",
       "domain": "history",
       "difficulty": 1,
       "words": [
-        "Römische Herrscher",
+        "Imperatoren",
         "Senat",
         "Forum",
         "Kolosseum",
@@ -198,14 +210,17 @@
         "Gladiator",
         "Thermen",
         "Latein",
-        "Römische Legion",
+        "Legion",
         "Mosaik",
         "Denar"
+      ],
+      "legacyNames": [
+        "Antikes Rom"
       ]
     },
     {
       "id": "de-history-roman-rulers",
-      "name": "Römische Herrscher",
+      "name": "Imperatoren",
       "domain": "history",
       "difficulty": 2,
       "words": [
@@ -221,6 +236,9 @@
         "Hadrian",
         "Mark Aurel",
         "Konstantin"
+      ],
+      "legacyNames": [
+        "Römische Herrscher"
       ]
     },
     {
@@ -245,7 +263,7 @@
     },
     {
       "id": "de-history-roman-legion",
-      "name": "Römische Legion",
+      "name": "Legion",
       "domain": "history",
       "difficulty": 2,
       "words": [
@@ -261,6 +279,9 @@
         "Kohorte",
         "Marsch",
         "Feldzeichen"
+      ],
+      "legacyNames": [
+        "Römische Legion"
       ]
     },
     {
@@ -352,7 +373,7 @@
         "Ritter",
         "Klöster",
         "Wappenkunde",
-        "Mittelalterliche Stadt",
+        "Stadtleben",
         "Bauer",
         "Pflug",
         "Mühle",
@@ -405,7 +426,7 @@
     },
     {
       "id": "de-history-medieval-town",
-      "name": "Mittelalterliche Stadt",
+      "name": "Stadtleben",
       "domain": "history",
       "difficulty": 1,
       "words": [
@@ -421,6 +442,9 @@
         "Nachtwächter",
         "Pflastersteine",
         "Dom"
+      ],
+      "legacyNames": [
+        "Mittelalterliche Stadt"
       ]
     },
     {
@@ -513,10 +537,10 @@
         "Bibel",
         "Metall",
         "Gussform",
-        "Bewegliche Lettern",
-        "Ölhaltige Farbe",
+        "Lettern",
+        "Ölfarbe",
         "Schraubenpresse",
-        "42 Zeilen",
+        "Zeilen",
         "Werkstatt",
         "Drucker",
         "Latein",
@@ -589,7 +613,7 @@
       "domain": "history",
       "difficulty": 1,
       "words": [
-        "Goldsucher",
+        "Sucher",
         "Nugget",
         "Waschpfanne",
         "Waschrinne",
@@ -599,13 +623,13 @@
         "Fluss",
         "Kalifornien",
         "Klondike",
-        "Goldgräberstadt",
-        "Goldprobe"
+        "Siedlung",
+        "Probe"
       ]
     },
     {
       "id": "de-history-ancient-china",
-      "name": "Altes China",
+      "name": "China",
       "domain": "history",
       "difficulty": 1,
       "words": [
@@ -621,6 +645,9 @@
         "Reis",
         "Streitwagen",
         "Bambus"
+      ],
+      "legacyNames": [
+        "Altes China"
       ]
     },
     {

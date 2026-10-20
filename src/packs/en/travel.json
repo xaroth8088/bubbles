@@ -5,7 +5,7 @@
   "themes": [
     {
       "id": "theme-172",
-      "name": "Travel modes",
+      "name": "Transit",
       "domain": "travel",
       "difficulty": 1,
       "words": [
@@ -19,6 +19,9 @@
         "Motorcycle",
         "Walking",
         "Wheelchair"
+      ],
+      "legacyNames": [
+        "Travel modes"
       ]
     },
     {
@@ -28,7 +31,7 @@
       "difficulty": 1,
       "words": [
         "Gate",
-        "Boarding pass",
+        "Pass",
         "Runway",
         "Terminal",
         "Check-in",
@@ -54,7 +57,7 @@
         "Peg",
         "Groundsheet",
         "Lantern",
-        "Water bottle",
+        "Bottle",
         "First aid kit",
         "Cooler",
         "Chair",
@@ -70,7 +73,7 @@
       "words": [
         "Reception",
         "Concierge",
-        "Room key",
+        "Key",
         "Minibar",
         "Room service",
         "Elevator",
@@ -87,18 +90,21 @@
     },
     {
       "id": "theme-176",
-      "name": "Travel documents",
+      "name": "Documents",
       "domain": "travel",
       "difficulty": 2,
       "words": [
         "Passport",
         "Visa",
         "Ticket",
-        "Boarding pass",
+        "Pass",
         "Itinerary",
         "Insurance",
         "ID",
         "Reservation"
+      ],
+      "legacyNames": [
+        "Travel documents"
       ]
     },
     {
@@ -223,7 +229,7 @@
     },
     {
       "id": "theme-184",
-      "name": "US national parks",
+      "name": "National parks",
       "domain": "travel",
       "difficulty": 2,
       "words": [
@@ -235,11 +241,14 @@
         "Everglades",
         "Grand Canyon",
         "Arches"
+      ],
+      "legacyNames": [
+        "US national parks"
       ]
     },
     {
       "id": "theme-185",
-      "name": "Mountain ranges",
+      "name": "Ranges",
       "domain": "travel",
       "difficulty": 2,
       "words": [
@@ -251,6 +260,9 @@
         "Atlas",
         "Urals",
         "Appalachians"
+      ],
+      "legacyNames": [
+        "Mountain ranges"
       ]
     },
     {
@@ -345,7 +357,7 @@
     },
     {
       "id": "theme-191",
-      "name": "Road signs",
+      "name": "Signs",
       "domain": "travel",
       "difficulty": 1,
       "words": [
@@ -361,11 +373,14 @@
         "Construction",
         "Parking",
         "Crossing"
+      ],
+      "legacyNames": [
+        "Road signs"
       ]
     },
     {
       "id": "theme-301",
-      "name": "Outdoor places",
+      "name": "Outdoors",
       "domain": "travel",
       "difficulty": 1,
       "words": [
@@ -379,6 +394,9 @@
         "Campground",
         "Town",
         "Coast"
+      ],
+      "legacyNames": [
+        "Outdoor places"
       ]
     },
     {
@@ -416,7 +434,7 @@
     },
     {
       "id": "theme-307",
-      "name": "Map features",
+      "name": "Topography",
       "domain": "travel",
       "difficulty": 2,
       "words": [
@@ -428,15 +446,18 @@
         "Landmarks",
         "Paths",
         "Lakes"
+      ],
+      "legacyNames": [
+        "Map features"
       ]
     },
     {
       "id": "theme-473",
-      "name": "Airport terminal",
+      "name": "Terminal",
       "domain": "travel",
       "difficulty": 1,
       "words": [
-        "Boarding pass",
+        "Pass",
         "Gate",
         "Check-in",
         "Security",
@@ -447,7 +468,10 @@
         "Lounge",
         "Ticket",
         "Boarding",
-        "Baggage claim"
+        "Reclaim"
+      ],
+      "legacyNames": [
+        "Airport terminal"
       ]
     },
     {
@@ -560,7 +584,7 @@
         "Map",
         "Gas station",
         "Highway",
-        "Rest stop",
+        "Rest",
         "Snack",
         "Playlist",
         "Hotel",
@@ -601,7 +625,7 @@
         "Sunglasses",
         "Swimsuit",
         "Hat",
-        "Water bottle",
+        "Bottle",
         "Flip-flops",
         "Book",
         "Snorkel",
@@ -742,12 +766,12 @@
         "Cockpit",
         "Pilot",
         "Tail",
-        "Landing gear",
+        "Undercarriage",
         "Fuselage",
         "Propeller",
         "Seat belt",
         "Runway",
-        "Flight attendant",
+        "Attendant",
         "Window"
       ]
     },
@@ -762,7 +786,7 @@
         "Cockpit",
         "Pilot",
         "Tail",
-        "Landing pad",
+        "Pad",
         "Rescue",
         "Hover",
         "Skid",
@@ -803,7 +827,7 @@
         "Brake",
         "Seat",
         "Exhaust",
-        "Leather jacket",
+        "Leather",
         "Kickstand",
         "Mirror",
         "Headlight"
@@ -1162,7 +1186,7 @@
     },
     {
       "id": "theme-515",
-      "name": "Continental Europe",
+      "name": "Europe",
       "domain": "travel",
       "difficulty": 2,
       "words": [
@@ -1178,6 +1202,9 @@
         "Portugal",
         "Sweden",
         "Norway"
+      ],
+      "legacyNames": [
+        "Continental Europe"
       ]
     },
     {
@@ -1253,7 +1280,7 @@
         "Jackhammer",
         "Steamroller",
         "Hard hat",
-        "Safety vest",
+        "Vest",
         "Excavator",
         "Flagger",
         "Pothole",
@@ -1293,9 +1320,8 @@
         "Car",
         "Barrier",
         "Permit",
-        "Pay station",
         "Reverse",
-        "Wheel clamp",
+        "Clamp",
         "Lot",
         "Valet"
       ]

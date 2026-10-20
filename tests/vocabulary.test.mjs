@@ -11,12 +11,12 @@ test('type clues omit giveaway family words while preserving useful ambiguity',(
   assert.ok(!theme('Soup').words.includes('Tomato soup'));
 });
 test('short instrument names still form exact nested theme connections',()=>{
-  const families=theme('Instrument families');
+  const families=theme('Instrumentation');
   for(const name of ['Strings','Woodwinds','Brass','Percussion']){
     assert.ok(families.words.includes(name));assert.ok(theme(name).words.length>=4);
   }
   assert.ok(theme('Strings').words.includes('Bass'));
-  assert.ok(theme('Musical topics').words.includes('Instrument families'));
+  assert.ok(theme('Musicianship').words.includes('Instrumentation'));
 });
 test('picture keys use one emoji grapheme and exact playable clue spellings',()=>{
   const words=new Set(THEMES.flatMap(t=>t.words));

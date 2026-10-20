@@ -19,7 +19,7 @@
         "Fireplace",
         "Curtains",
         "Television",
-        "Remote control",
+        "Remote",
         "Side table",
         "Blanket",
         "Footstool"
@@ -42,7 +42,7 @@
         "Can opener",
         "Masher",
         "Spoon",
-        "Pastry brush",
+        "Brush",
         "Sieve",
         "Funnel",
         "Pan"
@@ -91,7 +91,7 @@
         "Duvet",
         "Wardrobe",
         "Curtains",
-        "Alarm clock",
+        "Alarm",
         "Mirror",
         "Lamp",
         "Rug",
@@ -144,7 +144,7 @@
         "Cloth",
         "Soap",
         "Polish",
-        "Spray bottle",
+        "Sprayer",
         "Scrubber",
         "Gloves",
         "Paper towel",
@@ -166,12 +166,11 @@
         "Screwdriver",
         "Chisel",
         "File",
-        "Tape measure",
+        "Tape",
         "Level",
         "Clamp",
         "Mallet",
         "Allen key",
-        "Socket wrench",
         "Axe",
         "Pickaxe",
         "Shovel",
@@ -200,7 +199,7 @@
     },
     {
       "id": "theme-113",
-      "name": "Building materials",
+      "name": "Materials",
       "domain": "home",
       "difficulty": 1,
       "words": [
@@ -213,6 +212,9 @@
         "Plaster",
         "Tile",
         "Asphalt"
+      ],
+      "legacyNames": [
+        "Building materials"
       ]
     },
     {
@@ -233,7 +235,7 @@
     },
     {
       "id": "theme-115",
-      "name": "Door hardware",
+      "name": "Fittings",
       "domain": "home",
       "difficulty": 2,
       "words": [
@@ -245,6 +247,9 @@
         "Doorbell",
         "Knocker",
         "Strike"
+      ],
+      "legacyNames": [
+        "Door hardware"
       ]
     },
     {
@@ -317,7 +322,7 @@
         "Bobbin",
         "Pincushion",
         "Seam ripper",
-        "Tape measure",
+        "Tape",
         "Pin"
       ]
     },
@@ -663,7 +668,7 @@
     },
     {
       "id": "theme-231",
-      "name": "Office supplies",
+      "name": "Stationery",
       "domain": "life",
       "difficulty": 1,
       "words": [
@@ -673,7 +678,7 @@
         "Envelope",
         "Notepad",
         "Highlighter",
-        "Sticky note",
+        "Note",
         "Binder",
         "Pen",
         "Pencil",
@@ -689,6 +694,9 @@
         "Notebook",
         "Calendar",
         "Wastebasket"
+      ],
+      "legacyNames": [
+        "Office supplies"
       ]
     },
     {
@@ -809,7 +817,7 @@
     },
     {
       "id": "theme-238",
-      "name": "Relaxing activities",
+      "name": "Pastimes",
       "domain": "life",
       "difficulty": 1,
       "words": [
@@ -821,6 +829,9 @@
         "Napping",
         "Walking",
         "Coloring"
+      ],
+      "legacyNames": [
+        "Relaxing activities"
       ]
     },
     {
@@ -849,23 +860,26 @@
     },
     {
       "id": "theme-240",
-      "name": "Emergency services",
+      "name": "Rescue",
       "domain": "life",
       "difficulty": 1,
       "words": [
         "Firefighter",
         "Paramedic",
-        "Police officer",
+        "Officer",
         "Dispatcher",
         "Ambulance",
         "Fire engine",
         "Rescue boat",
-        "Search team"
+        "Team"
+      ],
+      "legacyNames": [
+        "Emergency services"
       ]
     },
     {
       "id": "theme-241",
-      "name": "Time units",
+      "name": "Intervals",
       "domain": "life",
       "difficulty": 1,
       "words": [
@@ -877,6 +891,9 @@
         "Month",
         "Year",
         "Decade"
+      ],
+      "legacyNames": [
+        "Time units"
       ]
     },
     {
@@ -910,15 +927,15 @@
         "Credit",
         "Debit",
         "Check",
-        "Bank transfer",
-        "Gift card",
+        "Transfer",
+        "Voucher",
         "Money order",
-        "Mobile wallet"
+        "Wallet"
       ]
     },
     {
       "id": "theme-244",
-      "name": "School subjects",
+      "name": "Curriculum",
       "domain": "life",
       "difficulty": 1,
       "words": [
@@ -934,6 +951,9 @@
         "Drama",
         "Computing",
         "Physical education"
+      ],
+      "legacyNames": [
+        "School subjects"
       ]
     },
     {
@@ -963,7 +983,7 @@
     },
     {
       "id": "theme-293",
-      "name": "Bank visit",
+      "name": "Transactions",
       "domain": "life",
       "difficulty": 1,
       "words": [
@@ -975,6 +995,9 @@
         "Teller",
         "Mortgage",
         "Withdrawal"
+      ],
+      "legacyNames": [
+        "Bank visit"
       ]
     },
     {
@@ -993,7 +1016,7 @@
         "Theater",
         "Factory",
         "Warehouse",
-        "Shopping mall",
+        "Mall",
         "Hardware store",
         "Pharmacy",
         "Greenhouse",
@@ -1081,7 +1104,7 @@
         "Washer",
         "Dryer",
         "Detergent",
-        "Fabric softener",
+        "Softener",
         "Basket",
         "Hamper",
         "Clothesline",
@@ -1089,7 +1112,7 @@
         "Iron",
         "Ironing board",
         "Stain",
-        "Spin cycle"
+        "Spin"
       ]
     },
     {
@@ -1105,7 +1128,7 @@
         "Bicycle",
         "Shelf",
         "Paint",
-        "Motor oil",
+        "Oil",
         "Toolbox",
         "Door",
         "Tire",
@@ -1145,7 +1168,7 @@
         "Washer",
         "Dryer",
         "Workbench",
-        "Water heater"
+        "Heater"
       ]
     },
     {
@@ -1161,7 +1184,7 @@
         "Door",
         "Light",
         "Flowerpot",
-        "Welcome sign",
+        "Welcome",
         "Doorbell",
         "Swing"
       ]
@@ -1242,8 +1265,7 @@
         "Flashlight",
         "Spotlight",
         "Bulb",
-        "Ceiling light",
-        "Desk lamp",
+        "Fixture",
         "Fairy lights",
         "Dimmer",
         "Lampshade"
@@ -1369,7 +1391,7 @@
         "Washer",
         "Leak",
         "Plunger",
-        "Water heater",
+        "Heater",
         "Wrench"
       ]
     },
@@ -1395,7 +1417,7 @@
     },
     {
       "id": "theme-406",
-      "name": "Healthy habits",
+      "name": "Wellness",
       "domain": "life",
       "difficulty": 1,
       "words": [
@@ -1406,9 +1428,12 @@
         "Vegetables",
         "Stretching",
         "Handwashing",
-        "Brushing teeth",
+        "Brushing",
         "Rest",
         "Fresh air"
+      ],
+      "legacyNames": [
+        "Healthy habits"
       ]
     },
     {
@@ -1426,7 +1451,7 @@
         "Tweezers",
         "Plaster",
         "Kit",
-        "Emergency number",
+        "Hotline",
         "Stethoscope",
         "Syringe",
         "Pill",
@@ -1481,11 +1506,10 @@
       "difficulty": 1,
       "words": [
         "Saucepan",
-        "Frying pan",
         "Skillet",
         "Wok",
         "Stockpot",
-        "Roasting pan",
+        "Roaster",
         "Baking sheet",
         "Casserole",
         "Pressure cooker",
@@ -1500,13 +1524,13 @@
       "words": [
         "Whisk",
         "Rolling pin",
-        "Measuring cup",
+        "Cup",
         "Bowl",
         "Spatula",
         "Sieve",
         "Cookie cutter",
-        "Cake tin",
-        "Muffin tray",
+        "Tin",
+        "Tray",
         "Scale"
       ]
     },
@@ -1521,10 +1545,8 @@
         "Spoon",
         "Teaspoon",
         "Tablespoon",
-        "Butter knife",
+        "Spreader",
         "Steak knife",
-        "Salad fork",
-        "Dessert spoon",
         "Chopsticks"
       ]
     },
@@ -1557,7 +1579,7 @@
         "Produce",
         "Bakery",
         "Dairy",
-        "Frozen food",
+        "Frozen",
         "Aisle",
         "Checkout",
         "Cart",
@@ -1584,7 +1606,7 @@
         "Flowers",
         "Bread",
         "Cheese",
-        "Handmade goods",
+        "Crafts",
         "Coins"
       ]
     },
@@ -1601,11 +1623,11 @@
         "Eraser",
         "Ruler",
         "Lunchbox",
-        "Water bottle",
+        "Bottle",
         "Folder",
         "Calculator",
         "Highlighter",
-        "Pencil case"
+        "Case"
       ]
     },
     {
@@ -1643,7 +1665,7 @@
         "Grass",
         "Picnic",
         "Flowers",
-        "Dog walker",
+        "Walker",
         "Bandstand",
         "Statue"
       ]
@@ -1699,7 +1721,7 @@
         "Uniform",
         "Badge",
         "Radio",
-        "Patrol car",
+        "Cruiser",
         "Desk",
         "Cell",
         "Report",
@@ -1797,7 +1819,7 @@
       "domain": "life",
       "difficulty": 1,
       "words": [
-        "Tree",
+        "Christmas tree",
         "Santa",
         "Reindeer",
         "Stocking",
@@ -1808,8 +1830,7 @@
         "December",
         "Tinsel",
         "Sleigh",
-        "Mistletoe",
-        "Christmas tree"
+        "Mistletoe"
       ]
     },
     {
@@ -1829,7 +1850,7 @@
         "Candy",
         "Jack-o'-lantern",
         "October",
-        "Haunted house",
+        "Haunting",
         "Coffin",
         "Tombstone"
       ]
@@ -1942,7 +1963,7 @@
     },
     {
       "id": "theme-613",
-      "name": "Moving house",
+      "name": "Moving",
       "domain": "life",
       "difficulty": 1,
       "words": [
@@ -1956,6 +1977,9 @@
         "Furniture",
         "Home",
         "Unpacking"
+      ],
+      "legacyNames": [
+        "Moving house"
       ]
     },
     {
@@ -1991,7 +2015,7 @@
         "Clamp",
         "Sandpaper",
         "Hammer",
-        "Measuring tape",
+        "Tape",
         "Goggles",
         "Wood",
         "Toolbox",
@@ -2075,7 +2099,7 @@
       "words": [
         "Sunrise",
         "Breakfast",
-        "Alarm clock",
+        "Alarm",
         "Shower",
         "Coffee",
         "Toothbrush",
@@ -2098,7 +2122,7 @@
         "Story",
         "Nightlight",
         "Lullaby",
-        "Alarm clock",
+        "Alarm",
         "Sleep",
         "Goodnight"
       ]
@@ -2242,7 +2266,7 @@
         "Driver's license",
         "Receipt",
         "Photo",
-        "Gift card",
+        "Voucher",
         "Loyalty card"
       ]
     },
@@ -2261,7 +2285,7 @@
         "Television",
         "Postcard",
         "Message",
-        "Video call",
+        "Call",
         "Sign language",
         "Speech",
         "Telephone",
@@ -2303,7 +2327,7 @@
         "Strawberry",
         "Tomato",
         "Fire engine",
-        "Stop sign",
+        "Stop",
         "Poppy",
         "Cardinal",
         "Crimson",
@@ -2409,7 +2433,7 @@
     },
     {
       "id": "theme-641",
-      "name": "Black and white",
+      "name": "Monochrome",
       "domain": "style",
       "difficulty": 1,
       "words": [
@@ -2419,10 +2443,13 @@
         "Dalmatian",
         "Chessboard",
         "Newspaper",
-        "Piano keys",
+        "Keys",
         "Domino",
         "Orca",
         "Skunk"
+      ],
+      "legacyNames": [
+        "Black and white"
       ]
     },
     {
@@ -2463,7 +2490,7 @@
         "Wallet",
         "Tie",
         "Jewelry",
-        "Hair clip",
+        "Clip",
         "Backpack",
         "Umbrella",
         "Socks",
@@ -2505,7 +2532,7 @@
         "Bra",
         "Sweatband",
         "Trainers",
-        "Training top"
+        "Top"
       ]
     },
     {
@@ -2570,7 +2597,7 @@
     },
     {
       "id": "theme-649",
-      "name": "Hair salon",
+      "name": "Salon",
       "domain": "style",
       "difficulty": 1,
       "words": [
@@ -2587,6 +2614,9 @@
         "Stylist",
         "Dye",
         "Barber pole"
+      ],
+      "legacyNames": [
+        "Hair salon"
       ]
     },
     {
@@ -2624,7 +2654,7 @@
         "Post office",
         "Fire station",
         "Train station",
-        "Shopping mall",
+        "Mall",
         "Bridge",
         "Fountain",
         "Statue",
@@ -2668,7 +2698,7 @@
         "Brick",
         "Foundation",
         "Steel",
-        "Building materials",
+        "Materials",
         "Tools"
       ]
     },
@@ -2689,7 +2719,7 @@
         "Warehouse",
         "Robot",
         "Workshop",
-        "Loading dock"
+        "Dock"
       ]
     },
     {
@@ -2705,7 +2735,7 @@
         "Box",
         "Stock",
         "Barcode",
-        "Loading dock",
+        "Dock",
         "Delivery",
         "Storage",
         "Inventory",
@@ -2714,7 +2744,7 @@
     },
     {
       "id": "theme-846",
-      "name": "Shopping mall",
+      "name": "Mall",
       "domain": "life",
       "difficulty": 1,
       "words": [
@@ -2730,6 +2760,9 @@
         "Cafe",
         "Cinema",
         "Shopping"
+      ],
+      "legacyNames": [
+        "Shopping mall"
       ]
     },
     {
@@ -2747,8 +2780,8 @@
         "Ladder",
         "Plumbing",
         "Lighting",
-        "Building materials",
-        "Extension cord",
+        "Materials",
+        "Cord",
         "Padlock"
       ]
     },
@@ -2808,7 +2841,7 @@
         "Vision",
         "Prescription",
         "Case",
-        "Reading glasses",
+        "Readers",
         "Cloth",
         "Goggles"
       ]
@@ -2823,7 +2856,7 @@
         "Needle",
         "Thread",
         "Fabric",
-        "Tape measure",
+        "Tape",
         "Scissors",
         "Pin",
         "Seam",
@@ -2900,7 +2933,7 @@
       "difficulty": 1,
       "words": [
         "Badge",
-        "Name tag",
+        "Tag",
         "Cap",
         "Helmet",
         "Apron",
@@ -2909,7 +2942,7 @@
         "Tie",
         "Scrubs",
         "Lab coat",
-        "Reflective vest",
+        "Vest",
         "Overalls"
       ]
     },
@@ -3029,7 +3062,7 @@
         "Glass",
         "Cutlery",
         "Dishwasher",
-        "Drying rack",
+        "Rack",
         "Tea towel"
       ]
     },
@@ -3072,7 +3105,7 @@
     },
     {
       "id": "theme-994",
-      "name": "Hand gestures",
+      "name": "Gestures",
       "domain": "life",
       "difficulty": 1,
       "words": [
@@ -3090,6 +3123,9 @@
         "Salute",
         "Shrug",
         "Facepalm"
+      ],
+      "legacyNames": [
+        "Hand gestures"
       ]
     }
   ],

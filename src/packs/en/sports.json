@@ -5,7 +5,7 @@
   "themes": [
     {
       "id": "theme-132",
-      "name": "Ball sports",
+      "name": "Ballgames",
       "domain": "sport",
       "difficulty": 1,
       "words": [
@@ -20,6 +20,9 @@
         "Softball",
         "Football",
         "Bowling"
+      ],
+      "legacyNames": [
+        "Ball sports"
       ]
     },
     {
@@ -41,7 +44,7 @@
     },
     {
       "id": "theme-134",
-      "name": "Athletics events",
+      "name": "Track and field",
       "domain": "sport",
       "difficulty": 2,
       "words": [
@@ -53,6 +56,9 @@
         "High jump",
         "Pole vault",
         "Steeplechase"
+      ],
+      "legacyNames": [
+        "Athletics events"
       ]
     },
     {
@@ -89,7 +95,7 @@
     },
     {
       "id": "theme-137",
-      "name": "Gym equipment",
+      "name": "Gym",
       "domain": "sport",
       "difficulty": 1,
       "words": [
@@ -98,14 +104,17 @@
         "Treadmill",
         "Elliptical",
         "Kettlebell",
-        "Resistance band",
-        "Bench press",
-        "Rowing machine"
+        "Band",
+        "Bench",
+        "Ergometer"
+      ],
+      "legacyNames": [
+        "Gym equipment"
       ]
     },
     {
       "id": "theme-138",
-      "name": "Basketball terms",
+      "name": "Hoops",
       "domain": "sport",
       "difficulty": 2,
       "words": [
@@ -117,11 +126,14 @@
         "Three-pointer",
         "Layup",
         "Jump ball"
+      ],
+      "legacyNames": [
+        "Basketball terms"
       ]
     },
     {
       "id": "theme-139",
-      "name": "Soccer terms",
+      "name": "Football",
       "domain": "sport",
       "difficulty": 2,
       "words": [
@@ -133,6 +145,9 @@
         "Free kick",
         "Header",
         "Throw-in"
+      ],
+      "legacyNames": [
+        "Soccer terms"
       ]
     },
     {
@@ -153,24 +168,27 @@
     },
     {
       "id": "theme-141",
-      "name": "Baseball positions",
+      "name": "Positions",
       "domain": "sport",
       "difficulty": 2,
       "words": [
         "Pitcher",
         "Catcher",
         "Shortstop",
-        "First base",
-        "Second base",
-        "Third base",
-        "Left field",
-        "Center field",
-        "Right field"
+        "First",
+        "Second",
+        "Third",
+        "Left",
+        "Center",
+        "Right"
+      ],
+      "legacyNames": [
+        "Baseball positions"
       ]
     },
     {
       "id": "theme-142",
-      "name": "Tennis scoring",
+      "name": "Scoring",
       "domain": "sport",
       "difficulty": 2,
       "words": [
@@ -181,12 +199,15 @@
         "Match",
         "Tiebreak",
         "Ace",
-        "Break point"
+        "Break"
+      ],
+      "legacyNames": [
+        "Tennis scoring"
       ]
     },
     {
       "id": "theme-143",
-      "name": "Swimming strokes",
+      "name": "Strokes",
       "domain": "sport",
       "difficulty": 1,
       "words": [
@@ -194,6 +215,9 @@
         "Backstroke",
         "Breaststroke",
         "Butterfly"
+      ],
+      "legacyNames": [
+        "Swimming strokes"
       ]
     },
     {
@@ -214,7 +238,7 @@
     },
     {
       "id": "theme-145",
-      "name": "Yoga poses",
+      "name": "Yoga",
       "domain": "sport",
       "difficulty": 2,
       "words": [
@@ -225,7 +249,10 @@
         "Triangle",
         "Child",
         "Bridge",
-        "Downward dog"
+        "Dog"
+      ],
+      "legacyNames": [
+        "Yoga poses"
       ]
     },
     {
@@ -309,7 +336,7 @@
     },
     {
       "id": "theme-296",
-      "name": "Sports gear",
+      "name": "Equipment",
       "domain": "sport",
       "difficulty": 1,
       "words": [
@@ -331,6 +358,9 @@
         "Snorkel",
         "Bow",
         "Gi"
+      ],
+      "legacyNames": [
+        "Sports gear"
       ]
     },
     {
@@ -386,8 +416,8 @@
         "Backpack",
         "Map",
         "Compass",
-        "Water bottle",
-        "Walking stick",
+        "Bottle",
+        "Stick",
         "Mountain",
         "Forest",
         "View",
@@ -420,7 +450,7 @@
         "Climbing",
         "Running",
         "Table tennis",
-        "Horse riding",
+        "Riding",
         "Skating"
       ]
     },
@@ -557,7 +587,7 @@
         "Breaststroke",
         "Butterfly",
         "Lane",
-        "Diving board",
+        "Board",
         "Lap",
         "Float"
       ]
@@ -591,7 +621,7 @@
         "Deck",
         "Wheel",
         "Truck",
-        "Grip tape",
+        "Grip",
         "Ollie",
         "Kickflip",
         "Ramp",
@@ -703,18 +733,21 @@
     },
     {
       "id": "theme-568",
-      "name": "Football gear",
+      "name": "Kit",
       "domain": "sport",
       "difficulty": 1,
       "words": [
         "Ball",
         "Boots",
-        "Shin guard",
+        "Guard",
         "Jersey",
         "Shorts",
         "Gloves",
         "Whistle",
         "Net"
+      ],
+      "legacyNames": [
+        "Football gear"
       ]
     },
     {
@@ -729,7 +762,7 @@
         "Stilt",
         "Seesaw",
         "Scale",
-        "One foot",
+        "Foot",
         "Center of gravity",
         "Steady",
         "Coordination",
@@ -746,9 +779,9 @@
         "Beam",
         "Vault",
         "Floor",
-        "Uneven bars",
+        "Bars",
         "Rings",
-        "Pommel horse",
+        "Pommel",
         "Mat",
         "Leotard",
         "Cartwheel",
@@ -789,7 +822,7 @@
         "Court",
         "Serve",
         "Smash",
-        "Drop shot",
+        "Drop",
         "Rally",
         "Doubles",
         "Singles",
@@ -812,7 +845,7 @@
         "Draw",
         "Aim",
         "Release",
-        "Arm guard",
+        "Bracer",
         "Recurve",
         "Longbow"
       ]
@@ -832,7 +865,7 @@
         "Seat",
         "River",
         "Regatta",
-        "Finish line",
+        "Finish",
         "Scull",
         "Training"
       ]
@@ -872,7 +905,7 @@
         "Sprint",
         "Marathon",
         "Relay",
-        "Finish line",
+        "Finish",
         "Stopwatch",
         "Warm-up"
       ]
@@ -899,7 +932,7 @@
     },
     {
       "id": "theme-885",
-      "name": "Horse riding",
+      "name": "Riding",
       "domain": "sport",
       "difficulty": 1,
       "words": [
@@ -914,7 +947,10 @@
         "Trot",
         "Canter",
         "Gallop",
-        "Show jumping"
+        "Jumping"
+      ],
+      "legacyNames": [
+        "Horse riding"
       ]
     },
     {
@@ -928,7 +964,7 @@
         "Blade",
         "Rink",
         "Helmet",
-        "Knee pad",
+        "Pad",
         "Glide",
         "Spin",
         "Jump",

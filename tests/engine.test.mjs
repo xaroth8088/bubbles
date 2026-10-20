@@ -363,7 +363,7 @@ test('concise themes return as ordinary terms in expanded fixed-solution connect
       assert.equal(bubble.atoms[0].word,'Ship');assert.equal(bubble.kind,'normal');assert.equal(bubble.groupId,parent.id);assert.ok(parent.words.every(w=>THEMES.find(t=>t.name===parent.name).words.includes(w)));solve(state);
     }
   }
-  for(const [name,parent]of[['Ship','Vehicles'],['Car','Vehicles'],['Book','Reading material'],['Guitar','Strings'],['Airport','Buildings'],['Coffee','Hot drinks']])returned.add(checkNamedReturn(name,parent));
+  for(const [name,parent]of[['Ship','Vehicles'],['Car','Vehicles'],['Book','Reading'],['Guitar','Strings'],['Airport','Buildings'],['Coffee','Hot drinks']])returned.add(checkNamedReturn(name,parent));
   for(const name of['Ship','Car','Book','Guitar','Airport','Coffee'])assert.ok(returned.has(name),`${name} never returned`);
 });
 test('split fragments cannot be sorted until reunited in either direction',()=>{
@@ -511,7 +511,7 @@ test('a category term can change meaning and behaves exactly like an ordinary wo
     assert.equal(term.kind,'normal');assert.equal(term.atoms.length,1);assert.equal(term.groupId,child.parentId);assert.equal(bubbleText(term),child.name);
     meanings.add(child.name);solve(state);
   }
-  for(const [name,parent]of[['Bass','Freshwater fish'],['Rock','Music genres'],['Pitch','Soccer'],['Jam','Music session'],['Cricket','Ball sports'],['Keys','Moving house']])meanings.add(checkNamedReturn(name,parent));
+  for(const [name,parent]of[['Bass','Freshwater fish'],['Rock','Styles'],['Pitch','Soccer'],['Jam','Jamming'],['Cricket','Ballgames'],['Keys','Moving']])meanings.add(checkNamedReturn(name,parent));
   assert.ok(meanings.size>=5,'Several category transfers should change meanings');assert.ok(meanings.has('Bass'));
 });
 

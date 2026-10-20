@@ -21,7 +21,7 @@
     },
     {
       "id": "theme-161",
-      "name": "Art supplies",
+      "name": "Art kit",
       "domain": "arts",
       "difficulty": 1,
       "words": [
@@ -42,11 +42,14 @@
         "Glue",
         "Scissors",
         "Paintbrush"
+      ],
+      "legacyNames": [
+        "Art supplies"
       ]
     },
     {
       "id": "theme-162",
-      "name": "Painting styles",
+      "name": "Movements",
       "domain": "arts",
       "difficulty": 2,
       "words": [
@@ -58,11 +61,14 @@
         "Pointillism",
         "Pop art",
         "Abstract"
+      ],
+      "legacyNames": [
+        "Painting styles"
       ]
     },
     {
       "id": "theme-163",
-      "name": "Art media",
+      "name": "Media",
       "domain": "arts",
       "difficulty": 2,
       "words": [
@@ -74,6 +80,9 @@
         "Tempera",
         "Fresco",
         "Encaustic"
+      ],
+      "legacyNames": [
+        "Art media"
       ]
     },
     {
@@ -86,7 +95,7 @@
         "Curtain",
         "Spotlight",
         "Backstage",
-        "Orchestra pit",
+        "Pit",
         "Prop",
         "Costume",
         "Auditorium",
@@ -191,7 +200,7 @@
     },
     {
       "id": "theme-297",
-      "name": "Warm colors",
+      "name": "Warm hues",
       "domain": "arts",
       "difficulty": 1,
       "words": [
@@ -203,6 +212,9 @@
         "Amber",
         "Gold",
         "Vermilion"
+      ],
+      "legacyNames": [
+        "Warm colors"
       ]
     },
     {
@@ -238,9 +250,9 @@
         "Artifact",
         "Fossil",
         "Guide",
-        "Display case",
+        "Case",
         "Ticket",
-        "Audio guide",
+        "Headset",
         "Collection",
         "History"
       ]
@@ -267,7 +279,7 @@
     },
     {
       "id": "theme-529",
-      "name": "Photography kit",
+      "name": "Camera gear",
       "domain": "arts",
       "difficulty": 1,
       "words": [
@@ -275,12 +287,15 @@
         "Lens",
         "Tripod",
         "Flash",
-        "Memory card",
+        "Card",
         "Battery",
         "Strap",
         "Reflector",
         "Light",
         "Bag"
+      ],
+      "legacyNames": [
+        "Photography kit"
       ]
     },
     {
@@ -375,10 +390,10 @@
         "Chain",
         "Loop",
         "Blanket",
-        "Granny square",
+        "Square",
         "Pattern",
         "Scarf",
-        "Single crochet"
+        "Bobble"
       ]
     },
     {
@@ -395,7 +410,7 @@
         "Pattern",
         "Cross-stitch",
         "Backstitch",
-        "Satin stitch",
+        "Satin",
         "Floss"
       ]
     },
@@ -454,7 +469,7 @@
         "Joint",
         "Workbench",
         "Varnish",
-        "Measuring tape"
+        "Tape"
       ]
     },
     {
@@ -497,13 +512,13 @@
     },
     {
       "id": "theme-541",
-      "name": "Magic show",
+      "name": "Illusions",
       "domain": "arts",
       "difficulty": 1,
       "words": [
         "Magician",
         "Wand",
-        "Top hat",
+        "Hat",
         "Rabbit",
         "Card",
         "Trick",
@@ -513,6 +528,9 @@
         "Disappearing",
         "Coin",
         "Sleight of hand"
+      ],
+      "legacyNames": [
+        "Magic show"
       ]
     },
     {
@@ -557,13 +575,13 @@
         "Flamenco",
         "Breakdance",
         "Disco",
-        "Line dance",
+        "Jive",
         "Polka"
       ]
     },
     {
       "id": "theme-650",
-      "name": "Fabric crafts",
+      "name": "Needlework",
       "domain": "arts",
       "difficulty": 1,
       "words": [
@@ -577,6 +595,9 @@
         "Thread",
         "Yarn",
         "Fabric"
+      ],
+      "legacyNames": [
+        "Fabric crafts"
       ]
     },
     {
@@ -691,7 +712,7 @@
         "Storyboard",
         "Cartoon",
         "Movement",
-        "Voice actor",
+        "Voice",
         "Stop motion",
         "Flipbook",
         "Computer",
@@ -714,7 +735,7 @@
         "Curtain",
         "Trapdoor",
         "Backdrop",
-        "Sound effect",
+        "Effect",
         "Stagehand",
         "Rehearsal"
       ]
@@ -726,7 +747,7 @@
       "difficulty": 1,
       "words": [
         "Face",
-        "Eye hole",
+        "Eye",
         "String",
         "Elastic",
         "Costume",
@@ -752,7 +773,6 @@
     "Star": "⭐",
     "Coral": "🪸",
     "Scarf": "🧣",
-    "Top hat": "🎩",
     "Scissors": "✂️",
     "Needle": "🪡",
     "Thread": "🧵",
@@ -777,6 +797,7 @@
     "Coin": "🪙",
     "Card": "💳",
     "Music": "🎶",
-    "Clamp": "🗜️"
+    "Clamp": "🗜️",
+    "Hat": "🎩"
   }
 }

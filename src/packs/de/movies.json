@@ -43,7 +43,7 @@
     },
     {
       "id": "de-movies-filmberufe",
-      "name": "Filmberufe",
+      "name": "Filmteam",
       "domain": "movies",
       "difficulty": 1,
       "words": [
@@ -55,11 +55,14 @@
         "Cutter",
         "Komponist",
         "Drehbuchautor"
+      ],
+      "legacyNames": [
+        "Filmberufe"
       ]
     },
     {
       "id": "de-movies-filmgenres",
-      "name": "Filmgenres",
+      "name": "Genres",
       "domain": "movies",
       "difficulty": 1,
       "words": [
@@ -67,10 +70,13 @@
         "Drama",
         "Thriller",
         "Western",
-        "Horrorfilm",
+        "Horror",
         "Krimi",
         "Musical",
-        "Abenteuerfilm"
+        "Abenteuer"
+      ],
+      "legacyNames": [
+        "Filmgenres"
       ]
     },
     {
@@ -126,7 +132,7 @@
     },
     {
       "id": "de-movies-weltraumkino",
-      "name": "Weltraumkino",
+      "name": "Science-Fiction",
       "domain": "movies",
       "difficulty": 1,
       "words": [
@@ -138,6 +144,9 @@
         "Galaxie",
         "Astronaut",
         "Laser"
+      ],
+      "legacyNames": [
+        "Weltraumkino"
       ]
     },
     {
@@ -203,7 +212,7 @@
         "Legolas",
         "Gollum",
         "Mordor",
-        "Der Eine Ring"
+        "Ring"
       ],
       "popCulture": true
     },
@@ -264,7 +273,7 @@
       "domain": "movies",
       "difficulty": 1,
       "words": [
-        "Shrek",
+        "Grün",
         "Fiona",
         "Esel",
         "Drache",
@@ -370,7 +379,7 @@
         "Hut",
         "Archäologe",
         "Bundeslade",
-        "Heiliger Gral",
+        "Gral",
         "Tempel",
         "Schlange",
         "Abenteuer"
@@ -455,8 +464,8 @@
         "Trinity",
         "Morpheus",
         "Agent Smith",
-        "Rote Pille",
-        "Blaue Pille",
+        "Pille",
+        "Entscheidung",
         "Simulation",
         "Telefonzelle"
       ],
@@ -489,9 +498,9 @@
         "Marmelade",
         "Peru",
         "London",
-        "Blauer Mantel",
-        "Roter Hut",
-        "Familie Brown",
+        "Mantel",
+        "Hut",
+        "Browns",
         "Koffer"
       ],
       "popCulture": true
@@ -508,8 +517,8 @@
         "Flake",
         "Schiff",
         "Helm",
-        "Schlaue Idee",
-        "Nase reiben"
+        "Idee",
+        "Reiben"
       ],
       "popCulture": true
     },

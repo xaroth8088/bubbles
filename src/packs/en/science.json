@@ -21,7 +21,7 @@
     },
     {
       "id": "theme-074",
-      "name": "Night sky",
+      "name": "Stargazing",
       "domain": "space",
       "difficulty": 1,
       "words": [
@@ -33,11 +33,14 @@
         "Galaxy",
         "Aurora",
         "Milky Way"
+      ],
+      "legacyNames": [
+        "Night sky"
       ]
     },
     {
       "id": "theme-075",
-      "name": "Space travel",
+      "name": "Spaceflight",
       "domain": "space",
       "difficulty": 1,
       "words": [
@@ -49,22 +52,25 @@
         "Launchpad",
         "Orbiter",
         "Station"
+      ],
+      "legacyNames": [
+        "Space travel"
       ]
     },
     {
       "id": "theme-076",
-      "name": "Moon phases",
+      "name": "Phases",
       "domain": "space",
       "difficulty": 2,
       "words": [
         "New",
         "Full",
-        "First quarter",
-        "Last quarter",
-        "Waxing crescent",
-        "Waning crescent",
-        "Waxing gibbous",
-        "Waning gibbous"
+        "Quarter",
+        "Crescent",
+        "Gibbous"
+      ],
+      "legacyNames": [
+        "Moon phases"
       ]
     },
     {
@@ -85,7 +91,7 @@
     },
     {
       "id": "theme-078",
-      "name": "Zodiac signs",
+      "name": "Zodiac",
       "domain": "space",
       "difficulty": 1,
       "words": [
@@ -101,6 +107,9 @@
         "Capricorn",
         "Aquarius",
         "Pisces"
+      ],
+      "legacyNames": [
+        "Zodiac signs"
       ]
     },
     {
@@ -121,7 +130,7 @@
     },
     {
       "id": "theme-080",
-      "name": "Space probes",
+      "name": "Probes",
       "domain": "space",
       "difficulty": 2,
       "words": [
@@ -133,11 +142,14 @@
         "Galileo",
         "Rosetta",
         "Mariner"
+      ],
+      "legacyNames": [
+        "Space probes"
       ]
     },
     {
       "id": "theme-081",
-      "name": "Stellar objects",
+      "name": "Deep sky",
       "domain": "space",
       "difficulty": 2,
       "words": [
@@ -145,10 +157,13 @@
         "Quasar",
         "Nebula",
         "Supernova",
-        "White dwarf",
-        "Red giant",
+        "Dwarf",
+        "Giant",
         "Black hole",
         "Neutron star"
+      ],
+      "legacyNames": [
+        "Stellar objects"
       ]
     },
     {
@@ -169,7 +184,7 @@
     },
     {
       "id": "theme-083",
-      "name": "Space agencies",
+      "name": "Agencies",
       "domain": "space",
       "difficulty": 2,
       "words": [
@@ -181,6 +196,9 @@
         "CSA",
         "UKSA",
         "DLR"
+      ],
+      "legacyNames": [
+        "Space agencies"
       ]
     },
     {
@@ -236,7 +254,7 @@
     },
     {
       "id": "theme-087",
-      "name": "Distance units",
+      "name": "Distances",
       "domain": "science",
       "difficulty": 2,
       "words": [
@@ -248,6 +266,9 @@
         "Inch",
         "Light-year",
         "Parsec"
+      ],
+      "legacyNames": [
+        "Distance units"
       ]
     },
     {
@@ -263,7 +284,7 @@
         "Flask",
         "Petri dish",
         "Centrifuge",
-        "Bunsen burner",
+        "Burner",
         "Telescope",
         "DNA",
         "Alembic",
@@ -420,7 +441,7 @@
     },
     {
       "id": "theme-098",
-      "name": "Subatomic particles",
+      "name": "Particles",
       "domain": "science",
       "difficulty": 3,
       "words": [
@@ -432,6 +453,9 @@
         "Neutrino",
         "Photon",
         "Gluon"
+      ],
+      "legacyNames": [
+        "Subatomic particles"
       ]
     },
     {
@@ -455,7 +479,7 @@
     },
     {
       "id": "theme-100",
-      "name": "Metric prefixes",
+      "name": "Prefixes",
       "domain": "science",
       "difficulty": 2,
       "words": [
@@ -467,6 +491,9 @@
         "Mega",
         "Giga",
         "Tera"
+      ],
+      "legacyNames": [
+        "Metric prefixes"
       ]
     },
     {
@@ -592,7 +619,7 @@
     },
     {
       "id": "theme-195",
-      "name": "File extensions",
+      "name": "Extensions",
       "domain": "tech",
       "difficulty": 2,
       "words": [
@@ -604,11 +631,14 @@
         "HTML",
         "CSV",
         "TXT"
+      ],
+      "legacyNames": [
+        "File extensions"
       ]
     },
     {
       "id": "theme-196",
-      "name": "Keyboard commands",
+      "name": "Commands",
       "domain": "tech",
       "difficulty": 1,
       "words": [
@@ -619,12 +649,15 @@
         "Redo",
         "Save",
         "Find",
-        "Select all"
+        "Select"
+      ],
+      "legacyNames": [
+        "Keyboard commands"
       ]
     },
     {
       "id": "theme-197",
-      "name": "Storage units",
+      "name": "Capacity",
       "domain": "tech",
       "difficulty": 2,
       "words": [
@@ -636,6 +669,9 @@
         "Terabyte",
         "Petabyte",
         "Exabyte"
+      ],
+      "legacyNames": [
+        "Storage units"
       ]
     },
     {
@@ -659,7 +695,7 @@
     },
     {
       "id": "theme-199",
-      "name": "Network hardware",
+      "name": "Networking",
       "domain": "tech",
       "difficulty": 2,
       "words": [
@@ -671,6 +707,9 @@
         "Repeater",
         "Bridge",
         "Firewall"
+      ],
+      "legacyNames": [
+        "Network hardware"
       ]
     },
     {
@@ -683,15 +722,15 @@
         "Word processor",
         "Browser",
         "Database",
-        "Photo editor",
-        "Media player",
+        "Editor",
+        "Player",
         "Antivirus",
         "Calendar"
       ]
     },
     {
       "id": "theme-201",
-      "name": "Web formats",
+      "name": "Formats",
       "domain": "tech",
       "difficulty": 2,
       "words": [
@@ -703,11 +742,14 @@
         "XML",
         "WebAssembly",
         "Markdown"
+      ],
+      "legacyNames": [
+        "Web formats"
       ]
     },
     {
       "id": "theme-202",
-      "name": "Computer keys",
+      "name": "Keyboard",
       "domain": "tech",
       "difficulty": 1,
       "words": [
@@ -719,6 +761,9 @@
         "Alt",
         "Delete",
         "Space"
+      ],
+      "legacyNames": [
+        "Computer keys"
       ]
     },
     {
@@ -810,7 +855,7 @@
         "Percent",
         "Infinity",
         "Pi",
-        "Square root",
+        "Root",
         "Division",
         "Multiply",
         "Divide"
@@ -893,7 +938,7 @@
       "words": [
         "Constellation",
         "Twinkle",
-        "Night sky",
+        "Stargazing",
         "Polaris",
         "Sun",
         "Telescope",
@@ -1148,7 +1193,7 @@
     },
     {
       "id": "theme-400",
-      "name": "Renewable energy",
+      "name": "Renewables",
       "domain": "science",
       "difficulty": 2,
       "words": [
@@ -1160,6 +1205,9 @@
         "Biomass",
         "Turbine",
         "Panel"
+      ],
+      "legacyNames": [
+        "Renewable energy"
       ]
     },
     {
@@ -1268,7 +1316,7 @@
     },
     {
       "id": "theme-459",
-      "name": "Science class",
+      "name": "Experiments",
       "domain": "science",
       "difficulty": 1,
       "words": [
@@ -1282,6 +1330,9 @@
         "Coat",
         "Thermometer",
         "Cylinder"
+      ],
+      "legacyNames": [
+        "Science class"
       ]
     },
     {
@@ -1336,7 +1387,7 @@
         "Tripod",
         "Focus",
         "Zoom",
-        "Memory card",
+        "Card",
         "Viewfinder",
         "Photo",
         "Aperture",
@@ -1392,7 +1443,7 @@
       "words": [
         "Tab",
         "Bookmark",
-        "Address bar",
+        "Address",
         "Link",
         "Website",
         "Search",
@@ -1400,7 +1451,7 @@
         "Back",
         "History",
         "Download",
-        "Home page",
+        "Home",
         "Window"
       ]
     },
@@ -1421,13 +1472,13 @@
         "Image",
         "Text",
         "Address",
-        "Home page",
+        "Home",
         "Radio button"
       ]
     },
     {
       "id": "theme-523",
-      "name": "Online safety",
+      "name": "Security",
       "domain": "tech",
       "difficulty": 1,
       "words": [
@@ -1440,10 +1491,13 @@
         "Phishing",
         "Firewall",
         "Update",
-        "Two-factor login",
+        "Verification",
         "Lock",
         "Key",
         "Shield"
+      ],
+      "legacyNames": [
+        "Online safety"
       ]
     },
     {
@@ -1468,7 +1522,7 @@
     },
     {
       "id": "theme-525",
-      "name": "Remote control",
+      "name": "Remote",
       "domain": "tech",
       "difficulty": 1,
       "words": [
@@ -1484,6 +1538,9 @@
         "Fast-forward",
         "Infrared",
         "Television"
+      ],
+      "legacyNames": [
+        "Remote control"
       ]
     },
     {
@@ -1503,7 +1560,7 @@
         "Circuit",
         "Machine",
         "Gripper",
-        "Remote control"
+        "Remote"
       ]
     },
     {
@@ -1528,7 +1585,7 @@
     },
     {
       "id": "theme-528",
-      "name": "Internet connections",
+      "name": "Connections",
       "domain": "tech",
       "difficulty": 1,
       "words": [
@@ -1536,12 +1593,15 @@
         "Broadband",
         "Fiber",
         "Ethernet",
-        "Mobile data",
+        "Data",
         "Satellite",
         "Router",
         "Modem",
         "Hotspot",
         "Network"
+      ],
+      "legacyNames": [
+        "Internet connections"
       ]
     },
     {
@@ -1604,7 +1664,7 @@
     },
     {
       "id": "theme-633",
-      "name": "Shapes and lines",
+      "name": "Outlines",
       "domain": "math",
       "difficulty": 1,
       "words": [
@@ -1620,6 +1680,9 @@
         "Parallel",
         "Perpendicular",
         "Diagonal"
+      ],
+      "legacyNames": [
+        "Shapes and lines"
       ]
     },
     {
@@ -1659,7 +1722,7 @@
         "Planet",
         "Observatory",
         "Constellation",
-        "Night sky"
+        "Stargazing"
       ]
     },
     {
@@ -1679,7 +1742,7 @@
         "Cell",
         "Bacteria",
         "Lab",
-        "Science class"
+        "Experiments"
       ]
     }
   ],

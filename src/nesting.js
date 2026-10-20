@@ -1,4 +1,7 @@
-const fold=word=>word.trim().toLowerCase();
+// Labels and dictionary clues use the same key, including composed/decomposed
+// accents and incidental spacing. Keep the original display text unchanged.
+export const normalizeLabel=word=>word.normalize('NFC').trim().replace(/\s+/gu,' ').toLowerCase();
+const fold=normalizeLabel;
 
 // A category can return wherever its name is an ordinary dictionary clue.
 // No connection recipes or companion words are stored separately from the pools.

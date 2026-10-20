@@ -99,7 +99,7 @@
         "Dough",
         "Batter",
         "Frosting",
-        "Chocolate chip"
+        "Chip"
       ]
     },
     {
@@ -229,9 +229,9 @@
         "Strawberry",
         "Pistachio",
         "Caramel",
-        "Mint chip",
-        "Cookie dough",
-        "Butter pecan"
+        "Mint",
+        "Dough",
+        "Pecan"
       ]
     },
     {
@@ -728,7 +728,7 @@
         "Fettuccine",
         "Linguine",
         "Fusilli",
-        "Tomato sauce",
+        "Sauce",
         "Pesto",
         "Parmesan",
         "Meatball"
@@ -782,7 +782,7 @@
       "domain": "food",
       "difficulty": 1,
       "words": [
-        "Chocolate chip",
+        "Chip",
         "Oatmeal",
         "Gingerbread",
         "Shortbread",
@@ -1044,13 +1044,13 @@
     },
     {
       "id": "theme-437",
-      "name": "Pizza kitchen",
+      "name": "Pizzeria",
       "domain": "food",
       "difficulty": 1,
       "words": [
         "Dough",
         "Crust",
-        "Tomato sauce",
+        "Sauce",
         "Mozzarella",
         "Pepperoni",
         "Oven",
@@ -1060,6 +1060,9 @@
         "Topping",
         "Yeast",
         "Basil"
+      ],
+      "legacyNames": [
+        "Pizza kitchen"
       ]
     },
     {
@@ -1279,7 +1282,7 @@
     },
     {
       "id": "theme-455",
-      "name": "Bakery counter",
+      "name": "Baked goods",
       "domain": "food",
       "difficulty": 1,
       "words": [
@@ -1295,6 +1298,9 @@
         "Brownie",
         "Turnover",
         "Croissant"
+      ],
+      "legacyNames": [
+        "Bakery counter"
       ]
     },
     {
@@ -1679,7 +1685,7 @@
     },
     {
       "id": "theme-992",
-      "name": "Chinese takeout",
+      "name": "Takeout",
       "domain": "food",
       "difficulty": 1,
       "words": [
@@ -1689,6 +1695,9 @@
         "Noodles",
         "Tea",
         "Chopsticks"
+      ],
+      "legacyNames": [
+        "Chinese takeout"
       ]
     }
   ],

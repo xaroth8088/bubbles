@@ -45,7 +45,7 @@
         "Trumpet",
         "Trombone",
         "Tuba",
-        "French horn",
+        "Horn",
         "Cornet",
         "Flugelhorn",
         "Euphonium",
@@ -70,7 +70,7 @@
     },
     {
       "id": "theme-152",
-      "name": "Music genres",
+      "name": "Styles",
       "domain": "music",
       "difficulty": 1,
       "words": [
@@ -83,6 +83,9 @@
         "Reggae",
         "Classical",
         "Soul"
+      ],
+      "legacyNames": [
+        "Music genres"
       ]
     },
     {
@@ -122,7 +125,7 @@
     },
     {
       "id": "theme-155",
-      "name": "Music notation",
+      "name": "Notation",
       "domain": "music",
       "difficulty": 2,
       "words": [
@@ -133,8 +136,11 @@
         "Sharp",
         "Flat",
         "Barline",
-        "Time signature",
+        "Signature",
         "Score"
+      ],
+      "legacyNames": [
+        "Music notation"
       ]
     },
     {
@@ -188,7 +194,7 @@
         "Bridge",
         "Headstock",
         "Pickguard",
-        "Tuning peg"
+        "Peg"
       ]
     },
     {
@@ -225,7 +231,7 @@
     },
     {
       "id": "theme-298",
-      "name": "Musical qualities",
+      "name": "Composition",
       "domain": "music",
       "difficulty": 2,
       "words": [
@@ -237,11 +243,14 @@
         "Harmony",
         "Tempo",
         "Dynamics"
+      ],
+      "legacyNames": [
+        "Musical qualities"
       ]
     },
     {
       "id": "theme-300",
-      "name": "Music session",
+      "name": "Jamming",
       "domain": "music",
       "difficulty": 2,
       "words": [
@@ -253,11 +262,14 @@
         "Chorus",
         "Bridge",
         "Break"
+      ],
+      "legacyNames": [
+        "Music session"
       ]
     },
     {
       "id": "theme-305",
-      "name": "Instrument families",
+      "name": "Instrumentation",
       "domain": "music",
       "difficulty": 2,
       "words": [
@@ -269,27 +281,32 @@
         "Electronic",
         "Plucked",
         "Bowed"
+      ],
+      "legacyNames": [
+        "Instrument families"
       ]
     },
     {
       "id": "theme-308",
-      "name": "Musical topics",
+      "name": "Musicianship",
       "domain": "music",
       "difficulty": 2,
       "words": [
-        "Music genres",
-        "Instrument families",
-        "Musical qualities",
-        "Music session",
-        "Music notation",
+        "Styles",
+        "Instrumentation",
         "Composition",
+        "Jamming",
+        "Notation",
         "Performance",
         "Recording"
+      ],
+      "legacyNames": [
+        "Musical topics"
       ]
     },
     {
       "id": "theme-461",
-      "name": "Music class",
+      "name": "Lesson",
       "domain": "music",
       "difficulty": 1,
       "words": [
@@ -301,10 +318,13 @@
         "Recorder",
         "Drum",
         "Choir",
-        "Sheet music",
+        "Score",
         "Teacher",
         "Scale",
         "Melody"
+      ],
+      "legacyNames": [
+        "Music class"
       ]
     },
     {
@@ -324,7 +344,7 @@
         "Band",
         "Singer",
         "Spotlight",
-        "Drum kit"
+        "Kit"
       ]
     },
     {
@@ -385,7 +405,7 @@
         "Violin",
         "Viola",
         "Cello",
-        "Double bass",
+        "Bass",
         "Flute",
         "Clarinet",
         "Trumpet",
@@ -393,7 +413,7 @@
         "Timpani",
         "Conductor",
         "Oboe",
-        "French horn"
+        "Horn"
       ]
     },
     {
@@ -409,7 +429,7 @@
         "Bass",
         "Harmony",
         "Conductor",
-        "Sheet music",
+        "Score",
         "Rehearsal",
         "Voice",
         "Choral",
@@ -433,7 +453,7 @@
         "Grand",
         "Upright",
         "Chord",
-        "Sheet music"
+        "Score"
       ]
     },
     {
@@ -465,7 +485,7 @@
         "Bow",
         "String",
         "Bridge",
-        "Chin rest",
+        "Chinrest",
         "Peg",
         "Fingerboard",
         "Case",
@@ -476,7 +496,7 @@
     },
     {
       "id": "theme-550",
-      "name": "Recording studio",
+      "name": "Studio",
       "domain": "music",
       "difficulty": 2,
       "words": [
@@ -490,11 +510,14 @@
         "Booth",
         "Recording",
         "Mastering"
+      ],
+      "legacyNames": [
+        "Recording studio"
       ]
     },
     {
       "id": "theme-551",
-      "name": "Music formats",
+      "name": "Playback",
       "domain": "music",
       "difficulty": 1,
       "words": [
@@ -508,6 +531,9 @@
         "Record",
         "Album",
         "Single"
+      ],
+      "legacyNames": [
+        "Music formats"
       ]
     },
     {

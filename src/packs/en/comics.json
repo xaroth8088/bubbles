@@ -33,7 +33,7 @@
         "Dogmatix",
         "Cacofonix",
         "Vitalstatistix",
-        "Magic potion",
+        "Potion",
         "Menhir",
         "Romans",
         "Gaul",
@@ -104,15 +104,15 @@
       "domain": "comics",
       "difficulty": 1,
       "words": [
-        "Papa Smurf",
+        "Papa",
         "Smurfette",
-        "Brainy Smurf",
+        "Brainy",
         "Gargamel",
         "Azrael",
-        "Mushroom houses",
+        "Mushrooms",
         "Blue",
-        "White hats",
-        "Smurf village",
+        "Hats",
+        "Village",
         "Peyo"
       ],
       "popCulture": true
@@ -188,8 +188,8 @@
         "Horace Horsecollar",
         "Clarabelle Cow",
         "Morty and Ferdie",
-        "White gloves",
-        "Round ears",
+        "Gloves",
+        "Ears",
         "Mouse"
       ],
       "popCulture": true
@@ -282,7 +282,7 @@
         "Silk Spectre",
         "Ozymandias",
         "The Comedian",
-        "Smiley badge",
+        "Badge",
         "Doomsday clock",
         "Alan Moore",
         "Dave Gibbons"
@@ -337,10 +337,10 @@
         "Luna",
         "Artemis",
         "Tuxedo Mask",
-        "Sailor Mercury",
-        "Sailor Mars",
-        "Sailor Jupiter",
-        "Sailor Venus",
+        "Mercury",
+        "Mars",
+        "Jupiter",
+        "Venus",
         "Chibiusa",
         "Silver Crystal"
       ],
@@ -354,12 +354,12 @@
       "words": [
         "Conan Edogawa",
         "Glasses",
-        "Rachel Moore",
-        "Richard Moore",
+        "Rachel",
+        "Richard",
         "Dr. Agasa",
         "Black Organization",
         "Bow tie",
-        "Voice changer",
+        "Voice",
         "Shrinking",
         "Deduction"
       ],
@@ -391,14 +391,14 @@
       "domain": "comics",
       "difficulty": 2,
       "words": [
-        "Tanjiro Kamado",
-        "Nezuko Kamado",
+        "Tanjiro",
+        "Nezuko",
         "Zenitsu",
         "Inosuke",
         "Muzan",
         "Hashira",
         "Demons",
-        "Breathing techniques",
+        "Breathing",
         "Nichirin sword",
         "Bamboo"
       ],
@@ -448,8 +448,8 @@
       "domain": "comics",
       "difficulty": 2,
       "words": [
-        "Edward Elric",
-        "Alphonse Elric",
+        "Edward",
+        "Alphonse",
         "Winry",
         "Roy Mustang",
         "Riza Hawkeye",
@@ -506,11 +506,11 @@
       "difficulty": 2,
       "words": [
         "Tohru Honda",
-        "Yuki Sohma",
-        "Kyo Sohma",
-        "Shigure Sohma",
-        "Akito Sohma",
-        "Momiji Sohma",
+        "Yuki",
+        "Kyo",
+        "Shigure",
+        "Akito",
+        "Momiji",
         "Zodiac",
         "Curse",
         "Transformation",
@@ -563,8 +563,8 @@
       "difficulty": 2,
       "words": [
         "Yugi Muto",
-        "Seto Kaiba",
-        "Mokuba Kaiba",
+        "Seto",
+        "Mokuba",
         "Bakura",
         "Pegasus",
         "Millennium Puzzle",
@@ -586,7 +586,7 @@
         "Suneo",
         "Gian",
         "Dorami",
-        "Robot cat",
+        "Robot",
         "Anywhere Door",
         "Time machine",
         "Pocket",
@@ -626,7 +626,7 @@
         "Tobio",
         "Robot",
         "Superstrength",
-        "Jet boots",
+        "Boots",
         "Osamu Tezuka",
         "Future"
       ],
@@ -653,7 +653,7 @@
     },
     {
       "id": "en-comics-comic-strips",
-      "name": "Comic strips",
+      "name": "Strips",
       "domain": "comics",
       "difficulty": 2,
       "words": [
@@ -667,6 +667,9 @@
         "Mafalda",
         "Doonesbury",
         "Andy Capp"
+      ],
+      "legacyNames": [
+        "Comic strips"
       ]
     },
     {
@@ -709,23 +712,26 @@
     },
     {
       "id": "en-comics-comic-formats",
-      "name": "Comic formats",
+      "name": "Publications",
       "domain": "comics",
       "difficulty": 2,
       "words": [
-        "Comic strips",
+        "Strips",
         "Graphic novels",
         "Webcomics",
-        "Comic books",
-        "Comic albums",
+        "Comics",
+        "Albums",
         "Anthologies",
         "One-shots",
         "Miniseries"
+      ],
+      "legacyNames": [
+        "Comic formats"
       ]
     },
     {
       "id": "en-comics-comic-making",
-      "name": "Making comics",
+      "name": "Illustration",
       "domain": "comics",
       "difficulty": 1,
       "words": [
@@ -740,12 +746,15 @@
         "Script",
         "Storyboard",
         "Sketch",
-        "Speech bubble"
+        "Bubble"
+      ],
+      "legacyNames": [
+        "Making comics"
       ]
     },
     {
       "id": "en-comics-comic-sounds",
-      "name": "Comic sounds",
+      "name": "Effects",
       "domain": "comics",
       "difficulty": 1,
       "words": [
@@ -759,6 +768,9 @@
         "Splash",
         "Clang",
         "Splat"
+      ],
+      "legacyNames": [
+        "Comic sounds"
       ]
     }
   ],
@@ -780,6 +792,6 @@
     "Pen": "🖊️",
     "Brush": "🖌️",
     "Ruler": "📏",
-    "Speech bubble": "💬"
+    "Bubble": "💬"
   }
 }

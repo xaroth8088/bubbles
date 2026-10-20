@@ -21,7 +21,7 @@
     },
     {
       "id": "theme-215",
-      "name": "Game actions",
+      "name": "Actions",
       "domain": "games",
       "difficulty": 1,
       "words": [
@@ -33,6 +33,9 @@
         "Block",
         "Reload",
         "Interact"
+      ],
+      "legacyNames": [
+        "Game actions"
       ]
     },
     {
@@ -121,7 +124,7 @@
         "Pinball",
         "Joystick",
         "Coin",
-        "High score",
+        "Record",
         "Cabinet"
       ]
     },
@@ -170,7 +173,7 @@
         "Steve",
         "Pickaxe",
         "Redstone",
-        "Crafting table",
+        "Workbench",
         "Nether",
         "Ender Dragon"
       ],
@@ -296,8 +299,8 @@
       "difficulty": 2,
       "words": [
         "Rainbow Road",
-        "Blue shell",
-        "Red shell",
+        "Blue",
+        "Red",
         "Banana",
         "Star",
         "Mushroom",
@@ -377,7 +380,7 @@
         "Chell",
         "GLaDOS",
         "Companion Cube",
-        "Portal gun",
+        "Gun",
         "Aperture",
         "Turret",
         "Cake",
@@ -395,7 +398,7 @@
         "Cortana",
         "Covenant",
         "Warthog",
-        "Energy sword",
+        "Sword",
         "Ring"
       ],
       "popCulture": true
@@ -409,7 +412,7 @@
         "Simoleon",
         "Plumbob",
         "Sim",
-        "Build mode",
+        "Build",
         "Needs",
         "Create-a-Sim"
       ],
@@ -424,7 +427,7 @@
         "Tetromino",
         "Line",
         "Rotation",
-        "Hard drop",
+        "Drop",
         "Hold",
         "Stack"
       ],
@@ -440,7 +443,7 @@
         "Crewmate",
         "Task",
         "Vent",
-        "Emergency meeting",
+        "Meeting",
         "The Skeld"
       ],
       "popCulture": true
@@ -663,7 +666,7 @@
         "Chocolate",
         "Lives",
         "Booster",
-        "Color bomb"
+        "Bomb"
       ],
       "popCulture": true
     },
@@ -778,7 +781,7 @@
         "Ezio",
         "Altair",
         "Animus",
-        "Hidden blade",
+        "Blade",
         "Leap of Faith",
         "Templars",
         "Desmond",
@@ -812,8 +815,8 @@
         "Vault Boy",
         "Pip-Boy",
         "Nuka-Cola",
-        "Power armor",
-        "Bottle cap",
+        "Armor",
+        "Cap",
         "Dogmeat",
         "Radroach",
         "Deathclaw"
@@ -833,7 +836,7 @@
         "Shout",
         "Daedra",
         "Stormcloak",
-        "Sweet roll"
+        "Sweetroll"
       ],
       "popCulture": true
     }

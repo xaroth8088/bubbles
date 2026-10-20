@@ -26,7 +26,7 @@
     },
     {
       "id": "theme-205",
-      "name": "Chess pieces",
+      "name": "Chessmen",
       "domain": "games",
       "difficulty": 1,
       "words": [
@@ -36,11 +36,14 @@
         "Bishop",
         "Knight",
         "Pawn"
+      ],
+      "legacyNames": [
+        "Chess pieces"
       ]
     },
     {
       "id": "theme-206",
-      "name": "Card ranks",
+      "name": "Ranks",
       "domain": "games",
       "difficulty": 1,
       "words": [
@@ -57,11 +60,14 @@
         "Four",
         "Three",
         "Two"
+      ],
+      "legacyNames": [
+        "Card ranks"
       ]
     },
     {
       "id": "theme-207",
-      "name": "Card suits",
+      "name": "Suits",
       "domain": "games",
       "difficulty": 1,
       "words": [
@@ -69,6 +75,9 @@
         "Diamonds",
         "Clubs",
         "Spades"
+      ],
+      "legacyNames": [
+        "Card suits"
       ]
     },
     {
@@ -105,7 +114,7 @@
     },
     {
       "id": "theme-210",
-      "name": "Game pieces",
+      "name": "Pieces",
       "domain": "games",
       "difficulty": 1,
       "words": [
@@ -117,6 +126,9 @@
         "Miniature",
         "Meeple",
         "Counter"
+      ],
+      "legacyNames": [
+        "Game pieces"
       ]
     },
     {
@@ -131,7 +143,7 @@
         "Dodgeball",
         "Four square",
         "Red rover",
-        "Jump rope",
+        "Skipping",
         "Capture the flag"
       ]
     },
@@ -145,19 +157,18 @@
         "Yo-yo",
         "Top",
         "Marble",
-        "Teddy bear",
+        "Teddy",
         "Jack-in-the-box",
-        "Rocking horse",
+        "Horse",
         "Doll",
         "Car",
-        "Train set",
-        "Jump rope",
+        "Train",
+        "Rope",
         "Ball",
         "Frisbee",
         "Puppet",
         "Dollhouse",
-        "Building blocks",
-        "Teddy"
+        "Blocks"
       ],
       "legacyNames": [
         "Classic toys"
@@ -165,7 +176,7 @@
     },
     {
       "id": "theme-213",
-      "name": "Logic puzzles",
+      "name": "Logic",
       "domain": "games",
       "difficulty": 2,
       "words": [
@@ -177,6 +188,9 @@
         "Slitherlink",
         "Futoshiki",
         "Minesweeper"
+      ],
+      "legacyNames": [
+        "Logic puzzles"
       ]
     },
     {
@@ -204,12 +218,12 @@
         "Slide",
         "Swing",
         "Seesaw",
-        "Monkey bars",
+        "Bars",
         "Sandbox",
-        "Climbing frame",
+        "Frame",
         "Hopscotch",
         "Tag",
-        "Jump rope",
+        "Rope",
         "Ball",
         "Bench",
         "Merry-go-round"
@@ -224,15 +238,15 @@
         "Ferris wheel",
         "Carousel",
         "Roller coaster",
-        "Bumper cars",
-        "Cotton candy",
+        "Dodgems",
+        "Candyfloss",
         "Ticket",
         "Prize",
         "Arcade",
         "Funhouse",
         "Popcorn",
         "Helter-skelter",
-        "Ring toss",
+        "Toss",
         "Circus"
       ]
     },
@@ -290,8 +304,8 @@
         "Score",
         "Blank",
         "Dictionary",
-        "Triple word",
-        "Double letter"
+        "Triple",
+        "Double"
       ]
     },
     {
@@ -300,10 +314,10 @@
       "domain": "games",
       "difficulty": 2,
       "words": [
-        "Colonel Mustard",
-        "Miss Scarlet",
-        "Professor Plum",
-        "Mrs. Peacock",
+        "Mustard",
+        "Scarlet",
+        "Plum",
+        "Peacock",
         "Revolver",
         "Candlestick",
         "Library",
@@ -404,10 +418,10 @@
       "difficulty": 1,
       "words": [
         "Slide",
-        "Wave pool",
-        "Lazy river",
-        "Splash pad",
-        "Inner tube",
+        "Waves",
+        "River",
+        "Splash",
+        "Tube",
         "Swimsuit",
         "Lifeguard",
         "Locker",
@@ -459,7 +473,7 @@
     },
     {
       "id": "theme-890",
-      "name": "Pool table",
+      "name": "Billiards",
       "domain": "games",
       "difficulty": 1,
       "words": [
@@ -471,10 +485,13 @@
         "Cushion",
         "Felt",
         "Break",
-        "Eight ball",
+        "Eight",
         "Stripe",
         "Solid",
         "Triangle"
+      ],
+      "legacyNames": [
+        "Pool table"
       ]
     },
     {
@@ -493,7 +510,7 @@
         "Sorting",
         "Border",
         "Table",
-        "Missing piece",
+        "Gap",
         "Puzzle"
       ]
     },
@@ -510,7 +527,7 @@
         "Letter",
         "Answer",
         "Number",
-        "Black square",
+        "Square",
         "Pencil",
         "Eraser",
         "Newspaper",
@@ -559,7 +576,7 @@
     },
     {
       "id": "theme-895",
-      "name": "Teddy bear",
+      "name": "Teddy",
       "domain": "games",
       "difficulty": 1,
       "words": [
@@ -575,11 +592,14 @@
         "Plush",
         "Stitch",
         "Soft"
+      ],
+      "legacyNames": [
+        "Teddy bear"
       ]
     },
     {
       "id": "theme-896",
-      "name": "Building blocks",
+      "name": "Blocks",
       "domain": "games",
       "difficulty": 1,
       "words": [
@@ -595,6 +615,9 @@
         "Base",
         "Piece",
         "Construction"
+      ],
+      "legacyNames": [
+        "Building blocks"
       ]
     }
   ],

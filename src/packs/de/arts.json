@@ -61,7 +61,7 @@
         "Mischfarbe",
         "Farbkreis",
         "Kontrast",
-        "Farbton",
+        "Ton",
         "Helligkeit",
         "Sättigung",
         "Komplementärfarbe"
@@ -390,7 +390,7 @@
         "Magritte",
         "Traum",
         "Unterbewusstsein",
-        "Schmelzende Uhren",
+        "Uhren",
         "Unwirklichkeit",
         "Metamorphose",
         "Fantastik"
@@ -472,10 +472,10 @@
       "domain": "arts",
       "difficulty": 2,
       "words": [
-        "Grafikdesigner",
+        "Grafiker",
         "Illustrator",
-        "Modedesigner",
-        "Produktdesigner",
+        "Couturier",
+        "Gestalter",
         "Innenarchitekt",
         "Typograf",
         "Keramiker",
