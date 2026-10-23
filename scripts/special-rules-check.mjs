@@ -187,13 +187,13 @@ if(process.argv.includes('--fixtures-only')){
       await f.undo();await retained(1,1);await f.reload();await retained(1,1);
       await f.dragJoin(driver,wrong);await retained(2,2);await f.idle();
       await f.tapJoin(driver,'g1w1');await f.idle();await retained(2,2); // An unrelated frozen target is blocked.
-      await f.page.keyboard.press('Escape');await f.tapJoin(driver,'g0w1');await f.idle();
+      await f.bubble(driver).press('Escape');await f.tapJoin(driver,'g0w1');await f.idle();
       let state=await f.read();assert.equal(state.bubbles.find(b=>b.id===lock).turns,1);assert.equal(state.bubbles.find(b=>b.id==='g0w1').driverColor,undefined);
       assert.equal(state.bubbles.find(b=>b.id==='g0w1').atoms.length,2);assert.equal(state.moves,3);assert.equal(state.mistakes,2);
       await f.undo();await retained(2,2);
       await f.dragJoin(driver,lock);await f.idle();await retained(2,2);
       await f.tapJoin(driver,lock);await f.idle();await retained(2,2);
-      await f.page.keyboard.press('Escape');await f.tapJoin(driver,lock);await f.idle();await retained(2,2);
+      await f.bubble(driver).press('Escape');await f.tapJoin(driver,lock);await f.idle();await retained(2,2);
       await f.reload();await retained(2,2);
       await f.tapJoin(driver,'g0w1');await f.idle();state=await f.read();
       assert.equal(state.bubbles.find(b=>b.id===lock).turns,1);assert.equal(state.bubbles.find(b=>b.id==='g0w1').driverColor,undefined);

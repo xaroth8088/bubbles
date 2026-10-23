@@ -96,7 +96,7 @@ try{
     await direct.bubble(id).evaluate(el=>el.style.zIndex='100');const box=await direct.bubble(id).boundingBox();
     await direct.page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);await direct.bubble(id).evaluate(el=>el.style.removeProperty('z-index'));
   }
-  await retained();await direct.idle();await direct.page.keyboard.press('Escape');
+  await retained();await direct.idle();await direct.bubble(directDriver.id).press('Escape');
   const directPartner=(await direct.read()).bubbles.find(b=>b.id!==directDriver.id&&b.groupId===directDriver.groupId&&!b.driverColor&&!isBlocked(b));assert.ok(directPartner);
   await direct.join(directDriver.id,directPartner.id);
   const merged=await direct.read();assert.equal(merged.bubbles.find(b=>b.id===direct.lock.id).turns,1);assert.equal(merged.moves,directState.moves+1);assert.equal(merged.mistakes,directState.mistakes);
