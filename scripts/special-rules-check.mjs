@@ -19,6 +19,7 @@ const rows=[
   ['Stories',"Will-o'-the-wisp",'Fairy tale','Once upon a time','Happy ending'],
 ];
 const all=state=>[...state.bubbles,...state.reserve.flat()];
+const wordLedger=state=>all(state).flatMap(b=>b.atoms).sort((a,b)=>a.id.localeCompare(b.id)||(a.part??-1)-(b.part??-1));
 const timerIn=state=>all(state).find(b=>typeof b.timer==='number');
 const partsIn=state=>all(state).filter(b=>b.atoms.some(a=>a.part!==undefined));
 function puzzle(groups=3,specials=[]){
@@ -174,9 +175,11 @@ if(process.argv.includes('--fixtures-only')){
 
     for(const motion of['system','reduced']){
       const f=await open(screwdriverFixture(),motion),driver='g0w0',wrong='g1w0',lock='g2w0';
+      const initialLedger=wordLedger(await f.read());
       const retained=async(moves,mistakes)=>{
         const state=await f.read();assert.equal(state.moves,moves);assert.equal(state.mistakes,mistakes);
         assert.equal(state.bubbles.find(b=>b.id===driver).driverColor,'violet');assert.equal(state.bubbles.find(b=>b.id===lock).turns,2);
+        assert.deepEqual(wordLedger(state),initialLedger,'A rejected screwdriver action changed the word ledger');
         assert.equal(await f.bubble(driver).locator('.screwdriver-art').count(),1);assert.equal(await f.bubble(lock).locator('.screw-head').count(),2);assert.ok(validateState(state));
       };
       await f.tapJoin(driver,wrong);await retained(1,1);
@@ -188,9 +191,15 @@ if(process.argv.includes('--fixtures-only')){
       let state=await f.read();assert.equal(state.bubbles.find(b=>b.id===lock).turns,1);assert.equal(state.bubbles.find(b=>b.id==='g0w1').driverColor,undefined);
       assert.equal(state.bubbles.find(b=>b.id==='g0w1').atoms.length,2);assert.equal(state.moves,3);assert.equal(state.mistakes,2);
       await f.undo();await retained(2,2);
-      await f.dragJoin(driver,lock);await f.idle();state=await f.read();assert.equal(state.bubbles.find(b=>b.id===lock).turns,1);
-      assert.equal(state.bubbles.find(b=>b.id===driver).driverColor,undefined);assert.equal(state.bubbles.find(b=>b.id===driver).atoms.length,1);
-      await f.tapJoin(driver,lock);await f.idle();assert.equal((await f.read()).bubbles.find(b=>b.id===lock).turns,1,'Repeated ring contact consumed a screwdriver twice');
+      await f.dragJoin(driver,lock);await f.idle();await retained(2,2);
+      await f.tapJoin(driver,lock);await f.idle();await retained(2,2);
+      await f.page.keyboard.press('Escape');await f.tapJoin(driver,lock);await f.idle();await retained(2,2);
+      await f.reload();await retained(2,2);
+      await f.tapJoin(driver,'g0w1');await f.idle();state=await f.read();
+      assert.equal(state.bubbles.find(b=>b.id===lock).turns,1);assert.equal(state.bubbles.find(b=>b.id==='g0w1').driverColor,undefined);
+      assert.equal(state.bubbles.some(b=>b.id===driver),false);assert.equal(state.bubbles.find(b=>b.id==='g0w1').atoms.length,2);
+      assert.equal(state.moves,3);assert.equal(state.mistakes,2);assert.deepEqual(wordLedger(state),initialLedger);
+      await f.tapJoin('g0w1',lock);await f.idle();assert.equal((await f.read()).bubbles.find(b=>b.id===lock).turns,1,'A consumed screwdriver removed another screw');
       await f.reload();assert.equal((await f.read()).bubbles.find(b=>b.id===lock).turns,1);assert.ok(validateState(await f.read()));
       await f.context.close();
 
@@ -251,7 +260,7 @@ if(process.argv.includes('--fixtures-only')){
       assert.ok((await incoming.page.evaluate(()=>window.countdownAppearances)).length,'The initial countdown never appeared');await incoming.context.close();
       console.log(`Special-rule browser checks passed in ${motion} motion.`);
     }
-    assert.deepEqual(errors,[]);console.log('Special-rule browser checks passed: real repeated tap/drag mismatch and blocked-target screwdriver retention, legal merge and direct-ring consumption, undo/reload, mixed split reserve/refills, unsplit phrases, frozen/partial/split/nested countdown eligibility, reserve and hidden-arrival tick protection, and visible constituent arrival order in both motion modes.');
+    assert.deepEqual(errors,[]);console.log('Special-rule browser checks passed: real repeated tap/drag mismatch and direct-ring screwdriver retention, merge-only tool consumption, unchanged rejected-action word ledger and counters, undo/reload, mixed split reserve/refills, unsplit phrases, frozen/partial/split/nested countdown eligibility, reserve and hidden-arrival tick protection, and visible constituent arrival order in both motion modes.');
   }catch(error){
     if(activePage&&!activePage.isClosed()){
       await activePage.screenshot({path:output+'special-rules-failure.png'}).catch(()=>{});

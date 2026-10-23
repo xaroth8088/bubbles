@@ -1,7 +1,7 @@
 import {SPECIALS,INTRO_LEVELS} from './data.js';
 import {getCatalog,PACKS,ALL_PACK_IDS,normalizePackIds,normalizeLanguage} from './catalog.js';
 import {translate,localizeUI} from './i18n.js';
-import {createPuzzle,makeState,merge,tapSpecial,getHint,magnet,moreRoom,bubbleText,specialLabel,isBlocked,blockedReason,validateState,localDate,random,shuffle,upgradeDealing,atomText,arrivalDependency,canUseDriver,linkedPartner,countdownReady} from './engine.js';
+import {createPuzzle,makeState,merge,tapSpecial,getHint,magnet,moreRoom,bubbleText,specialLabel,isBlocked,blockedReason,validateState,localDate,random,shuffle,upgradeDealing,atomText,arrivalDependency,linkedPartner,countdownReady} from './engine.js';
 import {stepPhysics,simulatePhysics,bubbleDiameter,radialImpulse,resetPhysics,membranePath,membraneContains,translateBoundedGroup,PHYSICS_STEP,PHYSICS_DEFAULTS,normalizePhysics} from './physics.js';
 import {specialArt,oceanArt,membraneArt,KEY_PALETTE} from './art.js';
 import {createExperience} from './experience.js';
@@ -233,7 +233,7 @@ async function animateAction(callback,{a,b,origin}={}){
   remember();
   if(origin&&history.length){const original=history.at(-1).bubbles.find(x=>x.id===a);if(original)original.position={x:origin.x/board.clientWidth,y:origin.y/board.clientHeight};}
   const result=callback();if(!result?.ok&&!result?.mismatch)history.pop();
-  const visualMembers=before.filter(old=>result?.poppedDecoys?.includes(old.id)||(result?.cleared?old.groupId===result.cleared.group.id:!result?.toolOnly&&old.id===a));
+  const visualMembers=before.filter(old=>result?.poppedDecoys?.includes(old.id)||(result?.cleared?old.groupId===result.cleared.group.id:old.id===a));
   const snapshots=new Map(visualMembers.map(old=>[old.id,{el:!reducedMotion()?elements.get(old.id)?.cloneNode(true):null,p:positions.has(old.id)?{...positions.get(old.id)}:null}]));
   if(result?.ok){returning.delete(a);returning.delete(b);}
   activeActions++;busy=true;board.dataset.busy='true';selected=null;hinted.clear();
@@ -248,11 +248,7 @@ async function animateAction(callback,{a,b,origin}={}){
     const liveBefore=new Set(before.map(b=>b.id)),notBefore=state.bubbles.filter(b=>!liveBefore.has(b.id)&&b.id!==result.cleared.returnedId);
     for(const bubble of notBefore){const p=positions.get(bubble.id);if(p?.releaseAt!==undefined)p.releaseAt+=1000;}
   }
-  if(result?.toolOnly){
-    for(const id of[a,b].filter(Boolean))pulse(id,'merge-bounce');
-    if(origin&&positions.has(a)){const p=positions.get(a);returning.set(a,{from:{x:p.x,y:p.y},to:origin,start:performance.now(),duration:reducedMotion()?1:260});wake();}
-    sound('merge');haptic(8);await delay(reducedMotion()?0:260);
-  }else if(!result?.ok){
+  if(!result?.ok){
     for(const id of[a,b].filter(Boolean))pulse(id);
     if(point)experience.ripple(point.x,point.y,point.r*.5,'#ffaab1',24);
     if(origin&&positions.has(a)){const p=positions.get(a);returning.set(a,{from:{x:p.x,y:p.y},to:origin,start:performance.now(),duration:reducedMotion()?1:260});wake();}
@@ -312,7 +308,7 @@ board.addEventListener('pointermove',event=>{
   const elapsed=Math.max(.008,(event.timeStamp-drag.lastTime)/1000);drag.velocity={x:Math.max(-400,Math.min(400,dx/elapsed)),y:Math.max(-400,Math.min(400,dy/elapsed))};drag.lastTime=event.timeStamp;
   elements.get(drag.id)?.classList.add('dragging');
   let nearest=null,distance=Infinity;
-  for(const b of state.bubbles){if(b.id===drag.id||b.kind==='bonus'&&!canUseDriver(bubble))continue;const q=positions.get(b.id);if(!q||q.rebirthPending||q.releaseAt!==undefined)continue;const d=Math.hypot(pos.x-q.x,pos.y-q.y);if(d<Math.max(q.r+12,pos.r+6)&&d<distance){nearest=b.id;distance=d;}}
+  for(const b of state.bubbles){if(b.id===drag.id||b.kind==='bonus')continue;const q=positions.get(b.id);if(!q||q.rebirthPending||q.releaseAt!==undefined)continue;const d=Math.hypot(pos.x-q.x,pos.y-q.y);if(d<Math.max(q.r+12,pos.r+6)&&d<distance){nearest=b.id;distance=d;}}
   for(const[id,el]of elements)el.classList.toggle('target',id===nearest);
   drag.target=nearest;drag.last=point;wake();event.preventDefault();
   experience.trail({x:pos.x,y:pos.y},nearest?positions.get(nearest):null);
@@ -329,7 +325,6 @@ function cancelDrag(){const pointer=drag?.pointer;drag=null;experience.release()
 function onBubbleTap(id){
   if(positions.get(id)?.rebirthPending||positions.get(id)?.releaseAt!==undefined)return;
   const b=state.bubbles.find(x=>x.id===id);if(!b)return;
-  if(selected&&selected!==id&&(canUseDriver(b)||canUseDriver(state.bubbles.find(x=>x.id===selected)))){combine(selected,id);return;}
   if(b.kind==='bonus'){act(()=>tapSpecial(state,id));return;}
   if(isBlocked(b)){pulse(id);return;}
   if(selected&&selected!==id){combine(selected,id);return;}

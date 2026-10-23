@@ -9,6 +9,7 @@ const base=process.env.TEST_URL||'http://127.0.0.1:4183';let server;
 if(!process.env.TEST_URL){server=spawn(process.execPath,[fileURLToPath(new URL('./server.mjs',import.meta.url))],{env:{...process.env,PORT:'4183'},windowsHide:true,stdio:['ignore','pipe','pipe']});await new Promise((resolve,reject)=>{server.stdout.once('data',resolve);server.once('error',reject);});}
 const browser=await chromium.launch({headless:true,...(process.env.BROWSER_PATH?{executablePath:process.env.BROWSER_PATH}:{})}),errors=[];
 const output=fileURLToPath(new URL('../test-results/',import.meta.url));await mkdir(output,{recursive:true});
+const wordLedger=state=>[...state.bubbles,...state.reserve.flat()].flatMap(b=>b.atoms).sort((a,b)=>a.id.localeCompare(b.id)||(a.part??-1)-(b.part??-1));
 async function fixture({count=5,reducedMotion='no-preference',mixed=false,legacy=false}={}){
   const puzzle=createPuzzle({mode:'lab',special:'screw'});if(mixed)puzzle.specials=['screw','keylock'];
   let initial;
@@ -74,16 +75,33 @@ try{
     await f.join(tool.id,partner.id);await f.idle();
   }
   assert.equal(await f.bubble(lock.id).locator('.screw-ring').count(),0);assert.ok(validateState(await f.read()));assert.equal(await f.page.locator('#toast.visible').count(),0);
-  // A real touch drag can use a screwdriver directly on its blocked ring.
+  // Direct contact with a ring never spends a screwdriver or changes the puzzle.
   const direct=await fixture({count:2}),directState=await direct.read(),directDriver=directState.bubbles.find(b=>b.driverColor),from=await direct.bubble(directDriver.id).boundingBox(),to=await direct.bubble(direct.lock.id).boundingBox();
+  const retained=async()=>{
+    const current=await direct.read();
+    assert.equal(current.bubbles.find(b=>b.id===direct.lock.id).turns,2,'Direct ring contact removed a screw');
+    assert.equal(current.bubbles.find(b=>b.id===directDriver.id).driverColor,directDriver.driverColor,'Direct ring contact consumed the screwdriver');
+    assert.equal(current.moves,directState.moves);assert.equal(current.mistakes,directState.mistakes);
+    assert.deepEqual(wordLedger(current),wordLedger(directState),'Direct ring contact changed the word ledger');
+    assert.deepEqual(current.bubbles.find(b=>b.id===directDriver.id).atoms,directDriver.atoms);
+    assert.equal(await direct.bubble(directDriver.id).locator('.screwdriver-art').count(),1);assert.equal(await direct.bubble(direct.lock.id).locator('.screw-head').count(),2);
+    assert.equal(await direct.page.locator('.state-effect.unscrew').count(),0);assert.ok(validateState(current));
+  };
   const directTouch=await direct.page.context().newCDPSession(direct.page);
   await directTouch.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:from.x+from.width/2,y:from.y+from.height/2}]});
   await directTouch.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x:to.x+to.width/2,y:to.y+to.height/2}]});
   assert.ok(await direct.bubble(direct.lock.id).evaluate(el=>el.classList.contains('target')));await directTouch.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});
-  assert.equal((await direct.read()).bubbles.find(b=>b.id===direct.lock.id).turns,1);assert.equal((await direct.read()).mistakes,0);
-  assert.equal(await direct.bubble(directDriver.id).count(),1);assert.equal(await direct.bubble(directDriver.id).locator('.screwdriver-art').count(),0);await direct.idle();
-  const lastDriver=(await direct.read()).bubbles.find(b=>b.driverColor);await direct.join(lastDriver.id,direct.lock.id);
-  assert.equal((await direct.read()).bubbles.find(b=>b.id===direct.lock.id).turns,0);assert.equal(await direct.bubble(direct.lock.id).locator('.screw-ring').count(),0);assert.ok(validateState(await direct.read()));
+  await retained();await direct.idle();
+  for(const id of[directDriver.id,direct.lock.id]){
+    await direct.bubble(id).evaluate(el=>el.style.zIndex='100');const box=await direct.bubble(id).boundingBox();
+    await direct.page.touchscreen.tap(box.x+box.width/2,box.y+box.height/2);await direct.bubble(id).evaluate(el=>el.style.removeProperty('z-index'));
+  }
+  await retained();await direct.idle();await direct.page.keyboard.press('Escape');
+  const directPartner=(await direct.read()).bubbles.find(b=>b.id!==directDriver.id&&b.groupId===directDriver.groupId&&!b.driverColor&&!isBlocked(b));assert.ok(directPartner);
+  await direct.join(directDriver.id,directPartner.id);
+  const merged=await direct.read();assert.equal(merged.bubbles.find(b=>b.id===direct.lock.id).turns,1);assert.equal(merged.moves,directState.moves+1);assert.equal(merged.mistakes,directState.mistakes);
+  assert.equal(merged.bubbles.some(b=>b.id===directDriver.id),false);assert.equal(merged.bubbles.find(b=>b.id===directPartner.id).driverColor,undefined);assert.equal(merged.bubbles.find(b=>b.id===directPartner.id).atoms.length,2);
+  assert.deepEqual(wordLedger(merged),wordLedger(directState));assert.equal(await direct.bubble(direct.lock.id).locator('.screw-head').count(),1);assert.equal(await direct.bubble(directPartner.id).locator('.screwdriver-art').count(),0);assert.ok(validateState(merged));await direct.idle();
   const mixed=await fixture({count:2,mixed:true});state=await mixed.read();const key=state.bubbles.find(b=>b.keyColor),keyLock=toolLock(key,state.bubbles),partner=state.bubbles.find(b=>b.groupId===key.groupId&&b.id!==key.id&&!isBlocked(b)&&!b.driverColor);
   await mixed.join(key.id,partner.id);assert.equal((await mixed.read()).bubbles.find(b=>b.id===keyLock.id).lockColor,undefined);assert.equal((await mixed.read()).bubbles.find(b=>b.id===mixed.lock.id).turns,2);
   assert.notEqual(key.keyColor,mixed.lock.screwColor);assert.deepEqual(await mixed.page.evaluate(()=>window.driverArrivalViolations),[]);
@@ -91,5 +109,5 @@ try{
   await reduced.join(driver.id,mate.id);assert.equal((await reduced.read()).bubbles.find(b=>b.id===reduced.lock.id).turns,2-1-Number(!!mate.driverColor));assert.ok(validateState(await reduced.read()));
   const legacy=await fixture({count:2,legacy:true});assert.equal((await legacy.read()).moves,0);assert.equal((await legacy.read()).bubbles.filter(b=>b.driverColor).length+(await legacy.read()).reserve.flat().filter(b=>b.driverColor).length,2);assert.ok(validateState(await legacy.read()));
   await f.page.context().setOffline(true);await f.page.reload();await f.bubble(lock.id).waitFor();assert.equal((await f.read()).bubbles.find(b=>b.id===lock.id).turns,0);assert.equal(await f.bubble(lock.id).locator('.screw-ring').count(),0);
-  assert.deepEqual(errors,[]);console.log('Screw checks passed: failed word merges retain tools and record a mistake, legal matching partners consume tools, native touch onto a blocked ring, one-time tool consumption, screw animations, immediate next touch, undo, reload/offline state, color/key isolation, legacy saves, and reduced motion.');
+  assert.deepEqual(errors,[]);console.log('Screw checks passed: failed word merges retain tools and record a mistake, native drag/tap onto a blocked ring preserves tools, counters, and words, only legal matching merges consume tools, screw animations, immediate next touch, undo, reload/offline state, color/key isolation, legacy saves, and reduced motion.');
 }finally{await browser.close();server?.kill();}

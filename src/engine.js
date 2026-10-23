@@ -237,7 +237,7 @@ export function blockedReason(b) {
   if(b.pinsNeeded>0) return `Collect ${b.pinsNeeded} green pin${b.pinsNeeded===1?'':'s'} by completing their groups.`;
   if(b.clearsNeeded>0) return 'Clear another group to loosen the kelp.';
   if(b.hiddenUntil>0) return 'Clear another group to lift this cloud.';
-  if(b.turns>0) return `Merge a ${b.screwColor||'matching'} screwdriver word correctly or use it on this ring; ${b.turns} screws remain.`;
+  if(b.turns>0) return `Merge a ${b.screwColor||'matching'} screwdriver word correctly; ${b.turns} screws remain.`;
   if(b.shell) return 'Tap to break the shell first.';
   return '';
 }
@@ -571,26 +571,18 @@ export function merge(state, sourceId, targetId, {visibleIds}={}) {
   if(!a||!b||a.id===b.id) return {ok:false,message:'Choose two bubbles.'};
   const visible=visibleIds?state.bubbles.filter(b=>visibleIds.has(b.id)):state.bubbles;
   const activeTimers=new Set(state.bubbles.filter(b=>typeof b.timer==='number'&&countdownReady(state,b,visible)).map(b=>b.groupId));
-  // Direct contact with the matching ring is an intentional tool action. All
-  // other contacts validate the word merge before consuming either tool.
-  const directDrivers=[a,b].filter((tool,i)=>canUseDriver(tool)&&[b,a][i].turns>0&&[b,a][i].screwColor===tool.driverColor);
-  const usedDrivers=directDrivers.length?useDrivers(state,directDrivers):[];
   const aFragment=a.atoms.some(x=>x.part!==undefined),bFragment=b.atoms.some(x=>x.part!==undefined);
   const sameFragments=aFragment&&bFragment&&a.atoms[0].id===b.atoms[0].id&&a.atoms[0].part!==b.atoms[0].part;
   const wordPair=a.kind!=='bonus'&&b.kind!=='bonus',blocked=isBlocked(a)||isBlocked(b);
   const mismatch=a.decoy||b.decoy||a.groupId!==b.groupId||((aFragment||bFragment)&&!sameFragments);
   if(!wordPair||blocked||mismatch){
-    if(usedDrivers.length){
-      // Keep both words and their fixed solutions intact when only the tool can connect.
-      spendMove(state,activeTimers);releaseCountdowns(state);checkFailure(state);
-      return {ok:true,toolOnly:true,usedDrivers};
-    }
     if(!wordPair)return {ok:false,message:'Choose two word bubbles.'};
     if(blocked)return {ok:false,blocked:true,message:blockedReason(isBlocked(a)?a:b)};
     spendMove(state,activeTimers);state.mistakes++;checkFailure(state);
     return {ok:false,mismatch:true,message:aFragment||bFragment?'Join the two pieces of the same word first.':'Different connections. Try another pair.'};
   }
-  usedDrivers.push(...useDrivers(state,[a,b].filter(canUseDriver)));
+  // Tools activate only after the word join has passed every semantic and lock check.
+  const usedDrivers=useDrivers(state,[a,b].filter(canUseDriver));
   // Positional merging keeps the bubble under the player's drop target.
   const usedKeys=useKeys(state,[a,b]);
   const carry={pinCarrier:(Number(a.pinCarrier)||0)+(Number(b.pinCarrier)||0),timer:Math.min(a.timer??Infinity,b.timer??Infinity)};

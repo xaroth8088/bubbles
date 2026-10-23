@@ -29,6 +29,8 @@ jobs:
         run: npx playwright install --with-deps chromium
       - name: Check language, packs, and bubble text in a browser
         run: node scripts/catalog-browser-check.mjs
+      - name: Check screwdriver drag, tap, and merge behavior in a browser
+        run: node scripts/screw-check.mjs
       - name: Check screwdriver, split, and countdown rules in a browser
         run: node scripts/special-rules-check.mjs
       - name: Save browser failure diagnostics
