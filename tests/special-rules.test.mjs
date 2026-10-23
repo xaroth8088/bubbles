@@ -30,8 +30,9 @@ test('failed screwdriver joins are repeatable and save-safe, even on a carried p
       assert.deepEqual(all(s).flatMap(b=>b.atoms),words);assert.ok(validateState(s));
     }
     const reloaded=JSON.parse(JSON.stringify(s));upgradeDealing(reloaded);assert.deepEqual(reloaded,s);
-    // Undo uses the pre-action snapshot; retry can then make an intentional tool action.
-    s=structuredClone(snapshot);assert.ok(merge(s,tool.id,ring.id).toolOnly);
+    // Undo restores the tool; ring contact still cannot activate it, but a correct join can.
+    s=structuredClone(snapshot);assert.equal(merge(s,tool.id,ring.id).ok,false);assert.deepEqual(s,snapshot);
+    const next=members(s,tool.groupId).find(b=>b.id!==tool.id);assert.ok(merge(s,next.id,tool.id).ok);
     assert.equal(s.bubbles.find(b=>b.id===ring.id).turns,1);assert.equal(s.bubbles.find(b=>b.id===tool.id).driverColor,undefined);
     assert.ok(!merge(s,tool.id,ring.id).ok);assert.equal(s.bubbles.find(b=>b.id===ring.id).turns,1);assert.ok(validateState(s));
   }
@@ -41,7 +42,7 @@ test('invalid and blocked screwdriver interactions never mutate tools, rings, or
   const s=fixture(),tool=members(s,'g0')[0],wrong=members(s,'g1')[0],ring=members(s,'g2')[0];
   tool.driverColor='violet';ring.kind='screw';ring.turns=ring.screwTotal=2;ring.screwColor='violet';
   wrong.kind='screw';wrong.turns=wrong.screwTotal=2;wrong.screwColor='coral';
-  for(const ids of[[tool.id,tool.id],[tool.id,'missing'],[tool.id,wrong.id],[wrong.id,tool.id]]){
+  for(const ids of[[tool.id,tool.id],[tool.id,'missing'],[tool.id,wrong.id],[wrong.id,tool.id],[tool.id,ring.id],[ring.id,tool.id]]){
     const before=structuredClone(s);assert.equal(merge(s,...ids).ok,false);assert.deepEqual(s,before);
   }
   s.status='paused';const before=structuredClone(s);assert.equal(merge(s,tool.id,ring.id).ok,false);assert.deepEqual(s,before);

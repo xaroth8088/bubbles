@@ -249,7 +249,7 @@ test('a screwdriver removes one screw when joining an ordinary single, pair, or 
   }
 });
 
-test('screwdrivers reject unrelated or blocked words and only activate on the matching ring',()=>{
+test('screwdrivers reject unrelated words and every blocked ring without consuming tools',()=>{
   for(const kind of['normal','frozen','keylock','sealed','pinlock','screw'])for(const toolFirst of[false,true]){
     const state=makeState(createPuzzle({mode:'lab',special:'screw'}),{shuffleSeed:'screw-5'}),lock=state.bubbles.find(b=>b.turns),tool=state.bubbles.find(b=>b.driverColor);
     const partner=kind==='screw'?lock:state.bubbles.find(b=>b.groupId!==tool.groupId&&!b.driverColor&&!isBlocked(b));
@@ -259,12 +259,11 @@ test('screwdrivers reject unrelated or blocked words and only activate on the ma
     if(kind==='pinlock'){partner.kind=kind;partner.pinsNeeded=2;}
     const ledger=state.bubbles.flatMap(b=>b.atoms).concat(state.reserve.flat().flatMap(b=>b.atoms)),before=structuredClone(ledger),turns=lock.turns;
     const result=merge(state,...(toolFirst?[tool.id,partner.id]:[partner.id,tool.id]));
-    if(kind==='screw'){assert.ok(result.ok&&result.toolOnly);assert.deepEqual(result.usedDrivers,['violet']);assert.equal(tool.driverColor,undefined);}
-    else{assert.equal(result.ok,false);assert.equal(tool.driverColor,'violet');}
-    assert.equal(lock.turns,turns-Number(kind==='screw'));
+    assert.equal(result.ok,false);assert.equal(tool.driverColor,'violet');
+    assert.equal(lock.turns,turns);
     assert.deepEqual(state.bubbles.flatMap(b=>b.atoms).concat(state.reserve.flat().flatMap(b=>b.atoms)),before);assert.equal(state.mistakes,Number(kind==='normal'));
     assert.ok(state.bubbles.includes(tool)&&state.bubbles.includes(partner));assert.ok(validateState(state));
-    assert.ok(!merge(state,tool.id,partner.id).ok);assert.equal(lock.turns,turns-Number(kind==='screw'),'Repeated failures must not remove another screw');
+    assert.ok(!merge(state,tool.id,partner.id).ok);assert.equal(lock.turns,turns,'Repeated failures must not remove another screw');
     if(kind==='frozen')assert.equal(partner.ice,4);
     if(kind==='keylock')assert.equal(partner.lockColor,'amber');
   }
@@ -294,8 +293,9 @@ test('unrelated screwdriver colors survive failed merges and open only their own
   locks.forEach((lock,i)=>{lock.kind='screw';lock.turns=lock.screwTotal=2;lock.screwColor=colors[i];members(state,groups[i].id).slice(0,2).forEach(b=>b.driverColor=colors[i]);});
   const result=merge(state,tools[0].id,tools[1].id);assert.ok(result.mismatch);assert.deepEqual(locks.map(b=>b.turns),[2,2]);
   assert.deepEqual(tools.map(b=>b.driverColor),colors);
-  tools.forEach((tool,i)=>assert.ok(merge(state,tool.id,locks[i].id).toolOnly));assert.deepEqual(locks.map(b=>b.turns),[1,1]);
-  assert.ok(tools.every(b=>state.bubbles.includes(b)&&!b.driverColor));assert.ok(validateState(state));solve(state);
+  tools.forEach((tool,i)=>{assert.equal(merge(state,tool.id,locks[i].id).ok,false);assert.equal(locks[i].turns,2);
+    const partner=members(state,tool.groupId).find(b=>b!==tool&&!b.driverColor);assert.ok(merge(state,partner.id,tool.id).ok);});
+  assert.deepEqual(locks.map(b=>b.turns),[1,1]);assert.ok(tools.every(b=>state.bubbles.includes(b)&&!b.driverColor));assert.ok(validateState(state));solve(state);
 });
 
 test('two screwdrivers in one partial merge remove two screws and fragment joins consume one',()=>{
