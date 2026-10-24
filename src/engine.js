@@ -4,6 +4,7 @@ import { assembleThemeChain, normalizeLabel } from './nesting.js';
 
 export const SCHEMA = 1;
 export const FROZEN_MERGES = 4;
+export const PICTURE_MAJORITY_INTERVAL = 8;
 export const KEY_COLORS = ['amber','azure','coral','violet'];
 export function hash(text) {
   let value = 2166136261;
@@ -78,27 +79,49 @@ export function createPuzzle({mode = 'journey', level = 1, date = localDate(), r
     if(candidate.length>selected.length)selected=candidate;
     if(selected.length===count)break;
   }
-  const groups = selected.map((t,i) => ({id:`g${i}`,name:t.name,domain:t.domain,words:t.words}));
-  let child=groups[0];
-  for(const layer of chain){
-    const parent={id:`g${groups.length}`,name:layer.name,domain:layer.domain,words:layer.words,childId:child.id};
-    child.parentId=parent.id;groups.push(parent);child=parent;
-  }
-  return {id:seed,seed,language,packIds,catalogKey,mode,level,date,round,difficulty,specials,splitCount,groups,
+  const buildGroups=selected=>{
+    const groups=selected.map((t,i)=>({id:`g${i}`,name:t.name,domain:t.domain,words:t.words}));
+    let child=groups[0];
+    for(const layer of chain){
+      const parent={id:`g${groups.length}`,name:layer.name,domain:layer.domain,words:layer.words,childId:child.id};
+      child.parentId=parent.id;groups.push(parent);child=parent;
+    }
+    return groups;
+  };
+  const groups=buildGroups(selected);
+  const puzzle={id:seed,seed,language,packIds,catalogKey,mode,level,date,round,difficulty,specials,splitCount,groups,
     title:mode === 'lab' ? SPECIALS.find(s => s.id === specials[0])?.name || 'Word bubbles' : mode === 'daily' ? 'A fresh little challenge' : mode === 'journey' && level <= INTRO_LEVELS ? titles[level-1] : mode === 'endless' ? 'Follow your curiosity' : ['Little discoveries','Find your flow','Room for wonder','One thing leads to another'][level%4]};
+  // Every eighth post-introduction board can be picture-led. Keep explicit
+  // mechanics/tutorials intact, preserve the scheduled returning chain, and
+  // fall back to this ordinary deck if the selected vocabulary cannot do it.
+  if(!special&&mode!=='lab'&&!introduction&&sequence%PICTURE_MAJORITY_INTERVAL===1){
+    const majoritySpecials=[...(specials.includes('nested')?['nested']:[]),'picture'];
+    const total=count*4+chain.length*3;
+    if(new Set(Object.values(pictures)).size>total/2){
+      const pictureRng=random(`${seed}-majority`);
+      for(let attempt=0;attempt<24;attempt++){
+        const picked=selectDeckThemes({themes,planned,count,maxDifficulty,specials:majoritySpecials,pictures,rng:pictureRng,preferPictures:true});
+        if(picked.length!==count)continue;
+        const candidate={...puzzle,specials:majoritySpecials,splitCount:0,groups:buildGroups(picked),pictureMajority:true};
+        if(makeState(candidate).puzzle.pictureMajority)return candidate;
+      }
+    }
+  }
+  return puzzle;
 }
 
 const fold=normalizeLabel;
 const graphemes=new Intl.Segmenter(undefined,{granularity:'grapheme'});
 const letters=word=>[...graphemes.segment(word)].map(part=>part.segment);
 export const isSplittableWord=word=>/^\p{L}[\p{L}\p{M}]+$/u.test(word)&&letters(word).length>=2;
-export function selectDeckThemes({themes,planned,count,maxDifficulty,specials,pictures,rng}){
+export function selectDeckThemes({themes,planned,count,maxDifficulty,specials,pictures,rng,preferPictures=false}){
   const selected=planned.length?[planned[0]]:[],chosenIds=new Set(planned.map(t=>t.id));
   const used=new Set(planned.map(t=>fold(t.name))),dealtWords=new Set(),selectedPool=new Set(),domains=new Set();
+  const pictureGlyphs=new Set();
   const originals=new Map(themes.map(t=>[t.id,t]));
   const addTheme=theme=>{
     used.add(fold(theme.name));
-    theme.words.forEach(word=>{used.add(fold(word));dealtWords.add(fold(word));});
+    theme.words.forEach(word=>{used.add(fold(word));dealtWords.add(fold(word));if(pictures[word])pictureGlyphs.add(pictures[word]);});
     originals.get(theme.id).words.forEach(word=>selectedPool.add(fold(word)));
     domains.add(theme.domain);chosenIds.add(theme.id);
   };
@@ -107,13 +130,18 @@ export function selectDeckThemes({themes,planned,count,maxDifficulty,specials,pi
   // Widen within the selected packs only if the easier pools cannot fill a deck.
   for(let limit=maxDifficulty;limit<=3&&selected.length<count;limit++){
     for(let pass=0;pass<2&&selected.length<count;pass++){
-      for(const theme of shuffle(themes.filter(t=>t.difficulty<=limit),rng)){
+      const candidates=shuffle(themes.filter(t=>t.difficulty<=limit),rng);
+      // Randomize ties, then favor recognizable, distinct images. Never add
+      // mappings or relax the full-pool exclusivity/label ledgers below.
+      const pictureScore=theme=>Math.min(4,new Set(theme.words.filter(w=>pictures[w]&&!pictureGlyphs.has(pictures[w])&&!used.has(fold(w))&&!selectedPool.has(fold(w))).map(w=>pictures[w])).size);
+      if(preferPictures)candidates.sort((a,b)=>pictureScore(b)-pictureScore(a));
+      for(const theme of candidates){
         if(selected.length>=count)break;
         // Only the preassembled chain may deliberately reuse a label as a
         // clue. Ordinary themes cannot reuse any earlier label or dealt word,
         // and their own name must be reserved before drawing their clues.
         const name=fold(theme.name);
-        if(chosenIds.has(theme.id)||used.has(name)||(pass===0&&domains.has(theme.domain)))continue;
+        if(chosenIds.has(theme.id)||used.has(name)||(!preferPictures&&pass===0&&domains.has(theme.domain)))continue;
         // Compare full catalog pools in both directions. Existing clues must
         // not gain a second meaning, and new clues must not fit prior themes.
         // The ledger includes nested labels before those labels become live.
@@ -125,6 +153,11 @@ export function selectDeckThemes({themes,planned,count,maxDifficulty,specials,pi
         // Prefer contiguous words on split decks without weakening exclusive membership.
         const draw=shuffle(pool,rng);
         if(specials.includes('split'))draw.sort((a,b)=>Number(isSplittableWord(b))-Number(isSplittableWord(a)));
+        if(preferPictures){
+          const seen=new Set(pictureGlyphs),rank=new Map();
+          for(const word of draw){const glyph=pictures[word];rank.set(word,glyph&&!seen.has(glyph)?1:0);if(glyph)seen.add(glyph);}
+          draw.sort((a,b)=>rank.get(b)-rank.get(a));
+        }
         const words=draw.slice(0,4);
         if(specials.includes('picture')&&!selected.some(pictureCandidate)&&!words.some(w=>pictures[w])&&pictureWords.length){
           words[Math.floor(rng()*words.length)]=pictureWords[Math.floor(rng()*pictureWords.length)];
@@ -139,6 +172,7 @@ export function selectDeckThemes({themes,planned,count,maxDifficulty,specials,pi
 export function makeState(puzzle, {challenge = false, shuffleSeed = null} = {}) {
   const pictures=getCatalog(puzzle).pictures;
   puzzle={...puzzle,specials:canonicalSpecials(puzzle.specials).filter(s=>s!=='bonus'||challenge||puzzle.mode==='lab')};
+  if(puzzle.pictureMajority&&!puzzle.specials.includes('picture'))puzzle.pictureMajority=false;
   if(shuffleSeed)puzzle={...puzzle,shuffleSeed};
   let chunks = puzzle.groups.map(group => group.words.filter(w => !(group.childId && w === puzzle.groups.find(g => g.id === group.childId).name)).map((word,i) => ({id:`${group.id}w${i}`,groupId:group.id,atoms:[{id:`${group.id}a${i}`,word}],kind:'normal'})));
   const special = puzzle.specials;
@@ -194,12 +228,26 @@ export function makeState(puzzle, {challenge = false, shuffleSeed = null} = {}) 
   const state={schema:SCHEMA,puzzle,bubbles:[],reserve:chunks,solved:[],moves:0,mistakes:0,hints:0,assists:0,
     remaining:challenge||puzzle.mode==='lab'&&special.includes('bonus') ? puzzle.groups.length*3+puzzle.splitCount+7 : null,
     capacity:puzzle.mode==='lab'?12:24,dealVersion:4,pressure:0,pins:0,keys:[],status:'playing',bonusCollected:0};
+  if(puzzle.pictureMajority){
+    const seen=new Set();
+    const candidates=shuffle(state.reserve.flat().filter(b=>pictureEligible(b,pictures)),random(`${puzzle.shuffleSeed||puzzle.seed}-majority-pictures`));
+    for(const b of candidates){const glyph=pictures[b.atoms[0].word];if(seen.has(glyph))continue;seen.add(glyph);b.kind='picture';b.picture=glyph;}
+    if(seen.size<=state.reserve.flat().length/2){
+      puzzle.pictureMajority=false;
+      for(const b of candidates)if(b.kind==='picture'){b.kind='normal';delete b.picture;}
+    }
+  }
   refill(state,{initial:true});
-  if(special.includes('picture')) {
+  if(puzzle.pictureMajority&&state.bubbles.filter(b=>b.kind==='picture').length<=state.bubbles.length/2){
+    // A custom/legacy deck may be too obstructed to show a real majority.
+    // Preserve its mechanics instead of advertising a text-heavy board.
+    puzzle.pictureMajority=false;
+    for(const b of allBubbles(state))if(b.kind==='picture'){b.kind='normal';delete b.picture;}
+  }
+  if(special.includes('picture')&&!puzzle.pictureMajority) {
     // Decorate after other mechanics and dealing so a picture never replaces
     // a split, timer, lock, or cryptic clue. Every suitable live clue can win.
-    const ordinary=b=>b.kind==='normal'&&!isBlocked(b)&&!b.decoy&&!b.keyColor&&!b.driverColor&&!b.pinCarrier&&b.atoms.length===1&&b.atoms[0].part===undefined;
-    const eligible=b=>ordinary(b)&&pictures[b.atoms[0].word];
+    const eligible=b=>pictureEligible(b,pictures);
     const rng=random(`${puzzle.shuffleSeed||puzzle.seed}-picture`);
     const visible=state.bubbles.filter(eligible),waiting=state.reserve.flat().filter(eligible);
     // If all mapped clues carry other mechanics, leave those clues intact.
@@ -222,6 +270,8 @@ export function makeState(puzzle, {challenge = false, shuffleSeed = null} = {}) 
   if(special.includes('bonus')) state.bubbles.push({id:'bonus',groupId:null,atoms:[],kind:'bonus'});
   return state;
 }
+
+const pictureEligible=(b,pictures)=>b.kind==='normal'&&!isBlocked(b)&&!b.decoy&&!b.keyColor&&!b.driverColor&&!b.pinCarrier&&b.atoms.length===1&&b.atoms[0].part===undefined&&pictures[b.atoms[0].word];
 
 export function linkedPartner(bubble,bubbles){
   if(!bubble?.link||bubble.atoms.some(a=>a.part!==undefined))return null;
@@ -288,7 +338,13 @@ export function refill(state,{initial=false,budget=4}={}) {
     allowance-=cost(incoming);return true;
   };
   const seed=state.puzzle.shuffleSeed||state.puzzle.seed;
-  const groupOrder=state.puzzle.shuffleSeed?shuffle(state.puzzle.groups,random(`${seed}-groups-${state.solved.length}`)):state.puzzle.groups;
+  const groupOrder=state.puzzle.shuffleSeed?shuffle(state.puzzle.groups,random(`${seed}-groups-${state.solved.length}`)):[...state.puzzle.groups];
+  // Start picture-led boards with picture-rich complete groups. Ordinary
+  // connection-first dealing and later refills otherwise stay unchanged.
+  if(initial&&state.puzzle.pictureMajority){
+    const score=group=>state.reserve.flat().filter(b=>b.groupId===group.id&&b.kind==='picture').length;
+    groupOrder.sort((a,b)=>score(b)-score(a));
+  }
   const candidates=()=>groupOrder.filter(g=>!state.solved.some(s=>s.id===g.id)).map(g=>{
     const live=state.bubbles.filter(b=>b.groupId===g.id),waiting=state.reserve.flat().filter(b=>b.groupId===g.id),all=[...live,...waiting];
     const required=plan(waiting);
@@ -687,6 +743,7 @@ export function validateState(value) {
   if(p.shuffleSeed!==undefined&&(typeof p.shuffleSeed!=='string'||!p.shuffleSeed.length||p.shuffleSeed.length>128))return false;
   if(!['journey','daily','endless','lab'].includes(p.mode)||typeof p.id!=='string'||typeof p.seed!=='string'||typeof p.title!=='string'||!Number.isInteger(p.level)||p.level<1||!Number.isInteger(p.round)||p.round<1||typeof p.date!=='string'||!/^\d{4}-\d{2}-\d{2}$/.test(p.date)||!Array.isArray(p.specials)||!p.specials.every(s=>['hidden','crack','octopus'].includes(s)||SPECIALS.some(x=>x.id===s)))return false;
   // Legacy saves omit this original-deck metadata; assembled pairs cannot be inferred.
+  if(p.pictureMajority!==undefined&&typeof p.pictureMajority!=='boolean')return false;
   if(p.splitCount!==undefined&&(!Number.isInteger(p.splitCount)||(p.specials.includes('split')?p.splitCount<4||p.splitCount>8:p.splitCount!==0)))return false;
   if(!Array.isArray(value.keys)||!value.keys.every(color=>KEY_COLORS.includes(color))||!Number.isFinite(value.pressure)||!Number.isFinite(value.pins)||!Number.isFinite(value.mistakes)||!Number.isFinite(value.hints)||!Number.isFinite(value.assists))return false;
   if(!p.groups.every(g=>g&&typeof g.id==='string'))return false;
