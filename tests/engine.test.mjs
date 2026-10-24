@@ -442,7 +442,8 @@ test('incoming fours mix themes whenever the reserve offers several themes',()=>
   assert.ok(mixed>100);
 });
 test('oversized old decks shed unseen groups without changing live clues or solved progress',()=>{
-  const puzzle=createPuzzle({mode:'endless',difficulty:'tricky'}),used=new Set(puzzle.groups.flatMap(g=>g.words));
+  // Old v3 saves predate majority decks; use an explicit legacy mechanic.
+  const puzzle=createPuzzle({mode:'endless',difficulty:'tricky',special:'nested'}),used=new Set(puzzle.groups.flatMap(g=>g.words));
   for(const theme of THEMES){if(puzzle.groups.length>=20)break;const words=theme.words.filter(w=>!used.has(w)).slice(0,4);if(words.length!==4)continue;puzzle.groups.push({id:`extra${puzzle.groups.length}`,name:theme.name,domain:theme.domain,words});words.forEach(w=>used.add(w));}
   const state=makeState(puzzle);state.dealVersion=3;popGroup(state,'g0');
   const live=structuredClone(state.bubbles),solved=structuredClone(state.solved),moves=state.moves;

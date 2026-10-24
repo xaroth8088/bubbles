@@ -17,6 +17,7 @@
     "test:input-keys": "npm run build && node scripts/input-key-check.mjs",
     "test:screws": "npm run build && node scripts/screw-check.mjs",
     "test:special-rules": "npm run build && node scripts/special-rules-check.mjs",
+    "test:picture-majority": "npm run build && node scripts/picture-majority-check.mjs",
     "test:specials": "npm run build && node scripts/specials-check.mjs",
     "test:physics-controls": "npm run build && node scripts/physics-controls-check.mjs",
     "check": "node scripts/check.mjs"

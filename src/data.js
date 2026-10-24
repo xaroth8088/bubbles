@@ -12,7 +12,7 @@ export function themeName(name){
 }
 
 export const SPECIALS = Object.freeze([
-  {id:'picture',icon:'🍎',name:'Picture',description:'An emoji stands in for a word. That word can have more than one meaning.',tip:'A picture of a bat can mean the animal or the sports tool.',level:2},
+  {id:'picture',icon:'🍎',name:'Picture',description:'An emoji stands in for a word. That word can have more than one meaning. Occasionally, most bubbles are pictures.',tip:'A picture of a bat can mean the animal or the sports tool.',level:2},
   {id:'frozen',icon:'❄️',name:'Frozen',description:'Four successful merges thaw the ice. Partial and split-word joins count too.',tip:'Cracks deepen and ice fragments fall away with each successful join.',level:3},
   {id:'split',icon:'◒',name:'Split word',description:'Join the two fragments before sorting the whole word.',tip:'Drag matching fragments together in either order.',level:4},
   {id:'cryptic',icon:'∴',name:'Dots',description:'Dots conceal letters that emerge as you make connections.',tip:'Every successful merge reveals a letter. Connecting this word reveals it completely.',level:5},
