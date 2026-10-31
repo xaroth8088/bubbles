@@ -114,7 +114,7 @@
         "Conditioner",
         "Towel",
         "Sink",
-        "Bath",
+        "Shower cap",
         "Shower",
         "Toilet",
         "Mat",
@@ -566,20 +566,20 @@
       "domain": "life",
       "difficulty": 1,
       "words": [
-        "Joy",
-        "Anger",
-        "Fear",
-        "Surprise",
-        "Sadness",
+        "Contentment",
+        "Guilt",
+        "Trust",
+        "Anticipation",
+        "Nostalgia",
         "Hope",
         "Envy",
         "Pride",
         "Love",
         "Excitement",
         "Disappointment",
-        "Relief",
+        "Empathy",
         "Gratitude",
-        "Curiosity",
+        "Determination",
         "Calm",
         "Loneliness",
         "Happy",
@@ -855,7 +855,7 @@
         "Delivery",
         "Booklet",
         "Carrier",
-        "Package"
+        "Sorting"
       ]
     },
     {
@@ -978,7 +978,7 @@
         "Desk",
         "Card",
         "Quiet",
-        "Books"
+        "Manuscript"
       ]
     },
     {
@@ -2278,7 +2278,7 @@
       "words": [
         "Letter",
         "Email",
-        "Phone",
+        "Intercom",
         "Text",
         "Conversation",
         "Radio",
@@ -2488,14 +2488,14 @@
         "Watch",
         "Handbag",
         "Wallet",
-        "Tie",
+        "Brooch",
         "Jewelry",
         "Clip",
         "Backpack",
         "Umbrella",
         "Socks",
         "Necktie",
-        "Purse",
+        "Coin purse",
         "Fan"
       ]
     },
@@ -2531,7 +2531,7 @@
         "Swimsuit",
         "Bra",
         "Sweatband",
-        "Trainers",
+        "Cleats",
         "Top"
       ]
     },
@@ -2551,7 +2551,7 @@
         "Clutch",
         "Duffel",
         "Satchel",
-        "Purse",
+        "Coin purse",
         "Messenger"
       ]
     },
@@ -2877,7 +2877,7 @@
         "Label",
         "Courier",
         "Van",
-        "Package",
+        "Dispatch",
         "Doorbell",
         "Signature",
         "Tracking",
@@ -3015,7 +3015,7 @@
         "Bottle",
         "Spray",
         "Scent",
-        "Fragrance",
+        "Atomizer",
         "Rose",
         "Jasmine",
         "Lavender",
@@ -3215,7 +3215,7 @@
     "Gloves": "🧤",
     "Socks": "🧦",
     "Necktie": "👔",
-    "Purse": "👛",
+    "Coin purse": "👛",
     "Handbag": "👜",
     "Umbrella": "☂️",
     "Fan": "🪭",
@@ -3323,7 +3323,6 @@
     "Envelope": "✉️",
     "Wastebasket": "🗑️",
     "Book": "📖",
-    "Books": "📚",
     "Bookmark": "🔖",
     "Abacus": "🧮",
     "Keyboard": "⌨️",

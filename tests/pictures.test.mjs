@@ -39,7 +39,7 @@ test('picture generation is seeded, diverse, and keeps the clue ledger distinct'
     const puzzle = createPuzzle(options), state = makeState(puzzle);
     assert.deepEqual(puzzle, createPuzzle(options));
     assert.deepEqual(state, makeState(createPuzzle(options)));
-    assert.match(puzzle.seed, /-v10-/);
+    assert.match(puzzle.seed, /-v11-/);
     const words = puzzle.groups.flatMap(g => g.words.map(w => w.toLowerCase()));
     assert.equal(new Set(words).size, words.length);
     assert.equal(pictures(state).length, 1);

@@ -41,7 +41,7 @@
         "Clay",
         "Glue",
         "Scissors",
-        "Paintbrush"
+        "Sponge"
       ],
       "legacyNames": [
         "Art supplies"
@@ -778,7 +778,7 @@
     "Thread": "🧵",
     "Yarn": "🧶",
     "Palette": "🎨",
-    "Paintbrush": "🖌️",
+    "Brush": "🖌️",
     "Crayon": "🖍️",
     "Camera": "📷",
     "Film": "🎞️",
