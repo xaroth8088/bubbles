@@ -34,7 +34,7 @@ export function createPuzzle({mode = 'journey', level = 1, date = localDate(), r
   language=catalog.language;packIds=[...catalog.packIds].sort();
   const catalogKey=`${language}-${hash(`${CATALOG_VERSION}:${packIds.join(',')}`).toString(36)}`;
   if (mode === 'daily') difficulty = 'balanced';
-  const baseSeed = mode === 'daily' ? `daily-v10-${date}` : mode === 'lab' ? `lab-v10-${special}-${round}` : `${mode}-v10-${level}-${round}-${difficulty}`;
+  const baseSeed = mode === 'daily' ? `daily-v11-${date}` : mode === 'lab' ? `lab-v11-${special}-${round}` : `${mode}-v11-${level}-${round}-${difficulty}`;
   const seed=`${baseSeed}-${catalogKey}`;
   const rng = random(seed);
   let count = mode === 'lab' ? 4 : difficulty === 'tricky' ? 17 : difficulty === 'gentle' || (mode === 'journey' && level <= 4) ? 10 : 14;

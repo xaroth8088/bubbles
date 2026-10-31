@@ -51,7 +51,7 @@
         "Trailer",
         "Seat",
         "Film",
-        "Movie",
+        "Premiere",
         "Director",
         "Actor",
         "Soundtrack",
@@ -544,7 +544,7 @@
         "Nani",
         "Ohana",
         "Hawaii",
-        "626"
+        "Elvis"
       ],
       "popCulture": true
     },
@@ -1519,7 +1519,7 @@
         "Saul",
         "Skyler",
         "Hank",
-        "Heisenberg",
+        "RV",
         "Albuquerque",
         "Los Pollos Hermanos"
       ],
