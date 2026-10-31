@@ -43,8 +43,16 @@ test('German compound clues require finding the missing shared word',()=>{
 
 test('saved clues and category names are not rewritten by vocabulary updates',()=>{
   for(const language of ['en','de']){
-    const state=makeState(createPuzzle({language,mode:'lab',special:'nested'}));
-    for(const group of state.puzzle.groups){const changed=changes.find(c=>c.language===language&&c.name===group.name);if(changed)group.name=changed.old;}
+    const puzzle=createPuzzle({language,mode:'lab',special:'nested'});
+    // A returning name is also a parent clue. Construct a consistent legacy
+    // ledger before making the state, rather than renaming only its heading.
+    for(const group of puzzle.groups){
+      const changed=changes.find(c=>c.language===language&&c.name===group.name);
+      if(!changed)continue;
+      group.name=changed.old;
+      for(const parent of puzzle.groups)parent.words=parent.words.map(word=>word===changed.name?changed.old:word);
+    }
+    const state=makeState(puzzle);assert.ok(validateState(state),'legacy fixture starts valid');
     const before=structuredClone(state);
     upgradeDealing(state);
     assert.deepEqual(state.puzzle.groups,before.puzzle.groups);
