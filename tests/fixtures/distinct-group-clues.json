@@ -162,6 +162,12 @@
     "replacement": "Coin purse"
   },
   {
+    "language": "en",
+    "id": "en-mythology-dragons",
+    "old": "Hoard",
+    "replacement": "Egg"
+  },
+  {
     "language": "de",
     "id": "de-language-haus-reime",
     "old": "raus",
