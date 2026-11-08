@@ -1,0 +1,914 @@
+[
+  {
+    "language": "en",
+    "id": "theme-530",
+    "old": "Paint",
+    "replacement": "Pigment"
+  },
+  {
+    "language": "en",
+    "id": "theme-533",
+    "old": "Knit",
+    "replacement": "Cable"
+  },
+  {
+    "language": "en",
+    "id": "theme-536",
+    "old": "Quilt",
+    "replacement": "Patchwork"
+  },
+  {
+    "language": "en",
+    "id": "theme-541",
+    "old": "Illusion",
+    "replacement": "Levitation"
+  },
+  {
+    "language": "en",
+    "id": "theme-552",
+    "old": "Breakdance",
+    "replacement": "Charleston"
+  },
+  {
+    "language": "en",
+    "id": "theme-481",
+    "old": "Campfire",
+    "replacement": "Bonfire"
+  },
+  {
+    "language": "en",
+    "id": "theme-481",
+    "old": "Campsite",
+    "replacement": "Pitch"
+  },
+  {
+    "language": "en",
+    "id": "theme-489",
+    "old": "School bus",
+    "replacement": "School run"
+  },
+  {
+    "language": "en",
+    "id": "theme-499",
+    "old": "London Eye",
+    "replacement": "Trafalgar Square"
+  },
+  {
+    "language": "en",
+    "id": "theme-502",
+    "old": "Tokyo Tower",
+    "replacement": "Ginza"
+  },
+  {
+    "language": "en",
+    "id": "theme-514",
+    "old": "Mexico City",
+    "replacement": "Oaxaca"
+  },
+  {
+    "language": "en",
+    "id": "theme-839",
+    "old": "Streetlight",
+    "replacement": "Lamppost"
+  },
+  {
+    "language": "en",
+    "id": "theme-840",
+    "old": "Footbridge",
+    "replacement": "Pedestrian"
+  },
+  {
+    "language": "en",
+    "id": "theme-840",
+    "old": "Drawbridge",
+    "replacement": "Suspension"
+  },
+  {
+    "language": "en",
+    "id": "theme-300",
+    "old": "Jam",
+    "replacement": "Session"
+  },
+  {
+    "language": "en",
+    "id": "theme-548",
+    "old": "Drumstick",
+    "replacement": "Stick"
+  },
+  {
+    "language": "en",
+    "id": "theme-548",
+    "old": "Drummer",
+    "replacement": "Roll"
+  },
+  {
+    "language": "en",
+    "id": "theme-099",
+    "old": "Microbiology",
+    "replacement": "Physiology"
+  },
+  {
+    "language": "en",
+    "id": "theme-331",
+    "old": "Moonlight",
+    "replacement": "Lunar mare"
+  },
+  {
+    "language": "en",
+    "id": "theme-332",
+    "old": "Stargazing",
+    "replacement": "Supernova"
+  },
+  {
+    "language": "en",
+    "id": "theme-393",
+    "old": "Fireplace",
+    "replacement": "Hearth"
+  },
+  {
+    "language": "en",
+    "id": "theme-397",
+    "old": "Flashlight",
+    "replacement": "Photon"
+  },
+  {
+    "language": "en",
+    "id": "theme-459",
+    "old": "Experiment",
+    "replacement": "Hypothesis"
+  },
+  {
+    "language": "en",
+    "id": "theme-527",
+    "old": "Touchscreen",
+    "replacement": "Refresh rate"
+  },
+  {
+    "language": "en",
+    "id": "theme-889",
+    "old": "Dart",
+    "replacement": "Oche"
+  },
+  {
+    "language": "en",
+    "id": "theme-217",
+    "old": "Bookmark",
+    "replacement": "Ribbon"
+  },
+  {
+    "language": "en",
+    "id": "theme-629",
+    "old": "Comfort",
+    "replacement": "Reassurance"
+  },
+  {
+    "language": "en",
+    "id": "theme-656",
+    "old": "Wheelchair",
+    "replacement": "Stroller"
+  },
+  {
+    "language": "en",
+    "id": "theme-659",
+    "old": "Butterfly",
+    "replacement": "Moth"
+  },
+  {
+    "language": "en",
+    "id": "theme-659",
+    "old": "Dragonfly",
+    "replacement": "Wasp"
+  },
+  {
+    "language": "en",
+    "id": "theme-002",
+    "old": "Sunflower",
+    "replacement": "Zinnia"
+  },
+  {
+    "language": "en",
+    "id": "theme-020",
+    "old": "Glowworm",
+    "replacement": "Lava"
+  },
+  {
+    "language": "en",
+    "id": "theme-024",
+    "old": "Iceberg",
+    "replacement": "Berg"
+  },
+  {
+    "language": "en",
+    "id": "theme-326",
+    "old": "Raindrop",
+    "replacement": "Droplet"
+  },
+  {
+    "language": "en",
+    "id": "theme-326",
+    "old": "Raincoat",
+    "replacement": "Poncho"
+  },
+  {
+    "language": "en",
+    "id": "theme-326",
+    "old": "Rainbow",
+    "replacement": "Monsoon"
+  },
+  {
+    "language": "en",
+    "id": "theme-327",
+    "old": "Snowflake",
+    "replacement": "Crystal"
+  },
+  {
+    "language": "en",
+    "id": "theme-327",
+    "old": "Snowball",
+    "replacement": "Powder"
+  },
+  {
+    "language": "en",
+    "id": "theme-327",
+    "old": "Snowman",
+    "replacement": "Carrot nose"
+  },
+  {
+    "language": "en",
+    "id": "theme-327",
+    "old": "Snowshoe",
+    "replacement": "Crampon"
+  },
+  {
+    "language": "en",
+    "id": "theme-329",
+    "old": "Windmill",
+    "replacement": "Turbine"
+  },
+  {
+    "language": "en",
+    "id": "theme-330",
+    "old": "Sunlight",
+    "replacement": "Fusion"
+  },
+  {
+    "language": "en",
+    "id": "theme-330",
+    "old": "Sunrise",
+    "replacement": "Dawn"
+  },
+  {
+    "language": "en",
+    "id": "theme-330",
+    "old": "Sunset",
+    "replacement": "Dusk"
+  },
+  {
+    "language": "en",
+    "id": "theme-330",
+    "old": "Sundial",
+    "replacement": "Corona"
+  },
+  {
+    "language": "en",
+    "id": "theme-330",
+    "old": "Sunburn",
+    "replacement": "Ultraviolet"
+  },
+  {
+    "language": "en",
+    "id": "theme-330",
+    "old": "Sunbeam",
+    "replacement": "Ray"
+  },
+  {
+    "language": "en",
+    "id": "theme-330",
+    "old": "Sunscreen",
+    "replacement": "SPF"
+  },
+  {
+    "language": "en",
+    "id": "theme-338",
+    "old": "Houseplants",
+    "replacement": "Reeds"
+  },
+  {
+    "language": "en",
+    "id": "theme-340",
+    "old": "Maple leaf",
+    "replacement": "Maple"
+  },
+  {
+    "language": "en",
+    "id": "theme-342",
+    "old": "Taproot",
+    "replacement": "Absorption"
+  },
+  {
+    "language": "en",
+    "id": "theme-348",
+    "old": "Goldfish",
+    "replacement": "Guppy"
+  },
+  {
+    "language": "en",
+    "id": "theme-348",
+    "old": "Catfish",
+    "replacement": "Pike"
+  },
+  {
+    "language": "en",
+    "id": "theme-348",
+    "old": "Clownfish",
+    "replacement": "Mackerel"
+  },
+  {
+    "language": "en",
+    "id": "theme-361",
+    "old": "Catnip",
+    "replacement": "Tabby"
+  },
+  {
+    "language": "en",
+    "id": "theme-362",
+    "old": "Horseshoe",
+    "replacement": "Farrier"
+  },
+  {
+    "language": "en",
+    "id": "theme-363",
+    "old": "Bumblebee",
+    "replacement": "Drone"
+  },
+  {
+    "language": "en",
+    "id": "theme-367",
+    "old": "Bullfrog",
+    "replacement": "Gills"
+  },
+  {
+    "language": "en",
+    "id": "theme-919",
+    "old": "Anthill",
+    "replacement": "Mound"
+  },
+  {
+    "language": "en",
+    "id": "en-books-emma",
+    "old": "Emma Woodhouse",
+    "replacement": "Miss Bates"
+  },
+  {
+    "language": "en",
+    "id": "en-books-frankenstein",
+    "old": "Victor Frankenstein",
+    "replacement": "Victor"
+  },
+  {
+    "language": "en",
+    "id": "theme-668",
+    "old": "Studio Ghibli",
+    "replacement": "Warner Bros."
+  },
+  {
+    "language": "en",
+    "id": "theme-687",
+    "old": "Mama Coco",
+    "replacement": "Imelda"
+  },
+  {
+    "language": "en",
+    "id": "theme-733",
+    "old": "Greased Lightnin'",
+    "replacement": "Summer Nights"
+  },
+  {
+    "language": "en",
+    "id": "theme-445",
+    "old": "Applesauce",
+    "replacement": "Bramley"
+  },
+  {
+    "language": "en",
+    "id": "theme-856",
+    "old": "Lunchbox",
+    "replacement": "Thermos"
+  },
+  {
+    "language": "en",
+    "id": "theme-868",
+    "old": "Honeycomb",
+    "replacement": "Comb"
+  },
+  {
+    "language": "en",
+    "id": "theme-871",
+    "old": "Popcorn",
+    "replacement": "Tassel"
+  },
+  {
+    "language": "en",
+    "id": "theme-871",
+    "old": "Cornmeal",
+    "replacement": "Grits"
+  },
+  {
+    "language": "en",
+    "id": "theme-871",
+    "old": "Cornbread",
+    "replacement": "Masa"
+  },
+  {
+    "language": "en",
+    "id": "theme-111",
+    "old": "Toolbox",
+    "replacement": "Ratchet"
+  },
+  {
+    "language": "en",
+    "id": "theme-116",
+    "old": "Bedspread",
+    "replacement": "Mattress protector"
+  },
+  {
+    "language": "en",
+    "id": "theme-240",
+    "old": "Rescue boat",
+    "replacement": "Lifeboat"
+  },
+  {
+    "language": "en",
+    "id": "theme-385",
+    "old": "Flashlight",
+    "replacement": "Torch"
+  },
+  {
+    "language": "en",
+    "id": "theme-385",
+    "old": "Spotlight",
+    "replacement": "Sconce"
+  },
+  {
+    "language": "en",
+    "id": "theme-385",
+    "old": "Fairy lights",
+    "replacement": "LED strip"
+  },
+  {
+    "language": "en",
+    "id": "theme-389",
+    "old": "Doorbell",
+    "replacement": "Bell"
+  },
+  {
+    "language": "en",
+    "id": "theme-389",
+    "old": "Doormat",
+    "replacement": "Mat"
+  },
+  {
+    "language": "en",
+    "id": "theme-605",
+    "old": "Christmas tree",
+    "replacement": "Evergreen"
+  },
+  {
+    "language": "en",
+    "id": "theme-616",
+    "old": "Workshop",
+    "replacement": "Laboratory"
+  },
+  {
+    "language": "en",
+    "id": "theme-626",
+    "old": "Bank",
+    "replacement": "Branch"
+  },
+  {
+    "language": "en",
+    "id": "theme-637",
+    "old": "Blueberry",
+    "replacement": "Hydrangea"
+  },
+  {
+    "language": "en",
+    "id": "theme-642",
+    "old": "Clothes",
+    "replacement": "Overalls"
+  },
+  {
+    "language": "en",
+    "id": "theme-646",
+    "old": "Handbag",
+    "replacement": "Carry-on"
+  },
+  {
+    "language": "en",
+    "id": "theme-907",
+    "old": "Shoehorn",
+    "replacement": "Cobbler"
+  },
+  {
+    "language": "en",
+    "id": "theme-911",
+    "old": "Bathtub",
+    "replacement": "Tub"
+  },
+  {
+    "language": "en",
+    "id": "theme-912",
+    "old": "Dishwasher",
+    "replacement": "Detergent"
+  },
+  {
+    "language": "en",
+    "id": "theme-291",
+    "old": "Longbow",
+    "replacement": "Long"
+  },
+  {
+    "language": "en",
+    "id": "theme-291",
+    "old": "Crossbow",
+    "replacement": "Cross"
+  },
+  {
+    "language": "en",
+    "id": "theme-478",
+    "old": "Sail",
+    "replacement": "Canvas"
+  },
+  {
+    "language": "en",
+    "id": "theme-479",
+    "old": "Freshwater fish",
+    "replacement": "Waders"
+  },
+  {
+    "language": "en",
+    "id": "theme-560",
+    "old": "Swimsuit",
+    "replacement": "Cap"
+  },
+  {
+    "language": "en",
+    "id": "theme-561",
+    "old": "Surf",
+    "replacement": "Reef"
+  },
+  {
+    "language": "en",
+    "id": "theme-563",
+    "old": "Ski",
+    "replacement": "Binding"
+  },
+  {
+    "language": "en",
+    "id": "theme-881",
+    "old": "Rowlock",
+    "replacement": "Outrigger"
+  },
+  {
+    "language": "en",
+    "id": "theme-886",
+    "old": "Skate",
+    "replacement": "Axle"
+  },
+  {
+    "language": "de",
+    "id": "de-arts-topfern",
+    "old": "Töpferscheibe",
+    "replacement": "Drehscheibe"
+  },
+  {
+    "language": "de",
+    "id": "de-history-knights",
+    "old": "Ritterlichkeit",
+    "replacement": "Ehrenkodex"
+  },
+  {
+    "language": "de",
+    "id": "de-travel-reisegepack",
+    "old": "Handgepäck",
+    "replacement": "Sporttasche"
+  },
+  {
+    "language": "de",
+    "id": "de-travel-reisegepack",
+    "old": "Gepäckanhänger",
+    "replacement": "Namensschild"
+  },
+  {
+    "language": "de",
+    "id": "de-travel-camping",
+    "old": "Campingstuhl",
+    "replacement": "Klappstuhl"
+  },
+  {
+    "language": "de",
+    "id": "de-travel-strandurlaub",
+    "old": "Strandtuch",
+    "replacement": "Badetuch"
+  },
+  {
+    "language": "de",
+    "id": "de-science-mond",
+    "old": "Vollmond",
+    "replacement": "Gestein"
+  },
+  {
+    "language": "de",
+    "id": "de-science-mond",
+    "old": "Neumond",
+    "replacement": "Fußabdruck"
+  },
+  {
+    "language": "de",
+    "id": "de-science-mond",
+    "old": "Mondlicht",
+    "replacement": "Silberschein"
+  },
+  {
+    "language": "de",
+    "id": "de-science-mond",
+    "old": "Mondstaub",
+    "replacement": "Staub"
+  },
+  {
+    "language": "de",
+    "id": "de-science-messen",
+    "old": "Messbecher",
+    "replacement": "Becher"
+  },
+  {
+    "language": "de",
+    "id": "de-science-magnete",
+    "old": "Magnetnadel",
+    "replacement": "Nadel"
+  },
+  {
+    "language": "de",
+    "id": "de-games-verstecken",
+    "old": "Versteck",
+    "replacement": "Gebüsch"
+  },
+  {
+    "language": "de",
+    "id": "de-games-fangen",
+    "old": "Fänger",
+    "replacement": "Jäger"
+  },
+  {
+    "language": "de",
+    "id": "de-games-fangen",
+    "old": "Fangspiel",
+    "replacement": "Ausdauer"
+  },
+  {
+    "language": "de",
+    "id": "de-language-wochentage-co",
+    "old": "Wochenende",
+    "replacement": "Ruhetag"
+  },
+  {
+    "language": "de",
+    "id": "de-language-lesen",
+    "old": "Lesezeichen",
+    "replacement": "Schmöker"
+  },
+  {
+    "language": "de",
+    "id": "de-language-anfang",
+    "old": "Anfangspunkt",
+    "replacement": "Ursprung"
+  },
+  {
+    "language": "de",
+    "id": "de-language-ende",
+    "old": "Endpunkt",
+    "replacement": "Abbruch"
+  },
+  {
+    "language": "de",
+    "id": "de-video-games-portal",
+    "old": "Portalgun",
+    "replacement": "Geschützturm"
+  },
+  {
+    "language": "de",
+    "id": "de-nature-blumen",
+    "old": "Sonnenblume",
+    "replacement": "Hibiskus"
+  },
+  {
+    "language": "de",
+    "id": "de-nature-am-baum",
+    "old": "Baumscheibe",
+    "replacement": "Jahresring"
+  },
+  {
+    "language": "de",
+    "id": "de-nature-regen",
+    "old": "Regenbogen",
+    "replacement": "Nässe"
+  },
+  {
+    "language": "de",
+    "id": "de-nature-schnee",
+    "old": "Schneeball",
+    "replacement": "Ball"
+  },
+  {
+    "language": "de",
+    "id": "de-nature-schnee",
+    "old": "Schneemann",
+    "replacement": "Mann"
+  },
+  {
+    "language": "de",
+    "id": "de-nature-schnee",
+    "old": "Schneedecke",
+    "replacement": "Decke"
+  },
+  {
+    "language": "de",
+    "id": "de-nature-fische",
+    "old": "Thunfisch",
+    "replacement": "Zander"
+  },
+  {
+    "language": "de",
+    "id": "de-nature-fische",
+    "old": "Goldfisch",
+    "replacement": "Dorade"
+  },
+  {
+    "language": "de",
+    "id": "de-nature-pilze",
+    "old": "Steinpilz",
+    "replacement": "Marone"
+  },
+  {
+    "language": "de",
+    "id": "de-nature-pilze",
+    "old": "Fliegenpilz",
+    "replacement": "Täubling"
+  },
+  {
+    "language": "de",
+    "id": "de-books-frankenstein",
+    "old": "Victor Frankenstein",
+    "replacement": "Victor"
+  },
+  {
+    "language": "de",
+    "id": "de-movies-im-kino",
+    "old": "Kinokarte",
+    "replacement": "Eintrittskarte"
+  },
+  {
+    "language": "de",
+    "id": "de-food-backen",
+    "old": "Backpulver",
+    "replacement": "Natron"
+  },
+  {
+    "language": "de",
+    "id": "de-food-tee",
+    "old": "Schwarztee",
+    "replacement": "Assam"
+  },
+  {
+    "language": "de",
+    "id": "de-food-tee",
+    "old": "Grüntee",
+    "replacement": "Matcha"
+  },
+  {
+    "language": "de",
+    "id": "de-food-kartoffeln",
+    "old": "Pellkartoffel",
+    "replacement": "Schale"
+  },
+  {
+    "language": "de",
+    "id": "de-food-kartoffeln",
+    "old": "Bratkartoffel",
+    "replacement": "Braten"
+  },
+  {
+    "language": "de",
+    "id": "de-food-kartoffeln",
+    "old": "Ofenkartoffel",
+    "replacement": "Ofen"
+  },
+  {
+    "language": "de",
+    "id": "de-food-kaese",
+    "old": "Bergkäse",
+    "replacement": "Roquefort"
+  },
+  {
+    "language": "de",
+    "id": "de-food-besteck",
+    "old": "Salatbesteck",
+    "replacement": "Kuchenschaufel"
+  },
+  {
+    "language": "de",
+    "id": "de-food-reisgerichte",
+    "old": "Milchreis",
+    "replacement": "Milch"
+  },
+  {
+    "language": "de",
+    "id": "de-food-reisgerichte",
+    "old": "Reispfanne",
+    "replacement": "Pfanne"
+  },
+  {
+    "language": "de",
+    "id": "de-food-reisgerichte",
+    "old": "Reissalat",
+    "replacement": "Salat"
+  },
+  {
+    "language": "de",
+    "id": "de-food-sossen",
+    "old": "Bratensoße",
+    "replacement": "Braten"
+  },
+  {
+    "language": "de",
+    "id": "de-food-sossen",
+    "old": "Tomatensoße",
+    "replacement": "Tomate"
+  },
+  {
+    "language": "de",
+    "id": "de-food-sossen",
+    "old": "Sojasoße",
+    "replacement": "Soja"
+  },
+  {
+    "language": "de",
+    "id": "de-base-waesche",
+    "old": "Wäschekorb",
+    "replacement": "Korb"
+  },
+  {
+    "language": "de",
+    "id": "de-base-waesche",
+    "old": "Waschmittel",
+    "replacement": "Weichspüler"
+  },
+  {
+    "language": "de",
+    "id": "de-base-schuhe",
+    "old": "Hausschuh",
+    "replacement": "Mokassin"
+  },
+  {
+    "language": "de",
+    "id": "de-base-schuhe",
+    "old": "Schuhcreme",
+    "replacement": "Lederpflege"
+  },
+  {
+    "language": "de",
+    "id": "de-base-post",
+    "old": "Postkarte",
+    "replacement": "Ansichtskarte"
+  },
+  {
+    "language": "de",
+    "id": "de-base-ostern",
+    "old": "Osterglocke",
+    "replacement": "Narzisse"
+  },
+  {
+    "language": "de",
+    "id": "de-sports-segeln",
+    "old": "Segel",
+    "replacement": "Takelage"
+  },
+  {
+    "language": "en",
+    "id": "theme-264",
+    "old": "Keyboard",
+    "replacement": "Typewriter"
+  },
+  {
+    "language": "en",
+    "id": "theme-404",
+    "old": "Toothbrush",
+    "replacement": "Brush"
+  },
+  {
+    "language": "en",
+    "id": "theme-404",
+    "old": "Toothpaste",
+    "replacement": "Fluoride"
+  }
+]

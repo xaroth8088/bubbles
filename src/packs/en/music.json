@@ -254,7 +254,7 @@
       "domain": "music",
       "difficulty": 2,
       "words": [
-        "Jam",
+        "Session",
         "Solo",
         "Improvisation",
         "Groove",
@@ -467,13 +467,13 @@
         "Tom",
         "Cymbal",
         "Hi-hat",
-        "Drumstick",
+        "Stick",
         "Pedal",
         "Kit",
         "Beat",
         "Rhythm",
         "Brush",
-        "Drummer"
+        "Roll"
       ]
     },
     {
@@ -1361,7 +1361,6 @@
     "Banjo": "🪕",
     "Hammer": "🔨",
     "Kiwi": "🥝",
-    "Drumstick": "🍗",
     "Vampire": "🧛",
     "Rock": "🪨",
     "Umbrella": "☂️",
@@ -1389,6 +1388,7 @@
     "Snowman": "☃️",
     "Triangle": "🔺",
     "Scale": "⚖️",
-    "Maraca": "🪇"
+    "Maraca": "🪇",
+    "Speaker": "🔊"
   }
 }

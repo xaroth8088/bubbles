@@ -19,7 +19,7 @@
         "Stuhl",
         "Kissen",
         "Vorhang",
-        "Zimmer",
+        "Räume",
         "Garten",
         "Balkon"
       ]
@@ -159,8 +159,8 @@
         "Hemd",
         "Socke",
         "Handtuch",
-        "Wäschekorb",
-        "Waschmittel",
+        "Korb",
+        "Weichspüler",
         "Bügelbrett",
         "Bügeleisen",
         "Klammer",
@@ -196,12 +196,12 @@
         "Sandale",
         "Sneaker",
         "Pumps",
-        "Hausschuh",
+        "Mokassin",
         "Slipper",
         "Schnürsenkel",
         "Sohle",
         "Absatz",
-        "Schuhcreme"
+        "Lederpflege"
       ]
     },
     {
@@ -286,7 +286,7 @@
         "Marke",
         "Paket",
         "Umschlag",
-        "Postkarte",
+        "Ansichtskarte",
         "Adresse",
         "Absender",
         "Stempel",
@@ -363,7 +363,7 @@
         "Farbe",
         "Suchen",
         "Frühling",
-        "Osterglocke"
+        "Narzisse"
       ]
     },
     {
@@ -584,7 +584,7 @@
     },
     {
       "id": "de-base-zimmer",
-      "name": "Zimmer",
+      "name": "Räume",
       "domain": "base",
       "difficulty": 1,
       "words": [
@@ -598,6 +598,9 @@
         "Gästezimmer",
         "Arbeitszimmer",
         "Keller"
+      ],
+      "legacyNames": [
+        "Zimmer"
       ]
     }
   ],

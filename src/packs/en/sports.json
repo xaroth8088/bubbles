@@ -313,9 +313,9 @@
       "difficulty": 2,
       "words": [
         "Recurve",
-        "Longbow",
+        "Long",
         "Compound",
-        "Crossbow"
+        "Cross"
       ]
     },
     {
@@ -369,7 +369,7 @@
       "domain": "sport",
       "difficulty": 1,
       "words": [
-        "Sail",
+        "Canvas",
         "Mast",
         "Boom",
         "Rudder",
@@ -402,7 +402,7 @@
         "Trout",
         "Bass",
         "Carp",
-        "Freshwater fish"
+        "Waders"
       ]
     },
     {
@@ -581,7 +581,7 @@
         "Pool",
         "Water",
         "Goggles",
-        "Swimsuit",
+        "Cap",
         "Freestyle",
         "Backstroke",
         "Breaststroke",
@@ -609,7 +609,7 @@
         "Swell",
         "Fin",
         "Barrel",
-        "Surf"
+        "Reef"
       ]
     },
     {
@@ -636,7 +636,7 @@
       "domain": "sport",
       "difficulty": 1,
       "words": [
-        "Ski",
+        "Binding",
         "Pole",
         "Boot",
         "Slope",
@@ -861,7 +861,7 @@
         "Crew",
         "Coxswain",
         "Stroke",
-        "Rowlock",
+        "Outrigger",
         "Seat",
         "River",
         "Regatta",
@@ -959,7 +959,7 @@
       "domain": "sport",
       "difficulty": 1,
       "words": [
-        "Skate",
+        "Axle",
         "Wheel",
         "Blade",
         "Rink",
@@ -991,7 +991,6 @@
     "Wave": "🌊",
     "Ice": "🧊",
     "Shorts": "🩳",
-    "Swimsuit": "🩱",
     "Gloves": "🧤",
     "Helmet": "🪖",
     "Shoe": "👞",
@@ -1047,6 +1046,7 @@
     "Child": "🧒",
     "Triangle": "🔺",
     "Love": "💕",
-    "Scale": "⚖️"
+    "Scale": "⚖️",
+    "Cap": "🧢"
   }
 }

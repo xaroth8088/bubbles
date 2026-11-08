@@ -67,10 +67,10 @@ test('runtime nested decks are deterministic, varied, bounded, and solvable in a
     const puzzle=createPuzzle({mode:'endless',special:'nested',round,difficulty:round%2?'tricky':'balanced'});
     assert.deepEqual(puzzle,createPuzzle({mode:'endless',special:'nested',round,difficulty:round%2?'tricky':'balanced'}));
     let g=puzzle.groups[0],path=[g.name];
-    while(g.parentId){const parent=puzzle.groups.find(p=>p.id===g.parentId);assert.ok(THEMES.find(t=>t.name===parent.name).words.includes(g.name));assert.ok(parent.words.every(w=>THEMES.find(t=>t.name===parent.name).words.includes(w)));g=parent;path.push(g.name);}
+    while(g.parentId){const parent=puzzle.groups.find(p=>p.id===g.parentId);assert.ok(THEMES.find(t=>t.id===parent.sourceThemeId).words.includes(g.name));assert.ok(parent.words.every(w=>THEMES.find(t=>t.id===parent.sourceThemeId).words.includes(w)));g=parent;path.push(g.name);}
     paths.add(path.join(' → '));depths.add(path.length-1);
     const words=puzzle.groups.flatMap(g=>g.words.map(fold));assert.equal(new Set(words).size,words.length);
-    for(const group of puzzle.groups)assert.equal(group.domain,THEMES.find(t=>t.name===group.name).domain);
+    for(const group of puzzle.groups)assert.equal(group.domain,THEMES.find(t=>t.id===group.sourceThemeId).domain);
     const s=makeState(puzzle,{shuffleSeed:`nested-order-${round}`}),rng=random(`actions-${round}`);
     assert.ok(s.bubbles.length+s.reserve.flat().length<=70);
     for(let step=0;s.status==='playing'&&step<80;step++){
@@ -93,7 +93,7 @@ test('saved predefined chains retain their exact clues and return behavior after
 });
 test('a dictionary expansion refreshes an old decoy without invalidating or changing real clues',()=>{
   const puzzle=createPuzzle({mode:'lab',special:'linked'}),garden=THEMES.find(t=>t.name==='Garden');
-  puzzle.groups[1]={...puzzle.groups[1],name:'Garden',domain:garden.domain,words:['Soil','Seed','Trowel','Compost']};
+  puzzle.groups[1]={...puzzle.groups[1],sourceThemeId:undefined,name:'Garden',domain:garden.domain,words:['Soil','Seed','Trowel','Compost']};
   const s=makeState(puzzle),fake=[...s.bubbles,...s.reserve.flat()].find(b=>b.decoy);fake.atoms[0].word='Flowers';
   const realWords=[...s.bubbles,...s.reserve.flat()].filter(b=>!b.decoy).flatMap(b=>b.atoms.map(a=>a.word));
   assert.ok(validateState(s),'The old save must load before migration');upgradeDealing(s);

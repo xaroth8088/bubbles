@@ -1,5 +1,5 @@
 import { PICTURES, SPECIALS, INTRO_LEVELS, themeName } from './data.js';
-import { getCatalog, CATALOG_VERSION } from './catalog.js';
+import { getCatalog, groupThemeCandidates, CATALOG_VERSION } from './catalog.js';
 import { assembleThemeChain, normalizeLabel } from './nesting.js';
 
 export const SCHEMA = 1;
@@ -80,10 +80,10 @@ export function createPuzzle({mode = 'journey', level = 1, date = localDate(), r
     if(selected.length===count)break;
   }
   const buildGroups=selected=>{
-    const groups=selected.map((t,i)=>({id:`g${i}`,name:t.name,domain:t.domain,words:t.words}));
+    const groups=selected.map((t,i)=>({id:`g${i}`,sourceThemeId:t.id,name:t.name,domain:t.domain,words:t.words}));
     let child=groups[0];
     for(const layer of chain){
-      const parent={id:`g${groups.length}`,name:layer.name,domain:layer.domain,words:layer.words,childId:child.id};
+      const parent={id:`g${groups.length}`,sourceThemeId:layer.id,name:layer.name,domain:layer.domain,words:layer.words,childId:child.id};
       child.parentId=parent.id;groups.push(parent);child=parent;
     }
     return groups;
@@ -386,6 +386,7 @@ export function upgradeDealing(state){
   if(state.remaining===null){state.bubbles=state.bubbles.filter(b=>b.kind!=='bonus');state.reserve=state.reserve.map(c=>c.filter(b=>b.kind!=='bonus')).filter(c=>c.length);}
   for(const group of state.puzzle.groups){
     const old=group.name,name=themeName(old);if(old===name)continue;
+    if(state.puzzle.groups.some(g=>g!==group&&normalizeLabel(g.name)===normalizeLabel(name)))continue;
     const parent=state.puzzle.groups.find(g=>g.id===group.parentId);
     // A child label is also a word in its parent. Keep that ledger consistent,
     // and retain a legacy clue if shortening it would introduce a duplicate.
@@ -498,13 +499,13 @@ function upgradeCountdowns(state){
   releaseCountdowns(state);
 }
 
-function decoyPool(puzzle){
+export function decoyPool(puzzle){
   const themes=getCatalog(puzzle).themes;
   // Old boards keep their displayed labels. Resolve renamed categories only
   // for membership checks so a refreshed decoy still fits none of their pools.
-  const original=g=>themes.find(t=>t.name===g.name)||themes.find(t=>t.legacyNames?.includes(g.name));
-  const excluded=new Set(puzzle.groups.flatMap(g=>[g.name,...g.words,...(original(g)?.words||[])]).map(w=>w.toLowerCase()));
-  return [...new Set(themes.flatMap(t=>t.words))].filter(w=>!excluded.has(w.toLowerCase()));
+  const original=g=>groupThemeCandidates(g,themes).flatMap(theme=>theme.words);
+  const excluded=new Set(puzzle.groups.flatMap(g=>[g.name,...g.words,...original(g)]).map(normalizeLabel));
+  return [...new Set(themes.flatMap(t=>t.words))].filter(w=>!excluded.has(normalizeLabel(w)));
 }
 function makeDecoy(puzzle,link){
   const pool=decoyPool(puzzle),word=pool[hash(`${puzzle.shuffleSeed||puzzle.seed}-${link}-decoy`)%pool.length];
@@ -748,8 +749,16 @@ export function validateState(value) {
   if(!Array.isArray(value.keys)||!value.keys.every(color=>KEY_COLORS.includes(color))||!Number.isFinite(value.pressure)||!Number.isFinite(value.pins)||!Number.isFinite(value.mistakes)||!Number.isFinite(value.hints)||!Number.isFinite(value.assists))return false;
   if(!p.groups.every(g=>g&&typeof g.id==='string'))return false;
   const groupIds=new Set(value.puzzle.groups.map(g=>g.id));
-  if(groupIds.size!==value.puzzle.groups.length||!value.puzzle.groups.every(g=>typeof g.id==='string'&&typeof g.name==='string'&&Array.isArray(g.words)&&g.words.length===4&&g.words.every(w=>typeof w==='string'&&w.length<100)))return false;
-  if(!value.solved.every(g=>groupIds.has(g.id)&&typeof g.name==='string'&&Array.isArray(g.words)&&g.words.every(w=>typeof w==='string'))||new Set(value.solved.map(g=>g.id)).size!==value.solved.length)return false;
+  if(groupIds.size!==value.puzzle.groups.length||!value.puzzle.groups.every(g=>typeof g.id==='string'&&typeof g.name==='string'&&(g.sourceThemeId===undefined||typeof g.sourceThemeId==='string')&&Array.isArray(g.words)&&g.words.length===4&&g.words.every(w=>typeof w==='string'&&w.length<100)))return false;
+  const themes=getCatalog(p).themes;
+  for(const group of p.groups.filter(g=>g.sourceThemeId!==undefined)){
+    const source=themes.find(t=>t.id===group.sourceThemeId);
+    if(!source||![source.name,...(source.legacyNames||[])].some(name=>normalizeLabel(name)===normalizeLabel(group.name)||normalizeLabel(name)===normalizeLabel(themeName(group.name))))return false;
+    // A known source ID stays authoritative after later vocabulary revisions.
+    // Never invalidate a stored clue ledger merely because another same-named
+    // pool happens to contain those old words in the current catalog.
+  }
+  if(!value.solved.every(g=>groupIds.has(g.id)&&typeof g.name==='string'&&(g.sourceThemeId===undefined||typeof g.sourceThemeId==='string')&&Array.isArray(g.words)&&g.words.every(w=>typeof w==='string'))||new Set(value.solved.map(g=>g.id)).size!==value.solved.length)return false;
   const list=[...value.bubbles,...value.reserve.flat()];
   if(list.length>110||new Set(list.map(b=>b?.id)).size!==list.length)return false;
   const kinds=new Set(['normal','picture','frozen','hidden','keylock','sealed','pinlock','screw','crack','backward','cryptic','burst','linked','split','theme','bonus']);

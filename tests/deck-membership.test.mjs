@@ -8,8 +8,8 @@ const fold=word=>word.trim().toLowerCase();
 const indexes=new WeakMap();
 function check(puzzle){
   const catalog=getCatalog(puzzle);
-  if(!indexes.has(catalog))indexes.set(catalog,new Map(catalog.themes.map(t=>[t.name,new Set(t.words.map(fold))])));
-  const index=indexes.get(catalog),pools=puzzle.groups.map(g=>({id:g.id,words:index.get(g.name)}));
+  if(!indexes.has(catalog))indexes.set(catalog,new Map(catalog.themes.map(t=>[t.id,new Set(t.words.map(fold))])));
+  const index=indexes.get(catalog),pools=puzzle.groups.map(g=>({id:g.id,words:index.get(g.sourceThemeId)}));
   const words=puzzle.groups.flatMap(g=>g.words.map(fold));
   assert.equal(new Set(words).size,words.length,`Duplicate clue: ${puzzle.id}`);
   for(const group of puzzle.groups)for(const word of group.words){
@@ -41,7 +41,7 @@ test('every language and pack scope keeps all generated clues exclusive across m
     for(const difficulty of ['gentle','balanced','tricky'])for(let round=1;round<=20;round++){
       const special=[null,'nested','split','picture','linked'][round%5];
       const puzzle=createPuzzle({language,packIds,mode:'endless',difficulty,round,special});check(puzzle);
-      const pools=puzzle.groups.map(g=>catalog.themes.find(t=>t.name===g.name).words.map(fold));
+      const pools=puzzle.groups.map(g=>catalog.themes.find(t=>t.id===g.sourceThemeId).words.map(fold));
       if(!unusedOverlap)unusedOverlap=pools.some((pool,i)=>pools.slice(i+1).some(other=>pool.some(w=>other.includes(w))));
     }
     for(const level of [1,5,18,36])check(createPuzzle({language,packIds,level}));

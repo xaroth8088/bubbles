@@ -384,7 +384,7 @@
     },
     {
       "id": "theme-576",
-      "name": "Games",
+      "name": "Recreation",
       "domain": "games",
       "difficulty": 1,
       "words": [
@@ -409,6 +409,9 @@
         "Mahjong",
         "Joker",
         "Pawn"
+      ],
+      "legacyNames": [
+        "Games"
       ]
     },
     {
@@ -457,7 +460,7 @@
       "domain": "games",
       "difficulty": 1,
       "words": [
-        "Dart",
+        "Oche",
         "Board",
         "Bullseye",
         "Flight",

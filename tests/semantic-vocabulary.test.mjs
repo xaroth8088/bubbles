@@ -36,7 +36,7 @@ test('natural multiword titles and precise compounds remain playable',()=>{
 test('German compound clues require finding the missing shared word',()=>{
   const themes=getCatalog({language:'de',packIds:['language']}).themes;
   for(const stem of ['Hand','Wasser','Spiel','Buch','Schnee']){
-    const theme=themes.find(t=>t.name===`${stem} ergänzen`);assert.ok(theme,stem);
+    const theme=themes.find(t=>t.name===stem);assert.ok(theme,stem);
     assert.ok(theme.words.every(w=>!w.startsWith(stem)),`${stem}: prefix giveaway`);
   }
 });

@@ -47,14 +47,14 @@
       "words": [
         "Krater",
         "Sichel",
-        "Vollmond",
-        "Neumond",
-        "Mondlicht",
+        "Gestein",
+        "Fußabdruck",
+        "Silberschein",
         "Landung",
         "Umlaufbahn",
         "Gezeiten",
         "Finsternis",
-        "Mondstaub"
+        "Staub"
       ]
     },
     {
@@ -179,7 +179,7 @@
         "Uhr",
         "Thermometer",
         "Maßband",
-        "Messbecher",
+        "Becher",
         "Zollstock",
         "Stoppuhr",
         "Tacho",
@@ -272,7 +272,7 @@
         "Abstoßung",
         "Feld",
         "Spule",
-        "Magnetnadel",
+        "Nadel",
         "Kühlschrank"
       ]
     },
@@ -620,8 +620,6 @@
     "Komet": "☄️",
     "Satellit": "🛰️",
     "Teleskop": "🔭",
-    "Vollmond": "🌕",
-    "Neumond": "🌑",
     "Globus": "🌍",
     "Lunge": "🫁",
     "Gehirn": "🧠",
@@ -653,6 +651,8 @@
     "Telefon": "☎️",
     "Radio": "📻",
     "Flugzeug": "✈️",
-    "Holz": "🪵"
+    "Holz": "🪵",
+    "Gestein": "🪨",
+    "Fußabdruck": "👣"
   }
 }

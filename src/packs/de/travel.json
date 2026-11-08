@@ -13,9 +13,9 @@
         "Rucksack",
         "Reisetasche",
         "Kulturbeutel",
-        "Handgepäck",
+        "Sporttasche",
         "Kofferschloss",
-        "Gepäckanhänger",
+        "Namensschild",
         "Packliste"
       ],
       "legacyNames": [
@@ -161,7 +161,7 @@
         "Hering",
         "Gaskocher",
         "Taschenlampe",
-        "Campingstuhl",
+        "Klappstuhl",
         "Lagerfeuer"
       ]
     },
@@ -178,7 +178,7 @@
         "Sonnencreme",
         "Badehose",
         "Muschel",
-        "Strandtuch"
+        "Badetuch"
       ],
       "legacyNames": [
         "Strandurlaub"
