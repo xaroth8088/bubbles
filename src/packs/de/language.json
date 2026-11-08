@@ -185,7 +185,7 @@
     },
     {
       "id": "de-language-hand-woerter",
-      "name": "Hand ergänzen",
+      "name": "Hand",
       "domain": "language",
       "difficulty": 1,
       "words": [
@@ -201,12 +201,13 @@
         "Schrift"
       ],
       "legacyNames": [
-        "Hand-Wörter"
+        "Hand-Wörter",
+        "Hand ergänzen"
       ]
     },
     {
       "id": "de-language-wasser-woerter",
-      "name": "Wasser ergänzen",
+      "name": "Wasser",
       "domain": "language",
       "difficulty": 1,
       "words": [
@@ -222,12 +223,13 @@
         "Waage"
       ],
       "legacyNames": [
-        "Wasser-Wörter"
+        "Wasser-Wörter",
+        "Wasser ergänzen"
       ]
     },
     {
       "id": "de-language-spiel-woerter",
-      "name": "Spiel ergänzen",
+      "name": "Spiel",
       "domain": "language",
       "difficulty": 1,
       "words": [
@@ -243,12 +245,13 @@
         "Geld"
       ],
       "legacyNames": [
-        "Spiel-Wörter"
+        "Spiel-Wörter",
+        "Spiel ergänzen"
       ]
     },
     {
       "id": "de-language-buch-woerter",
-      "name": "Buch ergänzen",
+      "name": "Buch",
       "domain": "language",
       "difficulty": 1,
       "words": [
@@ -264,12 +267,13 @@
         "Zeichen"
       ],
       "legacyNames": [
-        "Buch-Wörter"
+        "Buch-Wörter",
+        "Buch ergänzen"
       ]
     },
     {
       "id": "de-language-schnee-woerter",
-      "name": "Schnee ergänzen",
+      "name": "Schnee",
       "domain": "language",
       "difficulty": 1,
       "words": [
@@ -285,7 +289,8 @@
         "Hase"
       ],
       "legacyNames": [
-        "Schnee-Wörter"
+        "Schnee-Wörter",
+        "Schnee ergänzen"
       ]
     },
     {
@@ -303,7 +308,7 @@
         "Sonntag",
         "Werktag",
         "Feiertag",
-        "Wochenende"
+        "Ruhetag"
       ],
       "legacyNames": [
         "Wochentage & Co."
@@ -434,7 +439,7 @@
         "Absatz",
         "Titel",
         "Inhalt",
-        "Lesezeichen"
+        "Schmöker"
       ]
     },
     {
@@ -490,7 +495,7 @@
         "Aufbruch",
         "Premiere",
         "Einstieg",
-        "Anfangspunkt",
+        "Ursprung",
         "Los"
       ]
     },
@@ -506,7 +511,7 @@
         "Abschluss",
         "Ausklang",
         "Feierabend",
-        "Endpunkt",
+        "Abbruch",
         "Abschied",
         "Schlusspunkt",
         "Stopp"

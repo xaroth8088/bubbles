@@ -262,8 +262,8 @@ const renamed={
 
 test('concise theme names retain stable IDs and leave no stale category references',()=>{
   for(const [language,changes] of Object.entries(renamed)){
-    const catalog=getCatalog({language}),names=new Set(catalog.themes.map(t=>t.name.toLocaleLowerCase(language)));
-    assert.equal(names.size,catalog.themes.length);
+    const catalog=getCatalog({language}),ids=new Set(catalog.themes.map(t=>t.id));
+    assert.equal(ids.size,catalog.themes.length);
     for(const [id,[old,name]] of Object.entries(changes)){
       const theme=catalog.themes.find(t=>t.id===id);
       assert.equal(theme?.name,name);assert.ok(theme.legacyNames.includes(old));assert.ok(Object.isFrozen(theme.legacyNames));
@@ -282,15 +282,17 @@ test('renamed category words keep their parent connections and pictures',()=>{
 });
 
 test('meaningful relations and recognizable titles survive the simplification pass',()=>{
+  const cakes=getCatalog().themes.filter(t=>t.name==='Cake');
+  assert.equal(cakes.length,2);assert.notDeepEqual(cakes[0].words,cakes[1].words);
   const names=new Set(getCatalog().themes.map(t=>t.name));
-  for(const name of ['Cake','Cake compounds','Night rhymes','With keys','The Beatles','Harry Potter','The Lord of the Rings'])assert.ok(names.has(name),name);
+  for(const name of ['Cake','Night rhymes','Keys','The Beatles','Harry Potter','The Lord of the Rings'])assert.ok(names.has(name),name);
 });
 
 
 test('renamed themes still exclude their full pools from legacy linked decoys',()=>{
   const catalog=getCatalog(),theme=catalog.themes.find(t=>t.name==='Family');
   const puzzle=createPuzzle({mode:'lab',special:'linked'});
-  puzzle.groups[1]={...puzzle.groups[1],name:'Family relations',domain:theme.domain,words:theme.words.slice(0,4)};
+  puzzle.groups[1]={...puzzle.groups[1],sourceThemeId:undefined,name:'Family relations',domain:theme.domain,words:theme.words.slice(0,4)};
   const state=makeState(puzzle),all=()=>[...state.bubbles,...state.reserve.flat()];
   const fake=all().find(b=>b.decoy);fake.atoms[0].word=theme.words.find(word=>!puzzle.groups.some(g=>g.words.includes(word)));
   assert.ok(fake.atoms[0].word);assert.ok(validateState(state));

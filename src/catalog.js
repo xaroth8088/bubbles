@@ -150,3 +150,24 @@ export function getCatalog({language='en',packIds}={}) {
   cache.set(key,catalog);
   return catalog;
 }
+
+// Labels describe answers, not pool identities: two unrelated categories may
+// share one label. Saved clue ledgers are immutable, including older clues
+// removed from today's dictionary, so resolve without rewriting their words.
+export function groupThemeCandidates(group, themes) {
+  if (group.sourceThemeId) {
+    const source = themes.find(theme=>theme.id===group.sourceThemeId);
+    return source ? [source] : [];
+  }
+  const fold = text=>text.normalize('NFC').trim().replace(/\s+/gu,' ').toLowerCase();
+  const name = fold(group.name);
+  const candidates = themes.filter(theme=>[theme.name,...(theme.legacyNames||[])].some(label=>fold(label)===name));
+  const exact = candidates.filter(theme=>group.words.every(word=>theme.words.some(clue=>fold(clue)===fold(word))));
+  // A full clue match identifies an older pool. Partial overlap cannot safely
+  // distinguish changed dictionaries, so retain all candidates for exclusions.
+  return exact.length ? exact : candidates;
+}
+export function resolveGroupTheme(group, themes) {
+  const candidates = groupThemeCandidates(group, themes);
+  return candidates.length===1 ? candidates[0] : undefined;
+}

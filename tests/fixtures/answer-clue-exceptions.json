@@ -1,0 +1,151 @@
+[
+  {
+    "language": "en",
+    "id": "theme-026",
+    "clues": [
+      "Strawberry",
+      "Blueberry",
+      "Raspberry",
+      "Blackberry",
+      "Cranberry",
+      "Gooseberry",
+      "Elderberry",
+      "Mulberry"
+    ],
+    "reason": "Keep recognizable fruit names rather than meaningless fragments such as Straw or Cran."
+  },
+  {
+    "language": "en",
+    "id": "theme-041",
+    "clues": [
+      "Walnut",
+      "Hazelnut",
+      "Chestnut",
+      "Peanut"
+    ],
+    "reason": "Keep familiar culinary names instead of replacing easy clues with obscure varieties."
+  },
+  {
+    "language": "en",
+    "id": "theme-143",
+    "clues": [
+      "Backstroke",
+      "Breaststroke"
+    ],
+    "reason": "These are the established names of swimming techniques."
+  },
+  {
+    "language": "en",
+    "id": "theme-517",
+    "clues": [
+      "Microphone"
+    ],
+    "reason": "The shared Greek root means sound; Microphone is not formed from the Phone device answer."
+  },
+  {
+    "language": "en",
+    "id": "theme-919",
+    "clues": [
+      "Antenna"
+    ],
+    "reason": "Antenna contains Ant only by accident."
+  },
+  {
+    "language": "en",
+    "id": "en-history-athens",
+    "clues": [
+      "Athena"
+    ],
+    "reason": "Athens is a singular proper city name, and Athena is a distinct goddess."
+  },
+  {
+    "language": "en",
+    "id": "theme-282",
+    "clues": [
+      "Biology",
+      "Geology",
+      "Ecology",
+      "Zoology",
+      "Mythology",
+      "Anthropology",
+      "Archaeology",
+      "Entomology"
+    ],
+    "reason": "The explicitly marked suffix is the wordplay rule."
+  },
+  {
+    "language": "en",
+    "id": "theme-283",
+    "clues": [
+      "Triangle",
+      "Tricycle",
+      "Trilogy",
+      "Tripod",
+      "Trident",
+      "Tricolor",
+      "Triceps",
+      "Trio"
+    ],
+    "reason": "The explicitly marked prefix is the wordplay rule."
+  },
+  {
+    "language": "de",
+    "id": "de-history-athens",
+    "clues": [
+      "Athene"
+    ],
+    "reason": "Athen and Athene are distinct proper names."
+  },
+  {
+    "language": "de",
+    "id": "de-food-beeren",
+    "clues": [
+      "Erdbeere",
+      "Himbeere",
+      "Brombeere",
+      "Heidelbeere",
+      "Stachelbeere",
+      "Johannisbeere",
+      "Preiselbeere",
+      "Maulbeere"
+    ],
+    "reason": "These are recognizable fruit names; stripping their common ending leaves misleading fragments."
+  },
+  {
+    "language": "de",
+    "id": "de-food-nuesse",
+    "clues": [
+      "Walnuss",
+      "Haselnuss",
+      "Erdnuss",
+      "Pekannuss",
+      "Paranuss"
+    ],
+    "reason": "These are natural culinary names, not optional descriptive qualifiers."
+  },
+  {
+    "language": "de",
+    "id": "de-travel-ozeane-und-meere",
+    "clues": [
+      "Mittelmeer",
+      "Rotes Meer"
+    ],
+    "reason": "Preserve recognizable geographic proper names."
+  },
+  {
+    "language": "de",
+    "id": "de-language-wochentage-co",
+    "clues": [
+      "Mittwoch"
+    ],
+    "reason": "Mittwoch is the fixed name of a weekday, not an optional repeated qualifier."
+  },
+  {
+    "language": "de",
+    "id": "de-language-ende",
+    "clues": [
+      "Feierabend"
+    ],
+    "reason": "Abend means evening; its ending is not the answer stem Ende."
+  }
+]

@@ -360,7 +360,7 @@ test('concise themes return as ordinary terms in expanded fixed-solution connect
     returned.add(child.name);
     if(child.name==='Ship'){
       const state=makeState(puzzle);popGroup(state,child.id);const bubble=state.bubbles.find(b=>b.id===`${child.id}-theme`);
-      assert.equal(bubble.atoms[0].word,'Ship');assert.equal(bubble.kind,'normal');assert.equal(bubble.groupId,parent.id);assert.ok(parent.words.every(w=>THEMES.find(t=>t.name===parent.name).words.includes(w)));solve(state);
+      assert.equal(bubble.atoms[0].word,'Ship');assert.equal(bubble.kind,'normal');assert.equal(bubble.groupId,parent.id);assert.ok(parent.words.every(w=>THEMES.find(t=>t.id===parent.sourceThemeId).words.includes(w)));solve(state);
     }
   }
   for(const [name,parent]of[['Ship','Vehicles'],['Car','Vehicles'],['Book','Reading'],['Guitar','Strings'],['Airport','Buildings'],['Coffee','Hot drinks']])returned.add(checkNamedReturn(name,parent));
@@ -512,7 +512,9 @@ test('a category term can change meaning and behaves exactly like an ordinary wo
     assert.equal(term.kind,'normal');assert.equal(term.atoms.length,1);assert.equal(term.groupId,child.parentId);assert.equal(bubbleText(term),child.name);
     meanings.add(child.name);solve(state);
   }
-  for(const [name,parent]of[['Bass','Freshwater fish'],['Rock','Styles'],['Pitch','Soccer'],['Jam','Jamming'],['Cricket','Ballgames'],['Keys','Moving']])meanings.add(checkNamedReturn(name,parent));
+  // Jam → Jamming repeated the answer stem. Keep the distinct-meaning routes
+  // without requiring that retired giveaway to remain in the dictionary.
+  for(const [name,parent]of[['Bass','Freshwater fish'],['Rock','Styles'],['Pitch','Soccer'],['Cricket','Ballgames'],['Keys','Moving']])meanings.add(checkNamedReturn(name,parent));
   assert.ok(meanings.size>=5,'Several category transfers should change meanings');assert.ok(meanings.has('Bass'));
 });
 

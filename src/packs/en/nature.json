@@ -40,7 +40,7 @@
         "Peony",
         "Dahlia",
         "Marigold",
-        "Sunflower",
+        "Zinnia",
         "Daffodil",
         "Violet",
         "Lavender",
@@ -382,7 +382,7 @@
       "difficulty": 2,
       "words": [
         "Firefly",
-        "Glowworm",
+        "Lava",
         "Aurora",
         "Ember",
         "Lantern",
@@ -456,7 +456,7 @@
       "words": [
         "Glacier",
         "Icicle",
-        "Iceberg",
+        "Berg",
         "Cube",
         "Rink",
         "Sculpture",
@@ -1380,15 +1380,15 @@
       "words": [
         "Umbrella",
         "Puddle",
-        "Raindrop",
+        "Droplet",
         "Cloud",
         "Drizzle",
         "Downpour",
-        "Raincoat",
+        "Poncho",
         "Thunder",
         "Storm",
         "Waterproof",
-        "Rainbow",
+        "Monsoon",
         "Gutter"
       ]
     },
@@ -1398,14 +1398,14 @@
       "domain": "nature",
       "difficulty": 1,
       "words": [
-        "Snowflake",
-        "Snowball",
-        "Snowman",
+        "Crystal",
+        "Powder",
+        "Carrot nose",
         "Blizzard",
         "Flurry",
         "Sled",
         "Ski",
-        "Snowshoe",
+        "Crampon",
         "Icicle",
         "Drift",
         "Frost",
@@ -1442,7 +1442,7 @@
         "Gust",
         "Gale",
         "Kite",
-        "Windmill",
+        "Turbine",
         "Sail",
         "Flag",
         "Vane",
@@ -1458,18 +1458,18 @@
       "domain": "nature",
       "difficulty": 1,
       "words": [
-        "Sunlight",
-        "Sunrise",
-        "Sunset",
+        "Fusion",
+        "Dawn",
+        "Dusk",
         "Solstice",
         "Heat",
         "Daylight",
         "Shadow",
         "Panel",
-        "Sundial",
-        "Sunburn",
-        "Sunbeam",
-        "Sunscreen"
+        "Corona",
+        "Ultraviolet",
+        "Ray",
+        "SPF"
       ]
     },
     {
@@ -1493,7 +1493,7 @@
         "Leaves",
         "Stem",
         "Succulents",
-        "Houseplants",
+        "Reeds",
         "Bamboo",
         "Seedling",
         "Shamrock",
@@ -1530,7 +1530,7 @@
         "Stem",
         "Green",
         "Autumn",
-        "Maple leaf",
+        "Maple",
         "Oak",
         "Chlorophyll",
         "Photosynthesis",
@@ -1572,7 +1572,7 @@
         "Beet",
         "Parsnip",
         "Rutabaga",
-        "Taproot",
+        "Absorption",
         "Soil",
         "Anchor",
         "Water",
@@ -1695,14 +1695,14 @@
         "Tuna",
         "Trout",
         "Carp",
-        "Goldfish",
+        "Guppy",
         "Shark",
         "Cod",
         "Herring",
         "Sardine",
-        "Catfish",
+        "Pike",
         "Perch",
-        "Clownfish",
+        "Mackerel",
         "Bass",
         "Stingray"
       ]
@@ -1956,7 +1956,7 @@
         "Tail",
         "Kitten",
         "Litter",
-        "Catnip",
+        "Tabby",
         "Post",
         "Nap",
         "Fur"
@@ -1977,7 +1977,7 @@
         "Stable",
         "Neigh",
         "Foal",
-        "Horseshoe",
+        "Farrier",
         "Trot",
         "Gallop"
       ]
@@ -1999,7 +1999,7 @@
         "Buzz",
         "Honeycomb",
         "Flower",
-        "Bumblebee"
+        "Drone"
       ]
     },
     {
@@ -2074,7 +2074,7 @@
         "Tongue",
         "Amphibian",
         "Tree",
-        "Bullfrog",
+        "Gills",
         "Toad"
       ]
     },
@@ -2312,7 +2312,7 @@
         "Antenna",
         "Legs",
         "Trail",
-        "Anthill",
+        "Mound",
         "Tunnel",
         "Crumb",
         "Nest",
@@ -2725,7 +2725,6 @@
     "Palm": "🌴",
     "Pine": "🌲",
     "Leaf": "🍃",
-    "Maple leaf": "🍁",
     "Rainbow": "🌈",
     "Lightning": "⚡",
     "Cloud": "☁️",
@@ -2783,6 +2782,7 @@
     "Pea": "🫛",
     "Scale": "⚖️",
     "Cherry": "🍒",
-    "Bean": "🫘"
+    "Bean": "🫘",
+    "Maple": "🍁"
   }
 }

@@ -268,7 +268,7 @@
         "Mohn",
         "Veilchen",
         "Orchidee",
-        "Sonnenblume",
+        "Hibiskus",
         "Dahlie",
         "Narzisse"
       ]
@@ -306,7 +306,7 @@
         "Krone",
         "Knospe",
         "Frucht",
-        "Baumscheibe"
+        "Jahresring"
       ],
       "legacyNames": [
         "Am Baum"
@@ -414,7 +414,7 @@
         "Wolke",
         "Gummistiefel",
         "Mantel",
-        "Regenbogen",
+        "Nässe",
         "Schauer",
         "Dachrinne",
         "Niesel"
@@ -427,13 +427,13 @@
       "difficulty": 1,
       "words": [
         "Flocke",
-        "Schneeball",
-        "Schneemann",
+        "Ball",
+        "Mann",
         "Schlitten",
         "Lawine",
         "Spur",
         "Schaufel",
-        "Schneedecke",
+        "Decke",
         "Skier",
         "Eiskristall"
       ]
@@ -503,8 +503,8 @@
         "Lachs",
         "Hecht",
         "Hering",
-        "Thunfisch",
-        "Goldfisch",
+        "Zander",
+        "Dorade",
         "Aal",
         "Kabeljau",
         "Barsch"
@@ -534,10 +534,10 @@
       "domain": "nature",
       "difficulty": 2,
       "words": [
-        "Steinpilz",
+        "Marone",
         "Pfifferling",
         "Champignon",
-        "Fliegenpilz",
+        "Täubling",
         "Morchel",
         "Trüffel",
         "Schirmling",
@@ -653,7 +653,6 @@
     "Robbe": "🦭",
     "Rose": "🌹",
     "Tulpe": "🌷",
-    "Sonnenblume": "🌻",
     "Blatt": "🍃",
     "Sonne": "☀️",
     "Regen": "🌧️",
@@ -667,10 +666,11 @@
     "Schlitten": "🛷",
     "Schneemann": "⛄",
     "Skier": "🎿",
-    "Regenbogen": "🌈",
     "Schnecke": "🐌",
     "Schlange": "🐍",
     "Schildkröte": "🐢",
-    "Krokodil": "🐊"
+    "Krokodil": "🐊",
+    "Tropfen": "💧",
+    "Hibiskus": "🌺"
   }
 }

@@ -64,7 +64,7 @@ test('all packs, languages, modes and mechanics keep label coincidences limited 
     for(const option of options){
       const puzzle=createPuzzle({language,packIds,...option});check(puzzle);
       returns+=puzzle.groups.filter(g=>g.parentId).length;
-      renamed+=puzzle.groups.filter(g=>catalog.themes.find(t=>t.name===g.name)?.legacyNames?.length).length;
+      renamed+=puzzle.groups.filter(g=>catalog.themes.find(t=>t.id===g.sourceThemeId)?.legacyNames?.length).length;
       assert.ok(puzzle.groups.length>=(puzzle.mode==='lab'?4:10),`Undersized deck: ${puzzle.id}`);
     }
   }

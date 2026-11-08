@@ -19,7 +19,7 @@ test('linked decoys belong to no deck theme, reject matches, and pop on a partia
   for(let seed=0;seed<40;seed++){
     const s=makeState(createPuzzle({mode:'lab',special:'linked'}),{shuffleSeed:`decoy-${seed}`}),fake=all(s).find(b=>b.decoy),real=all(s).find(b=>b.link&&!b.decoy);
     assert.equal(fake.groupId,null);assert.equal(fake.atoms.length,1);assert.equal(arrivalDependency(fake,all(s)),real);
-    assert.ok(!s.puzzle.groups.some(g=>g.words.includes(fake.atoms[0].word)||THEMES.find(t=>t.name===g.name)?.words.includes(fake.atoms[0].word)));
+    assert.ok(!s.puzzle.groups.some(g=>g.words.includes(fake.atoms[0].word)||THEMES.find(t=>t.id===g.sourceThemeId)?.words.includes(fake.atoms[0].word)));
     // Supply the real group for this small practice-board check.
     s.bubbles=all(s);s.reserve=[];s.capacity=24;
     const mate=s.bubbles.find(b=>b.groupId===real.groupId&&b.id!==real.id),before=structuredClone(fake);
@@ -57,7 +57,7 @@ test('kelp and pins have distinct art without padlocks and release on their orig
 });
 test('theme returns can form a logical chain with a valid save at every step',()=>{
   const s=demo('nested'),child=s.puzzle.groups[0],parent=s.puzzle.groups.find(g=>g.id===child.parentId),grand=s.puzzle.groups.find(g=>g.id===parent.parentId);
-  for(const [c,p] of[[child,parent],[parent,grand]])assert.ok(THEMES.find(t=>t.name===p.name).words.includes(c.name));
+  for(const [c,p] of[[child,parent],[parent,grand]])assert.ok(THEMES.find(t=>t.id===p.sourceThemeId).words.includes(c.name));
   // All parent clues are available, but their returning fourth words must still be earned.
   s.bubbles=all(s);s.reserve=[];s.capacity=24;
   for(const g of [child,parent]){

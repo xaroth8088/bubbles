@@ -178,7 +178,7 @@
         "Hook",
         "Chain",
         "Magnet",
-        "Toolbox"
+        "Ratchet"
       ]
     },
     {
@@ -263,7 +263,7 @@
         "Quilt",
         "Duvet",
         "Comforter",
-        "Bedspread",
+        "Mattress protector",
         "Throw",
         "Valance"
       ],
@@ -786,7 +786,7 @@
         "Streamers",
         "Invitation",
         "Pinata",
-        "Games",
+        "Recreation",
         "Music",
         "Confetti",
         "Ice cream",
@@ -870,7 +870,7 @@
         "Dispatcher",
         "Ambulance",
         "Fire engine",
-        "Rescue boat",
+        "Lifeboat",
         "Team"
       ],
       "legacyNames": [
@@ -1262,11 +1262,11 @@
         "Chandelier",
         "Lantern",
         "Candle",
-        "Flashlight",
-        "Spotlight",
+        "Torch",
+        "Sconce",
         "Bulb",
         "Fixture",
-        "Fairy lights",
+        "LED strip",
         "Dimmer",
         "Lampshade"
       ]
@@ -1346,13 +1346,13 @@
         "Knob",
         "Lock",
         "Key",
-        "Doorbell",
+        "Bell",
         "Knocker",
         "Frame",
         "Threshold",
         "Deadbolt",
         "Latch",
-        "Doormat"
+        "Mat"
       ]
     },
     {
@@ -1819,7 +1819,7 @@
       "domain": "life",
       "difficulty": 1,
       "words": [
-        "Christmas tree",
+        "Evergreen",
         "Santa",
         "Reindeer",
         "Stocking",
@@ -2029,7 +2029,7 @@
       "difficulty": 1,
       "words": [
         "Office",
-        "Workshop",
+        "Laboratory",
         "School",
         "Hospital",
         "Factory",
@@ -2238,7 +2238,7 @@
       "domain": "life",
       "difficulty": 1,
       "words": [
-        "Bank",
+        "Branch",
         "Deposit",
         "Withdrawal",
         "Account",
@@ -2365,7 +2365,7 @@
         "Sky",
         "Ocean",
         "Sapphire",
-        "Blueberry",
+        "Hydrangea",
         "Jeans",
         "Forget-me-not",
         "Navy",
@@ -2458,7 +2458,7 @@
       "domain": "style",
       "difficulty": 1,
       "words": [
-        "Clothes",
+        "Overalls",
         "Footwear",
         "Headwear",
         "Jewelry",
@@ -2546,7 +2546,7 @@
         "Zipper",
         "Pocket",
         "Backpack",
-        "Handbag",
+        "Carry-on",
         "Tote",
         "Clutch",
         "Duffel",
@@ -2963,7 +2963,7 @@
         "Suede",
         "Polish",
         "Box",
-        "Shoehorn"
+        "Cobbler"
       ]
     },
     {
@@ -3032,7 +3032,7 @@
       "domain": "home",
       "difficulty": 1,
       "words": [
-        "Bathtub",
+        "Tub",
         "Water",
         "Tap",
         "Plug",
@@ -3061,7 +3061,7 @@
         "Bowl",
         "Glass",
         "Cutlery",
-        "Dishwasher",
+        "Detergent",
         "Rack",
         "Tea towel"
       ]
@@ -3135,7 +3135,6 @@
     "Grape": "🍇",
     "Mango": "🥭",
     "Strawberry": "🍓",
-    "Blueberry": "🫐",
     "Carrot": "🥕",
     "Corn": "🌽",
     "Lemon": "🍋",
@@ -3159,7 +3158,6 @@
     "Pen": "🖊️",
     "Pencil": "✏️",
     "Tent": "⛺",
-    "Flashlight": "🔦",
     "Backpack": "🎒",
     "Balloon": "🎈",
     "Candle": "🕯️",
@@ -3391,7 +3389,6 @@
     "Tombstone": "🪦",
     "Santa": "🎅",
     "Snowman": "☃️",
-    "Christmas tree": "🎄",
     "Happy": "😀",
     "Sad": "😢",
     "Angry": "😠",
@@ -3453,6 +3450,9 @@
     "Pea": "🫛",
     "Scale": "⚖️",
     "Carton": "🥡",
-    "Cherry": "🍒"
+    "Cherry": "🍒",
+    "Bell": "🔔",
+    "Torch": "🔦",
+    "Evergreen": "🌲"
   }
 }

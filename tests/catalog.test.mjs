@@ -18,7 +18,6 @@ test('every language and standalone genre supplies a complete immutable dictiona
     assert.ok(catalog.themes.length>=25,`${language}/${packId}`);
     assert.equal(catalog.language,language);assert.deepEqual(catalog.packIds,[packId]);
     assert.equal(new Set(catalog.themes.map(t=>t.id)).size,catalog.themes.length);
-    assert.equal(new Set(catalog.themes.map(t=>t.name.toLocaleLowerCase(language))).size,catalog.themes.length);
     assert.ok(Object.keys(catalog.pictures).length>=4,`${language}/${packId} needs picture clues`);
     const words=new Set(catalog.themes.flatMap(t=>t.words));
     for(const theme of catalog.themes){
@@ -32,11 +31,10 @@ test('every language and standalone genre supplies a complete immutable dictiona
   }
 });
 
-test('each language has globally unique names and IDs',()=>{
+test('each language has globally unique pool IDs',()=>{
   for(const language of ['en','de']){
     const themes=getCatalog({language}).themes;
     assert.equal(new Set(themes.map(t=>t.id)).size,themes.length);
-    assert.equal(new Set(themes.map(t=>t.name.toLocaleLowerCase(language))).size,themes.length);
   }
 });
 
@@ -44,7 +42,7 @@ test('the original English packs preserve all 995 stable IDs and canonical emoji
   const catalog=getCatalog({packIds:ALL_PACK_IDS.filter(id=>!['history','books','mythology','comics'].includes(id))});
   assert.equal(catalog.themes.length,995);
   for(let i=1;i<=995;i++)assert.ok(catalog.themes.some(t=>t.id===`theme-${String(i).padStart(3,'0')}`));
-  assert.equal(Object.keys(catalog.pictures).length,705);
+  assert.equal(Object.keys(catalog.pictures).length,709);
   assert.equal(catalog.stats.entries,10093);
   const names=new Set(catalog.themes.map(t=>t.name));
   assert.ok(catalog.themes.reduce((count,t)=>count+t.words.filter(w=>names.has(w)).length,0)>=1367);
@@ -60,7 +58,7 @@ test('JSON stores punctuation as complete clues without delimiter parsing',()=>{
 
 test('shortened names retain exact nested memberships',()=>{
   const themes=getCatalog().themes;
-  for(const child of ['Matter','Capacity','Glow','House compounds'])assert.ok(themes.some(t=>t.name===child),child);
+  for(const child of ['Matter','Capacity','Glow','House'])assert.ok(themes.some(t=>t.name===child),child);
   assert.ok(themes.find(t=>t.name==='Instrumentation').words.includes('Strings'));
   assert.ok(themes.every(t=>!/^Things that can be |^Words (before|after) /.test(t.name)));
 });

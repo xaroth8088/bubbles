@@ -12,7 +12,7 @@ function checkReturns(puzzle,maxDepth){
     const parent=puzzle.groups.find(group=>group.id===child.parentId);
     assert.ok(parent&&parent.childId===child.id,puzzle.id);
     assert.ok(parent.words.includes(child.name),puzzle.id);
-    assert.ok(themes.find(theme=>theme.name===parent.name).words.includes(child.name),puzzle.id);
+    assert.ok(themes.find(theme=>theme.id===parent.sourceThemeId).words.includes(child.name),puzzle.id);
   }
   for(const root of puzzle.groups.filter(group=>!group.childId)){
     let group=root,depth=0;

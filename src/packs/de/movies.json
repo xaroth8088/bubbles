@@ -11,7 +11,7 @@
       "words": [
         "Leinwand",
         "Popcorn",
-        "Kinokarte",
+        "Eintrittskarte",
         "Sessel",
         "Vorhang",
         "Trailer",
@@ -595,7 +595,6 @@
     "Kamera": "🎥",
     "Klappe": "🎬",
     "Popcorn": "🍿",
-    "Kinokarte": "🎟️",
     "Mikrofon": "🎤",
     "Cowboy": "🤠",
     "Schloss": "🏰",
@@ -610,6 +609,7 @@
     "Schiff": "🚢",
     "Blitz": "⚡",
     "Spinnennetz": "🕸️",
-    "Geist": "👻"
+    "Geist": "👻",
+    "Eintrittskarte": "🎟️"
   }
 }

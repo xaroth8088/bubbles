@@ -140,7 +140,7 @@
         "Butter",
         "Ei",
         "Hefe",
-        "Backpulver",
+        "Natron",
         "Kakao",
         "Vanille",
         "Teig",
@@ -266,8 +266,8 @@
         "Fenchel",
         "Ingwer",
         "Hagebutte",
-        "Schwarztee",
-        "Grüntee",
+        "Assam",
+        "Matcha",
         "Honig",
         "Kanne",
         "Beutel"
@@ -338,11 +338,11 @@
         "Puffer",
         "Salat",
         "Gratin",
-        "Pellkartoffel",
-        "Bratkartoffel",
+        "Schale",
+        "Braten",
         "Kroketten",
         "Knödel",
-        "Ofenkartoffel"
+        "Ofen"
       ]
     },
     {
@@ -414,7 +414,7 @@
         "Camembert",
         "Cheddar",
         "Edamer",
-        "Bergkäse"
+        "Roquefort"
       ]
     },
     {
@@ -484,7 +484,7 @@
         "Suppenlöffel",
         "Kuchengabel",
         "Stäbchen",
-        "Salatbesteck",
+        "Kuchenschaufel",
         "Fischmesser",
         "Buttermesser"
       ]
@@ -537,13 +537,13 @@
         "Risotto",
         "Paella",
         "Sushi",
-        "Milchreis",
+        "Milch",
         "Curry",
         "Pilaw",
-        "Reispfanne",
+        "Pfanne",
         "Onigiri",
         "Biryani",
-        "Reissalat"
+        "Salat"
       ],
       "legacyNames": [
         "Reisgerichte"
@@ -561,9 +561,9 @@
         "Pesto",
         "Aioli",
         "Hollandaise",
-        "Bratensoße",
-        "Tomatensoße",
-        "Sojasoße",
+        "Braten",
+        "Tomate",
+        "Soja",
         "Chutney"
       ]
     },

@@ -22,7 +22,7 @@ try{
   };
   const assertCatalog=async(language,packIds)=>{
     const state=await active(),catalog=getCatalog({language,packIds}),available=new Set(catalog.themes.map(theme=>theme.name));
-    const pools=state.puzzle.groups.map(group=>({id:group.id,words:new Set(catalog.themes.find(t=>t.name===group.name).words.map(w=>w.toLowerCase()))}));
+    const pools=state.puzzle.groups.map(group=>({id:group.id,words:new Set(catalog.themes.find(t=>t.id===group.sourceThemeId).words.map(w=>w.toLowerCase()))}));
     for(const group of state.puzzle.groups)for(const word of group.words){
       assert.deepEqual(pools.filter(pool=>pool.words.has(word.toLowerCase())).map(pool=>pool.id),[group.id],`Ambiguous saved clue ${word} in ${language}/${packIds}`);
     }

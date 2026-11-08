@@ -37,7 +37,7 @@
         "Author",
         "Illustration",
         "Contents",
-        "Bookmark",
+        "Ribbon",
         "Jacket"
       ]
     },
@@ -286,7 +286,7 @@
     },
     {
       "id": "theme-257",
-      "name": "Rain compounds",
+      "name": "Rain",
       "domain": "wordplay",
       "difficulty": 3,
       "words": [
@@ -298,11 +298,14 @@
         "Check",
         "Storm",
         "Water"
+      ],
+      "legacyNames": [
+        "Rain compounds"
       ]
     },
     {
       "id": "theme-258",
-      "name": "House compounds",
+      "name": "House",
       "domain": "wordplay",
       "difficulty": 3,
       "words": [
@@ -314,11 +317,14 @@
         "Dog",
         "Club",
         "Boat"
+      ],
+      "legacyNames": [
+        "House compounds"
       ]
     },
     {
       "id": "theme-259",
-      "name": "Cake compounds",
+      "name": "Cake",
       "domain": "wordplay",
       "difficulty": 3,
       "words": [
@@ -330,11 +336,14 @@
         "Crab",
         "Angel",
         "Wedding"
+      ],
+      "legacyNames": [
+        "Cake compounds"
       ]
     },
     {
       "id": "theme-260",
-      "name": "Ball compounds",
+      "name": "Ball",
       "domain": "wordplay",
       "difficulty": 3,
       "words": [
@@ -346,11 +355,14 @@
         "Cannon",
         "Meat",
         "Eye"
+      ],
+      "legacyNames": [
+        "Ball compounds"
       ]
     },
     {
       "id": "theme-261",
-      "name": "Book compounds",
+      "name": "Book",
       "domain": "wordplay",
       "difficulty": 3,
       "words": [
@@ -362,11 +374,14 @@
         "Club",
         "Binding",
         "Shelf"
+      ],
+      "legacyNames": [
+        "Book compounds"
       ]
     },
     {
       "id": "theme-262",
-      "name": "Fly compounds",
+      "name": "Fly",
       "domain": "wordplay",
       "difficulty": 3,
       "words": [
@@ -378,11 +393,14 @@
         "May",
         "Sand",
         "Black"
+      ],
+      "legacyNames": [
+        "Fly compounds"
       ]
     },
     {
       "id": "theme-263",
-      "name": "Sun compounds",
+      "name": "Sun",
       "domain": "wordplay",
       "difficulty": 3,
       "words": [
@@ -394,22 +412,28 @@
         "Screen",
         "Beam",
         "Dial"
+      ],
+      "legacyNames": [
+        "Sun compounds"
       ]
     },
     {
       "id": "theme-264",
-      "name": "With keys",
+      "name": "Keys",
       "domain": "wordplay",
       "difficulty": 3,
       "words": [
         "Piano",
-        "Keyboard",
+        "Typewriter",
         "Lock",
         "Map",
         "Hotel",
         "Car",
         "Dictionary",
         "Cipher"
+      ],
+      "legacyNames": [
+        "With keys"
       ]
     },
     {
@@ -433,7 +457,7 @@
     },
     {
       "id": "theme-266",
-      "name": "With teeth",
+      "name": "Teeth",
       "domain": "wordplay",
       "difficulty": 3,
       "words": [
@@ -445,6 +469,9 @@
         "Shark",
         "Rake",
         "Crocodile"
+      ],
+      "legacyNames": [
+        "With teeth"
       ]
     },
     {
@@ -563,7 +590,7 @@
     },
     {
       "id": "theme-273",
-      "name": "Board compounds",
+      "name": "Board",
       "domain": "wordplay",
       "difficulty": 3,
       "words": [
@@ -575,11 +602,14 @@
         "Black",
         "White",
         "Spring"
+      ],
+      "legacyNames": [
+        "Board compounds"
       ]
     },
     {
       "id": "theme-274",
-      "name": "Light compounds",
+      "name": "Light",
       "domain": "wordplay",
       "difficulty": 3,
       "words": [
@@ -591,11 +621,14 @@
         "Head",
         "Sun",
         "Gas"
+      ],
+      "legacyNames": [
+        "Light compounds"
       ]
     },
     {
       "id": "theme-275",
-      "name": "Work compounds",
+      "name": "Work",
       "domain": "wordplay",
       "difficulty": 3,
       "words": [
@@ -607,11 +640,14 @@
         "Paper",
         "Fire",
         "Needle"
+      ],
+      "legacyNames": [
+        "Work compounds"
       ]
     },
     {
       "id": "theme-276",
-      "name": "Paper compounds",
+      "name": "Paper",
       "domain": "wordplay",
       "difficulty": 3,
       "words": [
@@ -623,11 +659,14 @@
         "Graph",
         "Tissue",
         "Wrapping"
+      ],
+      "legacyNames": [
+        "Paper compounds"
       ]
     },
     {
       "id": "theme-277",
-      "name": "Line compounds",
+      "name": "Line",
       "domain": "wordplay",
       "difficulty": 3,
       "words": [
@@ -639,6 +678,9 @@
         "Life",
         "Base",
         "Time"
+      ],
+      "legacyNames": [
+        "Line compounds"
       ]
     },
     {
@@ -1257,7 +1299,7 @@
         "Peace",
         "Friendship",
         "Delight",
-        "Comfort",
+        "Reassurance",
         "Gratitude",
         "Wonder"
       ],
@@ -1369,7 +1411,7 @@
         "Truck",
         "Bus",
         "Skateboard",
-        "Wheelchair",
+        "Stroller",
         "Cart",
         "Skate",
         "Suitcase"
@@ -1415,12 +1457,12 @@
       "words": [
         "Bird",
         "Bat",
-        "Butterfly",
+        "Moth",
         "Airplane",
         "Helicopter",
         "Kite",
         "Bee",
-        "Dragonfly",
+        "Wasp",
         "Glider",
         "Balloon"
       ]
@@ -1615,7 +1657,6 @@
     "Helicopter": "🚁",
     "Ship": "🚢",
     "Wheel": "🛞",
-    "Wheelchair": "🦽",
     "Map": "🗺️",
     "Suitcase": "🧳",
     "House": "🏠",
@@ -1664,6 +1705,7 @@
     "Music": "🎶",
     "Love": "💕",
     "Broken heart": "💔",
-    "Pea": "🫛"
+    "Pea": "🫛",
+    "Ribbon": "🎀"
   }
 }

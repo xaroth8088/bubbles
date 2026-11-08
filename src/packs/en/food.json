@@ -1215,7 +1215,7 @@
         "Orchard",
         "Cider",
         "Pie",
-        "Applesauce",
+        "Bramley",
         "Granny Smith",
         "Gala",
         "Fuji",
@@ -1314,7 +1314,7 @@
         "Soup",
         "Wrap",
         "Leftovers",
-        "Lunchbox",
+        "Thermos",
         "Picnic",
         "Noodles",
         "Quiche",
@@ -1552,7 +1552,7 @@
         "Bee",
         "Hive",
         "Nectar",
-        "Honeycomb",
+        "Comb",
         "Wax",
         "Jar",
         "Spoon",
@@ -1615,11 +1615,11 @@
         "Silk",
         "Stalk",
         "Field",
-        "Popcorn",
-        "Cornmeal",
+        "Tassel",
+        "Grits",
         "Tortilla",
         "Polenta",
-        "Cornbread",
+        "Masa",
         "Butter"
       ]
     },
@@ -1741,7 +1741,6 @@
     "Ginger": "🫚",
     "Chili": "🌶️",
     "Chestnut": "🌰",
-    "Peanut": "🥜",
     "Bread": "🍞",
     "Croissant": "🥐",
     "Baguette": "🥖",
@@ -1830,6 +1829,7 @@
     "Pancake": "🥞",
     "Carton": "🥡",
     "Cherry": "🍒",
-    "Bean": "🫘"
+    "Bean": "🫘",
+    "Peanut": "🥜"
   }
 }
