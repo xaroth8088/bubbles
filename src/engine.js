@@ -196,16 +196,25 @@ export function makeState(puzzle, {challenge = false, shuffleSeed = null} = {}) 
     const eligible=(b,group,index)=>b.kind==='normal'&&!b.link&&!b.decoy&&!b.keyColor&&!b.pinCarrier&&isSplittableWord(b.atoms[0].word)&&!(special.includes('screw')&&group===1&&index<=1);
     const pools=chunks.map((chunk,group)=>chunk.filter((b,index)=>eligible(b,group,index)).sort((a,b)=>Number(b.atoms[0].word.length>=5)-Number(a.atoms[0].word.length>=5)));
     const requested=Number.isInteger(puzzle.splitCount)&&puzzle.splitCount>=4&&puzzle.splitCount<=8?puzzle.splitCount:4+hash(`${puzzle.seed}-split-count`)%5;
-    const chosen=[];
-    for(let i=0;chosen.length<requested&&pools.some(pool=>pool[i]);i++)for(const pool of pools)if(pool[i]&&chosen.length<requested)chosen.push(pool[i]);
-    // A legacy/custom phrase-only deck may lack four eligible words. Keep
-    // its clues intact rather than splitting a phrase or creating an invalid save.
+    const chosen=[],usedFragments=new Set();
+    for(let i=0;chosen.length<requested&&pools.some(pool=>pool[i]);i++)for(const pool of pools){
+      const bubble=pool[i];if(!bubble||chosen.length>=requested)continue;
+      const characters=letters(bubble.atoms[0].word),cut=Math.floor(characters.length/2);
+      const labels=[characters.slice(0,cut).join('').toLowerCase(),characters.slice(cut).join('').toLowerCase()];
+      // Matching uses word identity, so equal-looking pieces from different
+      // words must never be dealt, even on opposite sides or later in reserve.
+      // Equal halves of this one word are fine: either order joins the same pair.
+      const keys=labels.map(fold);if(keys.some(key=>usedFragments.has(key)))continue;
+      keys.forEach(key=>usedFragments.add(key));chosen.push({bubble,labels});
+    }
+    // A legacy/custom deck may lack four collision-free single-word pairs. Keep
+    // its clues intact rather than dealing ambiguous pieces or an invalid save.
     if(chosen.length<4){chosen.length=0;puzzle.specials=puzzle.specials.filter(s=>s!=='split');}
     puzzle.splitCount=chosen.length;
-    for(const b of chosen){
-      const chunk=chunks.find(c=>c.includes(b)),at=chunk.indexOf(b),atom=b.atoms[0],characters=letters(atom.word),cut=Math.floor(characters.length/2);
-      chunk.splice(at,1,{...b,id:`${b.id}l`,atoms:[{...atom,part:0,label:characters.slice(0,cut).join('').toLowerCase()}],kind:'split'},
-        {...b,id:`${b.id}r`,atoms:[{...atom,part:1,label:characters.slice(cut).join('').toLowerCase()}],kind:'split'});
+    for(const {bubble:b,labels} of chosen){
+      const chunk=chunks.find(c=>c.includes(b)),at=chunk.indexOf(b),atom=b.atoms[0];
+      chunk.splice(at,1,{...b,id:`${b.id}l`,atoms:[{...atom,part:0,label:labels[0]}],kind:'split'},
+        {...b,id:`${b.id}r`,atoms:[{...atom,part:1,label:labels[1]}],kind:'split'});
     }
   }
   if(!special.includes('split'))puzzle.splitCount=0;
